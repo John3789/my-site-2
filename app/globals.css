@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #012E2B; /* Tailwind teal-950 */
+}
+:root {
+  /* BRAND (use these for nameplate + teal button) */
+  --color-teal: #0E3A3B;     /* ← the darker turquoise you were using */
+  --color-cream: #F4F1EA;
+  --color-gold: #C9A227;
+
+  /* Section shades (keep everything dark) */
+  --color-teal-900: #062B2C;
+  --color-teal-800: #0B3536;
+  --color-teal-700: #0E3A3B; /* same as --color-teal */
+}
+
+
+
+
+/* Map font variables to utility classes */
+.font-sans { font-family: var(--font-sans), ui-sans-serif, system-ui; }
+.font-serif { font-family: var(--font-serif), ui-serif, Georgia, serif; }
+html { scroll-behavior: smooth; }
