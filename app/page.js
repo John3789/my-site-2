@@ -15,7 +15,7 @@ export default function Home() {
       <a href="#home">
 <span className="block text-7xl hover:opacity-90 transition">
   DR. JUAN PABLO SALERNO
-  <sup className="text-2xl align-super opacity-70">™</sup>
+  <sup className="text-lg align-super opacity-70">™</sup>
 </span>
       </a>
     </h1>
