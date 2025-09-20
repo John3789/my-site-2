@@ -23,13 +23,8 @@ export default function ContactPage() {
 
         {sent ? (
           <div className="rounded-md bg-black/20 border border-white/10 p-6">
-            <p className="font-semibold">Thanks! Your message was noted.</p>
-            <p className="opacity-80 mt-2">
-              We’ll follow up soon. If it’s time-sensitive, email{" "}
-              <a href="mailto:contact@drjuanpablosalerno.com" className="underline">
-                contact@drjuanpablosalerno.com
-              </a>.
-            </p>
+            <p className="font-semibold">Thanks! Your message was received and we will follow-up soon.</p>
+            
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="max-w-2xl space-y-4">
@@ -69,6 +64,7 @@ export default function ContactPage() {
                 <option className="bg-[var(--color-teal-900)]" value="Consulting">Consulting</option>
                 <option className="bg-[var(--color-teal-900)]" value="Speaking">Speaking</option>
                 <option className="bg-[var(--color-teal-900)]" value="Media">Media / Press</option>
+                <option className="bg-[var(--color-teal-900)]" value="Collaborations">Collaborations</option>
                 <option className="bg-[var(--color-teal-900)]" value="Other">Another Inquiry</option>
               </select>
             </div>
