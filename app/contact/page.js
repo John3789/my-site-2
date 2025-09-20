@@ -86,7 +86,7 @@ export default function ContactPage() {
 
             <button
               type="submit"
-              className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-[var(--color-cream)] px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition"
+              className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition"
             >
               Send
             </button>
