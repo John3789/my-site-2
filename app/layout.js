@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
       {/* ⬇️ lock layout so it always looks like full screen */}
       <body className="min-w-[1200px] bg-[#F4F1EA] text-[#0C1415] antialiased">
         {children}
-       <footer className="text-center py-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-950)]">
+<footer className="text-center py-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-950)]">
   © {new Date().getFullYear()} Dr. Juan Pablo Salerno. All rights reserved. ·
   <a href="/terms" className="underline ml-2 hover:opacity-80">Terms</a> ·
   <a href="/privacy" className="underline ml-2 hover:opacity-80">Privacy</a>
