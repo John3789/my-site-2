@@ -69,7 +69,7 @@ export default function ContactPage() {
                 <option className="bg-[var(--color-teal-900)]" value="Consulting">Consulting</option>
                 <option className="bg-[var(--color-teal-900)]" value="Speaking">Speaking</option>
                 <option className="bg-[var(--color-teal-900)]" value="Media">Media / Press</option>
-                <option className="bg-[var(--color-teal-900)]" value="Other">Other</option>
+                <option className="bg-[var(--color-teal-900)]" value="Other">Another Inquiry</option>
               </select>
             </div>
 
