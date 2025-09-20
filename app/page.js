@@ -72,7 +72,7 @@ export default function Home() {
     {/* Main quote */}
     <p className="font-serif text-2xl sm:text-3xl lg:text-4xl leading-snug">
       “I believe everyone has the power to unlock hidden potential and live with a higher purpose — 
-      my mission is to blend science and growth wisdom to guide that journey.”
+      my mission is to blend science and growth wisdom to guide the way.”
     </p>
 
     {/* Optional link below */}
