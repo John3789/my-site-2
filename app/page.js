@@ -1,17 +1,17 @@
 // app/page.js
 import Link from 'next/link'
 import Image from 'next/image'
-import Header from '../components/Header'
 import SocialFooter from "../components/SocialFooter";
 
 export default function Home() {
   return (
     <>
-      <Header />
+          {/* spacer to clear the fixed header (must match h-8) */}
+      <div aria-hidden className="h-8" />
 
 {/* Nameplate bar (teal) */}
-<section id="home" className="!bg-[var(--color-teal-950)] !text-[var(--color-cream)]">
-  <div className="mx-auto max-w-[1200px] px-6 pt-0 pb-4">
+<section id="home" className="bg-[var(--color-teal-950)] !text-[var(--color-cream)]">
+  <div className="mx-auto max-w-[1200px] px-6 pt-0 pb-5">
     <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
       <a href="#home">
 <span className="block text-7xl hover:opacity-90 transition">

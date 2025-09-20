@@ -3,6 +3,7 @@ import './globals.css'
 import { Inter, Cormorant_Garamond } from 'next/font/google'
 import SocialFooter from "../components/SocialFooter";
 import { Analytics } from '@vercel/analytics/react';
+import Header from "../components/Header";
 
 // Sans font for body text
 const inter = Inter({
@@ -18,10 +19,12 @@ const cormorant = Cormorant_Garamond({
 })
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
       {/* ⬇️ lock layout so it always looks like full screen */}
       <body className="min-w-[1200px] bg-[#F4F1EA] text-[#0C1415] antialiased">
+          <Header /> 
         {children}
 <footer className="relative py-6 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-950)] text-center">
   {/* Centered copyright/legal */}

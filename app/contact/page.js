@@ -117,13 +117,12 @@ export default function ContactPage() {
         </div>
 
         {/* Right side: email */}
-        <div className="flex-1 text-right self-center">
-          <h2 className="font-serif text-2xl mb-3">Email</h2>
+        <div className="flex-1 text-center self-start mt-17">
           <a
-            href="mailto:contact@djuanpablosalerno.com"
-            className="text-lg underline hover:opacity-80 transition"
+            href="mailto:contact@drjuanpablosalerno.com"
+            className="text-base underline hover:opacity-80 transition"
           >
-            contact@djuanpablosalerno.com
+            contact@drjuanpablosalerno.com
           </a>
         </div>
       </div>
