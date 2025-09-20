@@ -1,41 +1,102 @@
 // app/about/page.js
 export default function AboutPage() {
   return (
-    <main
-      className="min-h-screen w-full bg-[var(--color-teal-900)] text-[var(--color-cream)]"
-    >
+    <main className="min-h-screen w-full bg-[var(--color-teal-900)] text-[var(--color-cream)]">
       <div className="mx-auto max-w-[1200px] px-6 py-20">
         {/* Page title */}
-        <h1 className="font-serif text-4xl mb-6">About Dr. Salerno</h1>
+        <h1 className="font-serif text-4xl mb-8 text-center">About Dr. Salerno</h1>
 
-        {/* Intro */}
-        <p className="text-lg opacity-90 max-w-3xl mb-8">
-          I am a public health scientist dedicated to advancing mental-health equity and
-          empowering communities to thrive. My work blends rigorous research with accessible
-          strategies that help people live with greater clarity, resilience, and purpose.
-        </p>
+        {/* Row 1: first two paragraphs + photo side-by-side */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start mb-12">
+          {/* Left: first two paragraphs */}
+          <div>
+            <p className="text-lg opacity-90 mb-4">
+              Dr. Juan Pablo Salerno, also known in academic spaces as Dr. John P.
+              Salerno, is a mental health scientist, personal growth expert, and
+              30x scientific peer-reviewed author. He has over 14 years of experience
+              working in top academic institutions, including Columbia University,
+              George Washington University, University of Maryland, and University
+              of Miami. He is committed to sharing his lived experience, wisdom, and
+              expertise to empower people to overcome struggles, unlock hidden
+              potential, and live lives filled with love, happiness, fulfillment, and
+              purpose — free from mental health hardships.
+            </p>
 
-        {/* Section: Mission */}
-        <section className="mb-12">
-          <h2 className="font-serif text-2xl mb-3">My Mission</h2>
-          <p className="opacity-90 max-w-2xl">
-            To bridge the gap between science and everyday life, offering practical tools rooted
-            in evidence while honoring lived experience and cultural context.
+            <p className="text-lg opacity-90">
+              His research has been published in leading journals such as Psychiatry
+              Research, Psychological Trauma, Epidemiology &amp; Psychiatric Sciences,
+              Drug &amp; Alcohol Dependence, Psychology of Sexual Orientation &amp;
+              Gender Diversity, and Preventing Chronic Disease. In recognition of his
+              contributions, he received the 2024 National Award of Excellence in
+              Research from the National Hispanic Science Network and was an invited
+              main speaker at the 2024 National Institute of Mental Health Workshop on
+              Promoting Mental Health for Sexual and Gender Minority Youth.
+            </p>
+          </div>
+
+          {/* Right: photo */}
+          <div className="flex justify-center">
+            <img
+              src="/heroabout.jpg"
+              alt="Dr. Juan Pablo Salerno"
+              className="w-full max-w-md h-auto rounded-2xl shadow-lg object-cover"
+            />
+          </div>
+        </div>
+
+        {/* Row 2+: everything else centered below */}
+        <div className="max-w-3xl mx-auto space-y-12">
+          {/* Paragraph 3 */}
+          <p className="text-lg opacity-90">
+            Dr. Salerno’s commitment is personal as well as professional. After
+            hitting his own rock bottom in mental health, he spent years in therapy
+            with psychologists and psychiatrists. When he realized that his wounds
+            needed more than traditional approaches, he began exploring personal
+            growth practices — including meditation, Feng Shui, and manifestation —
+            learning from some of the most well-known experts in the field. Through
+            this journey, he discovered his true purpose.
           </p>
-        </section>
 
-        {/* Section: Approach */}
-        <section className="mb-12">
-          <h2 className="font-serif text-2xl mb-3">My Approach</h2>
-          <p className="opacity-90 max-w-2xl">
-            My work integrates neuroscience, behavioral science, and mindfulness practices to
-            create strategies that foster sustainable growth. I believe true change happens when
-            knowledge meets accessibility, compassion, and action.
-          </p>
-        </section>
+          {/* Mission */}
+          <section>
+            <h2 className="font-serif text-4xl mb-4 text-center">Mission</h2>
+            <p className="text-lg opacity-90">
+              To blend science and personal growth wisdom to help individuals and
+              communities unlock their hidden potential and live full lives with
+              higher purpose, free from mental health struggles.
+            </p>
+          </section>
+
+          {/* Work in the Now */}
+          <section>
+            <h2 className="font-serif text-4xl mb-4 text-center">Work in the Now</h2>
+            <p className="text-lg opacity-90">
+              Today, Dr. Salerno continues conducting research with the goal of
+              making scientific discoveries relevant for improving mental health. He
+              is also pursuing his personal growth journey and is currently working
+              on a forthcoming book that weaves science and personal growth wisdom to
+              guide others toward balance, purpose, fulfillment, and mental wellness.
+              On this site, you can explore his offerings, including consulting,
+              public speaking, guided meditations, and resources for personal growth
+              and mental health.
+            </p>
+          </section>
+
+          {/* Credentials */}
+          <section>
+            <h2 className="font-serif text-4xl mb-4 text-center">Credentials</h2>
+            <p className="text-lg opacity-90">
+              Dr. Salerno holds a Ph.D. in Behavioral &amp; Community Health and a
+              Graduate Certificate in Measurement, Statistics, &amp; Evaluation from
+              the University of Maryland. He also earned an M.P.H. in Prevention
+              Science &amp; Community Health and a B.A. in Psychology with a Minor in
+              Sociology from the University of Miami.
+            </p>
+          </section>
+        </div>
 
         {/* CTA */}
-        <div className="mt-12">
+        <div className="mt-16 flex justify-center">
           <a
             href="/contact"
             className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide shadow-md hover:shadow-lg hover:-translate-y-0.5 transition"

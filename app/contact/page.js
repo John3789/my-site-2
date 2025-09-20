@@ -19,8 +19,14 @@ export default function ContactPage() {
         <div className="flex-1">
           <h1 className="font-serif text-4xl mb-6">Contact</h1>
           <p className="text-lg opacity-90 max-w-3xl mb-10">
-            For consulting, speaking, media, and collaborations, please share a few details below.
-          </p>
+            For consulting, speaking, media, and collaborations, please share a few details below or send an email directly to{" "}
+          <a
+          href="mailto:contact@drjuanpablosalerno.com"
+      className="underline underline-offset-4 hover:opacity-80 transition whitespace-nowrap"
+    >
+      contact@drjuanpablosalerno.com
+    </a>.
+    </p>
 
           {sent ? (
             <div className="rounded-md bg-black/20 border border-white/10 p-6">
@@ -114,18 +120,10 @@ export default function ContactPage() {
               </p>
             </form>
           )}
-        </div>
-
-        {/* Right side: email */}
-        <div className="flex-1 text-center self-start mt-17">
-          <a
-            href="mailto:contact@drjuanpablosalerno.com"
-            className="text-base underline hover:opacity-80 transition"
-          >
-            contact@drjuanpablosalerno.com
-          </a>
-        </div>
+        </div> 
       </div>
     </main>
   );
 }
+
+
