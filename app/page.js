@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import Header from '../components/Header'
+import SocialFooter from "../components/SocialFooter";
 
 export default function Home() {
   return (
@@ -147,6 +148,8 @@ export default function Home() {
   </section>
 
 </main>
+
     </>
   )
 }
+
