@@ -2,6 +2,7 @@
 import './globals.css'
 import { Inter, Cormorant_Garamond } from 'next/font/google'
 import SocialFooter from "../components/SocialFooter";
+import { Analytics } from "@vercel/analytics/next"
 
 // Sans font for body text
 const inter = Inter({
