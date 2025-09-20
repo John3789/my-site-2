@@ -14,7 +14,7 @@ export default function Home() {
     <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
       <a href="#home">
         <span className="block text-7xl hover:opacity-90 transition">
-          DR. JUAN PABLO SALERNO
+          DR. JUAN PABLO SALERNO™
         </span>
       </a>
     </h1>
