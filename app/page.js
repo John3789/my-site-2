@@ -13,9 +13,10 @@ export default function Home() {
   <div className="mx-auto max-w-[1200px] px-6 pt-0 pb-4">
     <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
       <a href="#home">
-        <span className="block text-7xl hover:opacity-90 transition">
-          DR. JUAN PABLO SALERNO™
-        </span>
+<span className="block text-7xl hover:opacity-90 transition">
+  DR. JUAN PABLO SALERNO
+  <sup className="text-2xl align-super opacity-70">™</sup>
+</span>
       </a>
     </h1>
   </div>
