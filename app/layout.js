@@ -2,7 +2,7 @@
 import './globals.css'
 import { Inter, Cormorant_Garamond } from 'next/font/google'
 import SocialFooter from "../components/SocialFooter";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from '@vercel/analytics/react';
 
 // Sans font for body text
 const inter = Inter({
@@ -36,6 +36,7 @@ export default function RootLayout({ children }) {
     <SocialFooter />
   </div>
 </footer>
+ <Analytics />   {/* ✅ Add this */}
       </body>
     </html>
   )
