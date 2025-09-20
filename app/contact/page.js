@@ -26,8 +26,8 @@ export default function ContactPage() {
             <p className="font-semibold">Thanks! Your message was noted.</p>
             <p className="opacity-80 mt-2">
               We’ll follow up soon. If it’s time-sensitive, email{" "}
-              <a href="mailto:hello@djuanpablosalerno.com" className="underline">
-                hello@djuanpablosalerno.com
+              <a href="mailto:contact@drjuanpablosalerno.com" className="underline">
+                contact@drjuanpablosalerno.com
               </a>.
             </p>
           </div>
