@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
   </p>
 
   {/* Absolutely positioned social icons bottom-right */}
-  <div className="absolute right-6 bottom-6">
+  <div className="absolute right-45 bottom-6">
     <SocialFooter />
   </div>
 </footer>
