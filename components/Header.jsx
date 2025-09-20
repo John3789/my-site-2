@@ -33,7 +33,7 @@ export default function Header() {
             <span className="text-lg lg:text-xl">
               DR. JUAN PABLO SALERNO
             </span>
-            <sup className="ml-0 text-[15px] align-super">™</sup>
+            <sup className="text-lg align-super opacity-70">™</sup>
           </Link>
         )}
       </div>
