@@ -22,15 +22,53 @@ export default function SpeakingPage() {
               Speaking
             </h1>
             <p className="text-lg md:text-xl max-w-2xl text-white/90 drop-shadow-md">
-              Science-backed, story-driven talks that inspire resilience,
-              growth, and transformation.
+              Science-backed, story-driven talks that spark resilience,
+              growth, and change.
+            </p>
+          </div>
+        </div>
+      </section>
+
+       {/* ===== Intro Blurb ===== */}
+      <section className="relative w-full bg-[var(--color-teal-800)] text-[var(--color-cream)] py-16">
+        <div className="mx-auto max-w-[900px] px-6 text-center space-y-8">
+          <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-wide">
+            Engaging. Inspiring. Transformational.
+          </h2>
+
+          <div className="space-y-6 text-lg md:text-xl leading-relaxed opacity-90">
+            <p>
+              Dr. Juan Pablo Salerno is a respected mental health scientist,
+              personal growth expert, and engaging speaker whose work bridges
+              cutting-edge science with practical tools for personal and
+              professional transformation. He has delivered talks and workshops
+              for audiences across academic, scientific, governmental, health,
+              and nonprofit sectors, with a focus on mental health, resilience,
+              and personal growth.
+            </p>
+            <p>
+              His speaking engagements have included national and local
+              conferences, federal health organizations, leading universities,
+              research institutes, K–12 public schools, community-based mental
+              health and healthcare organizations, and county and state
+              departments of health.
+            </p>
+            <p>
+              Presentations typically run about an hour and can be delivered
+              in-person or virtually. Dr. Salerno’s style is dynamic,
+              approachable, and grounded in evidence-based science, leaving
+              attendees not only inspired but also equipped with actionable
+              strategies to enhance their well-being, leadership, and
+              fulfillment—whether in the workplace, at home, or in their
+              personal lives. He is also available for panel discussions and
+              collaborative speaking engagements.
             </p>
           </div>
         </div>
       </section>
 
       {/* ===== MAIN CONTENT ===== */}
-      <div className="mx-auto max-w-[1400px] px-6 py-24 space-y-24" id="topics">
+      <div className="mx-auto max-w-[1400px] px-6 py-14 space-y-24" id="topics">
         {/* Popular Topics */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-5 lg:py-6">
@@ -107,7 +145,7 @@ export default function SpeakingPage() {
         <div className="flex justify-center">
           <a
             href="/contact"
-            className="inline-flex items-center md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition"
+            className="inline-flex items-center rmd bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition"
           >
             Book Dr. Salerno to Speak
           </a>
