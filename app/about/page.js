@@ -69,7 +69,7 @@ export default function AboutPage() {
 
           {/* Work in the Now */}
           <section>
-            <h2 className="font-serif text-4xl mb-4 text-center">Work in the Now</h2>
+            <h2 className="font-serif text-4xl mb-4 text-center">Projects in the Now</h2>
             <p className="text-lg opacity-90">
               Today, Dr. Salerno continues conducting research with the goal of
               making scientific discoveries relevant for improving mental health. He

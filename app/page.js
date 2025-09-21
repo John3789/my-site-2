@@ -25,7 +25,7 @@ export default function Home() {
       {/* Hero with background photo */}
       <section className="relative h-[87.5svh] overflow-hidden">
         <Image
-          src="/hero4.jpg?v=10"
+          src="/hero16.jpg?v=22"
           alt="Portrait"
           fill
           className="object-cover"
