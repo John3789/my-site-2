@@ -10,17 +10,17 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start mb-12">
           {/* Left: first two paragraphs */}
           <div>
-            <p className="text-lg opacity-90 mb-4">
-              Dr. Juan Pablo Salerno, also known in academic spaces as Dr. John P.
-              Salerno, is a mental health scientist, personal growth expert, and
-              30x scientific peer-reviewed author. He has over 14 years of experience
-              working in top academic institutions, including Columbia University,
-              George Washington University, University of Maryland, and University
-              of Miami. He is committed to sharing his lived experience, wisdom, and
-              expertise to empower people to overcome struggles, unlock hidden
-              potential, and live lives filled with love, happiness, fulfillment, and
-              purpose — free from mental health hardships.
-            </p>
+<p className="text-lg opacity-90 mb-4">
+ Dr. Juan Pablo Salerno, also known in academic spaces as  <strong>Dr. John P. Salerno</strong>, is a mental health scientist, personal growth expert, and
+  30x scientific peer-reviewed author. He has over 14 years of experience
+  working in top academic institutions, including Columbia University,
+  George Washington University, University of Maryland, and University
+  of Miami. He is committed to sharing his lived experience, wisdom, and
+  expertise to empower people to overcome struggles, unlock hidden
+  potential, and live lives filled with love, happiness, fulfillment, and
+  purpose — free from mental health hardships.
+</p>
+
 
             <p className="text-lg opacity-90">
               His research has been published in leading journals such as Psychiatry
