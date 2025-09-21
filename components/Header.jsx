@@ -9,7 +9,8 @@ export default function Header() {
   const isHome = pathname === "/";
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-transparent text-[var(--color-cream)]">
+        // raise z, ensure header receives clicks
+    <header className="fixed inset-x-0 top-0 z-[200] bg-transparent text-[var(--color-cream)] pointer-events-auto">
             {/* Make this relative so the top-right name can be absolutely positioned */}
       <div className="mx-auto max-w-7xl px-6 h-10 flex items-center justify-center">
                 {/* Centered nav */}
