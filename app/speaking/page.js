@@ -48,7 +48,7 @@ export default function SpeakingPage() {
               <img
                 src="/speaking1.jpg"
                 alt="Dr. Salerno presenting on stage"
-                className="w-full h-[520px] rounded-3xl shadow-2xl object-cover"
+                className="w-full h-[520px] 3xl shadow-2xl object-cover"
               />
             </div>
           </div>
@@ -61,7 +61,7 @@ export default function SpeakingPage() {
               <img
                 src="/speaking2.jpg"
                 alt="Workshop with audience"
-                className="w-full h-[520px] rounded-3xl shadow-2xl object-cover"
+                className="w-full h-[520px] 3xl shadow-2xl object-cover"
               />
             </div>
           </div>
@@ -97,7 +97,7 @@ export default function SpeakingPage() {
               <img
                 src="/speaking3.jpg"
                 alt="Audience engagement"
-                className="w-full h-[520px] rounded-3xl shadow-2xl object-cover"
+                className="w-full h-[520px] 3xl shadow-2xl object-cover"
               />
             </div>
           </div>
@@ -107,7 +107,7 @@ export default function SpeakingPage() {
         <div className="flex justify-center">
           <a
             href="/contact"
-            className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition"
+            className="inline-flex items-center md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition"
           >
             Book Dr. Salerno to Speak
           </a>
