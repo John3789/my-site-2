@@ -2,8 +2,8 @@
 export default function SpeakingPage() {
   return (
     <main className="min-h-screen w-full bg-[var(--color-teal-800)] text-[var(--color-cream)]">
-      {/* ===== HERO VIDEO (cinematic full-bleed) ===== */}
-      <section className="w-full">
+      {/* ===== HERO VIDEO with overlay text ===== */}
+      <section className="relative w-full">
         <div className="relative h-[70vh]">
           <video
             playsInline
@@ -15,23 +15,23 @@ export default function SpeakingPage() {
           >
             <source src="/speaking-hero.mp4" type="video/mp4" />
           </video>
+
+          {/* Overlay headline + subheadline */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center bg-black/30">
+            <h1 className="font-serif text-5xl md:text-6xl text-white mb-4 drop-shadow-lg">
+              Speaking
+            </h1>
+            <p className="text-lg md:text-xl max-w-2xl text-white/90 drop-shadow-md">
+              Science-backed, story-driven talks that inspire resilience,
+              growth, and transformation.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* ===== MAIN CONTENT (premium spacing) ===== */}
-      <div className="mx-auto max-w-[1400px] px-6 py-16 space-y-24">
-        {/* Title + impact line */}
-        <header className="text-center max-w-4xl mx-auto space-y-4">
-          <h1 className="font-serif text-5xl leading-tight">Speaking</h1>
-          <p className="text-xl opacity-90">
-            Engaging, science-backed presentations on mental health, personal growth, and wellness—designed
-            to inspire behavior change, strengthen resilience, and leave audiences with practical tools they
-            can use immediately. My talks blend rigorous research with personal growth wisdom, delivered with
-            warmth and real-world relevance.
-          </p>
-        </header>
-
-        {/* === BAND 1: Popular Topics (text left, sticky image right) === */}
+      {/* ===== MAIN CONTENT ===== */}
+      <div className="mx-auto max-w-[1400px] px-6 py-24 space-y-24" id="topics">
+        {/* Popular Topics */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-5 lg:py-6">
             <h2 className="font-serif text-4xl mb-6">Popular Topics</h2>
@@ -54,7 +54,7 @@ export default function SpeakingPage() {
           </div>
         </section>
 
-        {/* === BAND 2: Formats (alternate side) === */}
+        {/* Formats */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-7 order-2 lg:order-1">
             <div className="lg:sticky lg:top-24">
@@ -68,20 +68,27 @@ export default function SpeakingPage() {
           <div className="lg:col-span-5 order-1 lg:order-2 lg:py-6">
             <h2 className="font-serif text-4xl mb-6">Formats</h2>
             <ul className="text-lg leading-relaxed space-y-3 opacity-90">
-              <li><span className="font-semibold">Keynotes:</span> high-energy, story-driven talks with evidence-based takeaways.</li>
-              <li><span className="font-semibold">Workshops:</span> interactive sessions with exercises, tools, and live Q&amp;A.</li>
-              <li><span className="font-semibold">Panels &amp; Fireside Chats:</span> conversational and tailored to your audience.</li>
+              <li>
+                <span className="font-semibold">Keynotes:</span> high-energy, story-driven talks with evidence-based takeaways.
+              </li>
+              <li>
+                <span className="font-semibold">Workshops:</span> interactive sessions with exercises, tools, and live Q&amp;A.
+              </li>
+              <li>
+                <span className="font-semibold">Panels &amp; Fireside Chats:</span> conversational and tailored to your audience.
+              </li>
             </ul>
           </div>
         </section>
 
-        {/* === BAND 3: Outcomes === */}
+        {/* Outcomes */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-5 lg:py-6">
             <h2 className="font-serif text-4xl mb-6">Outcomes</h2>
             <p className="text-lg opacity-90 leading-relaxed">
-              Audiences leave with clarity, confidence, and actionable tools—how to build resilient habits,
-              regulate stress, deepen focus with meditation, and align their work and life with higher purpose.
+              Audiences leave with clarity, confidence, and actionable tools—
+              how to build resilient habits, regulate stress, deepen focus with
+              meditation, and align their work and life with higher purpose.
               Every talk is customized for your goals and audience.
             </p>
           </div>
