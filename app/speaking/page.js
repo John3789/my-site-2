@@ -176,80 +176,81 @@ export default function SpeakingPage() {
           </div>
         </section>
 
-        {/* Dr. Salerno Offers */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Image */}
-          <div className="lg:col-span-7 order-2 lg:order-1 flex justify-center items-center">
-            <img
-              src="/speaking2.jpg"
-              alt="Workshop with audience"
-              className="w-full h-[520px] object-cover shadow-2xl mt-15"
-            />
-          </div>
+{/* Dr. Salerno Offers */}
+<section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+  {/* Image */}
+  <div className="lg:col-span-7 order-2 lg:order-1 flex justify-center items-center">
+    <img
+      src="/speaking2.jpg"
+      alt="Workshop with audience"
+      className="w-full h-[520px] object-cover shadow-2xl mt-15"
+    />
+  </div>
 
-          {/* Formats */}
-          <div className="lg:col-span-5 order-1 lg:order-2 lg:py-6 space-y-8">
-            <h2 className="font-serif text-4xl mb-8">Dr. Salerno Offers</h2>
+  {/* Formats */}
+  <div className="lg:col-span-5 order-1 lg:order-2 lg:py-6 space-y-8">
+    <h2 className="font-serif text-4xl mb-8">Dr. Salerno Offers</h2>
 
-            <div>
-              <h3 className="font-serif text-2xl mb-2">
-                <span className="text-[var(--color-gold)]">Keynotes</span>
-              </h3>
-              <p className="text-lg leading-loose">
-                High-energy, story-driven talks with evidence-based takeaways.
-              </p>
-            </div>
+    <div>
+      <h3 className="font-serif text-2xl mb-2">
+        <span className="text-[var(--color-gold)]">Keynotes</span>
+      </h3>
+      <p className="text-lg ">
+        High-energy, story-driven talks with evidence-based takeaways.
+      </p>
+    </div>
 
-            <div>
-              <h3 className="font-serif text-2xl mb-2">
-                <span className="text-[var(--color-gold)]">Workshops</span>
-              </h3>
-              <p className="text-lg leading-loose">
-                Interactive sessions with exercises, tools, and live Q&amp;A.
-              </p>
-            </div>
+    <div>
+      <h3 className="font-serif text-2xl mb-2">
+        <span className="text-[var(--color-gold)]">Workshops</span>
+      </h3>
+      <p className="text-lg">
+        Interactive sessions with exercises, tools, and live Q&amp;A.
+      </p>
+    </div>
 
-            <div>
-              <h3 className="font-serif text-2xl mb-2">
-                <span className="text-[var(--color-gold)]">Panels</span>
-              </h3>
-              <p className="text-lg leading-loose">
-                Multi-speaker discussions designed to bring diverse perspectives to key topics
-                in mental health, resilience, and personal growth.
-              </p>
-            </div>
+    <div>
+      <h3 className="font-serif text-2xl mb-2">
+        <span className="text-[var(--color-gold)]">Panels</span>
+      </h3>
+      <p className="text-lg">
+        Multi-speaker discussions designed to bring diverse perspectives to key topics
+        in mental health, resilience, and personal growth.
+      </p>
+    </div>
 
-            <div>
-              <h3 className="font-serif text-2xl mb-2">
-                <span className="text-[var(--color-gold)]">Fireside Chats</span>
-              </h3>
-              <p className="text-lg leading-loose">
-                A relaxed, conversational format with a moderator that blends storytelling
-                and audience connection for an intimate, authentic experience. 
-              </p>
-            </div>
+    <div>
+      <h3 className="font-serif text-2xl mb-2">
+        <span className="text-[var(--color-gold)]">Fireside Chats</span>
+      </h3>
+      <p className="text-lg">
+        A relaxed, conversational format with a moderator that blends storytelling
+        and audience connection for an intimate, authentic experience.
+      </p>
+    </div>
 
-            <div>
-              <h3 className="font-serif text-2xl mb-2">
-                <span className="text-[var(--color-gold)]">Moderated Discussions</span>
-              </h3>
-              <p className="text-lg leading-loose">
-                Thoughtful facilitation of complex conversations that spark insight,
-                learning, and connection among participants.
-              </p>
-            </div>
+    <div>
+      <h3 className="font-serif text-2xl mb-2">
+        <span className="text-[var(--color-gold)]">Moderated Discussions</span>
+      </h3>
+      <p className="text-lg">
+        Thoughtful facilitation of complex conversations that spark insight,
+        learning, and connection among participants.
+      </p>
+    </div>
 
-            <div>
-              <h3 className="font-serif text-2xl mb-2">
-                <span className="text-[var(--color-gold)]">Virtual Talks &amp; Webinars</span>
-              </h3>
-              <p className="text-lg leading-loose">
-                Accessible online sessions that bring science-backed strategies and personal
-                growth tools to audiences worldwide—ideal for remote or global teams.
-              </p>
-            </div>
-          </div>
-        </section>
+    <div>
+      <h3 className="font-serif text-2xl mb-2">
+        <span className="text-[var(--color-gold)]">Virtual Talks &amp; Webinars</span>
+      </h3>
+      <p className="text-lg">
+        Accessible online sessions that bring science-backed strategies and personal
+        growth tools to audiences worldwide—ideal for remote or global teams.
+      </p>
+    </div>
+  </div>
+</section>
+
 
         {/* Outcomes (bulleted) */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">

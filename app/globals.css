@@ -1,12 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --color-cream: #f5f0e6; /* or your exact cream hex */
-  --color-gold: #d4af37;  /* already defined, just confirming */
-}
-:root {
-  --color-teal-900: #0f3b3b;
-  --color-teal-800: #135050;
+  --color-cream-100: #f5f0e6; /* or your exact cream hex */
+  --color-gold-100: #d4af37;  /* already defined, just confirming */
 }
 :root {
   --background: #ffffff;
@@ -27,12 +23,6 @@
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #012E2B; /* Tailwind teal-950 */
-}
 :root {
   /* BRAND (use these for nameplate + teal button) */
   --color-teal: #0E3A3B;     /* ← the darker turquoise you were using */
@@ -43,6 +33,8 @@ body {
   --color-teal-900: #062B2C;
   --color-teal-800: #0B3536;
   --color-teal-700: #0E3A3B; /* same as --color-teal */
+  --color-teal-600: #0f3b3b;
+  --color-teal-500: #135050;
 }
 
 
@@ -58,20 +50,16 @@ html { scroll-behavior: smooth; }
   html { @apply antialiased; }
 
   /* Body copy: higher contrast + more breathing room */
-  body { @apply text-white/90 leading-loose; }
+body { @apply text-[var(--color-cream)] leading-loose; }
 
   /* Paragraphs & list items: consistent spacing/legibility */
   p, li { @apply leading-loose; }
   ul { @apply space-y-3; }
 
-  /* Headings: full-opacity cream by default */
-  h1, h2, h3, h4 {
-    @apply text-[var(--color-cream)];
   }
 
   /* Small/secondary text */
-  small, .muted { @apply text-white/70; }
-}
+  small, .muted { @apply text-[var(--color-cream)]/70; }
 
 /* Handy utilities you can reuse anywhere */
 @layer utilities {
@@ -79,29 +67,19 @@ html { scroll-behavior: smooth; }
   .eyebrow-gold { @apply font-serif text-xl text-[var(--color-gold)]; }
 
   /* Primary body copy block (use on <div> that wraps text) */
-  .copy { @apply text-white/90 leading-loose; }
+  .copy { @apply text-[var(--color-cream)] leading-loose; }
 
-  /* Slightly larger lead-in paragraph */
-  .lead { @apply text-lg md:text-xl text-white/90; }
-}
-:root {
-  --color-cream: #f5f0e6; /* or your exact cream hex */
-  --color-gold: #d4af37;  /* already defined, just confirming */
 }
 
 /* Make all body text cream by default */
 body {
   @apply text-[var(--color-cream)];
-  background-color: var(--color-teal-900); /* keep your background consistent */
+  background-color: var(--color-teal-800); /* keep your background consistent */
 }
 
 /* Headings also cream by default */
 h1, h2, h3, h4, h5, h6 {
   color: var(--color-cream);
-}
 
-html,
-body {
-  background-color: var(--color-teal-950);
 }
 

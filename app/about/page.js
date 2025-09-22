@@ -10,7 +10,9 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start mb-12">
           {/* Left: first two paragraphs */}
           <div>
-<p className="text-lg opacity-90 mb-4">
+
+<p className="space-y-6 text-lg mb-4 opacity-90 leading loose">
+
  Dr. Juan Pablo Salerno, also known in academic spaces as  <strong>Dr. John P. Salerno</strong>, is a mental health scientist, personal growth expert, and
   30x scientific peer-reviewed author. He has over 14 years of experience
   working in top academic institutions, including Columbia University,
@@ -22,7 +24,8 @@ export default function AboutPage() {
 </p>
 
 
-            <p className="text-lg opacity-90">
+            <p className="space-y-6 text-lg opacity-90 leading-loose">
+
               His research has been published in leading journals such as Psychiatry
               Research, Psychological Trauma, Epidemiology &amp; Psychiatric Sciences,
               Drug &amp; Alcohol Dependence, Psychology of Sexual Orientation &amp;
@@ -39,7 +42,7 @@ export default function AboutPage() {
             <img
               src="/heroabout.jpg"
               alt="Dr. Juan Pablo Salerno"
-              className="w-full max-w-md h-auto 2xl shadow-lg object-cover mt-10"
+              className="w-full max-w-md h-full shadow-lg object-cover mt-10"
             />
           </div>
         </div>
@@ -47,7 +50,7 @@ export default function AboutPage() {
         {/* Row 2+: everything else centered below */}
         <div className="max-w-3xl mx-auto space-y-12">
           {/* Paragraph 3 */}
-          <p className="text-lg opacity-90">
+          <p className="space-y-6 text-lg opacity-90 leading-loose">
             Dr. Salerno’s commitment is personal as well as professional. After 
             hitting his own rock bottom in mental health, he spent years in therapy 
             with psychologists and psychiatrists. After reaching a plateau in his 
@@ -61,7 +64,7 @@ export default function AboutPage() {
           {/* Mission */}
           <section>
             <h2 className="font-serif text-4xl mb-4 text-center">Mission</h2>
-            <p className="text-lg opacity-90">
+            <p className="space-y-6 text-lg opacity-90 leading-loose">
               To blend science and personal growth wisdom to help individuals and
               communities unlock their hidden potential and live full lives with
               higher purpose, free from mental health struggles.
@@ -71,7 +74,7 @@ export default function AboutPage() {
           {/* Work in the Now */}
           <section>
             <h2 className="font-serif text-4xl mb-4 text-center">Projects in the Now</h2>
-            <p className="text-lg opacity-90">
+            <p className="space-y-6 text-lg opacity-90 leading-loose">
               Today, Dr. Salerno continues conducting research with the goal of
               making scientific discoveries relevant for improving mental health. He
               is also pursuing his personal growth journey and is currently working
@@ -86,7 +89,7 @@ export default function AboutPage() {
           {/* Credentials */}
           <section>
             <h2 className="font-serif text-4xl mb-4 text-center">Credentials</h2>
-            <p className="text-lg opacity-90">
+            <p className="space-y-6 text-lg opacity-90 leading-loose">
               Dr. Salerno holds a Ph.D. in Behavioral &amp; Community Health and a
               Graduate Certificate in Measurement, Statistics, &amp; Evaluation from
               the University of Maryland. He also earned an M.P.H. in Prevention
