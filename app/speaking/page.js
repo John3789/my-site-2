@@ -38,7 +38,7 @@ export default function SpeakingPage() {
             Engaging. Inspiring. Transformational.
           </h2>
 
-          <div className="space-y-6 text-lg md:text-xl leading-loose">
+          <div className="space-y-6 opacity-90 text-lg md:text-xl leading-loose">
             <p>
               Dr. Juan Pablo Salerno is a respected mental health scientist,
               personal growth expert, and engaging speaker whose work bridges
@@ -56,7 +56,7 @@ export default function SpeakingPage() {
               departments of health.
             </p>
             <p>
-              Presentations typically run about an hour and can be delivered
+              Presentations typically run between one to two hours and can be delivered
               in-person or virtually. Dr. Salerno’s style is dynamic,
               approachable, and grounded in evidence-based science, leaving
               attendees not only inspired but also equipped with actionable
@@ -70,7 +70,8 @@ export default function SpeakingPage() {
       </section>
 
       {/* ===== MAIN CONTENT ===== */}
-      <div className="mx-auto max-w-[1400px] px-6 py-24 space-y-24" id="topics">
+      <div className="mx-auto max-w-[1400px] px-6 py-14 space-y-24" id="topics">
+        <hr className="border-t opacity-70 border-cream mb-8 w-full"/>
         {/* Popular Topics */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5 lg:py-6">
@@ -82,9 +83,9 @@ export default function SpeakingPage() {
                 <h3 className="font-serif text-2xl mb-2">
                   <span className="text-[var(--color-gold)]">Leveling-Up Mindset &amp; Growth</span>
                 </h3>
-                <ul className="text-lg space-y-3">
+                <ul className="text-lg opacity-90 space-y-3">
                   <li className="flex items-start gap-2">
-                    <span className="text-[var(--color-gold)]">✔</span>
+                    <span className="!text-[var(--color-gold)]">✔</span>
                     <span>Transforming Your Mindset to Achieve Your Goals</span>
                   </li>
                   <li className="flex items-start gap-2">
@@ -111,7 +112,7 @@ export default function SpeakingPage() {
                 <h3 className="font-serif text-2xl mb-2">
                   <span className="text-[var(--color-gold)]">Strengthening Mental Health &amp; Wellbeing</span>
                 </h3>
-                <ul className="text-lg space-y-3">
+                <ul className="text-lg opacity-90 space-y-3">
                   <li className="flex items-start gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
                     <span>Everyday Strategies to Improve Mental Health</span>
@@ -140,7 +141,7 @@ export default function SpeakingPage() {
         <h3 className="font-serif text-2xl mb-2">
           <span className="text-[var(--color-gold)]">Boosting Performance &amp; Potential</span>
         </h3>
-        <ul className="text-lg space-y-3">
+        <ul className="text-lg opacity-90 space-y-3">
           <li className="flex items-start gap-2">
             <span className="text-[var(--color-gold)]">✔</span>
             <span>Harnessing Motivation &amp; Emotional Intelligence for Success</span>
@@ -177,6 +178,7 @@ export default function SpeakingPage() {
         </section>
 
 {/* Dr. Salerno Offers */}
+<hr className="border-t opacity-70 border-cream mb-8 w-full"/>
 <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
   {/* Image */}
   <div className="lg:col-span-7 order-2 lg:order-1 flex justify-center items-center">
@@ -195,7 +197,7 @@ export default function SpeakingPage() {
       <h3 className="font-serif text-2xl mb-2">
         <span className="text-[var(--color-gold)]">Keynotes</span>
       </h3>
-      <p className="text-lg ">
+      <p className="text-lg opacity-90">
         High-energy, story-driven talks with evidence-based takeaways.
       </p>
     </div>
@@ -204,7 +206,7 @@ export default function SpeakingPage() {
       <h3 className="font-serif text-2xl mb-2">
         <span className="text-[var(--color-gold)]">Workshops</span>
       </h3>
-      <p className="text-lg">
+      <p className="text-lg opacity-90">
         Interactive sessions with exercises, tools, and live Q&amp;A.
       </p>
     </div>
@@ -213,7 +215,7 @@ export default function SpeakingPage() {
       <h3 className="font-serif text-2xl mb-2">
         <span className="text-[var(--color-gold)]">Panels</span>
       </h3>
-      <p className="text-lg">
+      <p className="text-lg opacity-90">
         Multi-speaker discussions designed to bring diverse perspectives to key topics
         in mental health, resilience, and personal growth.
       </p>
@@ -223,7 +225,7 @@ export default function SpeakingPage() {
       <h3 className="font-serif text-2xl mb-2">
         <span className="text-[var(--color-gold)]">Fireside Chats</span>
       </h3>
-      <p className="text-lg">
+      <p className="text-lg opacity-90">
         A relaxed, conversational format with a moderator that blends storytelling
         and audience connection for an intimate, authentic experience.
       </p>
@@ -233,7 +235,7 @@ export default function SpeakingPage() {
       <h3 className="font-serif text-2xl mb-2">
         <span className="text-[var(--color-gold)]">Moderated Discussions</span>
       </h3>
-      <p className="text-lg">
+      <p className="text-lg opacity-90">
         Thoughtful facilitation of complex conversations that spark insight,
         learning, and connection among participants.
       </p>
@@ -243,7 +245,7 @@ export default function SpeakingPage() {
       <h3 className="font-serif text-2xl mb-2">
         <span className="text-[var(--color-gold)]">Virtual Talks &amp; Webinars</span>
       </h3>
-      <p className="text-lg">
+      <p className="text-lg opacity-90">
         Accessible online sessions that bring science-backed strategies and personal
         growth tools to audiences worldwide—ideal for remote or global teams.
       </p>
@@ -253,14 +255,15 @@ export default function SpeakingPage() {
 
 
         {/* Outcomes (bulleted) */}
+        <hr className="border-t opacity-70 border-cream mb-8 w-full"/>
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-5 lg:py-6">
             <h2 className="font-serif text-4xl mb-6">Outcomes</h2>
-            <p className="text-lg mb-6">
+            <p className="text-lg opacity-90 mb-6">
               Audiences leave with clarity, confidence, and actionable strategies they can
               apply immediately. Key outcomes include:
             </p>
-            <ul className="text-lg space-y-3">
+            <ul className="text-lg opacity-90 space-y-3">
               <li className="flex items-start gap-2">
                 <span className="text-[var(--color-gold)]">✔</span>
                 <span>Building resilient habits</span>
@@ -283,7 +286,7 @@ export default function SpeakingPage() {
               </li>
             </ul>
 
-            <p className="text-lg mt-6">
+            <p className="text-lg opacity-90 mt-6">
               Every talk is tailored to your audience’s unique needs and goals, ensuring
               lasting impact both personally and professionally.
             </p>

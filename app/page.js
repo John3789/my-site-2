@@ -50,7 +50,7 @@ export default function Home() {
  
  <Link
   href="consulting"
-  className="inline-flex items-center rounded-md !bg-[var(--color-teal-700)] !text-[var(--color-cream)] px-7 py-3 font-medium uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition"
+  className="inline-flex items-center rounded-md !bg-[var(--color-teal-800)] !text-[var(--color-cream)] px-7 py-3 font-medium uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition"
 >
   Book consulting with Dr. Salerno
  </Link>
@@ -64,13 +64,13 @@ export default function Home() {
       <main>
 
 {/* Mission Quote Section */}
-<section className="w-full bg-[var(--color-teal-900)] text-[var(--color-cream)] flex items-center justify-center min-h-[60vh] px-6">
+<section className="w-full bg-[var(--color-teal-800)] text-[var(--color-cream)] flex items-center justify-center min-h-[60vh] px-6">
   <div className="max-w-4xl text-center">
     {/* Small heading */}
     <h3 className="uppercase tracking-wide text-sm mb-6 opacity-80">Mission</h3>
 
     {/* Main quote */}
-    <p className="font-serif text-2xl sm:text-3xl lg:text-4xl leading-snug">
+    <p className="font-serif text-2xl opacity-90 sm:text-3xl lg:text-4xl leading-snug">
       “I believe everyone has the power to unlock hidden potential and live with a higher purpose — 
       my mission is to blend science and growth wisdom to guide the way.”
     </p>
@@ -87,11 +87,12 @@ export default function Home() {
         {/* Meditations */}
         <section
           id="meditations"
-          className="w-full min-h-[60vh] snap-start bg-[var(--color-teal-700)] text-[var(--color-cream)]"
+          className="w-full min-h-[60vh] snap-start bg-[var(--color-teal-800)] text-[var(--color-cream)]"
         >
           <div className="mx-auto max-w-[1200px] px-6 py-20">
-            <h2 className="font-serif text-3xl mb-3">Short Meditations with Dr. Salerno</h2>
-            <p className="max-w-2xl">
+            <hr className="border-t opacity-70 border-cream mb-8 w-full"/>
+            <h2 className="font-serif text-3xl opacity-90 mb-3">Short Meditations with Dr. Salerno</h2>
+            <p className="max-w-2xl opacity-90">
               Guided meditations to restore body, mind, and spiritual alignment.
             </p>
             
@@ -106,11 +107,12 @@ export default function Home() {
   {/* Resources */}
   <section
     id="resources"
-    className="w-full min-h-[60vh] bg-[var(--color-teal-900)] text-[var(--color-cream)]"
+    className="w-full min-h-[60vh] bg-[var(--color-teal-800)] text-[var(--color-cream)]"
   >
     <div className="mx-auto max-w-[1200px] px-6 py-20">
-      <h2 className="font-serif text-3xl mb-3">Resources for Self-Elevation</h2>
-      <p className="max-w-2xl">Practical tools to strengthen your mental health, nurture your growth, and expand your learning.</p>
+      <hr className="border-t opacity-70 border-cream mb-8 w-full"/>
+      <h2 className="font-serif text-3xl opacity-90 mb-3">Resources for Self-Elevation</h2>
+      <p className="max-w-2xl opacity-90">Practical tools to strengthen your mental health, nurture your growth, and expand your learning.</p>
       <Link href="/resources" className="mt-6 inline-block underline underline-offset-4 hover:opacity-80 transition">
         Explore →
       </Link>
@@ -123,8 +125,9 @@ export default function Home() {
     className="w-full min-h-[60vh] bg-[var(--color-teal-800)] text-[var(--color-cream)]"
   >
     <div className="mx-auto max-w-[1200px] px-6 py-20">
-      <h2 className="font-serif text-3xl mb-3">Speaking that Transforms</h2>
-      <p className="max-w-2xl">Book Dr. Salerno for engaging, interactive, and science-backed presentations that inspire growth, strengthen mental health, and promote wellness.</p>
+      <hr className="border-t opacity-70 border-cream mb-8 w-full"/>
+      <h2 className="font-serif text-3xl opacity-90 mb-3">Speaking that Transforms</h2>
+      <p className="max-w-2xl opacity-90">Book Dr. Salerno for engaging, interactive, and science-backed presentations that inspire growth, strengthen mental health, and promote wellness.</p>
       <Link href="/speaking" className="mt-6 inline-block underline underline-offset-4 hover:opacity-80 transition">
         Book Dr. Salerno to speak →
       </Link>
@@ -134,11 +137,12 @@ export default function Home() {
    {/* Consulting */}
   <section
     id="consulting"
-    className="w-full min-h-[60vh] bg-[var(--color-teal-900)] text-[var(--color-cream)]"
+    className="w-full min-h-[60vh] bg-[var(--color-teal-800)] text-[var(--color-cream)]"
   >
     <div className="mx-auto max-w-[1200px] px-6 py-20">
-      <h2 className="font-serif text-3xl mb-3">Purposeful Consulting Solutions </h2>
-      <p className="max-w-2xl">Expert consulting in mental health research, data analysis, and program evaluation — paired with applied experience in personal growth methods and tools.</p>
+      <hr className="border-t opacity-70 border-cream mb-8 w-full"/>
+      <h2 className="font-serif text-3xl opacity-90 mb-3">Purposeful Consulting Solutions </h2>
+      <p className="max-w-2xl opacity-90">Expert consulting in mental health research, data analysis, and program evaluation — paired with applied experience in personal growth methods and tools.</p>
      <Link href="/consulting" className="mt-6 inline-block underline underline-offset-4 hover:opacity-80 transition">
         Book Dr. Salerno for consulting →
       </Link>

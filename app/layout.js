@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
       <body className="min-w-[1200px] bg-[#F4F1EA] text-[#0C1415] antialiased">
           <Header /> 
         {children}
-<footer className="relative py-6 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-950)] text-center">
+<footer className="relative py-6 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-800)] text-center">
   {/* Centered copyright/legal */}
   <p>
     © {new Date().getFullYear()} Dr. Juan Pablo Salerno™. All rights reserved. ·

@@ -63,6 +63,7 @@ export default function AboutPage() {
 
           {/* Mission */}
           <section>
+            <hr className="border-t opacity-70 border-cream mb-8 w-full"/>
             <h2 className="font-serif text-4xl mb-4 text-center">Mission</h2>
             <p className="space-y-6 text-lg opacity-90 leading-loose">
               To blend science and personal growth wisdom to help individuals and
@@ -73,6 +74,7 @@ export default function AboutPage() {
 
           {/* Work in the Now */}
           <section>
+            <hr className="border-t opacity-70 border-cream mb-8 w-full"/>
             <h2 className="font-serif text-4xl mb-4 text-center">Projects in the Now</h2>
             <p className="space-y-6 text-lg opacity-90 leading-loose">
               Today, Dr. Salerno continues conducting research with the goal of
@@ -88,6 +90,7 @@ export default function AboutPage() {
 
           {/* Credentials */}
           <section>
+            <hr className="border-t opacity-70 border-cream mb-8 w-full"/>
             <h2 className="font-serif text-4xl mb-4 text-center">Credentials</h2>
             <p className="space-y-6 text-lg opacity-90 leading-loose">
               Dr. Salerno holds a Ph.D. in Behavioral &amp; Community Health and a
