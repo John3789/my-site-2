@@ -10,7 +10,7 @@ export default function Home() {
       <div aria-hidden className="h-8" />
 
 {/* Nameplate bar (teal) */}
-<section id="home" className="bg-[var(--color-teal-950)] !text-[var(--color-cream)]">
+<section id="home" className="bg-[var(--color-teal-900)] !text-[var(--color-cream)]">
   <div className="mx-auto max-w-[1200px] px-6 pt-0 pb-4">
     <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
 <span className="block text-7xl hover:opacity-90 transition">
@@ -23,7 +23,7 @@ export default function Home() {
 
 
       {/* Hero with background photo */}
-      <section className="relative h-[87.5svh] overflow-hidden">
+      <section className="relative h-[88.8svh] overflow-hidden">
         <Image
           src="/hero17.jpg?v=25"
           alt="Portrait"
@@ -50,7 +50,7 @@ export default function Home() {
  
  <Link
   href="consulting"
-  className="inline-flex items-center rounded-md !bg-[var(--color-teal-800)] !text-[var(--color-cream)] px-7 py-3 font-medium uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition"
+  className="inline-flex items-center rounded-md !bg-[var(--color-teal-900)] !text-[var(--color-cream)] px-7 py-3 font-medium uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition"
 >
   Book consulting with Dr. Salerno
  </Link>
@@ -64,7 +64,7 @@ export default function Home() {
       <main>
 
 {/* Mission Quote Section */}
-<section className="w-full bg-[var(--color-teal-800)] text-[var(--color-cream)] flex items-center justify-center min-h-[60vh] px-6">
+<section className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] flex items-center justify-center min-h-[60vh] px-6">
   <div className="max-w-4xl text-center">
     {/* Small heading */}
     <h3 className="uppercase tracking-wide text-sm mb-6 opacity-80">Mission</h3>
@@ -87,7 +87,7 @@ export default function Home() {
         {/* Meditations */}
         <section
           id="meditations"
-          className="w-full min-h-[60vh] snap-start bg-[var(--color-teal-800)] text-[var(--color-cream)]"
+          className="w-full min-h-[60vh] snap-start bg-[var(--color-teal-850)] text-[var(--color-cream)]"
         >
           <div className="mx-auto max-w-[1200px] px-6 py-20">
             <hr className="border-t opacity-70 border-cream mb-8 w-full"/>
@@ -107,7 +107,7 @@ export default function Home() {
   {/* Resources */}
   <section
     id="resources"
-    className="w-full min-h-[60vh] bg-[var(--color-teal-800)] text-[var(--color-cream)]"
+    className="w-full min-h-[60vh] bg-[var(--color-teal-850)] text-[var(--color-cream)]"
   >
     <div className="mx-auto max-w-[1200px] px-6 py-20">
       <hr className="border-t opacity-70 border-cream mb-8 w-full"/>
@@ -122,7 +122,7 @@ export default function Home() {
   {/* Speaking */}
   <section
     id="speaking"
-    className="w-full min-h-[60vh] bg-[var(--color-teal-800)] text-[var(--color-cream)]"
+    className="w-full min-h-[60vh] bg-[var(--color-teal-850)] text-[var(--color-cream)]"
   >
     <div className="mx-auto max-w-[1200px] px-6 py-20">
       <hr className="border-t opacity-70 border-cream mb-8 w-full"/>
@@ -137,7 +137,7 @@ export default function Home() {
    {/* Consulting */}
   <section
     id="consulting"
-    className="w-full min-h-[60vh] bg-[var(--color-teal-800)] text-[var(--color-cream)]"
+    className="w-full min-h-[60vh] bg-[var(--color-teal-850)] text-[var(--color-cream)]"
   >
     <div className="mx-auto max-w-[1200px] px-6 py-20">
       <hr className="border-t opacity-70 border-cream mb-8 w-full"/>

@@ -1,6 +1,6 @@
 export default function MeditationsPage() {
   return (
-    <main className="min-h-screen w-full bg-[var(--color-teal-800)] text-[var(--color-cream)]">
+    <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
       <div className="mx-auto max-w-[1200px] px-6 py-20">
         <h1 className="font-serif text-4xl mb-6">Meditations</h1>
         <p className="text-lg opacity-90 max-w-3xl mb-8">

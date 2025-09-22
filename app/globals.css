@@ -42,6 +42,7 @@ body {
   --color-teal-900: #062B2C;
   --color-teal-800: #0B3536;
   --color-teal-700: #0E3A3B; /* same as --color-teal */
+  --color-teal-850: #11443e;
 }
 
 
@@ -91,7 +92,7 @@ html { scroll-behavior: smooth; }
 /* Make all body text cream by default */
 body {
   @apply text-[var(--color-cream)];
-  background-color: var(--color-teal-950); /* keep your background consistent */
+  background-color: var(--color-teal-900); /* keep your background consistent */
 }
 
 /* Headings also cream by default */

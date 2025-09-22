@@ -1,6 +1,6 @@
 export default function TermsPage() {
   return (
-    <main className="min-h-screen w-full bg-[var(--color-teal-800)] text-[var(--color-cream)] px-6 py-20">
+    <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] px-6 py-20">
       <h1 className="font-serif text-4xl mb-6">Terms of Use</h1>
 
       <p className="mb-4">

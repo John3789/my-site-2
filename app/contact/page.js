@@ -12,7 +12,7 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="min-h-screen w-full bg-[var(--color-teal-800)] text-[var(--color-cream)]">
+    <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
       <div className="mx-auto max-w-[1200px] px-6 py-20 flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
         
         {/* Left side: form */}

@@ -2,7 +2,7 @@
 export default function BooksPage() {
   return (
     <main
-      className="min-h-screen w-full bg-[var(--color-teal-800)] text-[var(--color-cream)]"
+      className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]"
     >
       <div className="mx-auto max-w-[1200px] px-6 py-20">
         {/* Page title */}

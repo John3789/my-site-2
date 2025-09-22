@@ -1,7 +1,7 @@
 // app/speaking/page.js
 export default function SpeakingPage() {
   return (
-    <main className="min-h-screen w-full bg-[var(--color-teal-800)]">
+    <main className="min-h-screen w-full bg-[var(--color-teal-850)]">
    {/* ===== HERO VIDEO with overlay text ===== */}
 <section className="relative w-full">
   <div className="relative h-[70vh]">

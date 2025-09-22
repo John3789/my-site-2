@@ -1,7 +1,7 @@
 // app/about/page.js
 export default function AboutPage() {
   return (
-    <main className="min-h-screen w-full bg-[var(--color-teal-800)] text-[var(--color-cream)]">
+    <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
       <div className="mx-auto max-w-[1200px] px-6 py-20">
         {/* Page title */}
         <h1 className="font-serif text-4xl mb-8 text-center">About Dr. Salerno</h1>
