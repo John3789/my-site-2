@@ -114,15 +114,15 @@ export default function SpeakingPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
-                    <span>The Science of Gratitude and Its Impact on Mental Health</span>
+                    <span>Expressing Gratitude is Good for Your Mental Health</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
-                    <span>The Science of Self-Compassion: Impact on Mental Health</span>
+                    <span>Self-Compassion: Effects on Wellbeing</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
-                    <span>The Science of Altruism to Enhance Your Own Wellbeing</span>
+                    <span>Practicing Altruism to Enhance Your Own Wellbeing</span>
                   </li>
                 </ul>
               </div>
@@ -217,7 +217,7 @@ export default function SpeakingPage() {
               </h3>
               <p className="text-lg leading-loose">
                 A relaxed, conversational format with a moderator that blends storytelling
-                and audience connection for an intimate, authentic experience.
+                and audience connection for an intimate, authentic experience. 
               </p>
             </div>
 

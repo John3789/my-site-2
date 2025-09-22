@@ -39,7 +39,7 @@ export default function AboutPage() {
             <img
               src="/heroabout.jpg"
               alt="Dr. Juan Pablo Salerno"
-              className="w-full max-w-md h-auto 2xl shadow-lg object-cover"
+              className="w-full max-w-md h-auto 2xl shadow-lg object-cover mt-10"
             />
           </div>
         </div>
