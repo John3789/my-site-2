@@ -77,10 +77,10 @@ export default function SpeakingPage() {
             <h2 className="font-serif text-4xl mb-8">Popular Topics</h2>
 
             <div className="space-y-10">
-              {/* Mindset & Growth */}
+              {/* Leveling-Up Your Mindset & Growth */}
               <div>
                 <h3 className="font-serif text-2xl mb-2">
-                  <span className="text-[var(--color-gold)]">Mindset &amp; Growth</span>
+                  <span className="text-[var(--color-gold)]">Leveling-Up Mindset &amp; Growth</span>
                 </h3>
                 <ul className="text-lg space-y-3">
                   <li className="flex items-start gap-2">
@@ -138,7 +138,7 @@ export default function SpeakingPage() {
            {/* Performance & Potential */}
       <div>
         <h3 className="font-serif text-2xl mb-2">
-          <span className="text-[var(--color-gold)]">Performance &amp; Potential</span>
+          <span className="text-[var(--color-gold)]">Boosting Performance &amp; Potential</span>
         </h3>
         <ul className="text-lg space-y-3">
           <li className="flex items-start gap-2">
