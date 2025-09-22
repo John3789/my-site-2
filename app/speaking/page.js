@@ -89,11 +89,11 @@ export default function SpeakingPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
-                    <span>Building Personal and Professional Resilience</span>
+                    <span>Strengthening Personal and Professional Resilience</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
-                    <span>Overcoming Imposter Syndrome and Building Self-Confidence</span>
+                    <span>Overcoming Imposter Syndrome and Unlocking Self-Confidence</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
@@ -101,7 +101,7 @@ export default function SpeakingPage() {
                   </li>
                    <li className="flex items-start gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
-                    <span>Practicing Meditation to Improve Performance and Outcomes</span>
+                    <span>Practicing Meditation to Level-Up Your Life</span>
                   </li>
                 </ul>
               </div>
@@ -118,11 +118,11 @@ export default function SpeakingPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
-                    <span>Work-Life Balance: Strategies for Success and Fulfillment</span>
+                    <span>Work-Life Balance: Tools for Success and Fulfillment</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
-                    <span>Science-Backed Strategies for Stress Reduction</span>
+                    <span>Science-Backed Practices for Stress Reduction</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
@@ -147,7 +147,7 @@ export default function SpeakingPage() {
           </li>
           <li className="flex items-start gap-2">
             <span className="text-[var(--color-gold)]">✔</span>
-            <span>Unlocking Creativity and Flow States</span>
+            <span>Unlocking Creativity and Flow States for Excellence</span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-[var(--color-gold)]">✔</span>
