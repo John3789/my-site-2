@@ -11,13 +11,13 @@ export default function SpeakingPage() {
       autoPlay
       loop
       poster="/speaking-hero-poster.jpg"
-      className="absolute inset-0 h-full w-full object-cover"
+      className="absolute inset-0 h-full w-full object-cover pointer-events-none"
     >
       <source src="/speaking-hero.mp4" type="video/mp4" />
     </video>
 
     {/* Overlay headline + subheadline */}
-    <div className="absolute inset-0 flex flex-col items-center justify-center text-center bg-black/30">
+    <div className="absolute inset-0 flex flex-col items-center justify-center text-center bg-black/30 pointer-events-none">
       <h1 className="font-serif text-5xl md:text-6xl mb-4 drop-shadow-lg">
         Speaking
       </h1>

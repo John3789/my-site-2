@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <>
       {/* Transparent, fixed header with centered nav (unchanged behavior) */}
-      <header className="fixed inset-x-0 top-0 z-[200] bg-transparent text-[var(--color-cream)] pointer-events-auto">
+<header className="fixed inset-x-0 top-0 z-[9999] bg-transparent text-[var(--color-cream)] pointer-events-auto">
         <div className="mx-auto max-w-7xl px-6 h-10 flex items-center justify-center">
           <nav className="flex flex-wrap items-center justify-center gap-6 text-[13px] tracking-wide uppercase">
             <Link href="/about" className="hover:underline underline-offset-4 hover:opacity-90 transition">About</Link>
