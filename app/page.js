@@ -10,7 +10,7 @@ export default function Home() {
       <div aria-hidden className="h-8" />
 
 {/* Nameplate bar (teal) */}
-<section id="home" className="bg-[var(--color-teal-900)] !text-[var(--color-cream)]">
+<section id="home" className="bg-[var(--color-teal-950)] !text-[var(--color-cream)]">
   <div className="mx-auto max-w-[1200px] px-6 pt-0 pb-4">
     <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
 <span className="block text-7xl hover:opacity-90 transition">
@@ -50,7 +50,7 @@ export default function Home() {
  
  <Link
   href="consulting"
-  className="inline-flex items-center rounded-md !bg-[var(--color-teal-900)] !text-[var(--color-cream)] px-7 py-3 font-medium uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition"
+  className="inline-flex items-center rounded-md !bg-[var(--color-teal-800)] !text-[var(--color-cream)] px-7 py-3 font-medium uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition"
 >
   Book consulting with Dr. Salerno
  </Link>
