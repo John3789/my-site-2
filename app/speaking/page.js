@@ -99,43 +99,22 @@ export default function SpeakingPage() {
                     <span className="text-[var(--color-gold)]">✔</span>
                     <span>Using Visualization and Affirmations to Achieve Your Goals</span>
                   </li>
-                </ul>
-              </div>
-
-              {/* Science of Wellbeing */}
-              <div>
-                <h3 className="font-serif text-2xl mb-2">
-                  <span className="text-[var(--color-gold)]">Science of Wellbeing</span>
-                </h3>
-                <ul className="text-lg space-y-3">
-                  <li className="flex items-start gap-2">
+                   <li className="flex items-start gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
-                    <span>The Science of Happiness: Tips for a Fulfilling Life</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-[var(--color-gold)]">✔</span>
-                    <span>Expressing Gratitude for Improved Mental Health</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-[var(--color-gold)]">✔</span>
-                    <span>Engaging in Self-Compassion to Promote Your Wellbeing</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-[var(--color-gold)]">✔</span>
-                    <span>Practicing Altruism to Enhance Your Wellness</span>
+                    <span>Practicing Meditation to Improve Performance and Outcomes</span>
                   </li>
                 </ul>
               </div>
 
-              {/* Health & Balance */}
+              {/* Strengthening Mental Health and Wellbeing */}
               <div>
                 <h3 className="font-serif text-2xl mb-2">
-                  <span className="text-[var(--color-gold)]">Health &amp; Balance</span>
+                  <span className="text-[var(--color-gold)]">Strengthening Mental Health &amp; Wellbeing</span>
                 </h3>
                 <ul className="text-lg space-y-3">
                   <li className="flex items-start gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
-                    <span>Promoting Mental Health Within and Beyond Yourself</span>
+                    <span>Everyday Strategies to Improve Mental Health</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
@@ -143,20 +122,49 @@ export default function SpeakingPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
-                    <span>Science-Backed Strategies for Stress and Mental Health</span>
+                    <span>Science-Backed Strategies for Stress Reduction</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
-                    <span>The Impact of Nature on Mental Health and Wellbeing</span>
+                    <span>Burnout Prevention and Recovery: Protect Your Health</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
-                    <span>The Science of Mindful Technology Use for Mental Health</span>
+                    <span>Gratitude, Self-Compassion, and Altruism for Wellbeing</span>
                   </li>
                 </ul>
               </div>
-            </div>
-          </div>
+
+           {/* Performance & Potential */}
+      <div>
+        <h3 className="font-serif text-2xl mb-2">
+          <span className="text-[var(--color-gold)]">Performance &amp; Potential</span>
+        </h3>
+        <ul className="text-lg space-y-3">
+          <li className="flex items-start gap-2">
+            <span className="text-[var(--color-gold)]">✔</span>
+            <span>Harnessing Motivation &amp; Emotional Intelligence for Success</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-[var(--color-gold)]">✔</span>
+            <span>Unlocking Creativity and Flow States</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-[var(--color-gold)]">✔</span>
+            <span>Energy Management for Peak Performance</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-[var(--color-gold)]">✔</span>
+            <span>The Power of Micro-Habits for Lasting Growth</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-[var(--color-gold)]">✔</span>
+            <span>Building Grit and Perseverance for Long-Term Goals</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
           {/* Image */}
           <div className="lg:col-span-7 flex justify-center items-center">
