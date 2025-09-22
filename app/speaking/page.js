@@ -79,7 +79,7 @@ export default function SpeakingPage() {
             <div className="space-y-10">
               {/* Mindset & Growth */}
               <div>
-                <h3 className="font-serif text-xl mb-2">
+                <h3 className="font-serif text-2xl mb-2">
                   <span className="text-[var(--color-gold)]">Mindset &amp; Growth</span>
                 </h3>
                 <ul className="text-lg space-y-3">
@@ -104,7 +104,7 @@ export default function SpeakingPage() {
 
               {/* Science of Wellbeing */}
               <div>
-                <h3 className="font-serif text-xl mb-2">
+                <h3 className="font-serif text-2xl mb-2">
                   <span className="text-[var(--color-gold)]">Science of Wellbeing</span>
                 </h3>
                 <ul className="text-lg space-y-3">
@@ -129,7 +129,7 @@ export default function SpeakingPage() {
 
               {/* Health & Balance */}
               <div>
-                <h3 className="font-serif text-xl mb-2">
+                <h3 className="font-serif text-2xl mb-2">
                   <span className="text-[var(--color-gold)]">Health &amp; Balance</span>
                 </h3>
                 <ul className="text-lg space-y-3">
@@ -184,7 +184,7 @@ export default function SpeakingPage() {
             <h2 className="font-serif text-4xl mb-8">Dr. Salerno Offers</h2>
 
             <div>
-              <h3 className="font-serif text-xl mb-2">
+              <h3 className="font-serif text-2xl mb-2">
                 <span className="text-[var(--color-gold)]">Keynotes</span>
               </h3>
               <p className="text-lg leading-loose">
@@ -193,7 +193,7 @@ export default function SpeakingPage() {
             </div>
 
             <div>
-              <h3 className="font-serif text-xl mb-2">
+              <h3 className="font-serif text-2xl mb-2">
                 <span className="text-[var(--color-gold)]">Workshops</span>
               </h3>
               <p className="text-lg leading-loose">
@@ -202,7 +202,7 @@ export default function SpeakingPage() {
             </div>
 
             <div>
-              <h3 className="font-serif text-xl mb-2">
+              <h3 className="font-serif text-2xl mb-2">
                 <span className="text-[var(--color-gold)]">Panels</span>
               </h3>
               <p className="text-lg leading-loose">
@@ -212,7 +212,7 @@ export default function SpeakingPage() {
             </div>
 
             <div>
-              <h3 className="font-serif text-xl mb-2">
+              <h3 className="font-serif text-2xl mb-2">
                 <span className="text-[var(--color-gold)]">Fireside Chats</span>
               </h3>
               <p className="text-lg leading-loose">
@@ -222,7 +222,7 @@ export default function SpeakingPage() {
             </div>
 
             <div>
-              <h3 className="font-serif text-xl mb-2">
+              <h3 className="font-serif text-2xl mb-2">
                 <span className="text-[var(--color-gold)]">Moderated Discussions</span>
               </h3>
               <p className="text-lg leading-loose">
@@ -232,7 +232,7 @@ export default function SpeakingPage() {
             </div>
 
             <div>
-              <h3 className="font-serif text-xl mb-2">
+              <h3 className="font-serif text-2xl mb-2">
                 <span className="text-[var(--color-gold)]">Virtual Talks &amp; Webinars</span>
               </h3>
               <p className="text-lg leading-loose">
@@ -276,7 +276,7 @@ export default function SpeakingPage() {
 
             <p className="text-lg mt-6">
               Every talk is tailored to your audience’s unique needs and goals, ensuring
-              lasting impact both inside and outside the workplace.
+              lasting impact both personally and professionally.
             </p>
           </div>
           <div className="lg:col-span-7">

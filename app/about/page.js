@@ -48,13 +48,14 @@ export default function AboutPage() {
         <div className="max-w-3xl mx-auto space-y-12">
           {/* Paragraph 3 */}
           <p className="text-lg opacity-90">
-            Dr. Salerno’s commitment is personal as well as professional. After
-            hitting his own rock bottom in mental health, he spent years in therapy
-            with psychologists and psychiatrists. When he realized that his wounds
-            needed more than traditional approaches, he began exploring personal
-            growth practices — including meditation, Feng Shui, and manifestation —
-            learning from some of the most well-known experts in the field. Through
-            this journey, he discovered his true purpose.
+            Dr. Salerno’s commitment is personal as well as professional. After 
+            hitting his own rock bottom in mental health, he spent years in therapy 
+            with psychologists and psychiatrists. After reaching a plateau in his 
+            healing process, he began exploring additional practices to complement 
+            traditional care — including meditation, Feng Shui, and manifestation 
+            — learning from some of the most well-known experts in the field. Through 
+            his journey, he achieved full remission from his mental health struggles 
+            and uncovered his deeper purpose.
           </p>
 
           {/* Mission */}
