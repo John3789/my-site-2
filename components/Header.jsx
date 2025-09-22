@@ -5,39 +5,37 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
-    const pathname = usePathname();
+  const pathname = usePathname();
   const isHome = pathname === "/";
 
   return (
-        // raise z, ensure header receives clicks
-    <header className="fixed inset-x-0 top-0 z-[200] bg-transparent text-[var(--color-cream)] pointer-events-auto">
-            {/* Make this relative so the top-right name can be absolutely positioned */}
-      <div className="mx-auto max-w-7xl px-6 h-10 flex items-center justify-center">
-                {/* Centered nav */}
-        <nav className="flex flex-wrap items-center justify-center gap-6 text-[13px] tracking-wide uppercase">
-          <Link href="/about" className="hover:underline underline-offset-4 hover:opacity-90 transition">About</Link>
-          <Link href="/books" className="hover:underline underline-offset-4 hover:opacity-90 transition">Books & Publications</Link>
-          <Link href="/meditations" className="hover:underline underline-offset-4 hover:opacity-90 transition">Meditations</Link>
-          <Link href="/resources" className="hover:underline underline-offset-4 hover:opacity-90 transition">Resources</Link>
-          <Link href="/speaking" className="hover:underline underline-offset-4 hover:opacity-90 transition">Speaking</Link>
-          <Link href="/consulting" className="hover:underline underline-offset-4 hover:opacity-90 transition">Consulting</Link>
-          <Link href="/press" className="hover:underline underline-offset-4 hover:opacity-90 transition">Press</Link>
-          <Link href="/contact" className="hover:underline underline-offset-4 hover:opacity-90 transition">Contact</Link>
-        </nav>
+    <>
+      {/* Transparent, fixed header with centered nav (unchanged behavior) */}
+      <header className="fixed inset-x-0 top-0 z-[200] bg-transparent text-[var(--color-cream)] pointer-events-auto">
+        <div className="mx-auto max-w-7xl px-6 h-10 flex items-center justify-center">
+          <nav className="flex flex-wrap items-center justify-center gap-6 text-[13px] tracking-wide uppercase">
+            <Link href="/about" className="hover:underline underline-offset-4 hover:opacity-90 transition">About</Link>
+            <Link href="/books" className="hover:underline underline-offset-4 hover:opacity-90 transition">Books & Publications</Link>
+            <Link href="/meditations" className="hover:underline underline-offset-4 hover:opacity-90 transition">Meditations</Link>
+            <Link href="/resources" className="hover:underline underline-offset-4 hover:opacity-90 transition">Resources</Link>
+            <Link href="/speaking" className="hover:underline underline-offset-4 hover:opacity-90 transition">Speaking</Link>
+            <Link href="/consulting" className="hover:underline underline-offset-4 hover:opacity-90 transition">Consulting</Link>
+            <Link href="/press" className="hover:underline underline-offset-4 hover:opacity-90 transition">Press</Link>
+            <Link href="/contact" className="hover:underline underline-offset-4 hover:opacity-90 transition">Contact</Link>
+          </nav>
+        </div>
+      </header>
 
-          {/* Top-left name link (hidden on the homepage) */}
-        {!isHome && (
-          <Link
-            href="/"
-            className="absolute right-15 top-15 -translate-y-1/2 font-serif tracking-wide hover:opacity-90 transition"
-          >
-            <span className="text-lg lg:text-xl">
-              DR. JUAN PABLO SALERNO
-            </span>
-            <sup className="text-lg align-super opacity-70">™</sup>
-          </Link>
-        )}
-      </div>
-    </header>
+      {/* Name fixed at the true top-right of the viewport (separate from the header) */}
+      {!isHome && (
+        <Link
+          href="/"
+          className="fixed top-9 right-15 z-[201] pt-1 pr-3 font-serif tracking-wide hover:opacity-90 transition leading-none"
+        >
+          <span className="text-lg lg:text-xl">DR. JUAN PABLO SALERNO</span>
+          <sup className="text-lg align-super opacity-70">™</sup>
+        </Link>
+      )}
+    </>
   );
 }

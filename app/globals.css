@@ -1,6 +1,14 @@
 @import "tailwindcss";
 
 :root {
+  --color-cream: #f5f0e6; /* or your exact cream hex */
+  --color-gold: #d4af37;  /* already defined, just confirming */
+}
+:root {
+  --color-teal-900: #0f3b3b;
+  --color-teal-800: #135050;
+}
+:root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -44,3 +52,55 @@ body {
 .font-sans { font-family: var(--font-sans), ui-sans-serif, system-ui; }
 .font-serif { font-family: var(--font-serif), ui-serif, Georgia, serif; }
 html { scroll-behavior: smooth; }
+
+/* === Global readability + typography defaults === */
+@layer base {
+  html { @apply antialiased; }
+
+  /* Body copy: higher contrast + more breathing room */
+  body { @apply text-white/90 leading-loose; }
+
+  /* Paragraphs & list items: consistent spacing/legibility */
+  p, li { @apply leading-loose; }
+  ul { @apply space-y-3; }
+
+  /* Headings: full-opacity cream by default */
+  h1, h2, h3, h4 {
+    @apply text-[var(--color-cream)];
+  }
+
+  /* Small/secondary text */
+  small, .muted { @apply text-white/70; }
+}
+
+/* Handy utilities you can reuse anywhere */
+@layer utilities {
+  /* Gold eyebrow / subhead (your yellow section headings) */
+  .eyebrow-gold { @apply font-serif text-xl text-[var(--color-gold)]; }
+
+  /* Primary body copy block (use on <div> that wraps text) */
+  .copy { @apply text-white/90 leading-loose; }
+
+  /* Slightly larger lead-in paragraph */
+  .lead { @apply text-lg md:text-xl text-white/90; }
+}
+:root {
+  --color-cream: #f5f0e6; /* or your exact cream hex */
+  --color-gold: #d4af37;  /* already defined, just confirming */
+}
+
+/* Make all body text cream by default */
+body {
+  @apply text-[var(--color-cream)];
+  background-color: var(--color-teal-900); /* keep your background consistent */
+}
+
+/* Headings also cream by default */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-cream);
+}
+
+html,
+body {
+  background-color: var(--color-teal-950);
+}
