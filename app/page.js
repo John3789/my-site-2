@@ -11,7 +11,7 @@ export default function Home() {
 
 {/* Nameplate bar (teal) */}
 <section id="home" className="bg-[var(--color-teal-950)] !text-[var(--color-cream)]">
-  <div className="mx-auto max-w-[1200px] px-6 pt-0 pb-5">
+  <div className="mx-auto max-w-[1200px] px-6 pt-0 pb-4">
     <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
 <span className="block text-7xl hover:opacity-90 transition">
   DR. JUAN PABLO SALERNO
