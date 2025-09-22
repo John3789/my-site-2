@@ -114,15 +114,15 @@ export default function SpeakingPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
-                    <span>Expressing Gratitude is Good for Your Mental Health</span>
+                    <span>Expressing Gratitude for Improved Mental Health</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
-                    <span>Self-Compassion: Effects on Wellbeing</span>
+                    <span>Engaging in Self-Compassion to Promote Your Wellbeing</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
-                    <span>Practicing Altruism to Enhance Your Own Wellbeing</span>
+                    <span>Practicing Altruism to Enhance Your Wellness</span>
                   </li>
                 </ul>
               </div>
@@ -135,7 +135,7 @@ export default function SpeakingPage() {
                 <ul className="text-lg space-y-3">
                   <li className="flex items-start gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
-                    <span>Promoting Mental Health Within and Beyond</span>
+                    <span>Promoting Mental Health Within and Beyond Yourself</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
