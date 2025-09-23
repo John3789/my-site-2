@@ -13,7 +13,7 @@ export default function SpeakingPage() {
       poster="/speaking-hero-poster.jpg"
       className="absolute inset-0 h-full w-full object-cover pointer-events-none"
     >
-      <source src="/speaking-hero.mp4" type="video/mp4" />
+      <source src="/clip3.mp4" type="video/mp4" />
     </video>
 
     {/* Overlay headline + subheadline */}
