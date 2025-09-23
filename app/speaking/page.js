@@ -167,27 +167,45 @@ export default function SpeakingPage() {
     </div>
   </div>
 
-          {/* Image */}
-          <div className="lg:col-span-7 flex justify-center items-center">
-            <img
-              src="/speaking1.jpg"
-              alt="Dr. Salerno presenting on stage"
-              className="w-full h-[520px] object-cover shadow-2xl mt-15"
-            />
-          </div>
+{/* Images (stacked, equal landscape, slightly smaller) */}
+<div className="lg:col-span-7 ml-auto flex flex-col gap-6 max-w-[640px]">
+  <div className="w-full aspect-[3/2] overflow-hidden shadow-2xl mt-10">
+    <img
+      src="/hero18.jpg"
+      alt="Dr. Salerno presenting on stage"
+      className="w-full h-full object-cover"
+    />
+  </div>
+  <div className="w-full aspect-[3/2] overflow-hidden shadow-2xl mt-15">
+    <img
+      src="/speaking2.jpg"
+      alt="Audience engagement"
+      className="w-full h-full object-cover"
+    />
+  </div>
+</div>
         </section>
 
 {/* Dr. Salerno Offers */}
 <hr className="border-t opacity-70 border-cream mb-8 w-full"/>
 <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-  {/* Image */}
-  <div className="lg:col-span-7 order-2 lg:order-1 flex justify-center items-center">
+{/* Images (stacked, equal landscape, slightly smaller) */}
+<div className="lg:col-span-7 ml-0 flex flex-col gap-6 max-w-[640px]">
+  <div className="w-full aspect-[3/2] overflow-hidden shadow-2xl mt-10">
     <img
-      src="/speaking2.jpg"
-      alt="Workshop with audience"
-      className="w-full h-[520px] object-cover shadow-2xl mt-15"
+      src="/speaking1.jpg"
+      alt="Dr. Salerno presenting on stage"
+      className="w-full h-full object-cover"
     />
   </div>
+  <div className="w-full aspect-[3/2] overflow-hidden shadow-2xl mt-15">
+    <img
+      src="/speaking3.jpg"
+      alt="Audience engagement"
+      className="w-full h-full object-cover"
+    />
+  </div>
+</div>
 
   {/* Formats */}
   <div className="lg:col-span-5 order-1 lg:order-2 lg:py-6 space-y-8">
@@ -291,15 +309,16 @@ export default function SpeakingPage() {
               lasting impact both personally and professionally.
             </p>
           </div>
-          <div className="lg:col-span-7">
-            <div className="lg:sticky lg:top-24">
-              <img
-                src="/speaking3.jpg"
-                alt="Audience engagement"
-                className="w-full h-[520px] object-cover shadow-2xl"
-              />
-            </div>
-          </div>
+<div className="lg:col-span-7">
+  <div className="lg:sticky lg:top-24">
+    <img
+      src="/speaking4b.jpg"
+      alt="Audience engagement"
+      className="max-h-[600px] w-auto mx-auto object-contain shadow-2xl"
+    />
+  </div>
+</div>
+
         </section>
 
         {/* CTA */}
