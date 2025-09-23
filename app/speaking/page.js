@@ -309,15 +309,6 @@ export default function SpeakingPage() {
               lasting impact both personally and professionally.
             </p>
           </div>
-<div className="lg:col-span-7">
-  <div className="lg:sticky lg:top-24">
-    <img
-      src="/speaking4b.jpg"
-      alt="Audience engagement"
-      className="max-h-[600px] w-auto mx-auto object-contain shadow-2xl"
-    />
-  </div>
-</div>
 
         </section>
 

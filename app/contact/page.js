@@ -17,7 +17,7 @@ export default function ContactPage() {
         
         {/* Left side: form */}
         <div className="flex-1">
-          <h1 className="font-serif text-4xl mb-6">Contact</h1>
+          <h1 className="font-serif text-4xl opacity-90 mb-6">Contact</h1>
           <p className="text-lg opacity-90 max-w-3xl mb-10">
             For consulting, speaking, media, and collaborations, please share a few details below or send an email directly to{" "}
           <a
@@ -30,7 +30,7 @@ export default function ContactPage() {
 
           {sent ? (
             <div className="rounded-md bg-black/20 border border-white/10 p-6">
-              <p className="font-semibold">
+              <p className="font-semibold opacity-90">
                 Thanks! Your message was received and we will follow-up soon.
               </p>
             </div>
@@ -47,7 +47,7 @@ export default function ContactPage() {
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
-                  <label className="block text-sm mb-1">Name</label>
+                  <label className="block text-sm opacity-90 mb-1">Name</label>
                   <input
                     type="text"
                     name="name"
@@ -57,7 +57,7 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm mb-1">Email</label>
+                  <label className="block text-sm opacity-90 mb-1">Email</label>
                   <input
                     type="email"
                     name="email"
@@ -69,7 +69,7 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label className="block text-sm mb-1">Topic</label>
+                <label className="block text-sm opacity-90 mb-1">Topic</label>
                 <select
                   name="topic"
                   className="w-full rounded-md bg-transparent border border-white/20 px-4 py-3 outline-none"
@@ -94,7 +94,7 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label className="block text-sm mb-1">Message</label>
+                <label className="block text-sm opacity-90 mb-1">Message</label>
                 <textarea
                   name="message"
                   rows={6}

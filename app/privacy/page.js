@@ -1,7 +1,7 @@
 export default function PrivacyPage() {
   return (
-    <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] px-6 py-20">
-      <h1 className="font-serif text-4xl mb-6">Privacy Policy</h1>
+    <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] opacity-90 px-6 py-20">
+      <h1 className="font-serif text-4xl opacity-90 mb-6">Privacy Policy</h1>
       <p className="mb-4">
         This website respects your privacy. We only collect personal data that you voluntarily provide
         (such as through contact forms). Your information will never be sold or shared with third

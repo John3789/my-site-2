@@ -2,7 +2,7 @@ export default function ConsultingPage() {
   return (
     <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
       <div className="mx-auto max-w-[1200px] px-6 py-20">
-        <h1 className="font-serif text-4xl mb-6">Consulting</h1>
+        <h1 className="font-serif text-4xl opacity-90 mb-6">Consulting</h1>
         <p className="text-lg opacity-90 max-w-3xl mb-8">
           Strategy and leadership support grounded in neuroscience and behavior change—practical,
           measurable, and people-centered.
@@ -10,7 +10,7 @@ export default function ConsultingPage() {
 
         <section className="space-y-6">
           <div>
-            <h3 className="font-serif text-xl mb-2">Focus Areas</h3>
+            <h3 className="font-serif text-xl opacity-90 mb-2">Focus Areas</h3>
             <ul className="list-disc pl-6 space-y-1 opacity-90">
               <li>Behavior change & habit design</li>
               <li>Leadership coaching & team culture</li>
@@ -18,7 +18,7 @@ export default function ConsultingPage() {
             </ul>
           </div>
           <div>
-            <h3 className="font-serif text-xl mb-2">Engagement Formats</h3>
+            <h3 className="font-serif text-xl opacity-90 mb-2">Engagement Formats</h3>
             <ul className="list-disc pl-6 space-y-1 opacity-90">
               <li>Advisory retainers</li>
               <li>Workshops & trainings</li>
