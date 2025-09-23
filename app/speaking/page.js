@@ -17,7 +17,7 @@ export default function SpeakingPage() {
     </video>
 
     {/* Overlay headline + subheadline */}
-    <div className="absolute inset-0 flex flex-col items-center justify-center text-center bg-black/20 pointer-events-none">
+    <div className="absolute inset-0 flex flex-col items-center justify-center text-center bg-black/30 pointer-events-none">
       <h1 className="font-serif text-5xl md:text-6xl mb-4 drop-shadow-lg">
         Speaking
       </h1>
