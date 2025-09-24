@@ -23,7 +23,7 @@ export default function SpeakingPage() {
       </h1>
       <p className="text-lg md:text-xl opacity-90 max-w-3xl drop-shadow-md">
         Science-backed, story-driven talks that spark resilience,
-        growth, and lasting changes.
+        growth, and lasting change.
       </p>
     </div>
   </div>
