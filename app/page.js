@@ -50,7 +50,7 @@ export default function Home() {
  
  <Link
   href="consulting"
-  className="inline-flex items-center rounded-md !bg-[var(--color-teal-800)] !text-[var(--color-cream)] px-7 py-3 font-medium uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition"
+  className="inline-flex items-center rounded-md !bg-[var(--color-teal-700)] !text-[var(--color-cream)] px-7 py-3 font-medium uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition"
 >
   Book consulting with Dr. Salerno
  </Link>
