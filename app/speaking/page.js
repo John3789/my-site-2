@@ -192,7 +192,7 @@ export default function SpeakingPage() {
       <p>&ldquo...an exceptional speaker...engaging, well-spoken, and clearly passionate about his work.&rdquo;</p>
     </blockquote>
     <figcaption className="mt-4 text-sm uppercase tracking-wide opacity-80">
-      — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting & Expo
+      — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting and Expo
     </figcaption>
   </figure>
 
@@ -219,7 +219,7 @@ export default function SpeakingPage() {
       <p>&ldquo;...confident, polished, and deeply engaging...&rdquo;</p>
     </blockquote>
     <figcaption className="mt-4 text-sm uppercase tracking-wide opacity-80">
-      — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting & Expo
+      — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting and Expo
     </figcaption>
   </figure>
 
@@ -352,7 +352,7 @@ export default function SpeakingPage() {
       <p>&ldquo;...confident, polished, and deeply engaging...&rdquo;</p>
     </blockquote>
     <figcaption className="mt-4 text-sm uppercase tracking-wide opacity-80">
-      — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting & Expo
+      — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting and Expo
     </figcaption>
   </figure>
 
