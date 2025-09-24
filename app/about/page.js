@@ -17,10 +17,9 @@ export default function AboutPage() {
   30x scientific peer-reviewed author. He has over 14 years of experience
   working in top academic institutions, including Columbia University,
   George Washington University, University of Maryland, and University
-  of Miami. He is committed to sharing his lived experience, wisdom, and
-  expertise to empower people to overcome mental health struggles, unlock hidden
-  potential, and live in abundance of love, happiness, fulfillment, and
-  purpose.
+  of Miami. He is committed to sharing his lived experience, wisdom, and 
+  expertise to guide others in overcoming mental health struggles, awakening 
+  potential, and living abundantly with love, fulfillment, and purpose.
 </p>
 
 
@@ -56,7 +55,7 @@ export default function AboutPage() {
             After reaching a plateau in his healing process, he began exploring additional 
             practices to complement traditional care — including meditation, Feng Shui, and 
             manifestation — learning from some of the most well-known experts in the field. 
-            Through his journey, he discovered his highest self and deeper purpose.
+            Through his journey, he rose into his highest self and discovered his deeper purpose.
           </p>
 
           {/* Mission */}
