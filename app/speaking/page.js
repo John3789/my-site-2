@@ -11,7 +11,7 @@ export default function SpeakingPage() {
       autoPlay
       loop
       poster="/speaking-hero-poster.jpg"
-      className="absolute inset-0 h-full w-full object-cover pointer-events-none"
+      className="absolute inset-0 h-full w-full object-cover object-[50%_38%] pointer-events-none"
     >
       <source src="hero40.mp4" type="video/mp4" />
     </video>
