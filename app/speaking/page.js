@@ -13,15 +13,15 @@ export default function SpeakingPage() {
       poster="/speaking-hero-poster.jpg"
       className="absolute inset-0 h-full w-full object-cover pointer-events-none"
     >
-      <source src="hero26.mp4" type="video/mp4" />
+      <source src="hero40.mp4" type="video/mp4" />
     </video>
 
     {/* Overlay headline + subheadline */}
-    <div className="absolute inset-0 flex flex-col items-center justify-center text-center bg-black/30 pointer-events-none">
-      <h1 className="font-serif text-5xl md:text-6xl mb-4 drop-shadow-lg">
+    <div className="absolute inset-0 flex flex-col items-center justify-center text-center bg-black/40 pointer-events-none">
+      <h1 className="font-serif  text-5xl opacity-90 md:text-6xl mb-4 drop-shadow-lg">
         Speaking
       </h1>
-      <p className="text-lg md:text-xl max-w-3xl drop-shadow-md">
+      <p className="text-lg md:text-xl opacity-90 max-w-3xl drop-shadow-md">
         Science-backed, story-driven talks that spark resilience,
         growth, and lasting change.
       </p>
