@@ -171,7 +171,7 @@ export default function SpeakingPage() {
   <div className="lg:col-span-7 ml-auto flex flex-col gap-6 max-w-[640px]">
   <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-6">
     <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-      “...speaks with expertise, inspiration, and authencity!”
+      "...speaks with expertise, inspiration, and authencity!”
     </blockquote>
     <figcaption className="mt-4 text-sm uppercase tracking-wide opacity-80">
       — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
