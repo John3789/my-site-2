@@ -55,7 +55,7 @@ export default function AboutPage() {
             After achieving remission, he expanded his self-improvement process by exploring 
             personal growth practices — including meditation, Feng Shui, and manifestation — 
             learning from some of the most well-known experts in the field. Through his journey, 
-            he rose into his highest self and discovered his deeper purpose.
+            he rose into his highest self and uncovered his deeper purpose.
           </p>
 
           {/* Mission */}
