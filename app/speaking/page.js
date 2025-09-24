@@ -171,7 +171,7 @@ export default function SpeakingPage() {
   <div className="lg:col-span-7 ml-auto flex flex-col gap-6 max-w-[640px]">
   <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-6">
     <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-      "...speaks with expertise, inspiration, and authencity!”
+      <p>&ldquo;...speaks with expertise, inspiration, and authencity!&rdquo;</p>
     </blockquote>
     <figcaption className="mt-4 text-sm uppercase tracking-wide opacity-80">
       — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
@@ -180,7 +180,7 @@ export default function SpeakingPage() {
 
   <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-10">
     <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-      “...communicates with clarity and confidence...leaves a lasting impression.”
+      <p>&ldquo...communicates with clarity and confidence...leaves a lasting impression.&rdquo;</p>
     </blockquote>
     <figcaption className="mt-4 text-sm uppercase tracking-wide opacity-80">
       — <span className="text-[var(--color-gold)]">Audience member</span>, Society for Prevention Research Annual Meeting
@@ -189,7 +189,7 @@ export default function SpeakingPage() {
 
   <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-6">
     <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-      “...an exceptional speaker...engaging, well-spoken, and clearly passionate about his work.”
+      <p>&ldquo...an exceptional speaker...engaging, well-spoken, and clearly passionate about his work.&rdquo;</p>
     </blockquote>
     <figcaption className="mt-4 text-sm uppercase tracking-wide opacity-80">
       — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting & Expo
@@ -207,7 +207,7 @@ export default function SpeakingPage() {
 <div className="lg:col-span-7 ml-0 flex flex-col gap-6 max-w-[640px]">
   <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-6">
     <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-      "...has a way of blending data with human stories that makes science resonate...”
+      <p>&ldquo;...has a way of blending data with human stories that makes science resonate...&rdquo;</p>
     </blockquote>
     <figcaption className="mt-4 text-sm uppercase tracking-wide opacity-80">
       — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
@@ -216,7 +216,7 @@ export default function SpeakingPage() {
 
   <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-10">
     <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-      “...confident, polished, and deeply engaging...”
+      <p>&ldquo;...confident, polished, and deeply engaging...&rdquo;</p>
     </blockquote>
     <figcaption className="mt-4 text-sm uppercase tracking-wide opacity-80">
       — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting & Expo
@@ -225,7 +225,7 @@ export default function SpeakingPage() {
 
   <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-10">
     <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-      “...speaks with a full heart...”
+      <p>&ldquo;...speaks with a full heart...&rdquo;</p>
     </blockquote>
     <figcaption className="mt-4 text-sm uppercase tracking-wide opacity-80">
       — <span className="text-[var(--color-gold)]">Audience member</span>, Society of Behavioral Medicine Annual Meeting
@@ -340,7 +340,7 @@ export default function SpeakingPage() {
 <div className="lg:col-span-7 ml-0 flex flex-col gap-6 max-w-[640px]">
   <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-6">
     <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-      "...very engaging...excellent”
+      <p>&ldquo;...very engaging...excellent&rdquo;</p>
     </blockquote>
     <figcaption className="mt-4 text-sm uppercase tracking-wide opacity-80">
       — <span className="text-[var(--color-gold)]">Audience member</span>, Lehigh University
@@ -349,7 +349,7 @@ export default function SpeakingPage() {
 
   <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-10">
     <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-      “...confident, polished, and deeply engaging...”
+      <p>&ldquo;...confident, polished, and deeply engaging...&rdquo;</p>
     </blockquote>
     <figcaption className="mt-4 text-sm uppercase tracking-wide opacity-80">
       — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting & Expo
@@ -358,7 +358,7 @@ export default function SpeakingPage() {
 
   <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-10">
     <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-      “...speaks with a full heart...”
+      <p>&ldquo;...speaks with a full heart...&rdquo;</p>
     </blockquote>
     <figcaption className="mt-4 text-sm uppercase tracking-wide opacity-80">
       — <span className="text-[var(--color-gold)]">Audience member</span>, Society of Behavioral Medicine Annual Meeting
