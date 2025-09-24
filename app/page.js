@@ -138,7 +138,7 @@ export default function Home() {
             <hr className="border-t opacity-70 border-cream mb-8 w-full"/>
             <h2 className="font-serif text-3xl opacity-90 mb-3">Short Meditations with Dr. Salerno</h2>
             <p className="max-w-md opacity-90">
-              Free guided meditations to reset your body, mind, and spirit. Back to center. Forward to growth. Level-up your life.  
+              Free guided meditations to reset your body, mind, and spirit.
             </p>
             
             <Link href="/meditations"
@@ -156,7 +156,7 @@ export default function Home() {
     <div className="mx-auto max-w-[1200px] px-6 py-20">
       <hr className="border-t opacity-70 border-cream mb-8 w-full"/>
       <h2 className="font-serif text-3xl opacity-90 mb-3">Resources for Self-Elevation</h2>
-      <p className="max-w-md opacity-90">Science-backed tools to strengthen your mind and empower your life. Grow with intention. Learn without limits.</p>
+      <p className="max-w-md opacity-90">Science-backed tools to strengthen your mind and empower your life.</p>
       <Link href="/resources" className="mt-6 inline-block underline underline-offset-4 hover:opacity-80 transition">
         Explore →
       </Link>
