@@ -169,18 +169,18 @@ export default function SpeakingPage() {
 
 {/* Quotes (stacked to match previous image column) */}
   <div className="lg:col-span-7 ml-auto flex flex-col gap-6 max-w-[640px]">
-  <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-6">
+   <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-6">
     <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-      <p>&ldquo;...speaks with expertise, inspiration, and authencity!&rdquo;</p>
+      <p>&ldquo;...an exceptional speaker...engaging, well-spoken, and clearly passionate about his work.&rdquo;</p>
     </blockquote>
     <figcaption className="mt-4 text-sm uppercase tracking-wide opacity-80">
-      — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
+      — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting &amp; Expo
     </figcaption>
   </figure>
 
   <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-10">
     <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-      <p>&ldquol;...communicates with clarity and confidence...leaves a lasting impression.&rdquo;</p>
+      <p>&ldquo;...communicates with clarity and confidence...leaves a lasting impression.&rdquo;</p>
     </blockquote>
     <figcaption className="mt-4 text-sm uppercase tracking-wide opacity-80">
       — <span className="text-[var(--color-gold)]">Audience member</span>, Society for Prevention Research Annual Meeting
@@ -189,10 +189,10 @@ export default function SpeakingPage() {
 
   <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-6">
     <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-      <p>&ldquo;...an exceptional speaker...engaging, well-spoken, and clearly passionate about his work.&rdquo;</p>
+      <p>&ldquo;...has a way of blending data with human stories that makes science resonate...&rdquo;</p>
     </blockquote>
     <figcaption className="mt-4 text-sm uppercase tracking-wide opacity-80">
-      — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting and Expo
+      — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
     </figcaption>
   </figure>
 
@@ -205,9 +205,9 @@ export default function SpeakingPage() {
 <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 {/* Quotes (stacked to match previous image column) */}
 <div className="lg:col-span-7 ml-0 flex flex-col gap-6 max-w-[640px]">
-  <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-6">
+    <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-6">
     <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-      <p>&ldquo;...has a way of blending data with human stories that makes science resonate...&rdquo;</p>
+      <p>&ldquo;...speaks with expertise, inspiration, and authencity!&rdquo;</p>
     </blockquote>
     <figcaption className="mt-4 text-sm uppercase tracking-wide opacity-80">
       — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
@@ -219,7 +219,7 @@ export default function SpeakingPage() {
       <p>&ldquo;...confident, polished, and deeply engaging...&rdquo;</p>
     </blockquote>
     <figcaption className="mt-4 text-sm uppercase tracking-wide opacity-80">
-      — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting and Expo
+      — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting &amp; Expo
     </figcaption>
   </figure>
 
@@ -352,7 +352,7 @@ export default function SpeakingPage() {
       <p>&ldquo;...confident, polished, and deeply engaging...&rdquo;</p>
     </blockquote>
     <figcaption className="mt-4 text-sm uppercase tracking-wide opacity-80">
-      — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting and Expo
+      — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting &amp; Expo
     </figcaption>
   </figure>
 
