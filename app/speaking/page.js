@@ -35,7 +35,7 @@ export default function SpeakingPage() {
       <section className="relative w-full py-16">
         <div className="mx-auto max-w-[900px] px-6 text-center space-y-8">
           <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-wide">
-            "Engaging. Inspiring. Transformational." 
+            &ldquo;Engaging. Inspiring. Transformational.&rdquo;
           </h2>
 
           <div className="space-y-6 opacity-90 text-lg md:text-xl leading-loose">
@@ -180,7 +180,7 @@ export default function SpeakingPage() {
 
   <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-10">
     <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-      <p>&ldquo...communicates with clarity and confidence...leaves a lasting impression.&rdquo;</p>
+      <p>&ldquol;...communicates with clarity and confidence...leaves a lasting impression.&rdquo;</p>
     </blockquote>
     <figcaption className="mt-4 text-sm uppercase tracking-wide opacity-80">
       — <span className="text-[var(--color-gold)]">Audience member</span>, Society for Prevention Research Annual Meeting
@@ -189,7 +189,7 @@ export default function SpeakingPage() {
 
   <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-6">
     <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-      <p>&ldquo...an exceptional speaker...engaging, well-spoken, and clearly passionate about his work.&rdquo;</p>
+      <p>&ldquo;...an exceptional speaker...engaging, well-spoken, and clearly passionate about his work.&rdquo;</p>
     </blockquote>
     <figcaption className="mt-4 text-sm uppercase tracking-wide opacity-80">
       — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting and Expo
