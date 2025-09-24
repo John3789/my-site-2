@@ -18,9 +18,9 @@ export default function AboutPage() {
   working in top academic institutions, including Columbia University,
   George Washington University, University of Maryland, and University
   of Miami. He is committed to sharing his lived experience, wisdom, and
-  expertise to empower people to overcome struggles, unlock hidden
-  potential, and live lives filled with love, happiness, fulfillment, and
-  purpose — free from mental health hardships.
+  expertise to empower people to overcome mental health struggles, unlock hidden
+  potential, and live in abundance of love, happiness, fulfillment, and
+  purpose.
 </p>
 
 
@@ -52,13 +52,11 @@ export default function AboutPage() {
           {/* Paragraph 3 */}
           <p className="space-y-6 text-lg opacity-90 leading-loose">
             Dr. Salerno’s commitment is personal as well as professional. After 
-            hitting his own rock bottom in mental health, he spent years in therapy 
-            with psychologists and psychiatrists. After reaching a plateau in his 
-            healing process, he began exploring additional practices to complement 
-            traditional care — including meditation, Feng Shui, and manifestation 
-            — learning from some of the most well-known experts in the field. Through 
-            his journey, he achieved full remission from his mental health struggles 
-            and uncovered his deeper purpose.
+            hitting his own rock bottom, he spent years in therapy working on his recovery. 
+            After reaching a plateau in his healing process, he began exploring additional 
+            practices to complement traditional care — including meditation, Feng Shui, and 
+            manifestation — learning from some of the most well-known experts in the field. 
+            Through his journey, he discovered his highest self and deeper purpose.
           </p>
 
           {/* Mission */}
@@ -67,8 +65,8 @@ export default function AboutPage() {
             <h2 className="font-serif text-4xl mb-4 text-center">Mission</h2>
             <p className="space-y-6 text-lg opacity-90 leading-loose">
               To blend science and personal growth wisdom to help individuals and
-              communities unlock their hidden potential and live full lives with
-              higher purpose, free from mental health struggles.
+              communities rise above mental health struggle, unlock hidden potential,
+              and live abundant lives with higher purpose. 
             </p>
           </section>
 
