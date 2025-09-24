@@ -74,14 +74,14 @@ export default function AboutPage() {
             <hr className="border-t opacity-70 border-cream mb-8 w-full"/>
             <h2 className="font-serif text-4xl mb-4 text-center">Projects in the Now</h2>
             <p className="space-y-6 text-lg opacity-90 leading-loose">
-              Today, Dr. Salerno continues conducting research with the goal of
-              making scientific discoveries relevant for improving mental health. He
-              is also pursuing his personal growth journey and is currently working
-              on a forthcoming book that weaves science and personal growth wisdom to
-              guide others toward balance, purpose, fulfillment, and mental wellness.
-              On this site, you can explore his offerings, including consulting,
-              public speaking, guided meditations, and resources for personal growth
-              and mental health.
+              Today, Dr. Salerno continues conducting research with the goal of making scientific 
+              discoveries relevant for improving mental health. He also teaches at the university 
+              level, where he inspires the next generation of scholars and practitioners. Alongside 
+              his academic work, he is pursuing his personal growth journey and is currently working 
+              on a forthcoming book that weaves science and personal growth wisdom to guide others 
+              toward balance, purpose, fulfillment, and mental wellness. On this site, you can 
+              explore his offerings, including publications, consulting, public speaking, guided 
+              meditations, and resources for personal growth and mental health.
             </p>
           </section>
 
