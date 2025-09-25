@@ -91,7 +91,7 @@ export default function Home() {
 >
   <div className="mx-auto max-w-[1200px] px-6 py-28">
     {/* TOP BORDER (keep) */}
-    <hr className="border-t opacity-70 border-cream mb-12 w-full" />
+    <hr className="border-t opacity-70 border-cream mb-27 w-full" />
 
     {/* Two-column layout */}
     <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-12">
@@ -114,8 +114,8 @@ export default function Home() {
         </Link>
       </div>
 
-<div className="lg:col-span-6 flex justify-center lg:justify-end mt-12">
-  <div className="relative w-full max-w-[520px] aspect-[3/2] rounded-md shadow-2xl overflow-hidden">
+<div className="lg:col-span-6 flex justify-center lg:justify-end">
+  <div className="relative w-full max-w-[520px] aspect-[3/2] square-md shadow-2xl overflow-hidden">
     <Image
       src="/plant1.jpg"   // make sure this is in /public/
       alt="Consulting collaboration"
