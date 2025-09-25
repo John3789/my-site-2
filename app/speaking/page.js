@@ -171,7 +171,7 @@ export default function SpeakingPage() {
   <div className="lg:col-span-7 ml-auto flex flex-col gap-6 max-w-[640px]">
    <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-6">
     <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-      <p>&ldquo;...an exceptional speaker...engaging, well-spoken, and clearly passionate about his work.&rdquo;</p>
+      <p>&ldquo;...an exceptional speaker...he is engaging, well-spoken, and clearly passionate about his work.&rdquo;</p>
     </blockquote>
     <figcaption className="mt-4 text-sm uppercase tracking-wide opacity-80">
       — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting &amp; Expo
@@ -358,7 +358,7 @@ export default function SpeakingPage() {
 
   <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-10">
     <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-      <p>&ldquo;...speaks with a full heart...&rdquo;</p>
+      <p>&ldquo;can communicate with a diverse audience...speaks with a full heart...&rdquo;</p>
     </blockquote>
     <figcaption className="mt-4 text-sm uppercase tracking-wide opacity-80">
       — <span className="text-[var(--color-gold)]">Audience member</span>, Society of Behavioral Medicine Annual Meeting
