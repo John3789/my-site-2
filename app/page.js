@@ -64,7 +64,7 @@ export default function Home() {
       <main>
 
 {/* Mission Quote Section */}
-<section className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] flex items-center justify-center min-h-[60vh] px-6">
+<section className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] flex items-center justify-center min-h-[75vh] px-6">
   <div className="max-w-4xl text-center mt-15">
     {/* Small heading */}
     <h3 className="uppercase tracking-wide text-sm mb-6 opacity-80">Mission</h3>
@@ -91,20 +91,19 @@ export default function Home() {
 >
   <div className="mx-auto max-w-[1200px] px-6 py-28">
     {/* TOP BORDER (keep) */}
-    <hr className="border-t opacity-70 border-cream mb-27 w-full" />
+    <hr className="border-t opacity-70 border-cream mb-40 w-full" />
 
     {/* Two-column layout */}
     <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-12">
       {/* Left: text */}
       <div className="lg:col-span-6 text-center lg:text-left mx-auto">
-        <h2 className="font-serif text-3xl opacity-90 mb-3">
+        <h2 className="font-serif text-4xl opacity-90 mb-3 mt-15">
           Purposeful Consulting Solutions
         </h2>
-        <p className="opacity-90 mb-6 max-w-md lg:max-w-lg">
-          Through science-backed consulting—grounded in evidence-based
-          interventions, applied research, and program evaluation—Dr. Salerno
-          helps organizations strengthen mental health, build resilience, and
-          scale what works.
+        <p className="text-lg opacity-90 mb-6 max-w-md lg:max-w-lg">
+          Through science-backed consulting—grounded in evidence-based interventions, 
+          applied research, and program evaluation—Dr. Salerno helps organizations 
+          strengthen mental health, build resilience, foster growth, and scale what works.
         </p>
         <Link
           href="/consulting"
@@ -114,7 +113,7 @@ export default function Home() {
         </Link>
       </div>
 
-<div className="lg:col-span-6 flex justify-center lg:justify-end">
+<div className="lg:col-span-6 flex justify-center lg:justify-end mt-15">
   <div className="relative w-full max-w-[520px] aspect-[3/2] square-md shadow-2xl overflow-hidden">
     <Image
       src="/plant1.jpg"   // make sure this is in /public/
@@ -132,15 +131,15 @@ export default function Home() {
 </section>
 
 {/* Speaking */}
-<section className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] min-h-[60vh] px-6 flex flex-col">
+<section className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] min-h-[75vh] px-6 flex flex-col">
   {/* Top bar (same width as other sections; no extra vertical padding) */}
-  <div className="mx-auto max-w-[1200px] w-full px-6">
-    <hr className="border-t opacity-70 border-cream mb-8 w-full" />
+  <div className="mx-auto max-w-[1200px] w-full px-6 mt-27">
+    <hr className="border-t opacity-70 border-cream mb-30 w-full" />
   </div>
 
   {/* Content centered like Mission */}
   <div className="flex-grow flex items-center justify-center">
-    <div className="mx-auto max-w-4xl text-center">
+    <div className="mx-auto max-w-4xl text-center mt-15">
       <h3 className="uppercase tracking-wide text-sm mb-6 opacity-80">
         Speaking that Transforms
       </h3>
@@ -153,7 +152,7 @@ export default function Home() {
 
       <Link
         href="/speaking"
-        className="mt-8 inline-block underline underline-offset-4 hover:opacity-80 transition"
+                  className="inline-block underline underline-offset-4 hover:opacity-80 transition mt-6"
       >
         Book Dr. Salerno to speak →
       </Link>
@@ -161,39 +160,103 @@ export default function Home() {
   </div>
 </section>
 
-        {/* Meditations */}
-        <section
-          id="meditations"
-          className="w-full min-h-[60vh] snap-start bg-[var(--color-teal-850)] text-[var(--color-cream)]"
-        >
-          <div className="mx-auto max-w-[1200px] px-6 py-20">
-            <hr className="border-t opacity-70 border-cream mb-8 w-full"/>
-            <h2 className="font-serif text-3xl opacity-90 mb-3">Short Meditations with Dr. Salerno</h2>
-            <p className="max-w-md opacity-90">
-              Free guided meditations to reset your body, mind, and spirit.
-            </p>
-            
-            <Link href="/meditations"
-              className="mt-6 inline-block underline underline-offset-4 hover:opacity-80 transition">
-                Learn more →
-              </Link>
-          </div>
-        </section>
+{/* Meditations */}
+<section
+  id="meditations"
+  className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]"
+>
+    <div className="mx-auto max-w-[1200px] px-6 py-45">
+    {/* TOP BORDER (keep) */}
+    <hr className="border-t opacity-70 border-cream mb-30 w-full" />
 
-    {/* Resources */}
-  <section
-    id="resources"
-    className="w-full min-h-[60vh] bg-[var(--color-teal-850)] text-[var(--color-cream)]"
-  >
-    <div className="mx-auto max-w-[1200px] px-6 py-20">
-      <hr className="border-t opacity-70 border-cream mb-8 w-full"/>
-      <h2 className="font-serif text-3xl opacity-90 mb-3">Resources for Self-Elevation</h2>
-      <p className="max-w-md opacity-90">Science-backed tools to strengthen your mind and empower your life.</p>
-      <Link href="/resources" className="mt-6 inline-block underline underline-offset-4 hover:opacity-80 transition">
-        Explore →
-      </Link>
+    {/* Two-column layout */}
+    <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-12">
+      {/* Left: image with dim overlay */}
+<div className="lg:col-span-6 flex justify-center lg:justify-end mt-25 mb-11">
+  <div className="relative w-full max-w-[600px] square-md shadow-2xl overflow-hidden">
+          <Image
+            src="/beach1.jpg"   // ensure this exists in /public
+            alt="Meditation practice"
+            width={1200}
+            height={800}
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/0" />
+        </div>
+      </div>
+
+      {/* Right: text */}
+      <div className="lg:col-span-6 text-center lg:text-left mx-auto">
+        <h2 className="font-serif text-4xl opacity-90 mb-3 mt-15">
+          Short Meditations with Dr. Salerno
+     </h2>
+<p className="text-lg opacity-90 mb-6 max-w-md lg:max-w-lg">
+Free guided meditations designed by Dr. Salerno for all levels to 
+gently reset your body, calm your mind, and nourish your spirit. 
+Journey inward to awaken your true potential, deepen your sense of 
+peace, and create space for healing and growth.      </p>
+        <Link
+          href="/meditations"
+className="inline-block underline underline-offset-4 hover:opacity-80 transition"
+        >
+          Learn more →
+        </Link>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
+
+{/* Resources */}
+<section
+  id="consulting"
+  className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] min-h-[75vh]"
+>
+  <div className="mx-auto max-w-[1200px] px-6">
+    {/* TOP BORDER (keep) */}
+    <hr className="border-t opacity-70 border-cream mb-23 w-full" />
+
+    {/* Two-column layout */}
+    <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-12">
+      {/* Left: text */}
+      <div className="lg:col-span-6 text-center lg:text-left">
+        <h2 className="font-serif text-4xl opacity-90 mb-3 mt-30">
+          Resources for Self-Elevation
+        </h2>
+        <p className="text-lg opacity-90 mb-6 max-w-md lg:max-w-lg">
+          Science-backed tools designed or approved by Dr. Salerno to 
+          strengthen your mind and empower your life. Explore practices 
+          and insights that amplify your potential and guide you 
+          toward a more purposeful and abundant way of living.
+        </p>
+        <Link
+          href="/resources"
+          className="inline-block underline underline-offset-4 hover:opacity-80 transition"
+        >
+          Explore →
+        </Link>
+      </div>
+
+      {/* Right: image */}
+      <div className="lg:col-span-6 flex justify-center lg:justify-center mt-30">
+        <div className="relative w-[105%] max-w-[720px] aspect-[16/9] shadow-2xl overflow-hidden -ml-8">
+          <Image
+            src="/tree1.jpg"
+            alt="Resources illustration"
+            fill
+            className="object-cover"
+            priority={false}
+          />
+          {/* Dimming overlay */}
+          <div className="absolute inset-0 bg-black/30" />
+        </div>
+      </div>
+    </div>
+
+    {/* BOTTOM BORDER (new) */}
+    <hr className="border-t opacity-70 border-cream mt-55 w-full" />
+  </div>
+</section>
+
 
 </main>
 
