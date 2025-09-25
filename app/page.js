@@ -199,7 +199,7 @@ peace, and create space for healing and growth.      </p>
           href="/meditations"
 className="inline-block underline underline-offset-4 hover:opacity-80 transition"
         >
-          Learn more →
+          Discover →
         </Link>
       </div>
     </div>
@@ -232,7 +232,7 @@ className="inline-block underline underline-offset-4 hover:opacity-80 transition
           href="/resources"
           className="inline-block underline underline-offset-4 hover:opacity-80 transition"
         >
-          Explore →
+          Learn more →
         </Link>
       </div>
 
