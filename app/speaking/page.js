@@ -169,7 +169,7 @@ export default function SpeakingPage() {
 
 {/* Quotes (stacked to match previous image column) */}
   <div className="lg:col-span-7 ml-auto flex flex-col gap-6 max-w-[640px]">
-   <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-6">
+   <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-10">
     <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
       <p>&ldquo;Juan is an exceptional speaker: he is engaging, well-spoken, and passionate about his work.&rdquo;</p>
     </blockquote>
@@ -187,7 +187,7 @@ export default function SpeakingPage() {
     </figcaption>
   </figure>
 
-  <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-6">
+  <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-10">
     <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
       <p>&ldquo;Dr. Salerno has a way of blending data with human stories that makes the science resonate.&rdquo;</p>
     </blockquote>
@@ -204,8 +204,8 @@ export default function SpeakingPage() {
 <hr className="border-t opacity-70 border-cream mb-8 w-full"/>
 <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 {/* Quotes (stacked to match previous image column) */}
-<div className="lg:col-span-7 ml-0 flex flex-col gap-6 max-w-[640px]">
-    <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-6">
+<div className="lg:col-span-7 ml-auto flex flex-col gap-6 max-w-[640px]">
+    <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-10">
     <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
       <p>&ldquo;...speaks with expertise, inspiration, and authencity!&rdquo;</p>
     </blockquote>
@@ -337,8 +337,8 @@ export default function SpeakingPage() {
           </div>
 
 {/* Quotes (stacked to match previous image column) */}
-<div className="lg:col-span-7 ml-0 flex flex-col gap-6 max-w-[640px]">
-  <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-6">
+<div className="lg:col-span-7 ml-auto flex flex-col gap-6 max-w-[640px]">
+  <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-10">
     <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
       <p>&ldquo;...very engaging and excellent presentation...&rdquo;</p>
     </blockquote>
