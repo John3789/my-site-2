@@ -349,10 +349,10 @@ export default function SpeakingPage() {
 
   <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-10">
     <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-      <p>&ldquo;His delivery is confident, polished, and deeply engaging.&rdquo;</p>
+      <p>&ldquo;Dr. Salerno is an expert in mental health equity and a highly engaging speaker...&rdquo;</p>
     </blockquote>
     <figcaption className="mt-4 text-sm uppercase tracking-wide opacity-80">
-      — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting &amp; Expo
+      — <span className="text-[var(--color-gold)]">Audience member</span>, University of California, Los Angeles
     </figcaption>
   </figure>
 
