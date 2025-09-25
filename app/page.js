@@ -84,20 +84,52 @@ export default function Home() {
   </div>
 </section>
 
-   {/* Consulting */}
-  <section
-    id="consulting"
-    className="w-full min-h-[60vh] bg-[var(--color-teal-850)] text-[var(--color-cream)]"
-  >
-    <div className="mx-auto max-w-[1200px] px-6 py-20">
-      <hr className="border-t opacity-70 border-cream mb-8 w-full"/>
-      <h2 className="font-serif text-3xl opacity-90 mb-3">Purposeful Consulting Solutions </h2>
-      <p className="max-w-md opacity-90">Through science-backed consulting—grounded in evidence-based interventions, applied research, and program evaluation—Dr. Salerno helps organizations strengthen mental health, build resilience, and scale what works. </p>
-     <Link href="/consulting" className="mt-6 inline-block underline underline-offset-4 hover:opacity-80 transition">
-        Book Dr. Salerno for consulting →
-      </Link>
+{/* Consulting */}
+<section
+  id="consulting"
+  className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]"
+>
+  <div className="mx-auto max-w-[1200px] px-6 py-28">
+    {/* TOP BORDER (keep) */}
+    <hr className="border-t opacity-70 border-cream mb-12 w-full" />
+
+    {/* Two-column layout */}
+    <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-12">
+      {/* Left: text */}
+      <div className="lg:col-span-6 text-center lg:text-left mx-auto">
+        <h2 className="font-serif text-3xl opacity-90 mb-3">
+          Purposeful Consulting Solutions
+        </h2>
+        <p className="opacity-90 mb-6 max-w-md lg:max-w-lg">
+          Through science-backed consulting—grounded in evidence-based
+          interventions, applied research, and program evaluation—Dr. Salerno
+          helps organizations strengthen mental health, build resilience, and
+          scale what works.
+        </p>
+        <Link
+          href="/consulting"
+          className="inline-block underline underline-offset-4 hover:opacity-80 transition"
+        >
+          Book Dr. Salerno for consulting →
+        </Link>
+      </div>
+
+<div className="lg:col-span-6 flex justify-center lg:justify-end mt-12">
+  <div className="relative w-full max-w-[520px] aspect-[3/2] rounded-md shadow-2xl overflow-hidden">
+    <Image
+      src="/plant1.jpg"   // make sure this is in /public/
+      alt="Consulting collaboration"
+      fill
+      className="object-cover"
+      priority={false}
+    />
+       {/* Dark overlay */}
+    <div className="absolute inset-0 bg-black/5" />
+  </div>
+</div>
     </div>
-  </section>
+  </div>
+</section>
 
 {/* Speaking */}
 <section className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] min-h-[60vh] px-6 flex flex-col">
