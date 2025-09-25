@@ -65,7 +65,7 @@ export default function Home() {
 
 {/* Mission Quote Section */}
 <section className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] flex items-center justify-center min-h-[75vh] px-6">
-  <div className="max-w-4xl text-center mt-15">
+  <div className="max-w-4xl text-center mt-25">
     {/* Small heading */}
     <h3 className="uppercase tracking-wide text-sm mb-6 opacity-80">Mission</h3>
 
