@@ -202,9 +202,9 @@ export default function SpeakingPage() {
 
 {/* Dr. Salerno Offers */}
 <hr className="border-t opacity-70 border-cream mb-8 w-full"/>
-<section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<section className="grid grid-cols-1 lg:grid-cols-12 gap-y-6 lg:gap-x-0 items-center">
 {/* Quotes (stacked to match previous image column) */}
-<div className="lg:col-span-7 ml-auto flex flex-col gap-6 max-w-[640px]">
+ <div className="lg:col-span-7 flex flex-col gap-6 max-w-[640px] lg:pr-6">
     <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-10">
     <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
       <p>&ldquo;...speaks with expertise, inspiration, and authencity!&rdquo;</p>
@@ -234,7 +234,7 @@ export default function SpeakingPage() {
 </div>
 
   {/* Formats */}
-  <div className="lg:col-span-5 order-1 lg:order-2 lg:py-6 space-y-8">
+  <div className="lg:col-span-5 order-1 lg:order-2 lg:py-6 space-y-8 lg:pl-6">
     <h2 className="font-serif text-4xl mb-8">Dr. Salerno Offers</h2>
 
     <div>
