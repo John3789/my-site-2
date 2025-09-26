@@ -49,7 +49,7 @@ export default function BooksPage() {
         {/* Image on the right */}
         <div className="lg:col-span-5 flex justify-center mt-12">
           <img
-            src="speaking4b.jpg"  // replace with your actual image file in /public
+            src="award1.jpg"  // replace with your actual image file in /public
             alt="Book cover or related visual"
             className="w-full max-w-md object-cover shadow-2xl"
           />
