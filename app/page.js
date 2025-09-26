@@ -11,7 +11,7 @@ export default function Home() {
 
 {/* Nameplate bar (teal) */}
 <section id="home" className="bg-[var(--color-teal-800)] !text-[var(--color-cream)]">
-  <div className="mx-auto max-w-[1200px] px-6 pt-0 pb-4">
+  <div className="mx-auto max-w-[1400px] px-6 pt-0 pb-4">
     <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
 <span className="block text-7xl hover:opacity-90 transition">
   DR. JUAN PABLO SALERNO
@@ -38,7 +38,7 @@ export default function Home() {
 
         {/* CTA rail pinned at bottom of viewport */}
         <div className="absolute inset-x-0 bottom-6 z-20">
-          <div className="mx-auto max-w-[1200px] px-6">
+          <div className="mx-auto max-w-[1400px] px-6">
             <div className="flex items-center justify-center gap-100">
 
  <Link
@@ -89,7 +89,7 @@ export default function Home() {
   id="consulting"
   className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]"
 >
-  <div className="mx-auto max-w-[1200px] px-6 py-28">
+  <div className="mx-auto max-w-[1400px] px-6 py-28">
     {/* TOP BORDER (keep) */}
     <hr className="border-t opacity-70 border-cream mb-40 w-full" />
 
@@ -133,7 +133,7 @@ export default function Home() {
 {/* Speaking */}
 <section className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] min-h-[75vh] px-6 flex flex-col">
   {/* Top bar (same width as other sections; no extra vertical padding) */}
-  <div className="mx-auto max-w-[1200px] w-full px-6 mt-27">
+  <div className="mx-auto max-w-[1400px] w-full px-6 mt-27">
     <hr className="border-t opacity-70 border-cream mb-30 w-full" />
   </div>
 
@@ -165,7 +165,7 @@ export default function Home() {
   id="meditations"
   className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]"
 >
-    <div className="mx-auto max-w-[1200px] px-6 py-45">
+    <div className="mx-auto max-w-[1400px] px-6 py-45">
     {/* TOP BORDER (keep) */}
     <hr className="border-t opacity-70 border-cream mb-30 w-full" />
 
@@ -211,7 +211,7 @@ className="inline-block underline underline-offset-4 hover:opacity-80 transition
   id="consulting"
   className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] min-h-[75vh]"
 >
-  <div className="mx-auto max-w-[1200px] px-6">
+  <div className="mx-auto max-w-[1400px] px-6">
     {/* TOP BORDER (keep) */}
     <hr className="border-t opacity-70 border-cream mb-23 w-full" />
 
