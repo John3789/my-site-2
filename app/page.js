@@ -123,7 +123,7 @@ export default function Home() {
       priority={false}
     />
        {/* Dark overlay */}
-    <div className="absolute inset-0 bg-black/15" />
+    <div className="absolute inset-0 bg-black/25" />
   </div>
 </div>
     </div>
@@ -181,7 +181,7 @@ export default function Home() {
             className="object-cover"
             priority={false}
           />
-          <div className="absolute inset-0 bg-black/5" />
+          <div className="absolute inset-0 bg-black/10" />
         </div>
         </div>
 
