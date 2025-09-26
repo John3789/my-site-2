@@ -2,9 +2,9 @@
 export default function AboutPage() {
   return (
     <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
-      <div className="mx-auto max-w-[1200px] px-6 py-20">
+      <div className="mx-auto max-w-[1400px] px-6 py-20">
         {/* Page title */}
-        <h1 className="font-serif text-4xl mb-8 text-center">About Dr. Salerno</h1>
+        <h1 className="font-serif text-5xl mb-16 opacity-90 text-center">About Dr. Salerno</h1>
 
         {/* Row 1: first two paragraphs + photo side-by-side */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start mb-12">
@@ -41,13 +41,14 @@ export default function AboutPage() {
             <img
               src="/heroabout.jpg"
               alt="Dr. Juan Pablo Salerno"
-              className="w-full max-w-md h-full shadow-lg object-cover mt-10"
+              className="w-full max-w-md h-full shadow-lg object-cover mt-4"
             />
           </div>
         </div>
 
         {/* Row 2+: everything else centered below */}
-        <div className="max-w-3xl mx-auto space-y-12">
+        <div className="mx-auto max-w-[1000px] px-6 space-y-12">
+
           {/* Paragraph 3 */}
           <p className="space-y-6 text-lg opacity-90 leading-loose">
             Dr. Salerno’s commitment is both personal and professional. Having experienced 

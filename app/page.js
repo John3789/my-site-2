@@ -238,19 +238,20 @@ className="inline-block underline underline-offset-4 hover:opacity-80 transition
       </div>
 
       {/* Right: image */}
-      <div className="lg:col-span-6 flex justify-center lg:justify-center mt-30">
-        <div className="relative w-full max-w-[720px] aspect-[3/2] shadow-2xl overflow-hidden">
-          <Image
-            src="/tree1.jpg"
-            alt="Resources illustration"
-            fill
-            className="object-cover"
-            priority={false}
-          />
-          {/* Dimming overlay */}
-          <div className="absolute inset-0 bg-black/30" />
-        </div>
-      </div>
+<div className="lg:col-span-6 flex justify-center lg:justify-center mt-30">
+  <div className="relative w-full max-w-[720px] aspect-[3/2] shadow-2xl overflow-hidden bg-black/5">
+    <Image
+      src="/tree90.jpg"
+      alt="Resources illustration"
+      fill
+      className="object-contain"
+      priority
+    />
+    {/* Dimming overlay */}
+    <div className="absolute inset-0 bg-black/15 pointer-events-none" />
+  </div>
+</div>
+
     </div>
 
     {/* BOTTOM BORDER (new) */}
