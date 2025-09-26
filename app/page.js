@@ -248,7 +248,7 @@ className="inline-block underline underline-offset-4 hover:opacity-80 transition
       priority
     />
     {/* Dimming overlay */}
-    <div className="absolute inset-0 bg-black/30 pointer-events-none" />
+    <div className="absolute inset-0 bg-black/25 pointer-events-none" />
   </div>
 </div>
 
