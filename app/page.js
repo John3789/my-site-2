@@ -123,7 +123,7 @@ export default function Home() {
       priority={false}
     />
        {/* Dark overlay */}
-    <div className="absolute inset-0 bg-black/25" />
+    <div className="absolute inset-0 bg-black/20" />
   </div>
 </div>
     </div>
@@ -188,7 +188,7 @@ export default function Home() {
 
       {/* Right: text */}
       <div className="lg:col-span-6 text-center lg:text-left mx-auto">
-        <h2 className="font-serif text-4xl opacity-90 mb-3 mt-15">
+        <h2 className="font-serif text-4xl opacity-90 mb-3 mt-10">
           Short Meditations with Dr. Salerno
      </h2>
 <p className="text-lg opacity-90 mb-6 max-w-md lg:max-w-lg">
@@ -239,7 +239,7 @@ className="inline-block underline underline-offset-4 hover:opacity-80 transition
 
       {/* Right: image */}
 <div className="lg:col-span-6 flex justify-center lg:justify-center mt-30">
-  <div className="relative w-full max-w-[720px] aspect-[3/2] shadow-2xl overflow-hidden bg-black/5">
+  <div className="relative w-full max-w-[720px] aspect-[3/2] shadow-2xl overflow-hidden">
     <Image
       src="/tree90.jpg"
       alt="Resources illustration"
@@ -248,7 +248,7 @@ className="inline-block underline underline-offset-4 hover:opacity-80 transition
       priority
     />
     {/* Dimming overlay */}
-    <div className="absolute inset-0 bg-black/25 pointer-events-none" />
+    <div className="absolute inset-0 bg-black/20 pointer-events-none" />
   </div>
 </div>
 
