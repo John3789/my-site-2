@@ -3,7 +3,7 @@ export default function BooksPage() {
     <main
       className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]"
     >
-      <div className="mx-auto max-w-[1200px] px-6 py-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div className="mx-auto max-w-[1400px] px-6 py-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         
         {/* Content on the left */}
         <div className="lg:col-span-7">

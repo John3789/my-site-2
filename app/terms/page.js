@@ -1,19 +1,95 @@
 export default function TermsPage() {
   return (
     <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] opacity-90 px-6 py-20">
-      <h1 className="font-serif text-4xl opacity-90 mb-6">Terms of Use</h1>
+      <h1 className="font-serif text-4xl opacity-90 mb-10">Terms of Use</h1>
 
-      <p className="mb-4">
-        All content on this website, including text, audio, video, and images, is the property of 
-        Dr. Juan Pablo Salerno<span className="align-super text-xs">™</span>. Content is provided for 
-        personal, non-commercial use only. Reproduction, distribution, resale, or training of 
-        machine learning models using this content is strictly prohibited without prior written consent.
-      </p>
+      {/* 1. Ownership & Rights */}
+      <section className="mb-10">
+        <h2 className="font-serif text-2xl mb-3">1. Ownership &amp; Rights</h2>
+        <p className="mb-3">
+          All content on this website—including text, audio, video, images, meditations,
+          courses, and coaching materials—is the property of Dr. Juan Pablo Salerno
+          <sup className="text-xs">™</sup>.
+        </p>
+        <p className="mb-3">
+          Content is provided for personal, non-commercial use only.
+        </p>
+        <p className="mb-3">
+          Purchasing or accessing content does not transfer copyright or grant any license beyond personal use.
+        </p>
+        <p className="mb-3">
+          Reproduction, distribution, resale, adaptation, public performance, or use in training
+          machine learning models is strictly prohibited without prior written consent.
+        </p>
+      </section>
 
-      <p className="mb-4">
-        “Dr. Juan Pablo Salerno<span className="align-super text-xs">™</span>” is a trademark used 
-        exclusively for educational, consulting, and speaking services.
-      </p>
+      {/* 2. Meditations */}
+      <section className="mb-10">
+        <h2 className="font-serif text-2xl mb-3">2. Meditations</h2>
+        <p className="mb-3">
+          <strong>Pre-recorded meditations:</strong> Licensed for personal use only. They may not be uploaded,
+          shared, or redistributed.
+        </p>
+        <p className="mb-3">
+          <strong>Custom meditations:</strong> Unless otherwise agreed in writing, all custom meditations are
+          non-exclusive. This means Dr. Salerno may adapt, resell, or redistribute them. 
+        </p>
+      </section>
+
+      {/* 3. Courses & Coaching */}
+      <section className="mb-10">
+        <h2 className="font-serif text-2xl mb-3">3. Courses &amp; Coaching</h2>
+        <p className="mb-3">
+          <strong>Courses:</strong> Access is limited to the purchaser. Login credentials may not be shared.
+        </p>
+        <p className="mb-3">
+          <strong>Coaching sessions:</strong> Sessions must be scheduled in advance. Rescheduling requires at least
+          24 hours notice. Missed sessions without notice are non-refundable.
+        </p>
+      </section>
+
+      {/* 4. Refunds & Cancellations */}
+      <section className="mb-10">
+        <h2 className="font-serif text-2xl mb-3">4. Refunds &amp; Cancellations</h2>
+        <p className="mb-3">
+          Digital products (meditations, courses) are non-refundable once delivered or accessed.
+        </p>
+        <p className="mb-3">
+          <strong>Coaching:</strong> Refunds are not provided for completed sessions. Rescheduling policies apply as
+          outlined above.
+        </p>
+      </section>
+
+      {/* 5. Disclaimers */}
+      <section className="mb-10">
+        <h2 className="font-serif text-2xl mb-3">5. Disclaimers</h2>
+        <p className="mb-3">
+          Meditations, courses, and coaching are intended for educational and wellness purposes only. They are not a
+          substitute for medical or mental health treatment.
+        </p>
+        <p className="mb-3">
+          Users are responsible for their own well-being and should consult a qualified professional for medical,
+          psychological, or therapeutic concerns.
+        </p>
+      </section>
+
+      {/* 6. Trademarks */}
+      <section className="mb-10">
+        <h2 className="font-serif text-2xl mb-3">6. Trademarks</h2>
+        <p className="mb-3">
+          “Dr. Juan Pablo Salerno<sup className="text-xs">™</sup>” is a trademark used exclusively for educational,
+          consulting, and speaking services. Unauthorized use of the name or brand is prohibited.
+        </p>
+      </section>
+
+      {/* 7. Updates */}
+      <section>
+        <h2 className="font-serif text-2xl mb-3">7. Updates to Terms</h2>
+        <p>
+          These Terms of Use may be updated from time to time. Continued use of the site and services after changes
+          constitutes acceptance of the new terms.
+        </p>
+      </section>
     </main>
   );
 }
