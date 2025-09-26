@@ -114,7 +114,7 @@ export default function Home() {
       </div>
 
 <div className="lg:col-span-6 flex justify-center lg:justify-end mt-15">
-  <div className="relative w-full max-w-[520px] aspect-[3/2] square-md shadow-2xl overflow-hidden">
+  <div className="relative w-full max-w-[720px] aspect-[3/2] square-md shadow-2xl overflow-hidden">
     <Image
       src="/plant1.jpg"   // make sure this is in /public/
       alt="Consulting collaboration"
@@ -123,7 +123,7 @@ export default function Home() {
       priority={false}
     />
        {/* Dark overlay */}
-    <div className="absolute inset-0 bg-black/5" />
+    <div className="absolute inset-0 bg-black/15" />
   </div>
 </div>
     </div>
@@ -172,18 +172,19 @@ export default function Home() {
     {/* Two-column layout */}
     <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-12">
       {/* Left: image with dim overlay */}
-<div className="lg:col-span-6 flex justify-center lg:justify-end mt-25 mb-11">
-  <div className="relative w-full max-w-[600px] square-md shadow-2xl overflow-hidden">
+<div className="lg:col-span-6 flex justify-center lg:justify-center mt-25 mb-11">
+  <div className="relative w-full max-w-[720px] aspect-[3/2] square-md shadow-2xl overflow-hidden">
           <Image
             src="/beach1.jpg"   // ensure this exists in /public
             alt="Meditation practice"
-            width={1200}
-            height={800}
+            fill
             className="object-cover"
+            priority={false}
           />
-          <div className="absolute inset-0 bg-black/0" />
+          <div className="absolute inset-0 bg-black/5" />
         </div>
-      </div>
+        </div>
+
 
       {/* Right: text */}
       <div className="lg:col-span-6 text-center lg:text-left mx-auto">
@@ -208,7 +209,7 @@ className="inline-block underline underline-offset-4 hover:opacity-80 transition
 
 {/* Resources */}
 <section
-  id="consulting"
+  id="resources"
   className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] min-h-[75vh]"
 >
   <div className="mx-auto max-w-[1400px] px-6">
@@ -218,7 +219,7 @@ className="inline-block underline underline-offset-4 hover:opacity-80 transition
     {/* Two-column layout */}
     <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-12">
       {/* Left: text */}
-      <div className="lg:col-span-6 text-center lg:text-left">
+      <div className="lg:col-span-6 text-center lg:text-left mx-auto">
         <h2 className="font-serif text-4xl opacity-90 mb-3 mt-30">
           Resources for Self-Elevation
         </h2>
@@ -238,7 +239,7 @@ className="inline-block underline underline-offset-4 hover:opacity-80 transition
 
       {/* Right: image */}
       <div className="lg:col-span-6 flex justify-center lg:justify-center mt-30">
-        <div className="relative w-[105%] max-w-[720px] aspect-[16/9] shadow-2xl overflow-hidden -ml-8">
+        <div className="relative w-full max-w-[720px] aspect-[3/2] shadow-2xl overflow-hidden">
           <Image
             src="/tree1.jpg"
             alt="Resources illustration"
