@@ -33,8 +33,8 @@ export default function SpeakingPage() {
 
       {/* ===== Intro Blurb ===== */}
       <section className="relative w-full py-16">
-        <div className="mx-auto max-w-[900px] px-6 text-center space-y-8">
-          <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-wide">
+        <div className="mx-auto max-w-[900px] px-6 text-left space-y-8">
+          <h2 className="font-serif text-3xl md:text-4xl text-center font-semibold tracking-wide">
             &ldquo;Engaging. Inspiring. Transformational.&rdquo;
           </h2>
 
