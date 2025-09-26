@@ -33,14 +33,17 @@ export default function MeditationsPage() {
           </a>
         </div>
 
-        {/* Right column: image */}
-        <div className="lg:col-span-5">
-          <img
-            src="/hero20.jpg" // replace with your image path
-            alt="Meditation practice"
-            className="w-full h-auto object-cover shadow-2xl relative top-10"
-          />
-        </div>
+{/* Right column: image with overlay */}
+<div className="lg:col-span-5 relative shadow-2xl top-10">
+  <img
+    src="/hero20.jpg" // replace with your image path
+    alt="Meditation practice"
+    className="w-full h-auto object-cover"
+  />
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/5" />
+</div>
+
 
       </div>
     </main>

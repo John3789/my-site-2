@@ -33,12 +33,12 @@ export default function SpeakingPage() {
 
       {/* ===== Intro Blurb ===== */}
       <section className="relative w-full py-16">
-        <div className="mx-auto max-w-[1200px] px-6 text-left space-y-8">
+        <div className="mx-auto max-w-[1100px] px-6 text-left space-y-8">
           <h2 className="font-serif text-3xl md:text-4xl opacity-90 text-center font-semibold tracking-wide">
             &ldquo;Engaging. Inspiring. Transformational.&rdquo;
           </h2>
 
-          <div className="space-y-6 opacity-85 text-xl md:text-2xl leading-loose">
+          <div className="space-y-6 opacity-85 text-lg md:text-xl leading-loose">
             <p>
               Dr. Juan Pablo Salerno is a respected mental health scientist,
               personal growth expert, and engaging speaker whose work bridges
