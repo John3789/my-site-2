@@ -188,7 +188,7 @@ export default function BooksPage() {
 
     {/* CARD 3 */}
     <article className="w-full bg-white/5 rounded-xl shadow-2xl p-8 lg:p-10 relative">
-      <div className="absolute left-0 top-1 h-66 w-[3px] bg-[var(--color-gold)]/60 rounded-l-xl" />
+      <div className="absolute left-0 top-1 h-78 w-[3px] bg-[var(--color-gold)]/60 rounded-l-xl" />
       <div className="flex flex-col lg:flex-row gap-10 lg:gap-12">
         <div className="lg:w-1/3">
           <p className="text-sm uppercase tracking-wide text-[var(--color-gold)]">Theme</p>
