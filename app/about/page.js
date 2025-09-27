@@ -13,14 +13,13 @@ export default function AboutPage() {
 
 <p className="space-y-6 text-lg mb-4 opacity-90 leading loose">
 
- Dr. Juan Pablo Salerno, also known in academic spaces as  
- <strong>Dr. John P. Salerno</strong>, is a mental health scientist, 
+ Dr. Juan Pablo Salerno, also known in academic spaces as <strong>Dr. John P. Salerno</strong>, is a mental health scientist, 
  personal growth expert, and 30x scientific peer-reviewed author, cited 
- nearly 2000x in the last decade. He has over 14 years of experience working in top academic 
+ nearly 2000x in the last decade (2016 - present). He has over 14 years of experience working in top academic 
  institutions, including Columbia University, George Washington University, 
  University of Maryland, and University of Miami. He is committed to sharing 
  his lived experience, wisdom, and expertise to guide others in overcoming 
- mental health struggles, awakening potential, and living abundantly with love, 
+ mental health struggles, awakening potential, and living abundantly through self-love, 
  fulfillment, and purpose.
 </p>
 
@@ -53,12 +52,12 @@ export default function AboutPage() {
 
           {/* Paragraph 3 */}
           <p className="space-y-6 text-lg opacity-90 leading-loose">
-            Dr. Salerno’s commitment is both personal and professional. Having experienced 
+            Dr. Salerno’s expertise is rooted in science and shaped by personal transformation. Having experienced 
             his own lowest point in mental health, he dedicated years to therapy and recovery.
             After achieving remission, he expanded his self-improvement process by exploring 
             personal growth practices — including meditation, Feng Shui, and manifestation — 
             learning from some of the most well-known experts in the field. Through his journey, 
-            he rose into his highest self and uncovered his deeper purpose.
+            he continues to transcend into his highest self and uncover his deeper purpose.
           </p>
 
           {/* Mission */}
