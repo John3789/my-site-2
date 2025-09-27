@@ -162,7 +162,7 @@ export default function BooksPage() {
             </li>
             <li className="relative pl-7 before:content-[''] before:absolute before:left-0 before:top-2 before:h-2 before:w-2 before:rounded-full before:bg-[var(--color-gold)]">
               Salerno et&nbsp;al. (2022).
-              <em> LGBTQ Identity-Related Victimization During COVID-19 is Associaed with Moderate to Severe Psychological Distress Among Young Adults.</em>
+              <em> LGBTQ Identity-Related Victimization During COVID-19 is Associated with Moderate to Severe Psychological Distress Among Young Adults.</em>
               <span className="italic"> LGBT Health.</span>
               {" "}
               <a href="https://www.researchgate.net/publication/360505666_LGBTQ_Identity-Related_Victimization_During_COVID-19_Is_Associated_with_Moderate_to_Severe_Psychological_Distress_Among_Young_Adults" className="underline decoration-[var(--color-gold)] underline-offset-2 hover:opacity-80">Read Here →</a>
