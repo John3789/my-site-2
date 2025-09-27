@@ -148,7 +148,7 @@ export default function BooksPage() {
           <ul className="list-none space-y-5">
             <li className="relative pl-7 before:content-[''] before:absolute before:left-0 before:top-2 before:h-2 before:w-2 before:rounded-full before:bg-[var(--color-gold)]">
               Colleagues &amp; Salerno (2024).
-              <em> Mental Health Impact of Sexually Minoritized &amp; Gender Expansive Stressors Among LGBTQ+ Young Adults: A Latent Class Analysis</em>
+              <em> Mental Health Impact of Sexually Minoritized &amp; Gender Expansive Stressors Among LGBTQ+ Young Adults: A Latent Class Analysis.</em>
               <span className="italic"> Epidemiology &amp; Psychiatric Sciences.</span>
               {" "}
               <a href="https://www.researchgate.net/publication/379752647_Mental_health_impact_of_multiple_sexually_minoritized_and_gender_expansive_stressors_among_LGBTQ_young_adults_a_latent_class_analysis" className="underline decoration-[var(--color-gold)] underline-offset-2 hover:opacity-80">Read Here →</a>
