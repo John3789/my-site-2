@@ -33,7 +33,7 @@ export default function SpeakingPage() {
 
       {/* ===== Intro Blurb ===== */}
       <section className="relative w-full py-16">
-        <div className="mx-auto max-w-[1100px] px-6 text-left space-y-8">
+        <div className="mx-auto max-w-[1000px] px-6 text-left space-y-8">
           <h2 className="font-serif text-3xl md:text-4xl opacity-90 text-center font-semibold tracking-wide">
             &ldquo;Engaging. Inspiring. Transformational.&rdquo;
           </h2>
@@ -207,7 +207,7 @@ export default function SpeakingPage() {
  <div className="lg:col-span-7 flex flex-col gap-6 max-w-[640px] lg:pr-6">
     <figure className="w-full shadow-2xl rounded-md bg-white/5 p-8 mt-5">
     <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-      <p>&ldquo;...gifted speaker whose engaging style &amp; clear commmunication bring complex ideas to life.&rdquo;</p>
+      <p>&ldquo;...gifted speaker whose engaging style &amp; clear communication bring complex ideas to life.&rdquo;</p>
     </blockquote>
     <figcaption className="mt-4 text-sm uppercase tracking-wide opacity-80">
       — <span className="text-[var(--color-gold)]">Audience member</span>, Columbia University

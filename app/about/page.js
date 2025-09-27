@@ -13,13 +13,15 @@ export default function AboutPage() {
 
 <p className="space-y-6 text-lg mb-4 opacity-90 leading loose">
 
- Dr. Juan Pablo Salerno, also known in academic spaces as  <strong>Dr. John P. Salerno</strong>, is a mental health scientist, personal growth expert, and
-  30x scientific peer-reviewed author. He has over 14 years of experience
-  working in top academic institutions, including Columbia University,
-  George Washington University, University of Maryland, and University
-  of Miami. He is committed to sharing his lived experience, wisdom, and 
-  expertise to guide others in overcoming mental health struggles, awakening 
-  potential, and living abundantly with love, fulfillment, and purpose.
+ Dr. Juan Pablo Salerno, also known in academic spaces as  
+ <strong>Dr. John P. Salerno</strong>, is a mental health scientist, 
+ personal growth expert, and 30x scientific peer-reviewed author, cited 
+ nearly 2000x in the last decade. He has over 14 years of experience working in top academic 
+ institutions, including Columbia University, George Washington University, 
+ University of Maryland, and University of Miami. He is committed to sharing 
+ his lived experience, wisdom, and expertise to guide others in overcoming 
+ mental health struggles, awakening potential, and living abundantly with love, 
+ fulfillment, and purpose.
 </p>
 
 
