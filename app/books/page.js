@@ -77,7 +77,7 @@ export default function BooksPage() {
       <div className="flex flex-col lg:flex-row gap-10 lg:gap-12">
         <div className="lg:w-1/3">
           <p className="text-sm uppercase tracking-wide text-[var(--color-gold)]">Theme</p>
-          <div className="h-px w-10 bg-[var(--color-gold)]/30 mt-1 mb-4" />
+          <div className="h-px w-13 bg-[var(--color-gold)]/30 mt-1 mb-4" />
           <h3 className="font-serif text-3xl mb-3">
             Advancing Mental Health Equity Among Latinx Youth &amp; Other Communities of Color
           </h3>
@@ -135,7 +135,7 @@ export default function BooksPage() {
       <div className="flex flex-col lg:flex-row gap-10 lg:gap-12">
         <div className="lg:w-1/3">
           <p className="text-sm uppercase tracking-wide text-[var(--color-gold)]">Theme</p>
-          <div className="h-px w-10 bg-[var(--color-gold)]/30 mt-1 mb-4" />
+          <div className="h-px w-13 bg-[var(--color-gold)]/30 mt-1 mb-4" />
           <h3 className="font-serif text-3xl mb-3">
             Stress &amp; Resilience Among LGBTQ+ Youth: Impact on Mental Wellbeing
           </h3>
@@ -192,7 +192,7 @@ export default function BooksPage() {
       <div className="flex flex-col lg:flex-row gap-10 lg:gap-12">
         <div className="lg:w-1/3">
           <p className="text-sm uppercase tracking-wide text-[var(--color-gold)]">Theme</p>
-          <div className="h-px w-10 bg-[var(--color-gold)]/30 mt-1 mb-4" />
+          <div className="h-px w-13 bg-[var(--color-gold)]/30 mt-1 mb-4" />
           <h3 className="font-serif text-3xl mb-3">
             Expert Commentary and Review on Mental Health Prevention For Youth &amp; LGBTQ+ Communities 
           </h3>
