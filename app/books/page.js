@@ -205,7 +205,7 @@ export default function BooksPage() {
           <ul className="list-none space-y-5">
             <li className="relative pl-7 before:content-[''] before:absolute before:left-0 before:top-2 before:h-2 before:w-2 before:rounded-full before:bg-[var(--color-gold)]">
               Salerno et&nbsp;al. (2020).
-              <em> Sexual and Gender Minority Stress Amid the COVID-19 Pandemic: Implications for LGBTQ Young Persons' Mental Health and Well-Being.</em>
+              <em> Sexual and Gender Minority Stress Amid the COVID-19 Pandemic: Implications for LGBTQ Young Persons’ Mental Health and Well-Being.</em>
               <span className="italic"> Public Health Reports.</span>
               {" "}
               <a href="https://www.researchgate.net/publication/344521757_Sexual_and_Gender_Minority_Stress_Amid_the_COVID-19_Pandemic_Implications_for_LGBTQ_Young_Persons'_Mental_Health_and_Well-Being" className="underline decoration-[var(--color-gold)] underline-offset-2 hover:opacity-80">Read Here →</a>
