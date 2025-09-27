@@ -16,10 +16,10 @@ export default function BooksPage() {
     {/* Left column */}
     <div>
       <p className="text-lg opacity-90 mb-8 leading-loose">
-        Here you’ll find my published works, where science and personal growth come together. 
-        My research explores pathways to mental health, resilience, and wellbeing, 
+        Here you’ll find Dr. Salerno's published works, where science and personal growth come together. 
+        His research explores pathways to mental health, resilience, and wellbeing, 
         with a focus on uplifting communities too often overlooked. Each piece reflects 
-        my belief that science should empower communities, inspire healing, 
+        his belief that science should empower communities, inspire healing, 
         and spark meaningful change.
       </p>
 
