@@ -105,7 +105,7 @@ export default function BooksPage() {
             </li>
             <li className="relative pl-7 before:content-[''] before:absolute before:left-0 before:top-2 before:h-2 before:w-2 before:rounded-full before:bg-[var(--color-gold)]">
               Salerno et&nbsp;al. (2023).
-              <em> Profiles of Psychosocial Stressors and Buffers Among Latinx Immigrant Youth: Associations with Suicidality.</em>
+              <em> Profiles of Psychosocial Stressors and Buffers Among Latinx Immigrant Youth: Associations with Suicidal Ideation.</em>
               <span className="italic"> Psychiatry Research.</span>
               {" "}
               <a href="https://www.researchgate.net/publication/375071692_Profiles_of_Psychosocial_Stressors_and_Buffers_Among_Latinx_Immigrant_Youth_Associations_with_Suicidal_Ideation" className="underline decoration-[var(--color-gold)] underline-offset-2 hover:opacity-80">Read Here →</a>
