@@ -219,7 +219,7 @@ export default function BooksPage() {
             </li>
             <li className="relative pl-7 before:content-[''] before:absolute before:left-0 before:top-2 before:h-2 before:w-2 before:rounded-full before:bg-[var(--color-gold)]">
               Salerno (2016).
-              <em> Effectiveness of Universal School-Based Mental Health Awareness Programs Among Youth in the U.S.: A Systematic Review.</em>
+              <em> Effectiveness of Universal School-Based Mental Health Awareness Programs Among Youth in the United States: A Systematic Review.</em>
               <span className="italic"> Journal of School Health.</span>
               {" "}
               <a href="https://www.researchgate.net/publication/310161801_Effectiveness_of_Universal_School-Based_Mental_Health_Awareness_Programs_Among_Youth_in_the_United_States_A_Systematic_Review" className="underline decoration-[var(--color-gold)] underline-offset-2 hover:opacity-80">Read Here →</a>
