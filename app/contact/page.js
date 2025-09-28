@@ -114,7 +114,7 @@ export default function ContactPage() {
               {/* Disclaimer */}
               <p className="text-xs opacity-80 mt-4 max-w-xl leading-relaxed">
                 <strong>Disclaimer:</strong> This website and all communications through this
-                form are for informational and educational purposes only. They do not
+                form are for informational, educational, and wellness purposes only. They do not
                 constitute medical advice, diagnosis, or treatment. If you have medical or
                 mental health concerns, please consult a qualified health/mental healthcare professional.
               </p>
