@@ -5,7 +5,6 @@ export default function SpeakingPage() {
       <section className="relative w-full">
         <div className="relative h-[70vh]">
           <video
-            aria-label="Event speaking highlight reel"
             playsInline
             muted
             autoPlay
@@ -18,14 +17,13 @@ export default function SpeakingPage() {
 
           {/* Overlay headline + subheadline + vignette */}
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
-            {/* subtle vignette/gradient */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/30 to-black/45" />
             <div className="relative px-6">
               <h1 className="font-serif text-5xl md:text-6xl opacity-95 drop-shadow-lg">
                 Speaking
               </h1>
               <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 mb-3 rounded" />
-              <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto drop-shadow-md leading-snug">
+              <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto drop-shadow-md">
                 Science-backed, story-driven talks that spark resilience,
                 growth, and lasting changes.
               </p>
@@ -44,7 +42,7 @@ export default function SpeakingPage() {
           </h2>
 
           <div className="space-y-6 opacity-85 text-lg md:text-xl leading-loose">
-            <p className="leading-[1.8]">
+            <p>
               Dr. Juan Pablo Salerno is a respected mental health scientist,
               personal growth expert, and engaging speaker whose work bridges
               cutting-edge science with practical tools for personal and
@@ -53,14 +51,14 @@ export default function SpeakingPage() {
               and nonprofit sectors, with a focus on mental health, resilience,
               and personal growth.
             </p>
-            <p className="leading-[1.8]">
+            <p>
               His speaking engagements have included national and local
               conferences, federal health organizations, leading universities,
               research institutes, K–12 public schools, community-based mental
               health and healthcare organizations, and county and state
               departments of health.
             </p>
-            <p className="leading-[1.8]">
+            <p>
               Presentations typically run between one to two hours and can be delivered
               in-person or virtually. Dr. Salerno’s style is dynamic,
               approachable, and grounded in evidence-based science, leaving
@@ -81,6 +79,10 @@ export default function SpeakingPage() {
         {/* Popular Topics */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mx-15">
           <div className="lg:col-span-5 lg:py-6">
+            {/* Overline (slightly dimmer) */}
+            <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">
+              Programs
+            </p>
             <h2 className="font-serif text-4xl mb-2">Popular Topics</h2>
             <div className="h-[2px] w-12 bg-[var(--color-gold)]/75 mb-8 rounded" />
 
@@ -176,42 +178,37 @@ export default function SpeakingPage() {
 
           {/* Quotes (left column) */}
           <div className="lg:col-span-7 ml-auto flex flex-col gap-6 max-w-[640px]">
-            <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-5 ring-1 ring-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.25)] backdrop-blur-sm hover:shadow-[0_14px_36px_rgba(0,0,0,0.28)] transition">
-              <span
-                aria-hidden
-                className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r"
-                style={{ willChange: 'transform' }}
-              />
-              <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-                <p>&ldquo;...an exceptional speaker: he is engaging, well-spoken, and clearly passionate about his work.&rdquo;</p>
+            <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-5 ring-1 ring-white/10 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition">
+              <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+              {/* Decorative quotes (no normal quotes in text) */}
+              <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+                <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                <p>...an exceptional speaker: he is engaging, well-spoken, and clearly passionate about his work.</p>
+                <span aria-hidden className="absolute right-4 bottom-5 text-4xl opacity-20 select-none">”</span>
               </blockquote>
               <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
                 — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting &amp; Expo
               </figcaption>
             </figure>
 
-            <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 ring-1 ring-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.25)] backdrop-blur-sm hover:shadow-[0_14px_36px_rgba(0,0,0,0.28)] transition">
-              <span
-                aria-hidden
-                className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r"
-                style={{ willChange: 'transform' }}
-              />
-              <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-                <p>&ldquo;He communicates with clarity and confidence...leaves a lasting impression.&rdquo;</p>
+            <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 ring-1 ring-white/10 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition">
+              <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+              <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+                <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
+                <span aria-hidden className="absolute right-24 bottom-5 text-4xl opacity-20 select-none">”</span>
               </blockquote>
               <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
                 — <span className="text-[var(--color-gold)]">Audience member</span>, Society for Prevention Research Annual Meeting
               </figcaption>
             </figure>
 
-            <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 ring-1 ring-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.25)] backdrop-blur-sm hover:shadow-[0_14px_36px_rgba(0,0,0,0.28)] transition">
-              <span
-                aria-hidden
-                className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r"
-                style={{ willChange: 'transform' }}
-              />
-              <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-                <p>&ldquo;Dr. Salerno has a way of blending data with human stories that makes science resonate.&rdquo;</p>
+            <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 ring-1 ring-white/10 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition">
+              <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+              <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+                <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                <p>Dr. Salerno has a way of blending data with human stories that makes science resonate.</p>
+                <span aria-hidden className="absolute right-14 bottom-5 text-4xl opacity-20 select-none">”</span>
               </blockquote>
               <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
                 — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
@@ -225,42 +222,36 @@ export default function SpeakingPage() {
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-y-6 lg:gap-x-0 mx-15 items-center">
           {/* Quotes (RIGHT column) */}
           <div className="lg:col-span-7 flex flex-col gap-6 max-w-[640px] lg:pr-6">
-            <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-5 ring-1 ring-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.25)] backdrop-blur-sm hover:shadow-[0_14px_36px_rgba(0,0,0,0.28)] transition">
-              <span
-                aria-hidden
-                className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r"
-                style={{ willChange: 'transform' }}
-              />
-              <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-                <p>&ldquo;...gifted speaker whose engaging style &amp; clear communication bring complex ideas to life.&rdquo;</p>
+            <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-5 ring-1 ring-white/10 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition">
+              <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+              <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+                <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                <p>...gifted speaker whose engaging style &amp; clear communication bring complex ideas to life.</p>
+                <span aria-hidden className="absolute right-6 bottom-5 text-4xl opacity-20 select-none">”</span>
               </blockquote>
               <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
                 — <span className="text-[var(--color-gold)]">Audience member</span>, Columbia University
               </figcaption>
             </figure>
 
-            <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 ring-1 ring-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.25)] backdrop-blur-sm hover:shadow-[0_14px_36px_rgba(0,0,0,0.28)] transition">
-              <span
-                aria-hidden
-                className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r"
-                style={{ willChange: 'transform' }}
-              />
-              <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-                <p>&ldquo;...can communicate with diverse audiences, speaks with heart and dimensionality.&rdquo;</p>
+            <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 ring-1 ring-white/10 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition">
+              <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+              <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+                <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                <p>...can communicate with diverse audiences, speaks with heart and dimensionality.</p>
+                <span aria-hidden className="absolute right-23 bottom-5 text-4xl opacity-20 select-none">”</span>
               </blockquote>
               <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
                 — <span className="text-[var(--color-gold)]">Audience member</span>, Society of Behavioral Medicine Annual Meeting
               </figcaption>
             </figure>
 
-            <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 ring-1 ring-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.25)] backdrop-blur-sm hover:shadow-[0_14px_36px_rgba(0,0,0,0.28)] transition">
-              <span
-                aria-hidden
-                className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r"
-                style={{ willChange: 'transform' }}
-              />
-              <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-                <p>&ldquo;...consistently stands out...focused and dynamic...maintains audience attention...&rdquo;</p>
+            <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 ring-1 ring-white/10 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition">
+              <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+              <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+                <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                <p>...consistently stands out...focused and dynamic...maintains audience attention...</p>
+                <span aria-hidden className="absolute right-13 bottom-5 text-4xl opacity-20 select-none">”</span>
               </blockquote>
               <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
                 — <span className="text-[var(--color-gold)]">Audience member</span>, Society for Prevention Research Annual Meeting
@@ -270,6 +261,10 @@ export default function SpeakingPage() {
 
           {/* Formats */}
           <div className="lg:col-span-5 order-1 lg:order-2 lg:py-6 space-y-8 lg:pl-6">
+            {/* Overline added */}
+            <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">
+              Formats
+            </p>
             <h2 className="font-serif text-4xl mb-2">Dr. Salerno Offers</h2>
             <div className="h-[2px] w-12 bg-[var(--color-gold)]/75 mb-8 rounded" />
 
@@ -337,6 +332,10 @@ export default function SpeakingPage() {
         <hr className="border-t opacity-70 border-cream mb-8 w-full" />
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 mx-15 items-start">
           <div className="lg:col-span-5 lg:py-6">
+            {/* Overline added */}
+            <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">
+              Results
+            </p>
             <h2 className="font-serif text-4xl mb-2">Outcomes</h2>
             <div className="h-[2px] w-12 bg-[var(--color-gold)]/75 mb-6 rounded" />
 
@@ -375,28 +374,24 @@ export default function SpeakingPage() {
 
           {/* Quotes (right column, Outcomes) */}
           <div className="lg:col-span-7 ml-auto flex flex-col gap-6 max-w-[640px]">
-            <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 ring-1 ring-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.25)] backdrop-blur-sm hover:shadow-[0_14px_36px_rgba(0,0,0,0.28)] transition">
-              <span
-                aria-hidden
-                className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r"
-                style={{ willChange: 'transform' }}
-              />
-              <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-                <p>&ldquo;...engaging, energetic, strong communication skills, proven ability to disseminate science.&rdquo;</p>
+            <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 ring-1 ring-white/10 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition">
+              <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+              <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+                <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                <p>...engaging, energetic, strong communication skills, proven ability to disseminate science.</p>
+                <span aria-hidden className="absolute right-13 bottom-5 text-4xl opacity-20 select-none">”</span>
               </blockquote>
               <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
                 — <span className="text-[var(--color-gold)]">Audience member</span>, University of Central Florida
               </figcaption>
             </figure>
 
-            <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 ring-1 ring-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.25)] backdrop-blur-sm hover:shadow-[0_14px_36px_rgba(0,0,0,0.28)] transition">
-              <span
-                aria-hidden
-                className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r"
-                style={{ willChange: 'transform' }}
-              />
-              <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90">
-                <p>&ldquo;...a highly engaging, knowledgeable, and skilled speaker...strongly recommended.&rdquo;</p>
+            <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 ring-1 ring-white/10 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition">
+              <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+              <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+                <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                <p>...a highly engaging, knowledgeable, and skilled speaker...strongly recommended.</p>
+                <span aria-hidden className="absolute right-44 bottom-5 text-4xl opacity-20 select-none">”</span>
               </blockquote>
               <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
                 — <span className="text-[var(--color-gold)]">Audience member</span>, University of California, Los Angeles
@@ -409,7 +404,11 @@ export default function SpeakingPage() {
         <div className="flex justify-center">
           <a
             href="/contact"
-            className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
+            className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3
+                       font-semibold uppercase tracking-wide text-sm shadow-md
+                       transition will-change-transform
+                       hover:shadow-lg hover:-translate-y-[2px]
+                       focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
           >
             Book Dr. Salerno to Speak
           </a>
