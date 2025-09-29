@@ -25,7 +25,7 @@ export default function SpeakingPage() {
               <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 mb-3 rounded" />
               <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto drop-shadow-md">
                 Science-backed, story-driven talks that spark resilience,
-                growth, and lasting changes.
+                growth, and lasting change.
               </p>
             </div>
           </div>
