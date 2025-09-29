@@ -140,7 +140,7 @@ export default function Home() {
                     fill
                     sizes="(min-width: 1024px) 50vw, 100vw"
                     className="object-cover"
-                    style={{ objectPosition: 'center 15%' }}
+                    style={{ objectPosition: 'center 50%' }}
                   />
                   <div className="absolute inset-0 bg-black/20" />
                 </div>
