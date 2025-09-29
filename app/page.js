@@ -2,8 +2,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
 // import SocialFooter from "../components/SocialFooter"; // unchanged, optional
-import Reveal from "../components/Reveal";
-
 
 export default function Home() {
   return (
@@ -96,15 +94,9 @@ export default function Home() {
         {/* Mission */}
         <section className="w-full">
           <div className="mx-auto max-w-[1400px] px-6 pt-36 pb-12">
-           <Reveal>
-  <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">
-    Mission
-  </h5>
-</Reveal>
+            <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Mission</h5>
+            <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
 
-<Reveal delay={60}>
-  <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
-</Reveal>
             <div className="max-w-4xl mx-auto text-center">
               <p className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90">
                 “I believe everyone has the power to unlock hidden potential and live with a higher purpose —
@@ -121,15 +113,8 @@ export default function Home() {
         <section id="consulting" className="w-full">
           <div className="mx-auto max-w-[1400px] px-6 pt-40 pb-12">
             <hr className="border-t border-[var(--color-cream)]/22 mb-6" />
-            <Reveal>
-  <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">
-    Consulting
-  </h5>
-</Reveal>
-
-<Reveal delay={60}>
-  <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
-</Reveal>
+            <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Consulting</h5>
+            <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
 
             <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-16">
               {/* Left: text */}
@@ -168,15 +153,9 @@ export default function Home() {
         <section className="w-full">
           <div className="mx-auto max-w-[1400px] px-6 pt-40 pb-12">
             <hr className="border-t border-[var(--color-cream)]/22 mb-6" />
-           <Reveal>
-  <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">
-    Speaking
-  </h5>
-</Reveal>
+            <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Speaking</h5>
+            <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
 
-<Reveal delay={60}>
-  <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
-</Reveal>
             <div className="max-w-4xl mx-auto text-center">
               <p className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90">
                 Dr. Salerno is a highly regarded expert and dynamic speaker who has inspired audiences on stages large and small.
@@ -194,15 +173,9 @@ export default function Home() {
         <section id="meditations" className="w-full">
           <div className="mx-auto max-w-[1400px] px-6 pt-40 pb-12">
             <hr className="border-t border-[var(--color-cream)]/22 mb-6" />
-            <Reveal>
-  <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">
-    Meditations
-  </h5>
-</Reveal>
+            <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Meditations</h5>
+            <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
 
-<Reveal delay={60}>
-  <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
-</Reveal>
             <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-16">
               {/* Left: image */}
               <div className="lg:col-span-6 flex justify-center">
@@ -237,15 +210,8 @@ export default function Home() {
         <section id="resources" className="w-full">
           <div className="mx-auto max-w-[1400px] px-6 pt-40 pb-36">
             <hr className="border-t border-[var(--color-cream)]/22 mb-6" />
-           <Reveal>
-  <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">
-    Resources
-  </h5>
-</Reveal>
-
-<Reveal delay={60}>
-  <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
-</Reveal>
+            <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Resources</h5>
+            <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
 
             <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-16">
               {/* Left: text */}
