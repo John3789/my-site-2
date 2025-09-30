@@ -1,11 +1,23 @@
-import Head from "next/head";
+
+
+"use client";
+import { useEffect, useRef, useState } from "react";
 
 export default function SpeakingPage() {
+  // ---- Video ready/fade-in handling ----
+  const videoRef = useRef(null);
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    const onCanPlay = () => setReady(true);
+    v.addEventListener("canplay", onCanPlay, { once: true });
+    return () => v.removeEventListener("canplay", onCanPlay);
+  }, []);
   return (
+
     <main className="min-h-screen w-full bg-[var(--color-teal-850)]">
-      <Head>
-        <title>Speaking | Dr. Juan Pablo Salerno</title>
-      </Head>
 
       {/* ===== HERO VIDEO with overlay text ===== */}
       <section className="relative w-full">
