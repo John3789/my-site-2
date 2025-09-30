@@ -31,6 +31,22 @@ export default function ConsultingPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-8">
           {/* Card */}
+           <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition">
+            <span aria-hidden className="absolute left-0 top-2 bottom-2 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+            <h3 className="font-serif text-2xl mb-2">Partner in Research</h3>
+            <p className="opacity-90 leading-relaxed">
+              Work with an NIH-funded scientist to co-create studies, publish findings, and unlock
+              funding opportunities—bringing credibility and depth to your initiatives.
+            </p>
+          </article>
+                    <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition">
+            <span aria-hidden className="absolute left-0 top-2 bottom-2 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+            <h3 className="font-serif text-2xl mb-2">Design with Science</h3>
+            <p className="opacity-90 leading-relaxed">
+              Translate cutting-edge research into interventions that resonate with your community.
+              Evidence-based, culturally responsive, and operationally practical.
+            </p>
+          </article>
           <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition">
             <span aria-hidden className="absolute left-0 top-2 bottom-2 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
             <h3 className="font-serif text-2xl mb-2">Evaluate What Works</h3>
@@ -40,31 +56,12 @@ export default function ConsultingPage() {
               tied to outcomes that matter.
             </p>
           </article>
-
-          <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition">
-            <span aria-hidden className="absolute left-0 top-2 bottom-2 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
-            <h3 className="font-serif text-2xl mb-2">Design with Science</h3>
-            <p className="opacity-90 leading-relaxed">
-              Translate cutting-edge research into interventions that resonate with your community.
-              Evidence-based, culturally responsive, and operationally practical.
-            </p>
-          </article>
-
           <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition">
             <span aria-hidden className="absolute left-0 top-2 bottom-2 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
             <h3 className="font-serif text-2xl mb-2">Scale Resilience</h3>
             <p className="opacity-90 leading-relaxed">
               Strengthen organizations through strategies that improve wellbeing and reduce burnout:
               mindfulness, resilience training, habit design, and manager toolkits aligned to KPIs.
-            </p>
-          </article>
-
-          <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition">
-            <span aria-hidden className="absolute left-0 top-2 bottom-2 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
-            <h3 className="font-serif text-2xl mb-2">Partner in Research</h3>
-            <p className="opacity-90 leading-relaxed">
-              Work with an NIH-funded scientist to co-create studies, publish findings, and unlock
-              funding opportunities—bringing credibility and depth to your initiatives.
             </p>
           </article>
         </div>
@@ -81,7 +78,7 @@ export default function ConsultingPage() {
               I bridge <span className="font-semibold">science</span> and{" "}
               <span className="font-semibold">growth wisdom</span> to help organizations build
               effective, culturally grounded, and sustainable wellbeing strategies. With expertise
-              in Latino, LGBTQ, and youth populations, my work centers equity, inclusivity, and
+              working with diverse populations, my work centers equity, inclusivity, and
               real-world relevance.
             </p>
           </div>

@@ -124,7 +124,19 @@ export default function Home() {
 
                 {/* NEW bullet list */}
                 <ul className="text-[17px] leading-[1.7] opacity-90 mb-6 max-w-xl lg:max-w-xl space-y-3">
+                   <li className="flex gap-2">
+                    <span className="text-[var(--color-gold)]">✔</span>
+                    <span>
+                      <strong>Partner in Research</strong> — Collaborate with a community research expert.
+                    </span>
+                  </li>
                   <li className="flex gap-2">
+                    <span className="text-[var(--color-gold)]">✔</span>
+                    <span>
+                      <strong>Design with Science</strong> — Build powerful programs.
+                    </span>
+                    </li>
+                     <li className="flex gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
                     <span>
                       <strong>Evaluate What Works</strong> — Prove program impact.
@@ -133,19 +145,7 @@ export default function Home() {
                   <li className="flex gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
                     <span>
-                      <strong>Design with Science</strong> — Build powerful programs.
-                    </span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-[var(--color-gold)]">✔</span>
-                    <span>
                       <strong>Scale Resilience</strong> — Improve organizational wellbeing.
-                    </span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-[var(--color-gold)]">✔</span>
-                    <span>
-                      <strong>Partner in Research</strong> — Collaborate with a community research expert.
                     </span>
                   </li>
                 </ul>
