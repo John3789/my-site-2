@@ -31,7 +31,7 @@ export default function BooksPage() {
               </h2>
               <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 rounded mb-5" />
 
-              <p className="text-lg opacity-90 max-w-3xl mb-6 leading-relaxed">
+              <p className="text-lg opacity-90 max-w-3xl mb-6 leading-loose">
                 A powerful blend of science and personal growth wisdom, this forthcoming book by Dr. Salerno
                 offers an accessible, inspiring, and transformative framework for overcoming mental health
                 struggles and living with greater purpose, balance, and fulfillment.
