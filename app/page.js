@@ -120,12 +120,36 @@ export default function Home() {
               {/* Left: text */}
               <div className="lg:col-span-6 text-center lg:text-left">
                 <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90">Purposeful Consulting Solutions</h2>
-                <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto lg:mx-0 my-5 rounded" />
-                <p className="text-[17px] leading-[1.7] opacity-90 mb-6 max-w-xl lg:max-w-xl">
-                  Through science-backed consulting—grounded in evidence-based interventions,
-                  applied research, and program evaluation—Dr. Salerno helps organizations
-                  strengthen mental health, build resilience, foster growth, and scale what works.
-                </p>
+                 <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto lg:mx-0 my-5 rounded" />
+
+                {/* NEW bullet list */}
+                <ul className="text-[17px] leading-[1.7] opacity-90 mb-6 max-w-xl lg:max-w-xl space-y-3">
+                  <li className="flex gap-2">
+                    <span className="text-[var(--color-gold)]">✔</span>
+                    <span>
+                      <strong>Evaluate What Works</strong> — Prove your program’s impact with rigorous evaluation.
+                    </span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[var(--color-gold)]">✔</span>
+                    <span>
+                      <strong>Design with Science</strong> — Build interventions that truly resonate with your community.
+                    </span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[var(--color-gold)]">✔</span>
+                    <span>
+                      <strong>Scale Resilience</strong> — Improve wellbeing and reduce burnout in schools, workplaces, and organizations.
+                    </span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[var(--color-gold)]">✔</span>
+                    <span>
+                      <strong>Partner in Research</strong> — Collaborate with an NIH-funded scientist to publish findings and unlock funding.
+                    </span>
+                  </li>
+                </ul>
+
                 <Link href="/consulting" className="link">
                   Book Dr. Salerno for consulting →
                 </Link>
