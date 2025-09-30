@@ -220,7 +220,7 @@ export default function Home() {
                 <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90">Short Meditations with Dr. Salerno</h2>
                 <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto lg:mx-0 my-5 rounded" />
                 <p className="text-[17px] leading-[1.7] opacity-90 mb-6 max-w-xl lg:max-w-xl">
-                  Free guided meditations designed by Dr. Salerno for all levels to gently reset your body,
+                  Pre-recorded and custom-made guided meditations designed by Dr. Salerno for all levels to gently reset your body,
                   calm your mind, and nourish your spirit. Journey inward to awaken your true potential,
                   deepen your sense of peace, and create space for healing and growth.
                 </p>
