@@ -1,6 +1,12 @@
+import Head from "next/head";
+
 export default function SpeakingPage() {
   return (
     <main className="min-h-screen w-full bg-[var(--color-teal-850)]">
+      <Head>
+        <title>Speaking | Dr. Juan Pablo Salerno</title>
+      </Head>
+
       {/* ===== HERO VIDEO with overlay text ===== */}
       <section className="relative w-full">
         <div className="relative h-[70vh]">
@@ -9,10 +15,11 @@ export default function SpeakingPage() {
             muted
             autoPlay
             loop
+            preload="auto"
             poster="/speaking-hero-poster.jpg"
             className="absolute inset-0 h-full w-full object-cover object-[50%_38%] pointer-events-none motion-safe:opacity-100 motion-reduce:opacity-95"
           >
-            <source src="hero40.mp4" type="video/mp4" />
+            <source src="/hero40.mp4" type="video/mp4" />
           </video>
 
           {/* Overlay headline + subheadline + vignette */}
@@ -25,7 +32,7 @@ export default function SpeakingPage() {
               <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 mb-3 rounded" />
               <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto drop-shadow-md">
                 Science-backed, story-driven talks that spark resilience,
-                growth, and lasting change.
+                growth, and lasting changes.
               </p>
             </div>
           </div>
