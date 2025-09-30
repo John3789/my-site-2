@@ -103,7 +103,7 @@ export default function SpeakingPage() {
 
       {/* ===== MAIN CONTENT ===== */}
       <div className="mx-auto max-w-[1400px] py-14 space-y-24" id="topics">
-        <hr className="border-t opacity-70 border-cream mb-8 w-full" />
+        <hr className="border-t border-[var(--color-cream)]/22 mb-8 w-full" />
 
         {/* Popular Topics */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mx-15">
@@ -247,7 +247,7 @@ export default function SpeakingPage() {
         </section>
 
         {/* Dr. Salerno Offers */}
-        <hr className="border-t opacity-70 border-cream mb-8 w-full" />
+        <hr className="border-t border-[var(--color-cream)]/22 mb-8 w-full" />
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-y-6 lg:gap-x-0 mx-15 items-center">
           {/* Quotes (RIGHT column) */}
           <div className="lg:col-span-7 flex flex-col gap-6 max-w-[640px] lg:pr-6">
@@ -358,7 +358,7 @@ export default function SpeakingPage() {
         </section>
 
         {/* Outcomes (bulleted) */}
-        <hr className="border-t opacity-70 border-cream mb-8 w-full" />
+        <hr className="border-t border-[var(--color-cream)]/22 mb-8 w-full" />
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 mx-15 items-start">
           <div className="lg:col-span-5 lg:py-6">
             {/* Overline added */}
