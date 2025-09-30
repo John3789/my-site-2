@@ -252,8 +252,8 @@ export default function ConsultingPage() {
         <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { t: "Evaluation Sprint", d: "4–6 weeks: logic model, KPIs, measurement plan, quick insights." },
             { t: "Program Build", d: "6–12 weeks: co-design, pilot, facilitator toolkit, rollout support." },
+            { t: "Evaluation Sprint", d: "4–6 weeks: logic model, KPIs, measurement plan, quick insights." },
             { t: "Scale & Sustain", d: "Quarterly: trainings, dashboards, continuous improvement cycles." },
           ].map((p) => (
             <article
@@ -318,40 +318,74 @@ export default function ConsultingPage() {
       </div>
 
       {/* ===== TESTIMONIALS (3 cards) ===== */}
-      <section className="mx-auto max-w-[1100px] px-6 py-14 md:py-16">
-        <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 text-center mb-2">Testimonials</p>
-        <h2 className="font-serif text-3xl md:text-4xl opacity-95 text-center">What Partners Say</h2>
-        <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mx-auto mt-3 mb-8 rounded" />
+<section className="mx-auto max-w-[1100px] px-6 py-14 md:py-16">
+  <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 text-center mb-2">Testimonials</p>
+  <h2 className="font-serif text-3xl md:text-4xl opacity-95 text-center">What Clients and Partners Say</h2>
+  <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mx-auto mt-3 mb-8 rounded" />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[
-            {
-              q: "Our pilot with Dr. Salerno improved engagement and wellbeing — and gave us the measurement plan to prove it.",
-              a: "Program Director, Community Health Organization",
-            },
-            {
-              q: "He translated complex research into clear, actionable steps. Teams felt supported and outcomes improved quickly.",
-              a: "Chief People Officer, National Nonprofit",
-            },
-            {
-              q: "The evaluation sprint clarified our KPIs and unlocked new funding opportunities. Highly recommend.",
-              a: "VP, Community Health Initiative",
-            },
-          ].map((t) => (
-            <figure key={t.a} className="relative w-full rounded-xl bg-white/5 p-6 ring-1 ring-white/10 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition">
-              <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
-              <blockquote className="font-serif text-xl leading-snug opacity-90 relative">
-                <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
-                <p>{t.q}</p>
-                <span aria-hidden className="absolute right-6 bottom-1 text-4xl opacity-20 select-none">”</span>
-              </blockquote>
-              <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-                — {t.a}
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-      </section>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {[
+      {
+        q: "Dr. Salerno is an expert in mental health equity research, highly skilled and incorporates attention to community priorities.",
+        a: "University of California, Los Angeles",
+      },
+      {
+        q: "Dr. Salerno has a strong command of various research methods and an undeniable passion for his work in the public health sphere.",
+        a: "Columbia University",
+      },
+      {
+        q: "Dr. Salerno is incredibly intelligent and insightful with a deep, nuanced understanding of and appreciation for research.",
+        a: "New York University",
+      },
+    ].map((t, i) => (
+      <figure
+        key={t.a}
+        className="relative w-full rounded-xl bg-white/5 p-6 ring-1 ring-white/10 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition"
+      >
+        <span
+          aria-hidden
+          className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r"
+        />
+        <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
+          {/* LEFT DECORATIVE QUOTE */}
+          <span
+            aria-hidden
+            className={
+              "absolute text-4xl opacity-20 select-none " +
+              (i === 0
+                ? "-left-4 -top-1"
+                : i === 1
+                ? "-left-4 -top-1"
+                : "-left-4 -top-1")
+            }
+          >
+            “
+          </span>
+
+          <p>{t.q}</p>
+
+          {/* RIGHT DECORATIVE QUOTE */}
+          <span
+            aria-hidden
+            className={
+              "absolute text-4xl opacity-20 select-none " +
+              (i === 0
+                ? "right-17 bottom-2"
+                : i === 1
+                ? "right-19 bottom-2"
+                : "right-8 bottom-2")
+            }
+          >
+            ”
+          </span>
+        </blockquote>
+        <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+          — {t.a}
+        </figcaption>
+      </figure>
+    ))}
+  </div>
+</section>
 
       {/* JSON-LD (optional) */}
       <script

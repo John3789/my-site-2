@@ -279,11 +279,11 @@ export default function SpeakingPage() {
               <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
               <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
                 <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
-                <p>...consistently stands out...focused and dynamic...maintains audience attention...</p>
-                <span aria-hidden className="absolute right-13 bottom-5 text-4xl opacity-20 select-none">”</span>
+                <p>...brings a charming intensity and passion that inspires others with his presence and message.</p>
+                <span aria-hidden className="absolute right-0 bottom-5 text-4xl opacity-20 select-none">”</span>
               </blockquote>
               <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-                — <span className="text-[var(--color-gold)]">Audience member</span>, Society for Prevention Research Annual Meeting
+                — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
               </figcaption>
             </figure>
           </div>
