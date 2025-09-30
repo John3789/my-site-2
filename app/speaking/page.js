@@ -1,6 +1,5 @@
-
-
 "use client";
+
 import { useEffect, useRef, useState } from "react";
 
 export default function SpeakingPage() {
@@ -11,27 +10,42 @@ export default function SpeakingPage() {
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
+
     const onCanPlay = () => setReady(true);
     v.addEventListener("canplay", onCanPlay, { once: true });
-    return () => v.removeEventListener("canplay", onCanPlay);
+
+    return () => {
+      v.removeEventListener("canplay", onCanPlay);
+    };
   }, []);
+
   return (
-
     <main className="min-h-screen w-full bg-[var(--color-teal-850)]">
-
       {/* ===== HERO VIDEO with overlay text ===== */}
       <section className="relative w-full">
-        <div className="relative h-[70vh]">
+        {/* black backdrop so there’s never a green flash */}
+        <div className="relative h-[70vh] bg-black">
+          {/* Poster as an instant background layer */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-center bg-cover"
+            style={{ backgroundImage: "url(/speaking-hero-poster.jpg)" }}
+          />
+
+          {/* Video fades in only when it can play */}
           <video
+            ref={videoRef}
             playsInline
             muted
             autoPlay
             loop
             preload="auto"
             poster="/speaking-hero-poster.jpg"
-            className="absolute inset-0 h-full w-full object-cover object-[50%_38%] pointer-events-none motion-safe:opacity-100 motion-reduce:opacity-95"
+            className={`absolute inset-0 h-full w-full object-cover object-[50%_38%] pointer-events-none transition-opacity duration-300 ${
+              ready ? "opacity-100" : "opacity-0"
+            }`}
           >
-            <source src="/hero40.mp4" type="video/mp4" />
+            <source src="hero40.mp4" type="video/mp4" />
           </video>
 
           {/* Overlay headline + subheadline + vignette */}
