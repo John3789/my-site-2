@@ -32,21 +32,16 @@ export default function SpeakingPage() {
             style={{ backgroundImage: "url(/speaking-hero-poster.jpg)" }}
           />
 
-          {/* Video fades in only when it can play */}
-          <video
-            ref={videoRef}
-            playsInline
-            muted
-            autoPlay
-            loop
-            preload="auto"
-            poster="/speaking-hero-poster.jpg"
-            className={`absolute inset-0 h-full w-full object-cover object-[50%_38%] pointer-events-none transition-opacity duration-300 ${
-              ready ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <source src="hero40.mp4" type="video/mp4" />
-          </video>
+    <video
+  playsInline
+  muted
+  autoPlay
+  loop
+  preload="auto"
+  className="absolute inset-0 h-full w-full object-cover object-[50%_38%]"
+>
+  <source src="/hero40.mp4" type="video/mp4" />
+</video>
 
           {/* Overlay headline + subheadline + vignette */}
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
