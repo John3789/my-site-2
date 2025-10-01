@@ -78,7 +78,7 @@ export default function ConsultingPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-8">
           {/* Partner in Research */}
           <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
-            <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+            <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
             <h3 className="font-serif text-2xl mb-2">Partner in Research</h3>
             <p className="opacity-90 leading-relaxed mb-3">
               Partner with a federally-funded scientist across all phases of programming and research—bringing credibility and depth to your initiatives.
@@ -90,7 +90,7 @@ export default function ConsultingPage() {
 
           {/* Design with Science */}
           <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
-            <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+            <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
             <h3 className="font-serif text-2xl mb-2">Design with Science</h3>
             <p className="opacity-90 leading-relaxed mb-3">
               Translate cutting-edge research into programs that resonate with your organization or community.
@@ -103,7 +103,7 @@ export default function ConsultingPage() {
 
           {/* Evaluate What Works */}
           <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
-            <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+            <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
             <h3 className="font-serif text-2xl mb-2">Evaluate What Works</h3>
             <p className="opacity-90 leading-relaxed mb-3">
               Build confidence that your program delivers real impact through rigorous
@@ -117,7 +117,7 @@ export default function ConsultingPage() {
 
           {/* Scale Resilience */}
           <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
-            <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+            <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
             <h3 className="font-serif text-2xl mb-2">Scale Across Your Organization</h3>
             <p className="opacity-90 leading-relaxed mb-3">
 Strengthen and integrate organizational programs that foster mental health, resilience, and wellbeing — from mindfulness and stress management to practices that support sustainable growth.
@@ -147,7 +147,7 @@ Strengthen and integrate organizational programs that foster mental health, resi
 
         {/* Discovery anchor */}
         <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl backdrop-blur-sm text-center mb-10">
-          <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+          <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
           <h3 className="font-serif text-2xl mb-2">Discovery</h3>
           <p className="opacity-90 leading-relaxed">
             Understand your goals, challenges, stakeholders, and context—laying the foundation for success.
@@ -157,7 +157,7 @@ Strengthen and integrate organizational programs that foster mental health, resi
         {/* Modular follow-up options */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl backdrop-blur-sm hover:bg-white/[0.06] transition">
-            <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+            <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
             <h3 className="font-serif text-xl mb-2">Co-Design</h3>
             <p className="opacity-90 leading-relaxed">
               Develop tailored, evidence-based strategies that fit your organization’s unique needs and context.
@@ -165,7 +165,7 @@ Strengthen and integrate organizational programs that foster mental health, resi
           </article>
 
           <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl backdrop-blur-sm hover:bg-white/[0.06] transition">
-            <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+            <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
             <h3 className="font-serif text-xl mb-2">Implementation</h3>
             <p className="opacity-90 leading-relaxed">
               Support program rollout with facilitator toolkits, trainings, and change-management resources.
@@ -173,14 +173,14 @@ Strengthen and integrate organizational programs that foster mental health, resi
           </article>
 
           <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl backdrop-blur-sm hover:bg-white/[0.06] transition">
-            <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+            <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
             <h3 className="font-serif text-xl mb-2">Evaluation</h3>
             <p className="opacity-90 leading-relaxed">
               Measure program outcomes, refine designs, and assess true organizational-level impact.
             </p>
           </article>
                     <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl backdrop-blur-sm hover:bg-white/[0.06] transition">
-            <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+            <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
             <h3 className="font-serif text-xl mb-2">Scaling</h3>
             <p className="opacity-90 leading-relaxed">
               Expand programming more widely to increase reach and impact across your organization.
@@ -260,7 +260,7 @@ Strengthen and integrate organizational programs that foster mental health, resi
   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
     {/* Short Sprints */}
     <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
-      <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+      <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
       <h3 className="font-serif text-xl mb-2">Short Sprints</h3>
       <p className="opacity-90 leading-relaxed mb-3">
         2–6 weeks to quickly understand needs, run listening sessions, and surface
@@ -273,7 +273,7 @@ Strengthen and integrate organizational programs that foster mental health, resi
 
     {/* Deep Partnerships */}
     <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
-      <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+      <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
       <h3 className="font-serif text-xl mb-2">Deep Partnerships</h3>
       <p className="opacity-90 leading-relaxed mb-3">
         3–12 months to co-design programs, support implementation, and learn as you go—
@@ -286,7 +286,7 @@ Strengthen and integrate organizational programs that foster mental health, resi
 
     {/* Ongoing Support */}
     <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
-      <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+      <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
       <h3 className="font-serif text-xl mb-2">Ongoing Support</h3>
       <p className="opacity-90 leading-relaxed mb-3">
         Monthly or quarterly check-ins, trainings, and refreshers to sustain momentum,
@@ -396,7 +396,7 @@ Strengthen and integrate organizational programs that foster mental health, resi
       >
         <span
           aria-hidden
-          className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r"
+          className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl"
         />
         <blockquote className="font-serif text-xl md:text-2xl leading-relaxed opacity-90 relative">
           {/* LEFT DECORATIVE QUOTE — per-item position */}
