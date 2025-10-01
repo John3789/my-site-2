@@ -127,25 +127,25 @@ export default function Home() {
                    <li className="flex gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
                     <span>
-                      <strong>Partner in Research</strong> — Collaborate with a community research expert.
+                      <strong>Partner</strong> — Collaborate with a community-engaged research expert.
                     </span>
                   </li>
                   <li className="flex gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
                     <span>
-                      <strong>Design with Science</strong> — Build powerful programs.
+                      <strong>Design</strong> — Build powerful, evidence-based programs that truly resonate.
                     </span>
                     </li>
                      <li className="flex gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
                     <span>
-                      <strong>Evaluate What Works</strong> — Prove program impact.
+                      <strong>Evaluate</strong> — Measure outcomes that matter and prove impact with data.
                     </span>
                   </li>
                   <li className="flex gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
                     <span>
-                      <strong>Scale Resilience</strong> — Improve organizational wellbeing.
+                      <strong>Scale</strong> — Strengthen and integrate organizational resilience &amp; wellbeing.
                     </span>
                   </li>
                 </ul>
