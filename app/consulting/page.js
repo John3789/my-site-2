@@ -9,11 +9,11 @@ export default function ConsultingPage() {
         {/* shorter, centered gold hairline only */}
         <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 rounded" />
 
-        <p className="text-lg md:text-xl opacity-85 max-w-[780px] mx-auto mt-6 leading-relaxed">
+        <p className="text-lg md:text-xl opacity-85 max-w-[780px] mx-auto mt-12 leading-relaxed">
           Evidence-based consulting that helps organizations design, evaluate, and scale
           strategies to strengthen mental health, resilience, and growth.
         </p>
-      </section>
+</section>
 
       {/* === LOCAL SUBNAV === */}
       <nav className="sticky top-8 z-20 mx-auto max-w-[1100px] px-6 mt-2 mb-4">
@@ -26,6 +26,8 @@ export default function ConsultingPage() {
             { href: "#who-i-work-with", label: "Who I Work With" },
             { href: "#packages", label: "Packages" },
             { href: "#contact", label: "Contact" },
+            { href: "#testimonials", label: "Testimonials" }, // <-- added
+
           ].map((i) => (
             <li key={i.href}>
               <a
@@ -317,64 +319,71 @@ export default function ConsultingPage() {
         <div className="h-px w-full bg-[var(--color-cream)]/15" />
       </div>
 
-      {/* ===== TESTIMONIALS (3 cards) ===== */}
-<section className="mx-auto max-w-[1100px] px-6 py-14 md:py-16">
-  <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 text-center mb-2">Testimonials</p>
-  <h2 className="font-serif text-3xl md:text-4xl opacity-95 text-center">What Clients and Partners Say</h2>
+  {/* ===== TESTIMONIALS (customizable quotes + duplicate names ok) ===== */}
+<section
+  id="testimonials"
+  className="scroll-mt-24 md:scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14 md:py-16"
+>
+  <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 text-center mb-2">
+    Testimonials
+  </p>
+  <h2 className="font-serif text-3xl md:text-4xl opacity-95 text-center">
+    What Clients and Partners Say
+  </h2>
   <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mx-auto mt-3 mb-8 rounded" />
 
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
     {[
+      {
+        q: "I found Dr. Salerno to be very well-versed in research strategies. He definitely helped us grow and I genuinely appreciated his excellence.",
+        a: "Client at New York University",
+        // left & right decorative quote positions (Tailwind utility classes)
+        lq: "-left-4 -top-1",
+        rq: "right-[2.5rem] bottom-[0.5rem]",
+      },
       {
         q: "Dr. Salerno is an expert in mental health equity research, highly skilled and incorporates attention to community priorities.",
         a: "Client at University of California, Los Angeles",
+        lq: "-left-4 -top-1",
+        rq: "right-[7rem] bottom-[0.5rem]",
       },
       {
         q: "Dr. Salerno has a strong command of various research methods and an undeniable passion for his work in the public health sphere.",
         a: "Client at Columbia University",
+        lq: "-left-3 -top-2",
+        rq: "right-[6rem] bottom-[0.5rem]",
       },
       {
+        // duplicate attribution is fine now
         q: "Dr. Salerno is incredibly intelligent and insightful with a deep, nuanced understanding of and appreciation for research.",
-        a: "Client at New York University",
+        a: "Client at Columbia University", 
+        lq: "-left-4 -top-1",
+        rq: "right-[8.5rem] bottom-[0.5rem]",
       },
-    ].map((t, i) => (
+    ].map((t, idx) => (
       <figure
-        key={t.a}
+        key={idx} // use index so duplicate 'a' values are allowed
         className="relative w-full rounded-xl bg-white/5 p-6 ring-1 ring-white/10 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition"
       >
         <span
           aria-hidden
           className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r"
         />
-        <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-          {/* LEFT DECORATIVE QUOTE */}
+        <blockquote className="font-serif text-xl md:text-2xl leading-relaxed opacity-90 relative">
+          {/* LEFT DECORATIVE QUOTE — per-item position */}
           <span
             aria-hidden
-            className={
-              "absolute text-4xl opacity-20 select-none " +
-              (i === 0
-                ? "-left-4 -top-1"
-                : i === 1
-                ? "-left-4 -top-1"
-                : "-left-4 -top-1")
-            }
+            className={`absolute text-4xl opacity-20 select-none ${t.lq || "-left-4 -top-1"}`}
           >
             “
           </span>
 
           <p>{t.q}</p>
 
-          {/* RIGHT DECORATIVE QUOTE */}
+          {/* RIGHT DECORATIVE QUOTE — per-item position */}
           <span
             aria-hidden
-            className={
-              "absolute text-4xl opacity-20 select-none " +
-              (i === 0
-                ? "right-17 bottom-2"
-                : i === 1
-                ? "right-19 bottom-2"
-                : "right-8 bottom-2")
-            }
+            className={`absolute text-4xl opacity-20 select-none ${t.rq || "right-[2rem] bottom-[0.5rem]"}`}
           >
             ”
           </span>
