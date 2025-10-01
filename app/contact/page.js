@@ -19,7 +19,7 @@ export default function ContactPage() {
         <div className="flex-1">
           <h1 className="font-serif text-4xl opacity-90 mb-6">Contact</h1>
           <p className="text-lg opacity-90 max-w-3xl mb-10">
-            For consulting, speaking, media, and collaborations, please share a few details below or send an email directly to{" "}
+            For consulting, meditations, speaking, media, and collaborations, please share a few details below or send an email directly to{" "}
           <a
           href="mailto:contact@drjuanpablosalerno.com"
       className="underline underline-offset-4 hover:opacity-80 transition whitespace-nowrap"
@@ -80,6 +80,9 @@ export default function ContactPage() {
                   </option>
                   <option className="bg-[var(--color-teal-900)]" value="Speaking">
                     Speaking
+                  </option>
+                     <option className="bg-[var(--color-teal-900)]" value="Speaking">
+                    Meditations
                   </option>
                   <option className="bg-[var(--color-teal-900)]" value="Media">
                     Media / Press
