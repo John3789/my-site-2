@@ -335,7 +335,7 @@ export default function ConsultingPage() {
   <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
     {[
       {
-        q: "I found Dr. Salerno to be very well-versed in research strategies. He definitely helped us grow and I genuinely appreciated his excellence.",
+        q: "I found Dr. Salerno to be very well-versed in the subject matter. He definitely helped us grow and I genuinely appreciated his excellence.",
         a: "Client at New York University",
         // left & right decorative quote positions (Tailwind utility classes)
         lq: "-left-4 -top-1",

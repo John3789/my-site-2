@@ -38,7 +38,7 @@ export default function SpeakingPage() {
   autoPlay
   loop
   preload="auto"
-  fetchpriority="high"
+  fetchPriority="high"
   className="absolute inset-0 h-full w-full object-cover object-[50%_38%]"
 >
   <source src="/hero40.mp4" type="video/mp4" />
