@@ -11,20 +11,20 @@ export default function ConsultingPage() {
 
         <p className="text-lg md:text-xl opacity-85 max-w-[780px] mx-auto mt-12 leading-relaxed">
           Evidence-based consulting that helps organizations design, evaluate, and scale
-          strategies to strengthen mental health, resilience, and growth.
+          strategies to strengthen mental health, wellbeing, resilience, and growth.
         </p>
 </section>
 
       {/* === LOCAL SUBNAV === */}
       <nav className="sticky top-8 z-20 mx-auto max-w-[1100px] px-6 mt-2 mb-4">
-        <ul className="flex flex-wrap gap-3 justify-center text-[13px] uppercase tracking-[0.14em] opacity-85">
+        <ul className="flex flex-wrap gap-3 justify-center text-[12px] uppercase tracking-[0.14em] opacity-85">
           {[
             { href: "#approach", label: "Approach" },
             { href: "#pillars", label: "Services" },
             { href: "#process", label: "Process" },
             { href: "#results", label: "Results" },
             { href: "#who-i-work-with", label: "Who I Work With" },
-            { href: "#packages", label: "Packages" },
+            { href: "#packages", label: "Ways to Partner" },
             { href: "#contact", label: "Contact" },
             { href: "#testimonials", label: "Testimonials" }, // <-- added
 
@@ -81,8 +81,7 @@ export default function ConsultingPage() {
             <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
             <h3 className="font-serif text-2xl mb-2">Partner in Research</h3>
             <p className="opacity-90 leading-relaxed mb-3">
-              Work with an NIH-funded scientist to co-create studies, publish findings, and unlock
-              funding opportunities—bringing credibility and depth to your initiatives.
+              Partner with a federally-funded scientist across all phases of programming and research—bringing credibility and depth to your initiatives.
             </p>
             <a href="/contact" className="text-sm underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">
               Start a research partnership →
@@ -94,7 +93,7 @@ export default function ConsultingPage() {
             <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
             <h3 className="font-serif text-2xl mb-2">Design with Science</h3>
             <p className="opacity-90 leading-relaxed mb-3">
-              Translate cutting-edge research into interventions that resonate with your community.
+              Translate cutting-edge research into programs that resonate with your organization or community.
               Evidence-based, culturally responsive, and operationally practical.
             </p>
             <a href="/contact" className="text-sm underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">
@@ -112,20 +111,19 @@ export default function ConsultingPage() {
               tied to outcomes.
             </p>
             <a href="/contact" className="text-sm underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">
-              Request an evaluation →
+              Co-construct an evaluation →
             </a>
           </article>
 
           {/* Scale Resilience */}
           <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
             <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
-            <h3 className="font-serif text-2xl mb-2">Scale Resilience</h3>
+            <h3 className="font-serif text-2xl mb-2">Scale Across Your Organization</h3>
             <p className="opacity-90 leading-relaxed mb-3">
-              Strengthen organizations through strategies that improve wellbeing and reduce burnout:
-              mindfulness, resilience training, habit design, and manager toolkits aligned to KPIs.
+Strengthen and integrate organizational programs that foster mental health, resilience, and wellbeing — from mindfulness and stress management to practices that support sustainable growth.
             </p>
             <a href="/contact" className="text-sm underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">
-              Scale resilience →
+              Scale wellness and resilience →
             </a>
           </article>
         </div>
@@ -157,12 +155,12 @@ export default function ConsultingPage() {
         </article>
 
         {/* Modular follow-up options */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl backdrop-blur-sm hover:bg-white/[0.06] transition">
             <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
             <h3 className="font-serif text-xl mb-2">Co-Design</h3>
             <p className="opacity-90 leading-relaxed">
-              Develop tailored, evidence-based strategies with your team that fit your unique context.
+              Develop tailored, evidence-based strategies that fit your organization's unique needs and context.
             </p>
           </article>
 
@@ -170,15 +168,22 @@ export default function ConsultingPage() {
             <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
             <h3 className="font-serif text-xl mb-2">Implementation</h3>
             <p className="opacity-90 leading-relaxed">
-              Support rollout with facilitator toolkits, trainings, and change-management resources.
+              Support program rollout with facilitator toolkits, trainings, and change-management resources.
             </p>
           </article>
 
           <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl backdrop-blur-sm hover:bg-white/[0.06] transition">
             <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
-            <h3 className="font-serif text-xl mb-2">Evaluation &amp; Scaling</h3>
+            <h3 className="font-serif text-xl mb-2">Evaluation</h3>
             <p className="opacity-90 leading-relaxed">
-              Measure outcomes, refine programs, and expand what works to achieve greater impact.
+              Measure program outcomes, refine designs, and assess true organizational-level impact.
+            </p>
+          </article>
+                    <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl backdrop-blur-sm hover:bg-white/[0.06] transition">
+            <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+            <h3 className="font-serif text-xl mb-2">Scaling</h3>
+            <p className="opacity-90 leading-relaxed">
+              Expand programming more widely to increase reach and impact across your organization.
             </p>
           </article>
         </div>
@@ -192,13 +197,13 @@ export default function ConsultingPage() {
       {/* ===== RESULTS ===== */}
       <section id="results" className="mx-auto max-w-[1100px] px-6 py-14 md:py-16">
         <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Results</p>
-        <h2 className="font-serif text-3xl md:text-4xl opacity-95">What Partners Achieve</h2>
+        <h2 className="font-serif text-3xl md:text-4xl opacity-95">What Partners Will Achieve</h2>
         <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" />
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg opacity-90">
-          <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔</span><span>Higher program completion (10–25%) via habit design</span></li>
-          <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔</span><span>Reduced burnout indicators (15–30%) after trainings</span></li>
-          <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔</span><span>Grant-ready logic models, KPIs, and dashboards</span></li>
-          <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔</span><span>Publishable evaluation designs &amp; research partnerships</span></li>
+          <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔</span><span>Higher program engagement and follow-through</span></li>
+          <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔</span><span>Noticeable and meaningful reductions in stress and burnout</span></li>
+          <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔</span><span>Stronger cultures of mindfulness, resilience, and wellbeing</span></li>
+          <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔</span><span>Practical tools that support growth across teams/communities</span></li>
         </ul>
       </section>
 
@@ -214,29 +219,28 @@ export default function ConsultingPage() {
         <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" />
 
         <p className="text-base md:text-lg opacity-85 leading-relaxed max-w-3xl mb-6">
-          I partner with organizations of all sizes — from startups to global institutions — that want to
-          design, implement, evaluate, and scale wellbeing and growth programs. Whether the goal is to
-          strengthen internal teams or impact the wider community, I bring evidence-based strategies that
-          deliver measurable outcomes.
+ I collaborate with organizations that want to weave mental health, resilience, and wellbeing 
+    into the heart of their culture. From small organizations to global institutions, I help teams and 
+    communities strengthen connection, reduce burnout, and create environments where people can thrive.
         </p>
 
         <div className="rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm">
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5 text-base opacity-90">
             <li className="flex items-start gap-3">
               <span className="mt-2 h-2.5 w-2.5 rounded-full bg-[var(--color-gold)] shrink-0" />
-              <span>Build resilience and wellbeing in their workforce</span>
+              <span>Organizations that prioritize mental health, resilience, &amp; growth.</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="mt-2 h-2.5 w-2.5 rounded-full bg-[var(--color-gold)] shrink-0" />
-              <span>Design programs that reach underserved communities</span>
+              <span>Institutions seeking to build cultures of mindfulness &amp; wellbeing.</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="mt-2 h-2.5 w-2.5 rounded-full bg-[var(--color-gold)] shrink-0" />
-              <span>Evaluate existing initiatives with rigorous methods</span>
+              <span>Agencies that want to reduce burnout and strengthen connection.</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="mt-2 h-2.5 w-2.5 rounded-full bg-[var(--color-gold)] shrink-0" />
-              <span>Scale pilots into sustainable, long-term programs</span>
+              <span>Partners interested in blending science with wellness practices.</span>
             </li>
           </ul>
         </div>
@@ -247,28 +251,53 @@ export default function ConsultingPage() {
         <div className="h-px w-full bg-[var(--color-cream)]/15" />
       </div>
 
-      {/* ===== PACKAGES ===== */}
-      <section id="packages" className="mx-auto max-w-[1100px] px-6 py-14 md:py-16">
-        <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Packages</p>
-        <h2 className="font-serif text-3xl md:text-4xl opacity-95">Ways to Engage</h2>
-        <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[
-            { t: "Program Build", d: "6–12 weeks: co-design, pilot, facilitator toolkit, rollout support." },
-            { t: "Evaluation Sprint", d: "4–6 weeks: logic model, KPIs, measurement plan, quick insights." },
-            { t: "Scale & Sustain", d: "Quarterly: trainings, dashboards, continuous improvement cycles." },
-          ].map((p) => (
-            <article
-              key={p.t}
-              className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition"
-            >
-              <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
-              <h3 className="font-serif text-xl mb-2">{p.t}</h3>
-              <p className="opacity-90 leading-relaxed">{p.d}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+      {/* ===== WAYS TO PARTNER ===== */}
+<section id="packages" className="mx-auto max-w-[1100px] px-6 py-14 md:py-16">
+  <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Ways to Partner</p>
+  <h2 className="font-serif text-3xl md:text-4xl opacity-95">Choose the Partnership That Fits</h2>
+  <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" />
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {/* Short Sprints */}
+    <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
+      <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+      <h3 className="font-serif text-xl mb-2">Short Sprints</h3>
+      <p className="opacity-90 leading-relaxed mb-3">
+        2–6 weeks to quickly understand needs, run listening sessions, and surface
+        actionable insights—so you can make a confident next step.
+      </p>
+      <a href="/contact" className="text-sm underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">
+        Start a Sprint →
+      </a>
+    </article>
+
+    {/* Deep Partnerships */}
+    <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
+      <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+      <h3 className="font-serif text-xl mb-2">Deep Partnerships</h3>
+      <p className="opacity-90 leading-relaxed mb-3">
+        3–12 months to co-design programs, support implementation, and learn as you go—
+        grounding decisions in evidence while staying human-centered.
+      </p>
+      <a href="/contact" className="text-sm underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">
+        Explore a Partnership →
+      </a>
+    </article>
+
+    {/* Ongoing Support */}
+    <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
+      <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+      <h3 className="font-serif text-xl mb-2">Ongoing Support</h3>
+      <p className="opacity-90 leading-relaxed mb-3">
+        Monthly or quarterly check-ins, trainings, and refreshers to sustain momentum,
+        reduce burnout, and keep wellbeing practices alive across teams.
+      </p>
+      <a href="/contact" className="text-sm underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">
+        Set Up Support →
+      </a>
+    </article>
+  </div>
+</section>
 
       {/* contained thin divider */}
       <div className="mx-auto max-w-[1100px] px-6">
