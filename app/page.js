@@ -243,9 +243,9 @@ export default function Home() {
                 <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90">Resources for Self-Elevation</h2>
                 <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto lg:mx-0 my-5 rounded" />
                 <p className="text-[17px] leading-[1.7] opacity-90 mb-6 max-w-xl lg:max-w-xl">
-                  Science-backed tools designed or approved by Dr. Salerno to strengthen your mind and empower your life.
-                  Explore practices and insights that amplify your potential and guide you toward a more purposeful,
-                  abundant way of living.
+                Short media collections curated by Dr. Salerno to strengthen your mind and elevate 
+                your life. Discover simple, practical insights you can use today to build clarity, 
+                confidence, and momentum.
                 </p>
                 <Link href="/resources" className="link">Learn more →</Link>
               </div>
