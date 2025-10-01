@@ -327,15 +327,15 @@ export default function ConsultingPage() {
     {[
       {
         q: "Dr. Salerno is an expert in mental health equity research, highly skilled and incorporates attention to community priorities.",
-        a: "University of California, Los Angeles",
+        a: "Client at University of California, Los Angeles",
       },
       {
         q: "Dr. Salerno has a strong command of various research methods and an undeniable passion for his work in the public health sphere.",
-        a: "Columbia University",
+        a: "Client at Columbia University",
       },
       {
         q: "Dr. Salerno is incredibly intelligent and insightful with a deep, nuanced understanding of and appreciation for research.",
-        a: "New York University",
+        a: "Client at New York University",
       },
     ].map((t, i) => (
       <figure
