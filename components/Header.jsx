@@ -60,14 +60,7 @@ export default function Header() {
               }`}
             >
               Consulting
-            </Link>
-            <Link
-              href="/press"
-              className={`hover:underline underline-offset-4 hover:opacity-90 transition ${
-                pathname.startsWith("/press") ? "nav-active" : ""
-              }`}
-            >
-              Press
+            
             </Link>
             <Link
               href="/contact"

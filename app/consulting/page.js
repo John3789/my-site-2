@@ -160,7 +160,7 @@ Strengthen and integrate organizational programs that foster mental health, resi
             <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
             <h3 className="font-serif text-xl mb-2">Co-Design</h3>
             <p className="opacity-90 leading-relaxed">
-              Develop tailored, evidence-based strategies that fit your organization's unique needs and context.
+              Develop tailored, evidence-based strategies that fit your organization’s unique needs and context.
             </p>
           </article>
 
