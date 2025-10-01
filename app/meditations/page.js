@@ -1,38 +1,39 @@
+// app/meditations/page.js
 export default function MeditationsPage() {
   return (
     <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
       {/* ===== HERO ===== */}
       <section className="mx-auto max-w-[1100px] px-6 pt-16 md:pt-20 pb-10 text-center">
-        <h1 className="font-serif text-[clamp(34px,4.5vw,52px)] leading-[1.06] opacity-95">
+        <h1 className="font-serif text-6xl leading-[1.06] opacity-95">
           Meditations
         </h1>
         <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 mx-auto mt-4 rounded" />
       </section>
 
-
-
-
-      {/* ===== INTRO (moved away from heading to avoid crowding) ===== */}
-      <section className="mx-auto max-w-[780px] px-6 py-12 md:py-2 mb-8">
-        <p className="text-lg md:text-xl opacity-90 leading-relaxed max-w-[900px] mx-auto text-center">
-Practices designed to help reset your body, calm your mind, and uplift your spirit — 
-guiding you through the day with clarity and ease.
-        </p>
-
-        {/* Under construction notice */}
-        <div className="mt-6 flex justify-center">
-          <div className="relative w-full max-w-[900px] rounded-lg bg-white/5 ring-1 ring-white/10 p-4 md:p-5 text-center">
-            <p className="text-sm md:text-base opacity-85">
-              <span className="font-semibold">Note:</span> This page is a work in progress. I’ll be
-              adding new tracks periodically.
+      {/* ===== INTRO (footnote inside the same card) ===== */}
+      <section className="mx-auto max-w-[900px] px-6 mb-8 mt-5">
+        <div className="relative rounded-2xl bg-white/5 ring-1 ring-white/10">
+          {/* Gold spine on the left */}
+          <span
+            aria-hidden
+            className="absolute left-0 top-2 bottom-2 w-[3px] bg-[var(--color-gold)]/60 rounded-l-2xl"
+          />
+          <div className="p-5 md:p-6">
+            <p className="text-lg md:text-xl opacity-90 leading-relaxed text-center">
+              Practices designed to help reset your body, calm your mind, and uplift your
+              spirit — guiding you through the day with clarity and ease.
             </p>
+
+            {/* Footnote: discreet, inside the same card */}
+            <div className="mt-4 pt-3 text-center text-xs opacity-70 border-t border-[var(--color-cream)]/15">
+              This page is a work in progress. I’ll be adding new tracks periodically.
+            </div>
           </div>
         </div>
       </section>
 
       {/* Divider */}
-<div className="h-px w-3/4 md:w-3/5 mx-auto bg-[var(--color-cream)]/15" />
-
+      <div className="h-px w-3/4 md:w-3/5 mx-auto bg-[var(--color-cream)]/15" />
 
       {/* ===== FEATURED (5-Minute Reset) ===== */}
       <section className="mx-auto max-w-[1100px] px-6 py-14 md:py-16">
@@ -40,18 +41,19 @@ guiding you through the day with clarity and ease.
         <h2 className="font-serif text-3xl md:text-4xl opacity-95">5-Minute Reset (Free)</h2>
         <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-6 rounded" />
         <p className="opacity-90 leading-relaxed max-w-2xl">
-A gentle, all-levels 5-minute meditation to ground, align, and re-center.
-Morning clarity, afternoon reset, evening calm — a simple practice always within reach.
-Bookmark this page for moments when you need to recharge.
+          A gentle, all-levels 5-minute meditation to ground, align, and re-center. Morning
+          clarity, afternoon reset, evening calm — a simple practice always within reach.
+          Bookmark this page for moments when you need to recharge.
         </p>
 
         <article
           className="mt-6 relative rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7 shadow-2xl backdrop-blur-sm
                      hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] transition"
         >
+          {/* Gold spine (dimmed) */}
           <span
             aria-hidden
-            className="absolute left-0 top-2 bottom-2 w-[3px] bg-[var(--color-gold)]/70 rounded-r"
+            className="absolute left-0 top-2 bottom-2 w-[3px] bg-[var(--color-gold)]/60 rounded-l-2xl"
           />
           <div className="flex flex-wrap items-center gap-3 text-sm opacity-85">
             <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 ring-1 ring-white/15">
@@ -95,8 +97,7 @@ Bookmark this page for moments when you need to recharge.
       </section>
 
       {/* Divider */}
-<div className="h-px w-3/4 md:w-3/5 mx-auto bg-[var(--color-cream)]/15" />
-
+      <div className="h-px w-3/4 md:w-3/5 mx-auto bg-[var(--color-cream)]/15" />
 
       {/* ===== CUSTOM SESSIONS ===== */}
       <section className="mx-auto max-w-[1100px] px-6 py-14 md:py-16">
@@ -104,11 +105,10 @@ Bookmark this page for moments when you need to recharge.
         <h2 className="font-serif text-3xl md:text-4xl opacity-95">Custom-Made Sessions</h2>
         <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-6 rounded" />
         <p className="text-lg opacity-90 max-w-3xl leading-relaxed">
-I design custom meditations tailored to your goals and challenges — 
-whether it’s cultivating resilience, deepening focus, easing stress, 
-creating space for empowerment and manifestation, or something uniquely 
-yours. Each recording becomes a personalized pathway to growth and 
-wellbeing. Click below to get started.
+          I design custom meditations tailored to your goals and challenges — whether it’s
+          cultivating resilience, deepening focus, easing stress, creating space for empowerment
+          and manifestation, or something uniquely yours. Each recording becomes a personalized
+          pathway to growth and wellbeing. Click below to get started.
         </p>
         <a
           href="/contact"

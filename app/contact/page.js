@@ -17,7 +17,7 @@ export default function ContactPage() {
         
         {/* Left side: form */}
         <div className="flex-1">
-          <h1 className="font-serif text-4xl opacity-90 mb-6">Contact</h1>
+          <h1 className="font-serif text-6xl opacity-90 mb-6">Contact</h1>
           <p className="text-lg opacity-90 max-w-3xl mb-10">
             For consulting, meditations, speaking, media, and collaborations, please share a few details below or send an email directly to{" "}
           <a

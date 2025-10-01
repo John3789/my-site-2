@@ -81,7 +81,7 @@ export default function BooksPage() {
 
           {/* CARD 1 */}
           <article className="w-full bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10">
-            <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[var(--color-gold)]/60 rounded-l-xl" />
+            <div className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/60 rounded-l-xl" />
             <div className="flex flex-col lg:flex-row gap-10 lg:gap-12">
               <div className="lg:w-1/3">
                 <p className="text-xs uppercase tracking-[0.18em] text-[var(--color-gold)] opacity-90">Theme</p>
@@ -149,7 +149,7 @@ export default function BooksPage() {
 
           {/* CARD 2 */}
           <article className="w-full bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10">
-            <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[var(--color-gold)]/60 rounded-l-xl" />
+            <div className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/60 rounded-l-xl" />
             <div className="flex flex-col lg:flex-row gap-10 lg:gap-12">
               <div className="lg:w-1/3">
                 <p className="text-xs uppercase tracking-[0.18em] text-[var(--color-gold)] opacity-90">Theme</p>
@@ -216,7 +216,7 @@ export default function BooksPage() {
 
           {/* CARD 3 */}
           <article className="w-full bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10">
-            <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[var(--color-gold)]/60 rounded-l-xl" />
+            <div className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/60 rounded-l-xl" />
             <div className="flex flex-col lg:flex-row gap-10 lg:gap-12">
               <div className="lg:w-1/3">
                 <p className="text-xs uppercase tracking-[0.18em] text-[var(--color-gold)] opacity-90">Theme</p>
