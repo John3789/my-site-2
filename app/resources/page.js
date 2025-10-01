@@ -313,9 +313,9 @@ export default function ResourcesPage() {
           {/* Intro box (narrower) */}
           <div className="relative mx-auto max-w-[820px] mb-10 rounded-2xl border border-white/15 bg-white/5">
             {/* Gold spine */}
-            <span className="pointer-events-none absolute left-0 top-1 h-38 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
+            <span className="pointer-events-none absolute left-0 top-1 h-39 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
             <div className="flex flex-col gap-3 p-5">
-              <p className="text-[17px] leading-relaxed opacity-90">
+              <p className="text-[18px] leading-relaxed opacity-90">
                 A growing library of concise collections—shaped by science and lived
                 experience—to sharpen your mind and uplift your life. Each theme is
                 designed to meet you where you are and guide you toward greater
