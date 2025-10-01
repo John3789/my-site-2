@@ -310,25 +310,23 @@ export default function ResourcesPage() {
           </h1>
           <div className="mx-auto h-[2px] w-16 bg-[var(--color-gold)]/85 rounded mb-15" />
 
-          {/* Intro box (transparent/glass) with footnote inside */}
-<div className="relative mb-10 rounded-2xl border border-white/15 bg-white/5">
-  {/* Gold spine */}
-  <span className="pointer-events-none absolute left-0 top-1 h-32 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
-  
-  <div className="flex flex-col gap-3 p-5">
-    <p className="text-[17px] leading-relaxed opacity-90">
-      A growing library of concise collections—shaped by science and lived
-      experience—to sharpen your mind and uplift your life. Each theme is
-      designed to meet you where you are and guide you toward greater
-      confidence, balance, and intentional living.
-    </p>
-    <div className="pt-3 text-xs opacity-70 border-t border-[var(--color-cream)]/15">
-      This page is under construction and will be updated periodically with
-      new collections.
-    </div>
-  </div>
-</div>
-
+          {/* Intro box (narrower) */}
+          <div className="relative mx-auto max-w-[820px] mb-10 rounded-2xl border border-white/15 bg-white/5">
+            {/* Gold spine */}
+            <span className="pointer-events-none absolute left-0 top-1 h-38 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
+            <div className="flex flex-col gap-3 p-5">
+              <p className="text-[17px] leading-relaxed opacity-90">
+                A growing library of concise collections—shaped by science and lived
+                experience—to sharpen your mind and uplift your life. Each theme is
+                designed to meet you where you are and guide you toward greater
+                confidence, balance, and intentional living.
+              </p>
+              <div className="pt-3 text-xs opacity-70 border-t border-[var(--color-cream)]/15">
+                This page is under construction and will be updated periodically with
+                new collections.
+              </div>
+            </div>
+          </div>
 
           {/* Sticky subnav with affordances */}
           {Nav}
@@ -342,9 +340,7 @@ export default function ResourcesPage() {
                     <h2 className="font-serif text-[clamp(26px,3.3vw,34px)] opacity-95 mt-12">
                       {theme.title}
                     </h2>
-                    {/* Gold underline under section headings */}
                     <div className="h-[2px] w-12 bg-[var(--color-gold)]/85 rounded mt-0" />
-                    {/* Removed cream divider here as requested */}
                     <p className="opacity-85 mt-3 max-w-3xl">{theme.blurb}</p>
                   </header>
 
@@ -364,15 +360,12 @@ export default function ResourcesPage() {
                             <h3 className="font-serif text-[20px] md:text-[22px] opacity-95">
                               {col.title}
                             </h3>
-                            {/* Subtle gold underline for the card title (dim) */}
                             <div className="h-[2px] w-10 bg-[var(--color-gold)]/60 rounded mt-0" />
-                            {/* Larger, more readable subtitle */}
                             <p className="opacity-85 text-[15px] md:text-[16px] mt-2 min-h-[40px]">
                               {col.subtitle}
                             </p>
                           </div>
 
-                          {/* tags w/ reserved space */}
                           {col.tags?.length ? (
                             <div className="mt-3 flex flex-wrap gap-2 min-h-[28px]">
                               {col.tags.map((t) => (
@@ -388,7 +381,6 @@ export default function ResourcesPage() {
                             <div className="mt-3 min-h-[28px]" />
                           )}
 
-                          {/* Spacer to align buttons */}
                           <div className="flex-1" />
 
                           <div className="mt-5 flex flex-wrap gap-3">
@@ -415,7 +407,6 @@ export default function ResourcesPage() {
                     })}
                   </ul>
 
-                  {/* Section separator (light cream hairline) */}
                   {idx < THEMES.length - 1 && (
                     <div className="mt-12">
                       <div className="h-px w-full bg-[var(--color-cream)]/16" />
@@ -476,7 +467,6 @@ function CollectionModal({ open, onClose, collection }) {
         </header>
 
         <div className="max-h-[70vh] overflow-y-auto px-5 py-5">
-          {/* Empty safeguard */}
           {(!collection.items || collection.items.length === 0) ? (
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6 text-center">
               <p className="opacity-85">
