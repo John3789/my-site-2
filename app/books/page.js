@@ -60,7 +60,7 @@ export default function BooksPage() {
 
           {/* Right column image (plain) */}
           <div className="flex justify-center">
-            <image
+            <img
               src="/award1.jpg"
               alt="Book or award"
               className="w-full max-w-md h-full shadow-lg object-cover object-center mt-3"
