@@ -116,12 +116,12 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== Mobile & Tablet font scaling ===== */
 @media (max-width: 768px) {
   html {
-    font-size: 160%; /* ~10% bigger text on tablets/small laptops */
+    font-size: 200%; /* ~10% bigger text on tablets/small laptops */
   }
 }
 
 @media (max-width: 480px) {
   html {
-    font-size: 200%; /* ~20% bigger text on mobile phones */
+    font-size: 275%; /* ~20% bigger text on mobile phones */
   }
 }
