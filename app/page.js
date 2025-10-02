@@ -88,7 +88,7 @@ export default function Home() {
       </section>
 
       {/* ===== PAGE BODY ===== */}
-     <div
+<div
   style={{ '--z': 3.00, '--zoomL': 1.50 }}
   className="
     md:contents
@@ -100,7 +100,6 @@ export default function Home() {
     md:[width:100%]
         landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
     overflow-visible
-    [will-change:transform] [backface-visibility:hidden] [transform:translateZ(0)]
   "
 >
       <main
