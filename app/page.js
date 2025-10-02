@@ -8,6 +8,21 @@ export default function Home() {
       {/* spacer to clear the fixed header (must match h-8) */}
       <div aria-hidden className="h-8" />
 
+{/* ===== TOP ZOOM: Nameplate + Hero (mobile only) ===== */}
+<div
+  style={{ '--topz': 3.00 }}  // adjust 1.08–1.15 to taste
+  className="
+    md:contents
+    origin-top
+    [transform:scale(var(--topz))]
+    [width:calc(100%/var(--topz))]
+    [height:calc(100%/var(--topz))]
+    md:[transform:none]
+    md:[width:100%]
+    md:[height:auto]
+    overflow-x-hidden
+  "
+>
       {/* Nameplate bar (teal) */}
       <section id="home" className="bg-[var(--color-teal-800)] !text-[var(--color-cream)]">
         <div className="mx-auto max-w-[1400px] px-6 pt-0 pb-4">
@@ -20,21 +35,6 @@ export default function Home() {
         </div>
       </section>
 
-
-      {/* Hero zoom wrapper */}
-      <div
-        style={{ '--hz': 3.00 }}
-        className="
-          md:contents
-          origin-top
-          [transform:scale(var(--hz))]
-          [width:calc(100%/var(--hz))]
-          mx-auto
-          md:[transform:none]
-          md:[width:100%]
-          overflow-x-hidden
-        "
->
       {/* Hero with background photo */}
       <section className="relative h-[88.8svh] overflow-hidden">
         <Image
