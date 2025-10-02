@@ -89,7 +89,7 @@ export default function Home() {
 
       {/* ===== PAGE BODY ===== */}
      <div
-  style={{ '--z': 3.00, '--zoomL': 2.00 }} // tweak 1.08–1.20 depending on how close you want it
+  style={{ '--z': 3.00, '--zoomL': 1.50 }} // tweak 1.08–1.20 depending on how close you want it
   className="
     md:contents
     origin-top
