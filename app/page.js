@@ -91,7 +91,7 @@ export default function Home() {
       {/* ===== PAGE BODY ===== */}
       <main
   id="main"
-  className="bg-[var(--color-teal-850)] text-[var(--color-cream)] text-[17px]"
+  className="bg-[var(--color-teal-850)] text-[var(--color-cream)] text-[18px] leading-[1.7] md:text-[16px] md:leading-[1.75]"
 >
 
         {/* Mission */}
