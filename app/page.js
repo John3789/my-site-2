@@ -27,7 +27,7 @@ export default function Home() {
           alt="Portrait of Dr. Salerno"
           fill
           sizes="100vw"
-          className="object-cover scale-200 md:scale-100"
+          className="object-cover scale-125 md:scale-100"
           style={{ objectPosition: 'center 0%' }}
           priority
         />
