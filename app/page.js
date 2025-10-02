@@ -1,6 +1,7 @@
 // app/page.js
 import Link from 'next/link'
 import Image from 'next/image'
+import SocialFooter from '../components/SocialFooter'; // or your SocialFooter wrapper
 
 export default function Home() {
   return (
@@ -288,7 +289,9 @@ export default function Home() {
   </div>
 </section>
       </main>
-      </div>
+        {/* Footer now participates in the same flow */}
+  <footer><SocialFooter /></footer>
+</div>
     </>
   )
 }
