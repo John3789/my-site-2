@@ -100,6 +100,7 @@ export default function Home() {
     md:[width:100%]
         landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
     overflow-visible
+    overscroll-contain
   "
 >
       <main
