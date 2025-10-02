@@ -10,7 +10,7 @@ export default function Home() {
 
 {/* ===== TOP ZOOM: Nameplate + Hero (mobile only) ===== */}
 <div
-  style={{ '--topz': 1.50 }}  // adjust 1.08–1.15 to taste
+  style={{ '--topz': 1.15 }}  // adjust 1.08–1.15 to taste
   className="
     md:contents
     origin-top
