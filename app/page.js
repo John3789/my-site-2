@@ -88,7 +88,7 @@ export default function Home() {
       </section>
 
       {/* ===== PAGE BODY ===== */}
-<div
+     <div
   style={{ '--z': 3.00, '--zoomL': 1.50 }}
   className="
     md:contents
@@ -100,7 +100,7 @@ export default function Home() {
     md:[width:100%]
         landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
     overflow-visible
-        min-h-[100dvh]
+    [will-change:transform] [backface-visibility:hidden] [transform:translateZ(0)]
   "
 >
       <main
@@ -289,14 +289,13 @@ export default function Home() {
   </div>
 </section>
       </main>
-            {/* Real spacer so the global footer sits below on mobile */}
+      </div>
+      {/* Real spacer so the global footer sits below on mobile */}
 <div
   aria-hidden
   className="md:hidden"
   style={{ height: "calc((3.00 - 1) * 200dvh)" }}  // If your zoom is 1.12; adjust if different
 />
-      </div>
-      
     </>
   )
 }
