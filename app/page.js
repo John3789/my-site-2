@@ -23,7 +23,7 @@ export default function Home() {
 
       {/* Hero zoom wrapper */}
       <div
-        style={{ '--hz': 3.00 }}
+        style={{ '--hz': 1.12 }}
         className="
           md:contents
           origin-top
@@ -35,7 +35,6 @@ export default function Home() {
           overflow-x-hidden
         "
       >
-        </div>
 
       {/* Hero with background photo */}
       <section className="relative h-[88.8svh] overflow-hidden">
@@ -103,6 +102,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </div>
 
       {/* ===== PAGE BODY ===== */}
      <div
