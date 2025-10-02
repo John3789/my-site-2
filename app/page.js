@@ -100,6 +100,8 @@ export default function Home() {
     md:[transform:none]
     md:[width:100%]
     overflow-x-hidden
+        /* compensation so footer stays below on mobile */
+    mb-[calc((var(--z)-1)*100dvh)] md:mb-0
   "
 >
       <main
@@ -289,10 +291,9 @@ export default function Home() {
 </section>
 
 
-
-      </main>
-              {/* Optional footer */}
+        {/* Optional footer */}
         {/* <SocialFooter /> */}
+      </main>
       </div>
     </>
   )
