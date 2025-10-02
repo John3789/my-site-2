@@ -23,7 +23,7 @@ export default function Home() {
 
       {/* Hero zoom wrapper */}
       <div
-        style={{ '--hz': 1.12 }}
+        style={{ '--hz': 3.00 }}
         className="
           md:contents
           origin-top
