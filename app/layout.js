@@ -38,9 +38,10 @@ export default function RootLayout({ children }) {
             </p>
 
             {/* Socials inline on the right (same as your earlier code) */}
-            <div className="absolute right-45 bottom-6">
-              <SocialFooter />
-            </div>
+            <div className="absolute right-[45px] bottom-6">
+  <SocialFooter />
+</div>
+
           </footer>
         </FooterGate>
 

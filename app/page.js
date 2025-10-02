@@ -1,6 +1,7 @@
 // app/page.js
 import Link from 'next/link'
 import Image from 'next/image'
+import SocialFooter from "../components/SocialFooter";
 
 export default function Home() {
   return (
@@ -287,24 +288,21 @@ export default function Home() {
           </section>
         </main>
 
-        {/* ✅ FOOTER IS NOW INSIDE THE ZOOM WRAPPER (homepage only) */}
-        <footer className="bg-[var(--color-teal-850)] text-[var(--color-cream)] py-6">
-          <div className="mx-auto max-w-[1400px] px-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6">
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm opacity-86">
-              <span>© 2025 Dr. Juan Pablo Salerno™. All rights reserved.</span>
-              <span className="hidden sm:inline">·</span>
-              <Link href="/terms" className="underline-offset-2 hover:underline whitespace-nowrap">Terms</Link>
-              <span>·</span>
-              <Link href="/privacy" className="underline-offset-2 hover:underline whitespace-nowrap">Privacy</Link>
-            </div>
-            <div className="flex items-center gap-4 sm:gap-5 shrink-0">
-              <div className="relative whitespace-nowrap">ES&nbsp;|&nbsp;EN</div>
-              {/* If you want icons here and you have SocialFooter: */}
-              {/* <SocialFooter /> */}
-            </div>
-          </div>
-        </footer>
-        {/* ⬆️ END footer inside zoom */}
+        {/* ✅ FOOTER INSIDE THE ZOOM WRAPPER (homepage) */}
+<footer className="relative py-6 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)] text-center">
+  {/* Centered copyright/legal */}
+  <p>
+    © {new Date().getFullYear()} Dr. Juan Pablo Salerno™. All rights reserved. ·
+    <a href="/terms" className="underline ml-2 hover:opacity-80">Terms</a> ·
+    <a href="/privacy" className="underline ml-2 hover:opacity-80">Privacy</a>
+  </p>
+
+  {/* Socials inline on the right (absolute, like before) */}
+  <div className="absolute right-[45px] bottom-6">
+    <SocialFooter />
+  </div>
+</footer>
+
 
       </div>
     </>
