@@ -119,7 +119,7 @@ export default function Home() {
         <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90">Purposeful Consulting Solutions</h2>
         <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto xl:mx-0 my-5 rounded" />
 
-        <ul className="text-[17px] leading-[1.7] opacity-90 mb-6 max-w-xl xl:max-w-xl space-y-3 mx-auto xl:mx-0">
+        <ul className="text-[17px] sm:text-[18px] md:text-[19px] leading-[1.7] opacity-90 mb-6 max-w-xl xl:max-w-xl space-y-3 mx-auto xl:mx-0">
           <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔</span><span><strong>Partner</strong> — Collaborate with a community-engaged research expert.</span></li>
           <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔</span><span><strong>Design</strong> — Build powerful, evidence-based programs that truly resonate.</span></li>
           <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔</span><span><strong>Evaluate</strong> — Measure outcomes that matter and prove impact with data.</span></li>
@@ -194,7 +194,7 @@ export default function Home() {
       <div className="order-1 xl:order-none xl:col-span-6 text-center xl:text-left">
         <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90">Short Meditations with Dr. Salerno</h2>
         <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto xl:mx-0 my-5 rounded" />
-        <p className="text-[17px] leading-[1.7] opacity-90 mb-6 max-w-xl xl:max-w-xl mx-auto xl:mx-0">
+        <p className="text-[17px] sm:text-[18px] md:text-[19px] leading-[1.7] opacity-90 mb-6 max-w-xl xl:max-w-xl mx-auto xl:mx-0">
           Pre-recorded and custom-made guided meditations designed by Dr. Salerno for all levels to gently reset your body,
           calm your mind, and nourish your spirit. Journey inward to awaken your true potential,
           deepen your sense of peace, and create space for healing and growth.
@@ -218,7 +218,7 @@ export default function Home() {
       <div className="order-1 xl:order-none xl:col-span-6 text-center xl:text-left">
         <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90">Resources for Self-Elevation</h2>
         <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto xl:mx-0 my-5 rounded" />
-        <p className="text-[17px] leading-[1.7] opacity-90 mb-6 max-w-xl xl:max-w-xl mx-auto xl:mx-0">
+        <p className="text-[17px] sm:text-[18px] md:text-[19px] leading-[1.7] opacity-90 mb-6 max-w-xl xl:max-w-xl mx-auto xl:mx-0">
           Short media collections curated by Dr. Salerno to strengthen your mind and elevate
           your life. Discover simple, practical insights you can use today to build clarity,
           confidence, and momentum.
