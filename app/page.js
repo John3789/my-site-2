@@ -91,8 +91,16 @@ export default function Home() {
       {/* ===== PAGE BODY ===== */}
       <main
   id="main"
-  className="bg-[var(--color-teal-850)] text-[var(--color-cream)] text-[18px] leading-[1.7] md:text-[16px] md:leading-[1.75]"
+  className="
+    bg-[var(--color-teal-850)] text-[var(--color-cream)]
+    /* Mobile text zoom targets only paragraphs, list items, small labels, and links */
+    max-md:[&_p]:text-[18px]
+    max-md:[&_li]:text-[18px]
+    max-md:[&_h5]:text-[12px]
+    max-md:[&_a.link]:text-[16px]
+  "
 >
+
 
         {/* Mission */}
         <section className="w-full">
