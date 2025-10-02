@@ -28,22 +28,27 @@ export default function RootLayout({ children }) {
         {children}
 
         {/* 👇 Hide the global footer on "/" so it doesn't duplicate the homepage zoom footer */}
-        <FooterGate>
-          <footer className="relative py-6 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)] text-center">
-            {/* Centered copyright/legal (same as before) */}
-            <p>
-              © {new Date().getFullYear()} Dr. Juan Pablo Salerno™. All rights reserved. ·
-              <a href="/terms" className="underline ml-2 hover:opacity-80">Terms</a> ·
-              <a href="/privacy" className="underline ml-2 hover:opacity-80">Privacy</a>
-            </p>
+       <FooterGate>
+  <footer className="relative py-6 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
+    <div className="mx-auto max-w-[1400px]">
+      <p className="text-center">
+        © {new Date().getFullYear()} Dr. Juan Pablo Salerno™. All rights reserved. ·
+        <a href="/terms" className="underline ml-2 hover:opacity-80">Terms</a> ·
+        <a href="/privacy" className="underline ml-2 hover:opacity-80">Privacy</a>
+      </p>
 
-            {/* Socials inline on the right (same as your earlier code) */}
-            <div className="absolute right-[45px] bottom-6">
-  <SocialFooter />
-</div>
+      {/* Mobile row */}
+      <div className="sm:hidden mt-3 flex justify-center">
+        <SocialFooter />
+      </div>
 
-          </footer>
-        </FooterGate>
+      {/* ≥SM inline-right */}
+      <div className="hidden sm:block absolute right-[45px] bottom-6">
+        <SocialFooter />
+      </div>
+    </div>
+  </footer>
+</FooterGate>
 
         <Analytics />
       </body>
