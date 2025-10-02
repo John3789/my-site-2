@@ -119,7 +119,7 @@ h1, h2, h3, h4, h5, h6 {
   #main li, 
   #main h5,
   #main h2 {
-    font-size: 200%; /* ~10% bigger text on tablets/small laptops */
+    font-size: 100%; /* ~10% bigger text on tablets/small laptops */
   }
 }
 
@@ -128,6 +128,6 @@ h1, h2, h3, h4, h5, h6 {
   #main li, 
   #main h5,
   #main h2 {
-    font-size: 300%; /* ~20% bigger text on mobile phones */
+    font-size: 100%; /* ~20% bigger text on mobile phones */
   }
 }
