@@ -5,14 +5,6 @@ import SocialFooter from "../components/SocialFooter";
 import { Analytics } from '@vercel/analytics/react';
 import Header from "../components/Header";
 
-// ⬇️ Viewport export (lets Next.js add <meta name="viewport"> automatically)
-export const viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 1,    // optional: prevents zoom scaling on mobile
-  viewportFit: 'cover' // good for modern mobile devices with notches
-}
-
 // Sans font for body text
 const inter = Inter({
   subsets: ['latin'],
@@ -29,7 +21,8 @@ const cormorant = Cormorant_Garamond({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
-      <body className="bg-[#F4F1EA] text-[#0C1415] antialiased [text-rendering:optimizeLegibility] [-webkit-font-smoothing:antialiased]">
+      {/* ⬇️ lock layout so it always looks like full screen */}
+      <body className="min-w-[1200px] bg-[#F4F1EA] text-[#0C1415] antialiased [text-rendering:optimizeLegibility] [-webkit-font-smoothing:antialiased]">
         <Header />
         {children}
         <footer className="relative py-6 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)] text-center">
@@ -45,7 +38,7 @@ export default function RootLayout({ children }) {
             <SocialFooter />
           </div>
         </footer>
-        <Analytics />   {/* ✅ Keeps analytics working */}
+        <Analytics />   {/* ✅ Add this */}
       </body>
     </html>
   )
