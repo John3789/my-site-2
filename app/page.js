@@ -90,7 +90,7 @@ export default function Home() {
 
       {/* ===== PAGE BODY ===== */}
      <div
-  style={{ '--z': 2.50 }} // tweak 1.08–1.20 depending on how close you want it
+  style={{ '--z': 2.75 }} // tweak 1.08–1.20 depending on how close you want it
   className="
     md:contents
     origin-top
@@ -292,7 +292,9 @@ export default function Home() {
         {/* Optional footer */}
         {/* <SocialFooter /> */}
       </main>
-      </div>
+        {/* Footer is now included inside the zoom */}
+  <SocialFooter />
+</div>
     </>
   )
 }
