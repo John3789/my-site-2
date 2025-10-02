@@ -101,7 +101,7 @@ export default function Home() {
     md:[width:100%]
     overflow-x-hidden
         /* compensation so footer stays below on mobile */
-    mb-[calc((var(--z)-1)*250dvh)] md:mb-0
+    mb-[calc((var(--z)-1)*220dvh)] md:mb-0
   "
 >
       <main
