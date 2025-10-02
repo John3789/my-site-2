@@ -13,7 +13,7 @@ export default function Home() {
       <section id="home" className="bg-[var(--color-teal-800)] !text-[var(--color-cream)]">
         <div className="mx-auto max-w-[1400px] px-6 pt-0 pb-4">
           <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
-            <span className="block text-7xl sm-3xl hover:opacity-90 transition">
+            <span className="block text-7xl hover:opacity-90 transition">
               DR. JUAN PABLO SALERNO
               <sup className="text-2xl align-super opacity-70">™</sup>
             </span>

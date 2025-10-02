@@ -115,13 +115,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== Mobile & Tablet font scaling ===== */
 @media (max-width: 768px) {
-  html {
+   #main p,
+  #main li {
     font-size: 225%; /* ~10% bigger text on tablets/small laptops */
   }
 }
 
 @media (max-width: 480px) {
-  html {
+   #main p,
+  #main li {
     font-size: 300%; /* ~20% bigger text on mobile phones */
   }
 }
