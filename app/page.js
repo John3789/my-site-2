@@ -119,7 +119,7 @@ export default function Home() {
         <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90">Purposeful Consulting Solutions</h2>
         <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto xl:mx-0 my-5 rounded" />
 
-        <ul className="text-[19px] md-[17x] leading-[1.7] opacity-90 mb-6 max-w-xl xl:max-w-xl space-y-3 mx-auto xl:mx-0">
+        <ul className="text-[23px] md-[17x] leading-[1.7] opacity-90 mb-6 max-w-xl xl:max-w-xl space-y-3 mx-auto xl:mx-0">
           <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔</span><span><strong>Partner</strong> — Collaborate with a community-engaged research expert.</span></li>
           <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔</span><span><strong>Design</strong> — Build powerful, evidence-based programs that truly resonate.</span></li>
           <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔</span><span><strong>Evaluate</strong> — Measure outcomes that matter and prove impact with data.</span></li>
