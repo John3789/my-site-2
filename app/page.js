@@ -89,6 +89,19 @@ export default function Home() {
       </section>
 
       {/* ===== PAGE BODY ===== */}
+     <div
+  style={{ '--z': 1.12 }} // tweak 1.08–1.20 depending on how close you want it
+  className="
+    md:contents
+    origin-top
+    [transform:scale(var(--z))]
+    [width:calc(100%/var(--z))]
+    mx-auto
+    md:[transform:none]
+    md:[width:100%]
+    overflow-x-hidden
+  "
+>
       <main
   id="main"
   className="bg-[var(--color-teal-850)] text-[var(--color-cream)] text-[17px]"
@@ -279,6 +292,7 @@ export default function Home() {
         {/* Optional footer */}
         {/* <SocialFooter /> */}
       </main>
+      </div>
     </>
   )
 }
