@@ -113,7 +113,7 @@ export default function Home() {
             <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Consulting</h5>
             <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-16">
+            <div className="grid grid-cols-1 xl:grid-cols-12 items-center gap-16">
               {/* Left: text */}
               <div className="lg:col-span-6 text-center lg:text-left">
                 <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90">Purposeful Consulting Solutions</h2>
