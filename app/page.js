@@ -292,9 +292,9 @@ export default function Home() {
         {/* Optional footer */}
         {/* <SocialFooter /> */}
       </main>
-        {/* Footer is now included inside the zoom */}
+        {/* 👇 footer is now INSIDE the zoom */}
   <SocialFooter />
-</div>
+      </div>
     </>
   )
 }
