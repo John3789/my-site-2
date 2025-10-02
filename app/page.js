@@ -289,26 +289,25 @@ export default function Home() {
         </main>
 
         {/* ✅ FOOTER INSIDE THE ZOOM WRAPPER (homepage) */}
-<footer className="relative py-6 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
-  <div className="mx-auto max-w-[1400px]">
-    {/* legal text centered (always) */}
-    <p className="text-center">
+<footer className="py-6 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
+  <div className="mx-auto max-w-[1400px] grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] items-center gap-y-3">
+    {/* left spacer on >=sm keeps legal perfectly centered */}
+    <div className="hidden sm:block" />
+
+    {/* centered legal */}
+    <p className="text-center sm:col-start-2">
       © {new Date().getFullYear()} Dr. Juan Pablo Salerno™. All rights reserved. ·
       <a href="/terms" className="underline ml-2 hover:opacity-80">Terms</a> ·
       <a href="/privacy" className="underline ml-2 hover:opacity-80">Privacy</a>
     </p>
 
-    {/* Mobile: socials on their own row, centered */}
-    <div className="sm:hidden mt-3 flex justify-center">
-      <SocialFooter />
-    </div>
-
-    {/* ≥SM: socials inline on the right, like before */}
-    <div className="hidden sm:block absolute right-[45px] bottom-6">
-      <SocialFooter />
-    </div>
+    {/* socials: centered on mobile, right-aligned on >=sm */}
+    <div className="flex justify-center sm:justify-end sm:col-start-3 text-[20px] md:text-[22px]">
+  <SocialFooter />
+</div>
   </div>
 </footer>
+
 
 
 
