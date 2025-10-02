@@ -1,7 +1,6 @@
 // app/page.js
 import Link from 'next/link'
 import Image from 'next/image'
-// import SocialFooter from "../components/SocialFooter"; // unchanged, optional
 
 export default function Home() {
   return (
