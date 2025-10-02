@@ -22,22 +22,23 @@ const cormorant = Cormorant_Garamond({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
-      <body className="bg-[#F4F1EA] text-[#0C1415] antialiased [text-rendering:optimizeLegibility] [-webkit-font-smoothing:antialiased]">
+      {/* ✅ restore your min-width so layout looks like before */}
+      <body className="min-w-[1200px] bg-[#F4F1EA] text-[#0C1415] antialiased [text-rendering:optimizeLegibility] [-webkit-font-smoothing:antialiased]">
         <Header />
         {children}
 
-        {/* 👇 Global footer (hidden on "/") */}
+        {/* 👇 Hide the global footer on "/" so it doesn't duplicate the homepage zoom footer */}
         <FooterGate>
-          <footer className="relative py-6 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
-            <div className="mx-auto max-w-[1400px] flex flex-col sm:flex-row items-center justify-between gap-4">
-              {/* Centered copyright/legal */}
-              <p className="text-center sm:text-left">
-                © {new Date().getFullYear()} Dr. Juan Pablo Salerno™. All rights reserved. ·
-                <a href="/terms" className="underline ml-2 hover:opacity-80">Terms</a> ·
-                <a href="/privacy" className="underline ml-2 hover:opacity-80">Privacy</a>
-              </p>
+          <footer className="relative py-6 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)] text-center">
+            {/* Centered copyright/legal (same as before) */}
+            <p>
+              © {new Date().getFullYear()} Dr. Juan Pablo Salerno™. All rights reserved. ·
+              <a href="/terms" className="underline ml-2 hover:opacity-80">Terms</a> ·
+              <a href="/privacy" className="underline ml-2 hover:opacity-80">Privacy</a>
+            </p>
 
-              {/* Social icons aligned inline on the right */}
+            {/* Socials inline on the right (same as your earlier code) */}
+            <div className="absolute right-45 bottom-6">
               <SocialFooter />
             </div>
           </footer>
