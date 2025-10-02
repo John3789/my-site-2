@@ -116,7 +116,7 @@ export default function Home() {
     <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Consulting</h5>
     <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
 
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 place-items-start md:place-items-stretch">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start lg:items-center justify-items-stretch">
       {/* Left: text */}
       <div className="lg:col-span-6 w-full max-w-[680px] mx-auto lg:mx-0">
         <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90 text-center lg:text-left">
@@ -194,7 +194,7 @@ export default function Home() {
     <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Meditations</h5>
     <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
 
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 place-items-start md:place-items-stretch">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start lg:items-center justify-items-stretch">
       {/* Left: image */}
       <div className="lg:col-span-6 w-full max-w-[680px] lg:max-w-[780px] mx-auto lg:mx-0">
         <div className="relative w-full aspect-[3/2] shadow-2xl overflow-hidden">
@@ -237,7 +237,7 @@ export default function Home() {
     <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Resources</h5>
     <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
 
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 place-items-start md:place-items-stretch">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start lg:items-center justify-items-stretch">
       {/* Left: text */}
       <div className="lg:col-span-6 w-full max-w-[680px] mx-auto lg:mx-0">
         <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90 text-center lg:text-left">
