@@ -1,7 +1,6 @@
 // app/page.js
 import Link from 'next/link'
 import Image from 'next/image'
-import SocialFooter from '../components/SocialFooter'; // or your SocialFooter wrapper
 
 export default function Home() {
   return (
@@ -289,9 +288,13 @@ export default function Home() {
   </div>
 </section>
       </main>
-        {/* Footer now participates in the same flow */}
-  <footer><SocialFooter /></footer>
-</div>
+      </div>
+      {/* Real spacer so the global footer sits below on mobile */}
+<div
+  aria-hidden
+  className="md:hidden"
+  style={{ height: "calc((1.12 - 1) * 200dvh)" }}  // If your zoom is 1.12; adjust if different
+/>
     </>
   )
 }
