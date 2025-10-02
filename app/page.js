@@ -123,7 +123,7 @@ export default function Home() {
                  <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto lg:mx-0 my-5 rounded" />
 
                 {/* NEW bullet list */}
-                <ul className="text-[17px] leading-[1.7] opacity-90 mb-6 max-w-xl lg:max-w-xl space-y-3">
+                <ul className="text-base leading-[1.7] opacity-90 mb-6 max-w-xl lg:max-w-xl space-y-3">
                    <li className="flex gap-2">
                     <span className="text-[var(--color-gold)]">✔</span>
                     <span>
