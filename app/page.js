@@ -90,7 +90,7 @@ export default function Home() {
 
       {/* ===== PAGE BODY ===== */}
      <div
-  style={{ '--z': 1.12 }} // tweak 1.08–1.20 depending on how close you want it
+  style={{ '--z': 1.80 }} // tweak 1.08–1.20 depending on how close you want it
   className="
     md:contents
     origin-top
