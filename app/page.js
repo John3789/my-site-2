@@ -100,6 +100,7 @@ export default function Home() {
     md:[width:100%]
         landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
     overflow-visible
+        min-h-[100dvh]
   "
 >
       <main
@@ -295,6 +296,11 @@ export default function Home() {
   style={{ height: "calc((3.00 - 1) * 200dvh)" }}  // If your zoom is 1.12; adjust if different
 />
       </div>
+      <style jsx global>{`
+  html, body {
+    overscroll-behavior-y: contain;
+  }
+`}</style>
     </>
   )
 }
