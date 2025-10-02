@@ -12,10 +12,10 @@ export default function Home() {
       <section id="home" className="bg-[var(--color-teal-800)] !text-[var(--color-cream)]">
         <div className="mx-auto max-w-[1400px] px-6 pt-0 pb-4">
           <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
-            <span className="block text-7xl hover:opacity-90 transition">
-              DR. JUAN PABLO SALERNO
-              <sup className="text-2xl align-super opacity-70">™</sup>
-            </span>
+<span className="block text-[clamp(40px,9vw,72px)] hover:opacity-90 transition">
+  DR. JUAN PABLO SALERNO
+  <sup className="text-[clamp(14px,3.5vw,20px)] align-super opacity-70">™</sup>
+</span>
           </h1>
         </div>
       </section>
@@ -27,7 +27,7 @@ export default function Home() {
           alt="Portrait of Dr. Salerno"
           fill
           sizes="100vw"
-          className="object-cover"
+          className="object-cover scale-200 md:scale-100"
           style={{ objectPosition: 'center 0%' }}
           priority
         />
