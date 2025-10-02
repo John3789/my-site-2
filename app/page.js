@@ -89,7 +89,7 @@ export default function Home() {
 
       {/* ===== PAGE BODY ===== */}
      <div
-  style={{ '--z': 3.00 }} // tweak 1.08–1.20 depending on how close you want it
+  style={{ '--z': 3.00, '--zoomL': 2.00 }} // tweak 1.08–1.20 depending on how close you want it
   className="
     md:contents
     origin-top
@@ -98,7 +98,7 @@ export default function Home() {
     mx-auto
     md:[transform:none]
     md:[width:100%]
-        landscape:[transform:none] landscape:[width:100%] landscape:[height:auto]  <!-- add this -->
+        landscape:[transform:scale(var(--zoomL))] landscape:[width:100%] landscape:[height:auto]  <!-- add this -->
     overflow-x-hidden
         /* compensation so footer stays below on mobile */
     mb-[calc((var(--z)-1)*200dvh)] md:mb-0
