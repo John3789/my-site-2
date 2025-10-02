@@ -89,7 +89,11 @@ export default function Home() {
       </section>
 
       {/* ===== PAGE BODY ===== */}
-      <main id="main" className="bg-[var(--color-teal-850)] text-[var(--color-cream)]">
+      <main
+  id="main"
+  className="bg-[var(--color-teal-850)] text-[var(--color-cream)] text-[17px] md:text-[16px]"
+>
+
 
         {/* Mission */}
         <section className="w-full">
