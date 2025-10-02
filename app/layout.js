@@ -22,29 +22,28 @@ const cormorant = Cormorant_Garamond({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
-      {/* ⬇️ lock layout so it always looks like full screen */}
-      <body className="min-w-[1200px] bg-[#F4F1EA] text-[#0C1415] antialiased [text-rendering:optimizeLegibility] [-webkit-font-smoothing:antialiased]">
+      <body className="bg-[#F4F1EA] text-[#0C1415] antialiased [text-rendering:optimizeLegibility] [-webkit-font-smoothing:antialiased]">
         <Header />
         {children}
 
-        {/* 👇 Hide global footer on the homepage ("/") */}
+        {/* 👇 Global footer (hidden on "/") */}
         <FooterGate>
-          <footer className="relative py-6 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)] text-center">
-            {/* Centered copyright/legal */}
-            <p>
-              © {new Date().getFullYear()} Dr. Juan Pablo Salerno™. All rights reserved. ·
-              <a href="/terms" className="underline ml-2 hover:opacity-80">Terms</a> ·
-              <a href="/privacy" className="underline ml-2 hover:opacity-80">Privacy</a>
-            </p>
+          <footer className="relative py-6 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
+            <div className="mx-auto max-w-[1400px] flex flex-col sm:flex-row items-center justify-between gap-4">
+              {/* Centered copyright/legal */}
+              <p className="text-center sm:text-left">
+                © {new Date().getFullYear()} Dr. Juan Pablo Salerno™. All rights reserved. ·
+                <a href="/terms" className="underline ml-2 hover:opacity-80">Terms</a> ·
+                <a href="/privacy" className="underline ml-2 hover:opacity-80">Privacy</a>
+              </p>
 
-            {/* Absolutely positioned social icons bottom-right */}
-            <div className="absolute right-45 bottom-6">
+              {/* Social icons aligned inline on the right */}
               <SocialFooter />
             </div>
           </footer>
         </FooterGate>
 
-        <Analytics />   {/* ✅ Add this */}
+        <Analytics />
       </body>
     </html>
   )
