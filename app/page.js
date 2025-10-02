@@ -99,9 +99,7 @@ export default function Home() {
     md:[transform:none]
     md:[width:100%]
         landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
-    overflow-x-hidden
-        /* compensation so footer stays below on mobile */
-    mb-[calc((var(--z)-1)*200dvh)] md:mb-0
+    overflow-visible
   "
 >
       <main
