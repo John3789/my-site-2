@@ -115,7 +115,7 @@ export default function Home() {
 
             <div className="grid grid-cols-1 xl:grid-cols-12 items-center gap-16">
               {/* Left: text */}
-              <div className="lg:col-span-6 text-center lg:text-left">
+              <div className="xl:col-span-6 text-center lg:text-left">
                 <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90">Purposeful Consulting Solutions</h2>
                  <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto lg:mx-0 my-5 rounded" />
 
@@ -159,7 +159,7 @@ export default function Home() {
                     src="/plant1.jpg"
                     alt="Consulting collaboration"
                     fill
-                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    sizes="(min-width: 1280px) 50vw, 100vw"
                     className="object-cover"
                     style={{ objectPosition: 'center 50%' }}
                   />
