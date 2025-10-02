@@ -11,7 +11,7 @@ export default function Home() {
 
       {/* Nameplate bar (teal) */}
       <section id="home" className="bg-[var(--color-teal-800)] !text-[var(--color-cream)]">
-        <div className="mx-auto max-w-[1400px] px-5 sm:px-6 pt-0 pb-4">
+        <div className="mx-auto max-w-[1400px] px-6 pt-0 pb-4">
           <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
             <span className="block text-[clamp(36px,8vw,72px)] hover:opacity-90 transition">
   DR. JUAN PABLO SALERNO
@@ -37,7 +37,7 @@ export default function Home() {
 
         {/* CTA rail pinned at bottom of hero */}
         <div className="absolute inset-x-0 bottom-6 z-20">
-          <div className="mx-auto max-w-[1400px] px-5 sm:px-6 relative">
+          <div className="mx-auto max-w-[1400px] px-6 relative">
 
             {/* Desktop/tablet: left/right anchored */}
             <Link
@@ -59,7 +59,7 @@ export default function Home() {
               className="
                 hidden md:inline-flex
                 items-center rounded-md !bg-[var(--color-teal-700)] !text-[var(--color-cream)] px-8 py-3.5
-                font-medium uppercase tracking-wide text-[14px] md:text-[13px] shadow-sm
+                font-medium uppercase tracking-wide text=[14px] md:text-[13px] shadow-sm
                 hover:shadow-md hover:-translate-y-[1px] transition
                 focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60
                 absolute right-6 lg:right-34 bottom-0
@@ -96,7 +96,7 @@ export default function Home() {
 
         {/* Mission */}
         <section className="w-full">
-          <div className="mx-auto max-w-[1400px] px-5 sm:px-6 pt-36 pb-12">
+          <div className="mx-auto max-w-[1400px] px-6 pt-36 pb-12">
             <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Mission</h5>
             <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
 
@@ -114,7 +114,7 @@ export default function Home() {
 
         {/* Consulting */}
 <section id="consulting" className="w-full">
-  <div className="mx-auto max-w-[1400px] px-5 sm:px-6 pt-40 pb-12">
+  <div className="mx-auto max-w-[1400px] px-6 pt-40 pb-12">
     <hr className="border-t border-[var(--color-cream)]/22 mb-6" />
     <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Consulting</h5>
     <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
@@ -153,7 +153,7 @@ export default function Home() {
 
       {/* Right: image */}
       <div className="lg:col-span-6 w-full max-w-[680px] lg:max-w-[780px] mx-auto lg:mx-0">
-        <div className="relative w-full aspect-[4/3] lg:aspect-[3/2] shadow-2xl overflow-hidden">
+        <div className="relative w-full aspect-[3/2] shadow-2xl overflow-hidden">
           <Image
             src="/plant1.jpg"
             alt="Consulting collaboration"
@@ -172,7 +172,7 @@ export default function Home() {
 
         {/* Speaking */}
         <section className="w-full">
-          <div className="mx-auto max-w-[1400px] px-5 sm:px-6 pt-40 pb-12">
+          <div className="mx-auto max-w-[1400px] px-6 pt-40 pb-12">
             <hr className="border-t border-[var(--color-cream)]/22 mb-6" />
             <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Speaking</h5>
             <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
@@ -192,7 +192,7 @@ export default function Home() {
 
 {/* Meditations */}
 <section id="meditations" className="w-full">
-  <div className="mx-auto max-w-[1400px] px-5 sm:px-6 pt-40 pb-12">
+  <div className="mx-auto max-w-[1400px] px-6 pt-40 pb-12">
     <hr className="border-t border-[var(--color-cream)]/22 mb-6" />
     <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Meditations</h5>
     <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
@@ -200,7 +200,7 @@ export default function Home() {
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start lg:items-center justify-items-stretch">
       {/* Left: image */}
       <div className="lg:col-span-6 w-full max-w-[680px] lg:max-w-[780px] mx-auto lg:mx-0">
-        <div className="relative w-full aspect-[4/3] lg:aspect-[3/2] shadow-2xl overflow-hidden">
+        <div className="relative w-full aspect-[3/2] shadow-2xl overflow-hidden">
           <Image
             src="/beach1.jpg"
             alt="Meditation practice, calm beach"
@@ -235,7 +235,7 @@ export default function Home() {
 
 {/* Resources (text left, image right) */}
 <section id="resources" className="w-full">
-  <div className="mx-auto max-w-[1400px] px-5 sm:px-6 pt-40 pb-36">
+  <div className="mx-auto max-w-[1400px] px-6 pt-40 pb-36">
     <hr className="border-t border-[var(--color-cream)]/22 mb-6" />
     <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Resources</h5>
     <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
@@ -258,7 +258,7 @@ export default function Home() {
 
       {/* Right: image */}
       <div className="lg:col-span-6 w-full max-w-[680px] lg:max-w-[780px] mx-auto lg:mx-0">
-        <div className="relative w-full aspect-[4/3] lg:aspect-[3/2] shadow-2xl overflow-hidden">
+        <div className="relative w-full aspect-[3/2] shadow-2xl overflow-hidden">
           <Image
             src="/tree90.jpg"
             alt="Resources illustration, growth tree"
