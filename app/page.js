@@ -99,7 +99,7 @@ export default function Home() {
     md:[transform:none]
     md:[width:100%]
         landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
-    overflow-visible min-h-[100dvh] [overscroll-behavior-y:none]
+    overflow-hidden
   "
 >
       <main
