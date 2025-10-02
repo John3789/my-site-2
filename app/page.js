@@ -33,7 +33,7 @@ export default function Home() {
         /* compensation so footer stays below on mobile */
     mb-[calc((var(--z)-1)*200dvh)] md:mb-0
   "
-></div>
+>
       {/* Hero with background photo */}
       <section className="relative h-[88.8svh] overflow-hidden">
         <Image
@@ -303,6 +303,7 @@ export default function Home() {
   </div>
 </section>
       </main>
+      </div>
       </div>
     </>
   )
