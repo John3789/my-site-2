@@ -12,14 +12,28 @@ export default function Home() {
       <section id="home" className="bg-[var(--color-teal-800)] !text-[var(--color-cream)]">
         <div className="mx-auto max-w-[1400px] px-6 pt-0 pb-4">
           <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
-<span className="block text-[clamp(40px,9vw,72px)] hover:opacity-90 transition">
-  DR. JUAN PABLO SALERNO
-  <sup className="text-[clamp(14px,3.5vw,20px)] align-super opacity-70">™</sup>
-</span>
+            <span className="block text-7xl hover:opacity-90 transition">
+              DR. JUAN PABLO SALERNO
+              <sup className="text-2xl align-super opacity-70">™</sup>
+            </span>
           </h1>
         </div>
       </section>
 
+{/* 🔎 Hero zoom wrapper */}
+<div
+  style={{ '--hz': 3.00 }} // adjust zoom here
+  className="
+    md:contents
+    origin-top
+    [transform:scale(var(--hz))]
+    [width:calc(100%/var(--hz))]
+    mx-auto
+    md:[transform:none]
+    md:[width:100%]
+    overflow-x-hidden
+  "
+>
       {/* Hero with background photo */}
       <section className="relative h-[88.8svh] overflow-hidden">
         <Image
@@ -27,7 +41,7 @@ export default function Home() {
           alt="Portrait of Dr. Salerno"
           fill
           sizes="100vw"
-          className="object-cover scale-125 md:scale-100"
+          className="object-cover"
           style={{ objectPosition: 'center 0%' }}
           priority
         />
@@ -288,7 +302,8 @@ export default function Home() {
     </div>
   </div>
 </section>
-      </main>
+       </main>
+      </div>
       </div>
     </>
   )
