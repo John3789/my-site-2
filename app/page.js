@@ -290,7 +290,7 @@ export default function Home() {
         {/* ✅ FOOTER IS NOW INSIDE THE ZOOM WRAPPER (homepage only) */}
         <footer className="bg-[var(--color-teal-850)] text-[var(--color-cream)] py-6">
           <div className="mx-auto max-w-[1400px] px-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6">
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm opacity-85">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm opacity-86">
               <span>© 2025 Dr. Juan Pablo Salerno™. All rights reserved.</span>
               <span className="hidden sm:inline">·</span>
               <Link href="/terms" className="underline-offset-2 hover:underline whitespace-nowrap">Terms</Link>
