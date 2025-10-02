@@ -13,10 +13,10 @@ export default function Home() {
       <section id="home" className="bg-[var(--color-teal-800)] !text-[var(--color-cream)]">
         <div className="mx-auto max-w-[1400px] px-6 pt-0 pb-4">
           <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
-            <span className="block text-[clamp(36px,8vw,72px)] hover:opacity-90 transition">
-  DR. JUAN PABLO SALERNO
-  <sup className="text-[clamp(14px,3.2vw,20px)] align-super opacity-70">™</sup>
-</span>
+            <span className="block text-7xl hover:opacity-90 transition">
+              DR. JUAN PABLO SALERNO
+              <sup className="text-2xl align-super opacity-70">™</sup>
+            </span>
           </h1>
         </div>
       </section>
@@ -44,8 +44,8 @@ export default function Home() {
               href="speaking"
               className="
                 hidden md:inline-flex
-                items-center rounded-md bg-[var(--color-gold)] text-black px-8 py-3.5
-                font-medium uppercase tracking-wide text-[14px] md:text-[13px] shadow-sm
+                items-center rounded-md bg-[var(--color-gold)] text-black px-7 py-3
+                font-medium uppercase tracking-wide text-[13px] shadow-sm
                 hover:shadow-md hover:-translate-y-[1px] transition
                 focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60
                 absolute left-6 lg:left-61 bottom-0
@@ -58,8 +58,8 @@ export default function Home() {
               href="consulting"
               className="
                 hidden md:inline-flex
-                items-center rounded-md !bg-[var(--color-teal-700)] !text-[var(--color-cream)] px-8 py-3.5
-                font-medium uppercase tracking-wide text=[14px] md:text-[13px] shadow-sm
+                items-center rounded-md !bg-[var(--color-teal-700)] !text-[var(--color-cream)] px-7 py-3
+                font-medium uppercase tracking-wide text-[13px] shadow-sm
                 hover:shadow-md hover:-translate-y-[1px] transition
                 focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60
                 absolute right-6 lg:right-34 bottom-0
@@ -89,10 +89,7 @@ export default function Home() {
       </section>
 
       {/* ===== PAGE BODY ===== */}
-      <main
-  id="main"
-  className="bg-[var(--color-teal-850)] text-[var(--color-cream)] text-[17px] md:text-[16px]"
->
+      <main id="main" className="bg-[var(--color-teal-850)] text-[var(--color-cream)]">
 
         {/* Mission */}
         <section className="w-full">
@@ -101,7 +98,7 @@ export default function Home() {
             <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
 
             <div className="max-w-4xl mx-auto text-center">
-              <p className="font-serif leading-[1.08] text-[clamp(30px,6.6vw,48px)] opacity-90">
+              <p className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90">
                 “I believe everyone has the power to unlock hidden potential and live with a higher purpose —
                 my mission is to blend science and growth wisdom to guide the way.”
               </p>
@@ -119,10 +116,10 @@ export default function Home() {
     <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Consulting</h5>
     <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
 
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start lg:items-center justify-items-stretch">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 place-items-start md:place-items-stretch">
       {/* Left: text */}
       <div className="lg:col-span-6 w-full max-w-[680px] mx-auto lg:mx-0">
-        <h2 className="font-serif leading-[1.08] text-[clamp(30px,6.6vw,48px)] opacity-90 text-center lg:text-left">
+        <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90 text-center lg:text-left">
           Purposeful Consulting Solutions
         </h2>
         <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto lg:mx-0 my-5 rounded" />
@@ -178,7 +175,7 @@ export default function Home() {
             <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
 
             <div className="max-w-4xl mx-auto text-center">
-              <p className="font-serif leading-[1.08] text-[clamp(30px,6.6vw,48px)] opacity-90">
+              <p className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90">
                 Dr. Salerno is a highly regarded expert and dynamic speaker who has inspired audiences on stages large and small.
                 Book him for interactive, science-backed presentations that spark growth, strengthen mental health,
                 and promote lasting wellness.
@@ -197,7 +194,7 @@ export default function Home() {
     <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Meditations</h5>
     <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
 
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start lg:items-center justify-items-stretch">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 place-items-start md:place-items-stretch">
       {/* Left: image */}
       <div className="lg:col-span-6 w-full max-w-[680px] lg:max-w-[780px] mx-auto lg:mx-0">
         <div className="relative w-full aspect-[3/2] shadow-2xl overflow-hidden">
@@ -215,11 +212,11 @@ export default function Home() {
 
       {/* Right: text */}
       <div className="lg:col-span-6 w-full max-w-[680px] mx-auto lg:mx-0">
-        <h2 className="font-serif leading-[1.08] text-[clamp(30px,6.6vw,48px)] opacity-90 text-center lg:text-left">
+        <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90 text-center lg:text-left">
           Short Meditations with Dr. Salerno
         </h2>
         <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto lg:mx-0 my-5 rounded" />
-        <p className="text-[17px] leading-[1.65] opacity-90 mb-6 max-w-xl text-left mx-auto lg:mx-0">
+        <p className="text-[17px] leading-[1.7] opacity-90 mb-6 max-w-xl text-left mx-auto lg:mx-0">
           Pre-recorded and custom-made guided meditations designed by Dr. Salerno for all levels to gently reset your body,
           calm your mind, and nourish your spirit. Journey inward to awaken your true potential,
           deepen your sense of peace, and create space for healing and growth.
@@ -240,14 +237,14 @@ export default function Home() {
     <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Resources</h5>
     <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
 
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start lg:items-center justify-items-stretch">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 place-items-start md:place-items-stretch">
       {/* Left: text */}
       <div className="lg:col-span-6 w-full max-w-[680px] mx-auto lg:mx-0">
-        <h2 className="font-serif leading-[1.08] text-[clamp(30px,6.6vw,48px)] opacity-90 text-center lg:text-left">
+        <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90 text-center lg:text-left">
           Resources for Self-Elevation
         </h2>
         <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto lg:mx-0 my-5 rounded" />
-        <p className="text-[17px] leading-[1.65] opacity-90 mb-6 max-w-xl text-left mx-auto lg:mx-0">
+        <p className="text-[17px] leading-[1.7] opacity-90 mb-6 max-w-xl text-left mx-auto lg:mx-0">
           Short media collections curated by Dr. Salerno to strengthen your mind and elevate your life.
           Discover simple, practical insights you can use today to build clarity, confidence, and momentum.
         </p>
