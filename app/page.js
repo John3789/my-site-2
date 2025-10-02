@@ -294,7 +294,7 @@ export default function Home() {
 <div
   aria-hidden
   className="md:hidden"
-  style={{ height: "calc((3.00 - 1) * 200dvh)" }}  // If your zoom is 1.12; adjust if different
+  style={{ height: "calc((3.01 - 1) * 200dvh)" }}  // If your zoom is 1.12; adjust if different
 />
     </>
   )
