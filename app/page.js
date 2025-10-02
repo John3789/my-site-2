@@ -147,7 +147,6 @@ export default function Home() {
   </div>
 </section>
 
-
         {/* Speaking */}
         <section className="w-full">
           <div className="mx-auto max-w-[1400px] px-6 pt-40 pb-12">
@@ -169,79 +168,81 @@ export default function Home() {
         </section>
 
         {/* Meditations */}
-        <section id="meditations" className="w-full">
-          <div className="mx-auto max-w-[1400px] px-6 pt-40 pb-12">
-            <hr className="border-t border-[var(--color-cream)]/22 mb-6" />
-            <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Meditations</h5>
-            <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
+<section id="meditations" className="w-full">
+  <div className="mx-auto max-w-[1400px] px-6 pt-40 pb-12">
+    <hr className="border-t border-[var(--color-cream)]/22 mb-6" />
+    <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Meditations</h5>
+    <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-16">
-              {/* Left: image */}
-              <div className="lg:col-span-6 flex justify-center">
-                <div className="relative w-full max-w-[780px] aspect-[3/2] shadow-2xl overflow-hidden">
-                  <Image
-                    src="/beach1.jpg"
-                    alt="Meditation practice, calm beach"
-                    fill
-                    sizes="(min-width: 1024px) 50vw, 100vw"
-                    className="object-cover"
-                    style={{ objectPosition: 'center 40%' }}
-                  />
-                  <div className="absolute inset-0 bg-black/10" />
-                </div>
-              </div>
-              {/* Right: text */}
-              <div className="lg:col-span-6 text-center lg:text-left">
-                <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90">Short Meditations with Dr. Salerno</h2>
-                <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto lg:mx-0 my-5 rounded" />
-                <p className="text-[17px] leading-[1.7] opacity-90 mb-6 max-w-xl lg:max-w-xl">
-                  Pre-recorded and custom-made guided meditations designed by Dr. Salerno for all levels to gently reset your body,
-                  calm your mind, and nourish your spirit. Journey inward to awaken your true potential,
-                  deepen your sense of peace, and create space for healing and growth.
-                </p>
-                <Link href="/meditations" className="link">Discover →</Link>
-              </div>
-            </div>
-          </div>
-        </section>
+    <div className="grid grid-cols-1 xl:grid-cols-12 items-center gap-16">
+      {/* Image (second on small screens? move order if you want it first) */}
+      <div className="order-2 xl:order-none xl:col-span-6 flex justify-center">
+        <div className="relative w-full max-w-[780px] aspect-[3/2] shadow-2xl overflow-hidden">
+          <Image
+            src="/beach1.jpg"
+            alt="Meditation practice, calm beach"
+            fill
+            sizes="(min-width: 1280px) 50vw, 100vw"
+            className="object-cover"
+            style={{ objectPosition: 'center 40%' }}
+          />
+          <div className="absolute inset-0 bg-black/10" />
+        </div>
+      </div>
+
+      {/* Text (first on mobile) */}
+      <div className="order-1 xl:order-none xl:col-span-6 text-center xl:text-left">
+        <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90">Short Meditations with Dr. Salerno</h2>
+        <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto xl:mx-0 my-5 rounded" />
+        <p className="text-[17px] leading-[1.7] opacity-90 mb-6 max-w-xl xl:max-w-xl mx-auto xl:mx-0">
+          Pre-recorded and custom-made guided meditations designed by Dr. Salerno for all levels to gently reset your body,
+          calm your mind, and nourish your spirit. Journey inward to awaken your true potential,
+          deepen your sense of peace, and create space for healing and growth.
+        </p>
+        <Link href="/meditations" className="link">Discover →</Link>
+      </div>
+    </div>
+  </div>
+</section>
+
 
         {/* Resources (text left, image right) */}
-        <section id="resources" className="w-full">
-          <div className="mx-auto max-w-[1400px] px-6 pt-40 pb-36">
-            <hr className="border-t border-[var(--color-cream)]/22 mb-6" />
-            <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Resources</h5>
-            <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
+<section id="resources" className="w-full">
+  <div className="mx-auto max-w-[1400px] px-6 pt-40 pb-36">
+    <hr className="border-t border-[var(--color-cream)]/22 mb-6" />
+    <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Resources</h5>
+    <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-16">
-              {/* Left: text */}
-              <div className="lg:col-span-6 text-center lg:text-left">
-                <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90">Resources for Self-Elevation</h2>
-                <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto lg:mx-0 my-5 rounded" />
-                <p className="text-[17px] leading-[1.7] opacity-90 mb-6 max-w-xl lg:max-w-xl">
-                Short media collections curated by Dr. Salerno to strengthen your mind and elevate 
-                your life. Discover simple, practical insights you can use today to build clarity, 
-                confidence, and momentum.
-                </p>
-                <Link href="/resources" className="link">Learn more →</Link>
-              </div>
-              {/* Right: image */}
-              <div className="lg:col-span-6 flex justify-center">
-                <div className="relative w-full max-w-[780px] aspect-[3/2] shadow-2xl overflow-hidden">
-                  <Image
-                    src="/tree90.jpg"
-                    alt="Resources illustration, growth tree"
-                    fill
-                    sizes="(min-width: 1024px) 50vw, 100vw"
-                    className="object-cover"
-                    style={{ objectPosition: 'center 30%' }}
-                 
-                  />
-                  <div className="absolute inset-0 bg-black/20 pointer-events-none" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+    <div className="grid grid-cols-1 xl:grid-cols-12 items-center gap-16">
+      {/* Text */}
+      <div className="order-1 xl:order-none xl:col-span-6 text-center xl:text-left">
+        <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90">Resources for Self-Elevation</h2>
+        <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto xl:mx-0 my-5 rounded" />
+        <p className="text-[17px] leading-[1.7] opacity-90 mb-6 max-w-xl xl:max-w-xl mx-auto xl:mx-0">
+          Short media collections curated by Dr. Salerno to strengthen your mind and elevate
+          your life. Discover simple, practical insights you can use today to build clarity,
+          confidence, and momentum.
+        </p>
+        <Link href="/resources" className="link">Learn more →</Link>
+      </div>
+
+      {/* Image */}
+      <div className="order-2 xl:order-none xl:col-span-6 flex justify-center">
+        <div className="relative w-full max-w-[780px] aspect-[3/2] shadow-2xl overflow-hidden">
+          <Image
+            src="/tree90.jpg"
+            alt="Resources illustration, growth tree"
+            fill
+            sizes="(min-width: 1280px) 50vw, 100vw"
+            className="object-cover"
+            style={{ objectPosition: 'center 30%' }}
+          />
+          <div className="absolute inset-0 bg-black/20 pointer-events-none" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* Optional footer */}
         {/* <SocialFooter /> */}
