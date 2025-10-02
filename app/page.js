@@ -34,8 +34,7 @@ export default function Home() {
           md:[width:100%]
           overflow-x-hidden
         "
-      />
-
+>
       {/* Hero with background photo */}
       <section className="relative h-[88.8svh] overflow-hidden">
         <Image
@@ -101,6 +100,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </div>
 
       {/* ===== PAGE BODY ===== */}
      <div
