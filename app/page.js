@@ -89,19 +89,25 @@ export default function Home() {
 
       {/* ===== PAGE BODY ===== */}
      <div
-  style={{ '--z': 3.00, '--zoomL': 2.00 }} // tweak 1.08–1.20 depending on how close you want it
+  style={{ '--zoomP': 3.00, '--zoomL': 2.00 }}
   className="
     md:contents
     origin-top
-    [transform:scale(var(--z))]
-    [width:calc(100%/var(--z))]
-    mx-auto
-    md:[transform:none]
-    md:[width:100%]
-        landscape:[transform:scale(var(--zoomL))] landscape:[width:100%] landscape:[height:auto]  <!-- add this -->
+    /* Portrait zoom */
+    [transform:scale(var(--zoomP))]
+    [width:calc(100%/var(--zoomP))]
+    [height:calc(100%/var(--zoomP))]
+
+    /* Landscape: lighter zoom, not off */
+    landscape:[transform:scale(var(--zoomL))]
+    landscape:[width:calc(100%/var(--zoomL))]
+    landscape:[height:calc(100%/var(--zoomL))]
+
+    /* Desktop/tablet: no zoom */
+    md:[transform:none] md:[width:100%] md:[height:auto]
+
     overflow-x-hidden
-        /* compensation so footer stays below on mobile */
-    mb-[calc((var(--z)-1)*200dvh)] md:mb-0
+    mb-[calc((var(--zoomP)-1)*200dvh)] md:mb-0
   "
 >
       <main
