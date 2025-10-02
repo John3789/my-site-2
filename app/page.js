@@ -90,7 +90,7 @@ export default function Home() {
 
       {/* ===== PAGE BODY ===== */}
      <div
-  style={{ '--z': 2.75 }} // tweak 1.08–1.20 depending on how close you want it
+  style={{ '--z': 3.00 }} // tweak 1.08–1.20 depending on how close you want it
   className="
     md:contents
     origin-top
@@ -101,7 +101,7 @@ export default function Home() {
     md:[width:100%]
     overflow-x-hidden
         /* compensation so footer stays below on mobile */
-    mb-[calc((var(--z)-1)*150dvh)] md:mb-0
+    mb-[calc((var(--z)-1)*200dvh)] md:mb-0
   "
 >
       <main
