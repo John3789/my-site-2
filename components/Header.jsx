@@ -50,13 +50,16 @@ export default function Header() {
             type="button"
             aria-label="Open menu"
             onClick={() => setOpen(true)}
-            className="md:hidden p-3 -ml-1"   // ← left side (no ml-auto), tiny tuck with -ml-1
+            className="md:hidden mr-auto -ml-1 p-3"   // ← left side (no ml-auto), tiny tuck with -ml-1
           >
             {/* 3-line icon (cream) */}
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M3 6h18M3 12h18M3 18h18" stroke="var(--color-cream)" strokeWidth="2.5" strokeLinecap="round"/>
-            </svg>
-          </button>
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none">
+    <path d="M3 6h18M3 12h18M3 18h18" 
+      stroke="var(--color-cream)" 
+      strokeWidth="2.5" 
+      strokeLinecap="round"/>
+  </svg>
+</button>
         </div>
       </header>
 
@@ -69,7 +72,7 @@ export default function Header() {
             onClick={() => setOpen(false)}
           />
           {/* Panel */}
-          <aside className="fixed inset-y-0 right-0 z-[10001] w-[80vw] max-w-[420px] bg-[var(--color-teal-800)] text-[var(--color-cream)] shadow-2xl flex flex-col">
+          <aside className="fixed inset-y-0 left-0 z-[10001] w-[80vw] max-w-[420px] bg-[var(--color-teal-800)] text-[var(--color-cream)] shadow-2xl flex flex-col">
             <div className="flex items-center justify-between px-5 h-12">
               <span className="font-serif text-base">Menu</span>
               <button
