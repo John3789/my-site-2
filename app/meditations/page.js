@@ -2,7 +2,7 @@
 export default function MeditationsPage() {
   return (
     <>
-      {/* ===== PAGE BODY WRAPPER (same zoom as books/about) ===== */}
+      {/* ===== PAGE BODY WRAPPER (mobile zoom only; desktop unchanged) ===== */}
       <div
         style={{ '--z': 3.0, '--zoomL': 1.6 }}
         className="
@@ -16,14 +16,14 @@ export default function MeditationsPage() {
           landscape:[transform:scale(var(--zoomL))]
           landscape:[width:calc(100%/var(--zoomL))]
           overflow-hidden
-          will-change-transform
           transform-gpu
+          will-change-transform
         "
       >
         <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
           {/* ===== HERO ===== */}
           <section className="mx-auto max-w-[1100px] px-6 pt-16 md:pt-20 pb-10 text-center">
-            <h1 className="font-serif text-[clamp(36px,4.8vw,56px)] leading-[1.06] opacity-95">
+            <h1 className="font-serif text-6xl leading-[1.06] opacity-95">
               Meditations
             </h1>
             <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 mx-auto mt-4 rounded" />
@@ -43,7 +43,7 @@ export default function MeditationsPage() {
                   spirit — guiding you through the day with clarity and ease.
                 </p>
 
-                {/* Footnote */}
+                {/* Footnote: discreet, inside the same card */}
                 <div className="mt-4 pt-3 text-center text-xs opacity-70 border-t border-[var(--color-cream)]/15">
                   This page is a work in progress. I’ll be adding new tracks periodically.
                 </div>
@@ -68,9 +68,9 @@ export default function MeditationsPage() {
             <article
               className="
                 mt-6 relative rounded-2xl
-                bg-white/8 ring-1 ring-white/15
+                bg-white/5 ring-1 ring-white/10
                 p-6 md:p-7 shadow-2xl
-                md:backdrop-blur-sm                /* blur only on md+ to avoid mobile softness */
+                md:backdrop-blur-sm                 /* blur only on md+ (mobile blur off for crispness) */
                 hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)]
                 transition
               "
