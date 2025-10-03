@@ -2,7 +2,8 @@
 export default function MeditationsPage() {
   return (
     <>
-      {/* ===== PAGE BODY WRAPPER (mobile zoom only; desktop unchanged) ===== */}
+      {/* Mobile zoom wrapper (same pattern as Books/About).
+          Desktop (md+) is unchanged. */}
       <div
         style={{ '--z': 3.0, '--zoomL': 1.6 }}
         className="
@@ -16,8 +17,6 @@ export default function MeditationsPage() {
           landscape:[transform:scale(var(--zoomL))]
           landscape:[width:calc(100%/var(--zoomL))]
           overflow-hidden
-          transform-gpu
-          will-change-transform
         "
       >
         <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
@@ -31,7 +30,12 @@ export default function MeditationsPage() {
 
           {/* ===== INTRO (footnote inside the same card) ===== */}
           <section className="mx-auto max-w-[900px] px-6 mb-8 mt-5">
-            <div className="relative rounded-2xl bg-white/5 ring-1 ring-white/10">
+            <div
+              className="
+                relative rounded-2xl bg-white/5 ring-1 ring-white/10
+                backdrop-blur-none md:backdrop-blur-sm
+              "
+            >
               {/* Gold spine on the left */}
               <span
                 aria-hidden
@@ -67,12 +71,9 @@ export default function MeditationsPage() {
 
             <article
               className="
-                mt-6 relative rounded-2xl
-                bg-white/5 ring-1 ring-white/10
-                p-6 md:p-7 shadow-2xl
-                md:backdrop-blur-sm                 /* blur only on md+ (mobile blur off for crispness) */
-                hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)]
-                transition
+                mt-6 relative rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7 shadow-2xl
+                hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] transition
+                backdrop-blur-none md:backdrop-blur-sm
               "
             >
               {/* Gold spine (dimmed) */}
