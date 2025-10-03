@@ -16,6 +16,8 @@ export default function MeditationsPage() {
           landscape:[transform:scale(var(--zoomL))]
           landscape:[width:calc(100%/var(--zoomL))]
           overflow-hidden
+          will-change-transform
+          transform-gpu
         "
       >
         <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
@@ -41,7 +43,7 @@ export default function MeditationsPage() {
                   spirit — guiding you through the day with clarity and ease.
                 </p>
 
-                {/* Footnote: discreet, inside the same card */}
+                {/* Footnote */}
                 <div className="mt-4 pt-3 text-center text-xs opacity-70 border-t border-[var(--color-cream)]/15">
                   This page is a work in progress. I’ll be adding new tracks periodically.
                 </div>
@@ -64,8 +66,14 @@ export default function MeditationsPage() {
             </p>
 
             <article
-              className="mt-6 relative rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7 shadow-2xl backdrop-blur-sm
-                         hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] transition"
+              className="
+                mt-6 relative rounded-2xl
+                bg-white/8 ring-1 ring-white/15
+                p-6 md:p-7 shadow-2xl
+                md:backdrop-blur-sm                /* blur only on md+ to avoid mobile softness */
+                hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)]
+                transition
+              "
             >
               {/* Gold spine (dimmed) */}
               <span
