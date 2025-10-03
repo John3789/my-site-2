@@ -109,7 +109,7 @@ export default function Header() {
         overscroll-contain
       "
     >
-      <div className="flex items-center justify-between px-6 h-16">
+      <div className="flex items-center justify-between px-6 h-16 pr-3">
   {/* Bigger Menu label with landscape adjustment */}
   <span className="font-serif 
                   text-[13vw] landscape:text-[4vw]">
