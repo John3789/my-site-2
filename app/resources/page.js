@@ -218,50 +218,53 @@ export default function ResourcesPage() {
 
   return (
     <>
-      {/* ===== PAGE BODY WRAPPER (zoom) — GPU + 3D hint to keep text crisp ===== */}
-      <div
-        style={{ '--z': 3.0, '--zoomL': 1.60 }}
-        className={`
-          md:contents
-          origin-top
-          will-change-transform
-          [backface-visibility:hidden]
-          [transform:translateZ(0)_scale(var(--z))] [width:calc(100%/var(--z))]
-          mx-auto
-          md:[transform:none] md:[width:100%] md:will-change-auto
-          landscape:[transform:translateZ(0)_scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
-          overflow-hidden
-        `}
-      >
-        <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
-          <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-20">
-            {/* Centered Title */}
-            <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-3">
-              Resources
-            </h1>
-            <div className="mx-auto h-[2px] w-16 bg-[var(--color-gold)]/85 rounded mb-15" />
+      {/* ===== TITLE + INTRO (not scaled) ===== */}
+      <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
+        <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-6">
+          {/* Centered Title */}
+          <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-3">
+            Resources
+          </h1>
+          <div className="mx-auto h-[2px] w-16 bg-[var(--color-gold)]/85 rounded mb-6" />
 
-            {/* Intro box */}
-            <div className="relative mx-auto max-w-[820px] mb-10 rounded-2xl border border-white/15 bg-white/5">
-              {/* Gold spine */}
-              <span className="pointer-events-none absolute left-0 top-1 h-39 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
-              <div className="flex flex-col gap-3 p-5">
-                <p className="text-[18px] leading-relaxed opacity-90">
-                  A growing library of concise collections—shaped by science and lived
-                  experience—to sharpen your mind and uplift your life. Each theme is
-                  designed to meet you where you are and guide you toward greater
-                  confidence, balance, and intentional living.
-                </p>
-                <div className="pt-3 text-xs opacity-70 border-t border-[var(--color-cream)]/15">
-                  This page is under construction and will be updated periodically with
-                  new collections.
-                </div>
+          {/* Intro box */}
+          <div className="relative mx-auto max-w-[820px] mb-6 rounded-2xl border border-white/15 bg-white/5">
+            {/* Gold spine */}
+            <span className="pointer-events-none absolute left-0 top-1 h-39 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
+            <div className="flex flex-col gap-3 p-5">
+              <p className="text-[18px] leading-relaxed opacity-90">
+                A growing library of concise collections—shaped by science and lived
+                experience—to sharpen your mind and uplift your life. Each theme is
+                designed to meet you where you are and guide you toward greater
+                confidence, balance, and intentional living.
+              </p>
+              <div className="pt-3 text-xs opacity-70 border-t border-[var(--color-cream)]/15">
+                This page is under construction and will be updated periodically with
+                new collections.
               </div>
             </div>
+          </div>
+        </div>
 
-            {/* Sticky subnav */}
-            {Nav}
+        {/* ===== STICKY SUB-NAV (desktop only to avoid mobile blur) ===== */}
+        <div className="hidden md:block">{Nav}</div>
 
+        {/* ===== ZOOMED CONTENT (mobile portrait keeps --z:3.0) ===== */}
+        <div
+          style={{ '--z': 3.0, '--zoomL': 1.60 }}
+          className={`
+            md:contents
+            origin-top
+            will-change-transform
+            [backface-visibility:hidden]
+            [transform:translateZ(0)_scale(var(--z))] [width:calc(100%/var(--z))]
+            mx-auto
+            md:[transform:none] md:[width:100%] md:will-change-auto
+            landscape:[transform:translateZ(0)_scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
+            overflow-hidden
+          `}
+        >
+          <section className="mx-auto max-w-[1200px] px-6 pt-2 pb-20">
             {/* ===== THEME SECTIONS ===== */}
             <div className="space-y-14">
               {THEMES.map((theme, idx) => (
@@ -345,12 +348,9 @@ export default function ResourcesPage() {
                 </section>
               ))}
             </div>
-          </div>
-
-          {/* Collection Modal */}
-          <CollectionModal open={open} onClose={closeModal} collection={activeCollection} />
-        </main>
-      </div>
+          </section>
+        </div>
+      </main>
 
       {/* Hide horizontal scrollbar for the sticky nav (keeps scroll gesture) */}
       <style jsx global>{`
