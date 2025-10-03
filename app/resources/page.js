@@ -224,7 +224,7 @@ export default function ResourcesPage() {
         className={`
           md:contents
           origin-top
-          transform-gpu will-change-transform
+          will-change-transform
           [backface-visibility:hidden]
           [transform:translateZ(0)_scale(var(--z))] [width:calc(100%/var(--z))]
           mx-auto
