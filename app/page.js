@@ -55,8 +55,7 @@ export default function Home() {
   >
     <h1
       className="
-            relative inline-block
-      font-serif font-semibold uppercase tracking-[0.02em]
+        font-serif font-semibold uppercase tracking-[0.02em]
         text-[var(--color-cream)] text-center leading-[1.00]
         drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]
         /* Make it span the full width */
@@ -65,19 +64,8 @@ export default function Home() {
       "
     >
       DR. JUAN PABLO SALERNO
-      <span
-    className="
-      absolute
-      -top-[2.2vw] right-[-0.8vw]     /* portrait tweak */
-      landscape:-top-[1.2vw] landscape:right-[-0.5vw]  /* landscape tweak */
-      text-[3.6vw] landscape:text-[2vw]
-      opacity-70
-    "
-    aria-hidden="true"
-  >
-    ™
-  </span>
-</h1>
+      <sup className="text-[3.2vw] align-super opacity-70">™</sup>
+    </h1>
   </div>
 
   {/* Desktop buttons only (mobile CTAs are hidden) */}
