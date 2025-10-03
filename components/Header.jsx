@@ -124,7 +124,7 @@ export default function Header() {
     className="p-3 -mr-2 ml-8 landscape:ml-0"
   >
     <svg 
-      width="18vw" height="18vw"  /* scales in portrait */
+      width="20vw" height="20vw"  /* scales in portrait */
       className="landscape:w-[6vw] landscape:h-[6vw]"  /* smaller in landscape */
       viewBox="0 0 24 24" fill="none" aria-hidden="true"
     >
