@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       {/* spacer to clear the fixed header (keep) */}
-      <div aria-hidden className="hidden md:block h-8" />
+      <div aria-hidden className="h-8" />
 
       {/* DESKTOP/TABLET nameplate — unchanged */}
       <section id="home" className="hidden md:block bg-[var(--color-teal-800)] !text-[var(--color-cream)]">
@@ -22,9 +22,9 @@ export default function Home() {
       </section>
 
       {/* HERO — mobile full-screen; desktop unchanged */}
-      <section className="relative h-[100dvh] md:h-[88.8svh] overflow-hidden -mt-10 md:mt-0">
+      <section className="relative h-[100dvh] md:h-[88.8svh] overflow-hidden">
         {/* Image layer fills the section */}
-        <div className="absolute inset-0 bg-transparent">
+        <div className="absolute inset-0">
           <Image
             src="/hero17.jpg?v=25"
             alt="Portrait of Dr. Salerno"
