@@ -145,7 +145,7 @@ export default function ResourcesPage() {
           {/* Scroll container */}
           <div
             ref={navScrollRef}
-            className="flex gap-2 overflow-x-auto no-scrollbar scroll-smooth"
+            className="relative z-[2] flex gap-2 overflow-x-auto no-scrollbar scroll-smooth"
             onScroll={updateNavScrollState}
           >
             {THEMES.map((t) => {
@@ -171,13 +171,13 @@ export default function ResourcesPage() {
           {/* Edge fades */}
           <div
             className={[
-              "pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-[var(--color-teal-850)] to-transparent transition-opacity",
+              "pointer-events-none absolute inset-y-0 left-0 w-8 z-[1] bg-gradient-to-r from-[var(--color-teal-850)] to-transparent transition-opacity",
               canScrollLeft ? "opacity-100" : "opacity-0",
             ].join(" ")}
           />
           <div
             className={[
-              "pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-[var(--color-teal-850)] to-transparent transition-opacity",
+              "pointer-events-none absolute inset-y-0 right-0 w-8 z-[1] bg-gradient-to-l from-[var(--color-teal-850)] to-transparent transition-opacity",
               canScrollRight ? "opacity-100" : "opacity-0",
             ].join(" ")}
           />
@@ -189,7 +189,7 @@ export default function ResourcesPage() {
               disabled={!canScrollLeft}
               aria-label="Scroll left"
               className={[
-                "absolute left-1 top-1/2 -translate-y-1/2 rounded-full border px-2 py-1 text-sm",
+                "absolute left-1 top-1/2 -translate-y-1/2 rounded-full border px-2 py-1 text-sm z-[3]",
                 canScrollLeft
                   ? "border-white/25 bg-white/10 hover:bg-white/20"
                   : "border-white/10 bg-white/5 opacity-50 cursor-not-allowed",
@@ -202,7 +202,7 @@ export default function ResourcesPage() {
               disabled={!canScrollRight}
               aria-label="Scroll right"
               className={[
-                "absolute right-1 top-1/2 -translate-y-1/2 rounded-full border px-2 py-1 text-sm",
+                "absolute right-1 top-1/2 -translate-y-1/2 rounded-full border px-2 py-1 text-sm z-[3]",
                 canScrollRight
                   ? "border-white/25 bg-white/10 hover:bg-white/20"
                   : "border-white/10 bg-white/5 opacity-50 cursor-not-allowed",
@@ -218,28 +218,20 @@ export default function ResourcesPage() {
 
   return (
     <>
-      {/* ===== PAGE BODY WRAPPER (zoom) — GPU + 3D hint to keep text crisp ===== */}
+      {/* ===== PAGE BODY WRAPPER (same zoom pattern as Home/Books/Meditations/About) ===== */}
       <div
-  style={{
-    '--z': 3.0,
-    '--zoomL': 1.60,
-  }}
-  className={`
-    md:contents
-    origin-top
-    /* exact same pattern as Books/Meditations, but WITHOUT translateZ(0) */
-    [transform:scale(var(--z))] [width:calc(100%/var(--z))]
-    mx-auto
-    md:[transform:none] md:[width:100%]
-    landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
-    overflow-hidden
-    /* crisp text hints */
-    [text-rendering:optimizeLegibility]
-    [-webkit-font-smoothing:antialiased]
-    [font-smooth:always]
-  `}
->
-
+        style={{ '--z': 3.0, '--zoomL': 1.60 }}
+        className={`
+          md:contents
+          origin-top
+          [transform:scale(var(--z))] [width:calc(100%/var(--z))]
+          mx-auto
+          md:[transform:none] md:[width:100%]
+          landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
+          overflow-hidden
+          [will-change:transform]
+        `}
+      >
         <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
           <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-20">
             {/* Centered Title */}
@@ -249,7 +241,7 @@ export default function ResourcesPage() {
             <div className="mx-auto h-[2px] w-16 bg-[var(--color-gold)]/85 rounded mb-15" />
 
             {/* Intro box */}
-            <div className="relative mx-auto max-w-[820px] mb-10 rounded-2xl border border-white/15 bg-white/5">
+            <div className="relative mx-auto max-w-[820px] mb-10 rounded-2xl border border-white/15 bg-white/5 [will-change:transform]">
               {/* Gold spine */}
               <span className="pointer-events-none absolute left-0 top-1 h-39 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
               <div className="flex flex-col gap-3 p-5">
@@ -287,7 +279,7 @@ export default function ResourcesPage() {
                       return (
                         <li
                           key={col.slug}
-                          className="relative h-full rounded-2xl border border-white/12 bg-white/[0.04] p-6 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md flex flex-col"
+                          className="relative h-full rounded-2xl border border-white/12 bg-white/[0.04] p-6 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md flex flex-col [will-change:transform]"
                         >
                           {/* GOLD SPINE */}
                           <span className="pointer-events-none absolute left-0 top-1 h-64 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
@@ -359,7 +351,7 @@ export default function ResourcesPage() {
         </main>
       </div>
 
-      {/* Hide horizontal scrollbar for the sticky nav (keeps scroll gesture) */}
+      {/* Hide horizontal scrollbar for the nav (keeps scroll gesture) */}
       <style jsx global>{`
         .no-scrollbar {
           -ms-overflow-style: none; /* IE and Edge */
