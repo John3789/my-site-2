@@ -218,9 +218,11 @@ export default function ResourcesPage() {
 
   return (
     <>
-      {/* ===== PAGE BODY WRAPPER (same zoom pattern as Home/Books/Meditations/About) ===== */}
+      {/* ===== PAGE BODY WRAPPER =====
+         NOTE: To keep text CRISP on mobile portrait, disable scaling there.
+         Keep the landscape zoom you like. */}
       <div
-        style={{ '--z': 3.0, '--zoomL': 1.60 }}
+        style={{ '--z': 1.0, '--zoomL': 1.60 }}
         className={`
           md:contents
           origin-top
@@ -229,7 +231,6 @@ export default function ResourcesPage() {
           md:[transform:none] md:[width:100%]
           landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
           overflow-hidden
-          [will-change:transform]
         `}
       >
         <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
@@ -240,8 +241,8 @@ export default function ResourcesPage() {
             </h1>
             <div className="mx-auto h-[2px] w-16 bg-[var(--color-gold)]/85 rounded mb-15" />
 
-            {/* Intro box */}
-            <div className="relative mx-auto max-w-[820px] mb-10 rounded-2xl border border-white/15 bg-white/5 [will-change:transform]">
+            {/* Intro box (no backdrop blur; crisp text) */}
+            <div className="relative mx-auto max-w-[820px] mb-10 rounded-2xl border border-white/15 bg-white/5">
               {/* Gold spine */}
               <span className="pointer-events-none absolute left-0 top-1 h-39 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
               <div className="flex flex-col gap-3 p-5">
@@ -270,7 +271,9 @@ export default function ResourcesPage() {
                       {theme.title}
                     </h2>
                     <div className="h-[2px] w-12 bg-[var(--color-gold)]/85 rounded mt-0" />
-                    <p className="opacity-85 mt-3 max-w-3xl">{theme.blurb}</p>
+                    <p className="opacity-85 mt-3 max-w-3xl text-[17px]">
+                      {theme.blurb}
+                    </p>
                   </header>
 
                   <ul className="grid gap-8 md:grid-cols-2">
@@ -279,7 +282,7 @@ export default function ResourcesPage() {
                       return (
                         <li
                           key={col.slug}
-                          className="relative h-full rounded-2xl border border-white/12 bg-white/[0.04] p-6 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md flex flex-col [will-change:transform]"
+                          className="relative h-full rounded-2xl border border-white/12 bg-white/[0.04] p-6 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md flex flex-col"
                         >
                           {/* GOLD SPINE */}
                           <span className="pointer-events-none absolute left-0 top-1 h-64 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
@@ -290,7 +293,7 @@ export default function ResourcesPage() {
                               {col.title}
                             </h3>
                             <div className="h-[2px] w-10 bg-[var(--color-gold)]/60 rounded mt-0" />
-                            <p className="opacity-85 text-[15px] md:text-[16px] mt-2 min-h-[40px]">
+                            <p className="opacity-85 text-[15.5px] md:text-[16px] mt-2 min-h-[40px]">
                               {col.subtitle}
                             </p>
                           </div>
