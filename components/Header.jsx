@@ -50,7 +50,7 @@ export default function Header() {
             type="button"
             aria-label="Open menu"
             onClick={() => setOpen(true)}
-            className="md:hidden mr-auto -ml-1 p-3 translate-y-10"   // ← left side (no ml-auto), tiny tuck with -ml-1
+            className="md:hidden mr-auto -ml-1 p-3 translate-y-12"   // ← left side (no ml-auto), tiny tuck with -ml-1
           >
             {/* 3-line icon (cream) */}
             <svg width="75" height="75" viewBox="0 0 24 24" fill="none">
