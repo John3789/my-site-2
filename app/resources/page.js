@@ -220,19 +220,26 @@ export default function ResourcesPage() {
     <>
       {/* ===== PAGE BODY WRAPPER (zoom) — GPU + 3D hint to keep text crisp ===== */}
       <div
-        style={{ '--z': 3.0, '--zoomL': 1.60 }}
-        className={`
-          md:contents
-          origin-top
-          will-change-transform
-          [backface-visibility:hidden]
-          [transform:translateZ(0)_scale(var(--z))] [width:calc(100%/var(--z))]
-          mx-auto
-          md:[transform:none] md:[width:100%] md:will-change-auto
-          landscape:[transform:translateZ(0)_scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
-          overflow-hidden
-        `}
-      >
+  style={{
+    '--z': 3.0,
+    '--zoomL': 1.60,
+  }}
+  className={`
+    md:contents
+    origin-top
+    /* exact same pattern as Books/Meditations, but WITHOUT translateZ(0) */
+    [transform:scale(var(--z))] [width:calc(100%/var(--z))]
+    mx-auto
+    md:[transform:none] md:[width:100%]
+    landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
+    overflow-hidden
+    /* crisp text hints */
+    [text-rendering:optimizeLegibility]
+    [-webkit-font-smoothing:antialiased]
+    [font-smooth:always]
+  `}
+>
+
         <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
           <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-20">
             {/* Centered Title */}
