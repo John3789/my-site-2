@@ -112,7 +112,7 @@ export default function Header() {
       <div className="flex items-center justify-between px-6 h-16">
   {/* Bigger Menu label with landscape adjustment */}
   <span className="font-serif 
-                  text-[14vw] landscape:text-[4vw]">
+                  text-[13vw] landscape:text-[4vw]">
     Menu
   </span>
 
@@ -121,7 +121,7 @@ export default function Header() {
     type="button"
     aria-label="Close menu"
     onClick={() => setOpen(false)}
-    className="p-3 -mr-2 ml-4 landscape:ml-0"
+    className="p-3 -mr-2 ml-8 landscape:ml-0"
   >
     <svg 
       width="18vw" height="18vw"  /* scales in portrait */
