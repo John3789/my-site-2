@@ -302,7 +302,7 @@ export default function Home() {
     </p>
 
     {/* socials: centered on mobile, right-aligned on >=sm */}
-    <div className="flex justify-center sm:justify-end sm:col-start-3 text-[18px] md:text-[22px]">
+<div className="flex justify-center sm:justify-end sm:col-start-3 sm:pl-6">
   <SocialFooter />
 </div>
   </div>

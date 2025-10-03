@@ -29,24 +29,26 @@ export default function RootLayout({ children }) {
 
         {/* 👇 Hide the global footer on "/" so it doesn't duplicate the homepage zoom footer */}
        <FooterGate>
- <footer className="py-6 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
-  <div className="mx-auto max-w-[1400px] grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] items-center gap-y-3">
-    {/* left spacer on >=sm keeps legal perfectly centered */}
-    <div className="hidden sm:block" />
+ <footer className="relative py-6 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)] text-center">
+  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-y-3">
+    
+    {/* Left side: copyright + legal links */}
+    <div className="flex flex-wrap justify-center gap-x-3">
+      <p>© {new Date().getFullYear()} Dr. Juan Pablo Salerno™. All rights reserved.</p>
+      <a href="/terms" className="underline hover:opacity-80">Terms</a>
+      <a href="/privacy" className="underline hover:opacity-80">Privacy</a>
+    </div>
 
-    {/* centered legal */}
-    <p className="text-center sm:col-start-2">
-      © {new Date().getFullYear()} Dr. Juan Pablo Salerno™. All rights reserved. ·
-      <a href="/terms" className="underline ml-2 hover:opacity-80">Terms</a> ·
-      <a href="/privacy" className="underline ml-2 hover:opacity-80">Privacy</a>
-    </p>
-
-    {/* socials: centered on mobile, right-aligned on >=sm */}
-    <div className="flex justify-center sm:justify-end sm:col-start-3">
+    {/* Right side: follow + socials */}
+    <div className="flex items-center justify-center gap-x-3">
+      <span className="uppercase tracking-wide text-sm whitespace-nowrap hidden md:inline">
+        Follow Dr. Salerno:
+      </span>
       <SocialFooter />
     </div>
   </div>
 </footer>
+
 
 </FooterGate>
 
