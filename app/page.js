@@ -62,10 +62,10 @@ export default function Home() {
         text-[32vw]   /* tweak 8.5–10vw if you want more/less */
             landscape:text-[10vw]   /* shrink text in landscape */
       "
-    >
-      DR. JUAN PABLO SALERNO
-      <sup className="text-[3.2vw] align-super opacity-70">™</sup>
-    </h1>
+>
+  DR. JUAN PABLO SALERNO
+  <span className="text-[0.35em] opacity-70 ml-1">™</span>
+</h1>
   </div>
 
   {/* Desktop buttons only (mobile CTAs are hidden) */}
