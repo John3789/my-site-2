@@ -12,20 +12,8 @@ const THEMES = [
     title: "Motivation & Mindset",
     blurb: "Shift perspective and recharge your drive with affirmations and reframes.",
     collections: [
-      {
-        slug: "confidence-boost",
-        title: "Confidence Boost",
-        subtitle: "Reframes and tiny actions to move through self-doubt.",
-        tags: ["Motivation", "Confidence"],
-        items: [],
-      },
-      {
-        slug: "positive-reframes",
-        title: "Positive Reframes",
-        subtitle: "Gentle perspective shifts that stick.",
-        tags: ["Mindset", "Resilience"],
-        items: [],
-      },
+      { slug: "confidence-boost", title: "Confidence Boost", subtitle: "Reframes and tiny actions to move through self-doubt.", tags: ["Motivation", "Confidence"], items: [] },
+      { slug: "positive-reframes", title: "Positive Reframes", subtitle: "Gentle perspective shifts that stick.", tags: ["Mindset", "Resilience"], items: [] },
     ],
   },
   {
@@ -33,20 +21,8 @@ const THEMES = [
     title: "Mental Health & Stress Relief",
     blurb: "Practical steps for everyday wellbeing and downshifting your nervous system.",
     collections: [
-      {
-        slug: "everyday-wellbeing",
-        title: "Everyday Wellbeing",
-        subtitle: "Small habits that compound over time.",
-        tags: ["Wellbeing", "Habits"],
-        items: [],
-      },
-      {
-        slug: "calm-in-chaos",
-        title: "Calm in Chaos",
-        subtitle: "Grounding tools for busy environments.",
-        tags: ["Stress relief", "Grounding"],
-        items: [],
-      },
+      { slug: "everyday-wellbeing", title: "Everyday Wellbeing", subtitle: "Small habits that compound over time.", tags: ["Wellbeing", "Habits"], items: [] },
+      { slug: "calm-in-chaos", title: "Calm in Chaos", subtitle: "Grounding tools for busy environments.", tags: ["Stress relief", "Grounding"], items: [] },
     ],
   },
   {
@@ -54,20 +30,8 @@ const THEMES = [
     title: "Self-Compassion & Healing",
     blurb: "Practices for forgiving, softening, and rebuilding resilience after setbacks.",
     collections: [
-      {
-        slug: "compassion-practices",
-        title: "Compassion Practices",
-        subtitle: "Moments to offer yourself kindness.",
-        tags: ["Compassion", "Healing"],
-        items: [],
-      },
-      {
-        slug: "healing-habits",
-        title: "Healing Habits",
-        subtitle: "Daily cues that create space to recover.",
-        tags: ["Recovery", "Self-care"],
-        items: [],
-      },
+      { slug: "compassion-practices", title: "Compassion Practices", subtitle: "Moments to offer yourself kindness.", tags: ["Compassion", "Healing"], items: [] },
+      { slug: "healing-habits", title: "Healing Habits", subtitle: "Daily cues that create space to recover.", tags: ["Recovery", "Self-care"], items: [] },
     ],
   },
   {
@@ -75,20 +39,8 @@ const THEMES = [
     title: "Relationships & Connection",
     blurb: "Build healthier everyday relationships—with friends, family, colleagues, and community.",
     collections: [
-      {
-        slug: "everyday-connection",
-        title: "Everyday Connection",
-        subtitle: "Small ways to nurture belonging and support.",
-        tags: ["Connection", "Community"],
-        items: [],
-      },
-      {
-        slug: "communication-shifts",
-        title: "Communication Shifts",
-        subtitle: "Gentle ways to express yourself clearly.",
-        tags: ["Communication", "Clarity"],
-        items: [],
-      },
+      { slug: "everyday-connection", title: "Everyday Connection", subtitle: "Small ways to nurture belonging and support.", tags: ["Connection", "Community"], items: [] },
+      { slug: "communication-shifts", title: "Communication Shifts", subtitle: "Gentle ways to express yourself clearly.", tags: ["Communication", "Clarity"], items: [] },
     ],
   },
   {
@@ -96,20 +48,8 @@ const THEMES = [
     title: "Purpose & Alignment",
     blurb: "Connect with your deeper why and align your daily actions to it.",
     collections: [
-      {
-        slug: "values-check",
-        title: "Values Check",
-        subtitle: "Reflection prompts to guide decisions.",
-        tags: ["Purpose", "Values"],
-        items: [],
-      },
-      {
-        slug: "alignment-habits",
-        title: "Alignment Habits",
-        subtitle: "Simple steps to bring goals and life closer.",
-        tags: ["Alignment", "Direction"],
-        items: [],
-      },
+      { slug: "values-check", title: "Values Check", subtitle: "Reflection prompts to guide decisions.", tags: ["Purpose", "Values"], items: [] },
+      { slug: "alignment-habits", title: "Alignment Habits", subtitle: "Simple steps to bring goals and life closer.", tags: ["Alignment", "Direction"], items: [] },
     ],
   },
   {
@@ -117,20 +57,8 @@ const THEMES = [
     title: "Manifestation & Intention Setting",
     blurb: "Align actions with vision through clear intentions and consistent micro-moves.",
     collections: [
-      {
-        slug: "morning-clarity",
-        title: "Morning Clarity",
-        subtitle: "Orient your day toward purpose.",
-        tags: ["Clarity", "Intention"],
-        items: [],
-      },
-      {
-        slug: "get-unstuck",
-        title: "Get Unstuck",
-        subtitle: "From hesitation to first step.",
-        tags: ["Momentum", "Action"],
-        items: [],
-      },
+      { slug: "morning-clarity", title: "Morning Clarity", subtitle: "Orient your day toward purpose.", tags: ["Clarity", "Intention"], items: [] },
+      { slug: "get-unstuck", title: "Get Unstuck", subtitle: "From hesitation to first step.", tags: ["Momentum", "Action"], items: [] },
     ],
   },
   {
@@ -138,20 +66,8 @@ const THEMES = [
     title: "Feng Shui & Environment",
     blurb: "Small environmental shifts that support energy, focus, and rest.",
     collections: [
-      {
-        slug: "clarity-corners",
-        title: "Clarity Corners",
-        subtitle: "Tidy cues that nudge focus.",
-        tags: ["Focus", "Simplicity"],
-        items: [],
-      },
-      {
-        slug: "rest-friendly-bedroom",
-        title: "Rest-Friendly Bedroom",
-        subtitle: "Edit the room, not your willpower.",
-        tags: ["Rest", "Sleep"],
-        items: [],
-      },
+      { slug: "clarity-corners", title: "Clarity Corners", subtitle: "Tidy cues that nudge focus.", tags: ["Focus", "Simplicity"], items: [] },
+      { slug: "rest-friendly-bedroom", title: "Rest-Friendly Bedroom", subtitle: "Edit the room, not your willpower.", tags: ["Rest", "Sleep"], items: [] },
     ],
   },
 ];
@@ -224,7 +140,7 @@ export default function ResourcesPage() {
   /* ========= Sticky subnav with fades & chevrons ========= */
   const Nav = useMemo(() => {
     return (
-      <div className="sticky top-[64px] z-30 -mx-6 border-b border-white/10 bg-[var(--color-teal-850)]/80 backdrop-blur">
+      <div className="sticky top-[64px] z-30 -mx-6 border-b border-white/10 bg-[var(--color-teal-850)]/80 backdrop-blur-none md:backdrop-blur">
         <div className="relative mx-auto max-w-[1200px] px-6 py-3">
           {/* Scroll container */}
           <div
@@ -302,39 +218,54 @@ export default function ResourcesPage() {
 
   return (
     <>
-      <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
-        <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-20">
-          {/* Centered Title */}
-          <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-3">
-            Resources
-          </h1>
-          <div className="mx-auto h-[2px] w-16 bg-[var(--color-gold)]/85 rounded mb-15" />
+      {/* ===== PAGE BODY WRAPPER (same zoom pattern as Home/Books/Meditations/About) ===== */}
+      <div
+        style={{ '--z': 3.00, '--zoomL': 1.60 }}
+        className="
+          md:contents
+          origin-top
+          [transform:scale(var(--z))]
+          [width:calc(100%/var(--z))]
+          mx-auto
+          md:[transform:none]
+          md:[width:100%]
+          landscape:[transform:scale(var(--zoomL))]
+          landscape:[width:calc(100%/var(--zoomL))]
+          overflow-hidden
+        "
+      >
+        <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
+          <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-20">
+            {/* Centered Title */}
+            <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-3">
+              Resources
+            </h1>
+            <div className="mx-auto h-[2px] w-16 bg-[var(--color-gold)]/85 rounded mb-15" />
 
-          {/* Intro box (narrower) */}
-          <div className="relative mx-auto max-w-[820px] mb-10 rounded-2xl border border-white/15 bg-white/5">
-            {/* Gold spine */}
-            <span className="pointer-events-none absolute left-0 top-1 h-39 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
-            <div className="flex flex-col gap-3 p-5">
-              <p className="text-[18px] leading-relaxed opacity-90">
-                A growing library of concise collections—shaped by science and lived
-                experience—to sharpen your mind and uplift your life. Each theme is
-                designed to meet you where you are and guide you toward greater
-                confidence, balance, and intentional living.
-              </p>
-              <div className="pt-3 text-xs opacity-70 border-t border-[var(--color-cream)]/15">
-                This page is under construction and will be updated periodically with
-                new collections.
+            {/* Intro box */}
+            <div className="relative mx-auto max-w-[820px] mb-10 rounded-2xl border border-white/15 bg-white/5">
+              {/* Gold spine */}
+              <span className="pointer-events-none absolute left-0 top-1 h-39 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
+              <div className="flex flex-col gap-3 p-5">
+                <p className="text-[18px] leading-relaxed opacity-90">
+                  A growing library of concise collections—shaped by science and lived
+                  experience—to sharpen your mind and uplift your life. Each theme is
+                  designed to meet you where you are and guide you toward greater
+                  confidence, balance, and intentional living.
+                </p>
+                <div className="pt-3 text-xs opacity-70 border-t border-[var(--color-cream)]/15">
+                  This page is under construction and will be updated periodically with
+                  new collections.
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Sticky subnav with affordances */}
-          {Nav}
+            {/* Sticky subnav */}
+            {Nav}
 
-          {/* ===== THEME SECTIONS ===== */}
-          <div className="space-y-14">
-            {THEMES.map((theme, idx) => {
-              return (
+            {/* ===== THEME SECTIONS ===== */}
+            <div className="space-y-14">
+              {THEMES.map((theme, idx) => (
                 <section key={theme.slug} id={theme.slug} className="scroll-mt-28">
                   <header className="mb-4">
                     <h2 className="font-serif text-[clamp(26px,3.3vw,34px)] opacity-95 mt-12">
@@ -413,16 +344,16 @@ export default function ResourcesPage() {
                     </div>
                   )}
                 </section>
-              );
-            })}
+              ))}
+            </div>
           </div>
-        </div>
 
-        {/* Collection Modal */}
-        <CollectionModal open={open} onClose={closeModal} collection={activeCollection} />
-      </main>
+          {/* Collection Modal */}
+          <CollectionModal open={open} onClose={closeModal} collection={activeCollection} />
+        </main>
+      </div>
 
-      {/* Small CSS helper to hide horizontal scrollbar for nav (keeps scroll gesture) */}
+      {/* Hide horizontal scrollbar for the sticky nav (keeps scroll gesture) */}
       <style jsx global>{`
         .no-scrollbar {
           -ms-overflow-style: none; /* IE and Edge */
@@ -450,7 +381,7 @@ function CollectionModal({ open, onClose, collection }) {
       />
 
       <div className="relative mx-4 max-h-[85vh] w-full max-w-3xl overflow-hidden rounded-2xl border border-white/15 bg-[var(--color-teal-850)] shadow-2xl">
-        <header className="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-white/10 bg-[var(--color-teal-850)]/95 px-5 py-4 backdrop-blur">
+        <header className="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-white/10 bg-[var(--color-teal-850)]/95 px-5 py-4 backdrop-blur-none md:backdrop-blur">
           <div className="min-w-0">
             <div className="text-xs opacity-70 truncate">{collection.theme}</div>
             <h3 className="font-serif text-xl opacity-95 truncate">
