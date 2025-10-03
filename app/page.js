@@ -64,7 +64,7 @@ export default function Home() {
       "
 >
   DR. JUAN PABLO SALERNO
-  <span className="relative text-[0.35em] opacity-70 ml-1 -top-5">™</span>
+  <span className="relative text-[0.35em] opacity-70 ml-1 -top-15">™</span>
 </h1>
   </div>
 
