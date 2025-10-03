@@ -48,7 +48,7 @@ export default function Home() {
     className="md:hidden absolute inset-x-0 bottom-0 z-30 px-4 pointer-events-none"
     style={{
       // lift above the Safari URL bar / home indicator
-      marginBottom: 'calc(env(safe-area-inset-bottom) + 75px)',
+      marginBottom: 'calc(env(safe-area-inset-bottom) + 56px)',
     }}
   >
     <h1
