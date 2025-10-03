@@ -228,7 +228,7 @@ export default function ResourcesPage() {
           [backface-visibility:hidden]
           [transform:translateZ(0)_scale(var(--z))] [width:calc(100%/var(--z))]
           mx-auto
-          md:[transform:none] md:[width:100%] 
+          md:[transform:none] md:[width:100%] md:will-change-auto
           landscape:[transform:translateZ(0)_scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
           overflow-hidden
         `}
