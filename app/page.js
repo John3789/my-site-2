@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       {/* spacer to clear the fixed header (keep) */}
-      <div aria-hidden className="h-8" />
+      <div aria-hidden className="hidden md:block h-8" />
 
       {/* DESKTOP/TABLET nameplate — unchanged */}
       <section id="home" className="hidden md:block bg-[var(--color-teal-800)] !text-[var(--color-cream)]">
