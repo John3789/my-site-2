@@ -46,7 +46,7 @@ export default function Home() {
 {/* MOBILE nameplate overlay (upper-right) */}
 <div className="md:hidden absolute top-0 right-0 z-20 pt-3 pr-3 pointer-events-none">
   <div className="max-w-[65vw]">
-    <h1 className="font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05] text-right pointer-events-auto">
+    <h1 className="font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05] text-left pointer-events-auto">
       <span className="block text-[11.5vw]/[1.05] drop-shadow-[0_1px_2px_rgba(0,0,0,0.45)]">
         DR. JUAN PABLO SALERNO
         <sup className="text-[3.5vw] align-super opacity-80">™</sup>
