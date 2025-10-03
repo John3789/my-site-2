@@ -129,7 +129,7 @@ export default function ResourcesPage() {
   /* ========= Sticky subnav with fades & chevrons (desktop only) ========= */
   const Nav = useMemo(() => {
     return (
-      <div className="sticky top-[64px] z-30 -mx-6 md:border-b md:border-white/10 md:bg-[var(--color-teal-850)]/80 bg-transparent">
+      <div className="sticky top-[64px] z-10 -mx-6 bg-transparent border-0">
         <div className="relative mx-auto max-w-[1200px] px-6 py-3">
           {/* Scroll container */}
           <div
@@ -157,19 +157,7 @@ export default function ResourcesPage() {
             })}
           </div>
 
-          {/* Edge fades (subtle; no background tint) */}
-          <div
-            className={[
-              "hidden md:block pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-[var(--color-teal-850)] to-transparent transition-opacity",
-              canScrollLeft ? "opacity-100" : "opacity-0",
-            ].join(" ")}
-          />
-          <div
-            className={[
-              "hidden md:block pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-[var(--color-teal-850)] to-transparent transition-opacity",
-              canScrollRight ? "opacity-100" : "opacity-0",
-            ].join(" ")}
-          />
+
 
           {/* Chevron buttons (desktop only) */}
           <div className="hidden md:block">
