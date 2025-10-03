@@ -34,7 +34,7 @@ export default function Home() {
             sizes="(min-width:768px) 100vw, 150vw"
             className="
               object-cover origin-center will-change-transform
-              [transform:scaleX(1.04)_scaleY(1.08)]   /* mobile subtle zoom */
+              [transform:scaleX(1.02)_scaleY(1.04)]   /* mobile subtle zoom */
               md:[transform:none]                     /* desktop unchanged */
               object-[center_6%] md:object-[center_0%]
             "
