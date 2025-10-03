@@ -2,7 +2,7 @@
 export default function MeditationsPage() {
   return (
     <>
-      {/* ===== PAGE BODY WRAPPER (same zoom as home/about/books) ===== */}
+      {/* ===== PAGE BODY WRAPPER (same zoom as books/about) ===== */}
       <div
         style={{ '--z': 3.0, '--zoomL': 1.6 }}
         className="
@@ -21,7 +21,7 @@ export default function MeditationsPage() {
         <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
           {/* ===== HERO ===== */}
           <section className="mx-auto max-w-[1100px] px-6 pt-16 md:pt-20 pb-10 text-center">
-            <h1 className="font-serif text-6xl leading-[1.06] opacity-95">
+            <h1 className="font-serif text-[clamp(36px,4.8vw,56px)] leading-[1.06] opacity-95">
               Meditations
             </h1>
             <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 mx-auto mt-4 rounded" />
