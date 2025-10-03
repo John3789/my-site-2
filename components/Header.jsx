@@ -110,7 +110,7 @@ export default function Header() {
       "
     >
       <div className="flex items-center justify-between px-6 h-12">
-        <span className="font-serif text-xl">Menu</span>
+        <span className="font-serif text-5xl">Menu</span>
         <button
           type="button"
           aria-label="Close menu"
