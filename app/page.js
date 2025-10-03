@@ -6,93 +6,102 @@ import SocialFooter from "../components/SocialFooter";
 export default function Home() {
   return (
     <>
-      {/* spacer to clear the fixed header (must match h-8) */}
-      <div aria-hidden className="h-8" />
+{/* spacer to clear the fixed header (must match h-8) */}
+<div aria-hidden className="h-8" />
 
-      {/* Nameplate bar (teal) */}
-      <section id="home" className="bg-[var(--color-teal-800)] !text-[var(--color-cream)]">
-        <div className="mx-auto max-w-[1400px] px-6 pt-0 pb-4">
-          <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
-            <span className="block text-7xl hover:opacity-90 transition">
-              DR. JUAN PABLO SALERNO
-              <sup className="text-2xl align-super opacity-70">™</sup>
-            </span>
-          </h1>
+{/* 🔧 MOBILE SQUEEZE: nameplate + hero together (desktop unchanged) */}
+<div
+  style={{ '--sx': 0.92, '--sy': 1.10 }} /* tweak sx 0.85–0.95, sy 1.06–1.18 */
+  className="
+    md:contents
+    origin-top
+    [transform:scaleX(var(--sx))_scaleY(var(--sy))]
+    [width:calc(100%/var(--sx))]
+    mx-auto
+    md:[transform:none]
+    md:[width:100%]
+    overflow-x-hidden
+    will-change-transform
+  "
+>
+  {/* Nameplate bar (teal) */}
+  <section id="home" className="bg-[var(--color-teal-800)] !text-[var(--color-cream)]">
+    <div className="mx-auto max-w-[1400px] px-6 pt-0 pb-4">
+      <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
+        <span className="block text-7xl hover:opacity-90 transition">
+          DR. JUAN PABLO SALERNO
+          <sup className="text-2xl align-super opacity-70">™</sup>
+        </span>
+      </h1>
+    </div>
+  </section>
+
+  {/* Hero with background photo */}
+  <section className="relative h-[108svh] md:h-[88.8svh] overflow-hidden">
+    <Image
+      src="/hero17.jpg?v=25"
+      alt="Portrait of Dr. Salerno"
+      fill
+      sizes="100vw"
+      className="object-cover origin-center md:object-[center_0%] object-[center_6%]"
+      priority
+    />
+
+    {/* overlay */}
+    <div className="absolute inset-0 bg-black/28 pointer-events-none" />
+
+    {/* CTA rail pinned at bottom of hero */}
+    <div className="absolute inset-x-0 bottom-6 z-20">
+      <div className="mx-auto max-w-[1400px] px-6 relative">
+        {/* Desktop/tablet: left/right anchored */}
+        <Link
+          href="speaking"
+          className="
+            hidden md:inline-flex
+            items-center rounded-md bg-[var(--color-gold)] text-black px-7 py-3
+            font-medium uppercase tracking-wide text-[13px] shadow-sm
+            hover:shadow-md hover:-translate-y-[1px] transition
+            focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60
+            absolute left-6 lg:left-61 bottom-0
+          "
+        >
+          Book Dr. Salerno to speak
+        </Link>
+
+        <Link
+          href="consulting"
+          className="
+            hidden md:inline-flex
+            items-center rounded-md !bg-[var(--color-teal-700)] !text-[var(--color-cream)] px-7 py-3
+            font-medium uppercase tracking-wide text-[13px] shadow-sm
+            hover:shadow-md hover:-translate-y-[1px] transition
+            focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60
+            absolute right-6 lg:right-34 bottom-0
+          "
+        >
+          Book consulting with Dr. Salerno
+        </Link>
+
+        {/* Mobile fallback: centered, stacked */}
+        <div className="md:hidden flex flex-col items-center gap-3">
+          <Link
+            href="speaking"
+            className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-7 py-3 font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60"
+          >
+            Book Dr. Salerno to speak
+          </Link>
+          <Link
+            href="consulting"
+            className="inline-flex items-center rounded-md !bg-[var(--color-teal-700)] !text-[var(--color-cream)] px-7 py-3 font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60"
+          >
+            Book consulting with Dr. Salerno
+          </Link>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
+</div>
 
-      {/* Hero with background photo (mobile: compress sides + elongate) */}
-<section className="relative h-[108svh] md:h-[88.8svh] overflow-hidden">
-  <Image
-    src="/hero17.jpg?v=25"
-    alt="Portrait of Dr. Salerno"
-    fill
-    sizes="100vw"
-    className="
-      object-cover
-      origin-center
-      [transform:scaleX(0.90)_scaleY(1.12)]   /* mobile: squeeze width, stretch height */
-      md:[transform:none]                      /* desktop unchanged */
-      will-change-transform
-    "
-    style={{ objectPosition: 'center 6%' }}     /* nudge focal point up a touch; tweak if needed */
-    priority
-  />
-        {/* original flat overlay (your preferred darker look) */}
-        <div className="absolute inset-0 bg-black/28 pointer-events-none" />
-
-        {/* CTA rail pinned at bottom of hero */}
-        <div className="absolute inset-x-0 bottom-6 z-20">
-          <div className="mx-auto max-w-[1400px] px-6 relative">
-
-            {/* Desktop/tablet: left/right anchored */}
-            <Link
-              href="speaking"
-              className="
-                hidden md:inline-flex
-                items-center rounded-md bg-[var(--color-gold)] text-black px-7 py-3
-                font-medium uppercase tracking-wide text-[13px] shadow-sm
-                hover:shadow-md hover:-translate-y-[1px] transition
-                focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60
-                absolute left-6 lg:left-61 bottom-0
-              "
-            >
-              Book Dr. Salerno to speak
-            </Link>
-
-            <Link
-              href="consulting"
-              className="
-                hidden md:inline-flex
-                items-center rounded-md !bg-[var(--color-teal-700)] !text-[var(--color-cream)] px-7 py-3
-                font-medium uppercase tracking-wide text-[13px] shadow-sm
-                hover:shadow-md hover:-translate-y-[1px] transition
-                focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60
-                absolute right-6 lg:right-34 bottom-0
-              "
-            >
-              Book consulting with Dr. Salerno
-            </Link>
-
-            {/* Mobile fallback: centered, stacked */}
-            <div className="md:hidden flex flex-col items-center gap-3">
-              <Link
-                href="speaking"
-                className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-7 py-3 font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60"
-              >
-                Book Dr. Salerno to speak
-              </Link>
-              <Link
-                href="consulting"
-                className="inline-flex items-center rounded-md !bg-[var(--color-teal-700)] !text-[var(--color-cream)] px-7 py-3 font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60"
-              >
-                Book consulting with Dr. Salerno
-              </Link>
-            </div>
-
-          </div>
-        </div>
-      </section>
 
       {/* ===== PAGE BODY ===== */}
       <div
