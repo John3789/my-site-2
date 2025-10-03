@@ -58,6 +58,7 @@ export default function Home() {
         drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]
         /* Make it span the full width */
         text-[32vw]   /* tweak 8.5–10vw if you want more/less */
+            landscape:text-[16vw]   /* shrink text in landscape */
       "
     >
       DR. JUAN PABLO SALERNO

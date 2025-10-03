@@ -45,19 +45,25 @@ export default function Header() {
             <Link href="/contact" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/contact") ? "nav-active" : ""}`}>Contact</Link>
           </nav>
 
-          {/* Mobile hamburger — moved to LEFT and bigger (only change) */}
-          <button
-            type="button"
-            aria-label="Open menu"
-            onClick={() => setOpen(true)}
-            className="md:hidden mr-auto -ml-1 p-3 translate-y-14"   // ← left side (no ml-auto), tiny tuck with -ml-1
-          >
-            {/* 3-line icon (cream) */}
-            <svg width="75" height="75" viewBox="0 0 24 24" fill="none">
-    <path d="M3 6h18M3 12h18M3 18h18" 
-      stroke="var(--color-cream)" 
-      strokeWidth="3.0" 
-      strokeLinecap="round"/>
+          {/* Mobile hamburger — moved to LEFT and bigger (portrait), smaller (landscape) */}
+<button
+  type="button"
+  aria-label="Open menu"
+  onClick={() => setOpen(true)}
+  className="md:hidden mr-auto -ml-1 p-3 translate-y-14"
+>
+  {/* 3-line icon (cream) */}
+  <svg
+    className="w-[75px] h-[75px] landscape:w-[37px] landscape:h-[37px]"
+    viewBox="0 0 24 24"
+    fill="none"
+  >
+    <path
+      d="M3 6h18M3 12h18M3 18h18"
+      stroke="var(--color-cream)"
+      strokeWidth="3.0"
+      strokeLinecap="round"
+    />
   </svg>
 </button>
         </div>
