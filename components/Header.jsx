@@ -74,16 +74,16 @@ export default function Header() {
   <Link
     href="/"
     className="
-      hidden md:flex items-baseline
-      fixed top-9 right-6
-      z-[10002]
-      font-serif uppercase tracking-[0.02em]
+      hidden md:block absolute
+       top-9 right-15
+      z-[201] pt-1 pr-3
+      font-serif uppercase tracking-wide
       text-[var(--color-cream)] hover:opacity-90 transition
-      leading-none pointer-events-auto
+      leading-none
     "
   >
     <span className="text-lg lg:text-xl">DR. JUAN PABLO SALERNO</span>
-    <span className="relative -top-1 ml-1 text-[0.7em] opacity-70">™</span>
+    <sup className="text-lg align-super opacity-70">™</sup>
   </Link>
 )}
 
