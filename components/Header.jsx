@@ -7,12 +7,17 @@ export default function Header() {
   const pathname = usePathname();
   const isHome = pathname === "/";
 
+  // Force transparency on the homepage, mobile only.
+  // On md+ the header goes back to teal. Other routes keep teal on all sizes.
+  const headerClass = isHome
+    ? "fixed inset-x-0 top-0 z-[9999] !bg-transparent md:!bg-[var(--color-teal-800)] text-[var(--color-cream)] pointer-events-auto"
+    : "fixed inset-x-0 top-0 z-[9999] !bg-[var(--color-teal-800)] text-[var(--color-cream)] pointer-events-auto";
+
   return (
     <>
-      {/* Fixed header: transparent on mobile, teal on md+ */}
-      <header className="fixed inset-x-0 top-0 z-[9999] bg-transparent md:bg-[var(--color-teal-800)] text-[var(--color-cream)] pointer-events-auto">
+      <header className={headerClass} style={isHome ? { backgroundColor: "transparent" } : undefined}>
         <div className="mx-auto max-w-7xl px-6 h-10 flex items-center justify-center">
-          <nav className="flex flex-wrap items-center justify-center gap-6 text-[13px] tracking-wide uppercase">
+          <nav className="flex flex-wrap items-center justify-center gap-6 text-[13px] tracking-wide uppercase bg-transparent">
             <Link
               href="/about"
               className={`hover:underline underline-offset-4 hover:opacity-90 transition ${
@@ -73,7 +78,7 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Name fixed at the true top-right of the viewport (separate from the header) */}
+      {/* Keep the top-right name badge on non-home routes */}
       {!isHome && (
         <Link
           href="/"
