@@ -24,7 +24,7 @@ export default function Home() {
       {/* HERO — mobile full-screen; desktop unchanged */}
       <section className="relative h-[100dvh] md:h-[88.8svh] overflow-hidden -mt-10 md:mt-0">
         {/* Image layer fills the section */}
-        <div className="absolute inset-0 bg-transparent">
+        <div className="absolute inset-0">
           <Image
             src="/hero17.jpg?v=25"
             alt="Portrait of Dr. Salerno"
