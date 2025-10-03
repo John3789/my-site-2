@@ -129,7 +129,7 @@ export default function ResourcesPage() {
   /* ========= Sticky subnav with fades & chevrons (desktop only) ========= */
   const Nav = useMemo(() => {
     return (
-      <div className="sticky top-[64px] z-30 -mx-6 border-b border-white/10 bg-transparent">
+      <div className="sticky top-[64px] z-30 -mx-6 md:border-b md:border-white/10 md:bg-[var(--color-teal-850)]/80 bg-transparent">
         <div className="relative mx-auto max-w-[1200px] px-6 py-3">
           {/* Scroll container */}
           <div
@@ -333,7 +333,9 @@ className={`
         </div>
 
         {/* Desktop sticky sub-nav (kept OUTSIDE the zoom, transparent so no tint) */}
-        <div className="hidden md:block">{Nav}</div>
+        <div className="hidden md:block">
+  {Nav}
+</div>
       </main>
 
       {/* Hide horizontal scrollbar for the sticky nav (keeps scroll gesture) */}
