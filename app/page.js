@@ -21,17 +21,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Hero with background photo */}
-      <section className="relative h-[88.8svh] overflow-hidden">
-        <Image
-          src="/hero17.jpg?v=25"
-          alt="Portrait of Dr. Salerno"
-          fill
-          sizes="100vw"
-          className="object-cover"
-          style={{ objectPosition: 'center 0%' }}
-          priority
-        />
+      {/* Hero with background photo (mobile: compress sides + elongate) */}
+<section className="relative h-[108svh] md:h-[88.8svh] overflow-hidden">
+  <Image
+    src="/hero17.jpg?v=25"
+    alt="Portrait of Dr. Salerno"
+    fill
+    sizes="100vw"
+    className="
+      object-cover
+      origin-center
+      [transform:scaleX(0.90)_scaleY(1.12)]   /* mobile: squeeze width, stretch height */
+      md:[transform:none]                      /* desktop unchanged */
+      will-change-transform
+    "
+    style={{ objectPosition: 'center 6%' }}     /* nudge focal point up a touch; tweak if needed */
+    priority
+  />
         {/* original flat overlay (your preferred darker look) */}
         <div className="absolute inset-0 bg-black/28 pointer-events-none" />
 
