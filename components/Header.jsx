@@ -113,7 +113,7 @@ export default function Header() {
               </button>
             </div>
 
-            <nav className="px-6 py-4 space-y-5 uppercase tracking-wide text-[18px]">
+            <nav className="px-6 py-4 space-y-5 uppercase tracking-wide text-[22px]">
               <MobileLink href="/" onClick={() => setOpen(false)} active={pathname === "/"}>Home</MobileLink>
               <MobileLink href="/about" onClick={() => setOpen(false)} active={pathname.startsWith("/about")}>About</MobileLink>
               <MobileLink href="/books" onClick={() => setOpen(false)} active={pathname.startsWith("/books")}>Books & Publications</MobileLink>
