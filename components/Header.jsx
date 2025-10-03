@@ -109,24 +109,38 @@ export default function Header() {
         overscroll-contain
       "
     >
-      <div className="flex items-center justify-between px-6 h-12">
-        <span className="font-serif text-4xl">Menu</span>
-        <button
-          type="button"
-          aria-label="Close menu"
-          onClick={() => setOpen(false)}
-          className="p-3 -mr-2"
-        >
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M6 6l12 12M18 6l-12 12" stroke="var(--color-cream)" strokeWidth="2" strokeLinecap="round" />
-          </svg>
-        </button>
-      </div>
+      <div className="flex items-center justify-between px-6 h-16">
+  {/* Bigger Menu label with landscape adjustment */}
+  <span className="font-serif 
+                  text-[7vw] landscape:text-[3vw]">
+    Menu
+  </span>
+
+  {/* Close button */}
+  <button
+    type="button"
+    aria-label="Close menu"
+    onClick={() => setOpen(false)}
+    className="p-3 -mr-2"
+  >
+    <svg 
+      width="13vw" height="13vw"  /* scales in portrait */
+      className="landscape:w-[6vw] landscape:h-[6vw]"  /* smaller in landscape */
+      viewBox="0 0 24 24" fill="none" aria-hidden="true"
+    >
+      <path 
+        d="M6 6l12 12M18 6l-12 12" 
+        stroke="var(--color-cream)" 
+        strokeWidth="3" strokeLinecap="round"
+      />
+    </svg>
+  </button>
+</div>
 
       {/* Bigger, responsive options; shrink in landscape so nothing gets cut off */}
       <nav
         className="px-6 py-6 space-y-6 uppercase tracking-wide
-                   text-[12vw] landscape:text-[3.6vw]"
+                   text-[13vw] landscape:text-[4vw]"
       >
         <MobileLink href="/" onClick={() => setOpen(false)} active={pathname === "/"}>Home</MobileLink>
         <MobileLink href="/about" onClick={() => setOpen(false)} active={pathname.startsWith("/about")}>About</MobileLink>
