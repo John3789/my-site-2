@@ -61,7 +61,7 @@ export default function Header() {
     <path
       d="M3 6h18M3 12h18M3 18h18"
       stroke="var(--color-cream)"
-      strokeWidth="3.0"
+      strokeWidth="2.5"
       strokeLinecap="round"
     />
   </svg>
