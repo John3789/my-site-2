@@ -36,7 +36,7 @@ export default function Home() {
               object-cover origin-center will-change-transform
               [transform:scaleX(1.00)_scaleY(1.00)]   /* mobile subtle zoom */
               md:[transform:none]                     /* desktop unchanged */
-              object-[center_0%] md:object-[center_0%]
+              object-[center_50%] md:object-[center_0%]
             "
           />
           {/* dark overlay */}
