@@ -6,10 +6,10 @@ import SocialFooter from "../components/SocialFooter";
 export default function Home() {
   return (
     <>
-{/* spacer for fixed header (keep) */}
+{/* spacer to clear the fixed header (keep) */}
 <div aria-hidden className="h-8" />
 
-{/* DESKTOP/TABLET nameplate (unchanged) */}
+{/* DESKTOP/TABLET nameplate — unchanged look */}
 <section id="home" className="hidden md:block bg-[var(--color-teal-800)] !text-[var(--color-cream)]">
   <div className="mx-auto max-w-[1400px] px-6 pt-0 pb-4">
     <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
@@ -21,9 +21,9 @@ export default function Home() {
   </div>
 </section>
 
-{/* HERO — mobile: full-screen, side-cropped w/ nameplate overlay; desktop: your old sizing */}
-<section className="relative min-h-[100svh] md:h-[88.8svh] overflow-hidden">
-  {/* image wrapper with side crop only on mobile */}
+{/* HERO — mobile full-screen + side crop; desktop unchanged */}
+<section className="relative min-h-[calc(100svh-2rem)] md:h-[88.8svh] overflow-hidden">
+  {/* Image wrapper: crop sides only on mobile to “compress” horizontally */}
   <div className="absolute inset-0 [clip-path:inset(0_6%_0_6%)] md:[clip-path:none]">
     <Image
       src="/hero17.jpg?v=25"
@@ -32,16 +32,19 @@ export default function Home() {
       priority
       quality={90}
       sizes="100vw"
-      className="object-cover object-[center_6%] md:object-[center_0%]"
+      className="object-cover object-[center_6%] md:object-[center_0%]"  /* mobile slightly higher, desktop exactly as before */
     />
     <div className="absolute inset-0 bg-black/28 pointer-events-none" />
   </div>
 
-  {/* MOBILE nameplate overlay (so the image can fill 100svh) */}
+  {/* MOBILE nameplate overlay so the photo can fill the whole first screen */}
   <div className="md:hidden absolute top-0 inset-x-0 z-20 pt-4">
     <div className="mx-auto max-w-[94vw] px-6">
       <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
-        <span className="block text-[12vw]/[1.05]">DR. JUAN PABLO SALERNO<sup className="text-[3.5vw] align-super opacity-70">™</sup></span>
+        <span className="block text-[12vw]/[1.05]">
+          DR. JUAN PABLO SALERNO
+          <sup className="text-[3.5vw] align-super opacity-70">™</sup>
+        </span>
       </h1>
     </div>
   </div>
@@ -51,18 +54,26 @@ export default function Home() {
     <div className="mx-auto max-w-[1400px] px-6 relative">
       <Link
         href="speaking"
-        className="hidden md:inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-7 py-3 font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md hover:-translate-y-[1px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60 absolute left-6 lg:left-61 bottom-0"
+        className="
+          hidden md:inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-7 py-3
+          font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md hover:-translate-y-[1px] transition
+          focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60 absolute left-6 lg:left-61 bottom-0
+        "
       >
         Book Dr. Salerno to speak
       </Link>
       <Link
         href="consulting"
-        className="hidden md:inline-flex items-center rounded-md !bg-[var(--color-teal-700)] !text-[var(--color-cream)] px-7 py-3 font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md hover:-translate-y-[1px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60 absolute right-6 lg:right-34 bottom-0"
+        className="
+          hidden md:inline-flex items-center rounded-md !bg-[var(--color-teal-700)] !text-[var(--color-cream)] px-7 py-3
+          font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md hover:-translate-y-[1px] transition
+          focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60 absolute right-6 lg:right-34 bottom-0
+        "
       >
         Book consulting with Dr. Salerno
       </Link>
 
-      {/* mobile CTAs stacked */}
+      {/* Mobile CTAs (unchanged) */}
       <div className="md:hidden flex flex-col items-center gap-3">
         <Link
           href="speaking"
