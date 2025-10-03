@@ -156,7 +156,9 @@ export default function ResourcesPage() {
                   onClick={() => handleJump(t.slug)}
                   aria-current={active ? "true" : "false"}
                   className={[
-                    "whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition",
+                    // ↑↑ mobile bigger; md resets
+                    "whitespace-nowrap rounded-full border px-4 py-2 text-[13.5px] font-semibold tracking-wide transition",
+                    "md:px-3.5 md:py-1.5 md:text-[12px]",
                     active
                       ? "border-[var(--color-gold)] bg-[var(--color-gold)] text-black shadow-sm"
                       : "border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10",
@@ -218,11 +220,9 @@ export default function ResourcesPage() {
 
   return (
     <>
-      {/* ===== PAGE BODY WRAPPER =====
-         Portrait: crisp (no scale) but “zoomed” via font-size tweaks.
-         Landscape: keep your zoom for the wide feel. */}
+      {/* ===== PAGE BODY WRAPPER ===== */}
       <div
-        style={{ '--z': 2.5, '--zoomL': 1.60 }}
+        style={{ '--z': 1.0, '--zoomL': 1.60 }}
         className={`
           md:contents
           origin-top
@@ -236,23 +236,23 @@ export default function ResourcesPage() {
         <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
           <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-20">
             {/* Centered Title */}
-            <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-3">
+            <h1 className="text-center font-serif text-[40px] leading-[1.06] opacity-95 mb-3 mt-3 md:text-6xl">
               Resources
             </h1>
             <div className="mx-auto h-[2px] w-16 bg-[var(--color-gold)]/85 rounded mb-15" />
 
             {/* Intro box (no backdrop blur; crisp text) */}
-            <div className="relative mx-auto max-w-[820px] mb-10 rounded-2xl border border-white/15 bg-white/5">
+            <div className="relative mx-auto max-w-[860px] mb-10 rounded-2xl border border-white/15 bg-white/5">
               {/* Gold spine */}
               <span className="pointer-events-none absolute left-0 top-1 h-39 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
-              <div className="flex flex-col gap-3 p-5">
-                <p className="text-[18px] portrait:text-[19.5px] leading-relaxed opacity-90">
+              <div className="flex flex-col gap-3 p-6 md:p-5">
+                <p className="text-[19.5px] md:text-[18px] leading-relaxed opacity-90">
                   A growing library of concise collections—shaped by science and lived
                   experience—to sharpen your mind and uplift your life. Each theme is
                   designed to meet you where you are and guide you toward greater
                   confidence, balance, and intentional living.
                 </p>
-                <div className="pt-3 text-xs portrait:text-[13px] opacity-70 border-t border-[var(--color-cream)]/15">
+                <div className="pt-3 text-[13px] md:text-xs opacity-70 border-t border-[var(--color-cream)]/15">
                   This page is under construction and will be updated periodically with
                   new collections.
                 </div>
@@ -267,11 +267,11 @@ export default function ResourcesPage() {
               {THEMES.map((theme, idx) => (
                 <section key={theme.slug} id={theme.slug} className="scroll-mt-28">
                   <header className="mb-4">
-                    <h2 className="font-serif text-[clamp(26px,3.3vw,34px)] opacity-95 mt-12">
+                    <h2 className="font-serif text-[22px] opacity-95 mt-12 md:text-[clamp(26px,3.3vw,34px)]">
                       {theme.title}
                     </h2>
                     <div className="h-[2px] w-12 bg-[var(--color-gold)]/85 rounded mt-0" />
-                    <p className="opacity-85 mt-3 max-w-3xl text-[17px] portrait:text-[18.5px]">
+                    <p className="opacity-85 mt-3 max-w-3xl text-[18.5px] md:text-[17px]">
                       {theme.blurb}
                     </p>
                   </header>
@@ -282,18 +282,18 @@ export default function ResourcesPage() {
                       return (
                         <li
                           key={col.slug}
-                          className="relative h-full rounded-2xl border border-white/12 bg-white/[0.04] p-6 portrait:p-7 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md flex flex-col"
+                          className="relative h-full rounded-2xl border border-white/12 bg-white/[0.04] p-7 md:p-6 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md flex flex-col"
                         >
                           {/* GOLD SPINE */}
                           <span className="pointer-events-none absolute left-0 top-1 h-64 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
 
                           {/* Header block */}
                           <div>
-                            <h3 className="font-serif text-[20px] portrait:text-[21.5px] md:text-[22px] opacity-95">
+                            <h3 className="font-serif text-[21.5px] md:text-[22px] opacity-95">
                               {col.title}
                             </h3>
                             <div className="h-[2px] w-10 bg-[var(--color-gold)]/60 rounded mt-0" />
-                            <p className="opacity-85 text-[15.5px] portrait:text-[16.5px] md:text-[16px] mt-2 min-h-[40px]">
+                            <p className="opacity-85 text-[16.5px] md:text-[16px] mt-2 min-h-[40px]">
                               {col.subtitle}
                             </p>
                           </div>
@@ -303,7 +303,7 @@ export default function ResourcesPage() {
                               {col.tags.map((t) => (
                                 <span
                                   key={t}
-                                  className="rounded-full border border-white/15 bg-white/10 px-2 py-0.5 text-[12px] portrait:text-[12.5px]"
+                                  className="rounded-full border border-white/15 bg-white/10 px-2 py-0.5 text-[12.5px] md:text-[12px]"
                                 >
                                   {t}
                                 </span>
@@ -319,7 +319,7 @@ export default function ResourcesPage() {
                             {hasItems ? (
                               <button
                                 onClick={() => openCollection(col, theme.title)}
-                                className="rounded-full border border-white/20 px-4 py-2 portrait:px-5 portrait:py-2.5 hover:bg-white/10 transition"
+                                className="rounded-full border border-white/20 px-5 py-2.5 md:px-4 md:py-2 hover:bg-white/10 transition"
                                 aria-label={`Open collection ${col.title}`}
                               >
                                 View Collection
@@ -327,7 +327,7 @@ export default function ResourcesPage() {
                             ) : (
                               <button
                                 disabled
-                                className="rounded-full border border-white/20 px-4 py-2 portrait:px-5 portrait:py-2.5 opacity-60 cursor-not-allowed"
+                                className="rounded-full border border-white/20 px-5 py-2.5 md:px-4 md:py-2 opacity-60 cursor-not-allowed"
                                 aria-label="Collection coming soon"
                               >
                                 Coming Soon
