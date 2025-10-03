@@ -45,16 +45,16 @@ export default function Header() {
             <Link href="/contact" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/contact") ? "nav-active" : ""}`}>Contact</Link>
           </nav>
 
-          {/* Mobile hamburger (upper-right). Cream color to match name. */}
+          {/* Mobile hamburger — moved to LEFT and bigger (only change) */}
           <button
             type="button"
             aria-label="Open menu"
             onClick={() => setOpen(true)}
-            className="md:hidden ml-auto -mr-1 p-3"
+            className="md:hidden p-3 -ml-1"   // ← left side (no ml-auto), tiny tuck with -ml-1
           >
             {/* 3-line icon (cream) */}
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M3 6h18M3 12h18M3 18h18" stroke="var(--color-cream)" strokeWidth="2" strokeLinecap="round"/>
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M3 6h18M3 12h18M3 18h18" stroke="var(--color-cream)" strokeWidth="2.5" strokeLinecap="round"/>
             </svg>
           </button>
         </div>
@@ -78,8 +78,8 @@ export default function Header() {
                 onClick={() => setOpen(false)}
                 className="p-3 -mr-2"
               >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M6 6l12 12M18 6l-12 12" stroke="var(--color-cream)" strokeWidth="2" strokeLinecap="round"/>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M6 6l12 12M18 6l-12 12" stroke="var(--color-cream)" strokeWidth="2.5" strokeLinecap="round"/>
                 </svg>
               </button>
             </div>
