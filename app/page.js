@@ -34,9 +34,9 @@ export default function Home() {
             sizes="(min-width:768px) 100vw, 150vw"
             className="
               object-cover origin-center will-change-transform
-              [transform:scaleX(1.00)_scaleY(0.95)]   /* mobile subtle zoom */
+              [transform:scaleX(1.00)_scaleY(1.00)]   /* mobile subtle zoom */
               md:[transform:none]                     /* desktop unchanged */
-              object-[center_6%] md:object-[center_0%]
+              object-[center_8%] md:object-[center_0%]
             "
           />
           {/* dark overlay */}
