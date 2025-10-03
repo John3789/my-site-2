@@ -73,12 +73,20 @@ export default function Header() {
 {!isHome && (
   <Link
     href="/"
-    className="fixed top-9 right-15 z-[201] pt-1 pr-3 font-serif tracking-wide hover:opacity-90 transition leading-none"
+    className="
+      hidden md:flex items-baseline
+      fixed top-9 right-6
+      z-[10002]
+      font-serif uppercase tracking-[0.02em]
+      text-[var(--color-cream)] hover:opacity-90 transition
+      leading-none pointer-events-auto
+    "
   >
     <span className="text-lg lg:text-xl">DR. JUAN PABLO SALERNO</span>
-    <sup className="text-lg align-super opacity-70">™</sup>
+    <span className="relative -top-1 ml-1 text-[0.7em] opacity-70">™</span>
   </Link>
 )}
+
 
 
       {/* Mobile full-screen menu (slides over, cream on teal) */}
