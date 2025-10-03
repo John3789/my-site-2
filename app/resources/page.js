@@ -160,13 +160,13 @@ export default function ResourcesPage() {
           {/* Edge fades (subtle; no background tint) */}
           <div
             className={[
-              "pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-[var(--color-teal-850)] to-transparent transition-opacity",
+              "hidden md:block pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-[var(--color-teal-850)] to-transparent transition-opacity",
               canScrollLeft ? "opacity-100" : "opacity-0",
             ].join(" ")}
           />
           <div
             className={[
-              "pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-[var(--color-teal-850)] to-transparent transition-opacity",
+              "hidden md:block pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-[var(--color-teal-850)] to-transparent transition-opacity",
               canScrollRight ? "opacity-100" : "opacity-0",
             ].join(" ")}
           />
@@ -211,18 +211,15 @@ export default function ResourcesPage() {
         {/* ===== ZOOMED CONTENT (title + intro + sections) ===== */}
         <div
           style={{ '--z': 3.0, '--zoomL': 1.60 }}
-          className={`
-            zoomwrap                       /* for the global crisping styles below */
-            md:contents
-            origin-top
-            will-change-transform
-            [backface-visibility:hidden]
-            [transform:translateZ(0)_scale(var(--z))] [width:calc(100%/var(--z))]
-            mx-auto
-            md:[transform:none] md:[width:100%] md:will-change-auto
-            landscape:[transform:translateZ(0)_scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
-            overflow-hidden
-          `}
+className={`
+  md:contents
+  origin-top
+  [transform:scale(var(--z))] [width:calc(100%/var(--z))]
+  mx-auto
+  md:[transform:none] md:[width:100%]
+  landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
+  overflow-visible
+`}
         >
           {/* Title + Intro (now inside the zoom so sizes match) */}
           <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-6">
