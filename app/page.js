@@ -6,7 +6,7 @@ import SocialFooter from "../components/SocialFooter";
 export default function Home() {
   return (
     <>
-{/* spacer for fixed header (keep) */}
+{/* spacer to clear the fixed header (keep) */}
 <div aria-hidden className="h-8" />
 
 {/* DESKTOP/TABLET nameplate — unchanged */}
@@ -21,28 +21,28 @@ export default function Home() {
   </div>
 </section>
 
-{/* HERO — mobile full-screen + subtle zoom; desktop unchanged */}
-<section className="relative min-h-[calc(100svh-2rem)] md:h-[88.8svh] overflow-hidden">
+{/* HERO — mobile full-screen; desktop unchanged */}
+<section className="relative min-h-[100lvh] md:h-[88.8svh] overflow-hidden">
   <Image
     src="/hero17.jpg?v=25"
     alt="Portrait of Dr. Salerno"
     fill
     priority
     quality={90}
-    /* Ask for a larger asset on mobile so the zoom stays crisp */
+    /* Bigger mobile asset so the zoom is crisp */
     sizes="(min-width: 768px) 100vw, 130vw"
     className="
-      object-cover origin-center
-      /* Mobile: zoom a bit horizontally & vertically (fills edges, no gutters) */
-      [transform:scaleX(1.06)_scaleY(1.12)]
-      md:[transform:none]
-      will-change-transform
-      /* Slightly higher focal point on mobile; desktop as before */
-      object-[center_6%] md:object-[center_0%]
+      object-cover origin-center will-change-transform
+      [transform:scaleX(1.05)_scaleY(1.10)]     /* mobile: subtle zoom for narrower+taller feel */
+      md:[transform:none]                       /* desktop unchanged */
+      object-[center_6%] md:object-[center_0%]  /* mobile frame slightly higher, desktop original */
     "
   />
 
-  {/* Mobile nameplate over the photo so the image can fill the whole screen */}
+  {/* restore the same dark overlay as before */}
+  <div className="absolute inset-0 bg-black/28 pointer-events-none" />
+
+  {/* MOBILE nameplate overlay so the photo can fill the whole first screen */}
   <div className="md:hidden absolute top-0 inset-x-0 z-20 pt-4">
     <div className="mx-auto max-w-[94vw] px-6">
       <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
@@ -57,11 +57,10 @@ export default function Home() {
   {/* CTA rail (unchanged) */}
   <div className="absolute inset-x-0 bottom-6 z-20">
     <div className="mx-auto max-w-[1400px] px-6 relative">
-      {/* ...your existing CTA links... */}
+      {/* ... your existing CTA links exactly as before ... */}
     </div>
   </div>
 </section>
-
 
       {/* ===== PAGE BODY ===== */}
       <div
