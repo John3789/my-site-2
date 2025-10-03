@@ -21,22 +21,10 @@ export default function Home() {
         </div>
       </section>
 
-{/* HERO — mobile full-screen bleeding into safe areas; desktop unchanged */}
-<section
-  className="
-    relative overflow-hidden bg-transparent
-    md:h-[88.8svh]
-    min-h-[100svh]
-    /* pull the section up into the notch area and extend into the bottom home-indicator */
-    [-webkit-mask-composite:source-over]
-    -mt-[env(safe-area-inset-top)]
-    -mb-[env(safe-area-inset-bottom)]
-    pt-[env(safe-area-inset-top)]
-    pb-[env(safe-area-inset-bottom)]
-  "
->
+      {/* HERO — mobile full-screen; desktop unchanged */}
+      <section className="relative h-[100dvh] md:h-[88.8svh] overflow-hidden -mt-10 md:mt-0">
         {/* Image layer fills the section */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-transparent">
           <Image
             src="/hero17.jpg?v=25"
             alt="Portrait of Dr. Salerno"
