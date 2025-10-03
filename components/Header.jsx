@@ -89,47 +89,61 @@ export default function Header() {
 
 
 
-      {/* Mobile full-screen menu (slides over, cream on teal) */}
-      {open && (
-        <>
-          {/* Backdrop */}
-          <div
-            className="fixed inset-0 z-[10000] bg-black/40"
-            onClick={() => setOpen(false)}
-          />
-          {/* Panel */}
-          <aside className="fixed inset-y-0 left-0 z-[10001] w-[80vw] max-w-[420px] bg-[var(--color-teal-800)] text-[var(--color-cream)] shadow-2xl flex flex-col">
-            <div className="flex items-center justify-between px-5 h-12">
-              <span className="font-serif text-base">Menu</span>
-              <button
-                type="button"
-                aria-label="Close menu"
-                onClick={() => setOpen(false)}
-                className="p-3 -mr-2"
-              >
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M6 6l12 12M18 6l-12 12" stroke="var(--color-cream)" strokeWidth="2.5" strokeLinecap="round"/>
-                </svg>
-              </button>
-            </div>
+ {/* Mobile full-screen menu (slides over, cream on teal) */}
+{open && (
+  <>
+    {/* Backdrop */}
+    <div
+      className="fixed inset-0 z-[10000] bg-black/40"
+      onClick={() => setOpen(false)}
+    />
 
-            <nav className="px-6 py-4 space-y-5 uppercase tracking-wide text-[30px]">
-              <MobileLink href="/" onClick={() => setOpen(false)} active={pathname === "/"}>Home</MobileLink>
-              <MobileLink href="/about" onClick={() => setOpen(false)} active={pathname.startsWith("/about")}>About</MobileLink>
-              <MobileLink href="/books" onClick={() => setOpen(false)} active={pathname.startsWith("/books")}>Books & Publications</MobileLink>
-              <MobileLink href="/meditations" onClick={() => setOpen(false)} active={pathname.startsWith("/meditations")}>Meditations</MobileLink>
-              <MobileLink href="/resources" onClick={() => setOpen(false)} active={pathname.startsWith("/resources")}>Resources</MobileLink>
-              <MobileLink href="/speaking" onClick={() => setOpen(false)} active={pathname.startsWith("/speaking")}>Speaking</MobileLink>
-              <MobileLink href="/consulting" onClick={() => setOpen(false)} active={pathname.startsWith("/consulting")}>Consulting</MobileLink>
-              <MobileLink href="/contact" onClick={() => setOpen(false)} active={pathname.startsWith("/contact")}>Contact</MobileLink>
-            </nav>
+    {/* FULL-SCREEN PANEL */}
+    <aside
+      className="
+        fixed inset-0 z-[10001]
+        bg-[var(--color-teal-800)] text-[var(--color-cream)]
+        flex flex-col
+        min-h-[100svh]   /* fills viewport; stable on iOS */
+        overflow-y-auto   /* scroll if long */
+        overscroll-contain
+      "
+    >
+      <div className="flex items-center justify-between px-6 h-12">
+        <span className="font-serif text-base">Menu</span>
+        <button
+          type="button"
+          aria-label="Close menu"
+          onClick={() => setOpen(false)}
+          className="p-3 -mr-2"
+        >
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 6l12 12M18 6l-12 12" stroke="var(--color-cream)" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+        </button>
+      </div>
 
-            <div className="mt-auto px-6 pb-[calc(env(safe-area-inset-bottom)+12px)] text-xs opacity-80">
-              © {new Date().getFullYear()} Dr. Juan Pablo Salerno™
-            </div>
-          </aside>
-        </>
-      )}
+      {/* Bigger, responsive options; shrink in landscape so nothing gets cut off */}
+      <nav
+        className="px-6 py-6 space-y-6 uppercase tracking-wide
+                   text-[7vw] landscape:text-[3.6vw]"
+      >
+        <MobileLink href="/" onClick={() => setOpen(false)} active={pathname === "/"}>Home</MobileLink>
+        <MobileLink href="/about" onClick={() => setOpen(false)} active={pathname.startsWith("/about")}>About</MobileLink>
+        <MobileLink href="/books" onClick={() => setOpen(false)} active={pathname.startsWith("/books")}>Books & Publications</MobileLink>
+        <MobileLink href="/meditations" onClick={() => setOpen(false)} active={pathname.startsWith("/meditations")}>Meditations</MobileLink>
+        <MobileLink href="/resources" onClick={() => setOpen(false)} active={pathname.startsWith("/resources")}>Resources</MobileLink>
+        <MobileLink href="/speaking" onClick={() => setOpen(false)} active={pathname.startsWith("/speaking")}>Speaking</MobileLink>
+        <MobileLink href="/consulting" onClick={() => setOpen(false)} active={pathname.startsWith("/consulting")}>Consulting</MobileLink>
+        <MobileLink href="/contact" onClick={() => setOpen(false)} active={pathname.startsWith("/contact")}>Contact</MobileLink>
+      </nav>
+
+      <div className="mt-auto px-6 pb-[calc(env(safe-area-inset-bottom)+16px)] text-xs opacity-80">
+        © {new Date().getFullYear()} Dr. Juan Pablo Salerno™
+      </div>
+    </aside>
+  </>
+)}
     </>
   );
 }
