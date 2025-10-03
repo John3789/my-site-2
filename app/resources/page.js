@@ -12,8 +12,20 @@ const THEMES = [
     title: "Motivation & Mindset",
     blurb: "Shift perspective and recharge your drive with affirmations and reframes.",
     collections: [
-      { slug: "confidence-boost", title: "Confidence Boost", subtitle: "Reframes and tiny actions to move through self-doubt.", tags: ["Motivation", "Confidence"], items: [] },
-      { slug: "positive-reframes", title: "Positive Reframes", subtitle: "Gentle perspective shifts that stick.", tags: ["Mindset", "Resilience"], items: [] },
+      {
+        slug: "confidence-boost",
+        title: "Confidence Boost",
+        subtitle: "Reframes and tiny actions to move through self-doubt.",
+        tags: ["Motivation", "Confidence"],
+        items: [],
+      },
+      {
+        slug: "positive-reframes",
+        title: "Positive Reframes",
+        subtitle: "Gentle perspective shifts that stick.",
+        tags: ["Mindset", "Resilience"],
+        items: [],
+      },
     ],
   },
   {
@@ -21,8 +33,20 @@ const THEMES = [
     title: "Mental Health & Stress Relief",
     blurb: "Practical steps for everyday wellbeing and downshifting your nervous system.",
     collections: [
-      { slug: "everyday-wellbeing", title: "Everyday Wellbeing", subtitle: "Small habits that compound over time.", tags: ["Wellbeing", "Habits"], items: [] },
-      { slug: "calm-in-chaos", title: "Calm in Chaos", subtitle: "Grounding tools for busy environments.", tags: ["Stress relief", "Grounding"], items: [] },
+      {
+        slug: "everyday-wellbeing",
+        title: "Everyday Wellbeing",
+        subtitle: "Small habits that compound over time.",
+        tags: ["Wellbeing", "Habits"],
+        items: [],
+      },
+      {
+        slug: "calm-in-chaos",
+        title: "Calm in Chaos",
+        subtitle: "Grounding tools for busy environments.",
+        tags: ["Stress relief", "Grounding"],
+        items: [],
+      },
     ],
   },
   {
@@ -30,8 +54,20 @@ const THEMES = [
     title: "Self-Compassion & Healing",
     blurb: "Practices for forgiving, softening, and rebuilding resilience after setbacks.",
     collections: [
-      { slug: "compassion-practices", title: "Compassion Practices", subtitle: "Moments to offer yourself kindness.", tags: ["Compassion", "Healing"], items: [] },
-      { slug: "healing-habits", title: "Healing Habits", subtitle: "Daily cues that create space to recover.", tags: ["Recovery", "Self-care"], items: [] },
+      {
+        slug: "compassion-practices",
+        title: "Compassion Practices",
+        subtitle: "Moments to offer yourself kindness.",
+        tags: ["Compassion", "Healing"],
+        items: [],
+      },
+      {
+        slug: "healing-habits",
+        title: "Healing Habits",
+        subtitle: "Daily cues that create space to recover.",
+        tags: ["Recovery", "Self-care"],
+        items: [],
+      },
     ],
   },
   {
@@ -39,8 +75,20 @@ const THEMES = [
     title: "Relationships & Connection",
     blurb: "Build healthier everyday relationships—with friends, family, colleagues, and community.",
     collections: [
-      { slug: "everyday-connection", title: "Everyday Connection", subtitle: "Small ways to nurture belonging and support.", tags: ["Connection", "Community"], items: [] },
-      { slug: "communication-shifts", title: "Communication Shifts", subtitle: "Gentle ways to express yourself clearly.", tags: ["Communication", "Clarity"], items: [] },
+      {
+        slug: "everyday-connection",
+        title: "Everyday Connection",
+        subtitle: "Small ways to nurture belonging and support.",
+        tags: ["Connection", "Community"],
+        items: [],
+      },
+      {
+        slug: "communication-shifts",
+        title: "Communication Shifts",
+        subtitle: "Gentle ways to express yourself clearly.",
+        tags: ["Communication", "Clarity"],
+        items: [],
+      },
     ],
   },
   {
@@ -48,8 +96,20 @@ const THEMES = [
     title: "Purpose & Alignment",
     blurb: "Connect with your deeper why and align your daily actions to it.",
     collections: [
-      { slug: "values-check", title: "Values Check", subtitle: "Reflection prompts to guide decisions.", tags: ["Purpose", "Values"], items: [] },
-      { slug: "alignment-habits", title: "Alignment Habits", subtitle: "Simple steps to bring goals and life closer.", tags: ["Alignment", "Direction"], items: [] },
+      {
+        slug: "values-check",
+        title: "Values Check",
+        subtitle: "Reflection prompts to guide decisions.",
+        tags: ["Purpose", "Values"],
+        items: [],
+      },
+      {
+        slug: "alignment-habits",
+        title: "Alignment Habits",
+        subtitle: "Simple steps to bring goals and life closer.",
+        tags: ["Alignment", "Direction"],
+        items: [],
+      },
     ],
   },
   {
@@ -57,8 +117,20 @@ const THEMES = [
     title: "Manifestation & Intention Setting",
     blurb: "Align actions with vision through clear intentions and consistent micro-moves.",
     collections: [
-      { slug: "morning-clarity", title: "Morning Clarity", subtitle: "Orient your day toward purpose.", tags: ["Clarity", "Intention"], items: [] },
-      { slug: "get-unstuck", title: "Get Unstuck", subtitle: "From hesitation to first step.", tags: ["Momentum", "Action"], items: [] },
+      {
+        slug: "morning-clarity",
+        title: "Morning Clarity",
+        subtitle: "Orient your day toward purpose.",
+        tags: ["Clarity", "Intention"],
+        items: [],
+      },
+      {
+        slug: "get-unstuck",
+        title: "Get Unstuck",
+        subtitle: "From hesitation to first step.",
+        tags: ["Momentum", "Action"],
+        items: [],
+      },
     ],
   },
   {
@@ -66,8 +138,20 @@ const THEMES = [
     title: "Feng Shui & Environment",
     blurb: "Small environmental shifts that support energy, focus, and rest.",
     collections: [
-      { slug: "clarity-corners", title: "Clarity Corners", subtitle: "Tidy cues that nudge focus.", tags: ["Focus", "Simplicity"], items: [] },
-      { slug: "rest-friendly-bedroom", title: "Rest-Friendly Bedroom", subtitle: "Edit the room, not your willpower.", tags: ["Rest", "Sleep"], items: [] },
+      {
+        slug: "clarity-corners",
+        title: "Clarity Corners",
+        subtitle: "Tidy cues that nudge focus.",
+        tags: ["Focus", "Simplicity"],
+        items: [],
+      },
+      {
+        slug: "rest-friendly-bedroom",
+        title: "Rest-Friendly Bedroom",
+        subtitle: "Edit the room, not your willpower.",
+        tags: ["Rest", "Sleep"],
+        items: [],
+      },
     ],
   },
 ];
@@ -140,7 +224,7 @@ export default function ResourcesPage() {
   /* ========= Sticky subnav with fades & chevrons ========= */
   const Nav = useMemo(() => {
     return (
-      <div className="sticky top-[64px] z-30 -mx-6 border-b border-white/10 bg-[var(--color-teal-850)]/80">
+      <div className="sticky top-[64px] z-30 -mx-6 border-b border-white/10 bg-[var(--color-teal-850)]/90 md:bg-[var(--color-teal-850)]/80 md:backdrop-blur">
         <div className="relative mx-auto max-w-[1200px] px-6 py-3">
           {/* Scroll container */}
           <div
@@ -218,18 +302,21 @@ export default function ResourcesPage() {
 
   return (
     <>
-      {/* ===== PAGE BODY WRAPPER (same zoom pattern as Home/Books/Meditations/About) ===== */}
+      {/* ===== PAGE BODY WRAPPER (same crisp zoom pattern) ===== */}
 <div
-  style={{ '--z': 3.0, '--zoomL': 1.60 }}
-  className={`
+  style={{ '--z': 3.00, '--zoomL': 1.60 }}
+  className="
     md:contents
     origin-top
-    [transform:scale(var(--z))] [width:calc(100%/var(--z))]
+    [transform:scale(var(--z))]
+    [width:calc(100%/var(--z))]
     mx-auto
-    md:[transform:none] md:[width:100%]
-    landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
+    md:[transform:none]
+    md:[width:100%]
+    landscape:[transform:scale(var(--zoomL))]
+    landscape:[width:calc(100%/var(--zoomL))]
     overflow-hidden
-  `}
+  "
 >
         <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
           <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-20">
@@ -239,7 +326,7 @@ export default function ResourcesPage() {
             </h1>
             <div className="mx-auto h-[2px] w-16 bg-[var(--color-gold)]/85 rounded mb-15" />
 
-            {/* Intro box */}
+            {/* Intro box (narrower) */}
             <div className="relative mx-auto max-w-[820px] mb-10 rounded-2xl border border-white/15 bg-white/5">
               {/* Gold spine */}
               <span className="pointer-events-none absolute left-0 top-1 h-39 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
@@ -257,91 +344,93 @@ export default function ResourcesPage() {
               </div>
             </div>
 
-            {/* Sticky subnav */}
+            {/* Sticky subnav with affordances */}
             {Nav}
 
             {/* ===== THEME SECTIONS ===== */}
             <div className="space-y-14">
-              {THEMES.map((theme, idx) => (
-                <section key={theme.slug} id={theme.slug} className="scroll-mt-28">
-                  <header className="mb-4">
-                    <h2 className="font-serif text-[clamp(26px,3.3vw,34px)] opacity-95 mt-12">
-                      {theme.title}
-                    </h2>
-                    <div className="h-[2px] w-12 bg-[var(--color-gold)]/85 rounded mt-0" />
-                    <p className="opacity-85 mt-3 max-w-3xl">{theme.blurb}</p>
-                  </header>
+              {THEMES.map((theme, idx) => {
+                return (
+                  <section key={theme.slug} id={theme.slug} className="scroll-mt-28">
+                    <header className="mb-4">
+                      <h2 className="font-serif text-[clamp(26px,3.3vw,34px)] opacity-95 mt-12">
+                        {theme.title}
+                      </h2>
+                      <div className="h-[2px] w-12 bg-[var(--color-gold)]/85 rounded mt-0" />
+                      <p className="opacity-85 mt-3 max-w-3xl">{theme.blurb}</p>
+                    </header>
 
-                  <ul className="grid gap-8 md:grid-cols-2">
-                    {theme.collections.map((col) => {
-                      const hasItems = !!(col.items && col.items.length > 0);
-                      return (
-                        <li
-                          key={col.slug}
-                          className="relative h-full rounded-2xl border border-white/12 bg-white/[0.04] p-6 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md flex flex-col"
-                        >
-                          {/* GOLD SPINE */}
-                          <span className="pointer-events-none absolute left-0 top-1 h-64 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
+                    <ul className="grid gap-8 md:grid-cols-2">
+                      {theme.collections.map((col) => {
+                        const hasItems = !!(col.items && col.items.length > 0);
+                        return (
+                          <li
+                            key={col.slug}
+                            className="relative h-full rounded-2xl border border-white/12 bg-white/[0.04] p-6 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md flex flex-col"
+                          >
+                            {/* GOLD SPINE */}
+                            <span className="pointer-events-none absolute left-0 top-1 h-64 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
 
-                          {/* Header block */}
-                          <div>
-                            <h3 className="font-serif text-[20px] md:text-[22px] opacity-95">
-                              {col.title}
-                            </h3>
-                            <div className="h-[2px] w-10 bg-[var(--color-gold)]/60 rounded mt-0" />
-                            <p className="opacity-85 text-[15px] md:text-[16px] mt-2 min-h-[40px]">
-                              {col.subtitle}
-                            </p>
-                          </div>
-
-                          {col.tags?.length ? (
-                            <div className="mt-3 flex flex-wrap gap-2 min-h-[28px]">
-                              {col.tags.map((t) => (
-                                <span
-                                  key={t}
-                                  className="rounded-full border border-white/15 bg-white/10 px-2 py-0.5 text-[12px]"
-                                >
-                                  {t}
-                                </span>
-                              ))}
+                            {/* Header block */}
+                            <div>
+                              <h3 className="font-serif text-[20px] md:text-[22px] opacity-95">
+                                {col.title}
+                              </h3>
+                              <div className="h-[2px] w-10 bg-[var(--color-gold)]/60 rounded mt-0" />
+                              <p className="opacity-85 text-[15px] md:text-[16px] mt-2 min-h-[40px]">
+                                {col.subtitle}
+                              </p>
                             </div>
-                          ) : (
-                            <div className="mt-3 min-h-[28px]" />
-                          )}
 
-                          <div className="flex-1" />
-
-                          <div className="mt-5 flex flex-wrap gap-3">
-                            {hasItems ? (
-                              <button
-                                onClick={() => openCollection(col, theme.title)}
-                                className="rounded-full border border-white/20 px-4 py-2 hover:bg-white/10 transition"
-                                aria-label={`Open collection ${col.title}`}
-                              >
-                                View Collection
-                              </button>
+                            {col.tags?.length ? (
+                              <div className="mt-3 flex flex-wrap gap-2 min-h-[28px]">
+                                {col.tags.map((t) => (
+                                  <span
+                                    key={t}
+                                    className="rounded-full border border-white/15 bg-white/10 px-2 py-0.5 text-[12px]"
+                                  >
+                                    {t}
+                                  </span>
+                                ))}
+                              </div>
                             ) : (
-                              <button
-                                disabled
-                                className="rounded-full border border-white/20 px-4 py-2 opacity-60 cursor-not-allowed"
-                                aria-label="Collection coming soon"
-                              >
-                                Coming Soon
-                              </button>
+                              <div className="mt-3 min-h-[28px]" />
                             )}
-                          </div>
-                        </li>
-                      );
-                    })}
-                  </ul>
 
-                  {idx < THEMES.length - 1 && (
-                    <div className="mt-12">
-                      <div className="h-px w-full bg-[var(--color-cream)]/16" />
-                    </div>
-                  )}
-                </section>
-              ))}
+                            <div className="flex-1" />
+
+                            <div className="mt-5 flex flex-wrap gap-3">
+                              {hasItems ? (
+                                <button
+                                  onClick={() => openCollection(col, theme.title)}
+                                  className="rounded-full border border-white/20 px-4 py-2 hover:bg-white/10 transition"
+                                  aria-label={`Open collection ${col.title}`}
+                                >
+                                  View Collection
+                                </button>
+                              ) : (
+                                <button
+                                  disabled
+                                  className="rounded-full border border-white/20 px-4 py-2 opacity-60 cursor-not-allowed"
+                                  aria-label="Collection coming soon"
+                                >
+                                  Coming Soon
+                                </button>
+                              )}
+                            </div>
+                          </li>
+                        );
+                      })}
+                    </ul>
+
+                    {idx < THEMES.length - 1 && (
+                      <div className="mt-12">
+                        <div className="h-px w-full bg-[var(--color-cream)]/16" />
+                      </div>
+                    )}
+                  </section>
+                );
+              })}
             </div>
           </div>
 
@@ -350,7 +439,7 @@ export default function ResourcesPage() {
         </main>
       </div>
 
-      {/* Hide horizontal scrollbar for the sticky nav (keeps scroll gesture) */}
+      {/* Small CSS helper to hide horizontal scrollbar for nav (keeps scroll gesture) */}
       <style jsx global>{`
         .no-scrollbar {
           -ms-overflow-style: none; /* IE and Edge */
@@ -378,7 +467,7 @@ function CollectionModal({ open, onClose, collection }) {
       />
 
       <div className="relative mx-4 max-h-[85vh] w-full max-w-3xl overflow-hidden rounded-2xl border border-white/15 bg-[var(--color-teal-850)] shadow-2xl">
-        <header className="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-white/10 bg-[var(--color-teal-850)]/95 px-5 py-4">
+        <header className="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-white/10 bg-[var(--color-teal-850)]/98 md:bg-[var(--color-teal-850)]/90 px-5 py-4 md:backdrop-blur">
           <div className="min-w-0">
             <div className="text-xs opacity-70 truncate">{collection.theme}</div>
             <h3 className="font-serif text-xl opacity-95 truncate">
