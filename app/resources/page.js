@@ -140,7 +140,7 @@ export default function ResourcesPage() {
   /* ========= Sticky subnav with fades & chevrons ========= */
   const Nav = useMemo(() => {
     return (
-      <div className="sticky top-[64px] z-30 -mx-6 border-b border-white/10 bg-[var(--color-teal-850)]/80 backdrop-blur-0 md:backdrop-blur-sm [backdrop-filter:none] md:[backdrop-filter:blur(8px)]">
+      <div className="sticky top-[64px] z-30 -mx-6 border-b border-white/10 bg-[var(--color-teal-850)]/80 backdrop-blur-none md:backdrop-blur-sm">
         <div className="relative mx-auto max-w-[1200px] px-6 py-3">
           {/* Scroll container */}
           <div
@@ -231,7 +231,7 @@ export default function ResourcesPage() {
     overflow-hidden
   `}
 >
-        <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
+        <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] subpixel-antialiased">
           <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-20">
             {/* Centered Title */}
             <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-3">
@@ -378,7 +378,7 @@ function CollectionModal({ open, onClose, collection }) {
       />
 
       <div className="relative mx-4 max-h-[85vh] w-full max-w-3xl overflow-hidden rounded-2xl border border-white/15 bg-[var(--color-teal-850)] shadow-2xl">
-        <header className="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-white/10 bg-[var(--color-teal-850)]/95 px-5 py-4 backdrop-blur-0 md:backdrop-blur-sm [backdrop-filter:none] md:[backdrop-filter:blur(8px)]">
+        <header className="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-white/10 bg-[var(--color-teal-850)]/95 px-5 py-4 backdrop-blur-0 md:backdrop-blur-sm">
           <div className="min-w-0">
             <div className="text-xs opacity-70 truncate">{collection.theme}</div>
             <h3 className="font-serif text-xl opacity-95 truncate">
