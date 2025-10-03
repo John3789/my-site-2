@@ -126,21 +126,10 @@ export default function ResourcesPage() {
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  /* ========= Open/close modal ========= */
-  function openCollection(col, themeTitle) {
-    if (!col?.items?.length) return;
-    setActiveCollection({ ...col, theme: themeTitle });
-    setOpen(true);
-  }
-  function closeModal() {
-    setOpen(false);
-    setTimeout(() => setActiveCollection(null), 150);
-  }
-
-  /* ========= Sticky subnav with fades & chevrons ========= */
+  /* ========= Sticky subnav with fades & chevrons (desktop only) ========= */
   const Nav = useMemo(() => {
     return (
-      <div className="sticky top-[64px] z-30 -mx-6 border-b border-white/10 bg-[var(--color-teal-850)]/80">
+      <div className="sticky top-[64px] z-30 -mx-6 border-b border-white/10 bg-transparent">
         <div className="relative mx-auto max-w-[1200px] px-6 py-3">
           {/* Scroll container */}
           <div
@@ -168,7 +157,7 @@ export default function ResourcesPage() {
             })}
           </div>
 
-          {/* Edge fades */}
+          {/* Edge fades (subtle; no background tint) */}
           <div
             className={[
               "pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-[var(--color-teal-850)] to-transparent transition-opacity",
@@ -182,7 +171,7 @@ export default function ResourcesPage() {
             ].join(" ")}
           />
 
-          {/* Chevron buttons (desktop) */}
+          {/* Chevron buttons (desktop only) */}
           <div className="hidden md:block">
             <button
               onClick={() => scrollNavBy(-240)}
@@ -218,41 +207,12 @@ export default function ResourcesPage() {
 
   return (
     <>
-      {/* ===== TITLE + INTRO (not scaled) ===== */}
       <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
-        <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-6">
-          {/* Centered Title */}
-          <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-3">
-            Resources
-          </h1>
-          <div className="mx-auto h-[2px] w-16 bg-[var(--color-gold)]/85 rounded mb-6" />
-
-          {/* Intro box */}
-          <div className="relative mx-auto max-w-[820px] mb-6 rounded-2xl border border-white/15 bg-white/5">
-            {/* Gold spine */}
-            <span className="pointer-events-none absolute left-0 top-1 h-39 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
-            <div className="flex flex-col gap-3 p-5">
-              <p className="text-[18px] leading-relaxed opacity-90">
-                A growing library of concise collections—shaped by science and lived
-                experience—to sharpen your mind and uplift your life. Each theme is
-                designed to meet you where you are and guide you toward greater
-                confidence, balance, and intentional living.
-              </p>
-              <div className="pt-3 text-xs opacity-70 border-t border-[var(--color-cream)]/15">
-                This page is under construction and will be updated periodically with
-                new collections.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* ===== STICKY SUB-NAV (desktop only to avoid mobile blur) ===== */}
-        <div className="hidden md:block">{Nav}</div>
-
-        {/* ===== ZOOMED CONTENT (mobile portrait keeps --z:3.0) ===== */}
+        {/* ===== ZOOMED CONTENT (title + intro + sections) ===== */}
         <div
           style={{ '--z': 3.0, '--zoomL': 1.60 }}
           className={`
+            zoomwrap                       /* for the global crisping styles below */
             md:contents
             origin-top
             will-change-transform
@@ -264,8 +224,32 @@ export default function ResourcesPage() {
             overflow-hidden
           `}
         >
+          {/* Title + Intro (now inside the zoom so sizes match) */}
+          <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-6">
+            <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-3">
+              Resources
+            </h1>
+            <div className="mx-auto h-[2px] w-16 bg-[var(--color-gold)]/85 rounded mb-6" />
+
+            <div className="relative mx-auto max-w-[820px] mb-6 rounded-2xl border border-white/15 bg-white/5">
+              <span className="pointer-events-none absolute left-0 top-1 h-39 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
+              <div className="flex flex-col gap-3 p-5">
+                <p className="text-[18px] leading-relaxed opacity-90">
+                  A growing library of concise collections—shaped by science and lived
+                  experience—to sharpen your mind and uplift your life. Each theme is
+                  designed to meet you where you are and guide you toward greater
+                  confidence, balance, and intentional living.
+                </p>
+                <div className="pt-3 text-xs opacity-70 border-t border-[var(--color-cream)]/15">
+                  This page is under construction and will be updated periodically with
+                  new collections.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Sections */}
           <section className="mx-auto max-w-[1200px] px-6 pt-2 pb-20">
-            {/* ===== THEME SECTIONS ===== */}
             <div className="space-y-14">
               {THEMES.map((theme, idx) => (
                 <section key={theme.slug} id={theme.slug} className="scroll-mt-28">
@@ -350,6 +334,9 @@ export default function ResourcesPage() {
             </div>
           </section>
         </div>
+
+        {/* Desktop sticky sub-nav (kept OUTSIDE the zoom, transparent so no tint) */}
+        <div className="hidden md:block">{Nav}</div>
       </main>
 
       {/* Hide horizontal scrollbar for the sticky nav (keeps scroll gesture) */}
@@ -360,6 +347,13 @@ export default function ResourcesPage() {
         }
         .no-scrollbar::-webkit-scrollbar {
           display: none; /* Chrome, Safari */
+        }
+
+        /* Crisp text inside scaled wrapper (matches your other pages) */
+        .zoomwrap,
+        .zoomwrap * {
+          -webkit-font-smoothing: antialiased;
+          text-rendering: geometricPrecision;
         }
       `}</style>
     </>
