@@ -21,13 +21,16 @@ export default function Home() {
         </div>
       </section>
 
-{/* HERO — fills visible mobile viewport; desktop unchanged */}
-<section className="
-  relative overflow-hidden
-  h-[100svh] min-h-[100svh]   /* robust on iOS; no inline style */
-  md:h-[88.8svh]
-">
-  {/* Image layer fills the section */}
+{/* HERO — fills viewport on mobile; desktop unchanged */}
+<section
+  className="
+    relative overflow-hidden
+    h-[100vh] min-h-[100vh]     /* always shows something */
+    sm:h-[100svh] sm:min-h-[100svh]  /* modern iOS fix when available */
+    md:h-[88.8svh]
+  "
+>
+  {/* Image layer */}
   <div className="absolute inset-0">
     <Image
       src="/hero17.jpg?v=25"
@@ -35,18 +38,18 @@ export default function Home() {
       fill
       priority
       quality={90}
-      sizes="(min-width:768px) 100vw, 150vw"
-      className="
-        object-cover origin-center will-change-transform
-        [transform:scaleX(1.02)_scaleY(1.06)]  /* mobile squeeze + elongate */
-        md:[transform:none]
-        object-[center_6%] md:object-[center_0%]
-      "
+      sizes="100vw"
+      className="object-cover"
+      style={{
+        objectPosition: 'center 6%',         // nudge up a bit
+        transform: 'scaleX(1.02) scaleY(1.06)', // mobile squeeze + elongate
+        transformOrigin: 'center',
+      }}
     />
     <div className="absolute inset-0 bg-black/28 pointer-events-none" />
   </div>
 
-  {/* MOBILE nameplate overlay (upper-right) */}
+  {/* MOBILE nameplate (upper-right) */}
   <div className="md:hidden absolute top-0 right-0 z-20 pt-3 pr-3 pointer-events-none">
     <div className="max-w-[65vw]">
       <h1 className="font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05] text-right pointer-events-auto">
