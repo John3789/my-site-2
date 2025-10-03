@@ -69,6 +69,18 @@ export default function Header() {
         </div>
       </header>
 
+{/* Desktop top-right home link (non-home pages only) */}
+{!isHome && (
+  <Link
+    href="/"
+    className="fixed top-9 right-15 z-[201] pt-1 pr-3 font-serif tracking-wide hover:opacity-90 transition leading-none"
+  >
+    <span className="text-lg lg:text-xl">DR. JUAN PABLO SALERNO</span>
+    <sup className="text-lg align-super opacity-70">™</sup>
+  </Link>
+)}
+
+
       {/* Mobile full-screen menu (slides over, cream on teal) */}
       {open && (
         <>
@@ -104,27 +116,6 @@ export default function Header() {
               <MobileLink href="/contact" onClick={() => setOpen(false)} active={pathname.startsWith("/contact")}>Contact</MobileLink>
             </nav>
 
-{/* Top-right home link on non-home routes, desktop only */}
-{!isHome && (
-  <Link
-    href="/"
-    className="
-      hidden md:block
-      fixed top-9 right-4 md:right-6
-      z-[10002]
-      font-serif uppercase tracking-[0.02em]
-      text-[var(--color-cream)]
-      hover:opacity-90 transition
-      leading-none
-      pointer-events-auto
-    "
-  >
-    <span className="text-base md:text-lg lg:text-xl">
-      DR. JUAN PABLO SALERNO
-    </span>
-    <sup className="align-super opacity-70 text-[0.7em] md:text-[0.75em]">™</sup>
-  </Link>
-)}
             <div className="mt-auto px-6 pb-[calc(env(safe-area-inset-bottom)+12px)] text-xs opacity-80">
               © {new Date().getFullYear()} Dr. Juan Pablo Salerno™
             </div>
