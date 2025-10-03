@@ -39,41 +39,60 @@ export default function Home() {
         object-[center_0%] md:object-[center_0%]
       "
     />
-    {/* dark overlay if you want slight dimming */}
-    <div className="absolute inset-0 bg-black/20 pointer-events-none" />
+    {/* 🔒 same overlay on mobile + desktop */}
+    <div className="absolute inset-0 bg-black/28 pointer-events-none" />
   </div>
 
-  {/* MOBILE name across bottom */}
-  <div className="md:hidden absolute bottom-6 inset-x-0 z-20 text-center">
-    <h1 className="font-serif font-bold uppercase tracking-wide 
-                   text-[10vw] leading-none text-[var(--color-cream)]">
+  {/* MOBILE name across the bottom (buttons hidden on mobile) */}
+  <div
+    className="md:hidden absolute inset-x-0 bottom-0 z-30 px-4 pointer-events-none"
+    style={{
+      // lift above the Safari URL bar / home indicator
+      marginBottom: 'calc(env(safe-area-inset-bottom) + 56px)',
+    }}
+  >
+    <h1
+      className="
+        font-serif font-semibold uppercase tracking-[0.02em]
+        text-[var(--color-cream)] text-center leading-[0.9]
+        drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]
+        /* Make it span the full width */
+        text-[9vw]   /* tweak 8.5–10vw if you want more/less */
+      "
+    >
       DR. JUAN PABLO SALERNO
-      <sup className="text-[4vw] align-super opacity-70">™</sup>
+      <sup className="text-[3.2vw] align-super opacity-70">™</sup>
     </h1>
   </div>
 
-  {/* Desktop buttons */}
+  {/* Desktop buttons only (mobile CTAs are hidden) */}
   <div className="hidden md:block absolute inset-x-0 bottom-6 z-30">
     <div className="mx-auto max-w-[1400px] px-6 relative">
       <Link
         href="speaking"
-        className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-7 py-3
-                   font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md 
-                   hover:-translate-y-[1px] transition absolute left-6 lg:left-61 bottom-0"
+        className="
+          inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-7 py-3
+          font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md
+          hover:-translate-y-[1px] transition absolute left-6 lg:left-61 bottom-0
+        "
       >
         Book Dr. Salerno to speak
       </Link>
+
       <Link
         href="consulting"
-        className="inline-flex items-center rounded-md !bg-[var(--color-teal-700)] !text-[var(--color-cream)] px-7 py-3
-                   font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md 
-                   hover:-translate-y-[1px] transition absolute right-6 lg:right-34 bottom-0"
+        className="
+          inline-flex items-center rounded-md !bg-[var(--color-teal-700)] !text-[var(--color-cream)] px-7 py-3
+          font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md
+          hover:-translate-y-[1px] transition absolute right-6 lg:right-34 bottom-0
+        "
       >
         Book consulting with Dr. Salerno
       </Link>
     </div>
   </div>
 </section>
+
 
 
       {/* ===== PAGE BODY WRAPPER ===== */}
