@@ -21,76 +21,91 @@ export default function Home() {
         </div>
       </section>
 
-{/* HERO — mobile full-screen; desktop unchanged */}
-<section className="relative h-[100dvh] md:h-[88.8svh] overflow-hidden">
-  {/* Image layer fills the section */}
-  <div className="absolute inset-0">
-    <Image
-      src="/hero17.jpg?v=25"
-      alt="Portrait of Dr. Salerno"
-      fill
-      priority
-      quality={90}
-      sizes="100vw"                         // don’t downscale on mobile
-      className="object-cover origin-center will-change-transform
-                 [transform:scaleX(1.04)_scaleY(1.08)]   md:[transform:none]
-                 object-[center_6%] md:object-[center_0%]"
-    />
-    {/* dark overlay (unchanged darkness) */}
-    <div className="absolute inset-0 bg-black/28 pointer-events-none" />
-  </div>
+      {/* HERO — mobile full-screen; desktop unchanged */}
+      <section className="relative h-[100dvh] md:h-[88.8svh] overflow-hidden">
+        {/* Image layer fills the section */}
+        <div className="absolute inset-0">
+          <Image
+            src="/hero17.jpg?v=25"
+            alt="Portrait of Dr. Salerno"
+            fill
+            priority
+            quality={90}
+            sizes="(min-width:768px) 100vw, 150vw"
+            className="
+              object-cover origin-center will-change-transform
+              [transform:scaleX(1.04)_scaleY(1.08)]   /* mobile subtle zoom */
+              md:[transform:none]                     /* desktop unchanged */
+              object-[center_6%] md:object-[center_0%]
+            "
+          />
+          {/* dark overlay */}
+          <div className="absolute inset-0 bg-black/28 pointer-events-none" />
+        </div>
 
-  {/* MOBILE nameplate overlay — upper-right, off your face */}
-  <div className="md:hidden absolute top-0 right-0 z-20 pt-3 pr-3 pointer-events-none">
-    <div className="max-w-[65vw]">
-      <h1 className="font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05] text-right pointer-events-auto">
-        <span className="block text-[11.5vw]/[1.05] drop-shadow-[0_1px_2px_rgba(0,0,0,0.45)]">
-          DR. JUAN PABLO SALERNO
-          <sup className="text-[3.5vw] align-super opacity-80">™</sup>
-        </span>
-      </h1>
-    </div>
+{/* MOBILE nameplate overlay (upper-right) */}
+<div className="md:hidden absolute top-0 right-0 z-20 pt-3 pr-3 pointer-events-none">
+  <div className="max-w-[65vw]">
+    <h1 className="font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05] text-left pointer-events-auto">
+      <span className="block text-[11.5vw]/[1.05] drop-shadow-[0_1px_2px_rgba(0,0,0,0.45)]">
+        DR. JUAN PABLO SALERNO
+        <sup className="text-[3.5vw] align-super opacity-80">™</sup>
+      </span>
+    </h1>
   </div>
+</div>
 
-  {/* Desktop buttons (unchanged) */}
-  <div className="hidden md:block absolute inset-x-0 bottom-6 z-30">
-    <div className="mx-auto max-w-[1400px] px-6 relative">
-      <Link
-        href="speaking"
-        className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-7 py-3
-                   font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md hover:-translate-y-[1px] transition
-                   focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60
-                   absolute left-6 lg:left-61 bottom-0"
-      >
-        Book Dr. Salerno to speak
-      </Link>
-      <Link
-        href="consulting"
-        className="inline-flex items-center rounded-md !bg-[var(--color-teal-700)] !text-[var(--color-cream)] px-7 py-3
-                   font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md hover:-translate-y-[1px] transition
-                   focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60
-                   absolute right-6 lg:right-34 bottom-0"
-      >
-        Book consulting with Dr. Salerno
-      </Link>
-    </div>
-  </div>
 
-  {/* Mobile buttons (unchanged) */}
-  <div className="md:hidden absolute inset-x-0 bottom-6 z-30">
-    <div className="mx-auto max-w-[1400px] px-6">
-      <div className="flex flex-col items-center gap-3">
-        <Link href="speaking" className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-7 py-3 font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60">
-          Book Dr. Salerno to speak
-        </Link>
-        <Link href="consulting" className="inline-flex items-center rounded-md !bg-[var(--color-teal-700)] !text-[var(--color-cream)] px-7 py-3 font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60">
-          Book consulting with Dr. Salerno
-        </Link>
-      </div>
-    </div>
-  </div>
-</section>
+        {/* CTA rail */}
+        {/* Desktop buttons */}
+        <div className="hidden md:block absolute inset-x-0 bottom-6 z-30">
+          <div className="mx-auto max-w-[1400px] px-6 relative">
+            <Link
+              href="speaking"
+              className="
+                inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-7 py-3
+                font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md hover:-translate-y-[1px] transition
+                focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60
+                absolute left-6 lg:left-61 bottom-0
+              "
+            >
+              Book Dr. Salerno to speak
+            </Link>
 
+            <Link
+              href="consulting"
+              className="
+                inline-flex items-center rounded-md !bg-[var(--color-teal-700)] !text-[var(--color-cream)] px-7 py-3
+                font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md hover:-translate-y-[1px] transition
+                focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60
+                absolute right-6 lg:right-34 bottom-0
+              "
+            >
+              Book consulting with Dr. Salerno
+            </Link>
+          </div>
+        </div>
+
+        {/* Mobile buttons (stacked) */}
+        <div className="md:hidden absolute inset-x-0 bottom-6 z-30">
+          <div className="mx-auto max-w-[1400px] px-6">
+            <div className="flex flex-col items-center gap-3">
+              <Link
+                href="speaking"
+                className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-7 py-3 font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60"
+              >
+                Book Dr. Salerno to speak
+              </Link>
+              <Link
+                href="consulting"
+                className="inline-flex items-center rounded-md !bg-[var(--color-teal-700)] !text-[var(--color-cream)] px-7 py-3 font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60"
+              >
+                Book consulting with Dr. Salerno
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ===== PAGE BODY WRAPPER ===== */}
       <div
