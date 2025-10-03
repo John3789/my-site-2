@@ -222,7 +222,7 @@ export default function ResourcesPage() {
          Portrait: crisp (no scale) but “zoomed” via font-size tweaks.
          Landscape: keep your zoom for the wide feel. */}
       <div
-        style={{ '--z': 3.0, '--zoomL': 1.60 }}
+        style={{ '--z': 2.5, '--zoomL': 1.60 }}
         className={`
           md:contents
           origin-top
