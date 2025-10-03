@@ -22,30 +22,31 @@ export default function Home() {
 </section>
 
 {/* HERO — mobile full-screen; desktop unchanged */}
-<section className="relative min-h-[100lvh] md:h-[88.8svh] overflow-hidden">
-  <Image
-    src="/hero17.jpg?v=25"
-    alt="Portrait of Dr. Salerno"
-    fill
-    priority
-    quality={90}
-    /* Bigger mobile asset so the zoom is crisp */
-    sizes="(min-width: 768px) 100vw, 130vw"
-    className="
-      object-cover origin-center will-change-transform
-      [transform:scaleX(1.05)_scaleY(1.10)]     /* mobile: subtle zoom for narrower+taller feel */
-      md:[transform:none]                       /* desktop unchanged */
-      object-[center_6%] md:object-[center_0%]  /* mobile frame slightly higher, desktop original */
-    "
-  />
+<section className="relative h-[100dvh] md:h-[88.8svh] overflow-hidden">
+  {/* Image layer fills the section */}
+  <div className="absolute inset-0">
+    <Image
+      src="/hero17.jpg?v=25"
+      alt="Portrait of Dr. Salerno"
+      fill
+      priority
+      quality={90}
+      sizes="(min-width:768px) 100vw, 150vw"
+      className="
+        object-cover origin-center will-change-transform
+        [transform:scaleX(1.04)_scaleY(1.08)]   /* mobile subtle zoom */
+        md:[transform:none]                     /* desktop unchanged */
+        object-[center_6%] md:object-[center_0%]
+      "
+    />
+    {/* dark overlay */}
+    <div className="absolute inset-0 bg-black/28 pointer-events-none" />
+  </div>
 
-  {/* restore the same dark overlay as before */}
-  <div className="absolute inset-0 bg-black/28 pointer-events-none" />
-
-  {/* MOBILE nameplate overlay so the photo can fill the whole first screen */}
-  <div className="md:hidden absolute top-0 inset-x-0 z-20 pt-4">
+  {/* MOBILE nameplate overlay (doesn't block clicks) */}
+  <div className="md:hidden absolute top-0 inset-x-0 z-20 pt-4 pointer-events-none">
     <div className="mx-auto max-w-[94vw] px-6">
-      <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
+      <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05] pointer-events-auto">
         <span className="block text-[12vw]/[1.05]">
           DR. JUAN PABLO SALERNO
           <sup className="text-[3.5vw] align-super opacity-70">™</sup>
@@ -54,51 +55,58 @@ export default function Home() {
     </div>
   </div>
 
-  {/* CTA rail (unchanged) */}
-  <div className="absolute inset-x-0 bottom-6 z-20">
+  {/* CTA rail */}
+  {/* Desktop buttons */}
+  <div className="hidden md:block absolute inset-x-0 bottom-6 z-30">
     <div className="mx-auto max-w-[1400px] px-6 relative">
-      {/* ... your existing CTA links exactly as before ... */}
+      <Link
+        href="speaking"
+        className="
+          inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-7 py-3
+          font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md hover:-translate-y-[1px] transition
+          focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60
+          absolute left-6 lg:left-61 bottom-0
+        "
+      >
+        Book Dr. Salerno to speak
+      </Link>
+
+      <Link
+        href="consulting"
+        className="
+          inline-flex items-center rounded-md !bg-[var(--color-teal-700)] !text-[var(--color-cream)] px-7 py-3
+          font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md hover:-translate-y-[1px] transition
+          focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60
+          absolute right-6 lg:right-34 bottom-0
+        "
+      >
+        Book consulting with Dr. Salerno
+      </Link>
+    </div>
+  </div>
+
+  {/* Mobile buttons (stacked) */}
+  <div className="md:hidden absolute inset-x-0 bottom-6 z-30">
+    <div className="mx-auto max-w-[1400px] px-6">
+      <div className="flex flex-col items-center gap-3">
+        <Link
+          href="speaking"
+          className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-7 py-3 font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60"
+        >
+          Book Dr. Salerno to speak
+        </Link>
+        <Link
+          href="consulting"
+          className="inline-flex items-center rounded-md !bg-[var(--color-teal-700)] !text-[var(--color-cream)] px-7 py-3 font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60"
+        >
+          Book consulting with Dr. Salerno
+        </Link>
+      </div>
     </div>
   </div>
 </section>
 
-      {/* ===== PAGE BODY ===== */}
-      <div
-        style={{ '--z': 3.00, '--zoomL': 1.50 }}
-        className="
-          md:contents
-          origin-top
-          [transform:scale(var(--z))]
-          [width:calc(100%/var(--z))]
-          mx-auto
-          md:[transform:none]
-          md:[width:100%]
-          landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
-          overflow-hidden
-        "
-      >
-        <main
-          id="main"
-          className="bg-[var(--color-teal-850)] text-[var(--color-cream)] text-[17px]"
-        >
 
-          {/* Mission */}
-          <section className="w-full">
-            <div className="mx-auto max-w-[1400px] px-6 pt-36 pb-12">
-              <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Mission</h5>
-              <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
-
-              <div className="max-w-4xl mx-auto text-center">
-                <p className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90">
-                  “I believe everyone has the power to unlock hidden potential and live with a higher purpose —
-                  my mission is to blend science and growth wisdom to guide the way.”
-                </p>
-                <Link href="about" className="mt-8 inline-block link">
-                  About Dr. Salerno →
-                </Link>
-              </div>
-            </div>
-          </section>
 
           {/* Consulting */}
           <section id="consulting" className="w-full">
@@ -281,10 +289,6 @@ export default function Home() {
 </div>
   </div>
 </footer>
-
-
-
-
       </div>
     </>
   )
