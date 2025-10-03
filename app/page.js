@@ -100,7 +100,7 @@ export default function Home() {
 
       {/* ===== PAGE BODY WRAPPER ===== */}
       <div
-        style={{ '--z': 3.00, '--zoomL': 1.65 }}
+        style={{ '--z': 3.00, '--zoomL': 1.60 }}
         className="
           md:contents
           origin-top

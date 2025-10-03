@@ -104,7 +104,7 @@ export default function Header() {
         fixed inset-0 z-[10001]
         bg-[var(--color-teal-800)] text-[var(--color-cream)]
         flex flex-col
-        w-screen h-[100svh] max-w-none
+        min-h-[100svh]   /* fills viewport; stable on iOS */
         overflow-y-auto   /* scroll if long */
         overscroll-contain
       "

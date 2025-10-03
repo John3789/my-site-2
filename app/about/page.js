@@ -9,7 +9,7 @@ export default function AboutPage() {
 
       {/* ===== PAGE BODY WRAPPER (same zoom as home) ===== */}
       <div
-        style={{ '--z': 3.00, '--zoomL': 1.65 }}
+        style={{ '--z': 3.00, '--zoomL': 1.60 }}
         className="
           md:contents
           origin-top
