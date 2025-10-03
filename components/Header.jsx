@@ -110,7 +110,7 @@ export default function Header() {
       "
     >
       <div className="flex items-center justify-between px-6 h-12">
-        <span className="font-serif text-base">Menu</span>
+        <span className="font-serif text-xl">Menu</span>
         <button
           type="button"
           aria-label="Close menu"
@@ -126,7 +126,7 @@ export default function Header() {
       {/* Bigger, responsive options; shrink in landscape so nothing gets cut off */}
       <nav
         className="px-6 py-6 space-y-6 uppercase tracking-wide
-                   text-[7vw] landscape:text-[3.6vw]"
+                   text-[12vw] landscape:text-[3.6vw]"
       >
         <MobileLink href="/" onClick={() => setOpen(false)} active={pathname === "/"}>Home</MobileLink>
         <MobileLink href="/about" onClick={() => setOpen(false)} active={pathname.startsWith("/about")}>About</MobileLink>
