@@ -140,10 +140,7 @@ export default function ResourcesPage() {
   /* ========= Sticky subnav with fades & chevrons ========= */
   const Nav = useMemo(() => {
     return (
-      <div className="sticky top-[64px] z-30 -mx-6 border-b border-white/10 bg-[var(--color-teal-850)]/80
-      backdrop-blur-none backdrop-blur-sm
-      "
-      >
+      <div className="sticky top-[64px] z-30 -mx-6 border-b border-white/10 bg-[var(--color-teal-850)]/80">
         <div className="relative mx-auto max-w-[1200px] px-6 py-3">
           {/* Scroll container */}
           <div
@@ -243,7 +240,7 @@ export default function ResourcesPage() {
             <div className="mx-auto h-[2px] w-16 bg-[var(--color-gold)]/85 rounded mb-15" />
 
             {/* Intro box */}
-            <div className="relative mx-auto max-w-[820px] mb-10 rounded-2xl border border-white/15 bg-white/5">
+            <div className="relative mx-auto max-w-[820px] mb-10 rounded-2xl border border-white/15 bg-white/5 backdrop-blur-none md:backdrop-blur-sm">
               {/* Gold spine */}
               <span className="pointer-events-none absolute left-0 top-1 h-39 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
               <div className="flex flex-col gap-3 p-5">
@@ -381,11 +378,7 @@ function CollectionModal({ open, onClose, collection }) {
       />
 
       <div className="relative mx-4 max-h-[85vh] w-full max-w-3xl overflow-hidden rounded-2xl border border-white/15 bg-[var(--color-teal-850)] shadow-2xl">
-        <header className="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-white/10 bg-[var(--color-teal-850)]/95 px-5 py-4 
-        backdrop-blur-none md:backdrop-blur-sm
-        "
-        >
-
+        <header className="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-white/10 bg-[var(--color-teal-850)]/95 px-5 py-4 backdrop-blur-none md:backdrop-blur-sm">
           <div className="min-w-0">
             <div className="text-xs opacity-70 truncate">{collection.theme}</div>
             <h3 className="font-serif text-xl opacity-95 truncate">
