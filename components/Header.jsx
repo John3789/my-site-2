@@ -110,14 +110,14 @@ export default function Header() {
       "
     >
       <div className="flex items-center justify-between px-6 h-12">
-        <span className="font-serif text-5xl">Menu</span>
+        <span className="font-serif text-4xl">Menu</span>
         <button
           type="button"
           aria-label="Close menu"
           onClick={() => setOpen(false)}
           className="p-3 -mr-2"
         >
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M6 6l12 12M18 6l-12 12" stroke="var(--color-cream)" strokeWidth="2" strokeLinecap="round" />
           </svg>
         </button>
