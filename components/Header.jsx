@@ -121,7 +121,7 @@ export default function Header() {
     type="button"
     aria-label="Close menu"
     onClick={() => setOpen(false)}
-    className="p-3 -mr-2 ml-2 lanscape:ml-0"
+    className="p-3 -mr-2 ml-2 landscape:ml-0"
   >
     <svg 
       width="16vw" height="16vw"  /* scales in portrait */
