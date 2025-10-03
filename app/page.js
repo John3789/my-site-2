@@ -53,8 +53,6 @@ export default function Home() {
       marginBottom: 'calc(env(safe-area-inset-bottom) + 56px)',
     }}
   >
-      {/* relative wrapper lets us pin the ™ reliably */}
-  <div className="relative inline-block mx-auto">
     <h1
       className="
         font-serif font-semibold uppercase tracking-[0.02em]
@@ -64,25 +62,11 @@ export default function Home() {
         text-[32vw]   /* tweak 8.5–10vw if you want more/less */
             landscape:text-[10vw]   /* shrink text in landscape */
       "
-   >
-      DR. JUAN PABLO SALERNO
-    </h1>
-
-    {/* ™ pinned so it shows in BOTH portrait + landscape */}
-    <span
-      className="
-        absolute z-10
-        -top-[2.8vw] right-[4vw]          /* portrait position */
-        landscape:-top-[1.6vw] landscape:right-[2.4vw]  /* landscape position */
-        text-[4.2vw] landscape:text-[2.2vw]
-        opacity-70
-      "
-      aria-hidden="true"
     >
-      ™
-    </span>
+      DR. JUAN PABLO SALERNO
+      <sup className="text-[3.2vw] align-super opacity-70">™</sup>
+    </h1>
   </div>
-   </div>
 
   {/* Desktop buttons only (mobile CTAs are hidden) */}
   <div className="hidden md:block absolute inset-x-0 bottom-6 z-30">
