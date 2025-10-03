@@ -219,21 +219,18 @@ export default function ResourcesPage() {
   return (
     <>
       {/* ===== PAGE BODY WRAPPER (same zoom pattern as Home/Books/Meditations/About) ===== */}
-      <div
-        style={{ '--z': 3.00, '--zoomL': 1.60 }}
-        className="
-          md:contents
-          origin-top
-          [transform:scale(var(--z))]
-          [width:calc(100%/var(--z))]
-          mx-auto
-          md:[transform:none]
-          md:[width:100%]
-          landscape:[transform:scale(var(--zoomL))]
-          landscape:[width:calc(100%/var(--zoomL))]
-          overflow-hidden
-        "
-      >
+<div
+  style={{ '--z': 3.0, '--zoomL': 1.60 }}
+  className={`
+    md:contents
+    origin-top
+    [transform:scale(var(--z))] [width:calc(100%/var(--z))]
+    mx-auto
+    md:[transform:none] md:[width:100%]
+    landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
+    overflow-hidden
+  `}
+>
         <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
           <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-20">
             {/* Centered Title */}
