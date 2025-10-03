@@ -6,107 +6,139 @@ import SocialFooter from "../components/SocialFooter";
 export default function Home() {
   return (
     <>
-{/* spacer to clear the fixed header (keep) */}
-<div aria-hidden className="h-8" />
+      {/* spacer to clear the fixed header (keep) */}
+      <div aria-hidden className="h-8" />
 
-{/* DESKTOP/TABLET nameplate — unchanged */}
-<section id="home" className="hidden md:block bg-[var(--color-teal-800)] !text-[var(--color-cream)]">
-  <div className="mx-auto max-w-[1400px] px-6 pt-0 pb-4">
-    <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
-      <span className="block text-7xl hover:opacity-90 transition">
-        DR. JUAN PABLO SALERNO
-        <sup className="text-2xl align-super opacity-70">™</sup>
-      </span>
-    </h1>
-  </div>
-</section>
+      {/* DESKTOP/TABLET nameplate — unchanged */}
+      <section id="home" className="hidden md:block bg-[var(--color-teal-800)] !text-[var(--color-cream)]">
+        <div className="mx-auto max-w-[1400px] px-6 pt-0 pb-4">
+          <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
+            <span className="block text-7xl hover:opacity-90 transition">
+              DR. JUAN PABLO SALERNO
+              <sup className="text-2xl align-super opacity-70">™</sup>
+            </span>
+          </h1>
+        </div>
+      </section>
 
-{/* HERO — mobile full-screen; desktop unchanged */}
-<section className="relative h-[100dvh] md:h-[88.8svh] overflow-hidden">
-  {/* Image layer fills the section */}
-  <div className="absolute inset-0">
-    <Image
-      src="/hero17.jpg?v=25"
-      alt="Portrait of Dr. Salerno"
-      fill
-      priority
-      quality={90}
-      sizes="(min-width:768px) 100vw, 150vw"
-      className="
-        object-cover origin-center will-change-transform
-        [transform:scaleX(1.04)_scaleY(1.08)]   /* mobile subtle zoom */
-        md:[transform:none]                     /* desktop unchanged */
-        object-[center_6%] md:object-[center_0%]
-      "
-    />
-    {/* dark overlay */}
-    <div className="absolute inset-0 bg-black/28 pointer-events-none" />
-  </div>
+      {/* HERO — mobile full-screen; desktop unchanged */}
+      <section className="relative h-[100dvh] md:h-[88.8svh] overflow-hidden">
+        {/* Image layer fills the section */}
+        <div className="absolute inset-0">
+          <Image
+            src="/hero17.jpg?v=25"
+            alt="Portrait of Dr. Salerno"
+            fill
+            priority
+            quality={90}
+            sizes="(min-width:768px) 100vw, 150vw"
+            className="
+              object-cover origin-center will-change-transform
+              [transform:scaleX(1.04)_scaleY(1.08)]   /* mobile subtle zoom */
+              md:[transform:none]                     /* desktop unchanged */
+              object-[center_6%] md:object-[center_0%]
+            "
+          />
+          {/* dark overlay */}
+          <div className="absolute inset-0 bg-black/28 pointer-events-none" />
+        </div>
 
-  {/* MOBILE nameplate overlay (doesn't block clicks) */}
-  <div className="md:hidden absolute top-0 inset-x-0 z-20 pt-4 pointer-events-none">
-    <div className="mx-auto max-w-[94vw] px-6">
-      <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05] pointer-events-auto">
-        <span className="block text-[12vw]/[1.05]">
-          DR. JUAN PABLO SALERNO
-          <sup className="text-[3.5vw] align-super opacity-70">™</sup>
-        </span>
-      </h1>
-    </div>
-  </div>
+        {/* MOBILE nameplate overlay (doesn't block clicks) */}
+        <div className="md:hidden absolute top-0 inset-x-0 z-20 pt-4 pointer-events-none">
+          <div className="mx-auto max-w-[94vw] px-6">
+            <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05] pointer-events-auto">
+              <span className="block text-[12vw]/[1.05]">
+                DR. JUAN PABLO SALERNO
+                <sup className="text-[3.5vw] align-super opacity-70">™</sup>
+              </span>
+            </h1>
+          </div>
+        </div>
 
-  {/* CTA rail */}
-  {/* Desktop buttons */}
-  <div className="hidden md:block absolute inset-x-0 bottom-6 z-30">
-    <div className="mx-auto max-w-[1400px] px-6 relative">
-      <Link
-        href="speaking"
+        {/* CTA rail */}
+        {/* Desktop buttons */}
+        <div className="hidden md:block absolute inset-x-0 bottom-6 z-30">
+          <div className="mx-auto max-w-[1400px] px-6 relative">
+            <Link
+              href="speaking"
+              className="
+                inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-7 py-3
+                font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md hover:-translate-y-[1px] transition
+                focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60
+                absolute left-6 lg:left-61 bottom-0
+              "
+            >
+              Book Dr. Salerno to speak
+            </Link>
+
+            <Link
+              href="consulting"
+              className="
+                inline-flex items-center rounded-md !bg-[var(--color-teal-700)] !text-[var(--color-cream)] px-7 py-3
+                font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md hover:-translate-y-[1px] transition
+                focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60
+                absolute right-6 lg:right-34 bottom-0
+              "
+            >
+              Book consulting with Dr. Salerno
+            </Link>
+          </div>
+        </div>
+
+        {/* Mobile buttons (stacked) */}
+        <div className="md:hidden absolute inset-x-0 bottom-6 z-30">
+          <div className="mx-auto max-w-[1400px] px-6">
+            <div className="flex flex-col items-center gap-3">
+              <Link
+                href="speaking"
+                className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-7 py-3 font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60"
+              >
+                Book Dr. Salerno to speak
+              </Link>
+              <Link
+                href="consulting"
+                className="inline-flex items-center rounded-md !bg-[var(--color-teal-700)] !text-[var(--color-cream)] px-7 py-3 font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60"
+              >
+                Book consulting with Dr. Salerno
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== PAGE BODY WRAPPER ===== */}
+      <div
+        style={{ '--z': 3.00, '--zoomL': 1.50 }}
         className="
-          inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-7 py-3
-          font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md hover:-translate-y-[1px] transition
-          focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60
-          absolute left-6 lg:left-61 bottom-0
+          md:contents
+          origin-top
+          [transform:scale(var(--z))]
+          [width:calc(100%/var(--z))]
+          mx-auto
+          md:[transform:none]
+          md:[width:100%]
+          landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
+          overflow-hidden
         "
       >
-        Book Dr. Salerno to speak
-      </Link>
+        <main id="main" className="bg-[var(--color-teal-850)] text-[var(--color-cream)] text-[17px]">
 
-      <Link
-        href="consulting"
-        className="
-          inline-flex items-center rounded-md !bg-[var(--color-teal-700)] !text-[var(--color-cream)] px-7 py-3
-          font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md hover:-translate-y-[1px] transition
-          focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60
-          absolute right-6 lg:right-34 bottom-0
-        "
-      >
-        Book consulting with Dr. Salerno
-      </Link>
-    </div>
-  </div>
-
-  {/* Mobile buttons (stacked) */}
-  <div className="md:hidden absolute inset-x-0 bottom-6 z-30">
-    <div className="mx-auto max-w-[1400px] px-6">
-      <div className="flex flex-col items-center gap-3">
-        <Link
-          href="speaking"
-          className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-7 py-3 font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60"
-        >
-          Book Dr. Salerno to speak
-        </Link>
-        <Link
-          href="consulting"
-          className="inline-flex items-center rounded-md !bg-[var(--color-teal-700)] !text-[var(--color-cream)] px-7 py-3 font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/60"
-        >
-          Book consulting with Dr. Salerno
-        </Link>
-      </div>
-    </div>
-  </div>
-</section>
-
-
+          {/* Mission */}
+          <section className="w-full">
+            <div className="mx-auto max-w-[1400px] px-6 pt-36 pb-12">
+              <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Mission</h5>
+              <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
+              <div className="max-w-4xl mx-auto text-center">
+                <p className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90">
+                  “I believe everyone has the power to unlock hidden potential and live with a higher purpose —
+                  my mission is to blend science and growth wisdom to guide the way.”
+                </p>
+                <Link href="about" className="mt-8 inline-block link">
+                  About Dr. Salerno →
+                </Link>
+              </div>
+            </div>
+          </section>
 
           {/* Consulting */}
           <section id="consulting" className="w-full">
@@ -271,24 +303,24 @@ export default function Home() {
         </main>
 
         {/* ✅ FOOTER INSIDE THE ZOOM WRAPPER (homepage) */}
-<footer className="py-6 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
-  <div className="mx-auto max-w-[1400px] grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] items-center gap-y-3">
-    {/* left spacer on >=sm keeps legal perfectly centered */}
-    <div className="hidden sm:block" />
+        <footer className="py-6 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
+          <div className="mx-auto max-w-[1400px] grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] items-center gap-y-3">
+            {/* left spacer on >=sm keeps legal perfectly centered */}
+            <div className="hidden sm:block" />
 
-    {/* centered legal */}
-    <p className="text-center sm:col-start-2">
-      © {new Date().getFullYear()} Dr. Juan Pablo Salerno™. All rights reserved. ·
-      <a href="/terms" className="underline ml-2 hover:opacity-80">Terms</a> ·
-      <a href="/privacy" className="underline ml-2 hover:opacity-80">Privacy</a>
-    </p>
+            {/* centered legal */}
+            <p className="text-center sm:col-start-2">
+              © {new Date().getFullYear()} Dr. Juan Pablo Salerno™. All rights reserved. ·
+              <a href="/terms" className="underline ml-2 hover:opacity-80">Terms</a> ·
+              <a href="/privacy" className="underline ml-2 hover:opacity-80">Privacy</a>
+            </p>
 
-    {/* socials: centered on mobile, right-aligned on >=sm */}
-<div className="flex justify-center sm:justify-end sm:col-start-3 sm:pl-6">
-  <SocialFooter />
-</div>
-  </div>
-</footer>
+            {/* socials: centered on mobile, right-aligned on >=sm */}
+            <div className="flex justify-center sm:justify-end sm:col-start-3 sm:pl-6">
+              <SocialFooter />
+            </div>
+          </div>
+        </footer>
       </div>
     </>
   )
