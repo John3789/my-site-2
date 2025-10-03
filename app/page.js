@@ -45,7 +45,9 @@ export default function Home() {
 
   {/* MOBILE name across the bottom (buttons hidden on mobile) */}
   <div
-    className="md:hidden absolute inset-x-0 bottom-0 z-30 px-4 pointer-events-none"
+    className="md:hidden absolute inset-x-0 bottom-0 z-30 px-4 pointer-events-none
+        landscape:translate-y-6"
+        
     style={{
       // lift above the Safari URL bar / home indicator
       marginBottom: 'calc(env(safe-area-inset-bottom) + 56px)',
