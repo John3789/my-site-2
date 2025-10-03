@@ -4,8 +4,6 @@ import Link from "next/link";
 export default function AboutPage() {
   return (
     <>
-      {/* spacer to clear the fixed header (same as home) */}
-      <div aria-hidden className="h-8" />
 
       {/* ===== PAGE BODY WRAPPER (same zoom as home) ===== */}
       <div
