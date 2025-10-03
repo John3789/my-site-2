@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function BooksPage() {
   return (
     <>
-      {/* ===== PAGE BODY WRAPPER (same zoom pattern) ===== */}
+      {/* ===== PAGE BODY WRAPPER (same zoom as home/about) ===== */}
       <div
         style={{ '--z': 3.00, '--zoomL': 1.60 }}
         className="
@@ -97,7 +97,7 @@ export default function BooksPage() {
             <div className="space-y-10">
 
               {/* CARD 1 */}
-              <article className="w-full bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10">
+              <article className="w-full bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-0 md:backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10">
                 <div className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/60 rounded-l-xl" />
                 <div className="flex flex-col lg:flex-row gap-10 lg:gap-12">
                   <div className="lg:w-1/3">
@@ -165,7 +165,7 @@ export default function BooksPage() {
               </article>
 
               {/* CARD 2 */}
-              <article className="w-full bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10">
+              <article className="w-full bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-0 md:backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10">
                 <div className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/60 rounded-l-xl" />
                 <div className="flex flex-col lg:flex-row gap-10 lg:gap-12">
                   <div className="lg:w-1/3">
@@ -232,7 +232,7 @@ export default function BooksPage() {
               </article>
 
               {/* CARD 3 */}
-              <article className="w-full bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10">
+              <article className="w-full bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-0 md:backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10">
                 <div className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/60 rounded-l-xl" />
                 <div className="flex flex-col lg:flex-row gap-10 lg:gap-12">
                   <div className="lg:w-1/3">
