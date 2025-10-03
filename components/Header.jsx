@@ -94,6 +94,7 @@ export default function Header() {
             </div>
 
             <nav className="px-6 py-4 space-y-4 uppercase tracking-wide text-[14px]">
+              <MobileLink href="/" onClick={() => setOpen(false)} active={pathname === "/"}>Home</MobileLink>
               <MobileLink href="/about" onClick={() => setOpen(false)} active={pathname.startsWith("/about")}>About</MobileLink>
               <MobileLink href="/books" onClick={() => setOpen(false)} active={pathname.startsWith("/books")}>Books & Publications</MobileLink>
               <MobileLink href="/meditations" onClick={() => setOpen(false)} active={pathname.startsWith("/meditations")}>Meditations</MobileLink>
@@ -103,6 +104,27 @@ export default function Header() {
               <MobileLink href="/contact" onClick={() => setOpen(false)} active={pathname.startsWith("/contact")}>Contact</MobileLink>
             </nav>
 
+{/* Top-right home link on non-home routes, desktop only */}
+{!isHome && (
+  <Link
+    href="/"
+    className="
+      hidden md:block
+      fixed top-9 right-4 md:right-6
+      z-[10002]
+      font-serif uppercase tracking-[0.02em]
+      text-[var(--color-cream)]
+      hover:opacity-90 transition
+      leading-none
+      pointer-events-auto
+    "
+  >
+    <span className="text-base md:text-lg lg:text-xl">
+      DR. JUAN PABLO SALERNO
+    </span>
+    <sup className="align-super opacity-70 text-[0.7em] md:text-[0.75em]">™</sup>
+  </Link>
+)}
             <div className="mt-auto px-6 pb-[calc(env(safe-area-inset-bottom)+12px)] text-xs opacity-80">
               © {new Date().getFullYear()} Dr. Juan Pablo Salerno™
             </div>
