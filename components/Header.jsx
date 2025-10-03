@@ -54,7 +54,7 @@ export default function Header() {
 >
   {/* 3-line icon (cream) */}
   <svg
-    className="w-[75px] h-[75px] landscape:w-[44px] landscape:h-[44px]"
+    className="w-[75px] h-[75px] landscape:w-[48px] landscape:h-[48px]"
     viewBox="0 0 24 24"
     fill="none"
   >
@@ -112,7 +112,7 @@ export default function Header() {
       <div className="flex items-center justify-between px-6 h-16">
   {/* Bigger Menu label with landscape adjustment */}
   <span className="font-serif 
-                  text-[7vw] landscape:text-[3vw]">
+                  text-[11vw] landscape:text-[5vw]">
     Menu
   </span>
 
@@ -121,10 +121,10 @@ export default function Header() {
     type="button"
     aria-label="Close menu"
     onClick={() => setOpen(false)}
-    className="p-3 -mr-2"
+    className="p-3 -mr-2 ml-2 lanscape:ml-0"
   >
     <svg 
-      width="13vw" height="13vw"  /* scales in portrait */
+      width="16vw" height="16vw"  /* scales in portrait */
       className="landscape:w-[6vw] landscape:h-[6vw]"  /* smaller in landscape */
       viewBox="0 0 24 24" fill="none" aria-hidden="true"
     >
