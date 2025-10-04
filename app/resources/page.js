@@ -236,28 +236,39 @@ className={`
             </div>
           </div>
 
-{/* Mobile nav (under intro box) — no translucency, crisp-safe */}
-<div className="md:hidden mx-auto max-w-[1200px] px-6 pb-4">
-  <div className="rounded-xl border border-white/15 bg-[var(--color-teal-850)] px-3 py-3">
-    <div className="no-scrollbar flex gap-2 overflow-x-auto scroll-smooth">
-      {THEMES.map((t) => {
-        const active = currentId === t.slug;
-        return (
-          <button
-            key={t.slug}
-            onClick={() => handleJump(t.slug)}
-            aria-current={active ? "true" : "false"}
-            className={[
-              "whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide",
-              active
-                ? "border-[var(--color-gold)] bg-[var(--color-gold)] text-black shadow-sm"
-                : "border-white/25 bg-transparent text-[var(--color-cream)]"
-            ].join(" ")}
-          >
-            {t.title}
-          </button>
-        );
-      })}
+{/* Mobile nav (under intro) — inverse-scaled to stay crisp */}
+<div className="md:hidden mt-2">
+  <div
+    className={`
+      origin-top
+      [transform:scale(calc(1/var(--z)))]
+      [width:calc(100%*var(--z))]
+      px-6
+    `}
+  >
+    <div className="mx-auto max-w-[1200px]">
+      <div className="rounded-xl border border-white/15 bg-[var(--color-teal-850)] px-3 py-3">
+        <div className="no-scrollbar flex gap-2 overflow-x-auto">
+          {THEMES.map((t) => {
+            const active = currentId === t.slug;
+            return (
+              <button
+                key={t.slug}
+                onClick={() => handleJump(t.slug)}
+                aria-current={active ? "true" : "false"}
+                className={[
+                  "whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide",
+                  active
+                    ? "border-[var(--color-gold)] bg-[var(--color-gold)] text-black shadow-sm"
+                    : "border-white/25 bg-transparent text-[var(--color-cream)]"
+                ].join(" ")}
+              >
+                {t.title}
+              </button>
+            );
+          })}
+        </div>
+      </div>
     </div>
   </div>
 </div>
