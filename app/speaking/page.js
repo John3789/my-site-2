@@ -793,10 +793,6 @@ body:has([data-page="speaking"]) [data-component="footer"] {
 /* SPEAKING — mobile PORTRAIT: much larger */
 @media (max-width: 767px) and (orientation: portrait) {
   [data-page="speaking"] .s-hero .hero-title {
-      /* a touch less side padding so the line has more room */
-    padding-left: 0.75rem;  /* ≈ px-3 */
-    padding-right: 0.75rem;
-    
     font-size: clamp(125px, 28.5vw, 230px) !important;
     line-height: 1.02;
     letter-spacing: -0.015em;
@@ -824,6 +820,21 @@ body:has([data-page="speaking"]) [data-component="footer"] {
   [data-page="speaking"] .s-hero .hero-hr {
     width: clamp(96px, 22vw, 128px) !important;
     height: 3px !important;
+  }
+}
+  /* SPEAKING — mobile PORTRAIT: keep subheadline to ~2 lines without shrinking */
+@media (max-width: 767px) and (orientation: portrait) {
+  [data-page="speaking"] .s-hero {
+    /* a touch less side padding so the line has more room */
+    padding-left: 0.75rem;  /* ≈ px-3 */
+    padding-right: 0.75rem;
+  }
+  [data-page="speaking"] .s-hero .hero-sub {
+    /* widen line length enough for ~2 lines */
+    max-width: min(94vw, 60ch);
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+    line-height: 1.22;
   }
 }
 
