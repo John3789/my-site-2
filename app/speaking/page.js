@@ -279,7 +279,7 @@ export default function SpeakingPage() {
               {/* Quotes (left column) — desktop only */}
               <div className="lg:col-span-7 ml-auto hidden md:flex flex-col gap-6 max-w-[640px]">
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
-                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
                   {/* Decorative quotes (no normal quotes in text) */}
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
                     <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
@@ -295,7 +295,7 @@ export default function SpeakingPage() {
                 </figure>
 
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
-                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
@@ -307,7 +307,7 @@ export default function SpeakingPage() {
                 </figure>
 
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
-                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>Dr. Salerno has a way of blending data with human stories that makes science resonate.</p>
@@ -353,7 +353,7 @@ export default function SpeakingPage() {
               {/* Quotes (RIGHT column) — desktop only */}
               <div className="lg:col-span-7 hidden md:flex flex-col gap-6 max-w-[640px] lg:pr-6">
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
-                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>
@@ -368,7 +368,7 @@ export default function SpeakingPage() {
                 </figure>
 
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
-                  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" aria-hidden />
+                  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" aria-hidden />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>
@@ -383,7 +383,7 @@ export default function SpeakingPage() {
                 </figure>
 
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
-                  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" aria-hidden />
+                  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" aria-hidden />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>
@@ -541,7 +541,7 @@ export default function SpeakingPage() {
               {/* Quotes (right column, Results) — desktop only */}
               <div className="lg:col-span-7 ml-auto hidden md:flex flex-col gap-6 max-w-[640px]">
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
-                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>
@@ -556,7 +556,7 @@ export default function SpeakingPage() {
                 </figure>
 
                 <figure className="relative w/full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
-                  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" aria-hidden />
+                  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" aria-hidden />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>
@@ -608,7 +608,7 @@ export default function SpeakingPage() {
               <div className="flex flex-col gap-6 max-w-[640px]">
                 {/* From Programs */}
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
-                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
                   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
                     <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>...an exceptional speaker: he is engaging, well-spoken, and clearly passionate about his work.</p>
@@ -620,7 +620,7 @@ export default function SpeakingPage() {
                 </figure>
 
                 <figure className="relative w/full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
-                  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" aria-hidden />
+                  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" aria-hidden />
                   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
@@ -632,7 +632,7 @@ export default function SpeakingPage() {
                 </figure>
 
                 <figure className="relative w/full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
-                  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" aria-hidden />
+                  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" aria-hidden />
                   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>Dr. Salerno has a way of blending data with human stories that makes science resonate.</p>
@@ -645,7 +645,7 @@ export default function SpeakingPage() {
 
                 {/* From Formats */}
                 <figure className="relative w/full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
-                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
                   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>...gifted speaker whose engaging style &amp; clear communication bring complex ideas to life.</p>
@@ -657,7 +657,7 @@ export default function SpeakingPage() {
                 </figure>
 
 <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
-  <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+  <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
     <p>...can communicate with diverse audiences, speaks with heart and dimensionality.</p>
@@ -669,7 +669,7 @@ export default function SpeakingPage() {
 </figure>
 
 <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
-  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" aria-hidden />
+  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" aria-hidden />
   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
     <p>...brings a charming intensity and passion that inspires others with his presence and message.</p>
@@ -682,7 +682,7 @@ export default function SpeakingPage() {
 
                 {/* From Results */}
 <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
-  <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+  <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
     <p>...engaging, energetic, strong communication skills, proven ability to disseminate science.</p>
@@ -694,7 +694,7 @@ export default function SpeakingPage() {
 </figure>
 
 <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
-  <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+  <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
     <p>...a highly engaging, knowledgeable, and skilled speaker...strongly recommended.</p>
