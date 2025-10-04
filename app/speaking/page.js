@@ -706,7 +706,7 @@ const jump = (id, opts = {}) => {
   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
     <span className="absolute -left-4 -top-1 text-4xl opacity-20 select-none">“</span>
     <p>...a highly engaging, knowledgeable, and skilled speaker...strongly recommended.</p>
-    <span className="absolute right-14 bottom-4 text-4xl opacity-20 select-none">”</span>
+    <span className="absolute right-15 bottom-4 text-4xl opacity-20 select-none">”</span>
   </blockquote>
   <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
     — <span className="text-[var(--color-gold)]">Audience member</span>, University of California, Los Angeles
