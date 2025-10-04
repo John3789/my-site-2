@@ -317,32 +317,32 @@ export default function SpeakingPage() {
                 </figure>
               </div>
 
-              {/* MOBILE section footer nav — Programs */}
-              <div className="md:hidden mt-8 px-6">
-                <div className="grid grid-cols-3 gap-4">
-                  <button
-                    onClick={() => jump("intro")}
-                    aria-label="Previous section"
-                    className="rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
-                  >
-                    Previous
-                  </button>
-                  <button
-                    onClick={() => jump("topics")}
-                    aria-label="All Speaking"
-                    className="rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
-                  >
-                    All Speaking
-                  </button>
-                  <button
-                    onClick={() => jump("formats")}
-                    aria-label="Next section"
-                    className="rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
-                  >
-                    Next
-                  </button>
-                </div>
-              </div>
+{/* MOBILE section footer nav — Programs */}
+<div className="md:hidden mt-8 px-6">
+  <div className="grid grid-cols-3 gap-5">
+    <button
+      onClick={() => jump("intro")}
+      aria-label="Previous section"
+      className="w-full rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
+    >
+      Previous
+    </button>
+    <button
+      onClick={() => jump("topics")}
+      aria-label="All Speaking"
+      className="w-full rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
+    >
+      All Speaking
+    </button>
+    <button
+      onClick={() => jump("formats")}
+      aria-label="Next section"
+      className="w-full rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
+    >
+      Next
+    </button>
+  </div>
+</div>
             </section>
 
             {/* Dr. Salerno Offers (Formats) */}
@@ -466,32 +466,32 @@ export default function SpeakingPage() {
                 </div>
               </div>
 
-              {/* MOBILE section footer nav — Formats */}
-              <div className="md:hidden mt-8 px-6">
-                <div className="grid grid-cols-3 gap-4">
-                  <button
-                    onClick={() => jump("programs")}
-                    aria-label="Previous section"
-                    className="rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
-                  >
-                    Previous
-                  </button>
-                  <button
-                    onClick={() => jump("topics")}
-                    aria-label="All Speaking"
-                    className="rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
-                  >
-                    All Speaking
-                  </button>
-                  <button
-                    onClick={() => jump("results")}
-                    aria-label="Next section"
-                    className="rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
-                  >
-                    Next
-                  </button>
-                </div>
-              </div>
+  {/* MOBILE section footer nav — Formats */}
+<div className="md:hidden mt-8 px-6 order-2">
+  <div className="grid grid-cols-3 gap-5">
+    <button
+      onClick={() => jump("programs")}
+      aria-label="Previous section"
+      className="w-full rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
+    >
+      Previous
+    </button>
+    <button
+      onClick={() => jump("topics")}
+      aria-label="All Speaking"
+      className="w-full rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
+    >
+      All Speaking
+    </button>
+    <button
+      onClick={() => jump("results")}
+      aria-label="Next section"
+      className="w-full rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
+    >
+      Next
+    </button>
+  </div>
+</div>
             </section>
 
             {/* Outcomes (Results) */}
@@ -574,32 +574,32 @@ export default function SpeakingPage() {
                 </figure>
               </div>
 
-              {/* MOBILE section footer nav — Results */}
-              <div className="md:hidden mt-8 px-6">
-                <div className="grid grid-cols-3 gap-4">
-                  <button
-                    onClick={() => jump("formats")}
-                    aria-label="Previous section"
-                    className="rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
-                  >
-                    Previous
-                  </button>
-                  <button
-                    onClick={() => jump("topics")}
-                    aria-label="All Speaking"
-                    className="rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
-                  >
-                    All Speaking
-                  </button>
-                  <button
-                    onClick={() => jump("testimonials")}
-                    aria-label="Next section"
-                    className="rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
-                  >
-                    Next
-                  </button>
-                </div>
-              </div>
+ {/* MOBILE section footer nav — Results */}
+<div className="md:hidden mt-8 px-6">
+  <div className="grid grid-cols-3 gap-5">
+    <button
+      onClick={() => jump("formats")}
+      aria-label="Previous section"
+      className="w-full rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
+    >
+      Previous
+    </button>
+    <button
+      onClick={() => jump("topics")}
+      aria-label="All Speaking"
+      className="w-full rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
+    >
+      All Speaking
+    </button>
+    <button
+      onClick={() => jump("testimonials")}
+      aria-label="Next section"
+      className="w-full rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
+    >
+      Next
+    </button>
+  </div>
+</div>
             </section>
 
             {/* ===== Testimonials (mobile-only; all quotes moved here) ===== */}
@@ -715,32 +715,32 @@ export default function SpeakingPage() {
                 </figure>
               </div>
 
-              {/* MOBILE section footer nav — Testimonials */}
-              <div className="md:hidden mt-8 px-6">
-                <div className="grid grid-cols-3 gap-4">
-                  <button
-                    onClick={() => jump("results")}
-                    aria-label="Previous section"
-                    className="rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
-                  >
-                    Previous
-                  </button>
-                  <button
-                    onClick={() => jump("topics")}
-                    aria-label="All Speaking"
-                    className="rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
-                  >
-                    All Speaking
-                  </button>
-                  <button
-                    onClick={() => jump("programs")}
-                    aria-label="Next section"
-                    className="rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
-                  >
-                    Next
-                  </button>
-                </div>
-              </div>
+{/* MOBILE section footer nav — Testimonials */}
+<div className="md:hidden mt-8 px-6">
+  <div className="grid grid-cols-3 gap-5">
+    <button
+      onClick={() => jump("results")}
+      aria-label="Previous section"
+      className="w-full rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
+    >
+      Previous
+    </button>
+    <button
+      onClick={() => jump("topics")}
+      aria-label="All Speaking"
+      className="w-full rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
+    >
+      All Speaking
+    </button>
+    <button
+      onClick={() => jump("programs")}
+      aria-label="Next section"
+      className="w-full rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
+    >
+      Next
+    </button>
+  </div>
+</div>
             </section>
 
             {/* CTA (unchanged) */}
