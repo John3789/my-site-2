@@ -798,11 +798,11 @@ body:has([data-page="speaking"]) [data-component="footer"] {
     letter-spacing: -0.015em;
   }
   [data-page="speaking"] .s-hero .hero-sub {
-    font-size: clamp(36px, 9.5vw, 56px) !important;
+    font-size: clamp(42px, 10.5vw, 66px) !important;
     line-height: 1.28;
   }
   [data-page="speaking"] .s-hero .hero-hr {
-    width: clamp(200px, 48vw, 300px) !important;
+    width: clamp(225px, 52vw, 344px) !important;
     height: 4px !important;
   }
 }
