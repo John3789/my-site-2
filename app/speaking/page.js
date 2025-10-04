@@ -78,6 +78,7 @@ export default function SpeakingPage() {
     landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
   `}
 >
+
           {/* ===== Intro Blurb ===== */}
           <section className="relative w-full py-16">
             {/* subtle hairline divider from hero */}
@@ -459,41 +460,36 @@ export default function SpeakingPage() {
         </div>
       </main>
 
-{/* Global safeguards + mobile crispness for Speaking */}
 <style jsx global>{`
   /* iOS background peek fix (keep) */
   @supports (-webkit-touch-callout: none) {
     html, body { background: var(--color-teal-850) !important; }
   }
 
-  /* ==== Speaking page: mobile crisp preset (≤767px) ==== */
+  /* ===== Speaking page: mobile crisp + scale (≤767px) ===== */
   @media (max-width: 767px) {
-    /* Turn OFF transform zoom just on this page */
+    /* Keep transform off on mobile so text stays razor sharp */
     .speaking-mobile {
       transform: none !important;
       width: 100% !important;
     }
 
-    /* Typography scale to mimic the zoom (crisp, no transforms) */
-    .speaking-mobile h1 { font-size: 2rem; line-height: 1.15; }           /* ~32px */
-    .speaking-mobile h2 { font-size: 1.625rem; line-height: 1.2; }       /* ~26px */
-    .speaking-mobile h3 { font-size: 1.375rem; line-height: 1.25; }      /* ~22px */
-    .speaking-mobile p,
-    .speaking-mobile li,
-    .speaking-mobile blockquote { font-size: 1.0625rem; line-height: 1.8; } /* ~17px */
+    /* Upscale common Tailwind text sizes used on this page */
+    .speaking-mobile .text-sm { font-size: 1rem !important; line-height: 1.6 !important; }        /* 16px */
+    .speaking-mobile .text-base { font-size: 1.125rem !important; line-height: 1.7 !important; }  /* 18px */
+    .speaking-mobile .text-lg,
+    .speaking-mobile p { font-size: 1.25rem !important; line-height: 1.85 !important; }           /* 20px */
+    .speaking-mobile .text-xl { font-size: 1.5rem !important; line-height: 1.35 !important; }     /* 24px */
+    .speaking-mobile .text-2xl { font-size: 1.75rem !important; line-height: 1.28 !important; }   /* 28px */
+    .speaking-mobile .text-3xl { font-size: 2rem !important; line-height: 1.22 !important; }      /* 32px */
+    .speaking-mobile .text-4xl { font-size: 2.5rem !important; line-height: 1.16 !important; }    /* 40px */
+    .speaking-mobile .text-5xl { font-size: 3rem !important; line-height: 1.1 !important; }       /* 48px */
 
-    /* Restore comfortable spacing that the zoom provided */
-    .speaking-mobile section { scroll-margin-top: 72px; }
-    .speaking-mobile .mx-15 { margin-left: 1.25rem; margin-right: 1.25rem; } /* 20px */
-    .speaking-mobile .p-8 { padding: 1.25rem; }  /* quote cards smaller padding on mobile */
-    .speaking-mobile .mt-10 { margin-top: 1.75rem; }
-    .speaking-mobile .mt-5 { margin-top: 1.25rem; }
-
-    /* Avoid any residual rasterization on mobile */
-    .speaking-mobile .backdrop-blur, 
-    .speaking-mobile .backdrop-blur-sm { 
-      -webkit-backdrop-filter: none !important; 
-      backdrop-filter: none !important; 
+    /* Keep quotes crisp (avoid rasterization triggers) */
+    .speaking-mobile .backdrop-blur,
+    .speaking-mobile .backdrop-blur-sm {
+      -webkit-backdrop-filter: none !important;
+      backdrop-filter: none !important;
     }
     .speaking-mobile .drop-shadow-sm,
     .speaking-mobile .drop-shadow-md,
