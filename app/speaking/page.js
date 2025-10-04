@@ -32,6 +32,15 @@ export default function SpeakingPage() {
     "px-5 py-2.5 text-[13px] font-semibold tracking-wide transition " +
     "hover:bg-teal-700 active:translate-y-[1px]";
 
+  // Reusable row wrapper: fixed width so size doesn't change in landscape
+  const NavRow = ({ children }) => (
+    <div className="md:hidden mt-8 w-full">
+      <div className="mx-auto max-w-[460px] grid grid-cols-[1fr,1.25fr,1fr] gap-3">
+        {children}
+      </div>
+    </div>
+  );
+
   return (
     <>
       <main className="relative isolate min-h-screen w-full bg-[var(--color-teal-850)]">
@@ -133,7 +142,7 @@ export default function SpeakingPage() {
 
               {/* ---- MOBILE-ONLY quick nav (Resources styling; teal-800) ---- */}
               <div className="md:hidden mt-6" id="quicknav">
-                <div className="grid grid-cols-2 gap-2">
+                <div className="mx-auto max-w-[460px] grid grid-cols-2 gap-3">
                   <button onClick={() => jump("programs")} className={mBtn} aria-label="Jump to Programs">
                     Programs
                   </button>
@@ -223,7 +232,7 @@ export default function SpeakingPage() {
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
-                    <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                    <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
                     <span className="absolute right-24 bottom-5 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
@@ -241,14 +250,12 @@ export default function SpeakingPage() {
                 </figure>
               </div>
 
-              {/* Mobile-only section footer nav (Programs) — consistent in portrait & landscape */}
-              <div className="md:hidden mt-8 w-full">
-                <div className="grid grid-cols-3 gap-3">
-                  <button onClick={() => jump("intro")} className={mBtn} aria-label="Previous section">← Prev</button>
-                  <button onClick={() => jump("quicknav")} className={mBtn} aria-label="All Speaking">All Speaking</button>
-                  <button onClick={() => jump("formats")} className={mBtn} aria-label="Next section">Next →</button>
-                </div>
-              </div>
+              {/* Mobile-only section footer nav (Programs) — fixed size in both orientations */}
+              <NavRow>
+                <button onClick={() => jump("intro")} className={mBtn} aria-label="Previous section">← Prev</button>
+                <button onClick={() => jump("quicknav")} className={mBtn} aria-label="All Speaking">All Speaking</button>
+                <button onClick={() => jump("formats")} className={mBtn} aria-label="Next section">Next →</button>
+              </NavRow>
             </section>
 
             {/* Dr. Salerno Offers (Formats) */}
@@ -327,14 +334,12 @@ export default function SpeakingPage() {
                 </div>
               </div>
 
-              {/* Mobile-only section footer nav (Formats) — BOTTOM of section */}
-              <div className="md:hidden mt-8 w-full">
-                <div className="grid grid-cols-3 gap-3">
-                  <button onClick={() => jump("programs")} className={mBtn} aria-label="Previous section">← Prev</button>
-                  <button onClick={() => jump("quicknav")} className={mBtn} aria-label="All Speaking">All Speaking</button>
-                  <button onClick={() => jump("results")} className={mBtn} aria-label="Next section">Next →</button>
-                </div>
-              </div>
+              {/* Mobile-only section footer nav (Formats) — AFTER the section content */}
+              <NavRow>
+                <button onClick={() => jump("programs")} className={mBtn} aria-label="Previous section">← Prev</button>
+                <button onClick={() => jump("quicknav")} className={mBtn} aria-label="All Speaking">All Speaking</button>
+                <button onClick={() => jump("results")} className={mBtn} aria-label="Next section">Next →</button>
+              </NavRow>
             </section>
 
             {/* Outcomes (Results) */}
@@ -390,13 +395,11 @@ export default function SpeakingPage() {
               </div>
 
               {/* Mobile-only section footer nav (Results) */}
-              <div className="md:hidden mt-8 w-full">
-                <div className="grid grid-cols-3 gap-3">
-                  <button onClick={() => jump("formats")} className={mBtn} aria-label="Previous section">← Prev</button>
-                  <button onClick={() => jump("quicknav")} className={mBtn} aria-label="All Speaking">All Speaking</button>
-                  <button onClick={() => jump("testimonials")} className={mBtn} aria-label="Next section">Next →</button>
-                </div>
-              </div>
+              <NavRow>
+                <button onClick={() => jump("formats")} className={mBtn} aria-label="Previous section">← Prev</button>
+                <button onClick={() => jump("quicknav")} className={mBtn} aria-label="All Speaking">All Speaking</button>
+                <button onClick={() => jump("testimonials")} className={mBtn} aria-label="Next section">Next →</button>
+              </NavRow>
             </section>
 
             {/* ===== Testimonials (mobile-only; all quotes moved here) ===== */}
@@ -492,13 +495,11 @@ export default function SpeakingPage() {
               </div>
 
               {/* Mobile-only section footer nav (Testimonials) */}
-              <div className="md:hidden mt-8 w-full">
-                <div className="grid grid-cols-3 gap-3">
-                  <button onClick={() => jump("results")} className={mBtn} aria-label="Previous section">← Prev</button>
-                  <button onClick={() => jump("quicknav")} className={mBtn} aria-label="All Speaking">All Speaking</button>
-                  <button onClick={() => jump("programs")} className={mBtn} aria-label="Next section">Next →</button>
-                </div>
-              </div>
+              <NavRow>
+                <button onClick={() => jump("results")} className={mBtn} aria-label="Previous section">← Prev</button>
+                <button onClick={() => jump("quicknav")} className={mBtn} aria-label="All Speaking">All Speaking</button>
+                <button onClick={() => jump("programs")} className={mBtn} aria-label="Next section">Next →</button>
+              </NavRow>
             </section>
 
             {/* CTA (unchanged) */}
