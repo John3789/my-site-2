@@ -632,7 +632,7 @@ const jump = (id, opts = {}) => {
                   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
                     <span className="absolute -left-4 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
-                    <span className="absolute right-9 bottom-4 text-4xl opacity-20 select-none">”</span>
+                    <span className="absolute right-7 bottom-4 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
                   <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
                     — <span className="text-[var(--color-gold)]">Audience member</span>, Society for Prevention Research Annual Meeting
@@ -644,7 +644,7 @@ const jump = (id, opts = {}) => {
                   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
                     <span className="absolute -left-4 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>Dr. Salerno has a way of blending data with human stories that makes science resonate.</p>
-                    <span className="absolute right-24 bottom-4 text-4xl opacity-20 select-none">”</span>
+                    <span className="absolute right-28 bottom-4 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
                   <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
                     — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
