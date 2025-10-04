@@ -245,11 +245,10 @@ export default function ResourcesPage() {
         key={t.slug}
         onClick={() => handleJump(t.slug)}
         aria-current={active ? "true" : "false"}
-        className={[
-          "w-full rounded-full px-2 py-1.5 text-[11px] font-semibold tracking-wide truncate",
-          active
-            ? "bg-[var(--color-gold)] text-black"
-            : "bg-[var(--color-teal-800)] text-[var(--color-cream)] border border-white/12"
+className={[
+  "w-full rounded-full px-2 py-1.5 text-[11px] font-semibold tracking-wide truncate transition",
+  "active:scale-95 active:brightness-125",
+  "bg-[var(--color-teal-800)] text-[var(--color-cream)] border border-white/12"
         ].join(" ")}
       >
         {t.title}
