@@ -41,21 +41,6 @@ const jump = (id, opts = {}) => {
         {/* background guard to prevent mobile overlay artifact */}
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]" />
 
-{/* ===== PAGE ZOOM (mobile only) ===== */}
-        <div
-          style={{ "--z": 3.0, "--zoomL": 1.6 }}
-          className={`
-            zoomwrap
-            md:contents
-            origin-top
-            [transform:scale(var(--z))] [width:calc(100%/var(--z))]
-            mx-auto
-            md:[transform:none] md:[width:100%]
-            landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
-            overflow-visible
-          `}
-        ></div>
-
         {/* ===== HERO VIDEO with overlay text ===== */}
         <section className="relative w-full">
           {/* black backdrop so there’s never a green flash */}
@@ -83,16 +68,16 @@ const jump = (id, opts = {}) => {
             {/* Overlay headline + subheadline + vignette */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
               <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/30 to-black/45" />
-              <div className="relative px-6">
-                <h1 className="font-serif text-5xl md:text-6xl opacity-95 md:drop-shadow-lg">
-                  Speaking
-                </h1>
-                <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 mb-3 rounded" />
-                <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto md:drop-shadow-md">
-                  Science-backed, story-driven talks that spark resilience,
-                  growth, and lasting changes.
-                </p>
-              </div>
+              <div className="relative px-6 s-hero">
+  <h1 className="hero-title font-serif opacity-95 md:drop-shadow-lg md:text-6xl">
+    Speaking
+  </h1>
+  <div className="hero-hr bg-[var(--color-gold)]/85 mx-auto mt-4 mb-3 rounded" />
+  <p className="hero-sub opacity-90 max-w-3xl mx-auto md:drop-shadow-md md:text-xl">
+    Science-backed, story-driven talks that spark resilience,
+    growth, and lasting changes.
+  </p>
+</div>
             </div>
           </div>
         </section>
@@ -805,27 +790,41 @@ body:has([data-page="speaking"]) [data-component="footer"] {
 [data-page="speaking"] :is(footer, .social-footer, [data-role="social-footer"], [data-component="footer"]) {
   display: none !important;
 }
-
-/* Default (mobile both orientations): no zoom unless overridden below */
-[data-page="speaking"] .hero-zoom { --tz: 1; }
-
-/* Portrait: bigger */
+/* SPEAKING — mobile PORTRAIT: biggest */
 @media (max-width: 767px) and (orientation: portrait) {
-  [data-page="speaking"] .hero-zoom { --tz: 1.30; }
+  [data-page="speaking"] .s-hero .hero-title {
+    font-size: clamp(60px, 16vw, 96px) !important;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+  [data-page="speaking"] .s-hero .hero-sub {
+    font-size: clamp(22px, 6vw, 28px) !important;
+    line-height: 1.25;
+  }
+  [data-page="speaking"] .s-hero .hero-hr {
+    width: clamp(112px, 30vw, 160px) !important;
+    height: 3px !important;
+  }
 }
 
-/* Landscape: slightly smaller than portrait */
+/* SPEAKING — mobile LANDSCAPE: a bit smaller than portrait (video has less height) */
 @media (max-width: 767px) and (orientation: landscape) {
-  [data-page="speaking"] .hero-zoom { --tz: 1.14; }
+  [data-page="speaking"] .s-hero .hero-title {
+    font-size: clamp(48px, 12vw, 76px) !important;
+    line-height: 1.06;
+    letter-spacing: -0.01em;
+  }
+  [data-page="speaking"] .s-hero .hero-sub {
+    font-size: clamp(18px, 4.8vw, 24px) !important;
+    line-height: 1.25;
+  }
+  [data-page="speaking"] .s-hero .hero-hr {
+    width: clamp(96px, 22vw, 128px) !important;
+    height: 3px !important;
+  }
 }
 
-/* Keep scaled text crisp */
-[data-page="speaking"] .hero-zoom,
-[data-page="speaking"] .hero-zoom * {
-  -webkit-font-smoothing: antialiased;
-  text-rendering: geometricPrecision;
-}
-
+/* Desktop/landscape at md+ remains controlled by your md: classes */
 
       `}</style>
     </>
