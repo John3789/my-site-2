@@ -618,7 +618,7 @@ const jump = (id, opts = {}) => {
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
                   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-                    <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                    <span aria-hidden className="absolute -left-8 -top-0 text-4xl opacity-20 select-none">“</span>
                     <p>...an exceptional speaker: he is engaging, well-spoken, and clearly passionate about his work.</p>
                     <span aria-hidden className="absolute right-4 bottom-5 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
