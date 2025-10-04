@@ -41,6 +41,21 @@ const jump = (id, opts = {}) => {
         {/* background guard to prevent mobile overlay artifact */}
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]" />
 
+{/* ===== PAGE ZOOM (mobile only) ===== */}
+        <div
+          style={{ "--z": 3.0, "--zoomL": 1.6 }}
+          className={`
+            zoomwrap
+            md:contents
+            origin-top
+            [transform:scale(var(--z))] [width:calc(100%/var(--z))]
+            mx-auto
+            md:[transform:none] md:[width:100%]
+            landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
+            overflow-visible
+          `}
+        >
+
         {/* ===== HERO VIDEO with overlay text ===== */}
         <section className="relative w-full">
           {/* black backdrop so there’s never a green flash */}
@@ -68,34 +83,20 @@ const jump = (id, opts = {}) => {
             {/* Overlay headline + subheadline + vignette */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
               <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/30 to-black/45" />
-              <div className="relative px-6 s-hero">
-  <h1 className="hero-title font-serif opacity-95 md:drop-shadow-lg text-6xl md:text-6xl leading-[1.06]">
-    Speaking
-  </h1>
-  <div className="hero-hr h-[3px] w-28 md:w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 mb-3 rounded" />
-  <p className="hero-sub opacity-90 max-w-3xl mx-auto md:drop-shadow-md text-2xl md:text-xl leading-snug">
-    Science-backed, story-driven talks that spark resilience,
-    growth, and lasting changes.
-  </p>
-</div>
+              <div className="relative px-6">
+                <h1 className="font-serif text-5xl md:text-6xl opacity-95 md:drop-shadow-lg">
+                  Speaking
+                </h1>
+                <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 mb-3 rounded" />
+                <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto md:drop-shadow-md">
+                  Science-backed, story-driven talks that spark resilience,
+                  growth, and lasting changes.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* ===== Intro + Main (zoomed for mobile only) ===== */}
-        <div
-          style={{ "--z": 3.0, "--zoomL": 1.6 }}
-          className={`
-            zoomwrap
-            md:contents
-            origin-top
-            [transform:scale(var(--z))] [width:calc(100%/var(--z))]
-            mx-auto
-            md:[transform:none] md:[width:100%]
-            landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
-            overflow-visible
-          `}
-        >
           {/* ===== Intro Blurb ===== */}
           <section className="relative w-full py-16" id="intro">
             {/* subtle hairline divider from hero */}
@@ -789,22 +790,6 @@ body:has([data-page="speaking"]) [data-component="footer"] {
 /* Safety net: if something is injected inside the page content itself */
 [data-page="speaking"] :is(footer, .social-footer, [data-role="social-footer"], [data-component="footer"]) {
   display: none !important;
-}
-  /* Mobile PORTRAIT: make hero title/subtitle larger (desktop & landscape unchanged) */
-@media (max-width: 767px) and (orientation: portrait) {
-  .s-hero .hero-title {
-    font-size: clamp(52px, 13.5vw, 76px);
-    line-height: 1.05;
-    letter-spacing: -0.01em;
-  }
-  .s-hero .hero-sub {
-    font-size: clamp(20px, 5.6vw, 26px);
-    line-height: 1.25;
-  }
-  .s-hero .hero-hr {
-    width: clamp(96px, 28vw, 128px);
-    height: 3px;
-  }
 }
 
       `}</style>
