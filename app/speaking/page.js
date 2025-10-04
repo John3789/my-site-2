@@ -19,11 +19,19 @@ export default function SpeakingPage() {
     };
   }, []);
 
-  // ---- Mobile jump helper (same behavior used on Resources) ----
-  const jump = (id) => {
-    const el = typeof document !== "undefined" ? document.getElementById(id) : null;
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
+// ---- Mobile jump helper (center support for "All Speaking") ----
+const jump = (id, opts = {}) => {
+  const el = typeof document !== "undefined" ? document.getElementById(id) : null;
+  if (!el) return;
+
+  if (opts.center) {
+    const y = el.getBoundingClientRect().top + window.scrollY
+            - (window.innerHeight / 2) + (el.offsetHeight / 2);
+    window.scrollTo({ top: y, behavior: "smooth" });
+  } else {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+};
 
   return (
     <>
@@ -330,7 +338,7 @@ export default function SpeakingPage() {
                   ← Prev
                 </button>
                 <button
-                  onClick={() => jump("quicknav")}
+                  onClick={() => jump("quicknav", { center: true })}
                   className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                 >
                   All Speaking
@@ -477,7 +485,7 @@ export default function SpeakingPage() {
                   ← Prev
                 </button>
                 <button
-                  onClick={() => jump("quicknav")}
+                  onClick={() => jump("quicknav", { center: true })}
                   className="inline-flex items-center justify-center w/full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                 >
                   All Speaking
@@ -582,7 +590,7 @@ export default function SpeakingPage() {
                   ← Prev
                 </button>
                 <button
-                  onClick={() => jump("quicknav")}
+                  onClick={() => jump("quicknav", { center: true })}
                   className="inline-flex items-center justify-center w/full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                 >
                   All Speaking
@@ -717,7 +725,7 @@ export default function SpeakingPage() {
                   ← Prev
                 </button>
                 <button
-                  onClick={() => jump("quicknav")}
+                  onClick={() => jump("quicknav", { center: true })}
                   className="inline-flex items-center justify-center w/full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                 >
                   All Speaking
