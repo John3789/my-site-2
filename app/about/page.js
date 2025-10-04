@@ -29,7 +29,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-[1400px] px-6 py-20">
             {/* Page title with kicker + gold bar */}
             <div className="text-center mb-12">
-              <h1 className="font-serif text-[clamp(36px,4.8vw,56px)] leading-[1.06] opacity-90 mt-2">
+              <h1 className="font-serif text-6xl leading-[1.06] opacity-90 mt-2">
                 About Dr. Salerno
               </h1>
               <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto mt-4 rounded" />

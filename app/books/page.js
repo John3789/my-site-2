@@ -25,7 +25,7 @@ export default function BooksPage() {
 
             {/* Page title */}
             <div className="mx-auto max-w-[1400px] px-6 pt-20 mb-12 text-center">
-              <h1 className="font-serif text-[clamp(36px,4.8vw,56px)] leading-[1.06] opacity-90 mt-2">
+              <h1 className="font-serif text-6xl leading-[1.06] opacity-90 mt-2">
                 Books &amp; Publications
               </h1>
               <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto mt-4 rounded" />
