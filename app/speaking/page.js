@@ -84,6 +84,11 @@ const jump = (id, opts = {}) => {
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
               <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/30 to-black/45" />
               <div className="relative px-6">
+  {/* Mobile-only text zoom (title + hairline + sub), video NOT zoomed */}
+  <div
+    className="hero-zoom block mx-auto origin-top [transform:scale(var(--tz))] [width:calc(100%/var(--tz))] md:[transform:none] md:[width:100%]"
+    style={{ "--tz": 1 }}
+  >
                 <h1 className="font-serif text-5xl md:text-6xl opacity-95 md:drop-shadow-lg">
                   Speaking
                 </h1>
@@ -95,6 +100,7 @@ const jump = (id, opts = {}) => {
               </div>
             </div>
           </div>
+                    </div>
         </section>
 
         {/* ===== Intro + Main (zoomed for mobile only) ===== */}
@@ -804,6 +810,21 @@ body:has([data-page="speaking"]) [data-component="footer"] {
 /* Safety net: if something is injected inside the page content itself */
 [data-page="speaking"] :is(footer, .social-footer, [data-role="social-footer"], [data-component="footer"]) {
   display: none !important;
+}
+
+/* SPEAKING hero text zoom: mobile portrait & landscape only */
+@media (max-width: 767px) and (orientation: portrait) {
+  [data-page="speaking"] .hero-zoom { --tz: 1.28; }
+}
+@media (max-width: 767px) and (orientation: landscape) {
+  [data-page="speaking"] .hero-zoom { --tz: 1.12; }
+}
+
+/* Keep the scaled text crisp */
+[data-page="speaking"] .hero-zoom,
+[data-page="speaking"] .hero-zoom * {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
 }
 
       `}</style>
