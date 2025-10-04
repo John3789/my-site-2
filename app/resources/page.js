@@ -199,19 +199,19 @@ export default function ResourcesPage() {
         {/* background guard to prevent mid-page tint on mobile */}
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]" />
 
-        {/* ===== ZOOMED CONTENT (title + intro + sections) ===== */}
-        <div
-          style={{ '--z': 3.0, '--zoomL': 1.60 }}
-className={`
-  md:contents
-  origin-top
-  [transform:scale(var(--z))] [width:calc(100%/var(--z))]
-  mx-auto
-  md:[transform:none] md:[width:100%]
-  landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
-  overflow-visible
-`}
-        >
+        {/* 1) ZOOM WRAPPER — Title + Intro ONLY */}
+<div
+  style={{ '--z': 3.0, '--zoomL': 1.60 }}
+  className={`
+    md:contents
+    origin-top
+    [transform:scale(var(--z))] [width:calc(100%/var(--z))]
+    mx-auto
+    md:[transform:none] md:[width:100%]
+    landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
+    overflow-visible
+  `}
+>
           {/* Title + Intro (now inside the zoom so sizes match) */}
           <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-6">
             <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-3">
@@ -236,43 +236,45 @@ className={`
             </div>
           </div>
 
-{/* Mobile nav (under intro) — inverse-scaled to stay crisp */}
-<div className="md:hidden mt-2">
-  <div
-    className={`
-      origin-top
-      [transform:scale(calc(1/var(--z)))]
-      [width:calc(100%*var(--z))]
-      px-6
-    `}
-  >
-    <div className="mx-auto max-w-[1200px]">
-      <div className="rounded-xl border border-white/15 bg-[var(--color-teal-850)] px-3 py-3">
-        <div className="no-scrollbar flex gap-2 overflow-x-auto">
-          {THEMES.map((t) => {
-            const active = currentId === t.slug;
-            return (
-              <button
-                key={t.slug}
-                onClick={() => handleJump(t.slug)}
-                aria-current={active ? "true" : "false"}
-                className={[
-                  "whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide",
-                  active
-                    ? "border-[var(--color-gold)] bg-[var(--color-gold)] text-black shadow-sm"
-                    : "border-white/25 bg-transparent text-[var(--color-cream)]"
-                ].join(" ")}
-              >
-                {t.title}
-              </button>
-            );
-          })}
-        </div>
-      </div>
+{/* 2) MOBILE NAV — OUTSIDE the transform, placed visually under intro */}
+<div className="md:hidden mx-auto max-w-[1200px] px-6 pb-4">
+  <div className="rounded-xl border border-white/15 bg-[var(--color-teal-850)] px-3 py-3">
+    <div className="no-scrollbar flex gap-2 overflow-x-auto scroll-smooth">
+      {THEMES.map((t) => {
+        const active = currentId === t.slug;
+        return (
+          <button
+            key={t.slug}
+            onClick={() => handleJump(t.slug)}
+            aria-current={active ? "true" : "false"}
+            className={[
+              "whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide",
+              active
+                ? "border-[var(--color-gold)] bg-[var(--color-gold)] text-black shadow-sm"
+                : "border-white/25 bg-transparent text-[var(--color-cream)]"
+            ].join(" ")}
+          >
+            {t.title}
+          </button>
+        );
+      })}
     </div>
   </div>
 </div>
 
+{/* 3) ZOOM WRAPPER — Sections ONLY */}
+<div
+  style={{ '--z': 3.0, '--zoomL': 1.60 }}
+  className={`
+    md:contents
+    origin-top
+    [transform:scale(var(--z))] [width:calc(100%/var(--z))]
+    mx-auto
+    md:[transform:none] md:[width:100%]
+    landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
+    overflow-visible
+  `}
+></div>
 
           {/* Sections */}
           <section className="mx-auto max-w-[1200px] px-6 pt-2 pb-20">
