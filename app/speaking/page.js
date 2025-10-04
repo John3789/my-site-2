@@ -474,14 +474,26 @@ export default function SpeakingPage() {
     -webkit-font-smoothing: antialiased;
     text-rendering: geometricPrecision;
   }
-    /* Mobile-only: force the leading checkmark span in our lists to gold */
+    
+    /* Mobile-only: force the checkmark to render as gold text, not emoji */
 @media (max-width: 767px) {
+  /* Hide the original glyph and inject our own text-glyph check */
   .zoomwrap ul.text-lg li > span:first-child {
-    color: var(--color-gold) !important;
-    -webkit-text-fill-color: var(--color-gold) !important;
-    opacity: 1 !important;
+    position: relative;
+    color: transparent !important;           /* hide the black emoji check */
+  }
+  .zoomwrap ul.text-lg li > span:first-child::before {
+    content: "\\2714";                        /* heavy check mark ✔ */
+    display: inline-block;
+    font-weight: 700;
+    line-height: 1;
+    transform: translateY(0.02em);            /* tiny baseline nudge */
+    color: var(--color-gold) !important;      /* force gold */
+    /* force a non-emoji font so color applies */
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans";
   }
 }
+
 `}</style>
     </>
   );
