@@ -236,26 +236,25 @@ export default function ResourcesPage() {
             </div>
           </div>
 
-{/* MOBILE STICKY JUMP BAR — place between the two zoom wrappers */}
-<div className="md:hidden sticky top-0 z-40 bg-[var(--color-teal-850)] border-b border-white/12">
-  <div className="mx-auto max-w-[1200px] px-4 py-2">
-    <div className="no-scrollbar flex gap-2 overflow-x-auto scroll-smooth">
-      {THEMES.map((t) => (
-        <button
-          key={t.slug}
-          onClick={() => handleJump(t.slug)}
-          className={[
-            "shrink-0 rounded-full border border-white/15",
-            "px-3 py-1.5 text-[12px] font-semibold tracking-wide",
-            "bg-[var(--color-teal-800)] text-[var(--color-cream)]",
-            "transition active:scale-95 active:brightness-125 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-gold)]/70"
-          ].join(" ")}
-        >
-          {t.title}
-        </button>
-      ))}
-    </div>
-  </div>
+{/* Mobile nav — simplest, blur-safe chip list */}
+<div className="md:hidden mt-4 grid grid-cols-3 gap-2">
+  {THEMES.map((t) => {
+    const active = currentId === t.slug;
+    return (
+      <button
+        key={t.slug}
+        onClick={() => handleJump(t.slug)}
+        aria-current={active ? "true" : "false"}
+className={[
+  "w-full rounded-full px-2 py-1.5 text-[11px] font-semibold tracking-wide truncate transition",
+  "active:scale-95 active:brightness-125",
+  "bg-[var(--color-teal-800)] text-[var(--color-cream)] border border-white/12"
+        ].join(" ")}
+      >
+        {t.title}
+      </button>
+    );
+  })}
 </div>
 
 {/* 3) ZOOM WRAPPER — Sections ONLY */}
@@ -348,6 +347,34 @@ export default function ResourcesPage() {
                     })}
                   </ul>
 
+{/* Mobile section footer nav — crisp-safe (no sticky, no fixed) */}
+<div className="md:hidden mt-6 flex items-center justify-between gap-2">
+  <button
+    onClick={() => handleJump(THEMES[Math.max(0, idx - 1)].slug)}
+    className="rounded-full border border-white/15 bg-[var(--color-teal-800)] px-3 py-1.5 text-[12px] font-semibold text-[var(--color-cream)] active:scale-95 active:brightness-125"
+  >
+    ← Prev
+  </button>
+
+  <button
+    onClick={() => {
+      // jump back to the top intro (or first theme if you prefer)
+      const top = document.querySelector('h1'); 
+      if (top) top.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Or: handleJump(THEMES[0].slug)
+    }}
+    className="rounded-full border border-white/15 bg-[var(--color-teal-800)] px-3 py-1.5 text-[12px] font-semibold text-[var(--color-cream)] active:scale-95 active:brightness-125"
+  >
+    All Themes
+  </button>
+
+  <button
+    onClick={() => handleJump(THEMES[Math.min(THEMES.length - 1, idx + 1)].slug)}
+    className="rounded-full border border-white/15 bg-[var(--color-teal-800)] px-3 py-1.5 text-[12px] font-semibold text-[var(--color-cream)] active:scale-95 active:brightness-125"
+  >
+    Next →
+  </button>
+</div>
                   {idx < THEMES.length - 1 && (
                     <div className="mt-12">
                       <div className="h-px w-full bg-[var(--color-cream)]/16" />
