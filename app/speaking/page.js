@@ -101,7 +101,7 @@ const jump = (id, opts = {}) => {
             {/* subtle hairline divider from hero */}
             <div className="absolute inset-x-0 top-0 h-px bg-[var(--color-cream)]/15" />
             <div className="mx-auto max-w-[1000px] px-6 text-left space-y-8">
-              <h2 className="font-serif text-3xl md:text-4xl opacity-90 text-center font-semibold tracking-wide">
+              <h2 className="font-serif text-2xl md:text-4xl opacity-90 text-center font-semibold tracking-wide">
                 &ldquo;Engaging. Inspiring. Transformational.&rdquo;
               </h2>
 
@@ -793,12 +793,12 @@ body:has([data-page="speaking"]) [data-component="footer"] {
 /* SPEAKING — mobile PORTRAIT: much larger */
 @media (max-width: 767px) and (orientation: portrait) {
   [data-page="speaking"] .s-hero .hero-title {
-    font-size: clamp(130px, 29vw, 240px) !important;
+    font-size: clamp(125px, 28.5vw, 230px) !important;
     line-height: 1.02;
     letter-spacing: -0.015em;
   }
   [data-page="speaking"] .s-hero .hero-sub {
-    font-size: clamp(42px, 10.5vw, 66px) !important;
+    font-size: clamp(39px, 10vw, 61px) !important;
     line-height: 1.28;
   }
   [data-page="speaking"] .s-hero .hero-hr {
