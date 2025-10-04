@@ -88,7 +88,7 @@ export default function SpeakingPage() {
         >
           {/* ===== Intro Blurb ===== */}
           <section className="relative w-full py-16" id="intro">
-            {/* subtle hairline divider from hero (unchanged for desktop) */}
+            {/* subtle hairline divider from hero (DESKTOP EXACTLY AS BEFORE) */}
             <div className="absolute inset-x-0 top-0 h-px bg-[var(--color-cream)]/15" />
             <div className="mx-auto max-w-[1000px] px-6 text-left space-y-8">
               <h2 className="font-serif text-3xl md:text-4xl opacity-90 text-center font-semibold tracking-wide">
@@ -124,33 +124,33 @@ export default function SpeakingPage() {
                 </p>
               </div>
 
-              {/* ---- MOBILE-ONLY quick nav (Resources-style, bg-teal-800) ---- */}
+              {/* ---- MOBILE-ONLY quick nav (match Resources styling; teal-800) ---- */}
               <div className="md:hidden mt-6">
-                <div className="grid grid-cols-2 landscape:grid-cols-3 gap-4 px-0">
+                <div className="grid grid-cols-2 landscape:grid-cols-3 gap-2">
                   <button
                     onClick={() => jump("programs")}
-                    className="w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+                    className="inline-flex items-center justify-center w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                     aria-label="Jump to Programs"
                   >
                     Programs
                   </button>
                   <button
                     onClick={() => jump("formats")}
-                    className="w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+                    className="inline-flex items-center justify-center w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                     aria-label="Jump to Formats"
                   >
                     Formats
                   </button>
                   <button
                     onClick={() => jump("results")}
-                    className="w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+                    className="inline-flex items-center justify-center w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                     aria-label="Jump to Results"
                   >
                     Results
                   </button>
                   <button
                     onClick={() => jump("testimonials")}
-                    className="w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+                    className="inline-flex items-center justify-center w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                     aria-label="Jump to Testimonials"
                   >
                     Testimonials
@@ -295,7 +295,7 @@ export default function SpeakingPage() {
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
-                    <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                    <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
                     <span className="absolute right-24 bottom-5 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
@@ -317,27 +317,27 @@ export default function SpeakingPage() {
                 </figure>
               </div>
 
-              {/* MOBILE section footer nav — Programs */}
-              <div className="md:hidden mt-8 px-6">
-                <div className="grid grid-cols-3 gap-5">
+              {/* Mobile-only section footer nav (Programs) — wider center button */}
+              <div className="md:hidden mt-8 w-full">
+                <div className="grid grid-cols-8 gap-3">
                   <button
                     onClick={() => jump("intro")}
+                    className="col-span-2 inline-flex items-center justify-center w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-4 py-2 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                     aria-label="Previous section"
-                    className="w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                   >
                     Previous
                   </button>
                   <button
                     onClick={() => jump("topics")}
+                    className="col-span-4 inline-flex items-center justify-center w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-4 py-2 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                     aria-label="All Speaking"
-                    className="w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                   >
                     All Speaking
                   </button>
                   <button
                     onClick={() => jump("formats")}
+                    className="col-span-2 inline-flex items-center justify-center w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-4 py-2 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                     aria-label="Next section"
-                    className="w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                   >
                     Next
                   </button>
@@ -467,27 +467,27 @@ export default function SpeakingPage() {
                 </div>
               </div>
 
-              {/* MOBILE section footer nav — Formats (after content) */}
-              <div className="md:hidden mt-8 px-6 order-2">
-                <div className="grid grid-cols-3 gap-5">
+              {/* Mobile-only section footer nav (Formats) — after section, wider center */}
+              <div className="md:hidden mt-8 w-full">
+                <div className="grid grid-cols-8 gap-3">
                   <button
                     onClick={() => jump("programs")}
+                    className="col-span-2 inline-flex items-center justify-center w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-4 py-2 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                     aria-label="Previous section"
-                    className="w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                   >
                     Previous
                   </button>
                   <button
                     onClick={() => jump("topics")}
+                    className="col-span-4 inline-flex items-center justify-center w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-4 py-2 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                     aria-label="All Speaking"
-                    className="w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                   >
                     All Speaking
                   </button>
                   <button
                     onClick={() => jump("results")}
+                    className="col-span-2 inline-flex items-center justify-center w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-4 py-2 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                     aria-label="Next section"
-                    className="w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                   >
                     Next
                   </button>
@@ -575,27 +575,27 @@ export default function SpeakingPage() {
                 </figure>
               </div>
 
-              {/* MOBILE section footer nav — Results */}
-              <div className="md:hidden mt-8 px-6">
-                <div className="grid grid-cols-3 gap-5">
+              {/* Mobile-only section footer nav (Results) — wider center */}
+              <div className="md:hidden mt-8 w-full">
+                <div className="grid grid-cols-8 gap-3">
                   <button
                     onClick={() => jump("formats")}
+                    className="col-span-2 inline-flex items-center justify-center w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-4 py-2 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                     aria-label="Previous section"
-                    className="w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                   >
                     Previous
                   </button>
                   <button
                     onClick={() => jump("topics")}
+                    className="col-span-4 inline-flex items-center justify-center w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-4 py-2 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                     aria-label="All Speaking"
-                    className="w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                   >
                     All Speaking
                   </button>
                   <button
                     onClick={() => jump("testimonials")}
+                    className="col-span-2 inline-flex items-center justify-center w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-4 py-2 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                     aria-label="Next section"
-                    className="w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                   >
                     Next
                   </button>
@@ -713,27 +713,27 @@ export default function SpeakingPage() {
                 </figure>
               </div>
 
-              {/* MOBILE section footer nav — Testimonials */}
-              <div className="md:hidden mt-8 px-6">
-                <div className="grid grid-cols-3 gap-5">
+              {/* Mobile-only section footer nav (Testimonials) — wider center */}
+              <div className="md:hidden mt-8 w-full">
+                <div className="grid grid-cols-8 gap-3">
                   <button
                     onClick={() => jump("results")}
+                    className="col-span-2 inline-flex items-center justify-center w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-4 py-2 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                     aria-label="Previous section"
-                    className="w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                   >
                     Previous
                   </button>
                   <button
                     onClick={() => jump("topics")}
+                    className="col-span-4 inline-flex items-center justify-center w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-4 py-2 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                     aria-label="All Speaking"
-                    className="w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                   >
                     All Speaking
                   </button>
                   <button
                     onClick={() => jump("programs")}
+                    className="col-span-2 inline-flex items-center justify-center w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-4 py-2 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                     aria-label="Next section"
-                    className="w-full rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                   >
                     Next
                   </button>
