@@ -1,7 +1,32 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react"; // if not already imported
 
+// ...inside your page component, above `return (...)`
 export default function AboutPage() {
+useEffect(() => {
+  if (typeof window === "undefined") return;
+
+  // Only enforce on desktop viewports
+  const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+  if (!isDesktop) return;
+
+  // Prevent the browser from restoring a mid-page scroll position
+  const { scrollRestoration } = window.history;
+  window.history.scrollRestoration = "manual";
+
+  // Jump to the top
+  window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+
+  // Restore default behavior when leaving the page
+  return () => {
+    window.history.scrollRestoration = scrollRestoration || "auto";
+  };
+}, []);
+
+
   return (
     <>
 
