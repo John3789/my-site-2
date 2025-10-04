@@ -1,33 +1,31 @@
 "use client";
+import TopOnMount from "@/components/TopOnMount";
 import Image from "next/image";
 import Link from "next/link";
 
+
 export default function AboutPage() {
   return (
+    <TopOnMount>
     <>
-      <main className="relative isolate min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
-        {/* background guard (matches Resources) */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]"
-        />
 
-        {/* ===== PAGE BODY WRAPPER (same zoom style, placed INSIDE main) ===== */}
-        <div
-          style={{ "--z": 3.0, "--zoomL": 1.6 }}
-          className="
-            md:contents
-            origin-top
-            [transform:scale(var(--z))]
-            [width:calc(100%/var(--z))]
-            mx-auto
-            md:[transform:none]
-            md:[width:100%]
-            landscape:[transform:scale(var(--zoomL))]
-            landscape:[width:calc(100%/var(--zoomL))]
-            overflow-visible
-          "
-        >
+      {/* ===== PAGE BODY WRAPPER (same zoom as home) ===== */}
+      <div
+        style={{ '--z': 3.00, '--zoomL': 1.60 }}
+        className="
+          md:contents
+          origin-top
+          [transform:scale(var(--z))]
+          [width:calc(100%/var(--z))]
+          mx-auto
+          md:[transform:none]
+          md:[width:100%]
+          landscape:[transform:scale(var(--zoomL))]
+          landscape:[width:calc(100%/var(--zoomL))]
+          overflow-hidden
+        "
+      >
+        <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
           <div className="mx-auto max-w-[1400px] px-6 py-20">
             {/* Page title with kicker + gold bar */}
             <div className="text-center mb-12">
@@ -145,8 +143,10 @@ export default function AboutPage() {
               </Link>
             </div>
           </div>
-        </div>
-      </main>
+        </main>
+      </div>
     </>
+                </TopOnMount>
+
   );
 }
