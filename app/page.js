@@ -149,19 +149,19 @@ export default function Home() {
 
                   <ul className="text-base leading-[1.7] opacity-90 mb-6 max-w-xl space-y-3 text-left mx-auto lg:mx-0">
                     <li className="flex gap-2">
-                      <span className="text-[var(--color-gold)]">✔</span>
+                      <span className="text-[var(--color-gold)]">✔︎</span>
                       <span><strong>Partner</strong> — Collaborate with a community-engaged research expert.</span>
                     </li>
                     <li className="flex gap-2">
-                      <span className="text-[var(--color-gold)]">✔</span>
+                      <span className="text-[var(--color-gold)]">✔︎</span>
                       <span><strong>Design</strong> — Build powerful, evidence-based programs that truly resonate.</span>
                     </li>
                     <li className="flex gap-2">
-                      <span className="text-[var(--color-gold)]">✔</span>
+                      <span className="text-[var(--color-gold)]">✔︎</span>
                       <span><strong>Evaluate</strong> — Measure outcomes that matter and prove impact with data.</span>
                     </li>
                     <li className="flex gap-2">
-                      <span className="text-[var(--color-gold)]">✔</span>
+                      <span className="text-[var(--color-gold)]">✔︎</span>
                       <span><strong>Scale</strong> — Strengthen and integrate organizational resilience &amp; wellbeing.</span>
                     </li>
                   </ul>
