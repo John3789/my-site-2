@@ -8,16 +8,49 @@ export default function SpeakingPage() {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    const v = videoRef.current;
-    if (!v) return;
+  const v = videoRef.current;
+  if (!v) return;
 
-    const onCanPlay = () => setReady(true);
-    v.addEventListener("canplay", onCanPlay, { once: true });
+  const ensurePlay = () => {
+    if (document.visibilityState !== "visible") return;
+    if (v.paused || v.ended) {
+      v.muted = true;
+      const p = v.play();
+      if (p && typeof p.catch === "function") p.catch(() => {});
+    }
+  };
 
-    return () => {
-      v.removeEventListener("canplay", onCanPlay);
-    };
-  }, []);
+  const onCanPlay = () => ensurePlay();
+  const onEnded = () => {
+    // some mobile browsers stop after a few loops
+    v.currentTime = 0.01;
+    ensurePlay();
+  };
+  const onPause = () => ensurePlay();
+  const onStalled = () => ensurePlay();
+  const onSuspend = () => ensurePlay();
+  const onVisibility = () => ensurePlay();
+
+  v.addEventListener("canplay", onCanPlay);
+  v.addEventListener("ended", onEnded);
+  v.addEventListener("pause", onPause);
+  v.addEventListener("stalled", onStalled);
+  v.addEventListener("suspend", onSuspend);
+  document.addEventListener("visibilitychange", onVisibility);
+
+  // kick it once on mount
+  ensurePlay();
+
+  return () => {
+    v.removeEventListener("canplay", onCanPlay);
+    v.removeEventListener("ended", onEnded);
+    v.removeEventListener("pause", onPause);
+    v.removeEventListener("stalled", onStalled);
+    v.removeEventListener("suspend", onSuspend);
+    document.removeEventListener("visibilitychange", onVisibility);
+  };
+}, []);
+
 
 // ---- Mobile jump helper (center support for "All Speaking") ----
 const jump = (id, opts = {}) => {
