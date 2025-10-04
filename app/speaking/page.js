@@ -113,10 +113,17 @@ const jump = (id, opts = {}) => {
     Speaking
   </h1>
   <div className="hero-hr h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 mb-3 rounded" />
-  <p className="hero-sub opacity-90 max-w-3xl mx-auto md:drop-shadow-md md:text-xl">
-    Science-backed, story-driven talks that spark resilience,
-    growth, and lasting changes.
-  </p>
+{/* Mobile-only shorter subheadline */}
+<p className="hero-sub md:hidden opacity-90 max-w-3xl mx-auto md:drop-shadow-md md:text-xl">
+  Talks the spark resilience, growth, and lasting change.
+</p>
+
+{/* Desktop/tablet original subheadline (unchanged) */}
+<p className="hero-sub hidden md:block opacity-90 max-w-3xl mx-auto md:drop-shadow-md md:text-xl">
+  Science-backed, story-driven talks that spark resilience,
+  growth, and lasting change.
+</p>
+
 </div>
             </div>
           </div>
@@ -833,32 +840,32 @@ body:has([data-page="speaking"]) [data-component="footer"] {
 /* SPEAKING — mobile PORTRAIT: much larger */
 @media (max-width: 767px) and (orientation: portrait) {
   [data-page="speaking"] .s-hero .hero-title {
-    font-size: clamp(124px, 28.5vw, 226px) !important;
+    font-size: clamp(140px, 30vw, 260px) !important;
     line-height: 1.02;
     letter-spacing: -0.015em;
   }
   [data-page="speaking"] .s-hero .hero-sub {
-    font-size: clamp(38px, 9.60vw, 58px) !important;
+    font-size: clamp(41px, 10vw, 61px) !important;
     line-height: 1.28;
   }
   [data-page="speaking"] .s-hero .hero-hr {
     width: clamp(200px, 48vw, 300px) !important;
-    height: 4px !important;
+    height: 6px !important;
   }
 }
 /* SPEAKING — mobile LANDSCAPE: a bit smaller than portrait (video has less height) */
 @media (max-width: 767px) and (orientation: landscape) {
   [data-page="speaking"] .s-hero .hero-title {
-    font-size: clamp(48px, 12vw, 76px) !important;
+    font-size: clamp(64px, 15vw, 112px) !important;
     line-height: 1.06;
     letter-spacing: -0.01em;
   }
   [data-page="speaking"] .s-hero .hero-sub {
-    font-size: clamp(18px, 4.8vw, 24px) !important;
+    font-size: clamp(20px, 5.8vw, 28px) !important;
     line-height: 1.25;
   }
   [data-page="speaking"] .s-hero .hero-hr {
-    width: clamp(96px, 22vw, 128px) !important;
+    width: clamp(120px, 30vw, 180px) !important;
     height: 3px !important;
   }
 }
