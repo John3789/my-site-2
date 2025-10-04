@@ -15,7 +15,7 @@ export default function BooksPage() {
         {/* ===== PAGE BODY WRAPPER (same zoom as home/about) ===== */}
         <div
           style={{ "--z": 3.0, "--zoomL": 1.6 }}
-          className="
+          className={`
             md:contents
             origin-top
             [transform:scale(var(--z))]
@@ -26,7 +26,7 @@ export default function BooksPage() {
             landscape:[transform:scale(var(--zoomL))]
             landscape:[width:calc(100%/var(--zoomL))]
             overflow-hidden
-          "
+          `}
         >
           <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
             {/* Page title */}
@@ -248,7 +248,7 @@ export default function BooksPage() {
                             <em> Mental Health Impact of Sexually Minoritized &amp; Gender Expansive Stressors Among LGBTQ+ Young Adults: A Latent Class Analysis.</em>
                             <span className="italic"> Epidemiology &amp; Psychiatric Sciences.</span>{" "}
                             <a
-                              href="https://www.researchgate.net/publication/379752647_Mental_health_impact_of_multiple_sexually_minoritized_and_gender_expansive_stressors_among_LGBTQ_young_adults_a_latent_class_analysis"
+                              href="https://www.researchgate.net/publication/379752647_Mental_health_impact_of_multiple_sexually_minoritzed_and_gender_expansive_stressors_among_LGBTQ_young_adults_a_latent_class_analysis"
                               target="_blank"
                               rel="noreferrer"
                               className="underline decoration-[var(--color-gold)] underline-offset-2 hover:opacity-80"
