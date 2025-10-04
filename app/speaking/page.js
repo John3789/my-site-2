@@ -79,11 +79,17 @@ const jump = (id, opts = {}) => {
           {/* black backdrop so there’s never a green flash */}
           <div className="relative h-[70vh] bg-black">
             {/* Poster as an instant background layer */}
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 bg-center bg-cover"
-              style={{ backgroundImage: "url(/speaking-hero-poster.jpg)" }}
-            />
+{/* Poster as an instant image (paints immediately) */}
+<img
+  aria-hidden="true"
+  src="/speaking-hero-poster.jpg"
+  alt=""
+  decoding="async"
+  loading="eager"
+  fetchPriority="high"
+  className="absolute inset-0 h-full w-full object-cover object-[50%_38%]"
+/>
+
 
             <video
               playsInline
@@ -92,6 +98,7 @@ const jump = (id, opts = {}) => {
               loop
               preload="auto"
               fetchPriority="high"
+              poster="/speaking-hero-poster.jpg"        // ← add this line
               className="absolute inset-0 h-full w-full object-cover object-[50%_38%]"
               ref={videoRef}
             >
