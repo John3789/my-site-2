@@ -388,7 +388,7 @@ const jump = (id, opts = {}) => {
             </section>
 
             {/* Programs footer buttons (mobile only) */}
-            <div className="md:hidden mt-14 w-full">
+            <div className="md:hidden mt-16 w-full">
               <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
                 <button
                   onClick={() => jump("intro")}
@@ -535,7 +535,7 @@ const jump = (id, opts = {}) => {
             </section>
 
             {/* Formats footer buttons (mobile only) — AFTER the section */}
-            <div className="md:hidden mt-14 w-full">
+            <div className="md:hidden mt-16 w-full">
               <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
                 <button
                   onClick={() => jump("programs")}
@@ -640,7 +640,7 @@ const jump = (id, opts = {}) => {
             </section>
 
             {/* Results footer buttons (mobile only) */}
-            <div className="md:hidden mt-14 w-full">
+            <div className="md:hidden mt-16 w-full">
               <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
                 <button
                   onClick={() => jump("formats")}
@@ -790,7 +790,7 @@ const jump = (id, opts = {}) => {
 </section>
 
             {/* Testimonials footer buttons (mobile only) — moved OUTSIDE the section and centered */}
-            <div className="md:hidden mt-14 w-full">
+            <div className="md:hidden mt-16 w-full">
               <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4 px-6">
                 <button
                   onClick={() => jump("results")}
