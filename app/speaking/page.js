@@ -70,7 +70,7 @@ export default function SpeakingPage() {
 <div
   style={{ "--z": 3.0, "--zoomL": 1.6 }}
   className={`
-    zoomwrap
+    speaking-mobile
     md:contents
     origin-top mx-auto overflow-visible
     [transform:scale(var(--z))] [width:calc(100%/var(--z))]
@@ -459,30 +459,45 @@ export default function SpeakingPage() {
         </div>
       </main>
 
+{/* Global safeguards + mobile crispness for Speaking */}
 <style jsx global>{`
-  /* Prevent background peeking through on iOS Safari */
+  /* iOS background peek fix (keep) */
   @supports (-webkit-touch-callout: none) {
     html, body { background: var(--color-teal-850) !important; }
   }
 
-  /* Slightly crisper text inside the mobile zoom wrapper */
-  .zoomwrap, .zoomwrap * {
-    -webkit-font-smoothing: antialiased;
-    text-rendering: geometricPrecision;
-  }
-
-  /* Mobile-only: avoid softening from backdrop filters and drop-shadows */
+  /* ==== Speaking page: mobile crisp preset (≤767px) ==== */
   @media (max-width: 767px) {
-    .zoomwrap .backdrop-blur-sm,
-    .zoomwrap .backdrop-blur {
-      -webkit-backdrop-filter: none !important;
-      backdrop-filter: none !important;
+    /* Turn OFF transform zoom just on this page */
+    .speaking-mobile {
+      transform: none !important;
+      width: 100% !important;
     }
-    .zoomwrap .drop-shadow-sm,
-    .zoomwrap .drop-shadow-md,
-    .zoomwrap .drop-shadow-lg {
-      filter: none !important;
+
+    /* Typography scale to mimic the zoom (crisp, no transforms) */
+    .speaking-mobile h1 { font-size: 2rem; line-height: 1.15; }           /* ~32px */
+    .speaking-mobile h2 { font-size: 1.625rem; line-height: 1.2; }       /* ~26px */
+    .speaking-mobile h3 { font-size: 1.375rem; line-height: 1.25; }      /* ~22px */
+    .speaking-mobile p,
+    .speaking-mobile li,
+    .speaking-mobile blockquote { font-size: 1.0625rem; line-height: 1.8; } /* ~17px */
+
+    /* Restore comfortable spacing that the zoom provided */
+    .speaking-mobile section { scroll-margin-top: 72px; }
+    .speaking-mobile .mx-15 { margin-left: 1.25rem; margin-right: 1.25rem; } /* 20px */
+    .speaking-mobile .p-8 { padding: 1.25rem; }  /* quote cards smaller padding on mobile */
+    .speaking-mobile .mt-10 { margin-top: 1.75rem; }
+    .speaking-mobile .mt-5 { margin-top: 1.25rem; }
+
+    /* Avoid any residual rasterization on mobile */
+    .speaking-mobile .backdrop-blur, 
+    .speaking-mobile .backdrop-blur-sm { 
+      -webkit-backdrop-filter: none !important; 
+      backdrop-filter: none !important; 
     }
+    .speaking-mobile .drop-shadow-sm,
+    .speaking-mobile .drop-shadow-md,
+    .speaking-mobile .drop-shadow-lg { filter: none !important; }
   }
 `}</style>
 
