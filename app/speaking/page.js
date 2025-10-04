@@ -105,7 +105,7 @@ const jump = (id, opts = {}) => {
   <h1 className="hero-title font-serif opacity-95 md:drop-shadow-lg md:text-6xl">
     Speaking
   </h1>
-  <div className="hero-hr bg-[var(--color-gold)]/85 mx-auto mt-4 mb-3 rounded" />
+  <div className="hero-hr h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 mb-3 rounded" />
   <p className="hero-sub opacity-90 max-w-3xl mx-auto md:drop-shadow-md md:text-xl">
     Science-backed, story-driven talks that spark resilience,
     growth, and lasting changes.
@@ -855,6 +855,13 @@ body:has([data-page="speaking"]) [data-component="footer"] {
     height: 3px !important;
   }
 }
+  @media (min-width: 768px) {
+  [data-page="speaking"] .s-hero .hero-hr {
+    width: 4rem !important;   /* w-16 */
+    height: 2px !important;   /* h-[2px] */
+  }
+}
+
   
 /* Desktop/landscape at md+ remains controlled by your md: classes */
 
