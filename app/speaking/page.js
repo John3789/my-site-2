@@ -814,10 +814,10 @@ body:has([data-page="speaking"]) [data-component="footer"] {
 
 /* SPEAKING hero text zoom: mobile portrait & landscape only */
 @media (max-width: 767px) and (orientation: portrait) {
-  [data-page="speaking"] .hero-zoom { --tz: 1.28; }
+  [data-page="speaking"] .hero-zoom { --tz: 3.00; }
 }
 @media (max-width: 767px) and (orientation: landscape) {
-  [data-page="speaking"] .hero-zoom { --tz: 1.12; }
+  [data-page="speaking"] .hero-zoom { --tz: 1.60; }
 }
 
 /* Keep the scaled text crisp */
