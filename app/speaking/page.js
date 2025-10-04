@@ -618,7 +618,7 @@ const jump = (id, opts = {}) => {
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
                   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-                    <span aria-hidden className="absolute -left-2 -top-1 text-4xl opacity-20 select-none">“</span>
+                    <span aria-hidden className="absolute -left-4 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>...an exceptional speaker: he is engaging, well-spoken, and clearly passionate about his work.</p>
                     <span aria-hidden className="absolute right-13 bottom-4 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
@@ -630,9 +630,9 @@ const jump = (id, opts = {}) => {
                 <figure className="relative w/full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
                   <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" aria-hidden />
                   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-                    <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                    <span className="absolute -left-4 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
-                    <span className="absolute right-24 bottom-5 text-4xl opacity-20 select-none">”</span>
+                    <span className="absolute right-17 bottom-4 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
                   <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
                     — <span className="text-[var(--color-gold)]">Audience member</span>, Society for Prevention Research Annual Meeting
