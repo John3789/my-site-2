@@ -793,12 +793,12 @@ body:has([data-page="speaking"]) [data-component="footer"] {
 /* SPEAKING — mobile PORTRAIT: much larger */
 @media (max-width: 767px) and (orientation: portrait) {
   [data-page="speaking"] .s-hero .hero-title {
-    font-size: clamp(124px, 28.5vw, 226px) !important;
+    font-size: clamp(124px, 28vw, 226px) !important;
     line-height: 1.02;
     letter-spacing: -0.015em;
   }
   [data-page="speaking"] .s-hero .hero-sub {
-    font-size: clamp(40px, 10vw, 60px) !important;
+    font-size: clamp(40px, 9.5vw, 60px) !important;
     line-height: 1.28;
   }
   [data-page="speaking"] .s-hero .hero-hr {
