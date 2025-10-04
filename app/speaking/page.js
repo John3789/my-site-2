@@ -71,12 +71,12 @@ export default function SpeakingPage() {
   style={{ "--z": 3.0, "--zoomL": 1.6 }}
   className={`
     md:contents
-    origin-top
-    [transform:scale(var(--z))] [width:calc(100%/var(--z))]
-    mx-auto
+    isolate will-change-transform [backface-visibility:hidden]
+    origin-top mx-auto overflow-visible
+    bg-[var(--color-teal-850)]
+    [transform:translateZ(0)_scale(var(--z))] [width:calc(100%/var(--z))]
     md:[transform:none] md:[width:100%]
-    landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
-    overflow-visible
+    landscape:[transform:translateZ(0)_scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
   `}
 >
           {/* ===== Intro Blurb ===== */}
