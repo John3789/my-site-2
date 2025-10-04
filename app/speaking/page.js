@@ -82,7 +82,7 @@ const jump = (id, opts = {}) => {
 {/* Poster as an instant image (paints immediately) */}
 <img
   aria-hidden="true"
-  src="/speaking-hero-poster.jpg"
+  src="/speaking-hero-poster1.jpg"
   alt=""
   decoding="async"
   loading="eager"
@@ -98,7 +98,7 @@ const jump = (id, opts = {}) => {
               loop
               preload="auto"
               fetchPriority="high"
-              poster="/speaking-hero-poster.jpg"        // ← add this line
+              poster="/speaking-hero-poster1.jpg"        // ← add this line
               className="absolute inset-0 h-full w-full object-cover object-[50%_38%]"
               ref={videoRef}
             >
