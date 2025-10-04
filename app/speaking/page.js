@@ -632,7 +632,7 @@ const jump = (id, opts = {}) => {
                   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
                     <span className="absolute -left-4 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
-                    <span className="absolute right-11 bottom-4 text-4xl opacity-20 select-none">”</span>
+                    <span className="absolute right-9 bottom-4 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
                   <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
                     — <span className="text-[var(--color-gold)]">Audience member</span>, Society for Prevention Research Annual Meeting
@@ -655,9 +655,9 @@ const jump = (id, opts = {}) => {
                 <figure className="relative w/full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
                   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-                    <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                    <span className="absolute -left-4 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>...gifted speaker whose engaging style &amp; clear communication bring complex ideas to life.</p>
-                    <span className="absolute right-6 bottom-5 text-4xl opacity-20 select-none">”</span>
+                    <span className="absolute right-3 bottom-4 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
                   <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
                     — <span className="text-[var(--color-gold)]">Audience member</span>, Columbia University
