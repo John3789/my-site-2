@@ -236,29 +236,28 @@ export default function ResourcesPage() {
             </div>
           </div>
 
-{/* 2) MOBILE NAV — OUTSIDE the transform, placed visually under intro */}
-<div className="md:hidden mx-auto max-w-[1200px] px-6 pb-4">
-  <div className="rounded-xl border border-white/15 bg-[var(--color-teal-850)] px-3 py-3">
-    <div className="no-scrollbar flex gap-2 overflow-x-auto scroll-smooth">
-      {THEMES.map((t) => {
-        const active = currentId === t.slug;
-        return (
-          <button
-            key={t.slug}
-            onClick={() => handleJump(t.slug)}
-            aria-current={active ? "true" : "false"}
-            className={[
-              "whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide",
-              active
-                ? "border-[var(--color-gold)] bg-[var(--color-gold)] text-black shadow-sm"
-                : "border-white/25 bg-transparent text-[var(--color-cream)]"
-            ].join(" ")}
-          >
-            {t.title}
-          </button>
-        );
-      })}
-    </div>
+{/* Mobile nav — simplest, blur-safe chip list */}
+<div className="md:hidden pt-3 border-t border-[var(--color-cream)]/12">
+  <div className="mt-3 flex flex-wrap gap-2">
+    {THEMES.map((t) => {
+      const active = currentId === t.slug;
+      return (
+        <button
+          key={t.slug}
+          onClick={() => handleJump(t.slug)}
+          aria-current={active ? "true" : "false"}
+          className={[
+            "whitespace-nowrap rounded-full px-3.5 py-1.5 text-[12px] font-semibold tracking-wide",
+            // solid backgrounds only (no opacity), no shadows
+            active
+              ? "bg-[var(--color-gold)] text-black"
+              : "bg-[var(--color-teal-800)] text-[var(--color-cream)] border border-white/12"
+          ].join(" ")}
+        >
+          {t.title}
+        </button>
+      );
+    })}
   </div>
 </div>
 
