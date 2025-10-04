@@ -73,6 +73,12 @@ const THEMES = [
 ];
 
 export default function ResourcesPage() {
+  // 👇 This runs only while the Resources page is mounted
+  useEffect(() => {
+    document.body.classList.add("hide-footer-on-resources");
+    return () => document.body.classList.remove("hide-footer-on-resources");
+  }, []);
+
   const [open, setOpen] = useState(false);
   const [activeCollection, setActiveCollection] = useState(null);
   const [currentId, setCurrentId] = useState(THEMES[0].slug);
