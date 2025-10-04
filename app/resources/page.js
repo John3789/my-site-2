@@ -21,10 +21,14 @@ export default function SpeakingPage() {
 
   /* === Dark blue pill exactly like Resources === */
   const btnDark =
-    "rounded-full bg-[var(--color-teal-800)] text-[var(--color-cream)]/95 " +
-    "ring-1 ring-white/15 border border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] " +
-    "px-6 py-3 text-[14px] font-semibold tracking-wide transition " +
-    "hover:bg-[color-mix(in_oklab,var(--color-teal-800)_88%,white)] hover:ring-white/25 active:translate-y-[1px]";
+    "inline-flex items-center justify-center rounded-full " +
+    "bg-[var(--color-teal-800)] text-[var(--color-cream)]/95 " +
+    "ring-1 ring-white/15 border border-white/10 " +
+    "shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] " +
+    "px-6 py-3 text-[14px] font-semibold tracking-wide " +
+    "transition hover:bg-[color-mix(in_oklab,var(--color-teal-800)_88%,white)] " +
+    "hover:ring-white/25 active:translate-y-[1px] " +
+    "whitespace-nowrap min-w-[120px]";
 
   return (
     <>
@@ -40,12 +44,7 @@ export default function SpeakingPage() {
               style={{ backgroundImage: "url(/speaking-hero-poster.jpg)" }}
             />
             <video
-              playsInline
-              muted
-              autoPlay
-              loop
-              preload="auto"
-              fetchPriority="high"
+              playsInline muted autoPlay loop preload="auto" fetchPriority="high"
               className="absolute inset-0 h-full w-full object-cover object-[50%_38%]"
               ref={videoRef}
             >
@@ -55,13 +54,10 @@ export default function SpeakingPage() {
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
               <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/30 to-black/45" />
               <div className="relative px-6">
-                <h1 className="font-serif text-5xl md:text-6xl opacity-95 md:drop-shadow-lg">
-                  Speaking
-                </h1>
+                <h1 className="font-serif text-5xl md:text-6xl opacity-95 md:drop-shadow-lg">Speaking</h1>
                 <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 mb-3 rounded" />
                 <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto md:drop-shadow-md">
-                  Science-backed, story-driven talks that spark resilience,
-                  growth, and lasting changes.
+                  Science-backed, story-driven talks that spark resilience, growth, and lasting changes.
                 </p>
               </div>
             </div>
@@ -71,13 +67,7 @@ export default function SpeakingPage() {
         {/* ===== Intro (mobile zoom preserved) ===== */}
         <div
           style={{ "--z": 3.0, "--zoomL": 1.6 }}
-          className={`
-            zoomwrap md:contents origin-top
-            [transform:scale(var(--z))] [width:calc(100%/var(--z))] mx-auto
-            md:[transform:none] md:[width:100%]
-            landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
-            overflow-visible
-          `}
+          className="zoomwrap md:contents origin-top [transform:scale(var(--z))] [width:calc(100%/var(--z))] mx-auto md:[transform:none] md:[width:100%] landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))] overflow-visible"
         >
           <section className="relative w-full py-16" id="intro">
             <div className="absolute inset-x-0 top-0 h-px bg-[var(--color-cream)]/15" />
@@ -88,30 +78,20 @@ export default function SpeakingPage() {
 
               <div className="space-y-6 opacity-85 text-lg md:text-xl leading-loose">
                 <p>
-                  Dr. Juan Pablo Salerno is a respected mental health scientist,
-                  personal growth expert, and engaging speaker whose work bridges
-                  cutting-edge science with practical tools for personal and
-                  professional transformation. He has delivered talks and workshops
-                  for audiences across academic, scientific, governmental, health,
-                  and nonprofit sectors, with a focus on mental health, resilience,
-                  and personal growth.
+                  Dr. Juan Pablo Salerno is a respected mental health scientist, personal growth expert, and
+                  engaging speaker whose work bridges cutting-edge science with practical tools for transformation.
                 </p>
                 <p>
-                  His speaking engagements have included national and local
-                  conferences, federal health organizations, leading universities,
-                  research institutes, K–12 public schools, community-based mental
-                  health and healthcare organizations, and county and state
-                  departments of health.
+                  He has delivered talks and workshops for audiences across academic, scientific, governmental,
+                  health, and nonprofit sectors, with a focus on mental health, resilience, and personal growth.
                 </p>
                 <p>
-                  Presentations typically run between one to two hours and can be delivered
-                  in-person or virtually. Dr. Salerno’s style is dynamic,
-                  approachable, and grounded in evidence-based science, leaving
-                  attendees inspired and equipped with actionable strategies.
+                  Presentations typically run one to two hours, in person or virtual. Style: dynamic, approachable,
+                  and evidence-based—leaving attendees inspired and equipped with actionable strategies.
                 </p>
               </div>
 
-              {/* Intro quick nav — match dark blue pills and size */}
+              {/* Intro quick nav — dark blue pills */}
               <div className="md:hidden mt-7">
                 <div className="flex flex-wrap gap-3">
                   <button onClick={() => jump("programs")} className={btnDark}>Programs</button>
@@ -127,72 +107,66 @@ export default function SpeakingPage() {
           <div className="mx-auto max-w-[1400px] py-14 space-y-24" id="topics">
             <hr className="border-t border-[var(--color-cream)]/22 mb-8 w-full" />
 
-            {/* Programs */}
+            {/* Programs (content omitted for brevity; unchanged) */}
             <section id="programs" className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mx-15 gap-y-12">
               <div className="lg:col-span-5 lg:py-6">
                 <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Programs</p>
                 <h2 className="font-serif text-4xl mb-2">Popular Topics</h2>
                 <div className="h-[2px] w-12 bg-[var(--color-gold)]/75 mb-8 rounded" />
-
-                {/* ... your bullet lists unchanged ... */}
-                {/* (kept for brevity) */}
+                {/* ... your bullet lists stay as you had them ... */}
               </div>
 
-              {/* Quotes desktop column unchanged (omitted for brevity) */}
-
-              {/* Mobile footer nav — SPREAD + big pills + arrows */}
+              {/* MOBILE footer nav — WIDE, SPREAD, NO WRAP */}
               <div className="md:hidden mt-10 px-6">
-                <div className="flex items-stretch justify-between gap-8">
-                  <button onClick={() => jump("intro")} className={`w-[32%] ${btnDark}`}>← Prev</button>
-                  <button onClick={() => jump("topics")} className={`w-[32%] ${btnDark}`}>All Speaking</button>
-                  <button onClick={() => jump("formats")} className={`w-[32%] ${btnDark}`}>Next →</button>
+                <div className="flex gap-8">
+                  <button onClick={() => jump("intro")} className={`flex-1 ${btnDark}`}>← Prev</button>
+                  <button onClick={() => jump("topics")} className={`flex-1 ${btnDark}`}>All Speaking</button>
+                  <button onClick={() => jump("formats")} className={`flex-1 ${btnDark}`}>Next →</button>
                 </div>
               </div>
             </section>
 
-            {/* Formats */}
+            {/* Formats section (content unchanged) */}
             <hr className="border-t border-[var(--color-cream)]/22 mb-8 w-full" />
             <section id="formats" className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 lg:gap-x-0 mx-15 items-center">
-              {/* quotes right column (desktop) unchanged */}
-
               <div className="lg:col-span-5 order-1 lg:order-2 lg:py-6 space-y-8 lg:pl-6">
                 <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Formats</p>
                 <h2 className="font-serif text-4xl mb-2">Dr. Salerno Offers</h2>
                 <div className="h-[2px] w-12 bg-[var(--color-gold)]/75 mb-8 rounded" />
-                {/* ... formats blocks unchanged ... */}
+                {/* ... your formats blocks stay as you had them ... */}
               </div>
 
-              {/* Footer nav — spread + arrows */}
+              {/* MOBILE footer nav — WIDE, SPREAD, NO WRAP */}
               <div className="md:hidden mt-10 px-6 order-2">
-                <div className="flex items-stretch justify-between gap-8">
-                  <button onClick={() => jump("programs")} className={`w-[32%] ${btnDark}`}>← Prev</button>
-                  <button onClick={() => jump("topics")} className={`w-[32%] ${btnDark}`}>All Speaking</button>
-                  <button onClick={() => jump("results")} className={`w-[32%] ${btnDark}`}>Next →</button>
+                <div className="flex gap-8">
+                  <button onClick={() => jump("programs")} className={`flex-1 ${btnDark}`}>← Prev</button>
+                  <button onClick={() => jump("topics")} className={`flex-1 ${btnDark}`}>All Speaking</button>
+                  <button onClick={() => jump("results")} className={`flex-1 ${btnDark}`}>Next →</button>
                 </div>
               </div>
             </section>
 
-            {/* Results */}
+            {/* Results section (content unchanged) */}
             <hr className="border-t border-[var(--color-cream)]/22 mb-8 w-full" />
             <section id="results" className="grid grid-cols-1 lg:grid-cols-12 gap-12 mx-15 items-start gap-y-12">
               <div className="lg:col-span-5 lg:py-6">
                 <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Results</p>
                 <h2 className="font-serif text-4xl mb-2">Outcomes</h2>
                 <div className="h-[2px] w-12 bg-[var(--color-gold)]/75 mb-6 rounded" />
-                {/* ... outcomes list unchanged ... */}
+                {/* ... your outcomes list stays ... */}
               </div>
 
-              {/* Footer nav — spread + arrows */}
+              {/* MOBILE footer nav — WIDE, SPREAD, NO WRAP */}
               <div className="md:hidden mt-10 px-6">
-                <div className="flex items-stretch justify-between gap-8">
-                  <button onClick={() => jump("formats")} className={`w-[32%] ${btnDark}`}>← Prev</button>
-                  <button onClick={() => jump("topics")} className={`w-[32%] ${btnDark}`}>All Speaking</button>
-                  <button onClick={() => jump("testimonials")} className={`w-[32%] ${btnDark}`}>Next →</button>
+                <div className="flex gap-8">
+                  <button onClick={() => jump("formats")} className={`flex-1 ${btnDark}`}>← Prev</button>
+                  <button onClick={() => jump("topics")} className={`flex-1 ${btnDark}`}>All Speaking</button>
+                  <button onClick={() => jump("testimonials")} className={`flex-1 ${btnDark}`}>Next →</button>
                 </div>
               </div>
             </section>
 
-            {/* ===== Testimonials (MOBILE) — now populated ===== */}
+            {/* ===== Testimonials (MOBILE) — NOW POPULATED ===== */}
             <section id="testimonials" className="md:hidden mx-15">
               <hr className="border-t border-[var(--color-cream)]/22 mb-8 w-full" />
               <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Testimonials</p>
@@ -200,7 +174,7 @@ export default function SpeakingPage() {
               <div className="h-[2px] w-12 bg-[var(--color-gold)]/75 mb-8 rounded" />
 
               <div className="flex flex-col gap-6 max-w-[640px]">
-                {/* Programs quotes */}
+                {/* From Programs */}
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
                   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
@@ -216,9 +190,9 @@ export default function SpeakingPage() {
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
                   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-                    <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                    <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
-                    <span className="absolute right-24 bottom-5 text-4xl opacity-20 select-none">”</span>
+                    <span aria-hidden className="absolute right-24 bottom-5 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
                   <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
                     — <span className="text-[var(--color-gold)]">Audience member</span>, Society for Prevention Research Annual Meeting
@@ -229,15 +203,15 @@ export default function SpeakingPage() {
                   <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" aria-hidden />
                   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
-                    <p>Dr. Salerno blends data with human stories in a way that makes science resonate.</p>
+                    <p>Dr. Salerno has a way of blending data with human stories that makes science resonate.</p>
                     <span className="absolute right-14 bottom-5 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
                   <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-                    — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network International Conference
+                    — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
                   </figcaption>
                 </figure>
 
-                {/* Formats quotes */}
+                {/* From Formats */}
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
                   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
@@ -270,11 +244,11 @@ export default function SpeakingPage() {
                     <span className="absolute right-0 bottom-5 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
                   <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-                    — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network International Conference
+                    — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
                   </figcaption>
                 </figure>
 
-                {/* Results quotes */}
+                {/* From Results */}
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
                   <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
                   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
@@ -300,12 +274,12 @@ export default function SpeakingPage() {
                 </figure>
               </div>
 
-              {/* Footer nav — spread + arrows */}
+              {/* MOBILE footer nav — WIDE, SPREAD, NO WRAP */}
               <div className="md:hidden mt-10 px-6">
-                <div className="flex items-stretch justify-between gap-8">
-                  <button onClick={() => jump("results")} className={`w-[32%] ${btnDark}`}>← Prev</button>
-                  <button onClick={() => jump("topics")} className={`w-[32%] ${btnDark}`}>All Speaking</button>
-                  <button onClick={() => jump("programs")} className={`w-[32%] ${btnDark}`}>Next →</button>
+                <div className="flex gap-8">
+                  <button onClick={() => jump("results")} className={`flex-1 ${btnDark}`}>← Prev</button>
+                  <button onClick={() => jump("topics")} className={`flex-1 ${btnDark}`}>All Speaking</button>
+                  <button onClick={() => jump("programs")} className={`flex-1 ${btnDark}`}>Next →</button>
                 </div>
               </div>
             </section>
@@ -323,6 +297,7 @@ export default function SpeakingPage() {
         </div>
       </main>
 
+      {/* global crisp text + mobile emoji guard */}
       <style jsx global>{`
         @supports (-webkit-touch-callout: none) {
           html, body { background: var(--color-teal-850) !important; }
