@@ -69,11 +69,11 @@ const jump = (id, opts = {}) => {
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
               <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/30 to-black/45" />
               <div className="relative px-6">
-                <h1 className="font-serif text-5xl md:text-6xl opacity-95 md:drop-shadow-lg">
+                <h1 className="font-serif text-10xl md:text-6xl opacity-95 md:drop-shadow-lg">
                   Speaking
                 </h1>
                 <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 mb-3 rounded" />
-                <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto md:drop-shadow-md">
+                <p className="text-3xl md:text-xl opacity-90 max-w-3xl mx-auto md:drop-shadow-md">
                   Science-backed, story-driven talks that spark resilience,
                   growth, and lasting changes.
                 </p>
