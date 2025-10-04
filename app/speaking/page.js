@@ -232,7 +232,7 @@ const jump = (id, opts = {}) => {
 
           {/* ===== MAIN CONTENT ===== */}
           <div className="mx-auto max-w-[1400px] py-6 space-y-16 md:space-y-24" id="topics">
-            <hr className="border-t border-[var(--color-cream)]/22 mb-4 md:mb-8 w-full" />
+            <hr className="border-t border-[var(--color-cream)]/22 md:mb-8 w-full" />
 
             {/* Popular Topics (Programs) */}
             <section
@@ -388,8 +388,8 @@ const jump = (id, opts = {}) => {
             </section>
 
             {/* Programs footer buttons (mobile only) */}
-            <div className="md:hidden mt-3 mb-2 md:mt-8 md:mb-0 w-full">
-              <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-3">
+            <div className="md:hidden mt-8 w-full">
+              <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
                 <button
                   onClick={() => jump("intro")}
                   className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
@@ -535,8 +535,8 @@ const jump = (id, opts = {}) => {
             </section>
 
             {/* Formats footer buttons (mobile only) — AFTER the section */}
-            <div className="md:hidden mt-3 mb-2 md:mt-8 md:mb-0 w-full">
-              <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-3">
+            <div className="md:hidden mt-8 w-full">
+              <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
                 <button
                   onClick={() => jump("programs")}
                   className="inline-flex items-center justify-center w/full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
@@ -640,8 +640,8 @@ const jump = (id, opts = {}) => {
             </section>
 
             {/* Results footer buttons (mobile only) */}
-            <div className="md:hidden mt-3 mb-2 md:mt-8 md:mb-0 w-full">
-              <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-3">
+            <div className="md:hidden mt-8 w-full">
+              <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
                 <button
                   onClick={() => jump("formats")}
                   className="inline-flex items-center justify-center w/full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
@@ -789,8 +789,8 @@ const jump = (id, opts = {}) => {
 </section>
 
             {/* Testimonials footer buttons (mobile only) — moved OUTSIDE the section and centered */}
-            <div className="md:hidden mt-3 mb-2 md:mt-8 md:mb-0 w-full">
-              <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-3 px-6">
+            <div className="md:hidden mt-8 w-full">
+              <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4 px-6">
                 <button
                   onClick={() => jump("results")}
                   className="inline-flex items-center justify-center w/full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
