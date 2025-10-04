@@ -54,7 +54,7 @@ const jump = (id, opts = {}) => {
             landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
             overflow-visible
           `}
-        >
+        ></div>
 
         {/* ===== HERO VIDEO with overlay text ===== */}
         <section className="relative w-full">
@@ -97,6 +97,20 @@ const jump = (id, opts = {}) => {
           </div>
         </section>
 
+        {/* ===== Intro + Main (zoomed for mobile only) ===== */}
+        <div
+          style={{ "--z": 3.0, "--zoomL": 1.6 }}
+          className={`
+            zoomwrap
+            md:contents
+            origin-top
+            [transform:scale(var(--z))] [width:calc(100%/var(--z))]
+            mx-auto
+            md:[transform:none] md:[width:100%]
+            landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
+            overflow-visible
+          `}
+        >
           {/* ===== Intro Blurb ===== */}
           <section className="relative w-full py-16" id="intro">
             {/* subtle hairline divider from hero */}
