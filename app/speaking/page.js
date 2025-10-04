@@ -68,11 +68,13 @@ export default function SpeakingPage() {
 
 {/* ===== Intro + Main (zoomed for mobile only) ===== */}
 <div
-  style={{ '--z': 3.0, '--zoomL': 1.6 }}
+  style={{ "--z": 3.0, "--zoomL": 1.6 }}
   className={`
+    zoomwrap
+    md:contents
     origin-top mx-auto overflow-visible
     [transform:scale(var(--z))] [width:calc(100%/var(--z))]
-    md:[transform:none] md:[width:100%] md:contents
+    md:[transform:none] md:[width:100%]
     landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
   `}
 >
@@ -457,20 +459,74 @@ export default function SpeakingPage() {
         </div>
       </main>
 
-{/* Global safeguards and crisp text styles */}
+{/* Global safeguards + mobile crispness */}
 <style jsx global>{`
-  /* Prevent background peeking through on iOS Safari */
+  /* Prevent background peeking through on iOS Safari (kept) */
   @supports (-webkit-touch-callout: none) {
     html, body { background: var(--color-teal-850) !important; }
   }
 
-  /* Ensure crisp text inside zoomed containers */
-  .zoomwrap,
-  .zoomwrap * {
+  /* Make text a hair crisper inside scaled containers */
+  .zoomwrap, .zoomwrap * {
     -webkit-font-smoothing: antialiased;
     text-rendering: geometricPrecision;
   }
+
+  /* ===== MOBILE-ONLY CRISPNESS FIXES (≤767px) ===== */
+  @media (max-width: 767px) {
+    /* 1) Kill filters that force rasterization */
+    .zoomwrap .backdrop-blur-sm,
+    .zoomwrap .backdrop-blur {
+      -webkit-backdrop-filter: none !important;
+      backdrop-filter: none !important;
+    }
+    .zoomwrap .drop-shadow-sm,
+    .zoomwrap .drop-shadow-md,
+    .zoomwrap .drop-shadow-lg {
+      filter: none !important;
+    }
+
+    /* 2) Convert container opacity to text alpha so text isn't rasterized */
+    /* For common “dimmed” text spots */
+    .zoomwrap h1.opacity-95, .zoomwrap h2.opacity-95, .zoomwrap h3.opacity-95,
+    .zoomwrap h4.opacity-95, .zoomwrap h5.opacity-95, .zoomwrap h6.opacity-95,
+    .zoomwrap p.opacity-95, .zoomwrap li.opacity-95, .zoomwrap blockquote.opacity-95,
+    .zoomwrap figcaption.opacity-95 {
+      opacity: 1 !important;
+      color: rgba(255, 255, 255, 0.95) !important;
+    }
+
+    .zoomwrap h1.opacity-90, .zoomwrap h2.opacity-90, .zoomwrap h3.opacity-90,
+    .zoomwrap h4.opacity-90, .zoomwrap h5.opacity-90, .zoomwrap h6.opacity-90,
+    .zoomwrap p.opacity-90, .zoomwrap li.opacity-90, .zoomwrap blockquote.opacity-90,
+    .zoomwrap figcaption.opacity-90 {
+      opacity: 1 !important;
+      color: rgba(255, 255, 255, 0.90) !important;
+    }
+
+    .zoomwrap h1.opacity-85, .zoomwrap h2.opacity-85, .zoomwrap h3.opacity-85,
+    .zoomwrap h4.opacity-85, .zoomwrap h5.opacity-85, .zoomwrap h6.opacity-85,
+    .zoomwrap p.opacity-85, .zoomwrap li.opacity-85, .zoomwrap blockquote.opacity-85,
+    .zoomwrap figcaption.opacity-85 {
+      opacity: 1 !important;
+      color: rgba(255, 255, 255, 0.85) !important;
+    }
+
+    .zoomwrap h1.opacity-80, .zoomwrap h2.opacity-80, .zoomwrap h3.opacity-80,
+    .zoomwrap h4.opacity-80, .zoomwrap h5.opacity-80, .zoomwrap h6.opacity-80,
+    .zoomwrap p.opacity-80, .zoomwrap li.opacity-80, .zoomwrap blockquote.opacity-80,
+    .zoomwrap figcaption.opacity-80 {
+      opacity: 1 !important;
+      color: rgba(255, 255, 255, 0.80) !important;
+    }
+
+    .zoomwrap .opacity-70 {
+      opacity: 1 !important;
+      color: rgba(255, 255, 255, 0.70) !important;
+    }
+  }
 `}</style>
+
     </>
   );
 }
