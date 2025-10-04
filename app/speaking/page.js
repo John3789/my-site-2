@@ -640,7 +640,7 @@ const jump = (id, opts = {}) => {
             </section>
 
             {/* Results footer buttons (mobile only) */}
-            <div className="md:hidden mt-16 w-full">
+            <div className="md:hidden mt-1 w-full">
               <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
                 <button
                   onClick={() => jump("formats")}
