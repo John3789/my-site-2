@@ -101,7 +101,7 @@ const jump = (id, opts = {}) => {
             {/* subtle hairline divider from hero */}
             <div className="absolute inset-x-0 top-0 h-px bg-[var(--color-cream)]/15" />
             <div className="mx-auto max-w-[1000px] px-6 text-left space-y-8">
-              <h2 className="font-serif text-xl md:text-4xl opacity-90 text-center font-semibold tracking-wide">
+              <h2 className="font-serif text-2xl md:text-4xl opacity-90 text-center font-semibold tracking-wide">
                 &ldquo;Engaging. Inspiring. Transformational.&rdquo;
               </h2>
 
