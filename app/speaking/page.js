@@ -70,12 +70,13 @@ export default function SpeakingPage() {
 <div
   style={{ "--z": 3.0, "--zoomL": 1.6 }}
   className={`
-    zoomwrap
     md:contents
-    origin-top mx-auto overflow-visible
+    origin-top
     [transform:scale(var(--z))] [width:calc(100%/var(--z))]
+    mx-auto
     md:[transform:none] md:[width:100%]
     landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
+    overflow-visible
   `}
 >
           {/* ===== Intro Blurb ===== */}
@@ -224,7 +225,7 @@ export default function SpeakingPage() {
 
               {/* Quotes (left column) */}
               <div className="lg:col-span-7 ml-auto flex flex-col gap-6 max-w-[640px]">
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 ring-1 ring-white/10 shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
                   {/* Decorative quotes (no normal quotes in text) */}
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
@@ -237,7 +238,7 @@ export default function SpeakingPage() {
                   </figcaption>
                 </figure>
 
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 ring-1 ring-white/10 shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
                     <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
@@ -249,7 +250,7 @@ export default function SpeakingPage() {
                   </figcaption>
                 </figure>
 
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 ring-1 ring-white/10 shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
                     <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
@@ -268,7 +269,7 @@ export default function SpeakingPage() {
             <section className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 lg:gap-x-0 mx-15 items-center">
               {/* Quotes (RIGHT column) */}
               <div className="lg:col-span-7 flex flex-col gap-6 max-w-[640px] lg:pr-6">
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 ring-1 ring-white/10 shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
                     <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
@@ -280,7 +281,7 @@ export default function SpeakingPage() {
                   </figcaption>
                 </figure>
 
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 ring-1 ring-white/10 shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
                     <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
@@ -292,7 +293,7 @@ export default function SpeakingPage() {
                   </figcaption>
                 </figure>
 
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 ring-1 ring-white/10 shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
                     <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
@@ -420,7 +421,7 @@ export default function SpeakingPage() {
 
               {/* Quotes (right column, Outcomes) */}
               <div className="lg:col-span-7 ml-auto flex flex-col gap-6 max-w-[640px]">
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 ring-1 ring-white/10 shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
                     <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
@@ -432,7 +433,7 @@ export default function SpeakingPage() {
                   </figcaption>
                 </figure>
 
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 ring-1 ring-white/10 shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
                     <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
