@@ -412,7 +412,7 @@ const jump = (id, opts = {}) => {
             </div>
 
             {/* Dr. Salerno Offers (Formats) */}
-            <hr className="border-t border-[var(--color-cream)]/22 mb-8 w-full" />
+            <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 w-full" />
             <section
               id="formats"
               className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 lg:gap-x-0 mx-15 items-center"
@@ -559,7 +559,7 @@ const jump = (id, opts = {}) => {
             </div>
 
             {/* Outcomes (Results) */}
-            <hr className="border-t border-[var(--color-cream)]/22 mb-8 w-full" />
+            <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 w-full" />
             <section
               id="results"
               className="grid grid-cols-1 lg:grid-cols-12 gap-12 mx-15 items-start gap-y-12"
