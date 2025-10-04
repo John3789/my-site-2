@@ -236,27 +236,29 @@ export default function ResourcesPage() {
             </div>
           </div>
 
-{/* Mobile nav — simplest, blur-safe chip list */}
-<div className="md:hidden mt-4 grid grid-cols-3 gap-2">
-  {THEMES.map((t) => {
-    const active = currentId === t.slug;
-    return (
-      <button
-        key={t.slug}
-        onClick={() => handleJump(t.slug)}
-        aria-current={active ? "true" : "false"}
-        className={[
-          "w-full rounded-full px-2 py-1.5 text-[11px] font-semibold tracking-wide truncate",
-          active
-            ? "bg-[var(--color-gold)] text-black"
-            : "bg-[var(--color-teal-800)] text-[var(--color-cream)] border border-white/12"
-        ].join(" ")}
-      >
-        {t.title}
-      </button>
-    );
-  })}
+<div className="md:hidden pt-3 border-t border-[var(--color-cream)]/12 mt-4">
+  <div className="mt-3 flex flex-wrap gap-2 portrait:[&>button]:text-[11px] portrait:[&>button]:px-2">
+    {THEMES.map((t) => {
+      const active = currentId === t.slug;
+      return (
+        <button
+          key={t.slug}
+          onClick={() => handleJump(t.slug)}
+          aria-current={active ? "true" : "false"}
+          className={[
+            "whitespace-nowrap rounded-full px-3.5 py-1.5 text-[12px] font-semibold tracking-wide",
+            active
+              ? "bg-[var(--color-gold)] text-black"
+              : "bg-[var(--color-teal-800)] text-[var(--color-cream)] border border-white/12"
+          ].join(" ")}
+        >
+          {t.title}
+        </button>
+      );
+    })}
+  </div>
 </div>
+
 
 {/* 3) ZOOM WRAPPER — Sections ONLY */}
 <div
