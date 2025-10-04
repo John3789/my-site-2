@@ -129,7 +129,7 @@ export default function ResourcesPage() {
   /* ========= Sticky subnav with fades & chevrons (desktop only) ========= */
   const Nav = useMemo(() => {
     return (
-      <div className="sticky top-[64px] z-30 -mx-6 border-b border-white/10 bg-[var(--color-teal-850)] md:bg-[var(--color-teal-850)]/80">
+      <div className="sticky top-[64px] z-30 -mx-6 border-b border-white/10">
         <div className="relative mx-auto max-w-[1200px] px-6 py-3">
           {/* Scroll container */}
           <div
