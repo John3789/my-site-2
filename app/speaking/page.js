@@ -99,7 +99,7 @@ const jump = (id, opts = {}) => {
             </video>
 
             {/* Overlay headline + subheadline + vignette */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
+            <div className="hero-overlay absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
               <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/30 to-black/45" />
               <div className="relative px-6 s-hero">
   <h1 className="hero-title font-serif opacity-95 md:drop-shadow-lg md:text-6xl">
@@ -853,6 +853,20 @@ body:has([data-page="speaking"]) [data-component="footer"] {
   [data-page="speaking"] .s-hero .hero-hr {
     width: clamp(96px, 22vw, 128px) !important;
     height: 3px !important;
+  }
+}
+  /* SPEAKING — move hero text lower on MOBILE only */
+@media (max-width: 767px) and (orientation: portrait) {
+  [data-page="speaking"] .hero-overlay {
+    justify-content: flex-end;                 /* drop to bottom of video */
+    padding-bottom: calc(18vh + env(safe-area-inset-bottom, 0px)); /* keep your face clear + respect iPhone home bar */
+  }
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+  [data-page="speaking"] .hero-overlay {
+    justify-content: flex-end;
+    padding-bottom: 10vh;                      /* a bit less in landscape */
   }
 }
 
