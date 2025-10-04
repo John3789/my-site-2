@@ -129,28 +129,28 @@ export default function SpeakingPage() {
                 <div className="grid grid-cols-2 landscape:grid-cols-3 gap-2">
                   <button
                     onClick={() => jump("programs")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10"
+                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="Jump to Programs"
                   >
                     Programs
                   </button>
                   <button
                     onClick={() => jump("formats")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10"
+                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="Jump to Formats"
                   >
                     Formats
                   </button>
                   <button
                     onClick={() => jump("results")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10"
+                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="Jump to Results"
                   >
                     Results
                   </button>
                   <button
                     onClick={() => jump("testimonials")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10"
+                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="Jump to Testimonials"
                   >
                     Testimonials
@@ -295,7 +295,7 @@ export default function SpeakingPage() {
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
-                    <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                    <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
                     <span className="absolute right-24 bottom-5 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
@@ -305,7 +305,7 @@ export default function SpeakingPage() {
                 </figure>
 
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
-                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+                  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>Dr. Salerno has a way of blending data with human stories that makes science resonate.</p>
@@ -322,21 +322,21 @@ export default function SpeakingPage() {
                 <div className="grid grid-cols-3 gap-2">
                   <button
                     onClick={() => jump("intro")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10"
+                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="Previous section"
                   >
                     Previous
                   </button>
                   <button
                     onClick={() => jump("topics")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10"
+                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="All Speaking"
                   >
                     All Speaking
                   </button>
                   <button
                     onClick={() => jump("formats")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10"
+                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="Next section"
                   >
                     Next
@@ -472,21 +472,21 @@ export default function SpeakingPage() {
                 <div className="grid grid-cols-3 gap-2">
                   <button
                     onClick={() => jump("programs")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10"
+                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="Previous section"
                   >
                     Previous
                   </button>
                   <button
                     onClick={() => jump("topics")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10"
+                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="All Speaking"
                   >
                     All Speaking
                   </button>
                   <button
                     onClick={() => jump("results")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10"
+                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="Next section"
                   >
                     Next
@@ -580,21 +580,21 @@ export default function SpeakingPage() {
                 <div className="grid grid-cols-3 gap-2">
                   <button
                     onClick={() => jump("formats")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10"
+                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="Previous section"
                   >
                     Previous
                   </button>
                   <button
                     onClick={() => jump("topics")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10"
+                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="All Speaking"
                   >
                     All Speaking
                   </button>
                   <button
                     onClick={() => jump("testimonials")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10"
+                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="Next section"
                   >
                     Next
@@ -629,7 +629,7 @@ export default function SpeakingPage() {
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
                   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-                    <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                    <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
                     <span className="absolute right-24 bottom-5 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
@@ -718,21 +718,21 @@ export default function SpeakingPage() {
                 <div className="grid grid-cols-3 gap-2">
                   <button
                     onClick={() => jump("results")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10"
+                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="Previous section"
                   >
                     Previous
                   </button>
                   <button
                     onClick={() => jump("topics")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10"
+                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="All Speaking"
                   >
                     All Speaking
                   </button>
                   <button
                     onClick={() => jump("programs")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10"
+                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="Next section"
                   >
                     Next
