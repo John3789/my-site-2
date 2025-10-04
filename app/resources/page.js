@@ -242,6 +242,11 @@ export default function ResourcesPage() {
             </div>
           </div>
 
+        {/* Desktop sticky sub-nav (kept OUTSIDE the zoom, transparent so no tint) */}
+        <div className="hidden md:block">
+  {Nav}
+</div>
+
 {/* Mobile nav — simplest, blur-safe chip list */}
 <div className="md:hidden mt-4 grid grid-cols-3 gap-2">
   {THEMES.map((t) => {
@@ -392,10 +397,6 @@ className={[
           </section>
         </div>
 
-        {/* Desktop sticky sub-nav (kept OUTSIDE the zoom, transparent so no tint) */}
-        <div className="hidden md:block">
-  {Nav}
-</div>
       </main>
 
       {/* Hide horizontal scrollbar for the sticky nav (keeps scroll gesture) */}
