@@ -142,23 +142,23 @@ export default function SpeakingPage() {
                     </h3>
                     <ul className="text-lg opacity-90 space-y-3">
                       <li className="flex gap-2">
-                        <span className="text-[var(--color-gold)]">✔</span>
+                        <span className="text-[var(--color-gold)]">✔︎</span>
                         <span>Transforming Your Mindset to Achieve Your Goals</span>
                       </li>
                       <li className="flex gap-2">
-                        <span className="text-[var(--color-gold)]">✔</span>
+                        <span className="text-[var(--color-gold)]">✔︎</span>
                         <span>Strengthening Personal and Professional Resilience</span>
                       </li>
                       <li className="flex gap-2">
-                        <span className="text-[var(--color-gold)]">✔</span>
+                        <span className="text-[var(--color-gold)]">✔︎</span>
                         <span>Overcoming Imposter Syndrome and Unlocking Self-Confidence</span>
                       </li>
                       <li className="flex gap-2">
-                        <span className="text-[var(--color-gold)]">✔</span>
+                        <span className="text-[var(--color-gold)]">✔︎</span>
                         <span>Using Visualization and Affirmations to Achieve Your Goals</span>
                       </li>
                       <li className="flex gap-2">
-                        <span className="text-[var(--color-gold)]">✔</span>
+                        <span className="text-[var(--color-gold)]">✔︎</span>
                         <span>Practicing Meditation to Level-Up Your Life</span>
                       </li>
                     </ul>
@@ -171,23 +171,23 @@ export default function SpeakingPage() {
                     </h3>
                     <ul className="text-lg opacity-90 space-y-3">
                       <li className="flex gap-2">
-                        <span className="text-[var(--color-gold)]">✔</span>
+                        <span className="text-[var(--color-gold)]">✔︎</span>
                         <span>Everyday Strategies to Improve Mental Health</span>
                       </li>
                       <li className="flex gap-2">
-                        <span className="text-[var(--color-gold)]">✔</span>
+                        <span className="text-[var(--color-gold)]">✔︎</span>
                         <span>Work-Life Balance: Tools for Success and Fulfillment</span>
                       </li>
                       <li className="flex gap-2">
-                        <span className="text-[var(--color-gold)]">✔</span>
+                        <span className="text-[var(--color-gold)]">✔︎</span>
                         <span>Science-Backed Practices for Stress Reduction</span>
                       </li>
                       <li className="flex gap-2">
-                        <span className="text-[var(--color-gold)]">✔</span>
+                        <span className="text-[var(--color-gold)]">✔︎</span>
                         <span>Burnout Prevention and Recovery: Protect Your Health</span>
                       </li>
                       <li className="flex gap-2">
-                        <span className="text-[var(--color-gold)]">✔</span>
+                        <span className="text-[var(--color-gold)]">✔︎</span>
                         <span>Gratitude, Self-Compassion, and Altruism for Wellbeing</span>
                       </li>
                     </ul>
@@ -200,23 +200,23 @@ export default function SpeakingPage() {
                     </h3>
                     <ul className="text-lg opacity-90 space-y-3">
                       <li className="flex gap-2">
-                        <span className="text-[var(--color-gold)]">✔</span>
+                        <span className="text-[var(--color-gold)]">✔︎</span>
                         <span>Harnessing Motivation &amp; Emotional Intelligence for Success</span>
                       </li>
                       <li className="flex gap-2">
-                        <span className="text-[var(--color-gold)]">✔</span>
+                        <span className="text-[var(--color-gold)]">✔︎</span>
                         <span>Unlocking Creativity and Flow States for Excellence</span>
                       </li>
                       <li className="flex gap-2">
-                        <span className="text-[var(--color-gold)]">✔</span>
+                        <span className="text-[var(--color-gold)]">✔︎</span>
                         <span>Energy Management for Peak Performance</span>
                       </li>
                       <li className="flex gap-2">
-                        <span className="text-[var(--color-gold)]">✔</span>
+                        <span className="text-[var(--color-gold)]">✔︎</span>
                         <span>The Power of Micro-Habits for Lasting Growth</span>
                       </li>
                       <li className="flex gap-2">
-                        <span className="text-[var(--color-gold)]">✔</span>
+                        <span className="text-[var(--color-gold)]">✔︎</span>
                         <span>Building Grit and Perseverance for Long-Term Goals</span>
                       </li>
                     </ul>
@@ -393,19 +393,19 @@ export default function SpeakingPage() {
                 </p>
                 <ul className="text-lg opacity-90 space-y-3">
                   <li className="flex gap-2">
-                    <span className="text-[var(--color-gold)]">✔</span>
+                    <span className="text-[var(--color-gold)]">✔︎</span>
                     <span>Building resilient habits</span>
                   </li>
                   <li className="flex gap-2">
-                    <span className="text-[var(--color-gold)]">✔</span>
+                    <span className="text-[var(--color-gold)]">✔︎</span>
                     <span>Regulating stress effectively</span>
                   </li>
                   <li className="flex gap-2">
-                    <span className="text-[var(--color-gold)]">✔</span>
+                    <span className="text-[var(--color-gold)]">✔︎</span>
                     <span>Deepening focus through meditation</span>
                   </li>
                   <li className="flex gap-2">
-                    <span className="text-[var(--color-gold)]">✔</span>
+                    <span className="text-[var(--color-gold)]">✔︎</span>
                     <span>Strengthening relationships and connection</span>
                   </li>
                   <li className="flex gap-2">
