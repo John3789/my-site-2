@@ -140,7 +140,7 @@ export default function SpeakingPage() {
                     <h3 className="font-serif text-2xl mb-2">
                       <span className="text-[var(--color-gold)]">Leveling-Up Mindset &amp; Growth</span>
                     </h3>
-                    <ul className="text-lg opacity-90 space-y-3">
+                    <ul className="text-lg md:opacity-90 space-y-3">
                       <li className="flex gap-2">
                         <span className="text-[var(--color-gold)]">✔</span>
                         <span>Transforming Your Mindset to Achieve Your Goals</span>
@@ -169,7 +169,7 @@ export default function SpeakingPage() {
                     <h3 className="font-serif text-2xl mb-2">
                       <span className="text-[var(--color-gold)]">Strengthening Mental Health &amp; Wellbeing</span>
                     </h3>
-                    <ul className="text-lg opacity-90 space-y-3">
+                    <ul className="text-lg md:opacity-90 space-y-3">
                       <li className="flex gap-2">
                         <span className="text-[var(--color-gold)]">✔</span>
                         <span>Everyday Strategies to Improve Mental Health</span>
@@ -198,7 +198,7 @@ export default function SpeakingPage() {
                     <h3 className="font-serif text-2xl mb-2">
                       <span className="text-[var(--color-gold)]">Boosting Performance &amp; Potential</span>
                     </h3>
-                    <ul className="text-lg opacity-90 space-y-3">
+                    <ul className="text-lg md:opacity-90 space-y-3">
                       <li className="flex gap-2">
                         <span className="text-[var(--color-gold)]">✔</span>
                         <span>Harnessing Motivation &amp; Emotional Intelligence for Success</span>
