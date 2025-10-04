@@ -66,17 +66,14 @@ export default function SpeakingPage() {
           </div>
         </section>
 
-        {/* ===== Intro + Main (zoomed for mobile) ===== */}
-          <div
-  style={{ '--z': 3.0, '--zoomL': 1.60 }}
+{/* ===== Intro + Main (zoomed for mobile only) ===== */}
+<div
+  style={{ '--z': 3.0, '--zoomL': 1.6 }}
   className={`
-    md:contents
-    origin-top
+    origin-top mx-auto overflow-visible
     [transform:scale(var(--z))] [width:calc(100%/var(--z))]
-    mx-auto
-    md:[transform:none] md:[width:100%]
+    md:[transform:none] md:[width:100%] md:contents
     landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
-    overflow-visible
   `}
 >
           {/* ===== Intro Blurb ===== */}
@@ -460,12 +457,20 @@ export default function SpeakingPage() {
         </div>
       </main>
 
-      {/* Global safeguard so the page background never peeks through on mobile */}
-      <style jsx global>{`
-        @supports (-webkit-touch-callout: none) {
-          html, body { background: var(--color-teal-850) !important; }
-        }
-      `}</style>
+{/* Global safeguards and crisp text styles */}
+<style jsx global>{`
+  /* Prevent background peeking through on iOS Safari */
+  @supports (-webkit-touch-callout: none) {
+    html, body { background: var(--color-teal-850) !important; }
+  }
+
+  /* Ensure crisp text inside zoomed containers */
+  .zoomwrap,
+  .zoomwrap * {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: geometricPrecision;
+  }
+`}</style>
     </>
   );
 }
