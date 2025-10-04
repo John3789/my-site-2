@@ -101,7 +101,7 @@ const jump = (id, opts = {}) => {
             {/* Overlay headline + subheadline + vignette */}
             <div className="hero-overlay absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
               <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/30 to-black/45" />
-              <div className="relative px-6 s-hero">
+              <div className="s-hero absolute left-1/2 top-[78%] -translate-x-1/2 -translate-y-1/2 px-6 md:static md:inset-auto md:transform-none landscape:top-[72%]">
   <h1 className="hero-title font-serif opacity-95 md:drop-shadow-lg md:text-6xl">
     Speaking
   </h1>
@@ -853,20 +853,6 @@ body:has([data-page="speaking"]) [data-component="footer"] {
   [data-page="speaking"] .s-hero .hero-hr {
     width: clamp(96px, 22vw, 128px) !important;
     height: 3px !important;
-  }
-}
-/* SPEAKING — move hero text lower on MOBILE only */
-@media (max-width: 767px) and (orientation: portrait) {
-  [data-page="speaking"] .hero-overlay {
-    justify-content: flex-end !important;
-    padding-bottom: 22vh !important;   /* tweak: 18–28vh */
-  }
-}
-
-@media (max-width: 767px) and (orientation: landscape) {
-  [data-page="speaking"] .hero-overlay {
-    justify-content: flex-end !important;
-    padding-bottom: 12vh !important;   /* tweak: 8–16vh */
   }
 }
 
