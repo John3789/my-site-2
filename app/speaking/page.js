@@ -70,7 +70,7 @@ export default function SpeakingPage() {
 <div
   style={{ "--z": 3.0, "--zoomL": 1.6 }}
   className={`
-    speaking-mobile
+    zoomwrap
     md:contents
     origin-top mx-auto overflow-visible
     [transform:scale(var(--z))] [width:calc(100%/var(--z))]
@@ -78,7 +78,6 @@ export default function SpeakingPage() {
     landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
   `}
 >
-
           {/* ===== Intro Blurb ===== */}
           <section className="relative w-full py-16">
             {/* subtle hairline divider from hero */}
@@ -460,43 +459,20 @@ export default function SpeakingPage() {
         </div>
       </main>
 
+{/* Global safeguards and crisp text styles */}
 <style jsx global>{`
-  /* iOS background peek fix (keep) */
+  /* Prevent background peeking through on iOS Safari */
   @supports (-webkit-touch-callout: none) {
     html, body { background: var(--color-teal-850) !important; }
   }
 
-  /* ===== Speaking page: mobile crisp + scale (≤767px) ===== */
-  @media (max-width: 767px) {
-    /* Keep transform off on mobile so text stays razor sharp */
-    .speaking-mobile {
-      transform: none !important;
-      width: 100% !important;
-    }
-
-    /* Upscale common Tailwind text sizes used on this page */
-    .speaking-mobile .text-sm { font-size: 1rem !important; line-height: 1.6 !important; }        /* 16px */
-    .speaking-mobile .text-base { font-size: 1.125rem !important; line-height: 1.7 !important; }  /* 18px */
-    .speaking-mobile .text-lg,
-    .speaking-mobile p { font-size: 1.25rem !important; line-height: 1.85 !important; }           /* 20px */
-    .speaking-mobile .text-xl { font-size: 1.5rem !important; line-height: 1.35 !important; }     /* 24px */
-    .speaking-mobile .text-2xl { font-size: 1.75rem !important; line-height: 1.28 !important; }   /* 28px */
-    .speaking-mobile .text-3xl { font-size: 2rem !important; line-height: 1.22 !important; }      /* 32px */
-    .speaking-mobile .text-4xl { font-size: 2.5rem !important; line-height: 1.16 !important; }    /* 40px */
-    .speaking-mobile .text-5xl { font-size: 3rem !important; line-height: 1.1 !important; }       /* 48px */
-
-    /* Keep quotes crisp (avoid rasterization triggers) */
-    .speaking-mobile .backdrop-blur,
-    .speaking-mobile .backdrop-blur-sm {
-      -webkit-backdrop-filter: none !important;
-      backdrop-filter: none !important;
-    }
-    .speaking-mobile .drop-shadow-sm,
-    .speaking-mobile .drop-shadow-md,
-    .speaking-mobile .drop-shadow-lg { filter: none !important; }
+  /* Ensure crisp text inside zoomed containers */
+  .zoomwrap,
+  .zoomwrap * {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: geometricPrecision;
   }
 `}</style>
-
     </>
   );
 }
