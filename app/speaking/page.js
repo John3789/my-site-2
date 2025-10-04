@@ -70,13 +70,14 @@ export default function SpeakingPage() {
 <div
   style={{ "--z": 3.0, "--zoomL": 1.6 }}
   className={`
+    zoomwrap
     md:contents
-    isolate will-change-transform [backface-visibility:hidden]
-    origin-top mx-auto overflow-visible
-    bg-[var(--color-teal-850)]
-    [transform:translateZ(0)_scale(var(--z))] [width:calc(100%/var(--z))]
+    origin-top
+    [transform:scale(var(--z))] [width:calc(100%/var(--z))]
+    mx-auto
     md:[transform:none] md:[width:100%]
-    landscape:[transform:translateZ(0)_scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
+    landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
+    overflow-visible
   `}
 >
           {/* ===== Intro Blurb ===== */}
@@ -451,7 +452,7 @@ export default function SpeakingPage() {
             <div className="flex justify-center">
               <a
                 href="/contact"
-                className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs md:w-auto md:max-w-none"
+                className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs md:w-auto md:max-w-none"
               >
                 Book Dr. Salerno to Speak
               </a>
