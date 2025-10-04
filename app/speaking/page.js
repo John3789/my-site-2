@@ -232,7 +232,7 @@ const jump = (id, opts = {}) => {
 
           {/* ===== MAIN CONTENT ===== */}
           <div className="mx-auto max-w-[1400px] py-6 space-y-16 md:space-y-24" id="topics">
-            <hr className="border-t border-[var(--color-cream)]/22 mb-8 w-full" />
+            <hr className="border-t border-[var(--color-cream)]/22 mb-4 md:mb-8 w-full" />
 
             {/* Popular Topics (Programs) */}
             <section
