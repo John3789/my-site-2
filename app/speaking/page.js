@@ -664,8 +664,9 @@ const jump = (id, opts = {}) => {
             </div>
 
             {/* ===== Testimonials (mobile-only; now collapsible) ===== */}
+{/* Full-bleed divider above Testimonials (mobile only) */}
+<hr className="md:hidden w-screen relative left-1/2 -translate-x-1/2 border-t border-[var(--color-cream)]/22 mb-6" />
 <section id="testimonials" className="md:hidden mx-15">
-  <hr className="border-t border-[var(--color-cream)]/22 mb-8 w-full" />
   <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">
     Testimonials
   </p>
