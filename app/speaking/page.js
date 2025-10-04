@@ -483,7 +483,7 @@ export default function SpeakingPage() {
     -webkit-text-fill-color: transparent !important;
   }
   .zoomwrap ul.text-lg li > span:first-child::before {
-    content: "✓"; /* literal checkmark character */
+    content: "✔"; /* literal checkmark character */
     display: inline-block;
     font-weight: 700;
     line-height: 1;
