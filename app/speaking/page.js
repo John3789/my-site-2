@@ -535,7 +535,7 @@ const jump = (id, opts = {}) => {
             </section>
 
             {/* Formats footer buttons (mobile only) — AFTER the section */}
-            <div className="md:hidden mt-8 w-full">
+            <div className="md:hidden mt-8 pb-5 w-full">
               <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
                 <button
                   onClick={() => jump("programs")}
