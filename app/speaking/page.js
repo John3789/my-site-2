@@ -824,11 +824,6 @@ body:has([data-page="speaking"]) [data-component="footer"] {
 }
   /* SPEAKING — mobile PORTRAIT: keep subheadline to ~2 lines without shrinking */
 @media (max-width: 767px) and (orientation: portrait) {
-  [data-page="speaking"] .s-hero {
-    /* a touch less side padding so the line has more room */
-    padding-left: 0.75rem;  /* ≈ px-3 */
-    padding-right: 0.75rem;
-  }
   [data-page="speaking"] .s-hero .hero-sub {
     /* widen line length enough for ~2 lines */
     max-width: min(94vw, 60ch);
