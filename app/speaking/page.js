@@ -25,22 +25,6 @@ export default function SpeakingPage() {
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  // Reusable class for mobile buttons (Resources look, teal-800)
-  const mBtn =
-    "inline-flex items-center justify-center w-full whitespace-nowrap " +
-    "rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] " +
-    "px-5 py-2.5 text-[13px] font-semibold tracking-wide transition " +
-    "hover:bg-teal-700 active:translate-y-[1px]";
-
-  // Reusable row wrapper: fixed width so size doesn't change in landscape
-  const NavRow = ({ children }) => (
-    <div className="md:hidden mt-8 w-full">
-      <div className="mx-auto max-w-[460px] grid grid-cols-[1fr,1.25fr,1fr] gap-3">
-        {children}
-      </div>
-    </div>
-  );
-
   return (
     <>
       <main className="relative isolate min-h-screen w-full bg-[var(--color-teal-850)]">
@@ -92,15 +76,15 @@ export default function SpeakingPage() {
         <div
           style={{ "--z": 3.0, "--zoomL": 1.6 }}
           className={`
-    zoomwrap
-    md:contents
-    origin-top
-    [transform:scale(var(--z))] [width:calc(100%/var(--z))]
-    mx-auto
-    md:[transform:none] md:[width:100%]
-    landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
-    overflow-visible
-  `}
+            zoomwrap
+            md:contents
+            origin-top
+            [transform:scale(var(--z))] [width:calc(100%/var(--z))]
+            mx-auto
+            md:[transform:none] md:[width:100%]
+            landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
+            overflow-visible
+          `}
         >
           {/* ===== Intro Blurb ===== */}
           <section className="relative w-full py-16" id="intro">
@@ -140,19 +124,35 @@ export default function SpeakingPage() {
                 </p>
               </div>
 
-              {/* ---- MOBILE-ONLY quick nav (Resources styling; teal-800) ---- */}
-              <div className="md:hidden mt-6" id="quicknav">
-                <div className="mx-auto max-w-[460px] grid grid-cols-2 gap-3">
-                  <button onClick={() => jump("programs")} className={mBtn} aria-label="Jump to Programs">
+              {/* ---- MOBILE-ONLY quick nav (exact Resources pill styling) ---- */}
+              <div id="quicknav" className="md:hidden mt-6">
+                <div className="grid grid-cols-2 landscape:grid-cols-3 gap-2">
+                  <button
+                    onClick={() => jump("programs")}
+                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10"
+                    aria-label="Jump to Programs"
+                  >
                     Programs
                   </button>
-                  <button onClick={() => jump("formats")} className={mBtn} aria-label="Jump to Formats">
+                  <button
+                    onClick={() => jump("formats")}
+                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10"
+                    aria-label="Jump to Formats"
+                  >
                     Formats
                   </button>
-                  <button onClick={() => jump("results")} className={mBtn} aria-label="Jump to Results">
+                  <button
+                    onClick={() => jump("results")}
+                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10"
+                    aria-label="Jump to Results"
+                  >
                     Results
                   </button>
-                  <button onClick={() => jump("testimonials")} className={mBtn} aria-label="Jump to Testimonials">
+                  <button
+                    onClick={() => jump("testimonials")}
+                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10"
+                    aria-label="Jump to Testimonials"
+                  >
                     Testimonials
                   </button>
                 </div>
@@ -171,47 +171,104 @@ export default function SpeakingPage() {
               className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mx-15 gap-y-12"
             >
               <div className="lg:col-span-5 lg:py-6">
-                <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Programs</p>
+                {/* Overline (slightly dimmer) */}
+                <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">
+                  Programs
+                </p>
                 <h2 className="font-serif text-4xl mb-2">Popular Topics</h2>
                 <div className="h-[2px] w-12 bg-[var(--color-gold)]/75 mb-8 rounded" />
 
                 <div className="space-y-10">
+                  {/* Leveling-Up Your Mindset & Growth */}
                   <div>
                     <h3 className="font-serif text-2xl mb-2">
-                      <span className="text-[var(--color-gold)]">Leveling-Up Mindset &amp; Growth</span>
+                      <span className="text-[var(--color-gold)]">
+                        Leveling-Up Mindset &amp; Growth
+                      </span>
                     </h3>
                     <ul className="text-lg opacity-90 space-y-3">
-                      <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>Transforming Your Mindset to Achieve Your Goals</span></li>
-                      <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>Strengthening Personal and Professional Resilience</span></li>
-                      <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>Overcoming Imposter Syndrome and Unlocking Self-Confidence</span></li>
-                      <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>Using Visualization and Affirmations to Achieve Your Goals</span></li>
-                      <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>Practicing Meditation to Level-Up Your Life</span></li>
+                      <li className="flex gap-2">
+                        <span className="text-[var(--color-gold)]">✔︎</span>
+                        <span>Transforming Your Mindset to Achieve Your Goals</span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="text-[var(--color-gold)]">✔︎</span>
+                        <span>Strengthening Personal and Professional Resilience</span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="text-[var(--color-gold)]">✔︎</span>
+                        <span>Overcoming Imposter Syndrome and Unlocking Self-Confidence</span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="text-[var(--color-gold)]">✔︎</span>
+                        <span>Using Visualization and Affirmations to Achieve Your Goals</span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="text-[var(--color-gold)]">✔︎</span>
+                        <span>Practicing Meditation to Level-Up Your Life</span>
+                      </li>
                     </ul>
                   </div>
 
+                  {/* Strengthening Mental Health and Wellbeing */}
                   <div>
                     <h3 className="font-serif text-2xl mb-2">
-                      <span className="text-[var(--color-gold)]">Strengthening Mental Health &amp; Wellbeing</span>
+                      <span className="text-[var(--color-gold)]">
+                        Strengthening Mental Health &amp; Wellbeing
+                      </span>
                     </h3>
                     <ul className="text-lg opacity-90 space-y-3">
-                      <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>Everyday Strategies to Improve Mental Health</span></li>
-                      <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>Work-Life Balance: Tools for Success and Fulfillment</span></li>
-                      <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>Science-Backed Practices for Stress Reduction</span></li>
-                      <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>Burnout Prevention and Recovery: Protect Your Health</span></li>
-                      <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>Gratitude, Self-Compassion, and Altruism for Wellbeing</span></li>
+                      <li className="flex gap-2">
+                        <span className="text-[var(--color-gold)]">✔︎</span>
+                        <span>Everyday Strategies to Improve Mental Health</span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="text-[var(--color-gold)]">✔︎</span>
+                        <span>Work-Life Balance: Tools for Success and Fulfillment</span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="text-[var(--color-gold)]">✔︎</span>
+                        <span>Science-Backed Practices for Stress Reduction</span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="text-[var(--color-gold)]">✔︎</span>
+                        <span>Burnout Prevention and Recovery: Protect Your Health</span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="text-[var(--color-gold)]">✔︎</span>
+                        <span>Gratitude, Self-Compassion, and Altruism for Wellbeing</span>
+                      </li>
                     </ul>
                   </div>
 
+                  {/* Performance & Potential */}
                   <div>
                     <h3 className="font-serif text-2xl mb-2">
-                      <span className="text-[var(--color-gold)]">Boosting Performance &amp; Potential</span>
+                      <span className="text-[var(--color-gold)]">
+                        Boosting Performance &amp; Potential
+                      </span>
                     </h3>
                     <ul className="text-lg opacity-90 space-y-3">
-                      <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>Harnessing Motivation &amp; Emotional Intelligence for Success</span></li>
-                      <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>Unlocking Creativity and Flow States for Excellence</span></li>
-                      <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>Energy Management for Peak Performance</span></li>
-                      <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>The Power of Micro-Habits for Lasting Growth</span></li>
-                      <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>Building Grit and Perseverance for Long-Term Goals</span></li>
+                      <li className="flex gap-2">
+                        <span className="text-[var(--color-gold)]">✔︎</span>
+                        <span>Harnessing Motivation &amp; Emotional Intelligence for Success</span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="text-[var(--color-gold)]">✔︎</span>
+                        <span>Unlocking Creativity and Flow States for Excellence</span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="text-[var(--color-gold)]">✔︎</span>
+                        <span>Energy Management for Peak Performance</span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="text-[var(--color-gold)]">✔︎</span>
+                        <span>The Power of Micro-Habits for Lasting Growth</span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="text-[var(--color-gold)]">✔︎</span>
+                        <span>Building Grit and Perseverance for Long-Term Goals</span>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -221,42 +278,69 @@ export default function SpeakingPage() {
               <div className="lg:col-span-7 ml-auto hidden md:flex flex-col gap-6 max-w-[640px]">
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+                  {/* Decorative quotes (no normal quotes in text) */}
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
                     <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
-                    <p>...an exceptional speaker: he is engaging, well-spoken, and clearly passionate about his work.</p>
+                    <p>
+                      ...an exceptional speaker: he is engaging, well-spoken, and clearly
+                      passionate about his work.
+                    </p>
                     <span aria-hidden className="absolute right-4 bottom-5 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
-                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">— <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting &amp; Expo</figcaption>
+                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+                    — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting &amp; Expo
+                  </figcaption>
+                </figure>
+
+                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+                  <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+                    <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                    <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
+                    <span className="absolute right-24 bottom-5 text-4xl opacity-20 select-none">”</span>
+                  </blockquote>
+                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+                    — <span className="text-[var(--color-gold)]">Audience member</span>, Society for Prevention Research Annual Meeting
+                  </figcaption>
                 </figure>
 
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
-                    <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
-                    <span className="absolute right-24 bottom-5 text-4xl opacity-20 select-none">”</span>
-                  </blockquote>
-                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">— <span className="text-[var(--color-gold)]">Audience member</span>, Society for Prevention Research Annual Meeting</figcaption>
-                </figure>
-
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
-                  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" aria-hidden />
-                  <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
-                    <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>Dr. Salerno has a way of blending data with human stories that makes science resonate.</p>
-                    <span aria-hidden className="absolute right-14 bottom-5 text-4xl opacity-20 select-none">”</span>
+                    <span className="absolute right-14 bottom-5 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
-                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">— <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference</figcaption>
+                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+                    — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
+                  </figcaption>
                 </figure>
               </div>
-
-              {/* Mobile-only section footer nav (Programs) — fixed size in both orientations */}
-              <NavRow>
-                <button onClick={() => jump("intro")} className={mBtn} aria-label="Previous section">← Prev</button>
-                <button onClick={() => jump("quicknav")} className={mBtn} aria-label="All Speaking">All Speaking</button>
-                <button onClick={() => jump("formats")} className={mBtn} aria-label="Next section">Next →</button>
-              </NavRow>
             </section>
+
+            {/* Programs footer buttons (mobile only) */}
+            <div className="md:hidden mt-8 w-full">
+              <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
+                <button
+                  onClick={() => jump("intro")}
+                  className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+                >
+                  ← Prev
+                </button>
+                <button
+                  onClick={() => jump("quicknav")}
+                  className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+                >
+                  All Speaking
+                </button>
+                <button
+                  onClick={() => jump("formats")}
+                  className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+                >
+                  Next →
+                </button>
+              </div>
+            </div>
 
             {/* Dr. Salerno Offers (Formats) */}
             <hr className="border-t border-[var(--color-cream)]/22 mb-8 w-full" />
@@ -270,77 +354,140 @@ export default function SpeakingPage() {
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
-                    <p>...gifted speaker whose engaging style &amp; clear communication bring complex ideas to life.</p>
+                    <p>
+                      ...gifted speaker whose engaging style &amp; clear communication bring
+                      complex ideas to life.
+                    </p>
                     <span className="absolute right-6 bottom-5 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
-                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">— <span className="text-[var(--color-gold)]">Audience member</span>, Columbia University</figcaption>
-                </figure>
-
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
-                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
-                  <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
-                    <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
-                    <p>...can communicate with diverse audiences, speaks with heart and dimensionality.</p>
-                    <span className="absolute right-23 bottom-5 text-4xl opacity-20 select-none">”</span>
-                  </blockquote>
-                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">— <span className="text-[var(--color-gold)]">Audience member</span>, Society of Behavioral Medicine Annual Meeting</figcaption>
+                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+                    — <span className="text-[var(--color-gold)]">Audience member</span>, Columbia University
+                  </figcaption>
                 </figure>
 
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" aria-hidden />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
-                    <p>...brings a charming intensity and passion that inspires others with his presence and message.</p>
+                    <p>
+                      ...can communicate with diverse audiences, speaks with heart and
+                      dimensionality.
+                    </p>
+                    <span className="absolute right-23 bottom-5 text-4xl opacity-20 select-none">”</span>
+                  </blockquote>
+                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+                    — <span className="text-[var(--color-gold)]">Audience member</span>, Society of Behavioral Medicine Annual Meeting
+                  </figcaption>
+                </figure>
+
+                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+                  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" aria-hidden />
+                  <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+                    <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                    <p>
+                      ...brings a charming intensity and passion that inspires others with his
+                      presence and message.
+                    </p>
                     <span className="absolute right-0 bottom-5 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
-                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">— <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference</figcaption>
+                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+                    — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
+                  </figcaption>
                 </figure>
               </div>
 
               {/* Formats list */}
               <div className="lg:col-span-5 order-1 lg:order-2 lg:py-6 space-y-8 lg:pl-6">
-                <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Formats</p>
+                {/* Overline added */}
+                <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">
+                  Formats
+                </p>
                 <h2 className="font-serif text-4xl mb-2">Dr. Salerno Offers</h2>
                 <div className="h-[2px] w-12 bg-[var(--color-gold)]/75 mb-8 rounded" />
 
                 <div>
-                  <h3 className="font-serif text-2xl mb-2"><span className="text-[var(--color-gold)]">Keynotes</span></h3>
-                  <p className="text-lg opacity-90">High-energy, story-driven talks with evidence-based takeaways.</p>
+                  <h3 className="font-serif text-2xl mb-2">
+                    <span className="text-[var(--color-gold)]">Keynotes</span>
+                  </h3>
+                  <p className="text-lg opacity-90">
+                    High-energy, story-driven talks with evidence-based takeaways.
+                  </p>
                 </div>
 
                 <div>
-                  <h3 className="font-serif text-2xl mb-2"><span className="text-[var(--color-gold)]">Workshops</span></h3>
-                  <p className="text-lg opacity-90">Interactive sessions with exercises, tools, and live Q&amp;A.</p>
+                  <h3 className="font-serif text-2xl mb-2">
+                    <span className="text-[var(--color-gold)]">Workshops</span>
+                  </h3>
+                  <p className="text-lg opacity-90">
+                    Interactive sessions with exercises, tools, and live Q&amp;A.
+                  </p>
                 </div>
 
                 <div>
-                  <h3 className="font-serif text-2xl mb-2"><span className="text-[var(--color-gold)]">Panels</span></h3>
-                  <p className="text-lg opacity-90">Multi-speaker discussions designed to bring diverse perspectives to key topics in mental health, resilience, and personal growth.</p>
+                  <h3 className="font-serif text-2xl mb-2">
+                    <span className="text-[var(--color-gold)]">Panels</span>
+                  </h3>
+                  <p className="text-lg opacity-90">
+                    Multi-speaker discussions designed to bring diverse perspectives to key topics
+                    in mental health, resilience, and personal growth.
+                  </p>
                 </div>
 
                 <div>
-                  <h3 className="font-serif text-2xl mb-2"><span className="text-[var(--color-gold)]">Fireside Chats</span></h3>
-                  <p className="text-lg opacity-90">A relaxed, conversational format with a moderator that blends storytelling and audience connection for an intimate, authentic experience.</p>
+                  <h3 className="font-serif text-2xl mb-2">
+                    <span className="text-[var(--color-gold)]">Fireside Chats</span>
+                  </h3>
+                  <p className="text-lg opacity-90">
+                    A relaxed, conversational format with a moderator that blends storytelling
+                    and audience connection for an intimate, authentic experience.
+                  </p>
                 </div>
 
                 <div>
-                  <h3 className="font-serif text-2xl mb-2"><span className="text-[var(--color-gold)]">Moderated Discussions</span></h3>
-                  <p className="text-lg opacity-90">Thoughtful facilitation of complex conversations that spark insight, learning, and connection among participants.</p>
+                  <h3 className="font-serif text-2xl mb-2">
+                    <span className="text-[var(--color-gold)]">Moderated Discussions</span>
+                  </h3>
+                  <p className="text-lg opacity-90">
+                    Thoughtful facilitation of complex conversations that spark insight,
+                    learning, and connection among participants.
+                  </p>
                 </div>
 
                 <div>
-                  <h3 className="font-serif text-2xl mb-2"><span className="text-[var(--color-gold)]">Virtual Talks &amp; Webinars</span></h3>
-                  <p className="text-lg opacity-90">Accessible online sessions that bring science-backed strategies and personal growth tools to audiences worldwide—ideal for remote or global teams.</p>
+                  <h3 className="font-serif text-2xl mb-2">
+                    <span className="text-[var(--color-gold)]">Virtual Talks &amp; Webinars</span>
+                  </h3>
+                  <p className="text-lg opacity-90">
+                    Accessible online sessions that bring science-backed strategies and personal
+                    growth tools to audiences worldwide—ideal for remote or global teams.
+                  </p>
                 </div>
               </div>
-
-              {/* Mobile-only section footer nav (Formats) — AFTER the section content */}
-              <NavRow>
-                <button onClick={() => jump("programs")} className={mBtn} aria-label="Previous section">← Prev</button>
-                <button onClick={() => jump("quicknav")} className={mBtn} aria-label="All Speaking">All Speaking</button>
-                <button onClick={() => jump("results")} className={mBtn} aria-label="Next section">Next →</button>
-              </NavRow>
             </section>
+
+            {/* Formats footer buttons (mobile only) — AFTER the section */}
+            <div className="md:hidden mt-8 w-full">
+              <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
+                <button
+                  onClick={() => jump("programs")}
+                  className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+                >
+                  ← Prev
+                </button>
+                <button
+                  onClick={() => jump("quicknav")}
+                  className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+                >
+                  All Speaking
+                </button>
+                <button
+                  onClick={() => jump("results")}
+                  className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+                >
+                  Next →
+                </button>
+              </div>
+            </div>
 
             {/* Outcomes (Results) */}
             <hr className="border-t border-[var(--color-cream)]/22 mb-8 w-full" />
@@ -349,7 +496,10 @@ export default function SpeakingPage() {
               className="grid grid-cols-1 lg:grid-cols-12 gap-12 mx-15 items-start gap-y-12"
             >
               <div className="lg:col-span-5 lg:py-6">
-                <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Results</p>
+                {/* Overline added */}
+                <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">
+                  Results
+                </p>
                 <h2 className="font-serif text-4xl mb-2">Outcomes</h2>
                 <div className="h-[2px] w-12 bg-[var(--color-gold)]/75 mb-6 rounded" />
 
@@ -358,11 +508,26 @@ export default function SpeakingPage() {
                   apply immediately. Key outcomes include:
                 </p>
                 <ul className="text-lg opacity-90 space-y-3">
-                  <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>Building resilient habits</span></li>
-                  <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>Regulating stress effectively</span></li>
-                  <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>Deepening focus through meditation</span></li>
-                  <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>Strengthening relationships and connection</span></li>
-                  <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>Aligning work and life with higher purpose</span></li>
+                  <li className="flex gap-2">
+                    <span className="text-[var(--color-gold)]">✔︎</span>
+                    <span>Building resilient habits</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[var(--color-gold)]">✔︎</span>
+                    <span>Regulating stress effectively</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[var(--color-gold)]">✔︎</span>
+                    <span>Deepening focus through meditation</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[var(--color-gold)]">✔︎</span>
+                    <span>Strengthening relationships and connection</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[var(--color-gold)]">✔︎</span>
+                    <span>Aligning work and life with higher purpose</span>
+                  </li>
                 </ul>
 
                 <p className="text-lg opacity-90 mt-6">
@@ -377,35 +542,64 @@ export default function SpeakingPage() {
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
-                    <p>...engaging, energetic, strong communication skills, proven ability to disseminate science.</p>
+                    <p>
+                      ...engaging, energetic, strong communication skills, proven ability to
+                      disseminate science.
+                    </p>
                     <span className="absolute right-13 bottom-5 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
-                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">— <span className="text-[var(--color-gold)]">Audience member</span>, University of Central Florida</figcaption>
+                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+                    — <span className="text-[var(--color-gold)]">Audience member</span>, University of Central Florida
+                  </figcaption>
                 </figure>
 
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" aria-hidden />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
-                    <p>...a highly engaging, knowledgeable, and skilled speaker...strongly recommended.</p>
+                    <p>
+                      ...a highly engaging, knowledgeable, and skilled speaker...strongly
+                      recommended.
+                    </p>
                     <span className="absolute right-44 bottom-5 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
-                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">— <span className="text-[var(--color-gold)]">Audience member</span>, University of California, Los Angeles</figcaption>
+                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+                    — <span className="text-[var(--color-gold)]">Audience member</span>, University of California, Los Angeles
+                  </figcaption>
                 </figure>
               </div>
-
-              {/* Mobile-only section footer nav (Results) */}
-              <NavRow>
-                <button onClick={() => jump("formats")} className={mBtn} aria-label="Previous section">← Prev</button>
-                <button onClick={() => jump("quicknav")} className={mBtn} aria-label="All Speaking">All Speaking</button>
-                <button onClick={() => jump("testimonials")} className={mBtn} aria-label="Next section">Next →</button>
-              </NavRow>
             </section>
+
+            {/* Results footer buttons (mobile only) */}
+            <div className="md:hidden mt-8 w-full">
+              <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
+                <button
+                  onClick={() => jump("formats")}
+                  className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+                >
+                  ← Prev
+                </button>
+                <button
+                  onClick={() => jump("quicknav")}
+                  className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+                >
+                  All Speaking
+                </button>
+                <button
+                  onClick={() => jump("testimonials")}
+                  className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+                >
+                  Next →
+                </button>
+              </div>
+            </div>
 
             {/* ===== Testimonials (mobile-only; all quotes moved here) ===== */}
             <section id="testimonials" className="md:hidden mx-15">
               <hr className="border-t border-[var(--color-cream)]/22 mb-8 w-full" />
-              <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Testimonials</p>
+              <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">
+                Testimonials
+              </p>
               <h2 className="font-serif text-4xl mb-2">What People Say</h2>
               <div className="h-[2px] w-12 bg-[var(--color-gold)]/75 mb-8 rounded" />
 
@@ -418,7 +612,9 @@ export default function SpeakingPage() {
                     <p>...an exceptional speaker: he is engaging, well-spoken, and clearly passionate about his work.</p>
                     <span aria-hidden className="absolute right-4 bottom-5 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
-                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">— <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting &amp; Expo</figcaption>
+                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+                    — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting &amp; Expo
+                  </figcaption>
                 </figure>
 
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
@@ -428,7 +624,9 @@ export default function SpeakingPage() {
                     <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
                     <span className="absolute right-24 bottom-5 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
-                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">— <span className="text-[var(--color-gold)]">Audience member</span>, Society for Prevention Research Annual Meeting</figcaption>
+                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+                    — <span className="text-[var(--color-gold)]">Audience member</span>, Society for Prevention Research Annual Meeting
+                  </figcaption>
                 </figure>
 
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
@@ -438,7 +636,9 @@ export default function SpeakingPage() {
                     <p>Dr. Salerno has a way of blending data with human stories that makes science resonate.</p>
                     <span className="absolute right-14 bottom-5 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
-                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">— <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference</figcaption>
+                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+                    — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
+                  </figcaption>
                 </figure>
 
                 {/* From Formats */}
@@ -449,7 +649,9 @@ export default function SpeakingPage() {
                     <p>...gifted speaker whose engaging style &amp; clear communication bring complex ideas to life.</p>
                     <span className="absolute right-6 bottom-5 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
-                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">— <span className="text-[var(--color-gold)]">Audience member</span>, Columbia University</figcaption>
+                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+                    — <span className="text-[var(--color-gold)]">Audience member</span>, Columbia University
+                  </figcaption>
                 </figure>
 
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
@@ -459,7 +661,9 @@ export default function SpeakingPage() {
                     <p>...can communicate with diverse audiences, speaks with heart and dimensionality.</p>
                     <span className="absolute right-23 bottom-5 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
-                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">— <span className="text-[var(--color-gold)]">Audience member</span>, Society of Behavioral Medicine Annual Meeting</figcaption>
+                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+                    — <span className="text-[var(--color-gold)]">Audience member</span>, Society of Behavioral Medicine Annual Meeting
+                  </figcaption>
                 </figure>
 
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
@@ -469,7 +673,9 @@ export default function SpeakingPage() {
                     <p>...brings a charming intensity and passion that inspires others with his presence and message.</p>
                     <span className="absolute right-0 bottom-5 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
-                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">— <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference</figcaption>
+                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+                    — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
+                  </figcaption>
                 </figure>
 
                 {/* From Results */}
@@ -480,7 +686,9 @@ export default function SpeakingPage() {
                     <p>...engaging, energetic, strong communication skills, proven ability to disseminate science.</p>
                     <span className="absolute right-13 bottom-5 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
-                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">— <span className="text-[var(--color-gold)]">Audience member</span>, University of Central Florida</figcaption>
+                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+                    — <span className="text-[var(--color-gold)]">Audience member</span>, University of Central Florida
+                  </figcaption>
                 </figure>
 
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
@@ -490,16 +698,35 @@ export default function SpeakingPage() {
                     <p>...a highly engaging, knowledgeable, and skilled speaker...strongly recommended.</p>
                     <span className="absolute right-44 bottom-5 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
-                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">— <span className="text-[var(--color-gold)]">Audience member</span>, University of California, Los Angeles</figcaption>
+                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+                    — <span className="text-[var(--color-gold)]">Audience member</span>, University of California, Los Angeles
+                  </figcaption>
                 </figure>
               </div>
 
-              {/* Mobile-only section footer nav (Testimonials) */}
-              <NavRow>
-                <button onClick={() => jump("results")} className={mBtn} aria-label="Previous section">← Prev</button>
-                <button onClick={() => jump("quicknav")} className={mBtn} aria-label="All Speaking">All Speaking</button>
-                <button onClick={() => jump("programs")} className={mBtn} aria-label="Next section">Next →</button>
-              </NavRow>
+              {/* Testimonials footer buttons (mobile only) */}
+              <div className="md:hidden mt-8 w-full">
+                <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
+                  <button
+                    onClick={() => jump("results")}
+                    className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+                  >
+                    ← Prev
+                  </button>
+                  <button
+                    onClick={() => jump("quicknav")}
+                    className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+                  >
+                    All Speaking
+                  </button>
+                  <button
+                    onClick={() => jump("programs")}
+                    className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+                  >
+                    Next →
+                  </button>
+                </div>
+              </div>
             </section>
 
             {/* CTA (unchanged) */}
@@ -517,29 +744,29 @@ export default function SpeakingPage() {
 
       {/* Global safeguards and crisp text styles */}
       <style jsx global>{`
-  /* Prevent background peeking through on iOS Safari */
-  @supports (-webkit-touch-callout: none) {
-    html, body { background: var(--color-teal-850) !important; }
-  }
+        /* Prevent background peeking through on iOS Safari */
+        @supports (-webkit-touch-callout: none) {
+          html, body { background: var(--color-teal-850) !important; }
+        }
 
-  /* Ensure crisp text inside zoomed containers */
-  .zoomwrap,
-  .zoomwrap * {
-    -webkit-font-smoothing: antialiased;
-    text-rendering: geometricPrecision;
-  }
+        /* Ensure crisp text inside zoomed containers */
+        .zoomwrap,
+        .zoomwrap * {
+          -webkit-font-smoothing: antialiased;
+          text-rendering: geometricPrecision;
+        }
 
-  /* Mobile-only: force the checkmark span to render as gold text (not emoji) */
-  @media (max-width: 767px) {
-    .zoomwrap ul.text-lg li > span:first-child {
-      color: var(--color-gold) !important;
-      -webkit-text-fill-color: var(--color-gold) !important;
-      font-family: "Helvetica Neue", Arial, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif !important;
-      font-weight: 700;
-      opacity: 1 !important;
-    }
-  }
-`}</style>
+        /* Mobile-only: force the checkmark span to render as gold text (not emoji) */
+        @media (max-width: 767px) {
+          .zoomwrap ul.text-lg li > span:first-child {
+            color: var(--color-gold) !important;
+            -webkit-text-fill-color: var(--color-gold) !important;
+            font-family: "Helvetica Neue", Arial, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif !important;
+            font-weight: 700;
+            opacity: 1 !important;
+          }
+        }
+      `}</style>
     </>
   );
 }
