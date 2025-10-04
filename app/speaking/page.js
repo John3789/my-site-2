@@ -793,6 +793,10 @@ body:has([data-page="speaking"]) [data-component="footer"] {
 /* SPEAKING — mobile PORTRAIT: much larger */
 @media (max-width: 767px) and (orientation: portrait) {
   [data-page="speaking"] .s-hero .hero-title {
+      /* a touch less side padding so the line has more room */
+    padding-left: 0.75rem;  /* ≈ px-3 */
+    padding-right: 0.75rem;
+    
     font-size: clamp(125px, 28.5vw, 230px) !important;
     line-height: 1.02;
     letter-spacing: -0.015em;
