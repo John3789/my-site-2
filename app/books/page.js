@@ -7,8 +7,8 @@ export default function BooksPage() {
       <>
         {/* ===== PAGE BODY WRAPPER (same zoom as home/about) ===== */}
         <div
-          style={{ '--z': 3.00, '--zoomL': 1.60 }}
-          className="
+          style={{ "--z": 3.0, "--zoomL": 1.6 }}
+          className={`
             md:contents
             origin-top
             [transform:scale(var(--z))]
@@ -19,7 +19,7 @@ export default function BooksPage() {
             landscape:[transform:scale(var(--zoomL))]
             landscape:[width:calc(100%/var(--zoomL))]
             overflow-hidden
-          "
+          `}
         >
           <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
 
@@ -97,6 +97,7 @@ export default function BooksPage() {
               <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 mx-auto mt-3 mb-10 rounded" />
 
               <div className="space-y-10">
+
                 {/* CARD 1 */}
                 <article className="w-full bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-0 md:backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10">
                   <div className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/60 rounded-l-xl" />
@@ -114,7 +115,7 @@ export default function BooksPage() {
                     </div>
 
                     <div className="lg:w-2/3">
-                      {/* Mobile show more/less (pure CSS) */}
+                      {/* Mobile show more/less (pure CSS via checkbox; desktop always expanded) */}
                       <input id="more-c1" type="checkbox" className="peer hidden md:hidden" />
                       <ul className="list-none divide-y divide-white/10">
                         <li className="flex gap-3 py-4">
@@ -200,7 +201,7 @@ export default function BooksPage() {
                             Colleagues &amp; Salerno (2024).
                             <em> Mental Health Impact of Sexually Minoritized &amp; Gender Expansive Stressors Among LGBTQ+ Young Adults: A Latent Class Analysis.</em>
                             <span className="italic"> Epidemiology &amp; Psychiatric Sciences.</span>{" "}
-                            <a href="https://www.researchgate.net/publication/379752647_Mental_health_impact_of_multiple_sexually_minoritzed_and_gender_expansive_stressors_among_LGBTQ_young_adults_a_latent_class_analysis" target="_blank" rel="noreferrer" className="underline decoration-[var(--color-gold)] underline-offset-2 hover:opacity-80">Read Here →</a>
+                            <a href="https://www.researchgate.net/publication/379752647_Mental_health_impact_of_multiple_sexually_minoritized_and_gender_expansive_stressors_among_LGBTQ_young_adults_a_latent_class_analysis" target="_blank" rel="noreferrer" className="underline decoration-[var(--color-gold)] underline-offset-2 hover:opacity-80">Read Here →</a>
                           </div>
                         </li>
                         <li className="flex gap-3 py-4">
@@ -320,7 +321,7 @@ export default function BooksPage() {
         </div>
 
         {/* Mobile-only truncation CSS (no font/spacing changes) */}
-        <style jsx global>{`
+        <style>{`
           @media (max-width: 767px) {
             /* Hide items 3+ until the checkbox for that card is checked */
             #more-c1:not(:checked) ~ ul > li:nth-child(n + 3),
