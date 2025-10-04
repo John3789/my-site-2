@@ -76,19 +76,19 @@ export default function SpeakingPage() {
         <div
           style={{ "--z": 3.0, "--zoomL": 1.6 }}
           className={`
-    zoomwrap
-    md:contents
-    origin-top
-    [transform:scale(var(--z))] [width:calc(100%/var(--z))]
-    mx-auto
-    md:[transform:none] md:[width:100%]
-    landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
-    overflow-visible
-  `}
+            zoomwrap
+            md:contents
+            origin-top
+            [transform:scale(var(--z))] [width:calc(100%/var(--z))]
+            mx-auto
+            md:[transform:none] md:[width:100%]
+            landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
+            overflow-visible
+          `}
         >
           {/* ===== Intro Blurb ===== */}
           <section className="relative w-full py-16" id="intro">
-            {/* subtle hairline divider from hero */}
+            {/* subtle hairline divider from hero (desktop unchanged) */}
             <div className="absolute inset-x-0 top-0 h-px bg-[var(--color-cream)]/15" />
             <div className="mx-auto max-w-[1000px] px-6 text-left space-y-8">
               <h2 className="font-serif text-3xl md:text-4xl opacity-90 text-center font-semibold tracking-wide">
@@ -124,34 +124,34 @@ export default function SpeakingPage() {
                 </p>
               </div>
 
-              {/* ---- MOBILE-ONLY quick nav (exact Resources pill styling) ---- */}
+              {/* ---- MOBILE-ONLY quick nav (Resources-style pills) ---- */}
               <div className="md:hidden mt-6">
-                <div className="grid grid-cols-2 landscape:grid-cols-3 gap-2">
+                <div className="grid grid-cols-2 landscape:grid-cols-3 gap-3">
                   <button
                     onClick={() => jump("programs")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="Jump to Programs"
+                    className="whitespace-nowrap rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
                   >
                     Programs
                   </button>
                   <button
                     onClick={() => jump("formats")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="Jump to Formats"
+                    className="whitespace-nowrap rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
                   >
                     Formats
                   </button>
                   <button
                     onClick={() => jump("results")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="Jump to Results"
+                    className="whitespace-nowrap rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
                   >
                     Results
                   </button>
                   <button
                     onClick={() => jump("testimonials")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="Jump to Testimonials"
+                    className="whitespace-nowrap rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
                   >
                     Testimonials
                   </button>
@@ -295,7 +295,7 @@ export default function SpeakingPage() {
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
-                    <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                    <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
                     <span className="absolute right-24 bottom-5 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
@@ -305,7 +305,7 @@ export default function SpeakingPage() {
                 </figure>
 
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
-                  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+                  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" aria-hidden />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>Dr. Salerno has a way of blending data with human stories that makes science resonate.</p>
@@ -317,27 +317,27 @@ export default function SpeakingPage() {
                 </figure>
               </div>
 
-              {/* Mobile-only section footer nav (Programs) */}
-              <div className="md:hidden mt-6">
-                <div className="grid grid-cols-3 gap-2">
+              {/* MOBILE section footer nav — Programs */}
+              <div className="md:hidden mt-8 px-6">
+                <div className="grid grid-cols-3 gap-4">
                   <button
                     onClick={() => jump("intro")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="Previous section"
+                    className="rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
                   >
                     Previous
                   </button>
                   <button
                     onClick={() => jump("topics")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="All Speaking"
+                    className="rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
                   >
                     All Speaking
                   </button>
                   <button
                     onClick={() => jump("formats")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="Next section"
+                    className="rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
                   >
                     Next
                   </button>
@@ -399,9 +399,8 @@ export default function SpeakingPage() {
                 </figure>
               </div>
 
-              {/* Formats list */}
+              {/* Formats list (desktop unchanged) */}
               <div className="lg:col-span-5 order-1 lg:order-2 lg:py-6 space-y-8 lg:pl-6">
-                {/* Overline added */}
                 <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">
                   Formats
                 </p>
@@ -467,27 +466,27 @@ export default function SpeakingPage() {
                 </div>
               </div>
 
-              {/* Mobile-only section footer nav (Formats) */}
-              <div className="md:hidden mt-6">
-                <div className="grid grid-cols-3 gap-2">
+              {/* MOBILE section footer nav — Formats */}
+              <div className="md:hidden mt-8 px-6">
+                <div className="grid grid-cols-3 gap-4">
                   <button
                     onClick={() => jump("programs")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="Previous section"
+                    className="rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
                   >
                     Previous
                   </button>
                   <button
                     onClick={() => jump("topics")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="All Speaking"
+                    className="rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
                   >
                     All Speaking
                   </button>
                   <button
                     onClick={() => jump("results")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="Next section"
+                    className="rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
                   >
                     Next
                   </button>
@@ -502,7 +501,7 @@ export default function SpeakingPage() {
               className="grid grid-cols-1 lg:grid-cols-12 gap-12 mx-15 items-start gap-y-12"
             >
               <div className="lg:col-span-5 lg:py-6">
-                {/* Overline added */}
+                {/* Overline (slightly dimmer) */}
                 <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">
                   Results
                 </p>
@@ -575,27 +574,27 @@ export default function SpeakingPage() {
                 </figure>
               </div>
 
-              {/* Mobile-only section footer nav (Results) */}
-              <div className="md:hidden mt-6">
-                <div className="grid grid-cols-3 gap-2">
+              {/* MOBILE section footer nav — Results */}
+              <div className="md:hidden mt-8 px-6">
+                <div className="grid grid-cols-3 gap-4">
                   <button
                     onClick={() => jump("formats")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="Previous section"
+                    className="rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
                   >
                     Previous
                   </button>
                   <button
                     onClick={() => jump("topics")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="All Speaking"
+                    className="rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
                   >
                     All Speaking
                   </button>
                   <button
                     onClick={() => jump("testimonials")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="Next section"
+                    className="rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
                   >
                     Next
                   </button>
@@ -618,7 +617,10 @@ export default function SpeakingPage() {
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
                   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
                     <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
-                    <p>...an exceptional speaker: he is engaging, well-spoken, and clearly passionate about his work.</p>
+                    <p>
+                      ...an exceptional speaker: he is engaging, well-spoken, and clearly
+                      passionate about his work.
+                    </p>
                     <span aria-hidden className="absolute right-4 bottom-5 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
                   <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
@@ -713,27 +715,27 @@ export default function SpeakingPage() {
                 </figure>
               </div>
 
-              {/* Mobile-only section footer nav (Testimonials) */}
-              <div className="md:hidden mt-6">
-                <div className="grid grid-cols-3 gap-2">
+              {/* MOBILE section footer nav — Testimonials */}
+              <div className="md:hidden mt-8 px-6">
+                <div className="grid grid-cols-3 gap-4">
                   <button
                     onClick={() => jump("results")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="Previous section"
+                    className="rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
                   >
                     Previous
                   </button>
                   <button
                     onClick={() => jump("topics")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="All Speaking"
+                    className="rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
                   >
                     All Speaking
                   </button>
                   <button
                     onClick={() => jump("programs")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10 active:bg-white/15 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
                     aria-label="Next section"
+                    className="rounded-full border border-white/20 bg-white/5 text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-white/10 active:translate-y-[1px]"
                   >
                     Next
                   </button>
@@ -756,29 +758,29 @@ export default function SpeakingPage() {
 
       {/* Global safeguards and crisp text styles */}
       <style jsx global>{`
-  /* Prevent background peeking through on iOS Safari */
-  @supports (-webkit-touch-callout: none) {
-    html, body { background: var(--color-teal-850) !important; }
-  }
+        /* Prevent background peeking through on iOS Safari */
+        @supports (-webkit-touch-callout: none) {
+          html, body { background: var(--color-teal-850) !important; }
+        }
 
-  /* Ensure crisp text inside zoomed containers */
-  .zoomwrap,
-  .zoomwrap * {
-    -webkit-font-smoothing: antialiased;
-    text-rendering: geometricPrecision;
-  }
+        /* Ensure crisp text inside zoomed containers */
+        .zoomwrap,
+        .zoomwrap * {
+          -webkit-font-smoothing: antialiased;
+          text-rendering: geometricPrecision;
+        }
 
-  /* Mobile-only: force the checkmark span to render as gold text (not emoji) */
-  @media (max-width: 767px) {
-    .zoomwrap ul.text-lg li > span:first-child {
-      color: var(--color-gold) !important;
-      -webkit-text-fill-color: var(--color-gold) !important;
-      font-family: "Helvetica Neue", Arial, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif !important;
-      font-weight: 700;
-      opacity: 1 !important;
-    }
-  }
-`}</style>
+        /* Mobile-only: force the checkmark span to render as gold text (not emoji) */
+        @media (max-width: 767px) {
+          .zoomwrap ul.text-lg li > span:first-child {
+            color: var(--color-gold) !important;
+            -webkit-text-fill-color: var(--color-gold) !important;
+            font-family: "Helvetica Neue", Arial, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif !important;
+            font-weight: 700;
+            opacity: 1 !important;
+          }
+        }
+      `}</style>
     </>
   );
 }
