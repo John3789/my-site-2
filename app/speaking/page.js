@@ -124,33 +124,33 @@ export default function SpeakingPage() {
                 </p>
               </div>
 
-              {/* ---- MOBILE-ONLY quick nav (exact Resources pill styling) ---- */}
+              {/* ---- MOBILE-ONLY quick nav (now dark teal like Resources) ---- */}
               <div id="quicknav" className="md:hidden mt-6">
                 <div className="grid grid-cols-2 landscape:grid-cols-3 gap-2">
                   <button
                     onClick={() => jump("programs")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10"
+                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/15 bg-teal-800 text-[var(--color-cream)] hover:bg-teal-700"
                     aria-label="Jump to Programs"
                   >
                     Programs
                   </button>
                   <button
                     onClick={() => jump("formats")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10"
+                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/15 bg-teal-800 text-[var(--color-cream)] hover:bg-teal-700"
                     aria-label="Jump to Formats"
                   >
                     Formats
                   </button>
                   <button
                     onClick={() => jump("results")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10"
+                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/15 bg-teal-800 text-[var(--color-cream)] hover:bg-teal-700"
                     aria-label="Jump to Results"
                   >
                     Results
                   </button>
                   <button
                     onClick={() => jump("testimonials")}
-                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10"
+                    className="whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition border-white/15 bg-teal-800 text-[var(--color-cream)] hover:bg-teal-700"
                     aria-label="Jump to Testimonials"
                   >
                     Testimonials
@@ -295,7 +295,7 @@ export default function SpeakingPage() {
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
-                    <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                    <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
                     <span className="absolute right-24 bottom-5 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
@@ -470,19 +470,19 @@ export default function SpeakingPage() {
               <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
                 <button
                   onClick={() => jump("programs")}
-                  className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+                  className="inline-flex items-center justify-center w/full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                 >
                   ← Prev
                 </button>
                 <button
                   onClick={() => jump("quicknav")}
-                  className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+                  className="inline-flex items-center justify-center w/full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                 >
                   All Speaking
                 </button>
                 <button
                   onClick={() => jump("results")}
-                  className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+                  className="inline-flex items-center justify-center w/full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                 >
                   Next →
                 </button>
@@ -553,7 +553,7 @@ export default function SpeakingPage() {
                   </figcaption>
                 </figure>
 
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+                <figure className="relative w/full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" aria-hidden />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
@@ -575,19 +575,19 @@ export default function SpeakingPage() {
               <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
                 <button
                   onClick={() => jump("formats")}
-                  className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+                  className="inline-flex items-center justify-center w/full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                 >
                   ← Prev
                 </button>
                 <button
                   onClick={() => jump("quicknav")}
-                  className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+                  className="inline-flex items-center justify-center w/full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                 >
                   All Speaking
                 </button>
                 <button
                   onClick={() => jump("testimonials")}
-                  className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+                  className="inline-flex items-center justify-center w/full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
                 >
                   Next →
                 </button>
@@ -617,8 +617,8 @@ export default function SpeakingPage() {
                   </figcaption>
                 </figure>
 
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
-                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+                <figure className="relative w/full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
+                  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" aria-hidden />
                   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
@@ -629,7 +629,7 @@ export default function SpeakingPage() {
                   </figcaption>
                 </figure>
 
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
+                <figure className="relative w/full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
                   <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" aria-hidden />
                   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
@@ -642,7 +642,7 @@ export default function SpeakingPage() {
                 </figure>
 
                 {/* From Formats */}
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
+                <figure className="relative w/full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
                   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
@@ -654,8 +654,8 @@ export default function SpeakingPage() {
                   </figcaption>
                 </figure>
 
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
-                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+                <figure className="relative w/full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
+                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w/[3px] bg-[var(--color-gold)]/70 rounded-r" />
                   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>...can communicate with diverse audiences, speaks with heart and dimensionality.</p>
@@ -666,8 +666,8 @@ export default function SpeakingPage() {
                   </figcaption>
                 </figure>
 
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
-                  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" aria-hidden />
+                <figure className="relative w/full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
+                  <span className="absolute left-0 top-1 bottom-1 w/[3px] bg-[var(--color-gold)]/70 rounded-r" aria-hidden />
                   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>...brings a charming intensity and passion that inspires others with his presence and message.</p>
@@ -679,8 +679,8 @@ export default function SpeakingPage() {
                 </figure>
 
                 {/* From Results */}
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
-                  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" aria-hidden />
+                <figure className="relative w/full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
+                  <span className="absolute left-0 top-1 bottom-1 w/[3px] bg-[var(--color-gold)]/70 rounded-r" aria-hidden />
                   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>...engaging, energetic, strong communication skills, proven ability to disseminate science.</p>
@@ -691,8 +691,8 @@ export default function SpeakingPage() {
                   </figcaption>
                 </figure>
 
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
-                  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" aria-hidden />
+                <figure className="relative w/full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
+                  <span className="absolute left-0 top-1 bottom-1 w/[3px] bg-[var(--color-gold)]/70 rounded-r" aria-hidden />
                   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>...a highly engaging, knowledgeable, and skilled speaker...strongly recommended.</p>
@@ -703,37 +703,37 @@ export default function SpeakingPage() {
                   </figcaption>
                 </figure>
               </div>
-
-              {/* Testimonials footer buttons (mobile only) */}
-              <div className="md:hidden mt-8 w-full">
-                <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
-                  <button
-                    onClick={() => jump("results")}
-                    className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-                  >
-                    ← Prev
-                  </button>
-                  <button
-                    onClick={() => jump("quicknav")}
-                    className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-                  >
-                    All Speaking
-                  </button>
-                  <button
-                    onClick={() => jump("programs")}
-                    className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-                  >
-                    Next →
-                  </button>
-                </div>
-              </div>
             </section>
+
+            {/* Testimonials footer buttons (mobile only) — moved OUTSIDE the section and centered */}
+            <div className="md:hidden mt-8 w-full">
+              <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4 px-6">
+                <button
+                  onClick={() => jump("results")}
+                  className="inline-flex items-center justify-center w/full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+                >
+                  ← Prev
+                </button>
+                <button
+                  onClick={() => jump("quicknav")}
+                  className="inline-flex items-center justify-center w/full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+                >
+                  All Speaking
+                </button>
+                <button
+                  onClick={() => jump("programs")}
+                  className="inline-flex items-center justify-center w/full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+                >
+                  Next →
+                </button>
+              </div>
+            </div>
 
             {/* CTA (unchanged) */}
             <div className="flex justify-center">
               <a
                 href="/contact"
-                className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs md:w-auto md:max-w-none"
+                className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w/full max-w-xs md:w-auto md:max-w-none"
               >
                 Book Dr. Salerno to Speak
               </a>
