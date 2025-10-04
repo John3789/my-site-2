@@ -195,7 +195,10 @@ export default function ResourcesPage() {
 
   return (
     <>
-      <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
+      <main className="relative isolate min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
+        {/* background guard to prevent mid-page tint on mobile */}
+        <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]" />
+
         {/* ===== ZOOMED CONTENT (title + intro + sections) ===== */}
         <div
           style={{ '--z': 3.0, '--zoomL': 1.60 }}
@@ -341,6 +344,10 @@ className={`
         .zoomwrap * {
           -webkit-font-smoothing: antialiased;
           text-rendering: geometricPrecision;
+        }
+          /* Prevent browser UI/scroll background from ever peeking through on iOS/Android */
+          @supports (-webkit-touch-callout: none) {
+          html, body { background: var(--color-teal-850) !important; }
         }
       `}</style>
     </>
