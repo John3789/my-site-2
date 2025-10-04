@@ -855,18 +855,18 @@ body:has([data-page="speaking"]) [data-component="footer"] {
     height: 3px !important;
   }
 }
-  /* SPEAKING — move hero text lower on MOBILE only */
+/* SPEAKING — move hero text lower on MOBILE only */
 @media (max-width: 767px) and (orientation: portrait) {
   [data-page="speaking"] .hero-overlay {
-    justify-content: flex-end;                 /* drop to bottom of video */
-    padding-bottom: calc(18vh + env(safe-area-inset-bottom, 0px)); /* keep your face clear + respect iPhone home bar */
+    justify-content: flex-end !important;
+    padding-bottom: 22vh !important;   /* tweak: 18–28vh */
   }
 }
 
 @media (max-width: 767px) and (orientation: landscape) {
   [data-page="speaking"] .hero-overlay {
-    justify-content: flex-end;
-    padding-bottom: 10vh;                      /* a bit less in landscape */
+    justify-content: flex-end !important;
+    padding-bottom: 12vh !important;   /* tweak: 8–16vh */
   }
 }
 
