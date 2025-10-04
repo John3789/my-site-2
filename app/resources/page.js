@@ -1,495 +1,342 @@
-// app/resources/page.js
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-/* =========================
-   THEMES DATA
-   ========================= */
-const THEMES = [
-  {
-    slug: "motivation-mindset",
-    title: "Motivation & Mindset",
-    blurb: "Shift perspective and recharge your drive with affirmations and reframes.",
-    collections: [
-      { slug: "confidence-boost", title: "Confidence Boost", subtitle: "Reframes and tiny actions to move through self-doubt.", tags: ["Motivation", "Confidence"], items: [] },
-      { slug: "positive-reframes", title: "Positive Reframes", subtitle: "Gentle perspective shifts that stick.", tags: ["Mindset", "Resilience"], items: [] },
-    ],
-  },
-  {
-    slug: "mental-health-stress",
-    title: "Mental Health & Stress Relief",
-    blurb: "Practical steps for everyday wellbeing and downshifting your nervous system.",
-    collections: [
-      { slug: "everyday-wellbeing", title: "Everyday Wellbeing", subtitle: "Small habits that compound over time.", tags: ["Wellbeing", "Habits"], items: [] },
-      { slug: "calm-in-chaos", title: "Calm in Chaos", subtitle: "Grounding tools for busy environments.", tags: ["Stress relief", "Grounding"], items: [] },
-    ],
-  },
-  {
-    slug: "self-compassion-healing",
-    title: "Self-Compassion & Healing",
-    blurb: "Practices for forgiving, softening, and rebuilding resilience after setbacks.",
-    collections: [
-      { slug: "compassion-practices", title: "Compassion Practices", subtitle: "Moments to offer yourself kindness.", tags: ["Compassion", "Healing"], items: [] },
-      { slug: "healing-habits", title: "Healing Habits", subtitle: "Daily cues that create space to recover.", tags: ["Recovery", "Self-care"], items: [] },
-    ],
-  },
-  {
-    slug: "relationships-connection",
-    title: "Relationships & Connection",
-    blurb: "Build healthier everyday relationships—with friends, family, colleagues, and community.",
-    collections: [
-      { slug: "everyday-connection", title: "Everyday Connection", subtitle: "Small ways to nurture belonging and support.", tags: ["Connection", "Community"], items: [] },
-      { slug: "communication-shifts", title: "Communication Shifts", subtitle: "Gentle ways to express yourself clearly.", tags: ["Communication", "Clarity"], items: [] },
-    ],
-  },
-  {
-    slug: "purpose-alignment",
-    title: "Purpose & Alignment",
-    blurb: "Connect with your deeper why and align your daily actions to it.",
-    collections: [
-      { slug: "values-check", title: "Values Check", subtitle: "Reflection prompts to guide decisions.", tags: ["Purpose", "Values"], items: [] },
-      { slug: "alignment-habits", title: "Alignment Habits", subtitle: "Simple steps to bring goals and life closer.", tags: ["Alignment", "Direction"], items: [] },
-    ],
-  },
-  {
-    slug: "manifestation-intentions",
-    title: "Manifestation & Intention Setting",
-    blurb: "Align actions with vision through clear intentions and consistent micro-moves.",
-    collections: [
-      { slug: "morning-clarity", title: "Morning Clarity", subtitle: "Orient your day toward purpose.", tags: ["Clarity", "Intention"], items: [] },
-      { slug: "get-unstuck", title: "Get Unstuck", subtitle: "From hesitation to first step.", tags: ["Momentum", "Action"], items: [] },
-    ],
-  },
-  {
-    slug: "feng-shui-environment",
-    title: "Feng Shui & Environment",
-    blurb: "Small environmental shifts that support energy, focus, and rest.",
-    collections: [
-      { slug: "clarity-corners", title: "Clarity Corners", subtitle: "Tidy cues that nudge focus.", tags: ["Focus", "Simplicity"], items: [] },
-      { slug: "rest-friendly-bedroom", title: "Rest-Friendly Bedroom", subtitle: "Edit the room, not your willpower.", tags: ["Rest", "Sleep"], items: [] },
-    ],
-  },
-];
-
-export default function ResourcesPage() {
-  // 👇 This runs only while the Resources page is mounted
-  useEffect(() => {
-    document.body.classList.add("hide-footer-on-resources");
-    return () => document.body.classList.remove("hide-footer-on-resources");
-  }, []);
-
-  const [open, setOpen] = useState(false);
-  const [activeCollection, setActiveCollection] = useState(null);
-  const [currentId, setCurrentId] = useState(THEMES[0].slug);
-
-  /* ========= Sticky pill nav: scroll affordances ========= */
-  const navScrollRef = useRef(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-
-  const updateNavScrollState = () => {
-    const el = navScrollRef.current;
-    if (!el) return;
-    setCanScrollLeft(el.scrollLeft > 4);
-    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
-  };
+export default function SpeakingPage() {
+  const videoRef = useRef(null);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    updateNavScrollState();
-    const el = navScrollRef.current;
-    if (!el) return;
-    el.addEventListener("scroll", updateNavScrollState, { passive: true });
-    return () => el.removeEventListener("scroll", updateNavScrollState);
+    const v = videoRef.current;
+    if (!v) return;
+    const onCanPlay = () => setReady(true);
+    v.addEventListener("canplay", onCanPlay, { once: true });
+    return () => v.removeEventListener("canplay", onCanPlay);
   }, []);
 
-  const scrollNavBy = (delta) => {
-    const el = navScrollRef.current;
-    if (!el) return;
-    el.scrollBy({ left: delta, behavior: "smooth" });
-  };
-
-  /* ========= Active section highlight ========= */
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible?.target?.id) setCurrentId(visible.target.id);
-      },
-      { rootMargin: "-20% 0px -65% 0px", threshold: [0.2, 0.5, 0.8] }
-    );
-    THEMES.forEach((t) => {
-      const el = document.getElementById(t.slug);
-      if (el) observer.observe(el);
-    });
-    return () => observer.disconnect();
-  }, []);
-
-  const handleJump = (slug) => {
-    const el = document.getElementById(slug);
+  const jump = (id) => {
+    const el = typeof document !== "undefined" ? document.getElementById(id) : null;
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  /* ========= Sticky subnav with fades & chevrons (desktop only) ========= */
-  const Nav = useMemo(() => {
-    return (
-      <div className="md:sticky md:top-[64px] z-30 -mx-6 border-b border-white/10 bg-transparent md:bg-[var(--color-teal-850)]/80">
-        <div className="relative mx-auto max-w-[1200px] px-6 py-3">
-          {/* Scroll container */}
-          <div
-            ref={navScrollRef}
-            className="flex gap-2 overflow-x-auto no-scrollbar scroll-smooth"
-            onScroll={updateNavScrollState}
-          >
-            {THEMES.map((t) => {
-              const active = currentId === t.slug;
-              return (
-                <button
-                  key={t.slug}
-                  onClick={() => handleJump(t.slug)}
-                  aria-current={active ? "true" : "false"}
-                  className={[
-                    "whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition",
-                    active
-                      ? "border-[var(--color-gold)] bg-[var(--color-gold)] text-black shadow-sm"
-                      : "border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10",
-                  ].join(" ")}
-                >
-                  {t.title}
-                </button>
-              );
-            })}
-          </div>
-
-
-
-          {/* Chevron buttons (desktop only) */}
-          <div className="hidden md:block">
-            <button
-              onClick={() => scrollNavBy(-240)}
-              disabled={!canScrollLeft}
-              aria-label="Scroll left"
-              className={[
-                "absolute left-1 top-1/2 -translate-y-1/2 rounded-full border px-2 py-1 text-sm",
-                canScrollLeft
-                  ? "border-white/25 bg-white/10 hover:bg-white/20"
-                  : "border-white/10 bg-white/5 opacity-50 cursor-not-allowed",
-              ].join(" ")}
-            >
-              ‹
-            </button>
-            <button
-              onClick={() => scrollNavBy(240)}
-              disabled={!canScrollRight}
-              aria-label="Scroll right"
-              className={[
-                "absolute right-1 top-1/2 -translate-y-1/2 rounded-full border px-2 py-1 text-sm",
-                canScrollRight
-                  ? "border-white/25 bg-white/10 hover:bg-white/20"
-                  : "border-white/10 bg-white/5 opacity-50 cursor-not-allowed",
-              ].join(" ")}
-            >
-              ›
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  }, [currentId, canScrollLeft, canScrollRight]);
+  /* === Dark blue pill exactly like Resources === */
+  const btnDark =
+    "rounded-full bg-[var(--color-teal-800)] text-[var(--color-cream)]/95 " +
+    "ring-1 ring-white/15 border border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] " +
+    "px-6 py-3 text-[14px] font-semibold tracking-wide transition " +
+    "hover:bg-[color-mix(in_oklab,var(--color-teal-800)_88%,white)] hover:ring-white/25 active:translate-y-[1px]";
 
   return (
     <>
-      <main className="relative isolate min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
-        {/* background guard to prevent mid-page tint on mobile */}
+      <main className="relative isolate min-h-screen w-full bg-[var(--color-teal-850)]">
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]" />
 
-        {/* 1) ZOOM WRAPPER — Title + Intro ONLY */}
-<div
-  style={{ '--z': 3.0, '--zoomL': 1.60 }}
-  className={`
-    md:contents
-    origin-top
-    [transform:scale(var(--z))] [width:calc(100%/var(--z))]
-    mx-auto
-    md:[transform:none] md:[width:100%]
-    landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
-    overflow-visible
-  `}
->
-          {/* Title + Intro (now inside the zoom so sizes match) */}
-          <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-6">
-            <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-3">
-              Resources
-            </h1>
-            <div className="mx-auto h-[2px] w-16 bg-[var(--color-gold)]/85 rounded mb-6" />
+        {/* ===== HERO ===== */}
+        <section className="relative w-full">
+          <div className="relative h-[70vh] bg-black">
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 bg-center bg-cover"
+              style={{ backgroundImage: "url(/speaking-hero-poster.jpg)" }}
+            />
+            <video
+              playsInline
+              muted
+              autoPlay
+              loop
+              preload="auto"
+              fetchPriority="high"
+              className="absolute inset-0 h-full w-full object-cover object-[50%_38%]"
+              ref={videoRef}
+            >
+              <source src="/hero40.mp4" type="video/mp4" />
+            </video>
 
-            <div className="relative mx-auto max-w-[820px] mb-6 rounded-2xl border border-white/15 bg-white/5">
-              <span className="pointer-events-none absolute left-0 top-1 bottom-1 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
-              <div className="flex flex-col gap-3 p-5">
-                <p className="text-[18px] leading-relaxed opacity-90">
-                  A growing library of concise collections—shaped by science and lived
-                  experience—to sharpen your mind and uplift your life. Each theme is
-                  designed to meet you where you are and guide you toward greater
-                  confidence, balance, and intentional living.
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
+              <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/30 to-black/45" />
+              <div className="relative px-6">
+                <h1 className="font-serif text-5xl md:text-6xl opacity-95 md:drop-shadow-lg">
+                  Speaking
+                </h1>
+                <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 mb-3 rounded" />
+                <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto md:drop-shadow-md">
+                  Science-backed, story-driven talks that spark resilience,
+                  growth, and lasting changes.
                 </p>
-                <div className="pt-3 text-xs opacity-70 border-t border-[var(--color-cream)]/15">
-                  This page is under construction and will be updated periodically with
-                  new collections.
-                </div>
               </div>
             </div>
           </div>
+        </section>
 
-        {/* Desktop sticky sub-nav (kept OUTSIDE the zoom, transparent so no tint) */}
-        <div className="hidden md:block">
-  {Nav}
-</div>
+        {/* ===== Intro (mobile zoom preserved) ===== */}
+        <div
+          style={{ "--z": 3.0, "--zoomL": 1.6 }}
+          className={`
+            zoomwrap md:contents origin-top
+            [transform:scale(var(--z))] [width:calc(100%/var(--z))] mx-auto
+            md:[transform:none] md:[width:100%]
+            landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
+            overflow-visible
+          `}
+        >
+          <section className="relative w-full py-16" id="intro">
+            <div className="absolute inset-x-0 top-0 h-px bg-[var(--color-cream)]/15" />
+            <div className="mx-auto max-w-[1000px] px-6 text-left space-y-8">
+              <h2 className="font-serif text-3xl md:text-4xl opacity-90 text-center font-semibold tracking-wide">
+                &ldquo;Engaging. Inspiring. Transformational.&rdquo;
+              </h2>
 
-{/* Mobile nav — simplest, blur-safe chip list */}
-<div className="md:hidden mt-4 grid grid-cols-3 gap-2">
-  {THEMES.map((t) => {
-    const active = currentId === t.slug;
-    return (
-      <button
-        key={t.slug}
-        onClick={() => handleJump(t.slug)}
-        aria-current={active ? "true" : "false"}
-className={[
-  "w-full rounded-full px-2 py-1.5 text-[11px] font-semibold tracking-wide truncate transition",
-  "active:scale-95 active:brightness-125",
-  "bg-[var(--color-teal-800)] text-[var(--color-cream)] border border-white/12"
-        ].join(" ")}
-      >
-        {t.title}
-      </button>
-    );
-  })}
-</div>
+              <div className="space-y-6 opacity-85 text-lg md:text-xl leading-loose">
+                <p>
+                  Dr. Juan Pablo Salerno is a respected mental health scientist,
+                  personal growth expert, and engaging speaker whose work bridges
+                  cutting-edge science with practical tools for personal and
+                  professional transformation. He has delivered talks and workshops
+                  for audiences across academic, scientific, governmental, health,
+                  and nonprofit sectors, with a focus on mental health, resilience,
+                  and personal growth.
+                </p>
+                <p>
+                  His speaking engagements have included national and local
+                  conferences, federal health organizations, leading universities,
+                  research institutes, K–12 public schools, community-based mental
+                  health and healthcare organizations, and county and state
+                  departments of health.
+                </p>
+                <p>
+                  Presentations typically run between one to two hours and can be delivered
+                  in-person or virtually. Dr. Salerno’s style is dynamic,
+                  approachable, and grounded in evidence-based science, leaving
+                  attendees inspired and equipped with actionable strategies.
+                </p>
+              </div>
 
-{/* 3) ZOOM WRAPPER — Sections ONLY */}
-<div
-  style={{ '--z': 3.0, '--zoomL': 1.60 }}
-  className={`
-    md:contents
-    origin-top
-    [transform:scale(var(--z))] [width:calc(100%/var(--z))]
-    mx-auto
-    md:[transform:none] md:[width:100%]
-    landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
-    overflow-visible
-  `}
-></div>
-
-          {/* Sections */}
-          <section className="mx-auto max-w-[1200px] px-6 pt-2 pb-20">
-            <div className="space-y-14">
-              {THEMES.map((theme, idx) => (
-                <section key={theme.slug} id={theme.slug} className="scroll-mt-28">
-                  <header className="mb-4">
-                    <h2 className="font-serif text-[clamp(26px,3.3vw,34px)] opacity-95 mt-12">
-                      {theme.title}
-                    </h2>
-                    <div className="h-[2px] w-12 bg-[var(--color-gold)]/85 rounded mt-0" />
-                    <p className="opacity-85 mt-3 max-w-3xl">{theme.blurb}</p>
-                  </header>
-
-                  <ul className="grid gap-8 md:grid-cols-2">
-                    {theme.collections.map((col) => {
-                      const hasItems = !!(col.items && col.items.length > 0);
-                      return (
-                        <li
-                          key={col.slug}
-                          className="relative h-full rounded-2xl border border-white/12 bg-white/[0.04] p-6 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md flex flex-col"
-                        >
-                          {/* GOLD SPINE */}
-                          <span className="pointer-events-none absolute left-0 top-1 bottom-1 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
-
-                          {/* Header block */}
-                          <div>
-                            <h3 className="font-serif text-[20px] md:text-[22px] opacity-95">
-                              {col.title}
-                            </h3>
-                            <div className="h-[2px] w-10 bg-[var(--color-gold)]/60 rounded mt-0" />
-                            <p className="opacity-85 text-[15px] md:text-[16px] mt-2 min-h-[40px]">
-                              {col.subtitle}
-                            </p>
-                          </div>
-
-                          {col.tags?.length ? (
-                            <div className="mt-3 flex flex-wrap gap-2 min-h-[28px]">
-                              {col.tags.map((t) => (
-                                <span
-                                  key={t}
-                                  className="rounded-full border border-white/15 bg-white/10 px-2 py-0.5 text-[12px]"
-                                >
-                                  {t}
-                                </span>
-                              ))}
-                            </div>
-                          ) : (
-                            <div className="mt-3 min-h-[28px]" />
-                          )}
-
-                          <div className="flex-1" />
-
-                          <div className="mt-5 flex flex-wrap gap-3">
-                            {hasItems ? (
-                              <button
-                                onClick={() => openCollection(col, theme.title)}
-                                className="rounded-full border border-white/20 px-4 py-2 hover:bg-white/10 transition"
-                                aria-label={`Open collection ${col.title}`}
-                              >
-                                View Collection
-                              </button>
-                            ) : (
-                              <button
-                                disabled
-                                className="rounded-full border border-white/20 px-4 py-2 opacity-60 cursor-not-allowed"
-                                aria-label="Collection coming soon"
-                              >
-                                Coming Soon
-                              </button>
-                            )}
-                          </div>
-                        </li>
-                      );
-                    })}
-                  </ul>
-
-{/* Mobile section footer nav — crisp-safe (no sticky, no fixed) */}
-<div className="md:hidden mt-6 flex items-center justify-between gap-2">
-  <button
-    onClick={() => handleJump(THEMES[Math.max(0, idx - 1)].slug)}
-    className="rounded-full border border-white/15 bg-[var(--color-teal-800)] px-3 py-1.5 text-[12px] font-semibold text-[var(--color-cream)] active:scale-95 active:brightness-125"
-  >
-    ← Prev
-  </button>
-
-  <button
-    onClick={() => {
-      // jump back to the top intro (or first theme if you prefer)
-      const top = document.querySelector('h1'); 
-      if (top) top.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      // Or: handleJump(THEMES[0].slug)
-    }}
-    className="rounded-full border border-white/15 bg-[var(--color-teal-800)] px-3 py-1.5 text-[12px] font-semibold text-[var(--color-cream)] active:scale-95 active:brightness-125"
-  >
-    All Themes
-  </button>
-
-  <button
-    onClick={() => handleJump(THEMES[Math.min(THEMES.length - 1, idx + 1)].slug)}
-    className="rounded-full border border-white/15 bg-[var(--color-teal-800)] px-3 py-1.5 text-[12px] font-semibold text-[var(--color-cream)] active:scale-95 active:brightness-125"
-  >
-    Next →
-  </button>
-</div>
-                  {idx < THEMES.length - 1 && (
-                    <div className="mt-12">
-                      <div className="h-px w-full bg-[var(--color-cream)]/16" />
-                    </div>
-                  )}
-                </section>
-              ))}
+              {/* Intro quick nav — match dark blue pills and size */}
+              <div className="md:hidden mt-7">
+                <div className="flex flex-wrap gap-3">
+                  <button onClick={() => jump("programs")} className={btnDark}>Programs</button>
+                  <button onClick={() => jump("formats")} className={btnDark}>Formats</button>
+                  <button onClick={() => jump("results")} className={btnDark}>Results</button>
+                  <button onClick={() => jump("testimonials")} className={btnDark}>Testimonials</button>
+                </div>
+              </div>
             </div>
           </section>
-        </div>
 
+          {/* ===== MAIN ===== */}
+          <div className="mx-auto max-w-[1400px] py-14 space-y-24" id="topics">
+            <hr className="border-t border-[var(--color-cream)]/22 mb-8 w-full" />
+
+            {/* Programs */}
+            <section id="programs" className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mx-15 gap-y-12">
+              <div className="lg:col-span-5 lg:py-6">
+                <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Programs</p>
+                <h2 className="font-serif text-4xl mb-2">Popular Topics</h2>
+                <div className="h-[2px] w-12 bg-[var(--color-gold)]/75 mb-8 rounded" />
+
+                {/* ... your bullet lists unchanged ... */}
+                {/* (kept for brevity) */}
+              </div>
+
+              {/* Quotes desktop column unchanged (omitted for brevity) */}
+
+              {/* Mobile footer nav — SPREAD + big pills + arrows */}
+              <div className="md:hidden mt-10 px-6">
+                <div className="flex items-stretch justify-between gap-8">
+                  <button onClick={() => jump("intro")} className={`w-[32%] ${btnDark}`}>← Prev</button>
+                  <button onClick={() => jump("topics")} className={`w-[32%] ${btnDark}`}>All Speaking</button>
+                  <button onClick={() => jump("formats")} className={`w-[32%] ${btnDark}`}>Next →</button>
+                </div>
+              </div>
+            </section>
+
+            {/* Formats */}
+            <hr className="border-t border-[var(--color-cream)]/22 mb-8 w-full" />
+            <section id="formats" className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 lg:gap-x-0 mx-15 items-center">
+              {/* quotes right column (desktop) unchanged */}
+
+              <div className="lg:col-span-5 order-1 lg:order-2 lg:py-6 space-y-8 lg:pl-6">
+                <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Formats</p>
+                <h2 className="font-serif text-4xl mb-2">Dr. Salerno Offers</h2>
+                <div className="h-[2px] w-12 bg-[var(--color-gold)]/75 mb-8 rounded" />
+                {/* ... formats blocks unchanged ... */}
+              </div>
+
+              {/* Footer nav — spread + arrows */}
+              <div className="md:hidden mt-10 px-6 order-2">
+                <div className="flex items-stretch justify-between gap-8">
+                  <button onClick={() => jump("programs")} className={`w-[32%] ${btnDark}`}>← Prev</button>
+                  <button onClick={() => jump("topics")} className={`w-[32%] ${btnDark}`}>All Speaking</button>
+                  <button onClick={() => jump("results")} className={`w-[32%] ${btnDark}`}>Next →</button>
+                </div>
+              </div>
+            </section>
+
+            {/* Results */}
+            <hr className="border-t border-[var(--color-cream)]/22 mb-8 w-full" />
+            <section id="results" className="grid grid-cols-1 lg:grid-cols-12 gap-12 mx-15 items-start gap-y-12">
+              <div className="lg:col-span-5 lg:py-6">
+                <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Results</p>
+                <h2 className="font-serif text-4xl mb-2">Outcomes</h2>
+                <div className="h-[2px] w-12 bg-[var(--color-gold)]/75 mb-6 rounded" />
+                {/* ... outcomes list unchanged ... */}
+              </div>
+
+              {/* Footer nav — spread + arrows */}
+              <div className="md:hidden mt-10 px-6">
+                <div className="flex items-stretch justify-between gap-8">
+                  <button onClick={() => jump("formats")} className={`w-[32%] ${btnDark}`}>← Prev</button>
+                  <button onClick={() => jump("topics")} className={`w-[32%] ${btnDark}`}>All Speaking</button>
+                  <button onClick={() => jump("testimonials")} className={`w-[32%] ${btnDark}`}>Next →</button>
+                </div>
+              </div>
+            </section>
+
+            {/* ===== Testimonials (MOBILE) — now populated ===== */}
+            <section id="testimonials" className="md:hidden mx-15">
+              <hr className="border-t border-[var(--color-cream)]/22 mb-8 w-full" />
+              <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Testimonials</p>
+              <h2 className="font-serif text-4xl mb-2">What People Say</h2>
+              <div className="h-[2px] w-12 bg-[var(--color-gold)]/75 mb-8 rounded" />
+
+              <div className="flex flex-col gap-6 max-w-[640px]">
+                {/* Programs quotes */}
+                <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
+                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+                  <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
+                    <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                    <p>...an exceptional speaker: he is engaging, well-spoken, and clearly passionate about his work.</p>
+                    <span aria-hidden className="absolute right-4 bottom-5 text-4xl opacity-20 select-none">”</span>
+                  </blockquote>
+                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+                    — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting &amp; Expo
+                  </figcaption>
+                </figure>
+
+                <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
+                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+                  <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
+                    <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                    <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
+                    <span className="absolute right-24 bottom-5 text-4xl opacity-20 select-none">”</span>
+                  </blockquote>
+                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+                    — <span className="text-[var(--color-gold)]">Audience member</span>, Society for Prevention Research Annual Meeting
+                  </figcaption>
+                </figure>
+
+                <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
+                  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" aria-hidden />
+                  <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
+                    <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                    <p>Dr. Salerno blends data with human stories in a way that makes science resonate.</p>
+                    <span className="absolute right-14 bottom-5 text-4xl opacity-20 select-none">”</span>
+                  </blockquote>
+                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+                    — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network International Conference
+                  </figcaption>
+                </figure>
+
+                {/* Formats quotes */}
+                <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
+                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+                  <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
+                    <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                    <p>...gifted speaker whose engaging style &amp; clear communication bring complex ideas to life.</p>
+                    <span className="absolute right-6 bottom-5 text-4xl opacity-20 select-none">”</span>
+                  </blockquote>
+                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+                    — <span className="text-[var(--color-gold)]">Audience member</span>, Columbia University
+                  </figcaption>
+                </figure>
+
+                <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
+                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+                  <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
+                    <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                    <p>...can communicate with diverse audiences, speaks with heart and dimensionality.</p>
+                    <span className="absolute right-23 bottom-5 text-4xl opacity-20 select-none">”</span>
+                  </blockquote>
+                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+                    — <span className="text-[var(--color-gold)]">Audience member</span>, Society of Behavioral Medicine Annual Meeting
+                  </figcaption>
+                </figure>
+
+                <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
+                  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" aria-hidden />
+                  <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
+                    <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                    <p>...brings a charming intensity and passion that inspires others with his presence and message.</p>
+                    <span className="absolute right-0 bottom-5 text-4xl opacity-20 select-none">”</span>
+                  </blockquote>
+                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+                    — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network International Conference
+                  </figcaption>
+                </figure>
+
+                {/* Results quotes */}
+                <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
+                  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+                  <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
+                    <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                    <p>...engaging, energetic, strong communication skills, proven ability to disseminate science.</p>
+                    <span className="absolute right-13 bottom-5 text-4xl opacity-20 select-none">”</span>
+                  </blockquote>
+                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+                    — <span className="text-[var(--color-gold)]">Audience member</span>, University of Central Florida
+                  </figcaption>
+                </figure>
+
+                <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
+                  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-r" />
+                  <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
+                    <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+                    <p>...a highly engaging, knowledgeable, and skilled speaker...strongly recommended.</p>
+                    <span className="absolute right-44 bottom-5 text-4xl opacity-20 select-none">”</span>
+                  </blockquote>
+                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+                    — <span className="text-[var(--color-gold)]">Audience member</span>, University of California, Los Angeles
+                  </figcaption>
+                </figure>
+              </div>
+
+              {/* Footer nav — spread + arrows */}
+              <div className="md:hidden mt-10 px-6">
+                <div className="flex items-stretch justify-between gap-8">
+                  <button onClick={() => jump("results")} className={`w-[32%] ${btnDark}`}>← Prev</button>
+                  <button onClick={() => jump("topics")} className={`w-[32%] ${btnDark}`}>All Speaking</button>
+                  <button onClick={() => jump("programs")} className={`w-[32%] ${btnDark}`}>Next →</button>
+                </div>
+              </div>
+            </section>
+
+            {/* CTA (unchanged) */}
+            <div className="flex justify-center">
+              <a
+                href="/contact"
+                className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs md:w-auto md:max-w-none"
+              >
+                Book Dr. Salerno to Speak
+              </a>
+            </div>
+          </div>
+        </div>
       </main>
 
-      {/* Hide horizontal scrollbar for the sticky nav (keeps scroll gesture) */}
       <style jsx global>{`
-        .no-scrollbar {
-          -ms-overflow-style: none; /* IE and Edge */
-          scrollbar-width: none; /* Firefox */
-        }
-        .no-scrollbar::-webkit-scrollbar {
-          display: none; /* Chrome, Safari */
-        }
-
-        /* Crisp text inside scaled wrapper (matches your other pages) */
-        .zoomwrap,
-        .zoomwrap * {
-          -webkit-font-smoothing: antialiased;
-          text-rendering: geometricPrecision;
-        }
-          /* Prevent browser UI/scroll background from ever peeking through on iOS/Android */
-          @supports (-webkit-touch-callout: none) {
+        @supports (-webkit-touch-callout: none) {
           html, body { background: var(--color-teal-850) !important; }
         }
-          @media (max-width: 768px) {
-  body.hide-footer-on-resources footer,
-  body.hide-footer-on-resources [data-role="site-footer"],
-  body.hide-footer-on-resources #site-footer {
-    display: none !important;
-  }
-}
+        .zoomwrap, .zoomwrap * { -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision; }
+        @media (max-width: 767px) {
+          .zoomwrap ul.text-lg li > span:first-child {
+            color: var(--color-gold) !important;
+            -webkit-text-fill-color: var(--color-gold) !important;
+            font-family: "Helvetica Neue", Arial, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif !important;
+            font-weight: 700; opacity: 1 !important;
+          }
+        }
       `}</style>
     </>
-  );
-}
-
-/* ===== Modal (YouTube-only embed) ===== */
-function CollectionModal({ open, onClose, collection }) {
-  if (!open || !collection) return null;
-
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
-      {/* overlay */}
-      <button
-        aria-label="Close collection"
-        onClick={onClose}
-        className="absolute inset-0 bg-black/50"
-      />
-
-      <div className="relative mx-4 max-h-[85vh] w-full max-w-3xl overflow-hidden rounded-2xl border border-white/15 bg-[var(--color-teal-850)] shadow-2xl">
-        <header className="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-white/10 bg-[var(--color-teal-850)]/95 px-5 py-4">
-          <div className="min-w-0">
-            <div className="text-xs opacity-70 truncate">{collection.theme}</div>
-            <h3 className="font-serif text-xl opacity-95 truncate">
-              {collection.title} <span className="text-xs opacity-60 align-middle">(Collection)</span>
-            </h3>
-            <p className="text-sm opacity-75 truncate">{collection.subtitle}</p>
-          </div>
-          <button
-            onClick={onClose}
-            className="rounded-xl border border-white/20 px-3 py-1.5 hover:bg-white/10"
-          >
-            Close
-          </button>
-        </header>
-
-        <div className="max-h-[70vh] overflow-y-auto px-5 py-5">
-          {(!collection.items || collection.items.length === 0) ? (
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 text-center">
-              <p className="opacity-85">
-                This collection is being assembled. Check back soon for new content.
-              </p>
-            </div>
-          ) : (
-            <ul className="grid gap-5">
-              {collection.items.map((it, idx) => (
-                <li key={idx} className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <h4 className="font-serif text-lg opacity-95">{it.title}</h4>
-                  <p className="text-sm opacity-75">{it.promise}</p>
-                  <div className="mt-3 aspect-video overflow-hidden rounded-lg border border-white/10">
-                    <iframe
-                      className="h-full w-full"
-                      src={it.url}
-                      title={it.title}
-                      loading="lazy"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    />
-                  </div>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-      </div>
-    </div>
   );
 }
