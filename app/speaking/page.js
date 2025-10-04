@@ -806,20 +806,26 @@ body:has([data-page="speaking"]) [data-component="footer"] {
   display: none !important;
 }
 
-/* SPEAKING hero text zoom: mobile portrait & landscape only */
+/* Default (mobile both orientations): no zoom unless overridden below */
+[data-page="speaking"] .hero-zoom { --tz: 1; }
+
+/* Portrait: bigger */
 @media (max-width: 767px) and (orientation: portrait) {
-  [data-page="speaking"] .hero-zoom { --tz: 3.00; }
-}
-@media (max-width: 767px) and (orientation: landscape) {
-  [data-page="speaking"] .hero-zoom { --tz: 1.60; }
+  [data-page="speaking"] .hero-zoom { --tz: 1.30; }
 }
 
-/* Keep the scaled text crisp */
+/* Landscape: slightly smaller than portrait */
+@media (max-width: 767px) and (orientation: landscape) {
+  [data-page="speaking"] .hero-zoom { --tz: 1.14; }
+}
+
+/* Keep scaled text crisp */
 [data-page="speaking"] .hero-zoom,
 [data-page="speaking"] .hero-zoom * {
   -webkit-font-smoothing: antialiased;
   text-rendering: geometricPrecision;
 }
+
 
       `}</style>
     </>
