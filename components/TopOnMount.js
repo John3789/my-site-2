@@ -1,23 +1,25 @@
+// components/TopOnMount.jsx
 "use client";
-import { useLayoutEffect, useState } from "react";
+
+import { useEffect } from "react";
 
 export default function TopOnMount({ children }) {
-  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    // Desktop only
+    if (!window.matchMedia("(min-width: 768px)").matches) return;
 
-  useLayoutEffect(() => {
+    // Temporarily disable smooth scroll so it doesn't animate
     const html = document.documentElement;
-    const prev = html.style.scrollBehavior;
-    // Disable smooth for this tick and snap to top before reveal
+    const prevBehavior = html.style.scrollBehavior;
     html.style.scrollBehavior = "auto";
-    window.scrollTo(0, 0);
-    html.style.scrollBehavior = prev || "";
-    setReady(true);
+
+    // Force to top on first paint
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+      // restore any previous behavior
+      html.style.scrollBehavior = prevBehavior || "";
+    });
   }, []);
 
-  // Hide entirely until we've snapped to top (no fade animation)
-  return (
-    <div style={{ visibility: ready ? "visible" : "hidden" }}>
-      {children}
-    </div>
-  );
+  return children;
 }
