@@ -798,7 +798,7 @@ body:has([data-page="speaking"]) [data-component="footer"] {
     letter-spacing: -0.012em;
   }
   [data-page="speaking"] .s-hero .hero-sub {
-    font-size: clamp(26px, 7.6vw, 36px) !important;
+    font-size: clamp(30px, 8.8vw, 46px) !important;
     line-height: 1.28;
   }
   [data-page="speaking"] .s-hero .hero-hr {
