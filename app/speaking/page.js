@@ -67,18 +67,17 @@ export default function SpeakingPage() {
         </section>
 
         {/* ===== Intro + Main (zoomed for mobile) ===== */}
-        <div
-          style={{ "--z": 3.0, "--zoomL": 1.6 }}
-          className={`
-            md:contents
-            origin-top
-            [transform:scale(var(--z))] [width:calc(100%/var(--z))]
-            mx-auto
-            md:[transform:none] md:[width:100%]
-            landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
-            overflow-visible
-          `}
-        >
+<div
+  style={{ "--z": 3.0, "--zoomL": 1.6 }}
+  className={`
+    md:contents
+    origin-top mx-auto overflow-visible
+    [transform:scale(var(--z))] [width:calc(100%/var(--z))]
+    md:[transform:none] md:[width:100%]
+    landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
+  `}
+>
+
           {/* ===== Intro Blurb ===== */}
           <section className="relative w-full py-16">
             {/* subtle hairline divider from hero */}
