@@ -226,7 +226,7 @@ export default function ResourcesPage() {
             <div className="mx-auto h-[2px] w-16 bg-[var(--color-gold)]/85 rounded mb-6" />
 
             <div className="relative mx-auto max-w-[820px] mb-6 rounded-2xl border border-white/15 bg-white/5">
-              <span className="pointer-events-none absolute left-0 top-1 h-39 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
+              <span className="pointer-events-none absolute left-0 top-1 bottom-1 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
               <div className="flex flex-col gap-3 p-5">
                 <p className="text-[18px] leading-relaxed opacity-90">
                   A growing library of concise collections—shaped by science and lived
@@ -299,7 +299,7 @@ className={[
                           className="relative h-full rounded-2xl border border-white/12 bg-white/[0.04] p-6 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md flex flex-col"
                         >
                           {/* GOLD SPINE */}
-                          <span className="pointer-events-none absolute left-0 top-1 h-64 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
+                          <span className="pointer-events-none absolute left-0 top-1 bottom-1 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
 
                           {/* Header block */}
                           <div>
