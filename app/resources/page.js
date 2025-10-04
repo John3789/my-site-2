@@ -604,7 +604,7 @@ export default function SpeakingPage() {
             </section>
 
             {/* ===== Testimonials (mobile-only; all quotes moved here) ===== */}
-            <section id="testimonials" className="md:hidden mx-15">
+            <section id="testimonials" className="mx-15">
               <hr className="border-t border-[var(--color-cream)]/22 mb-8 w-full" />
               <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">
                 Testimonials
