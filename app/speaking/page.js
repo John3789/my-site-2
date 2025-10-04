@@ -101,7 +101,7 @@ const jump = (id, opts = {}) => {
             {/* Overlay headline + subheadline + vignette */}
             <div className="hero-overlay absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
               <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/30 to-black/45" />
-              <div className="s-hero absolute inset-x-0 bottom-[22vh] px-6 md:static md:bottom-auto landscape:bottom-[12vh]">
+              <div className="relative px-6 s-hero">
   <h1 className="hero-title font-serif opacity-95 md:drop-shadow-lg md:text-6xl">
     Speaking
   </h1>
