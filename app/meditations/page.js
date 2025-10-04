@@ -1,6 +1,11 @@
 // app/meditations/page.js
+import TopOnMount from "@/components/TopOnMount";
+
 export default function MeditationsPage() {
+
   return (
+            <TopOnMount>
+    
     <>
       {/* Mobile zoom wrapper (same pattern as Books/About).
           Desktop (md+) is unchanged. */}
@@ -151,5 +156,7 @@ export default function MeditationsPage() {
         </main>
       </div>
     </>
+                        </TopOnMount>
+    
   );
 }

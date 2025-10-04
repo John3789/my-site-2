@@ -1,7 +1,10 @@
 import Link from "next/link";
+import TopOnMount from "@/components/TopOnMount";
+
 
 export default function BooksPage() {
   return (
+        <TopOnMount>
     <>
       {/* ===== PAGE BODY WRAPPER (same zoom as home/about) ===== */}
       <div
@@ -288,5 +291,7 @@ export default function BooksPage() {
         </main>
       </div>
     </>
+                    </TopOnMount>
+    
   );
 }
