@@ -187,7 +187,7 @@ const jump = (id, opts = {}) => {
 <div className="mt-8 flex justify-center">
   <a
     href="/contact"
-    className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w/full max-w-xs md:w-auto md:max-w-none"
+    className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w/full max-w-xs md:w-auto md:max-w-none md:relative md:top-8"
   >
     Book Dr. Salerno to Speak
   </a>
@@ -813,10 +813,10 @@ const jump = (id, opts = {}) => {
             </div>
 
             {/* CTA (unchanged) */}
-            <div className="flex justify-center">
+            <div className="flex justify-center translate-y-[-28px] md:translate-y-0">
               <a
                 href="/contact"
-                className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w/full max-w-xs md:w-auto md:max-w-none translate-y-[30px] md:translate-y-[-60px]"
+                className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w/full max-w-xs md:w-auto md:max-w-none md:translate-y-[-60px]"
               >
                 Book Dr. Salerno to Speak
               </a>
