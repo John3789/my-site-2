@@ -790,23 +790,22 @@ body:has([data-page="speaking"]) [data-component="footer"] {
 [data-page="speaking"] :is(footer, .social-footer, [data-role="social-footer"], [data-component="footer"]) {
   display: none !important;
 }
-/* SPEAKING — mobile PORTRAIT: biggest */
+/* SPEAKING — mobile PORTRAIT: much larger */
 @media (max-width: 767px) and (orientation: portrait) {
   [data-page="speaking"] .s-hero .hero-title {
-    font-size: clamp(60px, 16vw, 96px) !important;
-    line-height: 1.05;
-    letter-spacing: -0.01em;
+    font-size: clamp(84px, 20vw, 140px) !important;
+    line-height: 1.04;
+    letter-spacing: -0.012em;
   }
   [data-page="speaking"] .s-hero .hero-sub {
-    font-size: clamp(22px, 6vw, 28px) !important;
-    line-height: 1.25;
+    font-size: clamp(24px, 6.8vw, 34px) !important;
+    line-height: 1.28;
   }
   [data-page="speaking"] .s-hero .hero-hr {
-    width: clamp(112px, 30vw, 160px) !important;
-    height: 3px !important;
+    width: clamp(144px, 36vw, 208px) !important;
+    height: 4px !important;
   }
 }
-
 /* SPEAKING — mobile LANDSCAPE: a bit smaller than portrait (video has less height) */
 @media (max-width: 767px) and (orientation: landscape) {
   [data-page="speaking"] .s-hero .hero-title {
