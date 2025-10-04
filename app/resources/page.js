@@ -129,7 +129,7 @@ export default function ResourcesPage() {
   /* ========= Sticky subnav with fades & chevrons (desktop only) ========= */
   const Nav = useMemo(() => {
     return (
-      <div className="sticky top-[64px] z-30 -mx-6 border-b border-white/10">
+      <div className="md:sticky md:top-[64px] z-30 -mx-6 border-b border-white/10 bg-transparent md:bg-[var(--color-teal-850)]/80">
         <div className="relative mx-auto max-w-[1200px] px-6 py-3">
           {/* Scroll container */}
           <div
@@ -197,18 +197,22 @@ export default function ResourcesPage() {
     <>
       <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
         {/* ===== ZOOMED CONTENT (title + intro + sections) ===== */}
-        <div
-          style={{ '--z': 3.0, '--zoomL': 1.60 }}
-className={`
-  md:contents
-  origin-top
-  [transform:scale(var(--z))] [width:calc(100%/var(--z))]
-  mx-auto
-  md:[transform:none] md:[width:100%]
-  landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
-  overflow-visible
-`}
-        >
+ <div
+ style={{ '--z': 3.0, '--zoomL': 1.60 }}
+   className={`
+     md:contents
+     origin-top
+     [transform:scale(var(--z))] [width:calc(100%/var(--z))]
+     mx-auto
+     md:[transform:none] md:[width:100%]
+     landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
+     overflow-visible
+     relative z-0 isolate
+     will-change-transform
+     [backface-visibility:hidden]
+     [transform-style:flat]
+   `}
+ >
           {/* Title + Intro (now inside the zoom so sizes match) */}
           <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-6">
             <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-3">
