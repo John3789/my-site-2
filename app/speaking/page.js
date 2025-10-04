@@ -474,33 +474,16 @@ export default function SpeakingPage() {
     -webkit-font-smoothing: antialiased;
     text-rendering: geometricPrecision;
   }
-    
-/* Mobile-only: force gold checks with an inline SVG mask (no emoji) */
+    /* Mobile-only: force the checkmark span to render as gold text (not emoji) */
 @media (max-width: 767px) {
-  /* Target the first <span> in each list item (your checkmark span) */
   .zoomwrap ul.text-lg li > span:first-child {
-    position: relative;
-    color: transparent !important;                 /* hide original glyph */
-    -webkit-text-fill-color: transparent !important;
-  }
-  .zoomwrap ul.text-lg li > span:first-child::before {
-    content: "" !important;                        /* override any prior content */
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    vertical-align: -0.1em;
-    background-color: var(--color-gold);          /* the gold color you want */
-    /* use the SVG shape as a mask so the background paints the check */
-    -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik05IDE2LjJMNCA4LjhsLTEuNCAxLjRMOSAxOSA yMSA3bC0xLjQtMS40eiIvPjwvc3ZnPg==");
-    mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik05IDE2LjJMNCA4LjhsLTEuNCAxLjRMOSAxOSA yMSA3bC0xLjQtMS40eiIvPjwvc3ZnPg==");
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
+    color: var(--color-gold) !important;
+    -webkit-text-fill-color: var(--color-gold) !important;
+    font-family: "Helvetica Neue", Arial, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif !important;
+    font-weight: 700;
+    opacity: 1 !important;
   }
 }
-
-
 `}</style>
     </>
   );
