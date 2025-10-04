@@ -409,7 +409,7 @@ export default function SpeakingPage() {
                     <span>Strengthening relationships and connection</span>
                   </li>
                   <li className="flex gap-2">
-                    <span className="text-[var(--color-gold)]">✔</span>
+                    <span className="text-[var(--color-gold)]">✔︎</span>
                     <span>Aligning work and life with higher purpose</span>
                   </li>
                 </ul>
