@@ -42,12 +42,9 @@ const jump = (id, opts = {}) => {
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]" />
 
         {/* ===== HERO VIDEO with overlay text ===== */}
-<section className="relative w-full">
-  <div
-    style={{ "--hz": 1.20 }}
-    className="origin-top [transform:scale(var(--hz))] [width:calc(100%/var(--hz))] md:[transform:none] md:[width:100%]"
-    >
-    <div className="relative h-[70vh] bg-black">
+        <section className="relative w-full">
+          {/* black backdrop so there’s never a green flash */}
+          <div className="relative h-[70vh] bg-black">
             {/* Poster as an instant background layer */}
             <div
               aria-hidden="true"
@@ -82,7 +79,6 @@ const jump = (id, opts = {}) => {
                 </p>
               </div>
             </div>
-          </div>
           </div>
         </section>
 
