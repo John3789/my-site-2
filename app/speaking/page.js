@@ -433,7 +433,7 @@ export default function SpeakingPage() {
             </section>
 
             {/* Programs footer buttons (mobile only) — tighter */}
-<div className="md:hidden -mt-12 mb-24 w-full">
+<div className="md:hidden -mt-12 mb-12 w-full">
   <div className="w-full flex justify-center">
     <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
       <button
@@ -582,27 +582,29 @@ export default function SpeakingPage() {
               </div>
             </section>
 
-            {/* Formats footer buttons (mobile only) — AFTER the section */}
-<div className="md:hidden mt-2 w-full">
-  <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
-    <button
-      onClick={() => jump("programs")}
-      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/18 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
-    >
-      ← Prev
-    </button>
-    <button
-      onClick={() => jump("quicknav", { center: true })}
-      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/18 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
-    >
-      All Speaking
-    </button>
-    <button
-      onClick={() => jump("results")}
-      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/18 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
-    >
-      Next →
-    </button>
+            {/* Formats footer buttons (mobile only) — slimmer + same spacing as Service Pillars */}
+<div className="md:hidden -mt-12 mb-12 w-full">
+  <div className="w-full flex justify-center">
+    <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
+      <button
+        onClick={() => jump("programs")}
+        className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[13px] font-semibold tracking-wide leading-tight transition active:translate-y-[1px]"
+      >
+        ← Prev
+      </button>
+      <button
+        onClick={() => jump("quicknav", { center: true })}
+        className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[13px] font-semibold tracking-wide leading-tight transition active:translate-y-[1px]"
+      >
+        All Speaking
+      </button>
+      <button
+        onClick={() => jump("results")}
+        className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[13px] font-semibold tracking-wide leading-tight transition active:translate-y-[1px]"
+      >
+        Next →
+      </button>
+    </div>
   </div>
 </div>
 
