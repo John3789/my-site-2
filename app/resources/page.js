@@ -242,7 +242,7 @@ export default function ResourcesPage() {
             <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-3">
               Resources
             </h1>
-            <div className="mx-auto h-[2px] w-16 bg-[var(--color-gold)]/85 rounded mb-6" />
+            <div className="mx-auto h-[2px] w-16 bg-[var(--color-gold)]/85 rounded mb-15" />
 
             <div className="relative mx-auto max-w-[820px] mb-6 rounded-2xl border border-white/15 bg-white/5">
               <span className="pointer-events-none absolute left-0 top-1 bottom-1 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
@@ -255,7 +255,7 @@ export default function ResourcesPage() {
                 </p>
                 <div className="pt-3 text-xs opacity-70 border-t border-[var(--color-cream)]/15">
                   This page is under construction and will be updated periodically with
-                  new collections.
+                  new content.
                 </div>
               </div>
             </div>
@@ -286,6 +286,14 @@ export default function ResourcesPage() {
               );
             })}
           </div>
+
+          {/* Mobile-only divider under the nav (above Motivation) */}
+<div className="md:hidden">
+  <div className="mx-auto max-w-[1200px] px-6">
+    <div className="h-px w-full bg-[var(--color-cream)]/15" />
+  </div>
+</div>
+
 
           {/* 3) ZOOM WRAPPER — Sections ONLY */}
           <div
