@@ -1,4 +1,74 @@
+"use client";
+
+import { useEffect, useMemo, useRef, useState } from "react";
+
 export default function ConsultingPage() {
+  /* ---- Sticky pill nav: active section tracking (Resources-style) ---- */
+  const SECTIONS = useMemo(
+    () => [
+      { id: "approach", label: "Approach" },
+      { id: "pillars", label: "Services" },
+      { id: "process", label: "Process" },
+      { id: "results", label: "Results" },
+      { id: "who-i-work-with", label: "Who I Work With" },
+      { id: "packages", label: "Ways to Partner" },
+      { id: "contact", label: "Contact" },
+      { id: "testimonials", label: "Testimonials" },
+    ],
+    []
+  );
+
+  const [activeId, setActiveId] = useState(SECTIONS[0].id);
+
+  // Smooth jump to a section
+  const handleJump = (id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  useEffect(() => {
+    const entriesMap = new Map();
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => entriesMap.set(e.target.id, e));
+        // pick the most visible observed section
+        let topEntry = null;
+        SECTIONS.forEach(({ id }) => {
+          const e = entriesMap.get(id);
+          if (!e) return;
+          if (e.isIntersecting) {
+            if (!topEntry || e.intersectionRatio > topEntry.intersectionRatio) {
+              topEntry = e;
+            }
+          }
+        });
+        if (topEntry?.target?.id) setActiveId(topEntry.target.id);
+      },
+      // Center-biased window; generous bottom so the last section can become active
+      { rootMargin: "-20% 0px -55% 0px", threshold: [0.15, 0.35, 0.6, 0.9] }
+    );
+
+    SECTIONS.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el) obs.observe(el);
+    });
+
+    // Safety: if scrolled to very bottom, force 'testimonials'
+    const onScroll = () => {
+      const nearBottom =
+        window.innerHeight + window.scrollY >=
+        document.body.scrollHeight - 2; // <= 2px from bottom
+      if (nearBottom) setActiveId("testimonials");
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => {
+      obs.disconnect();
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, [SECTIONS]);
+
   return (
     <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
       {/* ===== HERO / TITLE ===== */}
@@ -6,48 +76,50 @@ export default function ConsultingPage() {
         <h1 className="font-serif text-[clamp(34px,4.5vw,52px)] leading-[1.06] opacity-95">
           Consulting with Dr. Salerno
         </h1>
-        {/* shorter, centered gold hairline only */}
         <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 rounded" />
-
         <p className="text-lg md:text-xl opacity-85 max-w-[780px] mx-auto mt-12 leading-relaxed">
           Evidence-based consulting that helps organizations design, evaluate, and scale
           strategies to strengthen mental health, wellbeing, resilience, and growth.
         </p>
-</section>
+      </section>
 
-      {/* === LOCAL SUBNAV === */}
-      <nav className="sticky top-8 z-20 mx-auto max-w-[1100px] px-6 mt-2 mb-4">
-        <ul className="flex flex-wrap gap-3 justify-center text-[12px] uppercase tracking-[0.14em] opacity-85">
-          {[
-            { href: "#approach", label: "Approach" },
-            { href: "#pillars", label: "Services" },
-            { href: "#process", label: "Process" },
-            { href: "#results", label: "Results" },
-            { href: "#who-i-work-with", label: "Who I Work With" },
-            { href: "#packages", label: "Ways to Partner" },
-            { href: "#contact", label: "Contact" },
-            { href: "#testimonials", label: "Testimonials" }, // <-- added
+      {/* === LOCAL SUBNAV (Resources-style, centered, no arrows) === */}
+      <nav className="sticky top-8 z-30">
+        <div className="mx-auto max-w-[1100px] px-6">
+          {/* Pills */}
+          <div className="rounded-xl bg-[var(--color-teal-850)]/80 ring-1 ring-white/10">
+            <div className="flex flex-wrap items-center justify-center gap-2 px-3 py-3">
+              {SECTIONS.map((s) => {
+                const active = activeId === s.id;
+                return (
+                  <button
+                    key={s.id}
+                    onClick={() => handleJump(s.id)}
+                    aria-current={active ? "true" : "false"}
+                    className={[
+                      "whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition",
+                      active
+                        ? "border-[var(--color-gold)] bg-[var(--color-gold)] text-black shadow-sm"
+                        : "border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10",
+                    ].join(" ")}
+                  >
+                    {s.label}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
 
-          ].map((i) => (
-            <li key={i.href}>
-              <a
-                href={i.href}
-                className="inline-flex items-center px-3 py-1.5 rounded-md bg-white/5 ring-1 ring-white/10 hover:bg-white/[0.08] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/40"
-              >
-                {i.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+          {/* Local divider UNDER the nav, same width as nav container */}
+          <div className="mt-3 h-px w-full bg-[var(--color-cream)]/15" />
+        </div>
       </nav>
 
-      {/* contained thin divider */}
-      <div className="mx-auto max-w-[1100px] px-6">
-        <div className="h-px w-full bg-[var(--color-cream)]/15" />
-      </div>
-
       {/* ===== APPROACH ===== */}
-      <section id="approach" className="mx-auto max-w-[1100px] px-6 py-14 md:py-16">
+      <section
+        id="approach"
+        className="scroll-mt-28 md:scroll-mt-32 mx-auto max-w-[1100px] px-6 py-14 md:py-16"
+      >
         <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Philosophy</p>
         <h2 className="font-serif text-3xl md:text-4xl opacity-95">My Approach</h2>
         <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-6 rounded" />
@@ -70,7 +142,10 @@ export default function ConsultingPage() {
       </div>
 
       {/* ===== SERVICE PILLARS ===== */}
-      <section id="pillars" className="mx-auto max-w-[1100px] px-6 py-14 md:py-16">
+      <section
+        id="pillars"
+        className="scroll-mt-28 md:scroll-mt-32 mx-auto max-w-[1100px] px-6 py-14 md:py-16"
+      >
         <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Services</p>
         <h2 className="font-serif text-3xl md:text-4xl opacity-95">Service Pillars</h2>
         <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" />
@@ -120,7 +195,7 @@ export default function ConsultingPage() {
             <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
             <h3 className="font-serif text-2xl mb-2">Scale Across Your Organization</h3>
             <p className="opacity-90 leading-relaxed mb-3">
-Strengthen and integrate organizational programs that foster mental health, resilience, and wellbeing — from mindfulness and stress management to practices that support sustainable growth.
+              Strengthen and integrate organizational programs that foster mental health, resilience, and wellbeing — from mindfulness and stress management to practices that support sustainable growth.
             </p>
             <a href="/contact" className="text-sm underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">
               Scale wellness and resilience →
@@ -134,12 +209,14 @@ Strengthen and integrate organizational programs that foster mental health, resi
         <div className="h-px w-full bg-[var(--color-cream)]/15" />
       </div>
 
-      {/* ===== PROCESS (FLEXIBLE MODEL) ===== */}
-      <section id="process" className="mx-auto max-w-[1100px] px-6 py-14 md:py-16">
+      {/* ===== PROCESS ===== */}
+      <section
+        id="process"
+        className="scroll-mt-28 md:scroll-mt-32 mx-auto max-w-[1100px] px-6 py-14 md:py-16"
+      >
         <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Process</p>
         <h2 className="font-serif text-3xl md:text-4xl opacity-95">How We Work Together</h2>
         <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" />
-
         <p className="opacity-85 max-w-3xl mb-10 leading-relaxed">
           Every engagement begins with <span className="font-semibold">Discovery</span>. From there, we co-create a pathway
           that may include program design, implementation, evaluation, and/or scaling—depending on your organization’s priorities.
@@ -154,7 +231,7 @@ Strengthen and integrate organizational programs that foster mental health, resi
           </p>
         </article>
 
-        {/* Modular follow-up options */}
+        {/* Modular follow-ups */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl backdrop-blur-sm hover:bg-white/[0.06] transition">
             <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
@@ -179,7 +256,8 @@ Strengthen and integrate organizational programs that foster mental health, resi
               Measure program outcomes, refine designs, and assess true organizational-level impact.
             </p>
           </article>
-                    <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl backdrop-blur-sm hover:bg-white/[0.06] transition">
+
+          <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl backdrop-blur-sm hover:bg-white/[0.06] transition">
             <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
             <h3 className="font-serif text-xl mb-2">Scaling</h3>
             <p className="opacity-90 leading-relaxed">
@@ -195,7 +273,10 @@ Strengthen and integrate organizational programs that foster mental health, resi
       </div>
 
       {/* ===== RESULTS ===== */}
-      <section id="results" className="mx-auto max-w-[1100px] px-6 py-14 md:py-16">
+      <section
+        id="results"
+        className="scroll-mt-28 md:scroll-mt-32 mx-auto max-w-[1100px] px-6 py-14 md:py-16"
+      >
         <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Results</p>
         <h2 className="font-serif text-3xl md:text-4xl opacity-95">What Partners Will Achieve</h2>
         <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" />
@@ -213,15 +294,18 @@ Strengthen and integrate organizational programs that foster mental health, resi
       </div>
 
       {/* ===== WHO I WORK WITH ===== */}
-      <section id="who-i-work-with" className="mx-auto max-w-[1100px] px-6 py-14 md:py-16">
+      <section
+        id="who-i-work-with"
+        className="scroll-mt-28 md:scroll-mt-32 mx-auto max-w-[1100px] px-6 py-14 md:py-16"
+      >
         <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Who I Work With</p>
         <h2 className="font-serif text-3xl md:text-4xl opacity-95">Organization Partnerships</h2>
         <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" />
 
         <p className="text-base md:text-lg opacity-85 leading-relaxed max-w-3xl mb-6">
- I collaborate with organizations that want to weave mental health, resilience, and wellbeing 
-    into the heart of their culture. From small organizations to global institutions, I help teams and 
-    communities strengthen connection, reduce burnout, and create environments where people can thrive.
+          I collaborate with organizations that want to weave mental health, resilience, and wellbeing
+          into the heart of their culture. From small organizations to global institutions, I help teams and
+          communities strengthen connection, reduce burnout, and create environments where people can thrive.
         </p>
 
         <div className="rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm">
@@ -252,52 +336,55 @@ Strengthen and integrate organizational programs that foster mental health, resi
       </div>
 
       {/* ===== WAYS TO PARTNER ===== */}
-<section id="packages" className="mx-auto max-w-[1100px] px-6 py-14 md:py-16">
-  <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Ways to Partner</p>
-  <h2 className="font-serif text-3xl md:text-4xl opacity-95">Choose the Partnership That Fits</h2>
-  <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" />
+      <section
+        id="packages"
+        className="scroll-mt-28 md:scroll-mt-32 mx-auto max-w-[1100px] px-6 py-14 md:py-16"
+      >
+        <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Ways to Partner</p>
+        <h2 className="font-serif text-3xl md:text-4xl opacity-95">Choose the Partnership That Fits</h2>
+        <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" />
 
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-    {/* Short Sprints */}
-    <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
-      <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-      <h3 className="font-serif text-xl mb-2">Short Sprints</h3>
-      <p className="opacity-90 leading-relaxed mb-3">
-        2–6 weeks to quickly understand needs, run listening sessions, and surface
-        actionable insights—so you can make a confident next step.
-      </p>
-      <a href="/contact" className="text-sm underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">
-        Start a Sprint →
-      </a>
-    </article>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Short Sprints */}
+          <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
+            <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+            <h3 className="font-serif text-xl mb-2">Short Sprints</h3>
+            <p className="opacity-90 leading-relaxed mb-3">
+              2–6 weeks to quickly understand needs, run listening sessions, and surface
+              actionable insights—so you can make a confident next step.
+            </p>
+            <a href="/contact" className="text-sm underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">
+              Start a Sprint →
+            </a>
+          </article>
 
-    {/* Deep Partnerships */}
-    <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
-      <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-      <h3 className="font-serif text-xl mb-2">Deep Partnerships</h3>
-      <p className="opacity-90 leading-relaxed mb-3">
-        3–12 months to co-design programs, support implementation, and learn as you go—
-        grounding decisions in evidence while staying human-centered.
-      </p>
-      <a href="/contact" className="text-sm underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">
-        Explore a Partnership →
-      </a>
-    </article>
+          {/* Deep Partnerships */}
+          <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
+            <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+            <h3 className="font-serif text-xl mb-2">Deep Partnerships</h3>
+            <p className="opacity-90 leading-relaxed mb-3">
+              3–12 months to co-design programs, support implementation, and learn as you go—
+              grounding decisions in evidence while staying human-centered.
+            </p>
+            <a href="/contact" className="text-sm underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">
+              Explore a Partnership →
+            </a>
+          </article>
 
-    {/* Ongoing Support */}
-    <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
-      <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-      <h3 className="font-serif text-xl mb-2">Ongoing Support</h3>
-      <p className="opacity-90 leading-relaxed mb-3">
-        Monthly or quarterly check-ins, trainings, and refreshers to sustain momentum,
-        reduce burnout, and keep wellbeing practices alive across teams.
-      </p>
-      <a href="/contact" className="text-sm underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">
-        Set Up Support →
-      </a>
-    </article>
-  </div>
-</section>
+          {/* Ongoing Support */}
+          <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition">
+            <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+            <h3 className="font-serif text-xl mb-2">Ongoing Support</h3>
+            <p className="opacity-90 leading-relaxed mb-3">
+              Monthly or quarterly check-ins, trainings, and refreshers to sustain momentum,
+              reduce burnout, and keep wellbeing practices alive across teams.
+            </p>
+            <a href="/contact" className="text-sm underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">
+              Set Up Support →
+            </a>
+          </article>
+        </div>
+      </section>
 
       {/* contained thin divider */}
       <div className="mx-auto max-w-[1100px] px-6">
@@ -305,8 +392,10 @@ Strengthen and integrate organizational programs that foster mental health, resi
       </div>
 
       {/* ===== CONTACT / CTA BAND ===== */}
-      <section id="contact" className="mx-auto max-w-[1100px] px-6 py-14 md:py-16">
-        {/* Heading + hairline + subheading */}
+      <section
+        id="contact"
+        className="scroll-mt-28 md:scroll-mt-32 mx-auto max-w-[1100px] px-6 py-14 md:py-16"
+      >
         <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 text-center mb-2">Contact</p>
         <h2 className="font-serif text-3xl md:text-4xl opacity-95 text-center">Ready to Talk?</h2>
         <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mx-auto mt-3 mb-4 rounded" />
@@ -315,32 +404,21 @@ Strengthen and integrate organizational programs that foster mental health, resi
           strategies can create the greatest impact for your team or community.
         </p>
 
-{/* Clean glass card (no gold tint, lighter look) */}
-<div
-  className="relative overflow-hidden rounded-2xl
-             bg-white/4 ring-1 ring-white/15 p-7 md:p-9 shadow-2xl
-             backdrop-blur-sm"
->
-  <div className="relative text-center">
-    <h3 className="font-serif text-2xl md:text-3xl opacity-95">
-      Ready to strengthen your programs with science-backed consulting?
-    </h3>
-    <p className="opacity-85 mt-2">
-      A quick intro call can help us map the right next step.
-    </p>
-    <a
-      href="/contact"
-      className="mt-6 inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3
-                 font-semibold uppercase tracking-wide text-sm shadow-md
-                 transition will-change-transform
-                 hover:shadow-lg hover:-translate-y-[2px]
-                 focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
-    >
-      Schedule a Discovery Call →
-    </a>
-  </div>
-</div>
-
+        {/* Clean glass card */}
+        <div className="relative overflow-hidden rounded-2xl bg-white/4 ring-1 ring-white/15 p-7 md:p-9 shadow-2xl backdrop-blur-sm">
+          <div className="relative text-center">
+            <h3 className="font-serif text-2xl md:text-3xl opacity-95">
+              Ready to strengthen your programs with science-backed consulting?
+            </h3>
+            <p className="opacity-85 mt-2">A quick intro call can help us map the right next step.</p>
+            <a
+              href="/contact"
+              className="mt-6 inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
+            >
+              Schedule a Discovery Call →
+            </a>
+          </div>
+        </div>
       </section>
 
       {/* contained thin divider */}
@@ -348,97 +426,64 @@ Strengthen and integrate organizational programs that foster mental health, resi
         <div className="h-px w-full bg-[var(--color-cream)]/15" />
       </div>
 
-  {/* ===== TESTIMONIALS (customizable quotes + duplicate names ok) ===== */}
-<section
-  id="testimonials"
-  className="scroll-mt-24 md:scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14 md:py-16"
->
-  <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 text-center mb-2">
-    Testimonials
-  </p>
-  <h2 className="font-serif text-3xl md:text-4xl opacity-95 text-center">
-    What Clients and Partners Say
-  </h2>
-  <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mx-auto mt-3 mb-8 rounded" />
-
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-    {[
-      {
-        q: "I found Dr. Salerno to be very well-versed in the subject matter. He definitely helped us grow and I genuinely appreciated his excellence.",
-        a: "Client at New York University",
-        // left & right decorative quote positions (Tailwind utility classes)
-        lq: "-left-4 -top-1",
-        rq: "right-[2.5rem] bottom-[0.5rem]",
-      },
-      {
-        q: "Dr. Salerno is an expert in mental health equity research, highly skilled and incorporates attention to community priorities.",
-        a: "Client at University of California, Los Angeles",
-        lq: "-left-4 -top-1",
-        rq: "right-[7rem] bottom-[0.5rem]",
-      },
-      {
-        q: "Dr. Salerno has a strong command of various research methods and an undeniable passion for his work in the public health sphere.",
-        a: "Client at Columbia University",
-        lq: "-left-3 -top-2",
-        rq: "right-[6rem] bottom-[0.5rem]",
-      },
-      {
-        // duplicate attribution is fine now
-        q: "Dr. Salerno is incredibly intelligent and insightful with a deep, nuanced understanding of and appreciation for research.",
-        a: "Client at Columbia University", 
-        lq: "-left-4 -top-1",
-        rq: "right-[8.5rem] bottom-[0.5rem]",
-      },
-    ].map((t, idx) => (
-      <figure
-        key={idx} // use index so duplicate 'a' values are allowed
-        className="relative w-full rounded-xl bg-white/5 p-6 ring-1 ring-white/10 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition"
+      {/* ===== TESTIMONIALS ===== */}
+      <section
+        id="testimonials"
+        className="scroll-mt-28 md:scroll-mt-32 mx-auto max-w-[1100px] px-6 py-14 md:py-16"
       >
-        <span
-          aria-hidden
-          className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl"
-        />
-        <blockquote className="font-serif text-xl md:text-2xl leading-relaxed opacity-90 relative">
-          {/* LEFT DECORATIVE QUOTE — per-item position */}
-          <span
-            aria-hidden
-            className={`absolute text-4xl opacity-20 select-none ${t.lq || "-left-4 -top-1"}`}
-          >
-            “
-          </span>
+        <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 text-center mb-2">Testimonials</p>
+        <h2 className="font-serif text-3xl md:text-4xl opacity-95 text-center">What Clients and Partners Say</h2>
+        <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mx-auto mt-3 mb-8 rounded" />
 
-          <p>{t.q}</p>
-
-          {/* RIGHT DECORATIVE QUOTE — per-item position */}
-          <span
-            aria-hidden
-            className={`absolute text-4xl opacity-20 select-none ${t.rq || "right-[2rem] bottom-[0.5rem]"}`}
-          >
-            ”
-          </span>
-        </blockquote>
-        <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-          — {t.a}
-        </figcaption>
-      </figure>
-    ))}
-  </div>
-</section>
-
-      {/* JSON-LD (optional) */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ProfessionalService",
-            name: "Consulting with Dr. Juan Pablo Salerno",
-            areaServed: "US",
-            serviceType: ["Program Evaluation", "Intervention Design", "Workplace Wellbeing"],
-            url: "https://your-domain.com/consulting",
-          }),
-        }}
-      />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {[
+            {
+              q: "I found Dr. Salerno to be very well-versed in the subject matter. He definitely helped us grow and I genuinely appreciated his excellence.",
+              a: "Client at New York University",
+              lq: "-left-4 -top-1",
+              rq: "right-[2.5rem] bottom-[0.5rem]",
+            },
+            {
+              q: "Dr. Salerno is an expert in mental health equity research, highly skilled and incorporates attention to community priorities.",
+              a: "Client at University of California, Los Angeles",
+              lq: "-left-4 -top-1",
+              rq: "right-[7rem] bottom-[0.5rem]",
+            },
+            {
+              q: "Dr. Salerno has a strong command of various research methods and an undeniable passion for his work in the public health sphere.",
+              a: "Client at Columbia University",
+              lq: "-left-3 -top-2",
+              rq: "right-[6rem] bottom-[0.5rem]",
+            },
+            {
+              q: "Dr. Salerno is incredibly intelligent and insightful with a deep, nuanced understanding of and appreciation for research.",
+              a: "Client at Columbia University",
+              lq: "-left-4 -top-1",
+              rq: "right-[8.5rem] bottom-[0.5rem]",
+            },
+          ].map((t, idx) => (
+            <figure
+              key={idx}
+              className="relative w-full rounded-xl bg-white/5 p-6 ring-1 ring-white/10 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition"
+            >
+              <span
+                aria-hidden
+                className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl"
+              />
+              <blockquote className="font-serif text-xl md:text-2xl leading-relaxed opacity-90 relative">
+                <span aria-hidden className={`absolute text-4xl opacity-20 select-none ${t.lq || "-left-4 -top-1"}`}>
+                  “
+                </span>
+                <p>{t.q}</p>
+                <span aria-hidden className={`absolute text-4xl opacity-20 select-none ${t.rq || "right-[2rem] bottom-[0.5rem]"}`}>
+                  ”
+                </span>
+              </blockquote>
+              <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">— {t.a}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
     </main>
   );
 }

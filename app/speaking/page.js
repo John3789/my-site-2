@@ -883,16 +883,16 @@ body:has([data-page="speaking"]) [data-component="footer"] {
 /* SPEAKING — mobile LANDSCAPE: a bit smaller than portrait (video has less height) */
 @media (max-width: 767px) and (orientation: landscape) {
   [data-page="speaking"] .s-hero .hero-title {
-    font-size: clamp(64px, 15vw, 112px) !important;
+    font-size: clamp(56px, 13.5vw, 96px) !important;
     line-height: 1.06;
     letter-spacing: -0.01em;
   }
   [data-page="speaking"] .s-hero .hero-sub {
-    font-size: clamp(20px, 5.8vw, 28px) !important;
+    font-size: clamp(18px, 5.2vw, 24px) !important;
     line-height: 1.25;
   }
   [data-page="speaking"] .s-hero .hero-hr {
-    width: clamp(120px, 30vw, 180px) !important;
+    width: clamp(100px, 26vw, 160px) !important;
     height: 3px !important;
   }
 }
