@@ -244,7 +244,7 @@ export default function ResourcesPage() {
             </h1>
             <div className="mx-auto h-[2px] w-16 bg-[var(--color-gold)]/85 rounded mb-15" />
 
-            <div className="relative mx-auto max-w-[820px] mb-6 rounded-2xl border border-white/15 bg-white/5">
+            <div className="relative mx-auto max-w-[820px] mb-6 rounded-2xl ring-1 ring-white/10 bg-white/5 shadow-2xl backdrop-blur-sm">
               <span className="pointer-events-none absolute left-0 top-1 bottom-1 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
               <div className="flex flex-col gap-3 p-5">
                 <p className="text-[18px] leading-relaxed opacity-90">
@@ -328,7 +328,7 @@ export default function ResourcesPage() {
                       return (
                         <li
                           key={col.slug}
-                          className="relative h-full rounded-2xl border border-white/12 bg_WHITE/[0.04] bg-white/[0.04] p-6 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md flex flex-col"
+                          className="relative h-full rounded-2xl ring-1 ring-white/10 bg-white/5 p-6 shadow-2xl transition duration-200 hover:-translate-y-0.5 hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] flex flex-col"
                         >
                           {/* GOLD SPINE */}
                           <span className="pointer-events-none absolute left-0 top-1 bottom-1 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
