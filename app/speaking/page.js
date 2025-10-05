@@ -169,7 +169,7 @@ export default function SpeakingPage() {
                 <div className="hero-hr h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 mb-3 rounded" />
                 {/* Mobile-only shorter subheadline */}
                 <p className="hero-sub md:hidden opacity-90 max-w-3xl mx-auto md:drop-shadow-md md:text-xl">
-                  Talks the spark resilience, growth, and lasting change.
+                  Talks that spark resilience, growth, and lasting change.
                 </p>
 
                 {/* Desktop/tablet original subheadline (unchanged) */}
