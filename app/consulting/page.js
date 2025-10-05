@@ -121,7 +121,7 @@ export default function ConsultingPage() {
         >
           {/* HERO (inside zoom) */}
           <section className="mx-auto max-w-[1100px] px-6 pt-16 pb-10 text-center" id="hero-m">
-            <h1 className="font-serif text-6xl leading-[1.06] opacity-95">
+            <h1 className="font-serif text-5xl leading-[1.06] opacity-95">
               Consulting with Dr. Salerno
             </h1>
             <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 rounded" />
@@ -131,19 +131,23 @@ export default function ConsultingPage() {
             </p>
           </section>
 
-          {/* MOBILE QUICK NAV (buttons, non-sticky) */}
-          <div id="quicknav-m" className="mx-auto max-w-[1100px] px-6 -mt-2">
-            <div className="grid grid-cols-2 gap-2">
-              {SECTIONS.map((s) => (
-                <button
-                  key={s.id}
-                  onClick={() => jump(toMobile(s.id))}
-                  className="w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] px-3.5 py-1.5 text-[12px] font-semibold tracking-wide text-[var(--color-cream)] active:scale-95 active:brightness-125"
-                >
-                  {s.label}
-                </button>
-              ))}
-            </div>
+ {/* Mobile-only quick nav — NUMBERED */}
+<div id="quicknav" className="md:hidden mt-6">
+  <div className="grid grid-cols-2 landscape:grid-cols-3 gap-2">
+    {SECTIONS.map((s, idx) => (
+      <button
+        key={s.id}
+        onClick={() => handleJump(s.id)}
+        aria-label={`Jump to ${s.label}`}
+        className="inline-flex items-center justify-center w-full rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition hover:bg-[var(--color-teal-700)] active:scale-95 active:brightness-110 truncate"
+      >
+        <span className="mr-1.5 tabular-nums opacity-80 shrink-0">{idx + 1}.</span>
+        <span className="truncate">{s.label}</span>
+      </button>
+    ))}
+  </div>
+
+
             {/* divider same width as container */}
             <div className="mt-3 h-px w-full bg-[var(--color-cream)]/15" />
           </div>
