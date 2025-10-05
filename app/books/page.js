@@ -101,7 +101,7 @@ export default function BooksPage() {
 {/* CARD 1 */}
 <article className="w-full bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-0 md:backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10">
   <div className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/60 rounded-l-xl" />
-  <div className="flex flex-col lg:flex-row gap-10 lg:gap-12">
+  <div className="flex flex-col lg:flex-row gap-5 sm:gap-6 lg:gap-12">
     <div className="lg:w-1/3">
       <p className="text-xs uppercase tracking-[0.18em] text-[var(--color-gold)] opacity-90">Theme</p>
       <div className="h-px w-14 bg-[var(--color-gold)]/30 mt-2 mb-4" />
@@ -119,7 +119,7 @@ export default function BooksPage() {
       <input id="more-c1" type="checkbox" className="peer hidden md:hidden" />
 
       <ul className="list-none divide-y divide-white/10">
-        <li className="flex gap-3 py-4">
+        <li className="flex gap-3 py-3 md:py-4 first:pt-0 md:first:pt-4">
           <span className="mt-3 h-2 w-2 rounded-full bg-[var(--color-gold)] shrink-0" />
           <div>
             Salerno et&nbsp;al. (2024).
@@ -128,7 +128,7 @@ export default function BooksPage() {
             <a href="https://www.researchgate.net/publication/385788771_Mental_Health_Risk_and_Protection_Among_First-Generation_Latinx_Immigrant_Youth_A_Latent_Profile_Analysis" target="_blank" rel="noreferrer" className="underline decoration-[var(--color-gold)] underline-offset-2 hover:opacity-80">Read Here →</a>
           </div>
         </li>
-        <li className="flex gap-3 py-4">
+        <li className="flex gap-3 py-3 md:py-4 first:pt-0 md:first:pt-4">
           <span className="mt-3 h-2 w-2 rounded-full bg-[var(--color-gold)] shrink-0" />
           <div>
             Salerno et&nbsp;al. (2024).
@@ -137,7 +137,7 @@ export default function BooksPage() {
             <a href="https://www.researchgate.net/publication/380667864_Effects_of_Racist_Microaggressions_and_Sexual_and_Gender_Minority_Stress_on_Mental_Health_Among_Latinx_Lesbian_Gay_Bisexual_Transgender_and_Queer_or_Questioning_Young_Adults" target="_blank" rel="noreferrer" className="underline decoration-[var(--color-gold)] underline-offset-2 hover:opacity-80">Read Here →</a>
           </div>
         </li>
-        <li className="flex gap-3 py-4">
+        <li className="flex gap-3 py-3 md:py-4 first:pt-0 md:first:pt-4">
           <span className="mt-3 h-2 w-2 rounded-full bg-[var(--color-gold)] shrink-0" />
           <div>
             Salerno et&nbsp;al. (2023).
@@ -146,7 +146,7 @@ export default function BooksPage() {
             <a href="https://www.researchgate.net/publication/375071692_Profiles_of_Psychosocial_Stressors_and_Buffers_Among_Latinx_Immigrant_Youth_Associations_with_Suicidal_Ideation" target="_blank" rel="noreferrer" className="underline decoration-[var(--color-gold)] underline-offset-2 hover:opacity-80">Read Here →</a>
           </div>
         </li>
-        <li className="flex gap-3 py-4">
+        <li className="flex gap-3 py-3 md:py-4 first:pt-0 md:first:pt-4">
           <span className="mt-3 h-2 w-2 rounded-full bg-[var(--color-gold)] shrink-0" />
           <div>
             Salerno et&nbsp;al. (2023).
@@ -155,7 +155,7 @@ export default function BooksPage() {
             <a href="https://www.researchgate.net/publication/372481962_Impact_of_Racist_Microaggressions_and_LGBTQ-Related_Minority_Stressors_Effects_on_Psychological_Distress_Among_LGBTQ_Young_People_of_Color" target="_blank" rel="noreferrer" className="underline decoration-[var(--color-gold)] underline-offset-2 hover:opacity-80">Read Here →</a>
           </div>
         </li>
-        <li className="flex gap-3 py-4">
+        <li className="flex gap-3 py-3 md:py-4 first:pt-0 md:first:pt-4">
           <span className="mt-3 h-2 w-2 rounded-full bg-[var(--color-gold)] shrink-0" />
           <div>
             Salerno et&nbsp;al. (2022).
@@ -186,7 +186,7 @@ export default function BooksPage() {
  {/* CARD 2 */}
 <article className="w-full bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-0 md:backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10">
   <div className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/60 rounded-l-xl" />
-  <div className="flex flex-col lg:flex-row gap-10 lg:gap-12">
+  <div className="flex flex-col lg:flex-row gap-5 sm:gap-6 lg:gap-12">
     <div className="lg:w-1/3">
       <p className="text-xs uppercase tracking-[0.18em] text-[var(--color-gold)] opacity-90">Theme</p>
       <div className="h-px w-14 bg-[var(--color-gold)]/30 mt-2 mb-4" />
@@ -202,7 +202,7 @@ export default function BooksPage() {
       <input id="more-c2" type="checkbox" className="peer hidden md:hidden" />
 
       <ul className="list-none divide-y divide-white/10">
-        <li className="flex gap-3 py-4">
+        <li className="flex gap-3 py-3 md:py-4 first:pt-0 md:first:pt-4">
           <span className="mt-3 h-2 w-2 rounded-full bg-[var(--color-gold)] shrink-0" />
           <div>
             Colleagues &amp; Salerno (2024).
@@ -211,7 +211,7 @@ export default function BooksPage() {
             <a href="https://www.researchgate.net/publication/379752647_Mental_health_impact_of_multiple_sexually_minoritized_and_gender_expansive_stressors_among_LGBTQ_young_adults_a_latent_class_analysis" target="_blank" rel="noreferrer" className="underline decoration-[var(--color-gold)] underline-offset-2 hover:opacity-80">Read Here →</a>
           </div>
         </li>
-        <li className="flex gap-3 py-4">
+        <li className="flex gap-3 py-3 md:py-4 first:pt-0 md:first:pt-4">
           <span className="mt-3 h-2 w-2 rounded-full bg-[var(--color-gold)] shrink-0" />
           <div>
             Colleagues &amp; Salerno (2022).
@@ -220,7 +220,7 @@ export default function BooksPage() {
             <a href="https://www.researchgate.net/publication/361075038_Associations_between_living_arrangement_and_sexual_and_gender_minority_stressors_among_university_students_since_the_start_of_the_COVID-19_pandemic" target="_blank" rel="noreferrer" className="underline decoration-[var(--color-gold)] underline-offset-2 hover:opacity-80">Read Here →</a>
           </div>
         </li>
-        <li className="flex gap-3 py-4">
+        <li className="flex gap-3 py-3 md:py-4 first:pt-0 md:first:pt-4">
           <span className="mt-3 h-2 w-2 rounded-full bg-[var(--color-gold)] shrink-0" />
           <div>
             Salerno et&nbsp;al. (2022).
@@ -229,7 +229,7 @@ export default function BooksPage() {
             <a href="https://www.researchgate.net/publication/360505666_LGBTQ_Identity-Related_Victimization_During_COVID-19_Is_Associated_With_Moderate_to_Severe_Psychological_Distress_Among_Young_Adults" target="_blank" rel="noreferrer" className="underline decoration-[var(--color-gold)] underline-offset-2 hover:opacity-80">Read Here →</a>
           </div>
         </li>
-        <li className="flex gap-3 py-4">
+        <li className="flex gap-3 py-3 md:py-4 first:pt-0 md:first:pt-4">
           <span className="mt-3 h-2 w-2 rounded-full bg-[var(--color-gold)] shrink-0" />
           <div>
             Salerno et&nbsp;al. (2021).
@@ -238,7 +238,7 @@ export default function BooksPage() {
             <a href="https://www.researchgate.net/publication/352878843_Changes_in_Mental_Health_and_Wellbeing_Are_Associated_With_Living_Arrangements_With_Parents_During_COVID-19_Among_Sexual_Minority_Young_Persons_in_the_US" target="_blank" rel="noreferrer" className="underline decoration-[var(--color-gold)] underline-offset-2 hover:opacity-80">Read Here →</a>
           </div>
         </li>
-        <li className="flex gap-3 py-4">
+        <li className="flex gap-3 py-3 md:py-4 first:pt-0 md:first:pt-4">
           <span className="mt-3 h-2 w-2 rounded-full bg-[var(--color-gold)] shrink-0" />
           <div>
             Salerno et&nbsp;al. (2021).
@@ -269,7 +269,7 @@ export default function BooksPage() {
  {/* CARD 3 */}
 <article className="w-full bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-0 md:backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10">
   <div className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/60 rounded-l-xl" />
-  <div className="flex flex-col lg:flex-row gap-10 lg:gap-12">
+  <div className="flex flex-col lg:flex-row gap-5 sm:gap-6 lg:gap-12">
     <div className="lg:w-1/3">
       <p className="text-xs uppercase tracking-[0.18em] text-[var(--color-gold)] opacity-90">Theme</p>
       <div className="h-px w-14 bg-[var(--color-gold)]/30 mt-2 mb-4" />
@@ -285,7 +285,7 @@ export default function BooksPage() {
       <input id="more-c3" type="checkbox" className="peer hidden md:hidden" />
 
       <ul className="list-none divide-y divide-white/10">
-        <li className="flex gap-3 py-4">
+        <li className="flex gap-3 py-3 md:py-4 first:pt-0 md:first:pt-4">
           <span className="mt-3 h-2 w-2 rounded-full bg-[var(--color-gold)] shrink-0" />
           <div>
             Salerno et&nbsp;al. (2020).
@@ -294,7 +294,7 @@ export default function BooksPage() {
             <a href="https://www.researchgate.net/publication/344521757_Sexual_and_Gender_Minority_Stress_Amid_the_COVID-19_Pandemic_Implications_for_LGBTQ_Young_Persons'_Mental_Health_and_Well-Being" target="_blank" rel="noreferrer" className="underline decoration-[var(--color-gold)] underline-offset-2 hover:opacity-80">Read Here →</a>
           </div>
         </li>
-        <li className="flex gap-3 py-4">
+        <li className="flex gap-3 py-3 md:py-4 first:pt-0 md:first:pt-4">
           <span className="mt-3 h-2 w-2 rounded-full bg-[var(--color-gold)] shrink-0" />
           <div>
             Salerno et&nbsp;al. (2020).
@@ -303,7 +303,7 @@ export default function BooksPage() {
             <a href="https://www.researchgate.net/publication/342282937_LGBTQ_Populations_Psychologically_Vulnerable_Communities_in_the_COVID-19_Pandemic" target="_blank" rel="noreferrer" className="underline decoration-[var(--color-gold)] underline-offset-2 hover:opacity-80">Read Here →</a>
           </div>
         </li>
-        <li className="flex gap-3 py-4">
+        <li className="flex gap-3 py-3 md:py-4 first:pt-0 md:first:pt-4">
           <span className="mt-3 h-2 w-2 rounded-full bg-[var(--color-gold)] shrink-0" />
           <div>
             Salerno (2016).
