@@ -902,7 +902,7 @@ export default function SpeakingPage() {
                 </div>
 
                 {/* Toggle button */}
-                <div className="mt-3 flex justify-center">
+                <div className="mt-4 flex justify-center">
                   <button
                     onClick={() => setShowAllTestimonials((s) => !s)}
                     aria-expanded={showAllTestimonials}
@@ -915,7 +915,7 @@ export default function SpeakingPage() {
               </section>
 
 {/* Testimonials footer buttons (mobile only) — slimmer + centered + tight spacing */}
-<div className="md:hidden -mt-7 mb-1  w-full">
+<div className="md:hidden -mt-7 mb-7  w-full">
   <div className="w-full flex justify-center">
     <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
       <button
