@@ -409,7 +409,7 @@ export default function ConsultingPage() {
                   {
                     q: "Dr. Salerno has a strong command of various research methods and an undeniable passion for his work in the public health sphere.",
                     a: "Columbia University",
-                    lq: "-left-3 -top-2",
+                    lq: "-left-4 -top-1",
                     rq: "right-[5.75rem] bottom-[0.5rem]",
                   },
                   {
