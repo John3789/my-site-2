@@ -132,7 +132,7 @@ export default function ConsultingPage() {
           </section>
 
  {/* ---- MOBILE quick nav (numbered) ---- */}
-<div id="quicknav" className="md:hidden mt-6 -mb-3 pointer-events-auto">
+<div id="quicknav" className="md:hidden mt-6 pointer-events-auto">
   <div className="grid grid-cols-2 landscape:grid-cols-3 gap-2">
     {SECTIONS.map((s, idx) => (
       <button
@@ -144,7 +144,7 @@ export default function ConsultingPage() {
     "w-full inline-flex items-center gap-1 rounded-full px-3.5 py-1.5",
     "text-[12px] font-semibold tracking-wide truncate transition",
     "active:scale-95 active:brightness-125",
-    "border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)]",
+    "border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] mb-10",
     activeId === s.id && "!bg-[var(--color-gold)] !text-black !border-[var(--color-gold)]"
   ].join(" ")}
 >
