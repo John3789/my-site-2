@@ -245,7 +245,7 @@ export default function SpeakingPage() {
               </div>
 
               {/* ---- MOBILE quick nav (numbered, Consulting pattern) ---- */}
-              <div id="quicknav" className="md:hidden mt-0 pointer-events-auto">
+              <div id="quicknav" className="md:hidden mt-2 pointer-events-auto">
                 <div className="grid grid-cols-2 landscape:grid-cols-3 gap-2">
                   {SECTIONS.map((s, idx) => (
                     <button
@@ -276,7 +276,7 @@ export default function SpeakingPage() {
           </section>
 
           {/* ===== MAIN CONTENT ===== */}
-          <div className="mx-auto max-w-[1400px] py-3 md:py-6 space-y-16 md:space-y-24" id="topics">
+          <div className="mx-auto max-w-[1400px] py-0 md:py-6 space-y-16 md:space-y-24" id="topics">
             <hr className="border-t border-[var(--color-cream)]/22 md:mb-8 w-full" />
 
             {/* Popular Topics (Programs) */}
