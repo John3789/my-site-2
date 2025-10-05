@@ -690,25 +690,25 @@ export default function ConsultingPage() {
             {[
               {
                 q: "I found Dr. Salerno to be very well-versed in the subject matter. He definitely helped us grow and I genuinely appreciated his excellence.",
-                a: "Client at New York University",
+                a: "New York University",
                 lq: "-left-4 -top-1",
                 rq: "right-[2.5rem] bottom-[0.5rem]",
               },
               {
                 q: "Dr. Salerno is an expert in mental health equity research, highly skilled and incorporates attention to community priorities.",
-                a: "Client at University of California, Los Angeles",
+                a: "University of California, Los Angeles",
                 lq: "-left-4 -top-1",
                 rq: "right-[7rem] bottom-[0.5rem]",
               },
               {
                 q: "Dr. Salerno has a strong command of various research methods and an undeniable passion for his work in the public health sphere.",
-                a: "Client at Columbia University",
+                a: "Columbia University",
                 lq: "-left-3 -top-2",
                 rq: "right-[6rem] bottom-[0.5rem]",
               },
               {
                 q: "Dr. Salerno is incredibly intelligent and insightful with a deep, nuanced understanding of and appreciation for research.",
-                a: "Client at Columbia University",
+                a: "Columbia University",
                 lq: "-left-4 -top-1",
                 rq: "right-[8.5rem] bottom-[0.5rem]",
               },
