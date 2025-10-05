@@ -454,10 +454,7 @@ export default function SpeakingPage() {
                   Next →
                 </button>
               </div>
-              {/* contained hairline below */}
-              <div className="mx-auto max-w-[1100px] px-6 mt-6">
-                <div className="h-px w-full bg-[var(--color-cream)]/16" />
-              </div>
+              
             </div>
 
             {/* Dr. Salerno Offers (Formats) */}
@@ -605,10 +602,7 @@ export default function SpeakingPage() {
                   Next →
                 </button>
               </div>
-              {/* contained hairline below */}
-              <div className="mx-auto max-w-[1100px] px-6 mt-6">
-                <div className="h-px w-full bg-[var(--color-cream)]/16" />
-              </div>
+
             </div>
 
             {/* Outcomes (Results) */}
@@ -714,10 +708,7 @@ export default function SpeakingPage() {
                   Next →
                 </button>
               </div>
-              {/* contained hairline below */}
-              <div className="mx-auto max-w-[1100px] px-6 mt-6">
-                <div className="h-px w-full bg-[var(--color-cream)]/16" />
-              </div>
+
             </div>
 
             {/* ===== Testimonials (mobile-only; now collapsible) ===== */}
@@ -915,31 +906,33 @@ export default function SpeakingPage() {
                   </button>
                 </div>
               </div>
+              {/* Footer buttons (mobile only) — Service Pillars spacing, now inside the section */}
+<div className="md:hidden mt-8 w-full">
+  <div className="mx-auto max-w-[520px] grid grid-cols-[1fr_1.35fr_1fr] gap-3">
+    <button
+      onClick={() => jump("results")}
+      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-[var(--color-teal-700)] active:translate-y-[1px]"
+    >
+      ← Prev
+    </button>
+    <button
+      onClick={() => jump("quicknav", { center: true })}
+      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-[var(--color-teal-700)] active:translate-y-[1px]"
+    >
+      All Speaking
+    </button>
+    <button
+      onClick={() => jump("programs")}
+      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-[var(--color-teal-700)] active:translate-y-[1px]"
+    >
+      Next →
+    </button>
+  </div>
+</div>
+
             </section>
 
-            {/* Testimonials footer buttons (mobile only) — reformatted + smaller top space */}
-            <div className="md:hidden mt-4 w-full">
-              <div className="mx-auto w-full max-w-[520px] grid grid-cols-[1fr_1.35fr_1fr] gap-3 px-6">
-                <button
-                  onClick={() => jump("results")}
-                  className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-[var(--color-teal-700)] active:translate-y-[1px]"
-                >
-                  ← Prev
-                </button>
-                <button
-                  onClick={() => jump("quicknav", { center: true })}
-                  className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-[var(--color-teal-700)] active:translate-y-[1px]"
-                >
-                  All Speaking
-                </button>
-                <button
-                  onClick={() => jump("programs")}
-                  className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-5 py-2.5 text-[13px] font-semibold tracking-wide transition hover:bg-[var(--color-teal-700)] active:translate-y-[1px]"
-                >
-                  Next →
-                </button>
-              </div>
-            </div>
+
 
             {/* CTA (unchanged) */}
             <div className="flex justify-center translate-y-[-28px] md:translate-y-0">
