@@ -850,20 +850,23 @@ const jump = (id, opts = {}) => {
             opacity: 1 !important;
           }
         }
-          /* Hide any global or inline footer/social block on Speaking page only */
-body:has([data-page="speaking"]) footer,
-body:has([data-page="speaking"]) .site-footer,
-body:has([data-page="speaking"]) .home-footer,
-body:has([data-page="speaking"]) .social-footer,
-body:has([data-page="speaking"]) [data-role="social-footer"],
-body:has([data-page="speaking"]) [data-component="footer"] {
-  display: none !important;
+ /* MOBILE ONLY: hide footers on Speaking, show on desktop */
+@media (max-width: 767px) {
+  body:has([data-page="speaking"]) footer,
+  body:has([data-page="speaking"]) .site-footer,
+  body:has([data-page="speaking"]) .home-footer,
+  body:has([data-page="speaking"]) .social-footer,
+  body:has([data-page="speaking"]) [data-role="social-footer"],
+  body:has([data-page="speaking"]) [data-component="footer"] {
+    display: none !important;
+  }
+
+  /* Safety net if a footer is injected inside this page */
+  [data-page="speaking"] :is(footer, .social-footer, [data-role="social-footer"], [data-component="footer"]) {
+    display: none !important;
+  }
 }
 
-/* Safety net: if something is injected inside the page content itself */
-[data-page="speaking"] :is(footer, .social-footer, [data-role="social-footer"], [data-component="footer"]) {
-  display: none !important;
-}
 /* SPEAKING — mobile PORTRAIT: much larger */
 @media (max-width: 767px) and (orientation: portrait) {
   [data-page="speaking"] .s-hero .hero-title {
