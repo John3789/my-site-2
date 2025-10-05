@@ -18,8 +18,8 @@ export default function ConsultingPage() {
     []
   );
 
-  const [activeId, setActiveId] = useState(SECTIONS[0].id); // desktop highlight
-  const [showAllTestimonials, setShowAllTestimonials] = useState(false); // mobile toggle
+  const [activeId, setActiveId] = useState(SECTIONS[0].id);
+  const [showAllTestimonials, setShowAllTestimonials] = useState(false);
 
   const jump = (id, opts = {}) => {
     const el = typeof document !== "undefined" ? document.getElementById(id) : null;
@@ -36,7 +36,7 @@ export default function ConsultingPage() {
     }
   };
 
-  /* ---------- Desktop: observe sections for active chip ---------- */
+  // Desktop observer (desktop IDs only)
   useEffect(() => {
     const entriesMap = new Map();
     const obs = new IntersectionObserver(
@@ -55,7 +55,7 @@ export default function ConsultingPage() {
     );
 
     SECTIONS.forEach(({ id }) => {
-      const el = document.getElementById(id); // desktop ids only
+      const el = document.getElementById(id);
       if (el) obs.observe(el);
     });
 
@@ -71,7 +71,7 @@ export default function ConsultingPage() {
     };
   }, [SECTIONS]);
 
-  /* ---------- Mobile helpers (unique IDs) ---------- */
+  // Helpers for mobile (-m IDs)
   const toMobile = (id) => `${id}-m`;
   const idxOf = (id) => SECTIONS.findIndex((s) => s.id === id);
   const prevOf = (id) => SECTIONS[(idxOf(id) - 1 + SECTIONS.length) % SECTIONS.length].id;
@@ -104,14 +104,22 @@ export default function ConsultingPage() {
 
   return (
     <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
-      {/* ===================== MOBILE (zoomed) ===================== */}
+      {/* ============== MOBILE (uses the exact working zoom wrapper) ============== */}
       <div className="md:hidden" aria-label="Consulting mobile layout">
-        {/* Single zoom wrapper (NO backdrop filters inside) */}
         <div
-          style={{ "--z": 2.6, "--zoomL": 1.5 }}
-          className="zoomwrap origin-top [transform:translateZ(0)_scale(var(--z))] [width:calc(100%/var(--z))] mx-auto md:[transform:none] md:[width:100%] landscape:[transform:translateZ(0)_scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))] overflow-visible"
+          style={{ "--z": 3.0, "--zoomL": 1.60 }}
+          className={`
+            zoomwrap
+            md:contents
+            origin-top
+            [transform:scale(var(--z))] [width:calc(100%/var(--z))]
+            mx-auto
+            md:[transform:none] md:[width:100%]
+            landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
+            overflow-visible
+          `}
         >
-          {/* HERO */}
+          {/* HERO (inside zoom) */}
           <section className="mx-auto max-w-[1100px] px-6 pt-16 pb-10 text-center" id="hero-m">
             <h1 className="font-serif text-[clamp(34px,4.5vw,52px)] leading-[1.06] opacity-95">
               Consulting with Dr. Salerno
@@ -123,7 +131,7 @@ export default function ConsultingPage() {
             </p>
           </section>
 
-          {/* Mobile quick nav (non-sticky) */}
+          {/* MOBILE QUICK NAV (buttons, non-sticky) */}
           <div id="quicknav-m" className="mx-auto max-w-[1100px] px-6 -mt-2">
             <div className="grid grid-cols-2 gap-2">
               {SECTIONS.map((s) => (
@@ -136,10 +144,11 @@ export default function ConsultingPage() {
                 </button>
               ))}
             </div>
+            {/* divider same width as container */}
             <div className="mt-3 h-px w-full bg-[var(--color-cream)]/15" />
           </div>
 
-          {/* APPROACH */}
+          {/* ===== MOBILE SECTIONS (no backdrop-blur in this subtree) ===== */}
           <section id={toMobile("approach")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14">
             <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Philosophy</p>
             <h2 className="font-serif text-3xl opacity-95">My Approach</h2>
@@ -160,7 +169,6 @@ export default function ConsultingPage() {
 
           <div className="mx-auto max-w-[1100px] px-6"><div className="h-px w-full bg-[var(--color-cream)]/15" /></div>
 
-          {/* PILLARS */}
           <section id={toMobile("pillars")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14">
             <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Services</p>
             <h2 className="font-serif text-3xl opacity-95">Service Pillars</h2>
@@ -206,7 +214,6 @@ export default function ConsultingPage() {
 
           <div className="mx-auto max-w-[1100px] px-6"><div className="h-px w-full bg-[var(--color-cream)]/15" /></div>
 
-          {/* PROCESS */}
           <section id={toMobile("process")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14">
             <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Process</p>
             <h2 className="font-serif text-3xl opacity-95">How We Work Together</h2>
@@ -243,7 +250,6 @@ export default function ConsultingPage() {
 
           <div className="mx-auto max-w-[1100px] px-6"><div className="h-px w-full bg-[var(--color-cream)]/15" /></div>
 
-          {/* RESULTS */}
           <section id={toMobile("results")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14">
             <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Results</p>
             <h2 className="font-serif text-3xl opacity-95">What Partners Will Achieve</h2>
@@ -259,7 +265,6 @@ export default function ConsultingPage() {
 
           <div className="mx-auto max-w-[1100px] px-6"><div className="h-px w-full bg-[var(--color-cream)]/15" /></div>
 
-          {/* WHO I WORK WITH */}
           <section id={toMobile("who-i-work-with")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14">
             <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Who I Work With</p>
             <h2 className="font-serif text-3xl opacity-95">Organization Partnerships</h2>
@@ -284,7 +289,6 @@ export default function ConsultingPage() {
 
           <div className="mx-auto max-w-[1100px] px-6"><div className="h-px w-full bg-[var(--color-cream)]/15" /></div>
 
-          {/* PACKAGES */}
           <section id={toMobile("packages")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14">
             <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Ways to Partner</p>
             <h2 className="font-serif text-3xl opacity-95">Choose the Partnership That Fits</h2>
@@ -309,7 +313,6 @@ export default function ConsultingPage() {
 
           <div className="mx-auto max-w-[1100px] px-6"><div className="h-px w-full bg-[var(--color-cream)]/15" /></div>
 
-          {/* CONTACT */}
           <section id={toMobile("contact")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14">
             <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 text-center mb-2">Contact</p>
             <h2 className="font-serif text-3xl opacity-95 text-center">Ready to Talk?</h2>
@@ -319,7 +322,7 @@ export default function ConsultingPage() {
               strategies can create the greatest impact for your team or community.
             </p>
 
-            {/* note: removed backdrop-blur on mobile to keep text crisp */}
+            {/* no backdrop-blur on mobile */}
             <div className="relative overflow-hidden rounded-2xl bg-white/4 ring-1 ring-white/15 p-7 shadow-2xl">
               <div className="relative text-center">
                 <h3 className="font-serif text-2xl opacity-95">
@@ -339,7 +342,7 @@ export default function ConsultingPage() {
 
           <div className="mx-auto max-w-[1100px] px-6"><div className="h-px w-full bg-[var(--color-cream)]/15" /></div>
 
-          {/* TESTIMONIALS (show 2 + toggle) */}
+          {/* Testimonials (2 + Show All / Show Less) */}
           <section id={toMobile("testimonials")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14">
             <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 text-center mb-2">Testimonials</p>
             <h2 className="font-serif text-3xl opacity-95 text-center">What Clients and Partners Say</h2>
@@ -414,7 +417,7 @@ export default function ConsultingPage() {
         </div>
       </div>
 
-      {/* ===================== DESKTOP (unchanged) ===================== */}
+      {/* ============== DESKTOP (unchanged content & spacing) ============== */}
       <div className="hidden md:block" aria-label="Consulting desktop layout">
         {/* HERO */}
         <section className="mx-auto max-w-[1100px] px-6 pt-20 pb-10 text-center">
@@ -428,7 +431,7 @@ export default function ConsultingPage() {
           </p>
         </section>
 
-        {/* Desktop nav (centered, sticky) */}
+        {/* DESKTOP NAV (centered; targets desktop IDs only) */}
         <nav className="sticky top-8 z-30">
           <div className="mx-auto max-w-[1100px] px-6">
             <div className="rounded-xl bg-[var(--color-teal-850)]/80 ring-1 ring-white/10">
@@ -438,7 +441,7 @@ export default function ConsultingPage() {
                   return (
                     <button
                       key={s.id}
-                      onClick={() => jump(s.id)} // desktop targets desktop IDs
+                      onClick={() => jump(s.id)}
                       aria-current={active ? "true" : "false"}
                       className={[
                         "whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition",
@@ -453,11 +456,12 @@ export default function ConsultingPage() {
                 })}
               </div>
             </div>
+            {/* contained divider same width as nav */}
             <div className="mt-3 h-px w-full bg-[var(--color-cream)]/15" />
           </div>
         </nav>
 
-        {/* Desktop sections (unchanged content/spacing) */}
+        {/* DESKTOP SECTIONS (unchanged) */}
         <section id="approach" className="scroll-mt-32 mx-auto max-w-[1100px] px-6 py-16">
           <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Philosophy</p>
           <h2 className="font-serif text-4xl opacity-95">My Approach</h2>
@@ -482,6 +486,7 @@ export default function ConsultingPage() {
           <h2 className="font-serif text-3xl md:text-4xl opacity-95">Service Pillars</h2>
           <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* cards unchanged; include backdrop-blur on desktop only */}
             <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
               <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
               <h3 className="font-serif text-2xl mb-2">Partner in Research</h3>
@@ -692,7 +697,7 @@ export default function ConsultingPage() {
         </section>
       </div>
 
-      {/* JSON-LD once */}
+      {/* JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -707,7 +712,7 @@ export default function ConsultingPage() {
         }}
       />
 
-      {/* Global crispness & guards */}
+      {/* Global crisp text & iOS guard (same as your other pages) */}
       <style jsx global>{`
         @supports (-webkit-touch-callout: none) {
           html, body { background: var(--color-teal-850) !important; }
@@ -718,7 +723,6 @@ export default function ConsultingPage() {
           text-rendering: geometricPrecision;
         }
         @media (max-width: 767px) {
-          /* ensure gold checkmarks render as font, not emoji */
           ul li > span:first-child {
             color: var(--color-gold) !important;
             -webkit-text-fill-color: var(--color-gold) !important;
