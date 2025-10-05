@@ -384,13 +384,13 @@ export default function ConsultingPage() {
                   q: "I found Dr. Salerno to be very well-versed in the subject matter. He definitely helped us grow and I genuinely appreciated his excellence.",
                   a: "Client at New York University",
                   lq: "-left-4 -top-1",
-                  rq: "right-[2.5rem] bottom-[0.5rem]",
+                  rq: "right-[3rem] bottom-[0.5rem]",
                 },
                 {
                   q: "Dr. Salerno is an expert in mental health equity research, highly skilled and incorporates attention to community priorities.",
                   a: "Client at University of California, Los Angeles",
                   lq: "-left-4 -top-1",
-                  rq: "right-[13rem] bottom-[0.5rem]",
+                  rq: "right-[12rem] bottom-[0.5rem]",
                 },
               ].map((t, idx) => (
                 <figure key={idx} className="relative w-full rounded-xl bg-white/5 p-6 ring-1 ring-white/10 shadow-2xl">
@@ -410,7 +410,7 @@ export default function ConsultingPage() {
                     q: "Dr. Salerno has a strong command of various research methods and an undeniable passion for his work in the public health sphere.",
                     a: "Client at Columbia University",
                     lq: "-left-3 -top-2",
-                    rq: "right-[5.5rem] bottom-[0.5rem]",
+                    rq: "right-[6rem] bottom-[0.5rem]",
                   },
                   {
                     q: "Dr. Salerno is incredibly intelligent and insightful with a deep, nuanced understanding of and appreciation for research.",
