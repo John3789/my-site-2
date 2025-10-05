@@ -149,7 +149,7 @@ export default function ConsultingPage() {
   ].join(" ")}
 >
   {/* Fixed-width numeric block ensures perfect alignment */}
-  <span className="inline-block w-[3ch] text-right tabular-nums leading-none">
+  <span className="inline-block w-[3ch] text-center tabular-nums leading-none">
     {idx + 1}.
   </span>
   <span className="truncate">{s.label}</span>
