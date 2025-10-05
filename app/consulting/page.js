@@ -22,7 +22,7 @@ export default function ConsultingPage() {
   const [activeId, setActiveId] = useState(SECTIONS[0].id);
   const [showAllTestimonials, setShowAllTestimonials] = useState(false);
 
-  /* Smooth jump helper */
+  /* Smooth jump helper (also supports center) */
   const jump = (id, opts = {}) => {
     const el = typeof document !== "undefined" ? document.getElementById(id) : null;
     if (!el) return;
@@ -114,7 +114,7 @@ export default function ConsultingPage() {
       {/* background guard */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]" />
 
-      {/* ===== Mobile zoom wrapper (entire page, including heading) ===== */}
+      {/* ===== ZOOM #1 — HERO / TITLE ONLY (mobile) ===== */}
       <div
         style={{ "--z": 3.0, "--zoomL": 1.6 }}
         className={`
@@ -128,7 +128,6 @@ export default function ConsultingPage() {
           overflow-visible
         `}
       >
-        {/* ===== HERO / TITLE ===== */}
         <section className="mx-auto max-w-[1100px] px-6 pt-16 md:pt-20 pb-10 text-center">
           <h1 className="font-serif text-[clamp(34px,4.5vw,52px)] leading-[1.06] opacity-95">
             Consulting with Dr. Salerno
@@ -139,53 +138,68 @@ export default function ConsultingPage() {
             strategies to strengthen mental health, wellbeing, resilience, and growth.
           </p>
         </section>
+      </div>
 
-        {/* === Mobile quick nav (static buttons) === */}
-        <div id="quicknav" className="md:hidden mx-auto max-w-[1100px] px-6">
-          <div className="grid grid-cols-2 gap-2">
-            {SECTIONS.map((s) => (
-              <button
-                key={s.id}
-                onClick={() => jump(s.id)}
-                className="w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] px-3.5 py-1.5 text-[12px] font-semibold tracking-wide text-[var(--color-cream)] active:scale-95 active:brightness-125"
-              >
-                {s.label}
-              </button>
-            ))}
+      {/* === Mobile quick nav (outside zoom for crisp text) === */}
+      <div id="quicknav" className="md:hidden mx-auto max-w-[1100px] px-6">
+        <div className="grid grid-cols-2 gap-2">
+          {SECTIONS.map((s) => (
+            <button
+              key={s.id}
+              onClick={() => jump(s.id)}
+              className="w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] px-3.5 py-1.5 text-[12px] font-semibold tracking-wide text-[var(--color-cream)] active:scale-95 active:brightness-125"
+            >
+              {s.label}
+            </button>
+          ))}
+        </div>
+        {/* contained divider under mobile nav */}
+        <div className="mt-3 h-px w-full bg-[var(--color-cream)]/15" />
+      </div>
+
+      {/* ===== Desktop sticky nav (unchanged; hidden on mobile) ===== */}
+      <nav className="hidden md:block sticky top-8 z-30">
+        <div className="mx-auto max-w-[1100px] px-6">
+          <div className="rounded-xl bg-[var(--color-teal-850)]/80 ring-1 ring-white/10">
+            <div className="flex flex-wrap items-center justify-center gap-2 px-3 py-3">
+              {SECTIONS.map((s) => {
+                const active = activeId === s.id;
+                return (
+                  <button
+                    key={s.id}
+                    onClick={() => jump(s.id)}
+                    aria-current={active ? "true" : "false"}
+                    className={[
+                      "whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition",
+                      active
+                        ? "border-[var(--color-gold)] bg-[var(--color-gold)] text-black shadow-sm"
+                        : "border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10",
+                    ].join(" ")}
+                  >
+                    {s.label}
+                  </button>
+                );
+              })}
+            </div>
           </div>
-          {/* contained divider under mobile nav */}
           <div className="mt-3 h-px w-full bg-[var(--color-cream)]/15" />
         </div>
+      </nav>
 
-        {/* ===== Desktop sticky nav (unchanged visually; hidden on mobile) ===== */}
-        <nav className="hidden md:block sticky top-8 z-30">
-          <div className="mx-auto max-w-[1100px] px-6">
-            <div className="rounded-xl bg-[var(--color-teal-850)]/80 ring-1 ring-white/10">
-              <div className="flex flex-wrap items-center justify-center gap-2 px-3 py-3">
-                {SECTIONS.map((s) => {
-                  const active = activeId === s.id;
-                  return (
-                    <button
-                      key={s.id}
-                      onClick={() => jump(s.id)}
-                      aria-current={active ? "true" : "false"}
-                      className={[
-                        "whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition",
-                        active
-                          ? "border-[var(--color-gold)] bg-[var(--color-gold)] text-black shadow-sm"
-                          : "border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10",
-                      ].join(" ")}
-                    >
-                      {s.label}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-            <div className="mt-3 h-px w-full bg-[var(--color-cream)]/15" />
-          </div>
-        </nav>
-
+      {/* ===== ZOOM #2 — SECTIONS ONLY (mobile) ===== */}
+      <div
+        style={{ "--z": 3.0, "--zoomL": 1.6 }}
+        className={`
+          zoomwrap
+          md:contents
+          origin-top
+          [transform:scale(var(--z))] [width:calc(100%/var(--z))]
+          mx-auto
+          md:[transform:none] md:[width:100%]
+          landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
+          overflow-visible
+        `}
+      >
         {/* ===== APPROACH ===== */}
         <section id="approach" className="scroll-mt-28 md:scroll-mt-32 mx-auto max-w-[1100px] px-6 py-14 md:py-16">
           <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Philosophy</p>
@@ -217,6 +231,7 @@ export default function ConsultingPage() {
           <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-8">
+            {/* Partner in Research */}
             <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
               <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
               <h3 className="font-serif text-2xl mb-2">Partner in Research</h3>
@@ -228,6 +243,7 @@ export default function ConsultingPage() {
               </a>
             </article>
 
+            {/* Design with Science */}
             <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
               <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
               <h3 className="font-serif text-2xl mb-2">Design with Science</h3>
@@ -240,6 +256,7 @@ export default function ConsultingPage() {
               </a>
             </article>
 
+            {/* Evaluate What Works */}
             <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition hover:-translate-y-[2px]">
               <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
               <h3 className="font-serif text-2xl mb-2">Evaluate What Works</h3>
@@ -253,6 +270,7 @@ export default function ConsultingPage() {
               </a>
             </article>
 
+            {/* Scale Resilience */}
             <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition hover:-translate-y-[2px]">
               <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
               <h3 className="font-serif text-2xl mb-2">Scale Across Your Organization</h3>
@@ -400,6 +418,7 @@ export default function ConsultingPage() {
           <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Short Sprints */}
             <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
               <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
               <h3 className="font-serif text-xl mb-2">Short Sprints</h3>
@@ -412,6 +431,7 @@ export default function ConsultingPage() {
               </a>
             </article>
 
+            {/* Deep Partnerships */}
             <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
               <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
               <h3 className="font-serif text-xl mb-2">Deep Partnerships</h3>
@@ -424,6 +444,7 @@ export default function ConsultingPage() {
               </a>
             </article>
 
+            {/* Ongoing Support */}
             <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition hover:-translate-y-[2px]">
               <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
               <h3 className="font-serif text-xl mb-2">Ongoing Support</h3>
@@ -598,10 +619,13 @@ export default function ConsultingPage() {
         @supports (-webkit-touch-callout: none) {
           html, body { background: var(--color-teal-850) !important; }
         }
-        .zoomwrap, .zoomwrap * {
+        /* CRISP TEXT inside scaled wrappers */
+        .zoomwrap,
+        .zoomwrap * {
           -webkit-font-smoothing: antialiased;
           text-rendering: geometricPrecision;
         }
+        /* Ensure gold checks render as glyphs on mobile */
         @media (max-width: 767px) {
           ul li > span:first-child {
             color: var(--color-gold) !important;
