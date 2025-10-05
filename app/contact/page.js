@@ -203,7 +203,7 @@ export default function ContactPage() {
               <div className="flex items-center gap-3 mb-4">
                 <div className="h-10 w-10 overflow-hidden rounded-full ring-1 ring-white/20">
                   <img
-                    src="/headshot.jpg"  // ← update to your actual path
+                    src="/headshot.jpg"
                     alt="Dr. Juan Pablo Salerno headshot"
                     className="h-full w-full object-cover"
                     loading="lazy"
