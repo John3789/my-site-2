@@ -147,7 +147,9 @@ export default function ConsultingPage() {
           activeId === s.id && "!bg-[var(--color-gold)] !text-black !border-[var(--color-gold)]"
         ].join(" ")}
       >
-        <span className="mr-1 tabular-nums opacity-85">{idx + 1}.</span>
+       <span className="mr-1 inline-block w-4 text-center tabular-nums opacity-85">
+  {idx + 1}.
+</span>
 
         {s.label}
       </button>
