@@ -282,7 +282,7 @@ export default function SpeakingPage() {
             {/* Popular Topics (Programs) */}
             <section
               id="programs"
-              className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mx-15 gap-y-12"
+              className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center mx-15 gap-y-6"
             >
               <div className="lg:col-span-5 lg:py-6">
                 {/* Overline (slightly dimmer) */}
