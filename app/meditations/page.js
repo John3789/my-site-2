@@ -44,7 +44,7 @@ export default function MeditationsPage() {
               {/* Gold spine on the left */}
               <span
                 aria-hidden
-                className="absolute left-0 top-2 bottom-2 w-[3px] bg-[var(--color-gold)]/60 rounded-l-2xl"
+                className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/60 rounded-l-2xl"
               />
               <div className="p-5 md:p-6">
                 <p className="text-lg md:text-xl opacity-90 leading-relaxed text-center">
@@ -84,7 +84,7 @@ export default function MeditationsPage() {
               {/* Gold spine (dimmed) */}
               <span
                 aria-hidden
-                className="absolute left-0 top-2 bottom-2 w-[3px] bg-[var(--color-gold)]/60 rounded-l-2xl"
+                className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/60 rounded-l-2xl"
               />
               <div className="flex flex-wrap items-center gap-3 text-sm opacity-85">
                 <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 ring-1 ring-white/15">

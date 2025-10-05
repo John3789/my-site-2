@@ -87,7 +87,7 @@ export default function ConsultingPage() {
           ← Prev
         </button>
         <button
-          onClick={() => jump("quicknav-m", { center: true })}
+          onClick={() => jump("quicknav", { center: true })}
           className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
         >
           All Consulting
@@ -138,7 +138,7 @@ export default function ConsultingPage() {
       <button
   key={s.id}
   type="button"
-  onClick={() => jump(s.id)}
+  onClick={() => jump(`${s.id}-m`)}
   aria-current={activeId === s.id ? "true" : "false"}
   className={[
     "w-full inline-flex items-center gap-1 rounded-full px-3.5 py-1.5",
