@@ -433,7 +433,7 @@ export default function SpeakingPage() {
             </section>
 
             {/* Programs footer buttons (mobile only) */}
-<div className="md:hidden pt-1 pb-1 mt-1 w-full">
+<div className="md:hidden pt-0 pb-0 mt-0 w-full">
   <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
     <button
       onClick={() => jump("intro")}
