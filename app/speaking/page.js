@@ -276,13 +276,13 @@ export default function SpeakingPage() {
           </section>
 
           {/* ===== MAIN CONTENT ===== */}
-          <div className="mx-auto max-w-[1400px] md:py-6 space-y-16 md:space-y-24" id="topics">
+          <div className="mx-auto max-w-[1400px] pb-12 md:py-6 space-y-16 md:space-y-24" id="topics">
             <hr className="border-t border-[var(--color-cream)]/22 md:mb-8 w-full" />
 
             {/* Popular Topics (Programs) */}
             <section
               id="programs"
-              className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center mx-15 gap-y-6"
+              className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mx-15 gap-y-12"
             >
               <div className="lg:col-span-5 lg:py-6">
                 {/* Overline (slightly dimmer) */}
