@@ -196,68 +196,70 @@ export default function ContactPage() {
             )}
           </section>
 
-          {/* RIGHT: slim info card (desktop only) */}
-          <aside className="hidden md:block">
-            <div className="sticky top-24 rounded-2xl ring-1 ring-white/12 bg-white/5 p-5 shadow-2xl backdrop-blur-sm">
-              {/* Mini header with avatar */}
-              <div className="flex items-center gap-3 mb-4">
-                <div className="h-10 w-10 overflow-hidden rounded-full ring-1 ring-white/20">
-                  <img
-                    src="/headshot.jpg"
-                    alt="Dr. Juan Pablo Salerno headshot"
-                    className="h-full w-full object-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div className="min-w-0">
-                  <p className="text-sm opacity-85 truncate">Thanks for reaching out!</p>
-                  <p className="text-xs opacity-70 truncate">I read every note personally.</p>
-                </div>
-              </div>
+ {/* RIGHT: slim info card (desktop only) */}
+<aside className="hidden md:block">
+  <div className="sticky top-24 relative rounded-2xl ring-1 ring-white/12 bg-white/5 p-5 shadow-2xl backdrop-blur-sm overflow-hidden">
+    
 
-              <div className="h-px w-full bg-[var(--color-cream)]/15 my-4" />
+    {/* Mini header with larger avatar */}
+    <div className="flex items-center gap-3 mb-4 relative z-10">
+      <div className="h-14 w-14 overflow-hidden rounded-full ring-1 ring-white/25 shadow-md">
+        <img
+          src="/headshot.jpg"
+          alt="Dr. Juan Pablo Salerno headshot"
+          className="h-full w-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div className="min-w-0">
+        <p className="text-sm opacity-85 truncate">Thanks for reaching out!</p>
+        <p className="text-xs opacity-70 truncate">I read every note personally.</p>
+      </div>
+    </div>
 
-              {/* Primary action: email */}
-              <a
-                href="mailto:contact@drjuanpablosalerno.com"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-[var(--color-gold)] text-black px-4 py-2.5
-                           font-semibold text-sm tracking-wide shadow-md hover:shadow-lg transition"
-              >
-                {/* envelope icon */}
-                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                  <rect x="3" y="5" width="18" height="14" rx="2" ry="2"></rect>
-                  <path d="M3 7l9 6 9-6"></path>
-                </svg>
-                Email me directly
-              </a>
+    <div className="h-px w-full bg-[var(--color-cream)]/15 my-4" />
 
-              {/* Quick links */}
-              <ul className="mt-4 space-y-2 text-sm">
-                <li>
-                  <Link href="/newsletter" className="underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">
-                    Subscribe to my newsletter →
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/meditations" className="underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">
-                    Discover meditation →
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/resources" className="underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">
-                    Explore resources →
-                  </Link>
-                </li>
-              </ul>
+    {/* Primary action: email */}
+    <a
+      href="mailto:contact@drjuanpablosalerno.com"
+      className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-[var(--color-gold)] text-black px-4 py-2.5
+                 font-semibold text-sm tracking-wide shadow-md hover:shadow-lg transition"
+    >
+      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+        <rect x="3" y="5" width="18" height="14" rx="2" ry="2"></rect>
+        <path d="M3 7l9 6 9-6"></path>
+      </svg>
+      Email me directly
+    </a>
 
-              <div className="mt-5 rounded-lg bg-white/4 ring-1 ring-white/10 p-3">
-                <p className="text-xs leading-relaxed opacity-80">
-                  Prefer a short note? One or two sentences is perfect—share your goal and any timeline.
-                </p>
-              </div>
-            </div>
-          </aside>
+    {/* Quick links */}
+    <ul className="mt-4 space-y-2 text-sm relative z-10">
+      <li>
+        <Link href="/newsletter" className="underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">
+          Subscribe to my newsletter →
+        </Link>
+      </li>
+      <li>
+        <Link href="/meditations" className="underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">
+          Discover meditation →
+        </Link>
+      </li>
+      <li>
+        <Link href="/resources" className="underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">
+          Explore resources →
+        </Link>
+      </li>
+    </ul>
+
+    <div className="mt-5 rounded-lg bg-white/4 ring-1 ring-white/10 p-3 relative z-10">
+      <p className="text-xs leading-relaxed opacity-80">
+        Prefer a short note? One or two sentences is perfect—share your goal and any timeline.
+      </p>
+    </div>
+  </div>
+</aside>
+
         </div>
       </div>
     </main>
