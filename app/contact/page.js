@@ -5,200 +5,257 @@ import { useState } from "react";
 
 export default function ContactPage() {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
-    setSent(true);
+    setLoading(true);
+
+    const form = new FormData(e.currentTarget);
+    const name = (form.get("name") || "").toString().trim();
+    const email = (form.get("email") || "").toString().trim();
+    const msg = (form.get("message") || "").toString().trim();
+
+    if (!name || !email || msg.length < 8) {
+      setLoading(false);
+      alert("Please complete all fields (message must be at least 8 characters).");
+      return;
+    }
+
+    // TODO: replace with real submission (API route / Formspree / Resend)
+    setTimeout(() => {
+      setLoading(false);
+      setSent(true);
+    }, 600);
   }
 
+  const field =
+    "w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3.5 " +
+    "placeholder-white/60 outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 " +
+    "focus:border-[var(--color-gold)]/50 transition";
+
+  const topics = [
+    { value: "Consulting", label: "Consulting" },
+    { value: "Speaking", label: "Speaking" },
+    { value: "Meditations", label: "Meditations" },
+    { value: "Media", label: "Media / Press" },
+    { value: "Collaborations", label: "Collaborations" },
+    { value: "Other", label: "Another Inquiry" },
+  ];
+
   return (
-    <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
-      {/* ===== MOBILE ZOOM WRAPPER (mirrors your other pages) ===== */}
+    <main className="relative min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
+      {/* soft gradient wash */}
       <div
-        style={{ "--z": 3.0, "--zoomL": 1.60 }}
-        className={`
-          zoomwrap
-          md:contents
-          origin-top
-          [transform:scale(var(--z))] [width:calc(100%/var(--z))]
-          mx-auto
-          md:[transform:none] md:[width:100%]
-          landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
-          overflow-visible
-        `}
-      >
-        {/* Header / Intro */}
-        <header className="mx-auto max-w-[1200px] px-6 pt-16 pb-6">
-          <div className="flex items-center justify-center md:justify-start gap-3">
-            {/* Headshot avatar */}
-            <div className="h-12 w-12 overflow-hidden rounded-full ring-1 ring-white/20 shadow">
-              <img
-                src="/images/your-headshot.jpg" // ← set your real path
-                alt="Dr. Juan Pablo Salerno headshot"
-                className="h-full w-full object-cover"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <h1 className="font-serif text-5xl md:text-6xl leading-[1.06] opacity-90">
-              Contact
-            </h1>
-          </div>
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{
+          background:
+            "radial-gradient(1200px 600px at 10% -10%, rgba(255,221,149,0.07), transparent 60%), radial-gradient(900px 500px at 110% 10%, rgba(255,221,149,0.06), transparent 60%)",
+        }}
+      />
 
-          <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mt-4 rounded md:ml-[3.25rem]" />
-
-          <p className="text-lg opacity-90 max-w-3xl mt-6">
-            For consulting, meditations, speaking, media, and collaborations, please share a few
-            details below or email{" "}
+      <div className="mx-auto max-w-[1200px] px-6 py-20">
+        {/* Header */}
+        <header className="max-w-3xl mx-auto text-center mb-10">
+          <h1 className="font-serif text-6xl leading-[1.06] opacity-90">Contact</h1>
+          <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 rounded" />
+          <p className="text-lg opacity-90 mt-6">
+            I’m glad you’re here. Share a few details below or email{" "}
             <a
               href="mailto:contact@drjuanpablosalerno.com"
               className="underline underline-offset-4 hover:opacity-80 transition whitespace-nowrap"
             >
               contact@drjuanpablosalerno.com
-            </a>.
+            </a>
+            .
           </p>
         </header>
 
-        {/* Body */}
-        <div className="mx-auto max-w-[1200px] px-6 pb-20">
-          {/* Keep single-column; breathe on desktop with max-w */}
-          <div className="w-full md:max-w-[820px]">
+        {/* Body: form + slim info card */}
+        <div className="md:grid md:grid-cols-[1fr_340px] md:gap-10">
+          {/* LEFT: centered single contact card (your preferred version) */}
+          <section className="relative mx-auto md:mx-0 md:max-w-[820px] overflow-hidden rounded-2xl bg-white/4 ring-1 ring-white/12 p-6 md:p-7 shadow-2xl backdrop-blur-sm">
+            <span
+              aria-hidden
+              className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl"
+            />
+
             {sent ? (
-              <div
-                className="rounded-md bg-black/20 border border-white/10 p-6"
-                role="status"
-                aria-live="polite"
-              >
-                <p className="font-semibold opacity-90">
-                  Thanks! Your message was received and I’ll follow up soon.
-                </p>
+              <div role="status" aria-live="polite" className="text-center py-4">
+                <div className="mx-auto mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-gold)]/90 text-black">
+                  ✓
+                </div>
+                <p className="font-semibold opacity-95 text-lg">Got it—thanks for reaching out!</p>
+                <p className="opacity-80 mt-1">I’ll follow up shortly.</p>
+
+                <div className="mt-6 flex items-center justify-center gap-3">
+                  <a
+                    href="/resources"
+                    className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm hover:bg-white/10 transition"
+                  >
+                    Browse Resources
+                  </a>
+                  <a
+                    href="/"
+                    className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm hover:bg-white/10 transition"
+                  >
+                    Return Home
+                  </a>
+                </div>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="max-w-2xl space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Honeypot anti-spam */}
-                <input
-                  type="text"
-                  name="company"
-                  className="hidden"
-                  tabIndex={-1}
-                  autoComplete="off"
-                />
+                <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
 
-                <div className="grid gap-5 sm:grid-cols-2">
+                <div className="grid gap-4 sm:grid-cols-2">
                   <div>
-                    <label className="block text-sm opacity-90 mb-1.5" htmlFor="name">
-                      Name
-                    </label>
-                    <input
-                      id="name"
-                      type="text"
-                      name="name"
-                      required
-                      autoComplete="name"
-                      className="w-full rounded-md bg-transparent border border-white/20 px-4 py-3 outline-none placeholder-white/60
-                                 focus:ring-2 focus:ring-[var(--color-gold)]/35 focus:border-[var(--color-gold)]/60"
-                      placeholder="Your name"
-                    />
+                    <label className="block text-sm opacity-90 mb-1.5">Name</label>
+                    <input type="text" name="name" required className={field} placeholder="Your name" />
+                    <p className="mt-1 text-[12px] opacity-70">How you’d like to be addressed.</p>
                   </div>
                   <div>
-                    <label className="block text-sm opacity-90 mb-1.5" htmlFor="email">
-                      Email
-                    </label>
-                    <input
-                      id="email"
-                      type="email"
-                      name="email"
-                      required
-                      autoComplete="email"
-                      className="w-full rounded-md bg-transparent border border-white/20 px-4 py-3 outline-none placeholder-white/60
-                                 focus:ring-2 focus:ring-[var(--color-gold)]/35 focus:border-[var(--color-gold)]/60"
-                      placeholder="you@example.com"
-                    />
+                    <label className="block text-sm opacity-90 mb-1.5">Email</label>
+                    <input type="email" name="email" required className={field} placeholder="you@example.com" />
+                    <p className="mt-1 text-[12px] opacity-70">I’ll reply here.</p>
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-sm opacity-90 mb-1.5" htmlFor="topic">
-                    Topic
-                  </label>
-                  <select
-                    id="topic"
-                    name="topic"
-                    className="w-full rounded-md bg-transparent border border-white/20 px-4 py-3 outline-none
-                               focus:ring-2 focus:ring-[var(--color-gold)]/35 focus:border-[var(--color-gold)]/60"
-                    defaultValue="Consulting"
-                  >
-                    <option className="bg-[var(--color-teal-900)]" value="Consulting">
-                      Consulting
-                    </option>
-                    <option className="bg-[var(--color-teal-900)]" value="Speaking">
-                      Speaking
-                    </option>
-                    <option className="bg-[var(--color-teal-900)]" value="Meditations">
-                      Meditations
-                    </option>
-                    <option className="bg-[var(--color-teal-900)]" value="Media">
-                      Media / Press
-                    </option>
-                    <option className="bg-[var(--color-teal-900)]" value="Collaborations">
-                      Collaborations
-                    </option>
-                    <option className="bg-[var(--color-teal-900)]" value="Other">
-                      Another Inquiry
-                    </option>
-                  </select>
-                </div>
+                {/* Topic chips (radios) */}
+                <fieldset>
+                  <legend className="block text-sm opacity-90 mb-2">Topic</legend>
+                  <div className="flex flex-wrap gap-2">
+                    {topics.map((t, i) => (
+                      <div key={t.value}>
+                        <input
+                          id={`topic-${i}`}
+                          type="radio"
+                          name="topic"
+                          value={t.value}
+                          defaultChecked={i === 0}
+                          className="peer sr-only"
+                        />
+                        <label
+                          htmlFor={`topic-${i}`}
+                          className="cursor-pointer rounded-full border border-white/20 bg-white/5 px-3.5 py-1.5 text-[12px] font-semibold tracking-wide hover:bg-white/10 peer-checked:bg-[var(--color-gold)] peer-checked:text-black peer-checked:border-[var(--color-gold)] transition"
+                        >
+                          {t.label}
+                        </label>
+                      </div>
+                    ))}
+                  </div>
+                </fieldset>
 
                 <div>
-                  <label className="block text-sm opacity-90 mb-1.5" htmlFor="message">
-                    Message
-                  </label>
+                  <label className="block text-sm opacity-90 mb-1.5">Message</label>
                   <textarea
-                    id="message"
                     name="message"
                     rows={6}
+                    maxLength={1000}
                     required
-                    className="w-full rounded-md bg-transparent border border-white/20 px-4 py-3 outline-none placeholder-white/60
-                               focus:ring-2 focus:ring-[var(--color-gold)]/35 focus:border-[var(--color-gold)]/60"
-                    placeholder="How can I help?"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    className={field + " resize-y"}
+                    placeholder="What would you like to explore together?"
                   />
+                  <div className="mt-1 flex items-center justify-between">
+                    <p className="text-[12px] opacity-70">Helpful to include: goals, org/context, timeline.</p>
+                    <span className="text-[12px] opacity-70">{message.length}/1000</span>
+                  </div>
                 </div>
 
-                <button
-                  type="submit"
-                  className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3
-                             font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition
-                             focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
-                >
-                  Send
-                </button>
+                <div className="flex items-center gap-3">
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className={[
+                      "inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3",
+                      "font-semibold uppercase tracking-wide text-sm shadow-md transition",
+                      "hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50",
+                      loading ? "opacity-80 cursor-wait" : "",
+                    ].join(" ")}
+                  >
+                    {loading ? "Sending…" : "Send"}
+                  </button>
+                  <span className="text-xs opacity-80">I read every message personally.</span>
+                </div>
 
-                {/* Friendly, compact disclaimer */}
-                <p className="text-xs opacity-80 mt-4 max-w-xl leading-relaxed">
-                  <strong>Disclaimer:</strong> This site and messages sent here are for informational
-                  and wellness purposes only and do not constitute medical advice. If you have medical
-                  or mental health concerns, please consult a qualified professional.
+                {/* Disclaimer */}
+                <p className="text-xs opacity-75 leading-relaxed">
+                  <strong>Disclaimer:</strong> This website and all communications through this form are for
+                  informational, educational, and wellness purposes only. They do not constitute medical advice,
+                  diagnosis, or treatment. If you have medical or mental health concerns, please consult a qualified
+                  professional.
                 </p>
               </form>
             )}
-          </div>
+          </section>
+
+          {/* RIGHT: slim info card (desktop only) */}
+          <aside className="hidden md:block">
+            <div className="sticky top-24 rounded-2xl ring-1 ring-white/12 bg-white/5 p-5 shadow-2xl backdrop-blur-sm">
+              {/* Mini header with avatar */}
+              <div className="flex items-center gap-3 mb-4">
+                <div className="h-10 w-10 overflow-hidden rounded-full ring-1 ring-white/20">
+                  <img
+                    src="/headshot.jpg"
+                    alt="Dr. Juan Pablo Salerno headshot"
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-sm opacity-85 truncate">Thanks for reaching out!</p>
+                  <p className="text-xs opacity-70 truncate">I read every note personally.</p>
+                </div>
+              </div>
+
+              <div className="h-px w-full bg-[var(--color-cream)]/15 my-4" />
+
+              {/* Primary action: email */}
+              <a
+                href="mailto:contact@drjuanpablosalerno.com"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-[var(--color-gold)] text-black px-4 py-2.5 font-semibold text-sm tracking-wide shadow-md hover:shadow-lg transition"
+              >
+                {/* envelope icon */}
+                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="M21 7l-9 6L3 7" />
+                </svg>
+                Email me directly
+              </a>
+
+              {/* Quick links: your requested trio */}
+              <ul className="mt-4 space-y-2 text-sm">
+                <li>
+                  <a href="/newsletter" className="underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">
+                    Subscribe to my newsletter →
+                  </a>
+                </li>
+                <li>
+                  <a href="/meditations" className="underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">
+                    Discover meditations →
+                  </a>
+                </li>
+                <li>
+                  <a href="/resources" className="underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">
+                    Explore resources →
+                  </a>
+                </li>
+              </ul>
+
+              <div className="mt-5 rounded-lg bg-white/4 ring-1 ring-white/10 p-3">
+                <p className="text-xs leading-relaxed opacity-80">
+                  Prefer a short note? One or two sentences is perfect—share your goal and any timeline.
+                </p>
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
-
-      {/* Global crisp text & iOS background guard (same pattern as other pages) */}
-      <style jsx global>{`
-        @supports (-webkit-touch-callout: none) {
-          html,
-          body {
-            background: var(--color-teal-850) !important;
-          }
-        }
-        .zoomwrap,
-        .zoomwrap * {
-          -webkit-font-smoothing: antialiased;
-          text-rendering: geometricPrecision;
-        }
-      `}</style>
     </main>
   );
 }
