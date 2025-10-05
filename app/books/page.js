@@ -269,7 +269,7 @@ export default function BooksPage() {
  {/* CARD 3 */}
 <article className="w-full bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-0 md:backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10">
   <div className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/60 rounded-l-xl" />
-  <div className="flex flex-col lg:flex-row gap-5 sm:gap-6 lg:gap-12">
+  <div className="flex flex-col lg:flex-row gap-7 sm:gap-8 lg:gap-12">
     <div className="lg:w-1/3">
       <p className="text-xs uppercase tracking-[0.18em] text-[var(--color-gold)] opacity-90">Theme</p>
       <div className="h-px w-14 bg-[var(--color-gold)]/30 mt-2 mb-4" />
@@ -285,7 +285,7 @@ export default function BooksPage() {
       <input id="more-c3" type="checkbox" className="peer hidden md:hidden" />
 
       <ul className="list-none divide-y divide-white/10">
-        <li className="flex gap-3 py-3 md:py-4 first:pt-0 md:first:pt-4">
+        <li className="flex gap-3 py-4 md:py-4 first:pt-0 md:first:pt-4">
           <span className="mt-3 h-2 w-2 rounded-full bg-[var(--color-gold)] shrink-0" />
           <div>
             Salerno et&nbsp;al. (2020).
@@ -294,7 +294,7 @@ export default function BooksPage() {
             <a href="https://www.researchgate.net/publication/344521757_Sexual_and_Gender_Minority_Stress_Amid_the_COVID-19_Pandemic_Implications_for_LGBTQ_Young_Persons'_Mental_Health_and_Well-Being" target="_blank" rel="noreferrer" className="underline decoration-[var(--color-gold)] underline-offset-2 hover:opacity-80">Read Here →</a>
           </div>
         </li>
-        <li className="flex gap-3 py-3 md:py-4 first:pt-0 md:first:pt-4">
+        <li className="flex gap-3 py-4 md:py-4 first:pt-0 md:first:pt-4">
           <span className="mt-3 h-2 w-2 rounded-full bg-[var(--color-gold)] shrink-0" />
           <div>
             Salerno et&nbsp;al. (2020).
@@ -303,7 +303,7 @@ export default function BooksPage() {
             <a href="https://www.researchgate.net/publication/342282937_LGBTQ_Populations_Psychologically_Vulnerable_Communities_in_the_COVID-19_Pandemic" target="_blank" rel="noreferrer" className="underline decoration-[var(--color-gold)] underline-offset-2 hover:opacity-80">Read Here →</a>
           </div>
         </li>
-        <li className="flex gap-3 py-3 md:py-4 first:pt-0 md:first:pt-4">
+        <li className="flex gap-3 py-4 md:py-4 first:pt-0 md:first:pt-4">
           <span className="mt-3 h-2 w-2 rounded-full bg-[var(--color-gold)] shrink-0" />
           <div>
             Salerno (2016).
