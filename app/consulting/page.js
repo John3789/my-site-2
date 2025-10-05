@@ -131,22 +131,29 @@ export default function ConsultingPage() {
             </p>
           </section>
 
- {/* Mobile-only quick nav — NUMBERED */}
-<div id="quicknav" className="md:hidden mt-6">
+ {/* ---- MOBILE quick nav (numbered) ---- */}
+<div id="quicknav" className="md:hidden mt-6 pointer-events-auto">
   <div className="grid grid-cols-2 landscape:grid-cols-3 gap-2">
     {SECTIONS.map((s, idx) => (
       <button
         key={s.id}
-        onClick={() => handleJump(s.id)}
-        aria-label={`Jump to ${s.label}`}
-        className="inline-flex items-center justify-center w-full rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition hover:bg-[var(--color-teal-700)] active:scale-95 active:brightness-110 truncate"
+        type="button"
+        onClick={() => jump(s.id)}
+        aria-current={activeId === s.id ? "true" : "false"}
+        className={[
+          "w-full rounded-full px-3.5 py-1.5 text-[12px] font-semibold tracking-wide truncate transition",
+          "active:scale-95 active:brightness-125",
+          "border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)]",
+          activeId === s.id && "!bg-[var(--color-gold)] !text-black !border-[var(--color-gold)]"
+        ].join(" ")}
       >
-        <span className="mr-1.5 tabular-nums opacity-80 shrink-0">{idx + 1}.</span>
-        <span className="truncate">{s.label}</span>
+        <span className="mr-1 tabular-nums opacity-85">
+          {String(idx + 1).padStart(2, "0")}.
+        </span>
+        {s.label}
       </button>
     ))}
   </div>
-
 
             {/* divider same width as container */}
             <div className="mt-3 h-px w-full bg-[var(--color-cream)]/15" />
@@ -234,6 +241,22 @@ export default function ConsultingPage() {
                 Understand your goals, challenges, stakeholders, and context—laying the foundation for success.
               </p>
             </article>
+
+            {/* Gold arrow toward Co-Design (mobile only, no animation to avoid blur) */}
+<div className="md:hidden flex justify-center -mt-2 mb-6" aria-hidden>
+  <svg
+    viewBox="0 0 24 24"
+    className="h-7 w-7 text-[var(--color-gold)]"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M12 4v12" />
+    <path d="M7 12l5 5 5-5" />
+  </svg>
+</div>
 
             <div className="grid grid-cols-1 gap-6">
               {[
