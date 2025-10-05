@@ -135,36 +135,27 @@ export default function ConsultingPage() {
 <div id="quicknav" className="md:hidden mt-6 pointer-events-auto">
   <div className="grid grid-cols-2 landscape:grid-cols-3 gap-2">
     {SECTIONS.map((s, idx) => (
-  <button
-    key={s.id}
-    type="button"
-    onClick={() => jump(s.id)}
-    aria-current={activeId === s.id ? "true" : "false"}
-    className={[
-      "w-full grid grid-cols-[3ch_1fr_3ch] items-center rounded-full px-3.5 py-1.5",
-      "text-[12px] font-semibold tracking-wide transition",
-      "active:scale-95 active:brightness-125",
-      "border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)]",
-      activeId === s.id && "!bg-[var(--color-gold)] !text-black !border-[var(--color-gold)]"
-    ].join(" ")}
-  >
-    {/* Left: visible number (left-justified) */}
-    <span className="tabular-nums text-left leading-none">
-      {idx + 1}.
-    </span>
+      <button
+  key={s.id}
+  type="button"
+  onClick={() => jump(s.id)}
+  aria-current={activeId === s.id ? "true" : "false"}
+  className={[
+    "w-full inline-flex items-center gap-1 rounded-full px-3.5 py-1.5",
+    "text-[12px] font-semibold tracking-wide truncate transition",
+    "active:scale-95 active:brightness-125",
+    "border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)]",
+    activeId === s.id && "!bg-[var(--color-gold)] !text-black !border-[var(--color-gold)]"
+  ].join(" ")}
+>
+  {/* Fixed-width numeric block ensures perfect alignment */}
+  <span className="inline-block w-[3ch] text-left tabular-nums leading-none">
+    {idx + 1}.
+  </span>
+  <span className="truncate">{s.label}</span>
+</button>
 
-    {/* Center: label perfectly centered in the button */}
-    <span className="justify-self-center text-center leading-none truncate">
-      {s.label}
-    </span>
-
-    {/* Right: invisible number to balance the grid width */}
-    <span aria-hidden="true" className="tabular-nums opacity-0 leading-none">
-      {idx + 1}.
-    </span>
-  </button>
-))}
-
+    ))}
   </div>
 
             {/* divider same width as container */}
