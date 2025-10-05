@@ -171,7 +171,7 @@ export default function ConsultingPage() {
               I work with organizations committed to fostering wellbeing and sustainable impact.
               Each partnership is tailored to the unique needs, context, and goals of the people it serves.
             </p>
-            <p className="text-base opacity-90 leading-loose max-w-3xl -mb-4">
+            <p className="text-base opacity-90 leading-loose max-w-3xl -mb-3">
               I bridge <span className="font-semibold">science</span> and{" "}
               <span className="font-semibold">growth wisdom</span> to help organizations build
               effective, culturally grounded, and sustainable wellbeing strategies. With expertise
@@ -283,7 +283,7 @@ export default function ConsultingPage() {
           <section id={toMobile("results")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14">
             <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Results</p>
             <h2 className="font-serif text-3xl opacity-95">What Partners Will Achieve</h2>
-            <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" />
+            <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-2 rounded" />
             <ul className="grid grid-cols-1 gap-4 text-lg opacity-90">
               <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>Higher program engagement and follow-through</span></li>
               <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>Noticeable and meaningful reductions in stress and burnout</span></li>
