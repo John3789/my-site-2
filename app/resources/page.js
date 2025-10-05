@@ -289,7 +289,7 @@ export default function ResourcesPage() {
 
           {/* Mobile-only divider under the nav (above Motivation) */}
 <div className="md:hidden">
-  <div className="mx-auto max-w-[1200px] px-6">
+  <div className="mx-auto max-w-[1200px] px-6 mt-3">
     <div className="h-px w-full bg-[var(--color-cream)]/15" />
   </div>
 </div>
