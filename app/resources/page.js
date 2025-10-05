@@ -127,6 +127,20 @@ export default function ResourcesPage() {
     return () => observer.disconnect();
   }, []);
 
+  // Desktop-only safety: if user is at the very bottom, force the last pill active (Feng Shui)
+  useEffect(() => {
+    const onScroll = () => {
+      if (window.innerWidth < 768) return; // desktop only
+      const nearBottom =
+        window.innerHeight + window.scrollY >= document.body.scrollHeight - 2;
+      if (nearBottom) {
+        setCurrentId(THEMES[THEMES.length - 1].slug);
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const handleJump = (slug) => {
     const el = document.getElementById(slug);
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -135,7 +149,7 @@ export default function ResourcesPage() {
   /* ========= Sticky subnav with fades & chevrons (desktop only) ========= */
   const Nav = useMemo(() => {
     return (
-      <div className="z-30 -mx-6 border-b border-white/10 bg-transparent md:bg-[var(--color-teal-850)]/80">
+      <div className="z-30 bg-transparent md:bg-[var(--color-teal-850)]/80">
         <div className="relative mx-auto max-w-[1200px] px-6 py-3">
           {/* Scroll container */}
           <div
@@ -162,8 +176,6 @@ export default function ResourcesPage() {
               );
             })}
           </div>
-
-
 
           {/* Chevron buttons (desktop only) */}
           <div className="hidden md:block">
@@ -195,6 +207,13 @@ export default function ResourcesPage() {
             </button>
           </div>
         </div>
+
+        {/* Desktop-only divider UNDER the nav, constrained to nav width */}
+        <div className="hidden md:block">
+          <div className="mx-auto max-w-[1200px] px-6">
+            <div className="h-px w-full bg-[var(--color-cream)]/15" />
+          </div>
+        </div>
       </div>
     );
   }, [currentId, canScrollLeft, canScrollRight]);
@@ -206,9 +225,9 @@ export default function ResourcesPage() {
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]" />
 
         {/* 1) ZOOM WRAPPER — Title + Intro ONLY */}
-<div
-  style={{ '--z': 3.0, '--zoomL': 1.60 }}
-  className={`
+        <div
+          style={{ '--z': 3.0, '--zoomL': 1.60 }}
+          className={`
     md:contents
     origin-top
     [transform:scale(var(--z))] [width:calc(100%/var(--z))]
@@ -217,7 +236,7 @@ export default function ResourcesPage() {
     landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
     overflow-visible
   `}
->
+        >
           {/* Title + Intro (now inside the zoom so sizes match) */}
           <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-6">
             <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-3">
@@ -242,36 +261,36 @@ export default function ResourcesPage() {
             </div>
           </div>
 
-{/* Desktop sticky sub-nav (outside the zoom for crisp text) */}
-<div className="hidden md:block sticky top-[64px] z-30 -mx-6 border-b border-white/10 bg-transparent bg-[var(--color-teal-850)]/80">
-  {Nav}
-</div>
+          {/* Desktop sticky sub-nav (outside the zoom for crisp text) */}
+          <div className="hidden md:block sticky top-[64px] z-30 bg-[var(--color-teal-850)]/80">
+            {Nav}
+          </div>
 
-{/* Mobile nav — simplest, blur-safe chip list */}
-<div className="md:hidden mt-4 grid grid-cols-3 gap-2">
-  {THEMES.map((t) => {
-    const active = currentId === t.slug;
-    return (
-      <button
-        key={t.slug}
-        onClick={() => handleJump(t.slug)}
-        aria-current={active ? "true" : "false"}
-className={[
-  "w-full rounded-full px-2 py-1.5 text-[11px] font-semibold tracking-wide truncate transition",
-  "active:scale-95 active:brightness-125",
-  "bg-[var(--color-teal-800)] text-[var(--color-cream)] border border-white/12"
-        ].join(" ")}
-      >
-        {t.title}
-      </button>
-    );
-  })}
-</div>
+          {/* Mobile nav — simplest, blur-safe chip list */}
+          <div className="md:hidden mt-4 grid grid-cols-3 gap-2">
+            {THEMES.map((t) => {
+              const active = currentId === t.slug;
+              return (
+                <button
+                  key={t.slug}
+                  onClick={() => handleJump(t.slug)}
+                  aria-current={active ? "true" : "false"}
+                  className={[
+                    "w-full rounded-full px-2 py-1.5 text-[11px] font-semibold tracking-wide truncate transition",
+                    "active:scale-95 active:brightness-125",
+                    "bg-[var(--color-teal-800)] text-[var(--color-cream)] border border-white/12",
+                  ].join(" ")}
+                >
+                  {t.title}
+                </button>
+              );
+            })}
+          </div>
 
-{/* 3) ZOOM WRAPPER — Sections ONLY */}
-<div
-  style={{ '--z': 3.0, '--zoomL': 1.60 }}
-  className={`
+          {/* 3) ZOOM WRAPPER — Sections ONLY */}
+          <div
+            style={{ '--z': 3.0, '--zoomL': 1.60 }}
+            className={`
     md:contents
     origin-top
     [transform:scale(var(--z))] [width:calc(100%/var(--z))]
@@ -280,7 +299,7 @@ className={[
     landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
     overflow-visible
   `}
-></div>
+          ></div>
 
           {/* Sections */}
           <section className="mx-auto max-w-[1200px] px-6 pt-2 pb-20">
@@ -301,7 +320,7 @@ className={[
                       return (
                         <li
                           key={col.slug}
-                          className="relative h-full rounded-2xl border border-white/12 bg-white/[0.04] p-6 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md flex flex-col"
+                          className="relative h-full rounded-2xl border border-white/12 bg_WHITE/[0.04] bg-white/[0.04] p-6 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md flex flex-col"
                         >
                           {/* GOLD SPINE */}
                           <span className="pointer-events-none absolute left-0 top-1 bottom-1 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
@@ -358,34 +377,33 @@ className={[
                     })}
                   </ul>
 
-{/* Mobile section footer nav — crisp-safe (no sticky, no fixed) */}
-<div className="md:hidden mt-6 flex items-center justify-between gap-2">
-  <button
-    onClick={() => handleJump(THEMES[Math.max(0, idx - 1)].slug)}
-    className="rounded-full border border-white/15 bg-[var(--color-teal-800)] px-3 py-1.5 text-[12px] font-semibold text-[var(--color-cream)] active:scale-95 active:brightness-125"
-  >
-    ← Prev
-  </button>
+                  {/* Mobile section footer nav — crisp-safe (no sticky, no fixed) */}
+                  <div className="md:hidden mt-6 flex items-center justify-between gap-2">
+                    <button
+                      onClick={() => handleJump(THEMES[Math.max(0, idx - 1)].slug)}
+                      className="rounded-full border border-white/15 bg-[var(--color-teal-800)] px-3 py-1.5 text-[12px] font-semibold text-[var(--color-cream)] active:scale-95 active:brightness-125"
+                    >
+                      ← Prev
+                    </button>
 
-  <button
-    onClick={() => {
-      // jump back to the top intro (or first theme if you prefer)
-      const top = document.querySelector('h1'); 
-      if (top) top.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      // Or: handleJump(THEMES[0].slug)
-    }}
-    className="rounded-full border border-white/15 bg-[var(--color-teal-800)] px-3 py-1.5 text-[12px] font-semibold text-[var(--color-cream)] active:scale-95 active:brightness-125"
-  >
-    All Themes
-  </button>
+                    <button
+                      onClick={() => {
+                        const top = document.querySelector("h1");
+                        if (top) top.scrollIntoView({ behavior: "smooth", block: "start" });
+                      }}
+                      className="rounded-full border border-white/15 bg-[var(--color-teal-800)] px-3 py-1.5 text-[12px] font-semibold text-[var(--color-cream)] active:scale-95 active:brightness-125"
+                    >
+                      All Themes
+                    </button>
 
-  <button
-    onClick={() => handleJump(THEMES[Math.min(THEMES.length - 1, idx + 1)].slug)}
-    className="rounded-full border border-white/15 bg-[var(--color-teal-800)] px-3 py-1.5 text-[12px] font-semibold text-[var(--color-cream)] active:scale-95 active:brightness-125"
-  >
-    Next →
-  </button>
-</div>
+                    <button
+                      onClick={() => handleJump(THEMES[Math.min(THEMES.length - 1, idx + 1)].slug)}
+                      className="rounded-full border border-white/15 bg-[var(--color-teal-800)] px-3 py-1.5 text-[12px] font-semibold text-[var(--color-cream)] active:scale-95 active:brightness-125"
+                    >
+                      Next →
+                    </button>
+                  </div>
+
                   {idx < THEMES.length - 1 && (
                     <div className="mt-12">
                       <div className="h-px w-full bg-[var(--color-cream)]/16" />
@@ -396,7 +414,6 @@ className={[
             </div>
           </section>
         </div>
-
       </main>
 
       {/* Hide horizontal scrollbar for the sticky nav (keeps scroll gesture) */}
@@ -415,17 +432,19 @@ className={[
           -webkit-font-smoothing: antialiased;
           text-rendering: geometricPrecision;
         }
-          /* Prevent browser UI/scroll background from ever peeking through on iOS/Android */
-          @supports (-webkit-touch-callout: none) {
+
+        /* Prevent browser UI/scroll background from ever peeking through on iOS/Android */
+        @supports (-webkit-touch-callout: none) {
           html, body { background: var(--color-teal-850) !important; }
         }
-          @media (max-width: 768px) {
-  body.hide-footer-on-resources footer,
-  body.hide-footer-on-resources [data-role="site-footer"],
-  body.hide-footer-on-resources #site-footer {
-    display: none !important;
-  }
-}
+
+        @media (max-width: 768px) {
+          body.hide-footer-on-resources footer,
+          body.hide-footer-on-resources [data-role="site-footer"],
+          body.hide-footer-on-resources #site-footer {
+            display: none !important;
+          }
+        }
       `}</style>
     </>
   );
