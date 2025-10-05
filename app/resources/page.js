@@ -244,7 +244,8 @@ export default function ResourcesPage() {
             </h1>
             <div className="mx-auto h-[2px] w-16 bg-[var(--color-gold)]/85 rounded mb-15" />
 
-            <div className="relative mx-auto max-w-[820px] mb-6 rounded-2xl ring-1 ring-white/10 bg-white/5 shadow-2xl backdrop-blur-sm">
+            <div className="relative mx-auto max-w-[820px] mb-6 rounded-2xl ring-1 ring-white/10 bg-white/5 shadow-2xl">
+
               <span className="pointer-events-none absolute left-0 top-1 bottom-1 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
               <div className="flex flex-col gap-3 p-5">
                 <p className="text-[18px] leading-relaxed opacity-90">
