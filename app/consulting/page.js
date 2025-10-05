@@ -159,7 +159,7 @@ export default function ConsultingPage() {
   </div>
 
             {/* divider same width as container */}
-            <div className="mt-8 h-px w-full bg-[var(--color-cream)]/15" />
+            <div className="mt-2 h-px w-full bg-[var(--color-cream)]/15" />
           </div>
 
           {/* ===== MOBILE SECTIONS (no backdrop-blur in this subtree) ===== */}
