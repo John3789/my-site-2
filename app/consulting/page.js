@@ -235,6 +235,24 @@ export default function ConsultingPage() {
               </p>
             </article>
 
+{/* Gold arrow toward Co-Design (mobile only) */}
+<div className="md:hidden flex justify-center -mt-2 mb-6" aria-hidden>
+  <svg
+    viewBox="0 0 24 24"
+    className="h-8 w-8 text-[var(--color-gold)] animate-bounce"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    {/* stem */}
+    <path d="M12 4v12" />
+    {/* arrowhead */}
+    <path d="M7 12l5 5 5-5" />
+  </svg>
+</div>
+
             <div className="grid grid-cols-1 gap-6">
               {[
                 ["Co-Design", "Develop tailored, evidence-based strategies that fit your organization’s unique needs and context."],
