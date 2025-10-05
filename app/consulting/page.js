@@ -4,7 +4,6 @@
 import { useEffect, useMemo, useState } from "react";
 
 export default function ConsultingPage() {
-  /* ===== Sections registry ===== */
   const SECTIONS = useMemo(
     () => [
       { id: "approach", label: "Approach" },
@@ -22,21 +21,17 @@ export default function ConsultingPage() {
   const [activeId, setActiveId] = useState(SECTIONS[0].id);
   const [showAllTestimonials, setShowAllTestimonials] = useState(false);
 
-  /* Smooth jump helper (also supports center) */
   const jump = (id, opts = {}) => {
     const el = typeof document !== "undefined" ? document.getElementById(id) : null;
     if (!el) return;
-
     if (opts.center) {
-      const y =
-        el.getBoundingClientRect().top + window.scrollY - window.innerHeight / 2 + el.offsetHeight / 2;
+      const y = el.getBoundingClientRect().top + window.scrollY - window.innerHeight / 2 + el.offsetHeight / 2;
       window.scrollTo({ top: y, behavior: "smooth" });
     } else {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
-  /* Desktop: active section tracking for sticky nav */
   useEffect(() => {
     const entriesMap = new Map();
     const obs = new IntersectionObserver(
@@ -46,9 +41,7 @@ export default function ConsultingPage() {
         SECTIONS.forEach(({ id }) => {
           const e = entriesMap.get(id);
           if (!e) return;
-          if (e.isIntersecting) {
-            if (!topEntry || e.intersectionRatio > topEntry.intersectionRatio) topEntry = e;
-          }
+          if (e.isIntersecting && (!topEntry || e.intersectionRatio > topEntry.intersectionRatio)) topEntry = e;
         });
         if (topEntry?.target?.id) setActiveId(topEntry.target.id);
       },
@@ -61,8 +54,7 @@ export default function ConsultingPage() {
     });
 
     const onScroll = () => {
-      const nearBottom =
-        window.innerHeight + window.scrollY >= document.body.scrollHeight - 2;
+      const nearBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 2;
       if (nearBottom) setActiveId("testimonials");
     };
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -73,16 +65,9 @@ export default function ConsultingPage() {
     };
   }, [SECTIONS]);
 
-  /* Helpers for mobile section footer nav */
   const idxOf = (id) => SECTIONS.findIndex((s) => s.id === id);
-  const prevOf = (id) => {
-    const i = idxOf(id);
-    return SECTIONS[(i - 1 + SECTIONS.length) % SECTIONS.length].id;
-  };
-  const nextOf = (id) => {
-    const i = idxOf(id);
-    return SECTIONS[(i + 1) % SECTIONS.length].id;
-  };
+  const prevOf = (id) => SECTIONS[(idxOf(id) - 1 + SECTIONS.length) % SECTIONS.length].id;
+  const nextOf = (id) => SECTIONS[(idxOf(id) + 1) % SECTIONS.length].id;
 
   const MobileSectionFooter = ({ currentId }) => (
     <div className="md:hidden mt-8 pb-3 w-full">
@@ -111,24 +96,23 @@ export default function ConsultingPage() {
 
   return (
     <main className="relative isolate min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
-      {/* background guard */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]" />
 
-      {/* ===== ZOOM #1 — HERO / TITLE ONLY (mobile) ===== */}
+      {/* ===== ZOOM #1 — HERO ONLY (use translateZ(0) to keep text crisp) ===== */}
       <div
-        style={{ "--z": 3.0, "--zoomL": 1.6 }}
+        style={{ "--z": 2.6, "--zoomL": 1.5 }}
         className={`
           zoomwrap
           md:contents
           origin-top
-          [transform:scale(var(--z))] [width:calc(100%/var(--z))]
+          [transform:translateZ(0)_scale(var(--z))] [width:calc(100%/var(--z))]
           mx-auto
           md:[transform:none] md:[width:100%]
-          landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
+          landscape:[transform:translateZ(0)_scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
           overflow-visible
         `}
       >
-        <section className="mx-auto max-w-[1100px] px-6 pt-16 md:pt-20 pb-10 text-center">
+        <section className="relative mx-auto max-w-[1100px] px-6 pt-16 md:pt-20 pb-12 text-center">
           <h1 className="font-serif text-[clamp(34px,4.5vw,52px)] leading-[1.06] opacity-95">
             Consulting with Dr. Salerno
           </h1>
@@ -140,8 +124,8 @@ export default function ConsultingPage() {
         </section>
       </div>
 
-      {/* === Mobile quick nav (outside zoom for crisp text) === */}
-      <div id="quicknav" className="md:hidden mx-auto max-w-[1100px] px-6">
+      {/* === MOBILE QUICK NAV (outside any scaled layer for sharp text) === */}
+      <div id="quicknav" className="md:hidden mx-auto max-w-[1100px] px-6 mt-2">
         <div className="grid grid-cols-2 gap-2">
           {SECTIONS.map((s) => (
             <button
@@ -153,11 +137,10 @@ export default function ConsultingPage() {
             </button>
           ))}
         </div>
-        {/* contained divider under mobile nav */}
         <div className="mt-3 h-px w-full bg-[var(--color-cream)]/15" />
       </div>
 
-      {/* ===== Desktop sticky nav (unchanged; hidden on mobile) ===== */}
+      {/* ===== DESKTOP STICKY NAV (unchanged, hidden on mobile) ===== */}
       <nav className="hidden md:block sticky top-8 z-30">
         <div className="mx-auto max-w-[1100px] px-6">
           <div className="rounded-xl bg-[var(--color-teal-850)]/80 ring-1 ring-white/10">
@@ -186,17 +169,17 @@ export default function ConsultingPage() {
         </div>
       </nav>
 
-      {/* ===== ZOOM #2 — SECTIONS ONLY (mobile) ===== */}
+      {/* ===== ZOOM #2 — SECTIONS ONLY (translateZ(0) + strip blur on mobile) ===== */}
       <div
-        style={{ "--z": 3.0, "--zoomL": 1.6 }}
+        style={{ "--z": 2.6, "--zoomL": 1.5 }}
         className={`
           zoomwrap
           md:contents
           origin-top
-          [transform:scale(var(--z))] [width:calc(100%/var(--z))]
+          [transform:translateZ(0)_scale(var(--z))] [width:calc(100%/var(--z))]
           mx-auto
           md:[transform:none] md:[width:100%]
-          landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
+          landscape:[transform:translateZ(0)_scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
           overflow-visible
         `}
       >
@@ -219,10 +202,7 @@ export default function ConsultingPage() {
           <MobileSectionFooter currentId="approach" />
         </section>
 
-        {/* contained thin divider */}
-        <div className="mx-auto max-w-[1100px] px-6">
-          <div className="h-px w-full bg-[var(--color-cream)]/15" />
-        </div>
+        <div className="mx-auto max-w-[1100px] px-6"><div className="h-px w-full bg-[var(--color-cream)]/15" /></div>
 
         {/* ===== SERVICE PILLARS ===== */}
         <section id="pillars" className="scroll-mt-28 md:scroll-mt-32 mx-auto max-w-[1100px] px-6 py-14 md:py-16">
@@ -231,8 +211,7 @@ export default function ConsultingPage() {
           <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-8">
-            {/* Partner in Research */}
-            <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
+            <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
               <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
               <h3 className="font-serif text-2xl mb-2">Partner in Research</h3>
               <p className="opacity-90 leading-relaxed mb-3">
@@ -243,8 +222,7 @@ export default function ConsultingPage() {
               </a>
             </article>
 
-            {/* Design with Science */}
-            <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
+            <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
               <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
               <h3 className="font-serif text-2xl mb-2">Design with Science</h3>
               <p className="opacity-90 leading-relaxed mb-3">
@@ -256,8 +234,7 @@ export default function ConsultingPage() {
               </a>
             </article>
 
-            {/* Evaluate What Works */}
-            <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition hover:-translate-y-[2px]">
+            <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] hover:-translate-y-[2px] transition">
               <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
               <h3 className="font-serif text-2xl mb-2">Evaluate What Works</h3>
               <p className="opacity-90 leading-relaxed mb-3">
@@ -270,8 +247,7 @@ export default function ConsultingPage() {
               </a>
             </article>
 
-            {/* Scale Resilience */}
-            <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition hover:-translate-y-[2px]">
+            <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] hover:-translate-y-[2px] transition">
               <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
               <h3 className="font-serif text-2xl mb-2">Scale Across Your Organization</h3>
               <p className="opacity-90 leading-relaxed mb-3">
@@ -286,10 +262,7 @@ export default function ConsultingPage() {
           <MobileSectionFooter currentId="pillars" />
         </section>
 
-        {/* contained thin divider */}
-        <div className="mx-auto max-w-[1100px] px-6">
-          <div className="h-px w-full bg-[var(--color-cream)]/15" />
-        </div>
+        <div className="mx-auto max-w-[1100px] px-6"><div className="h-px w-full bg-[var(--color-cream)]/15" /></div>
 
         {/* ===== PROCESS ===== */}
         <section id="process" className="scroll-mt-28 md:scroll-mt-32 mx-auto max-w-[1100px] px-6 py-14 md:py-16">
@@ -301,7 +274,7 @@ export default function ConsultingPage() {
             that may include program design, implementation, evaluation, and/or scaling—depending on your organization’s priorities.
           </p>
 
-          <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl backdrop-blur-sm text-center mb-10">
+          <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl md:backdrop-blur-sm text-center mb-10">
             <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
             <h3 className="font-serif text-2xl mb-2">Discovery</h3>
             <p className="opacity-90 leading-relaxed">
@@ -310,7 +283,7 @@ export default function ConsultingPage() {
           </article>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl backdrop-blur-sm hover:bg-white/[0.06] transition">
+            <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
               <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
               <h3 className="font-serif text-xl mb-2">Co-Design</h3>
               <p className="opacity-90 leading-relaxed">
@@ -318,7 +291,7 @@ export default function ConsultingPage() {
               </p>
             </article>
 
-            <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl backdrop-blur-sm hover:bg-white/[0.06] transition">
+            <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
               <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
               <h3 className="font-serif text-xl mb-2">Implementation</h3>
               <p className="opacity-90 leading-relaxed">
@@ -326,7 +299,7 @@ export default function ConsultingPage() {
               </p>
             </article>
 
-            <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl backdrop-blur-sm hover:bg-white/[0.06] transition">
+            <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
               <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
               <h3 className="font-serif text-xl mb-2">Evaluation</h3>
               <p className="opacity-90 leading-relaxed">
@@ -334,7 +307,7 @@ export default function ConsultingPage() {
               </p>
             </article>
 
-            <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl backdrop-blur-sm hover:bg-white/[0.06] transition">
+            <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
               <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
               <h3 className="font-serif text-xl mb-2">Scaling</h3>
               <p className="opacity-90 leading-relaxed">
@@ -346,10 +319,7 @@ export default function ConsultingPage() {
           <MobileSectionFooter currentId="process" />
         </section>
 
-        {/* contained thin divider */}
-        <div className="mx-auto max-w-[1100px] px-6">
-          <div className="h-px w-full bg-[var(--color-cream)]/15" />
-        </div>
+        <div className="mx-auto max-w-[1100px] px-6"><div className="h-px w-full bg-[var(--color-cream)]/15" /></div>
 
         {/* ===== RESULTS ===== */}
         <section id="results" className="scroll-mt-28 md:scroll-mt-32 mx-auto max-w-[1100px] px-6 py-14 md:py-16">
@@ -365,10 +335,7 @@ export default function ConsultingPage() {
           <MobileSectionFooter currentId="results" />
         </section>
 
-        {/* contained thin divider */}
-        <div className="mx-auto max-w-[1100px] px-6">
-          <div className="h-px w-full bg-[var(--color-cream)]/15" />
-        </div>
+        <div className="mx-auto max-w-[1100px] px-6"><div className="h-px w-full bg-[var(--color-cream)]/15" /></div>
 
         {/* ===== WHO I WORK WITH ===== */}
         <section id="who-i-work-with" className="scroll-mt-28 md:scroll-mt-32 mx-auto max-w-[1100px] px-6 py-14 md:py-16">
@@ -382,7 +349,7 @@ export default function ConsultingPage() {
             communities strengthen connection, reduce burnout, and create environments where people can thrive.
           </p>
 
-          <div className="rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm">
+          <div className="rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl md:backdrop-blur-sm">
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5 text-base opacity-90">
               <li className="flex items-start gap-3">
                 <span className="mt-2 h-2.5 w-2.5 rounded-full bg-[var(--color-gold)] shrink-0" />
@@ -406,10 +373,7 @@ export default function ConsultingPage() {
           <MobileSectionFooter currentId="who-i-work-with" />
         </section>
 
-        {/* contained thin divider */}
-        <div className="mx-auto max-w-[1100px] px-6">
-          <div className="h-px w-full bg-[var(--color-cream)]/15" />
-        </div>
+        <div className="mx-auto max-w-[1100px] px-6"><div className="h-px w-full bg-[var(--color-cream)]/15" /></div>
 
         {/* ===== WAYS TO PARTNER ===== */}
         <section id="packages" className="scroll-mt-28 md:scroll-mt-32 mx-auto max-w-[1100px] px-6 py-14 md:py-16">
@@ -418,8 +382,7 @@ export default function ConsultingPage() {
           <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Short Sprints */}
-            <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
+            <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
               <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
               <h3 className="font-serif text-xl mb-2">Short Sprints</h3>
               <p className="opacity-90 leading-relaxed mb-3">
@@ -431,8 +394,7 @@ export default function ConsultingPage() {
               </a>
             </article>
 
-            {/* Deep Partnerships */}
-            <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
+            <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
               <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
               <h3 className="font-serif text-xl mb-2">Deep Partnerships</h3>
               <p className="opacity-90 leading-relaxed mb-3">
@@ -444,8 +406,7 @@ export default function ConsultingPage() {
               </a>
             </article>
 
-            {/* Ongoing Support */}
-            <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition hover:-translate-y-[2px]">
+            <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] hover:-translate-y-[2px] transition">
               <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
               <h3 className="font-serif text-xl mb-2">Ongoing Support</h3>
               <p className="opacity-90 leading-relaxed mb-3">
@@ -461,12 +422,9 @@ export default function ConsultingPage() {
           <MobileSectionFooter currentId="packages" />
         </section>
 
-        {/* contained thin divider */}
-        <div className="mx-auto max-w-[1100px] px-6">
-          <div className="h-px w-full bg-[var(--color-cream)]/15" />
-        </div>
+        <div className="mx-auto max-w-[1100px] px-6"><div className="h-px w-full bg-[var(--color-cream)]/15" /></div>
 
-        {/* ===== CONTACT / CTA BAND ===== */}
+        {/* ===== CONTACT ===== */}
         <section id="contact" className="scroll-mt-28 md:scroll-mt-32 mx-auto max-w-[1100px] px-6 py-14 md:py-16">
           <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 text-center mb-2">Contact</p>
           <h2 className="font-serif text-3xl md:text-4xl opacity-95 text-center">Ready to Talk?</h2>
@@ -476,7 +434,7 @@ export default function ConsultingPage() {
             strategies can create the greatest impact for your team or community.
           </p>
 
-          <div className="relative overflow-hidden rounded-2xl bg-white/4 ring-1 ring-white/15 p-7 md:p-9 shadow-2xl backdrop-blur-sm">
+          <div className="relative overflow-hidden rounded-2xl bg-white/4 ring-1 ring-white/15 p-7 md:p-9 shadow-2xl md:backdrop-blur-sm">
             <div className="relative text-center">
               <h3 className="font-serif text-2xl md:text-3xl opacity-95">
                 Ready to strengthen your programs with science-backed consulting?
@@ -484,7 +442,7 @@ export default function ConsultingPage() {
               <p className="opacity-85 mt-2">A quick intro call can help us map the right next step.</p>
               <a
                 href="/contact"
-                className="mt-6 inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
+                className="mt-6 inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
               >
                 Schedule a Discovery Call →
               </a>
@@ -494,10 +452,7 @@ export default function ConsultingPage() {
           <MobileSectionFooter currentId="contact" />
         </section>
 
-        {/* contained thin divider */}
-        <div className="mx-auto max-w-[1100px] px-6">
-          <div className="h-px w-full bg-[var(--color-cream)]/15" />
-        </div>
+        <div className="mx-auto max-w-[1100px] px-6"><div className="h-px w-full bg-[var(--color-cream)]/15" /></div>
 
         {/* ===== TESTIMONIALS ===== */}
         <section id="testimonials" className="scroll-mt-28 md:scroll-mt-32 mx-auto max-w-[1100px] px-6 py-14 md:py-16">
@@ -505,7 +460,7 @@ export default function ConsultingPage() {
           <h2 className="font-serif text-3xl md:text-4xl opacity-95 text-center">What Clients and Partners Say</h2>
           <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mx-auto mt-3 mb-8 rounded" />
 
-          {/* Desktop: show all */}
+          {/* Desktop: full grid */}
           <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-12">
             {[
               {
@@ -533,7 +488,7 @@ export default function ConsultingPage() {
                 rq: "right-[8.5rem] bottom-[0.5rem]",
               },
             ].map((t, idx) => (
-              <figure key={idx} className="relative w-full rounded-xl bg-white/5 p-6 ring-1 ring-white/10 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition">
+              <figure key={idx} className="relative w-full rounded-xl bg-white/5 p-6 ring-1 ring-white/10 shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
                 <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
                 <blockquote className="font-serif text-xl md:text-2xl leading-relaxed opacity-90 relative">
                   <span aria-hidden className={`absolute text-4xl opacity-20 select-none ${t.lq || "-left-4 -top-1"}`}>“</span>
@@ -545,23 +500,23 @@ export default function ConsultingPage() {
             ))}
           </div>
 
-          {/* Mobile: show 2 + Show All / Show Less */}
+          {/* Mobile: 2 cards + Show All/Less */}
           <div className="md:hidden flex flex-col gap-6">
             {[
               {
-                q: "...an exceptional speaker: he is engaging, well-spoken, and clearly passionate about his work.",
-                a: "Audience member, APHA Annual Meeting & Expo",
+                q: "I found Dr. Salerno to be very well-versed in the subject matter. He definitely helped us grow and I genuinely appreciated his excellence.",
+                a: "Client at New York University",
                 lq: "-left-4 -top-1",
-                rq: "right-6 bottom-4",
+                rq: "right-[2.5rem] bottom-[0.5rem]",
               },
               {
-                q: "He communicates with clarity and confidence...leaves a lasting impression.",
-                a: "Audience member, Society for Prevention Research",
+                q: "Dr. Salerno is an expert in mental health equity research, highly skilled and incorporates attention to community priorities.",
+                a: "Client at University of California, Los Angeles",
                 lq: "-left-4 -top-1",
-                rq: "right-6 bottom-4",
+                rq: "right-[7rem] bottom-[0.5rem]",
               },
             ].map((t, idx) => (
-              <figure key={idx} className="relative w-full rounded-xl bg-white/5 p-6 ring-1 ring-white/10 shadow-2xl backdrop-blur-sm">
+              <figure key={idx} className="relative w-full rounded-xl bg-white/5 p-6 ring-1 ring-white/10 shadow-2xl">
                 <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
                 <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
                   <span aria-hidden className={`absolute text-4xl opacity-20 select-none ${t.lq}`}>“</span>
@@ -587,7 +542,7 @@ export default function ConsultingPage() {
                   rq: "right-[8.5rem] bottom-[0.5rem]",
                 },
               ].map((t, idx) => (
-                <figure key={`more-${idx}`} className="relative w-full rounded-xl bg-white/5 p-6 ring-1 ring-white/10 shadow-2xl backdrop-blur-sm">
+                <figure key={`more-${idx}`} className="relative w-full rounded-xl bg-white/5 p-6 ring-1 ring-white/10 shadow-2xl">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
                   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
                     <span aria-hidden className={`absolute text-4xl opacity-20 select-none ${t.lq}`}>“</span>
@@ -614,18 +569,16 @@ export default function ConsultingPage() {
         </section>
       </div>
 
-      {/* Global crisp text in zoom + iOS background guard */}
+      {/* Global guards + crisp text */}
       <style jsx global>{`
         @supports (-webkit-touch-callout: none) {
           html, body { background: var(--color-teal-850) !important; }
         }
-        /* CRISP TEXT inside scaled wrappers */
         .zoomwrap,
         .zoomwrap * {
           -webkit-font-smoothing: antialiased;
           text-rendering: geometricPrecision;
         }
-        /* Ensure gold checks render as glyphs on mobile */
         @media (max-width: 767px) {
           ul li > span:first-child {
             color: var(--color-gold) !important;
