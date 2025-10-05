@@ -121,7 +121,7 @@ export default function ConsultingPage() {
         >
           {/* HERO (inside zoom) */}
           <section className="mx-auto max-w-[1100px] px-6 pt-16 pb-10 text-center" id="hero-m">
-            <h1 className="font-serif text-[clamp(34px,4.5vw,52px)] leading-[1.06] opacity-95">
+            <h1 className="font-serif text-6xl leading-[1.06] opacity-95">
               Consulting with Dr. Salerno
             </h1>
             <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 rounded" />
@@ -255,10 +255,10 @@ export default function ConsultingPage() {
             <h2 className="font-serif text-3xl opacity-95">What Partners Will Achieve</h2>
             <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" />
             <ul className="grid grid-cols-1 gap-4 text-lg opacity-90">
-              <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔</span><span>Higher program engagement and follow-through</span></li>
-              <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔</span><span>Noticeable and meaningful reductions in stress and burnout</span></li>
-              <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔</span><span>Stronger cultures of mindfulness, resilience, and wellbeing</span></li>
-              <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔</span><span>Practical tools that support growth across teams/communities</span></li>
+              <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>Higher program engagement and follow-through</span></li>
+              <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>Noticeable and meaningful reductions in stress and burnout</span></li>
+              <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>Stronger cultures of mindfulness, resilience, and wellbeing</span></li>
+              <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>Practical tools that support growth across teams/communities</span></li>
             </ul>
             <MobileSectionFooter baseId="results" />
           </section>
