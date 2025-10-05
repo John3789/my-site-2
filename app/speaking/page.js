@@ -277,7 +277,7 @@ export default function SpeakingPage() {
 
           {/* ===== MAIN CONTENT ===== */}
           <div className="mx-auto max-w-[1400px] py-6 space-y-16 md:space-y-24" id="topics">
-            <hr className="hidden md:block border-t border-[var(--color-cream)]/22 md:mb-8 w-full" />
+            <hr className="border-t border-[var(--color-cream)]/22 md:mb-8 w-full" />
 
             {/* Popular Topics (Programs) */}
             <section
@@ -458,7 +458,7 @@ export default function SpeakingPage() {
 
 
             {/* Dr. Salerno Offers (Formats) */}
-            <hr className="hidden md:block border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 w-full" />
+            <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 w-full" />
             <section
               id="formats"
               className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 lg:gap-x-0 mx-15 items-center"
@@ -606,7 +606,7 @@ export default function SpeakingPage() {
 
 
             {/* Outcomes (Results) */}
-            <hr className="hidden md:block border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 w-full" />
+            <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 w-full" />
             <section
               id="results"
               className="grid grid-cols-1 lg:grid-cols-12 gap-12 mx-15 items-start gap-y-12"
