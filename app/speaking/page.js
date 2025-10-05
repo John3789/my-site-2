@@ -817,7 +817,7 @@ const jump = (id, opts = {}) => {
             <div className="flex justify-center translate-y-[-28px] md:translate-y-0">
               <a
                 href="/contact"
-                className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w/full max-w-xs md:w-auto md:max-w-none md:translate-y-[-60px]"
+                className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w/full max-w-xs md:w-auto md:max-w-none md:translate-y-[-45px]"
               >
                 Book Dr. Salerno to Speak
               </a>
