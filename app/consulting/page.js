@@ -144,7 +144,7 @@ export default function ConsultingPage() {
     "w-full inline-flex items-center gap-1 rounded-full px-3.5 py-1.5",
     "text-[12px] font-semibold tracking-wide truncate transition",
     "active:scale-95 active:brightness-125",
-    "border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] mb-10",
+    "border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)]",
     activeId === s.id && "!bg-[var(--color-gold)] !text-black !border-[var(--color-gold)]"
   ].join(" ")}
 >
