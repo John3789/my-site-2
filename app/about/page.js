@@ -143,13 +143,10 @@ export default function AboutPage() {
               </Link>
             </div>
           </div>
-                    {/* Home: section/bookend divider (aligns to 1400px container) */}
-<div className="mx-auto max-w-[1000px] px-6">
-  <hr className="border-t border-[var(--color-cream)]/22" />
-</div>
+
 
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
-<div className="md:hidden mx-auto max-w-[1400px] px-6 -mt-5">
+<div className="md:hidden mx-auto max-w-[1400px] px-6 mt-10">
   <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
 </div>
 
@@ -177,11 +174,6 @@ Practical wisdom for modern souls — best paired with coffee and curiosity.
       </button>
     </div>
   </div>
-
-                                        {/* Home: section/bookend divider (aligns to 1400px container) */}
-<div className="mx-auto max-w-[1400px] px-6">
-  <hr className="border-t border-[var(--color-cream)]/22" />
-</div>
 
   {/* --- MOBILE Jay-style footer block --- */}
 <div className="mt-6 text-[13px] leading-relaxed">
