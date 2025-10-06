@@ -938,7 +938,7 @@ export default function SpeakingPage() {
           </div>
 
           {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
-<div className="mx-auto max-w-[1400px] px-0 mt-12">
+<div className="mx-auto max-w-[1400px] px-0 mt-13">
   <hr className="border-t border-[var(--color-cream)]/22 mb-15" />
 </div>
 
@@ -949,8 +949,7 @@ export default function SpeakingPage() {
       Science, Soul, and a Bit of Magic — Every Month
     </p>
     <p className="text-sm opacity-85 mb-3">
-    Grounded reflections and insights to help you live each day 
-    with greater balance, purpose, and self-trust.
+Practical wisdom for modern souls — best paired with coffee and curiosity.
 
     </p>
     <div className="flex gap-2">

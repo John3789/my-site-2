@@ -166,8 +166,7 @@ export default function MeditationsPage() {
       Science, Soul, and a Bit of Magic — Every Month
     </p>
     <p className="text-sm opacity-85 mb-3">
-    Grounded reflections and insights to help you live each day 
-    with greater balance, purpose, and self-trust.
+Practical wisdom for modern souls — best paired with coffee and curiosity.
 
     </p>
     <div className="flex gap-2">
