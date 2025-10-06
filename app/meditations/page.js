@@ -1,5 +1,5 @@
 // app/meditations/page.js
-import TopOnMount from "@/ViewportReset.js/TopOnMount";
+import TopOnMount from "../../TopOnMount/TopOnMount";
 
 export default function MeditationsPage() {
 

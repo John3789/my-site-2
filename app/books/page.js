@@ -1,5 +1,5 @@
 import Link from "next/link";
-import TopOnMount from "../../ViewportReset.js/TopOnMount";
+import TopOnMount from "../../TopOnMount/TopOnMount";
 
 export default function BooksPage() {
   return (

@@ -1,5 +1,5 @@
 "use client";
-import TopOnMount from "@/ViewportReset.js/TopOnMount";
+import TopOnMount from "../../TopOnMount/TopOnMount";
 import Image from "next/image";
 import Link from "next/link";
 

@@ -1,7 +1,7 @@
 // app/page.js
 import Link from 'next/link'
 import Image from 'next/image'
-import SocialFooter from "../ViewportReset.js/SocialFooter";
+import SocialFooter from "../SocialFooter/SocialFooter";
 
 export default function Home() {
   return (
