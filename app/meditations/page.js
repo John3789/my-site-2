@@ -143,7 +143,7 @@ export default function MeditationsPage() {
             </p>
             <a
               href="/contact"
-              className="mt-8 inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3
+              className="mt-8 mx-auto block w-fit rounded-md bg-[var(--color-gold)] text-black px-6 py-3
                          font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px]
                          transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
             >
@@ -155,7 +155,7 @@ export default function MeditationsPage() {
           <div className="pb-10" />
 
           {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
-<div className="mx-auto max-w-[1100px] px-12 -mt-4">
+<div className="mx-auto max-w-[1100px] px-12 -mt-6">
   <hr className="border-t border-[var(--color-cream)]/22 mb-15" />
 </div>
 
