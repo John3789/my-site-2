@@ -5,7 +5,6 @@ import { Inter, Cormorant_Garamond } from 'next/font/google'
 import SocialFooter from '../components/SocialFooter'
 import { Analytics } from '@vercel/analytics/react'
 import Header from '../components/Header'
-import ViewportReset from '../components/ViewportReset'
 import NewsletterSignup from '../components/NewsletterSignup'
 
 // Sans font for body text
@@ -30,7 +29,6 @@ export default function RootLayout({ children }) {
 
       {/* single body (no nesting) */}
       <body className="min-w-0 md:min-w-[1200px] bg-[#F4F1EA] text-[#0C1415] antialiased [text-rendering:optimizeLegibility] [-webkit-font-smoothing:antialiased]">
-        <ViewportReset />
         <Header />
 
         {children}
