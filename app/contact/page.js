@@ -118,7 +118,7 @@ export default function ContactPage() {
                 <fieldset className="m-0 p-0 border-0">
                   <legend className="block text-sm opacity-90 mb-2">Topic</legend>
 {/* Topics group — mobile friendly left-justified layout */}
-<div className="flex flex-wrap gap-2 pb-8 mt-3">
+<div className="flex flex-wrap gap-2 pb-8 mt-2">
 {topics.map((t, i) => (
       <div key={t.value} className="relative">
         {/* ✅ Hidden radio drives the peer-checked styles */}
