@@ -119,7 +119,7 @@ export default function ContactPage() {
 <div
   role="group"
   aria-labelledby="topic-label"
-  className="m-0 p-0 relative isolate before:content-[''] before:absolute before:inset-x-0 before:-top-px before:h-[2px] before:bg-[var(--color-teal-850)]"
+  className="m-0 p-0 relative isolate before:content-[''] before:absolute before:inset-x-0 before:-top-px before:h-[1px] before:bg-[var(--color-teal-850)]"
 >
 
   <p id="topic-label" className="block text-sm opacity-90 mb-2">Topic</p>
@@ -405,7 +405,7 @@ export default function ContactPage() {
 `}</style>
 
                                       {/* Home: section/bookend divider (aligns to 1400px container) */}
-<div className="mx-auto max-w-[1200px] px-6 mt-12">
+<div className="hidden md:block mx-auto max-w-[1200px] px-6 mt-12">
   <hr className="border-t border-[var(--color-cream)]/22" />
 </div>
     </main>
