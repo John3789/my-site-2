@@ -210,7 +210,7 @@ export default function ContactPage() {
 </div>
 
   {/* Legal line */}
-  <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px] opacity-85">
+  <div className="mt-6 flex flex-wrap items-left gap-x-3 gap-y-2 text-[13px] opacity-85">
     <span>© Dr. Juan Pablo Salerno™</span>
     <span className="opacity-50">·</span>
     <span>All rights reserved</span>
