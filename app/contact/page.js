@@ -55,15 +55,15 @@ export default function ContactPage() {
         <div style={{ "--z": 3.0, "--zoomL": 1.6 }} className="zoomwrap origin-top [transform:scale(var(--z))] [width:calc(100%/var(--z))] mx-auto landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))] overflow-visible">
 {/* Page header now inside the zoom so it scales crisply */}
 <header className="max-w-3xl mx-auto text-center mb-10">
-  {/* Mobile: centered title with headshot on the left (balanced with a right spacer) */}
+  {/* Mobile: centered title with headshot on the right (balanced with a left spacer) */}
   <div className="md:hidden flex items-center justify-center gap-3">
+    <span className="w-14 h-14" aria-hidden /> {/* left spacer matches headshot size */}
+    <h1 className="font-serif text-5xl leading-[1.06] opacity-90">Contact</h1>
     <img
       src="/headshot.jpg"
       alt="Dr. Juan Pablo Salerno"
       className="w-14 h-14 rounded-full object-cover border border-white/15"
     />
-    <h1 className="font-serif text-5xl leading-[1.06] opacity-90">Contact</h1>
-    <span className="w-14 h-14" aria-hidden /> {/* right spacer for balance */}
   </div>
 
   {/* Desktop: original centered title unchanged */}
