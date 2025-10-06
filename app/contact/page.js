@@ -206,15 +206,7 @@ export default function ContactPage() {
   </div>
 
   {/* Legal line */}
-  <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px] opacity-85">
-    <span>© Dr. Juan Pablo Salerno™</span>
-    <span className="opacity-50">·</span>
-    <span>All rights reserved</span>
-    <span className="opacity-50">·</span>
-    <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
-    <span className="opacity-50">·</span>
-    <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
-  </div>
+
 </div>
 
   {/* Legal line */}
