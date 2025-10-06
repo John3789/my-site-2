@@ -53,16 +53,27 @@ export default function ContactPage() {
       {/* ============== MOBILE (zoom wrapper) ============== */}
       <div className="md:hidden mx-auto max-w-[1200px] px-6 py-20">
         <div style={{ "--z": 3.0, "--zoomL": 1.6 }} className="zoomwrap origin-top [transform:scale(var(--z))] [width:calc(100%/var(--z))] mx-auto landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))] overflow-visible">
-          {/* Page header now inside the zoom so it scales crisply */}
-          <header className="max-w-3xl mx-auto text-center mb-10">
-            <h1 className="font-serif text-5xl leading-[1.06] opacity-90">Contact</h1>
-            <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 rounded" />
-            <p className="text-base opacity-90 mt-6">
-              I’m glad you’re here. Share a few details below or email{" "}
-              <a href="mailto:contact@drjuanpablosalerno.com" className="underline underline-offset-4 hover:opacity-80 transition whitespace-nowrap">contact@drjuanpablosalerno.com</a>.
-            </p>
-          </header>
-
+{/* Page header now inside the zoom so it scales crisply */}
+<header className="max-w-3xl mx-auto text-center mb-10">
+  <div className="flex items-center justify-center gap-3 md:block">
+    <img
+      src="/headshot.jpg"
+      alt="Dr. Juan Pablo Salerno"
+      className="w-14 h-14 rounded-full object-cover border border-white/15 md:hidden"
+    />
+    <h1 className="font-serif text-6xl leading-[1.06] opacity-90">Contact</h1>
+  </div>
+  <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 rounded" />
+  <p className="text-base opacity-90 mt-6">
+    I’m glad you’re here. Share a few details below or email{" "}
+    <a
+      href="mailto:contact@drjuanpablosalerno.com"
+      className="underline underline-offset-4 hover:opacity-80 transition whitespace-nowrap"
+    >
+      contact@drjuanpablosalerno.com
+    </a>.
+  </p>
+</header>
           {/* SINGLE form card (Consulting shell, no blur on mobile) */}
           <section className="relative overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
             <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
