@@ -145,15 +145,28 @@ export default function ContactPage() {
 
       {/* ============== DESKTOP (unchanged per your last version) ============== */}
       <div className="hidden md:block mx-auto max-w-[1200px] px-6 py-20">
-        {/* Page header */}
-        <header className="max-w-3xl mx-auto text-center mb-10">
-          <h1 className="font-serif text-6xl leading-[1.06] opacity-90">Contact</h1>
-          <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 rounded" />
-          <p className="text-lg opacity-90 mt-6">
-            I’m glad you’re here. Share a few details below or email{" "}
-            <a href="mailto:contact@drjuanpablosalerno.com" className="underline underline-offset-4 hover:opacity-80 transition whitespace-nowrap">contact@drjuanpablosalerno.com</a>.
-          </p>
-        </header>
+       {/* Page header now inside the zoom so it scales crisply */}
+<header className="max-w-3xl mx-auto text-center mb-10">
+  <div className="flex items-center justify-center gap-3 md:block">
+    <h1 className="font-serif text-5xl leading-[1.06] opacity-90">Contact</h1>
+    <img
+      src="/headshot.jpg"
+      alt="Dr. Juan Pablo Salerno"
+      className="w-14 h-14 rounded-full object-cover border border-white/15 md:hidden"
+    />
+  </div>
+  <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 rounded" />
+  <p className="text-base opacity-90 mt-6">
+    I’m glad you’re here. Share a few details below or email{" "}
+    <a
+      href="mailto:contact@drjuanpablosalerno.com"
+      className="underline underline-offset-4 hover:opacity-80 transition whitespace-nowrap"
+    >
+      contact@drjuanpablosalerno.com
+    </a>.
+  </p>
+</header>
+
 
         {/* Body: form + slim info card */}
         <div className="md:grid md:grid-cols-[1fr_340px] md:gap-10">
