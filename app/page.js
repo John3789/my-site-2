@@ -40,7 +40,7 @@ export default function Home() {
       "
     />
     {/* 🔒 same overlay on mobile + desktop */}
-    <div className="absolute inset-0 bg-black/28 pointer-events-none" />
+    <div className="absolute inset-0 bg-black/30 pointer-events-none" />
   </div>
 
   {/* MOBILE name across the bottom (buttons hidden on mobile) */}
