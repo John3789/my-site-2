@@ -451,13 +451,7 @@ export default function ResourcesPage() {
           html, body { background: var(--color-teal-850) !important; }
         }
 
-        @media (max-width: 768px) {
-          body.hide-footer-on-resources footer,
-          body.hide-footer-on-resources [data-role="site-footer"],
-          body.hide-footer-on-resources #site-footer {
-            display: none !important;
-          }
-        }
+
       `}</style>
     </>
   );
