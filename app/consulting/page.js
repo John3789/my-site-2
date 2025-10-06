@@ -447,7 +447,7 @@ export default function ConsultingPage() {
 
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="mx-auto max-w-[1100px] px-6 mt-0 mb-10">
-  <hr className="border-t border-[var(--color-cream)]/22 mb-16" />
+  <hr className="border-t border-[var(--color-cream)]/22 mb-15" />
 </div>
 
 <div className="mx-auto max-w-[1100px] px-3">
