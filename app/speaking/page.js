@@ -130,38 +130,26 @@ export default function SpeakingPage() {
           className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]"
         />
 
-        {/* ===== HERO VIDEO with overlay text ===== */}
+        {/* ===== HERO IMAGE with overlay text ===== */}
         <section className="relative w-full">
           {/* black backdrop so there’s never a green flash */}
           <div className="relative h-[70vh] bg-black">
-            {/* Poster as an instant image (paints immediately) */}
+            {/* Background image */}
             <img
               aria-hidden="true"
-              src="/speaking-hero-poster.jpg"
+              src="/bwspeaking1a.jpg"
               alt=""
               decoding="async"
               loading="eager"
               fetchPriority="high"
-              className="absolute inset-0 h-full w-full object-cover object-[50%_38%]"
+              className="absolute inset-0 h-full w-full object-cover object-[50%_35%]"
             />
 
-            <video
-              playsInline
-              muted
-              autoPlay
-              loop
-              preload="auto"
-              fetchPriority="high"
-              poster="/speaking-hero-poster.jpg"
-              className="absolute inset-0 h-full w-full object-cover object-[50%_38%]"
-              ref={videoRef}
-            >
-              <source src="/hero40.mp4" type="video/mp4" />
-            </video>
+            {/* Solid overlay (no gradient) */}
+<div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/30 to-black/60" />
 
-            {/* Overlay headline + subheadline + vignette */}
+            {/* Overlay headline + subheadline */}
             <div className="hero-overlay absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
-              <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/30 to-black/45" />
               <div className="relative px-6 s-hero">
                 <h1 className="hero-title font-serif opacity-95 md:drop-shadow-lg md:text-6xl">
                   Speaking
@@ -423,7 +411,7 @@ export default function SpeakingPage() {
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>Dr. Salerno has a way of blending data with human stories that makes science resonate.</p>
-                    <span className="absolute right-14 bottom-5 text-4xl opacity-20 select-none">”</span>
+                    <span aria-hidden className="absolute right-14 bottom-5 text-4xl opacity-20 select-none">”</span>
                   </blockquote>
                   <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
                     — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
@@ -433,31 +421,30 @@ export default function SpeakingPage() {
             </section>
 
             {/* Programs footer buttons (mobile only) — tighter */}
-<div className="md:hidden -mt-12 mb-15 w-full">
-  <div className="w-full flex justify-center">
-    <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
-      <button
-        onClick={() => jump("intro")}
-        className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
-      >
-        ← Prev
-      </button>
-      <button
-        onClick={() => jump("quicknav", { center: true })}
-        className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
-      >
-        All Speaking
-      </button>
-      <button
-        onClick={() => jump("formats")}
-        className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
-      >
-        Next →
-      </button>
-    </div>
-  </div>
-</div>
-
+            <div className="md:hidden -mt-12 mb-15 w-full">
+              <div className="w-full flex justify-center">
+                <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
+                  <button
+                    onClick={() => jump("intro")}
+                    className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
+                  >
+                    ← Prev
+                  </button>
+                  <button
+                    onClick={() => jump("quicknav", { center: true })}
+                    className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
+                  >
+                    All Speaking
+                  </button>
+                  <button
+                    onClick={() => jump("formats")}
+                    className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
+                  >
+                    Next →
+                  </button>
+                </div>
+              </div>
+            </div>
 
             {/* Dr. Salerno Offers (Formats) */}
             <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 w-full" />
@@ -583,31 +570,30 @@ export default function SpeakingPage() {
             </section>
 
             {/* Formats footer buttons (mobile only) — slimmer + same spacing as Service Pillars */}
-<div className="md:hidden -mt-12 mb-15 w-full">
-  <div className="w-full flex justify-center">
-    <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
-      <button
-        onClick={() => jump("programs")}
-        className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
-      >
-        ← Prev
-      </button>
-      <button
-        onClick={() => jump("quicknav", { center: true })}
-        className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
-      >
-        All Speaking
-      </button>
-      <button
-        onClick={() => jump("results")}
-        className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
-      >
-        Next →
-      </button>
-    </div>
-  </div>
-</div>
-
+            <div className="md:hidden -mt-12 mb-15 w-full">
+              <div className="w-full flex justify-center">
+                <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
+                  <button
+                    onClick={() => jump("programs")}
+                    className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
+                  >
+                    ← Prev
+                  </button>
+                  <button
+                    onClick={() => jump("quicknav", { center: true })}
+                    className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
+                  >
+                    All Speaking
+                  </button>
+                  <button
+                    onClick={() => jump("results")}
+                    className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
+                  >
+                    Next →
+                  </button>
+                </div>
+              </div>
+            </div>
 
             {/* Outcomes (Results) */}
             <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 w-full" />
@@ -690,32 +676,31 @@ export default function SpeakingPage() {
               </div>
             </section>
 
-{/* Results footer buttons (mobile only) — slimmer + same spacing as Service Pillars */}
-<div className="md:hidden -mt-12 mb-15 w-full">
-  <div className="w-full flex justify-center">
-    <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
-      <button
-        onClick={() => jump("formats")}
-        className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
-      >
-        ← Prev
-      </button>
-      <button
-        onClick={() => jump("quicknav", { center: true })}
-        className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
-      >
-        All Speaking
-      </button>
-      <button
-        onClick={() => jump("testimonials")}
-        className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
-      >
-        Next →
-      </button>
-    </div>
-  </div>
-</div>
-
+            {/* Results footer buttons (mobile only) — slimmer + same spacing as Service Pillars */}
+            <div className="md:hidden -mt-12 mb-15 w-full">
+              <div className="w-full flex justify-center">
+                <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
+                  <button
+                    onClick={() => jump("formats")}
+                    className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
+                  >
+                    ← Prev
+                  </button>
+                  <button
+                    onClick={() => jump("quicknav", { center: true })}
+                    className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
+                  >
+                    All Speaking
+                  </button>
+                  <button
+                    onClick={() => jump("testimonials")}
+                    className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
+                  >
+                    Next →
+                  </button>
+                </div>
+              </div>
+            </div>
 
             {/* ===== Testimonials (mobile-only; now collapsible) ===== */}
             {/* Full-bleed divider above Testimonials (mobile only) */}
@@ -912,37 +897,33 @@ export default function SpeakingPage() {
                   </button>
                 </div>
               </div>
-              </section>
+            </section>
 
-{/* Testimonials footer buttons (mobile only) — slimmer + centered + tight spacing */}
-<div className="md:hidden -mt-7 mb-17  w-full">
-  <div className="w-full flex justify-center">
-    <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
-      <button
-        onClick={() => jump("results")}
-        className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
-      >
-        ← Prev
-      </button>
-      <button
-        onClick={() => jump("quicknav", { center: true })}
-        className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
-      >
-        All Speaking
-      </button>
-      <button
-        onClick={() => jump("programs")}
-        className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
-      >
-        Next →
-      </button>
-    </div>
-  </div>
-</div>
-
-
-     
-
+            {/* Testimonials footer buttons (mobile only) — slimmer + centered + tight spacing */}
+            <div className="md:hidden -mt-7 mb-17  w-full">
+              <div className="w-full flex justify-center">
+                <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
+                  <button
+                    onClick={() => jump("results")}
+                    className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
+                  >
+                    ← Prev
+                  </button>
+                  <button
+                    onClick={() => jump("quicknav", { center: true })}
+                    className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
+                  >
+                    All Speaking
+                  </button>
+                  <button
+                    onClick={() => jump("programs")}
+                    className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
+                  >
+                    Next →
+                  </button>
+                </div>
+              </div>
+            </div>
 
             {/* CTA (unchanged) */}
             <div className="flex justify-center translate-y-[-28px] md:translate-y-0">
