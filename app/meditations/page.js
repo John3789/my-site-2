@@ -151,20 +151,27 @@ export default function MeditationsPage() {
             </a>
           </section>
 
-          {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
-<div className="mx-auto max-w-[1200px] px-6 -mt-3">
-  <hr className="border-t border-[var(--color-cream)]/22 mb-17" />
+          {/* Bottom spacer */}
+          <div className="pb-10" />
+                                          {/* Home: section/bookend divider (aligns to 1400px container) */}
+<div className="mx-auto max-w-[1200px] px-6">
+  <hr className="border-t border-[var(--color-cream)]/22" />
 </div>
 
-<div className="mx-auto max-w-[1200px] px-3">
+          {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
+<div className="mx-auto max-w-[1400px] px-0 mt-10">
+  <hr className="border-t border-[var(--color-cream)]/22 mb-15" />
+</div>
+
+<div className="mx-auto max-w-[1400px] px-3">
   {/* Newsletter card (midnight blue) */}
   <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
     <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
       Science, Soul, and a Bit of Magic — Every Month
     </p>
     <p className="text-sm opacity-85 mb-3">
-    Grounded reflections and insights to help you live each 
-    day with greater balance, purpose, and self-trust.
+    Grounded reflections and insights to help you live each day 
+    with greater balance, purpose, and self-trust.
 
     </p>
     <div className="flex gap-2">
@@ -229,13 +236,7 @@ author, and professor recognized for contributing 30+ peer-reviewed publications
 
         {/* removed the contained divider on mobile */}
       </div>
-      
-          {/* Bottom spacer */}
-          <div className="pb-10" />
-                                          {/* Home: section/bookend divider (aligns to 1400px container) */}
-<div className="mx-auto max-w-[1200px] px-6">
-  <hr className="border-t border-[var(--color-cream)]/22" />
-</div>
+
         </main>
       </div>
     </>
