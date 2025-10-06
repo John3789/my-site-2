@@ -180,7 +180,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Topic chips (radios) */}
-                <fieldset>
+                <fieldset className="m-0 p-0 border-0 mb-6">
                   <legend className="block text-sm opacity-90 mb-2">Topic</legend>
                   <div className="flex flex-wrap gap-2">
                     {topics.map((t, i) => (
