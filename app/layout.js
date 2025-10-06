@@ -57,7 +57,7 @@ export default function RootLayout({ children }) {
 <FooterGate>
   <footer className="relative isolate py-10 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
     {/* 🔧 Mobile zoom wrapper so footer scales like the rest of the page */}
-    <div className="md:contents [--z:3] [--zoomL:1.6] md:[--z:1] md:[--zoomL:1]">
+    <div className="contents [--z:3] [--zoomL:1.6] md:[--z:1] md:[--zoomL:1]">
       <div
         className="
           md:contents
