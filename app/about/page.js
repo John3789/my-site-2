@@ -134,7 +134,7 @@ export default function AboutPage() {
             </div>
 
             {/* CTA with faint outline */}
-            <div className="mt-10 flex justify-center">
+            <div className="mt-8 flex justify-center">
               <Link
                 href="/contact"
                 className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition ring-1 ring-black/10"
@@ -146,7 +146,7 @@ export default function AboutPage() {
 
 
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
-<div className="md:hidden mx-auto max-w-[1400px] px-6 -mt-5">
+<div className="md:hidden mx-auto max-w-[1400px] px-6 mb-7 -mt-7">
   <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
 </div>
 
