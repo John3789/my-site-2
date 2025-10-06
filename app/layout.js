@@ -20,13 +20,32 @@ const cormorant = Cormorant_Garamond({
 })
 
 export default function RootLayout({ children }) {
+  // Reset remembered pinch-zoom to 1.0 on each page show (iOS Safari quirk)
+useEffect(() => {
+  const meta = document.querySelector('meta[name="viewport"]');
+  if (!meta) return;
+
+  const base = 'width=device-width, initial-scale=1, viewport-fit=cover';
+
+  // On pageshow (including bfcache returns), briefly toggle the content.
+  const reset = () => {
+    // Toggle to force a re-parse of scale without killing accessibility.
+    meta.setAttribute('content', base);
+    // No timeout needed; a single set is typically enough.
+  };
+
+  window.addEventListener('pageshow', reset, { passive: true });
+  return () => window.removeEventListener('pageshow', reset);
+}, []);
+
   return (
     <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+      </head>
+
       {/* single body (no nesting) */}
       <body className="min-w-[1200px] bg-[#F4F1EA] text-[#0C1415] antialiased [text-rendering:optimizeLegibility] [-webkit-font-smoothing:antialiased]">
-        
-
-
         <Header />
 
         {children}
