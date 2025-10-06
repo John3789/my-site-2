@@ -48,32 +48,21 @@ export default function ContactPage() {
   return (
     <main className="relative min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
       {/* soft gradient wash */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10"
-        style={{
-          background:
-            "radial-gradient(1200px 600px at 10% -10%, rgba(255,221,149,0.07), transparent 60%), radial-gradient(900px 500px at 110% 10%, rgba(255,221,149,0.06), transparent 60%)",
-        }}
-      />
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10" style={{ background: "radial-gradient(1200px 600px at 10% -10%, rgba(255,221,149,0.07), transparent 60%), radial-gradient(900px 500px at 110% 10%, rgba(255,221,149,0.06), transparent 60%)" }} />
 
       {/* ============== MOBILE (zoom wrapper) ============== */}
       <div className="md:hidden mx-auto max-w-[1200px] px-6 py-20">
-        {/* Page header */}
-        <header className="max-w-3xl mx-auto text-center mb-10">
-          <h1 className="font-serif text-5xl leading-[1.06] opacity-90">Contact</h1>
-          <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 rounded" />
-          <p className="text-base opacity-90 mt-6">
-            I’m glad you’re here. Share a few details below or email{" "}
-            <a href="mailto:contact@drjuanpablosalerno.com" className="underline underline-offset-4 hover:opacity-80 transition whitespace-nowrap">
-              contact@drjuanpablosalerno.com
-            </a>
-            .
-          </p>
-        </header>
-
-        {/* Zoomed mobile content */}
         <div style={{ "--z": 3.0, "--zoomL": 1.6 }} className="zoomwrap origin-top [transform:scale(var(--z))] [width:calc(100%/var(--z))] mx-auto landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))] overflow-visible">
+          {/* Page header now inside the zoom so it scales crisply */}
+          <header className="max-w-3xl mx-auto text-center mb-10">
+            <h1 className="font-serif text-5xl leading-[1.06] opacity-90">Contact</h1>
+            <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 rounded" />
+            <p className="text-base opacity-90 mt-6">
+              I’m glad you’re here. Share a few details below or email{" "}
+              <a href="mailto:contact@drjuanpablosalerno.com" className="underline underline-offset-4 hover:opacity-80 transition whitespace-nowrap">contact@drjuanpablosalerno.com</a>.
+            </p>
+          </header>
+
           {/* SINGLE form card (Consulting shell, no blur on mobile) */}
           <section className="relative overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
             <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
@@ -85,12 +74,8 @@ export default function ContactPage() {
                 <p className="opacity-80 mt-1">I’ll follow up shortly.</p>
 
                 <div className="mt-6 flex items-center justify-center gap-3">
-                  <Link href="/resources" className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm hover:bg-white/10 transition">
-                    Browse Resources
-                  </Link>
-                  <Link href="/" className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm hover:bg-white/10 transition">
-                    Return Home
-                  </Link>
+                  <Link href="/resources" className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm hover:bg-white/10 transition">Browse Resources</Link>
+                  <Link href="/" className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm hover:bg-white/10 transition">Return Home</Link>
                 </div>
               </div>
             ) : (
@@ -112,15 +97,13 @@ export default function ContactPage() {
                 </div>
 
                 {/* Topic chips (radios) */}
-                <fieldset>
+                <fieldset className="m-0 p-0 border-0">
                   <legend className="block text-sm opacity-90 mb-2">Topic</legend>
                   <div className="flex flex-wrap gap-2">
                     {topics.map((t, i) => (
                       <div key={t.value}>
                         <input id={`topic-${i}`} type="radio" name="topic" value={t.value} defaultChecked={i === 0} className="peer sr-only" />
-                        <label htmlFor={`topic-${i}`} className="cursor-pointer rounded-full border border-white/20 bg-white/5 px-3.5 py-1.5 text-[12px] font-semibold tracking-wide hover:bg-white/10 peer-checked:bg-[var(--color-gold)] peer-checked:text-black peer-checked:border-[var(--color-gold)] transition">
-                          {t.label}
-                        </label>
+                        <label htmlFor={`topic-${i}`} className="cursor-pointer rounded-full border border-white/20 bg-white/5 px-3.5 py-1.5 text-[12px] font-semibold tracking-wide hover:bg-white/10 peer-checked:bg-[var(--color-gold)] peer-checked:text-black peer-checked:border-[var(--color-gold)] transition">{t.label}</label>
                       </div>
                     ))}
                   </div>
@@ -136,41 +119,28 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className={["inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3", "font-semibold uppercase tracking-wide text-sm shadow-md transition", "hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50", loading ? "opacity-80 cursor-wait" : ""].join(" ")}
-                  >
-                    {loading ? "Sending…" : "Send"}
-                  </button>
+                  <button type="submit" disabled={loading} className={["inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3", "font-semibold uppercase tracking-wide text-sm shadow-md transition", "hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50", loading ? "opacity-80 cursor-wait" : ""].join(" ")}>{loading ? "Sending…" : "Send"}</button>
                   <span className="text-xs opacity-80">I read every message personally.</span>
                 </div>
 
                 {/* Disclaimer */}
-                <p className="text-xs opacity-75 leading-relaxed">
-                  <strong>Disclaimer:</strong> This website and all communications through this form are for informational, educational, and wellness purposes only. They do not constitute medical advice, diagnosis, or treatment. If you have medical or mental health concerns, please consult a qualified professional.
-                </p>
+                <p className="text-xs opacity-75 leading-relaxed"><strong>Disclaimer:</strong> This website and all communications through this form are for informational, educational, and wellness purposes only. They do not constitute medical advice, diagnosis, or treatment. If you have medical or mental health concerns, please consult a qualified professional.</p>
               </form>
             )}
           </section>
         </div>
-
-        {/* contained divider */}
-        <div className="mt-6 h-px w-full bg-[var(--color-cream)]/15" />
+        {/* removed the contained divider on mobile */}
       </div>
 
-      {/* ============== DESKTOP ============== */}
+      {/* ============== DESKTOP (unchanged per your last version) ============== */}
       <div className="hidden md:block mx-auto max-w-[1200px] px-6 py-20">
         {/* Page header */}
         <header className="max-w-3xl mx-auto text-center mb-10">
           <h1 className="font-serif text-6xl leading-[1.06] opacity-90">Contact</h1>
           <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 rounded" />
-        <p className="text-lg opacity-90 mt-6">
+          <p className="text-lg opacity-90 mt-6">
             I’m glad you’re here. Share a few details below or email{" "}
-            <a href="mailto:contact@drjuanpablosalerno.com" className="underline underline-offset-4 hover:opacity-80 transition whitespace-nowrap">
-              contact@drjuanpablosalerno.com
-            </a>
-            .
+            <a href="mailto:contact@drjuanpablosalerno.com" className="underline underline-offset-4 hover:opacity-80 transition whitespace-nowrap">contact@drjuanpablosalerno.com</a>.
           </p>
         </header>
 
@@ -187,12 +157,8 @@ export default function ContactPage() {
                 <p className="opacity-80 mt-1">I’ll follow up shortly.</p>
 
                 <div className="mt-6 flex items-center justify-center gap-3">
-                  <Link href="/resources" className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm hover:bg-white/10 transition">
-                    Browse Resources
-                  </Link>
-                  <Link href="/" className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm hover:bg-white/10 transition">
-                    Return Home
-                  </Link>
+                  <Link href="/resources" className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm hover:bg-white/10 transition">Browse Resources</Link>
+                  <Link href="/" className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm hover:bg-white/10 transition">Return Home</Link>
                 </div>
               </div>
             ) : (
@@ -220,9 +186,7 @@ export default function ContactPage() {
                     {topics.map((t, i) => (
                       <div key={t.value}>
                         <input id={`topic-${i}`} type="radio" name="topic" value={t.value} defaultChecked={i === 0} className="peer sr-only" />
-                        <label htmlFor={`topic-${i}`} className="cursor-pointer rounded-full border border-white/20 bg-white/5 px-3.5 py-1.5 text-[12px] font-semibold tracking-wide hover:bg-white/10 peer-checked:bg-[var(--color-gold)] peer-checked:text-black peer-checked:border-[var(--color-gold)] transition">
-                          {t.label}
-                        </label>
+                        <label htmlFor={`topic-${i}`} className="cursor-pointer rounded-full border border-white/20 bg-white/5 px-3.5 py-1.5 text-[12px] font-semibold tracking-wide hover:bg-white/10 peer-checked:bg-[var(--color-gold)] peer-checked:text-black peer-checked:border-[var(--color-gold)] transition">{t.label}</label>
                       </div>
                     ))}
                   </div>
@@ -238,20 +202,12 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className={["inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3", "font-semibold uppercase tracking-wide text-sm shadow-md transition", "hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50", loading ? "opacity-80 cursor-wait" : ""].join(" ")}
-                  >
-                    {loading ? "Sending…" : "Send"}
-                  </button>
+                  <button type="submit" disabled={loading} className={["inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3", "font-semibold uppercase tracking-wide text-sm shadow-md transition", "hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50", loading ? "opacity-80 cursor-wait" : ""].join(" ")}>{loading ? "Sending…" : "Send"}</button>
                   <span className="text-xs opacity-80">I read every message personally.</span>
                 </div>
 
                 {/* Disclaimer */}
-                <p className="text-xs opacity-75 leading-relaxed">
-                  <strong>Disclaimer:</strong> This website and all communications through this form are for informational, educational, and wellness purposes only. They do not constitute medical advice, diagnosis, or treatment. If you have medical or mental health concerns, please consult a qualified professional.
-                </p>
+                <p className="text-xs opacity-75 leading-relaxed"><strong>Disclaimer:</strong> This website and all communications through this form are for informational, educational, and wellness purposes only. They do not constitute medical advice, diagnosis, or treatment. If you have medical or mental health concerns, please consult a qualified professional.</p>
               </form>
             )}
           </section>
@@ -284,19 +240,13 @@ export default function ContactPage() {
               {/* Quick links */}
               <ul className="mt-4 space-y-2 text-sm relative z-10">
                 <li>
-                  <Link href="/newsletter" className="underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">
-                    Subscribe to my newsletter →
-                  </Link>
+                  <Link href="/newsletter" className="underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">Subscribe to my newsletter →</Link>
                 </li>
                 <li>
-                  <Link href="/meditations" className="underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">
-                    Discover meditation →
-                  </Link>
+                  <Link href="/meditations" className="underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">Discover meditation →</Link>
                 </li>
                 <li>
-                  <Link href="/resources" className="underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">
-                    Explore resources →
-                  </Link>
+                  <Link href="/resources" className="underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">Explore resources →</Link>
                 </li>
               </ul>
 
@@ -308,7 +258,7 @@ export default function ContactPage() {
         </div>
       </div>
 
-      {/* Global crisp text & iOS guard (same as other pages) */}
+      {/* Global crisp text & iOS guard + mobile-only footer/fieldset tweaks */}
       <style jsx global>{`
         @supports (-webkit-touch-callout: none) {
           html, body { background: var(--color-teal-850) !important; }
@@ -317,6 +267,13 @@ export default function ContactPage() {
         .zoomwrap * {
           -webkit-font-smoothing: antialiased;
           text-rendering: geometricPrecision;
+        }
+        @media (max-width: 767px) {
+          /* Remove default Safari fieldset border/spacing on mobile */
+          fieldset { border: 0 !important; margin: 0 !important; padding: 0 !important; }
+          fieldset legend { margin: 0; padding: 0; }
+          /* Hide global footer on mobile for this page */
+          footer, .site-footer { display: none !important; }
         }
       `}</style>
     </main>
