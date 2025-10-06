@@ -930,7 +930,7 @@ export default function SpeakingPage() {
             <div className="flex justify-center translate-y-[-28px] md:translate-y-0">
               <a
                 href="/contact"
-                className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black -mb-6 px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs md:w-auto md:max-w-none md:translate-y-[-45px]"
+                className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black -mb-3 px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs md:w-auto md:max-w-none md:translate-y-[-45px]"
               >
                 Book Dr. Salerno to Speak
               </a>
@@ -938,11 +938,11 @@ export default function SpeakingPage() {
           </div>
 
           {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
-<div className="mx-auto max-w-[1400px] space-y-16 px-0 mt-10">
+<div className="mx-auto max-w-[1400px] px-6 mt-14">
   <hr className="border-t border-[var(--color-cream)]/22 mb-8" />
 </div>
 
-<div className="mx-auto max-w-[1400px] space-y-16 px-0">
+<div className="mx-auto max-w-[1400px] px-6">
   {/* Newsletter card (midnight blue) */}
   <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
     <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
