@@ -1,5 +1,5 @@
 // app/meditations/page.js
-import TopOnMount from "@/components/TopOnMount";
+import TopOnMount from "@/ViewportReset.js/TopOnMount";
 
 export default function MeditationsPage() {
 
@@ -153,6 +153,10 @@ export default function MeditationsPage() {
 
           {/* Bottom spacer */}
           <div className="pb-10" />
+                                          {/* Home: section/bookend divider (aligns to 1400px container) */}
+<div className="mx-auto max-w-[1200px] px-6">
+  <hr className="border-t border-[var(--color-cream)]/22" />
+</div>
         </main>
       </div>
     </>

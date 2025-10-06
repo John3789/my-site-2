@@ -1,5 +1,5 @@
 "use client";
-import TopOnMount from "@/components/TopOnMount";
+import TopOnMount from "@/ViewportReset.js/TopOnMount";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -143,6 +143,10 @@ export default function AboutPage() {
               </Link>
             </div>
           </div>
+                    {/* Home: section/bookend divider (aligns to 1400px container) */}
+<div className="mx-auto max-w-[1000px] px-6">
+  <hr className="border-t border-[var(--color-cream)]/22" />
+</div>
         </main>
       </div>
     </>

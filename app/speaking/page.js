@@ -137,7 +137,7 @@ export default function SpeakingPage() {
             {/* Background image */}
             <img
               aria-hidden="true"
-              src="/bwspeaking1a.jpg"
+              src="/bwspeaking1.jpg"
               alt=""
               decoding="async"
               loading="eager"
@@ -936,6 +936,10 @@ export default function SpeakingPage() {
             </div>
           </div>
         </div>
+                                        {/* Home: section/bookend divider (aligns to 1400px container) */}
+<div className="mx-auto max-w-[1400px] px-6">
+  <hr className="border-t border-[var(--color-cream)]/22" />
+</div>
       </main>
 
       {/* Global safeguards and crisp text styles */}
@@ -964,24 +968,6 @@ export default function SpeakingPage() {
               -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif !important;
             font-weight: 700;
             opacity: 1 !important;
-          }
-        }
-
-        /* MOBILE ONLY: hide footers on Speaking, show on desktop */
-        @media (max-width: 767px) {
-          body:has([data-page="speaking"]) footer,
-          body:has([data-page="speaking"]) .site-footer,
-          body:has([data-page="speaking"]) .home-footer,
-          body:has([data-page="speaking"]) .social-footer,
-          body:has([data-page="speaking"]) [data-role="social-footer"],
-          body:has([data-page="speaking"]) [data-component="footer"] {
-            display: none !important;
-          }
-
-          /* Safety net if a footer is injected inside this page */
-          [data-page="speaking"]
-            :is(footer, .social-footer, [data-role="social-footer"], [data-component="footer"]) {
-            display: none !important;
           }
         }
 

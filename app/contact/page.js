@@ -123,7 +123,7 @@ export default function ContactPage() {
       <div key={t.value} className="relative">
         {/* ✅ Hidden radio drives the peer-checked styles */}
         <input
-          id={`topic-${i}`}
+          id={`m-topic-${i}`}
           type="radio"
           name="topic"
           value={t.value}
@@ -131,7 +131,7 @@ export default function ContactPage() {
           className="peer sr-only"
         />
         <label
-          htmlFor={`topic-${i}`}
+          htmlFor={`m-topic-${i}`}
           className={[
             "inline-flex items-center gap-2 cursor-pointer select-none",
             "rounded-full border border-white/20 px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition",
@@ -237,17 +237,30 @@ export default function ContactPage() {
                 </div>
 
                 {/* Topic chips (radios) */}
-                <fieldset className="m-0 p-0 border-0 mb-6">
-                  <legend className="block text-sm opacity-90 mb-2">Topic</legend>
-                  <div className="flex flex-wrap gap-2">
-                    {topics.map((t, i) => (
-                      <div key={t.value}>
-                        <input id={`topic-${i}`} type="radio" name="topic" value={t.value} defaultChecked={i === 0} className="peer sr-only" />
-                        <label htmlFor={`topic-${i}`} className="cursor-pointer rounded-full border border-white/20 bg-white/5 px-3.5 py-1.5 text-[12px] font-semibold tracking-wide hover:bg-white/10 peer-checked:bg-[var(--color-gold)] peer-checked:text-black peer-checked:border-[var(--color-gold)] transition">{t.label}</label>
-                      </div>
-                    ))}
-                  </div>
-                </fieldset>
+<fieldset className="m-0 p-0 border-0 mb-6">
+  <legend className="block text-sm opacity-90 mb-2">Topic</legend>
+  <div className="flex flex-wrap gap-2">
+    {topics.map((t, i) => (
+      <div key={t.value}>
+        <input
+          id={`d-topic-${i}`}
+          type="radio"
+          name="topic"
+          value={t.value}
+          defaultChecked={i === 0}
+          className="peer sr-only"
+        />
+        <label
+          htmlFor={`d-topic-${i}`}
+          className="cursor-pointer rounded-full border border-white/20 bg-white/5 px-3.5 py-1.5 text-[12px] font-semibold tracking-wide hover:bg-white/10 peer-checked:bg-[var(--color-gold)] peer-checked:text-black peer-checked:border-[var(--color-gold)] transition"
+        >
+          {t.label}
+        </label>
+      </div>
+    ))}
+  </div>
+</fieldset>
+
 
                 <div className="mt-6">
                   <label className="block text-sm opacity-90 mb-1.5">Message</label>
@@ -315,25 +328,29 @@ export default function ContactPage() {
         </div>
       </div>
 
-      {/* Global crisp text & iOS guard + mobile-only footer/fieldset tweaks */}
-      <style jsx global>{`
-        @supports (-webkit-touch-callout: none) {
-          html, body { background: var(--color-teal-850) !important; }
-        }
-        .zoomwrap,
-        .zoomwrap * {
-          -webkit-font-smoothing: antialiased;
-          text-rendering: geometricPrecision;
-        }
-        @media (max-width: 767px) {
-          /* Remove default Safari fieldset border/spacing on mobile */
-  fieldset { border: 0 !important; padding: 0 !important; } /* removed margin: 0 */
-  fieldset legend { margin: 0; padding: 0; }
-}
-          /* Hide global footer on mobile for this page */
-          footer, .site-footer { display: none !important; }
-        }
-      `}</style>
+{/* Global crisp text & iOS guard + mobile-only footer/fieldset tweaks */}
+<style jsx global>{`
+  @supports (-webkit-touch-callout: none) {
+    html, body { background: var(--color-teal-850) !important; }
+  }
+
+  .zoomwrap,
+  .zoomwrap * {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: geometricPrecision;
+  }
+
+  @media (max-width: 767px) {
+    /* Remove default Safari fieldset border/spacing on mobile */
+    fieldset { border: 0 !important; padding: 0 !important; }
+    fieldset legend { margin: 0; padding: 0; }
+  }
+`}</style>
+
+                                      {/* Home: section/bookend divider (aligns to 1400px container) */}
+<div className="mx-auto max-w-[1200px] px-6 mt-12">
+  <hr className="border-t border-[var(--color-cream)]/22" />
+</div>
     </main>
   );
 }

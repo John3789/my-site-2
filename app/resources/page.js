@@ -423,6 +423,10 @@ export default function ResourcesPage() {
             </div>
           </section>
         </div>
+                                        {/* Home: section/bookend divider (aligns to 1400px container) */}
+<div className="mx-auto max-w-[1200px] px-6">
+  <hr className="border-t border-[var(--color-cream)]/22" />
+</div>
       </main>
 
       {/* Hide horizontal scrollbar for the sticky nav (keeps scroll gesture) */}

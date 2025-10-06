@@ -1,5 +1,5 @@
 import Link from "next/link";
-import TopOnMount from "@/components/TopOnMount";
+import TopOnMount from "../../ViewportReset.js/TopOnMount";
 
 export default function BooksPage() {
   return (
@@ -56,12 +56,6 @@ export default function BooksPage() {
                       struggles and living with greater purpose, balance, and fulfillment.
                     </p>
 
-                    <Link
-                      href="/waitlist"
-                      className="mt-0 inline-block underline underline-offset-4 hover:opacity-80 transition"
-                    >
-                      Join the Waitlist →
-                    </Link>
 
                     {/* Button */}
                     <div className="flex justify-center mt-12">
@@ -331,9 +325,12 @@ export default function BooksPage() {
 </article>
 </div>
 
-              {/* Section bookend */}
-              <hr className="mt-12 border-t border-[var(--color-cream)]/22" />
+      
             </div>
+                                {/* Home: section/bookend divider (aligns to 1400px container) */}
+<div className="mx-auto max-w-[1400px] px-6">
+  <hr className="border-t border-[var(--color-cream)]/22" />
+</div>
           </main>
         </div>
 

@@ -2,9 +2,11 @@
 import './globals.css'
 import FooterGate from '../components/FooterGate'
 import { Inter, Cormorant_Garamond } from 'next/font/google'
-import SocialFooter from "../components/SocialFooter";
-import { Analytics } from '@vercel/analytics/react';
-import Header from "../components/Header";
+import SocialFooter from '../components/SocialFooter'
+import { Analytics } from '@vercel/analytics/react'
+import Header from '../components/Header'
+import ViewportReset from '../components/ViewportReset'
+import NewsletterSignup from '../components/NewsletterSignup'
 
 // Sans font for body text
 const inter = Inter({
@@ -20,24 +22,6 @@ const cormorant = Cormorant_Garamond({
 })
 
 export default function RootLayout({ children }) {
-  // Reset remembered pinch-zoom to 1.0 on each page show (iOS Safari quirk)
-useEffect(() => {
-  const meta = document.querySelector('meta[name="viewport"]');
-  if (!meta) return;
-
-  const base = 'width=device-width, initial-scale=1, viewport-fit=cover';
-
-  // On pageshow (including bfcache returns), briefly toggle the content.
-  const reset = () => {
-    // Toggle to force a re-parse of scale without killing accessibility.
-    meta.setAttribute('content', base);
-    // No timeout needed; a single set is typically enough.
-  };
-
-  window.addEventListener('pageshow', reset, { passive: true });
-  return () => window.removeEventListener('pageshow', reset);
-}, []);
-
   return (
     <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
       <head>
@@ -45,26 +29,66 @@ useEffect(() => {
       </head>
 
       {/* single body (no nesting) */}
-+ <body className="min-w-0 md:min-w-[1200px] bg-[#F4F1EA] text-[#0C1415] antialiased [text-rendering:optimizeLegibility] [-webkit-font-smoothing:antialiased]">
+      <body className="min-w-0 md:min-w-[1200px] bg-[#F4F1EA] text-[#0C1415] antialiased [text-rendering:optimizeLegibility] [-webkit-font-smoothing:antialiased]">
+        <ViewportReset />
         <Header />
 
         {children}
 
-        <FooterGate>
-          <footer className="py-6 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
-            <div className="mx-auto max-w-[1400px] grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] items-center gap-y-3">
-              <div className="hidden sm:block" />
-              <p className="text-center sm:col-start-2">
-                © {new Date().getFullYear()} Dr. Juan Pablo Salerno™. All rights reserved. ·
-                <a href="/terms" className="underline ml-2 hover:opacity-80">Terms</a> ·
-                <a href="/privacy" className="underline ml-2 hover:opacity-80">Privacy</a>
+<FooterGate>
+  <footer className="py-10 px-4 md:px-8 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
+    <div className="mx-auto w-full max-w-[1680px] grid grid-cols-1 md:grid-cols-[1fr_minmax(0,1.05fr)] gap-y-10 gap-x-24 items-end">
+
+      {/* LEFT — Name + Terms + Privacy (perfect, unchanged) */}
+      <div className="flex flex-col justify-end pl-0">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 opacity-90 text-[13px] leading-relaxed">
+<span>© Dr. Juan Pablo Salerno™</span>
+          <span className="opacity-50">·</span>
+          <span>All rights reserved</span>
+          <span className="opacity-50">·</span>
+          <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
+          <span className="opacity-50">·</span>
+          <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
+        </div>
+      </div>
+
+      {/* RIGHT — Newsletter + Socials + Bio (same placement, slightly narrower) */}
+      <div className="grid gap-5 text-left pr-4 md:pr-10 justify-self-end max-w-[750px]">
+        {/* Newsletter block */}
+<div className="rounded-xl bg-[#081F2C] ring-1 ring-white/10 p-5 shadow-[0_10px_30px_rgba(0,0,0,0.55)] hover:bg-[#0C2634] transition">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div className="min-w-0">
+              <p className="text-[13px] uppercase tracking-[0.18em] opacity-70 mb-1">
+                Science, Soul, and a Bit of Magic — Every Month
               </p>
-              <div className="flex justify-center sm:justify-end sm:col-start-3 sm:pl-6">
-                <SocialFooter />
-              </div>
+              <p className="text-base md:text-[15px] opacity-95">
+                Grounded reflections and insights to help you live each day with greater balance, purpose, and self-trust.
+                
+              </p>
             </div>
-          </footer>
-        </FooterGate>
+            <NewsletterSignup />
+          </div>
+        </div>
+
+        {/* Socials */}
+        <div className="flex items-center justify-start mt-2">
+          <SocialFooter />
+        </div>
+
+        {/* One-line bio */}
+        <p className="text-[13px] leading-relaxed opacity-85 -mt-1 max-w-[750px]">
+          Dr. Salerno is a mental health scientist and personal growth expert helping people and organizations
+          live and lead with purpose and resilience. 
+        </p>
+      </div>
+    </div>
+  </footer>
+</FooterGate>
+
+
+
+
+
 
         <Analytics />
       </body>
