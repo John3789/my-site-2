@@ -155,7 +155,7 @@ export default function MeditationsPage() {
           <div className="pb-10" />
 
           {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
-<div className="mx-auto max-w-[1100px] px-6 mt-0">
+<div className="mx-auto max-w-[1100px] px-12 -mt-4">
   <hr className="border-t border-[var(--color-cream)]/22 mb-15" />
 </div>
 
