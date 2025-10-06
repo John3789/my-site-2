@@ -231,8 +231,8 @@ export default function ContactPage() {
 
   {/* 3) Bio line */}
   <p className="mt-5 text-center opacity-85">
-    Dr. Salerno is a mental health scientist and personal growth expert helping
-    people and organizations live and lead with purpose and resilience.
+Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, 
+author, and professor recognized for 30+ peer-reviewed publications and ~2,000 citations.
   </p>
 
   {/* 4) Name with © + ™ */}
