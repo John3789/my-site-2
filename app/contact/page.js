@@ -78,16 +78,15 @@ export default function ContactPage() {
         <div className="md:grid md:grid-cols-[1fr_340px] md:gap-10">
           {/* LEFT: friendly single card form */}
 <section
-  className="relative overflow-hidden rounded-xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
-             shadow-2xl md:backdrop-blur-sm
-             hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px]
+  className="relative overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
+             shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] 
+             hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px]
              transition"
 >
-  {/* gold spine (Consulting pattern) */}
-  <span
-    aria-hidden
-    className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl"
-  />
+            <span
+              aria-hidden
+              className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl"
+            />
 
             {sent ? (
               <div role="status" aria-live="polite" className="text-center py-4">
@@ -204,12 +203,11 @@ export default function ContactPage() {
 
  {/* RIGHT: slim info card (desktop only) */}
 <aside className="hidden md:block">
-<div
-  className="sticky top-24 relative overflow-hidden rounded-xl bg-white/5 ring-1 ring-white/10 p-6
-             shadow-2xl md:backdrop-blur-sm
+ <div
+  className="sticky top-24 rounded-2xl bg-white/5 ring-1 ring-white/10 shadow-2xl md:backdrop-blur-sm p-5
              hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px]
              transition"
->
+>    
 
     {/* Mini header with larger avatar */}
     <div className="flex items-center gap-3 mb-4 relative z-10">
