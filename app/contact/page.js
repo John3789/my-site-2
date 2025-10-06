@@ -270,8 +270,9 @@ export default function ContactPage() {
         }
         @media (max-width: 767px) {
           /* Remove default Safari fieldset border/spacing on mobile */
-          fieldset { border: 0 !important; margin: 0 !important; padding: 0 !important; }
-          fieldset legend { margin: 0; padding: 0; }
+  fieldset { border: 0 !important; padding: 0 !important; } /* removed margin: 0 */
+  fieldset legend { margin: 0; padding: 0; }
+}
           /* Hide global footer on mobile for this page */
           footer, .site-footer { display: none !important; }
         }
