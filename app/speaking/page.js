@@ -898,7 +898,47 @@ export default function SpeakingPage() {
                 </div>
               </div>
             </section>
-            {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
+            
+
+            {/* Testimonials footer buttons (mobile only) — slimmer + centered + tight spacing */}
+            <div className="md:hidden -mt-7 mb-17  w-full">
+              <div className="w-full flex justify-center">
+                <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
+                  <button
+                    onClick={() => jump("results")}
+                    className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
+                  >
+                    ← Prev
+                  </button>
+                  <button
+                    onClick={() => jump("quicknav", { center: true })}
+                    className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
+                  >
+                    All Speaking
+                  </button>
+                  <button
+                    onClick={() => jump("programs")}
+                    className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
+                  >
+                    Next →
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA (unchanged) */}
+            <div className="flex justify-center translate-y-[-28px] md:translate-y-0">
+              <a
+                href="/contact"
+                className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs md:w-auto md:max-w-none md:translate-y-[-45px]"
+              >
+                Book Dr. Salerno to Speak
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="mx-auto max-w-[1400px] px-0 mt-10">
   <hr className="border-t border-[var(--color-cream)]/22 mb-8" />
 </div>
@@ -976,44 +1016,6 @@ author, and professor recognized for 30+ peer-reviewed publications and ~2,000 c
         {/* removed the contained divider on mobile */}
       </div>
 
-
-            {/* Testimonials footer buttons (mobile only) — slimmer + centered + tight spacing */}
-            <div className="md:hidden -mt-7 mb-17  w-full">
-              <div className="w-full flex justify-center">
-                <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
-                  <button
-                    onClick={() => jump("results")}
-                    className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
-                  >
-                    ← Prev
-                  </button>
-                  <button
-                    onClick={() => jump("quicknav", { center: true })}
-                    className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
-                  >
-                    All Speaking
-                  </button>
-                  <button
-                    onClick={() => jump("programs")}
-                    className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
-                  >
-                    Next →
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* CTA (unchanged) */}
-            <div className="flex justify-center translate-y-[-28px] md:translate-y-0">
-              <a
-                href="/contact"
-                className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs md:w-auto md:max-w-none md:translate-y-[-45px]"
-              >
-                Book Dr. Salerno to Speak
-              </a>
-            </div>
-          </div>
-        </div>
                                         {/* Home: section/bookend divider (aligns to 1400px container) */}
 <div className="mx-auto max-w-[1400px] px-6">
   <hr className="border-t border-[var(--color-cream)]/22" />
