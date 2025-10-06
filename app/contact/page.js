@@ -209,12 +209,12 @@ export default function ContactPage() {
 <div className="mt-6 text-[13px] leading-relaxed">
 
   {/* 1) Heading */}
-  <p className="uppercase tracking-[0.18em] text-center opacity-70">
+  <p className="uppercase tracking-[0.18em] text-left opacity-70">
     Follow Dr. Salerno:
   </p>
 
   {/* 2) Socials row — centered & evenly spaced */}
-  <div className="mt-3 flex items-center justify-center gap-8">
+  <div className="mt-3 flex items-left justify-center gap-8">
     {/* TikTok */}
     <a href="https://www.tiktok.com/@YOURHANDLE" aria-label="TikTok" className="opacity-90 hover:opacity-100">
       <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z"/></svg>
@@ -230,18 +230,18 @@ export default function ContactPage() {
   </div>
 
   {/* 3) Bio line */}
-  <p className="mt-5 text-center opacity-85">
+  <p className="mt-5 text-left opacity-85">
 Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, 
 author, and professor recognized for 30+ peer-reviewed publications and ~2,000 citations.
   </p>
 
   {/* 4) Name with © + ™ */}
-  <p className="mt-6 text-center opacity-85">
+  <p className="mt-6 text-left opacity-85">
     © Dr. Juan Pablo Salerno™
   </p>
 
   {/* 5) Legal line (centered with dots) */}
-  <p className="mt-2 text-center opacity-85">
+  <p className="mt-2 text-left opacity-85">
     <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
     <span className="mx-2 opacity-50">·</span>
     <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
