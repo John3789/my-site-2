@@ -356,7 +356,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="h-px w-full bg-[var(--color-cream)]/15 my-4" />
+              <div className="hidden md:block h-px w-full bg-[var(--color-cream)]/15 my-4" />
 
               {/* Primary action: email */}
               <a href="mailto:contact@drjuanpablosalerno.com" className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-[var(--color-gold)] text-black px-4 py-2.5 font-semibold text-sm tracking-wide shadow-md hover:shadow-lg transition">
