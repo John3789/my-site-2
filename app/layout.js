@@ -55,7 +55,7 @@ export default function RootLayout({ children }) {
         {children}
 
 <FooterGate>
-  <footer className="py-10 px-4 md:px-8 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
+  <footer className="hidden md:block py-10 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
     <div className="mx-auto w-full max-w-[1680px] grid grid-cols-1 md:grid-cols-[1fr_minmax(0,1.05fr)] gap-y-10 gap-x-24 items-end">
 
       {/* LEFT — Name + Terms + Privacy (perfect, unchanged) */}
@@ -96,7 +96,8 @@ export default function RootLayout({ children }) {
 
         {/* One-line bio */}
         <p className="text-[13px] leading-relaxed opacity-85 -mt-1 max-w-[750px]">
-          Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, professor, and 30x published and ~2000x cited peer-reviewed author. 
+Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, 
+author, and professor recognized for 30+ peer-reviewed publications and ~2,000 citations.
         </p>
       </div>
     </div>
