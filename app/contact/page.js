@@ -116,7 +116,16 @@ export default function ContactPage() {
                 </div>
 
 {/* Topic chips (radios) — ARIA group (no fieldset hairline) */}
-<div role="group" aria-labelledby="topic-label" className="m-0 p-0">
+<div
+  role="group"
+  aria-labelledby="topic-label"
+  className="
+    m-0 p-0
+    relative isolate
+    before:content-[''] before:absolute before:inset-x-0 before:top-[-1px]
+    before:h-[2px] before:bg-[var(--color-teal-850)]
+  "
+>
   <p id="topic-label" className="block text-sm opacity-90 mb-2">Topic</p>
 
   {/* MOBILE version */}
@@ -210,7 +219,7 @@ export default function ContactPage() {
 </div>
 
   {/* Legal line */}
-  <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px] opacity-85">
+  <div className="mt-6 flex flex-wrap items-left gap-x-3 gap-y-2 text-[13px] opacity-85">
     <span>© Dr. Juan Pablo Salerno™</span>
     <span className="opacity-50">·</span>
     <span>All rights reserved</span>
