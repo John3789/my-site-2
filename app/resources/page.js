@@ -424,7 +424,7 @@ export default function ResourcesPage() {
           </section>
 
           {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
-<div className="mx-auto max-w-[1200px] px-6 mt-0">
+<div className="mx-auto max-w-[1200px] px-6 mb-2 -mt-2">
   <hr className="border-t border-[var(--color-cream)]/22 mb-15" />
 </div>
 
