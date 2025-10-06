@@ -119,13 +119,9 @@ export default function ContactPage() {
 <div
   role="group"
   aria-labelledby="topic-label"
-  className="
-    m-0 p-0
-    relative isolate
-    before:content-[''] before:absolute before:inset-x-0 before:top-[-1px]
-    before:h-[2px] before:bg-[var(--color-teal-850)]
-  "
+  className="m-0 p-0 relative isolate before:content-[''] before:absolute before:inset-x-0 before:-top-px before:h-[2px] before:bg-[var(--color-teal-850)]"
 >
+
   <p id="topic-label" className="block text-sm opacity-90 mb-2">Topic</p>
 
   {/* MOBILE version */}
