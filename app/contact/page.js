@@ -117,12 +117,13 @@ export default function ContactPage() {
                 {/* Topic chips (radios) */}
                 <fieldset className="m-0 p-0 border-0">
                   <legend className="block text-sm opacity-90 mb-2">Topic</legend>
-                  <div className="flex flex-wrap justify-center gap-2.5 mt-6">
+{/* Topics group — mobile friendly left-justified layout */}
+<div className="flex flex-wrap justify-start gap-2 pb-7 mt-5">
   {topics.map((t, i) => (
     <label
       key={i}
       htmlFor={`topic-${i}`}
-      className="cursor-pointer rounded-full border border-white/20 bg-white/5 px-3.5 py-1.5 text-[12px] font-semibold tracking-wide hover:bg-white/10 peer-checked:bg-[var(--color-gold)] peer-checked:text-black peer-checked:border-[var(--color-gold)] transition"
+      className="cursor-pointer rounded-full border border-white/20 bg-[var(--color-teal-850)] px-3.5 py-1.5 text-[12px] font-semibold tracking-wide hover:bg-[var(--color-teal-800)] peer-checked:bg-[var(--color-gold)] peer-checked:text-black peer-checked:border-[var(--color-gold)] transition"
     >
       {t.label}
     </label>
