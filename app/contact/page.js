@@ -99,7 +99,7 @@ export default function ContactPage() {
                 {/* Topic chips (radios) */}
                 <fieldset className="m-0 p-0 border-0">
                   <legend className="block text-sm opacity-90 mb-2">Topic</legend>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 pb-6 md:pb-0">
                     {topics.map((t, i) => (
                       <div key={t.value}>
                         <input id={`topic-${i}`} type="radio" name="topic" value={t.value} defaultChecked={i === 0} className="peer sr-only" />
