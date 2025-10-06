@@ -232,6 +232,10 @@ author, and professor recognized for contributing 30+ peer-reviewed publications
         {/* removed the contained divider on mobile */}
       </div>
 
+                                        {/* Home: section/bookend divider (aligns to 1400px container) */}
+<div className="mx-auto max-w-[1150px]">
+  <hr className="border-t border-[var(--color-cream)]/22" />
+</div>
         </main>
       </div>
     </>

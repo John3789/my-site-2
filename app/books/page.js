@@ -329,8 +329,8 @@ export default function BooksPage() {
             </div>
 
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
-<div className="md:hidden mx-auto max-w-[1400px] px-6 mt-0">
-  <hr className="border-t border-[var(--color-cream)]/22 mb-8" />
+<div className="md:hidden mx-auto max-w-[1400px] px-6 -mt-5">
+  <hr className="border-t border-[var(--color-cream)]/22 mb-10" />
 </div>
 
 <div className="md:hidden mx-auto max-w-[1400px] px-3">
