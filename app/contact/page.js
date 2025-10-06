@@ -54,7 +54,7 @@ export default function ContactPage() {
       <div className="md:hidden mx-auto max-w-[1200px] px-6 py-20">
         <div style={{ "--z": 3.0, "--zoomL": 1.6 }} className="zoomwrap origin-top [transform:scale(var(--z))] [width:calc(100%/var(--z))] mx-auto landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))] overflow-visible">
 <header className="relative max-w-3xl mx-auto mb-10 text-center">
-  <h1 className="font-serif text-6xl leading-[1.06] opacity-90">Contact</h1>
+  <h1 className="font-serif text-5xl leading-[1.06] opacity-90">Contact</h1>
   <img
     src="/headshot.jpg"
     alt="Dr. Juan Pablo Salerno"
