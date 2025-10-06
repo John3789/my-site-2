@@ -135,7 +135,6 @@ export default function ContactPage() {
           htmlFor={`m-topic-${i}`}
           className={[
             "inline-flex items-center gap-2 cursor-pointer select-none",
-            "rounded-full border border-white/20 px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition",
             "bg-[var(--color-teal-800)] hover:bg-[var(--color-teal-800)]",
             "peer-checked:bg-[var(--color-gold)] peer-checked:text-black peer-checked:border-[var(--color-gold)]",
             "focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-gold)]/50",
