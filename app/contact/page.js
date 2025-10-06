@@ -118,19 +118,41 @@ export default function ContactPage() {
                 <fieldset className="m-0 p-0 border-0">
                   <legend className="block text-sm opacity-90 mb-2">Topic</legend>
 {/* Topics group — mobile friendly left-justified layout */}
-<div className="flex flex-wrap justify-start gap-2 pb-8 mt-5">
-  {topics.map((t, i) => (
-    <label
-      key={i}
-      htmlFor={`topic-${i}`}
-      className="cursor-pointer rounded-full border border-white/20 bg-[var(--color-teal-800)] px-3.5 py-1.5 text-[12px] font-semibold tracking-wide hover:bg-[var(--color-teal-800)] peer-checked:bg-[var(--color-gold)] peer-checked:text-black peer-checked:border-[var(--color-gold)] transition"
-    >
-      {t.label}
-    </label>
-  ))}
-</div>
-                </fieldset>
-
+<div className="flex flex-wrap justify-start gap-2 pb-7 mt-5">
+{topics.map((t, i) => (
+      <div key={t.value} className="relative">
+        {/* ✅ Hidden radio drives the peer-checked styles */}
+        <input
+          id={`topic-${i}`}
+          type="radio"
+          name="topic"
+          value={t.value}
+          defaultChecked={i === 0}
+          className="peer sr-only"
+        />
+        <label
+          htmlFor={`topic-${i}`}
+          className={[
+            "inline-flex items-center gap-2 cursor-pointer select-none",
+            "rounded-full border border-white/20 px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition",
+            // default (teal)
+            "bg-[var(--color-teal-800)] hover:bg-[var(--color-teal-800)]",
+            // selected (gold)
+            "peer-checked:bg-[var(--color-gold)] peer-checked:text-black peer-checked:border-[var(--color-gold)]",
+            // focus outline for keyboard users
+            "focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-gold)]/50",
+            // tiny feedback on select
+            "peer-checked:shadow-md peer-checked:-translate-y-[1px]"
+          ].join(" ")}
+        >
+          {/* small status dot that flips when selected */}
+          <span className="h-1.5 w-1.5 rounded-full bg-white/35 peer-checked:bg-black/70 transition" />
+          {t.label}
+        </label>
+      </div>
+    ))}
+  </div>
+</fieldset>
                 <div>
                   <label className="block text-sm opacity-90 mb-1.5">Message</label>
                   <textarea name="message" rows={6} maxLength={1000} required value={message} onChange={(e) => setMessage(e.target.value)} className={field + " resize-y"} placeholder="What would you like to explore together?" />
