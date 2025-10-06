@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import SocialFooter from '../../components/SocialFooter';
 
 export default function ContactPage() {
   const [sent, setSent] = useState(false);
@@ -172,11 +173,7 @@ export default function ContactPage() {
               </form>
             )}
           </section>
-          {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
-<div className="mx-auto max-w-[1200px] px-0 mt-10">
-  <hr className="border-t border-[var(--color-cream)]/22 mb-12" />
-</div>
-
+{/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="mx-auto max-w-[1200px] px-0">
   {/* Newsletter card (midnight blue) */}
   <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl">
@@ -184,8 +181,8 @@ export default function ContactPage() {
       Science, Soul, and a Bit of Magic — Every Month
     </p>
     <p className="text-sm opacity-85 mb-3">
-      Grounded reflections and insights to help you live each day with greater balance, purpose, and self-trust.
-
+      Grounded reflections and science-backed tools to help you live each day
+      with greater balance, purpose, and self-trust.
     </p>
     <div className="flex gap-2">
       <input
@@ -201,6 +198,23 @@ export default function ContactPage() {
       </button>
     </div>
   </div>
+
+  {/* Socials (left-justified, same as desktop vibe) */}
+  <div className="mt-5 flex justify-start">
+    <SocialFooter />
+  </div>
+
+  {/* Legal line */}
+  <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px] opacity-85">
+    <span>© Dr. Juan Pablo Salerno™</span>
+    <span className="opacity-50">·</span>
+    <span>All rights reserved</span>
+    <span className="opacity-50">·</span>
+    <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
+    <span className="opacity-50">·</span>
+    <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
+  </div>
+</div>
 
   {/* Legal line */}
   <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px] opacity-85">
@@ -220,7 +234,7 @@ export default function ContactPage() {
 
         </div>
         {/* removed the contained divider on mobile */}
-      </div>
+     
 
       {/* ============== DESKTOP (unchanged per your last version) ============== */}
       <div className="hidden md:block mx-auto max-w-[1200px] px-6 py-20">
