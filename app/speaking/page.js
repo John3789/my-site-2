@@ -938,8 +938,8 @@ export default function SpeakingPage() {
           </div>
 
           {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
-<div className="mx-auto max-w-[1400px] px-6 mt-14">
-  <hr className="border-t border-[var(--color-cream)]/22 mb-8" />
+<div className="mx-auto max-w-[1400px] px-6 mt-10">
+  <hr className="border-t border-[var(--color-cream)]/22 mb-11" />
 </div>
 
 <div className="mx-auto max-w-[1400px] px-6">
