@@ -1,5 +1,5 @@
 "use client";
-import TopOnMount from "../../TopOnMount/TopOnMount";
+import TopOnMount from "../../components/TopOnMount";
 import Image from "next/image";
 import Link from "next/link";
 

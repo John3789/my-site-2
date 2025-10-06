@@ -1,5 +1,5 @@
 import Link from "next/link";
-import TopOnMount from "../../TopOnMount/TopOnMount";
+import TopOnMount from "../../components/TopOnMount";
 
 export default function BooksPage() {
   return (
