@@ -64,48 +64,6 @@ export default function ContactPage() {
     />
     <h1 className="font-serif text-5xl leading-[1.06] opacity-90">Contact</h1>
     <span className="w-14 h-14" aria-hidden /> {/* right spacer for balance */}
-
-        {/* --- MOBILE divider + footer (inside zoom) --- */}
-    <div className="mx-auto max-w-[1200px] px-0 mt-10">
-      <hr className="border-t border-[var(--color-cream)]/22 mb-6" />
-    </div>
-
-    <div className="mx-auto max-w-[1200px] px-0">
-      {/* Newsletter card (midnight blue) */}
-      <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl">
-        <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
-          Science, Soul, and a Bit of Magic — Every Month
-        </p>
-        <p className="text-sm opacity-85 mb-3">
-          Grounded reflections and science-backed tools to help you live each day with greater balance, purpose, and self-trust.
-        </p>
-        <div className="flex gap-2">
-          <input
-            type="email"
-            placeholder="you@example.com"
-            className="flex-1 rounded-md border border-white/15 bg-white/5 px-3 py-2 placeholder-white/60 outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50"
-          />
-          <button
-            type="button"
-            className="shrink-0 rounded-md bg-[var(--color-gold)] text-black px-4 py-2 font-semibold"
-          >
-            Subscribe
-          </button>
-        </div>
-      </div>
-
-      {/* Legal line */}
-      <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px] opacity-85">
-        <span>© Dr. Juan Pablo Salerno™</span>
-        <span className="opacity-50">·</span>
-        <span>All rights reserved</span>
-        <span className="opacity-50">·</span>
-        <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
-        <span className="opacity-50">·</span>
-        <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
-      </div>
-    </div>
-
   </div>
 
   {/* Desktop: original centered title unchanged */}
@@ -323,6 +281,53 @@ export default function ContactPage() {
               </form>
             )}
           </section>
+
+{/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
+<div className="mx-auto max-w-[1200px] px-0 mt-10">
+  <hr className="border-t border-[var(--color-cream)]/22 mb-6" />
+</div>
+
+<div className="mx-auto max-w-[1200px] px-0">
+  {/* Newsletter card (midnight blue) */}
+  <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl">
+    <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
+      Science, Soul, and a Bit of Magic — Every Month
+    </p>
+    <p className="text-sm opacity-85 mb-3">
+      Grounded reflections and science-backed tools to help you live each day
+      with greater balance, purpose, and self-trust.
+    </p>
+    <div className="flex gap-2">
+      <input
+        type="email"
+        placeholder="you@example.com"
+        className="flex-1 rounded-md border border-white/15 bg-white/5 px-3 py-2 placeholder-white/60 outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50"
+      />
+      <button
+        type="button"
+        className="shrink-0 rounded-md bg-[var(--color-gold)] text-black px-4 py-2 font-semibold"
+      >
+        Subscribe
+      </button>
+    </div>
+  </div>
+
+  {/* Legal line */}
+  <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px] opacity-85">
+    <span>© Dr. Juan Pablo Salerno™</span>
+    <span className="opacity-50">·</span>
+    <span>All rights reserved</span>
+    <span className="opacity-50">·</span>
+    <a href="/terms" className="underline underline-offset-4 hover:opacity-80">
+      Terms
+    </a>
+    <span className="opacity-50">·</span>
+    <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">
+      Privacy
+    </a>
+  </div>
+</div>
+
 
           {/* RIGHT: slim info card (desktop only) — EXACT formatting preserved */}
           <aside className="hidden md:block">
