@@ -23,9 +23,7 @@ const cormorant = Cormorant_Garamond({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-      </head>
+
 
       {/* single body (no nesting) */}
       <body className="min-w-0 md:min-w-[1200px] bg-[#F4F1EA] text-[#0C1415] antialiased [text-rendering:optimizeLegibility] [-webkit-font-smoothing:antialiased]">
