@@ -376,7 +376,7 @@ export default function ConsultingPage() {
           <section id={toMobile("testimonials")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14">
             <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 text-center mb-2">Testimonials</p>
             <h2 className="font-serif text-3xl opacity-95 text-center">What Clients and Partners Say</h2>
-            <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mx-auto mt-3 mb-15 rounded" />
+            <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mx-auto mt-3 mb-8 rounded" />
 
             <div className="flex flex-col gap-6">
               {[
@@ -446,11 +446,11 @@ export default function ConsultingPage() {
           </section>
 
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
-<div className="mx-auto max-w-[1100px] px-0 mt-10">
-  <hr className="border-t border-[var(--color-cream)]/22 mb-8" />
+<div className="mx-auto max-w-[1100px] px-3 mt-10">
+  <hr className="border-t border-[var(--color-cream)]/22 mb-16" />
 </div>
 
-<div className="mx-auto max-w-[1100px] px-3">
+<div className="mx-auto max-w-[1100px] px-0">
   {/* Newsletter card (midnight blue) */}
   <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
     <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
