@@ -329,11 +329,11 @@ export default function BooksPage() {
             </div>
 
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
-<div className="md:hidden mx-auto max-w-[1400px] px-0 mt-11">
+<div className="md:hidden mx-auto max-w-[1400px] px-6 mt-0">
   <hr className="border-t border-[var(--color-cream)]/22 mb-8" />
 </div>
 
-<div className="md:hidden mx-auto max-w-[1400px] px-0">
+<div className="md:hidden mx-auto max-w-[1400px] px-3">
   {/* Newsletter card (midnight blue) */}
   <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
     <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
@@ -407,6 +407,12 @@ author, and professor recognized for contributing 30+ peer-reviewed publications
 
         {/* removed the contained divider on mobile */}
       </div>
+
+                                      {/* Home: section/bookend divider (aligns to 1400px container) */}
+<div className="mx-auto max-w-[1400px] px-6">
+  <hr className="border-t border-[var(--color-cream)]/22" />
+</div>
+
           </main>
         </div>
 
