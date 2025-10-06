@@ -289,7 +289,12 @@ export default function ContactPage() {
                 </div>
 
                 {/* Topic chips (radios) */}
-<div role="group" aria-labelledby="d-topic-label" className="m-0 p-0 mb-6">
+<div
+  role="group"
+  aria-labelledby="topic-label"
+  data-topic-block
+  className="m-0 p-0 border-0 !border-transparent !outline-none"
+>
   <p id="d-topic-label" className="block text-sm opacity-90 mb-2">Topic</p>
   <div className="flex flex-wrap gap-2">
     {topics.map((t, i) => (
@@ -397,6 +402,22 @@ export default function ContactPage() {
     fieldset { border: 0 !important; padding: 0 !important; }
     fieldset legend { margin: 0; padding: 0; }
   }
+
+  @media (max-width: 767px) {
+  /* Nuke any sneaky iOS hairlines around the Topic group */
+  [data-topic-block] {
+    border: 0 !important;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+  }
+  [data-topic-block]::before,
+  [data-topic-block]::after {
+    display: none !important;
+    content: none !important;
+    border: 0 !important;
+  }
+}
+
 `}</style>
 
                                       {/* Home: section/bookend divider (aligns to 1400px container) */}
