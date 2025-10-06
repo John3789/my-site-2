@@ -23,6 +23,29 @@ const cormorant = Cormorant_Garamond({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
+      <head>
+  {/* Single authoritative viewport */}
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover"
+  />
+  {/* iOS bfcache: re-assert viewport on pageshow without a client component */}
+  <script
+    dangerouslySetInnerHTML={{
+      __html: `
+        window.addEventListener('pageshow', function () {
+          var m = document.querySelector('meta[name="viewport"]');
+          if (m) {
+            m.setAttribute(
+              'content',
+              'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover'
+            );
+          }
+        });
+      `,
+    }}
+  />
+</head>
 
 
       {/* single body (no nesting) */}
