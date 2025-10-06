@@ -176,8 +176,8 @@ export default function ContactPage() {
           </section>
           
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
-<div className="mx-auto max-w-[1200px] px-0 mt-30">
-  <hr className="border-t border-[var(--color-cream)]/22 mb-6" />
+<div className="mx-auto max-w-[1200px] px-0 mt-10">
+  <hr className="border-t border-[var(--color-cream)]/22 mb-6 mt-10" />
 </div>
 
 <div className="mx-auto max-w-[1200px] px-0">
