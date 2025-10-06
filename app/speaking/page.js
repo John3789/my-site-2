@@ -936,9 +936,8 @@ export default function SpeakingPage() {
               </a>
             </div>
           </div>
-        </div>
 
-        {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
+          {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="mx-auto max-w-[1400px] px-0 mt-10">
   <hr className="border-t border-[var(--color-cream)]/22 mb-8" />
 </div>
@@ -1016,6 +1015,7 @@ author, and professor recognized for 30+ peer-reviewed publications and ~2,000 c
         {/* removed the contained divider on mobile */}
       </div>
 
+        </div>
                                         {/* Home: section/bookend divider (aligns to 1400px container) */}
 <div className="mx-auto max-w-[1400px] px-6">
   <hr className="border-t border-[var(--color-cream)]/22" />
