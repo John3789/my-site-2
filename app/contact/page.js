@@ -115,14 +115,14 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Topic chips (radios) */}
-                <fieldset className="m-0 p-0 border-0">
-                  <legend className="block text-sm opacity-90 mb-2">Topic</legend>
-{/* Topics group — mobile friendly left-justified layout */}
-<div className="flex flex-wrap gap-2 pb-8 mt-2">
-{topics.map((t, i) => (
+{/* Topic chips (radios) — ARIA group (no fieldset hairline) */}
+<div role="group" aria-labelledby="topic-label" className="m-0 p-0">
+  <p id="topic-label" className="block text-sm opacity-90 mb-2">Topic</p>
+
+  {/* MOBILE version */}
+  <div className="flex flex-wrap gap-2 pb-8 mt-2">
+    {topics.map((t, i) => (
       <div key={t.value} className="relative">
-        {/* ✅ Hidden radio drives the peer-checked styles */}
         <input
           id={`m-topic-${i}`}
           type="radio"
@@ -136,24 +136,20 @@ export default function ContactPage() {
           className={[
             "inline-flex items-center gap-2 cursor-pointer select-none",
             "rounded-full border border-white/20 px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition",
-            // default (teal)
             "bg-[var(--color-teal-800)] hover:bg-[var(--color-teal-800)]",
-            // selected (gold)
             "peer-checked:bg-[var(--color-gold)] peer-checked:text-black peer-checked:border-[var(--color-gold)]",
-            // focus outline for keyboard users
             "focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-gold)]/50",
-            // tiny feedback on select
             "peer-checked:shadow-md peer-checked:-translate-y-[1px]"
           ].join(" ")}
         >
-          {/* small status dot that flips when selected */}
           <span className="h-1.5 w-1.5 rounded-full bg-white/35 peer-checked:bg-black/70 transition" />
           {t.label}
         </label>
       </div>
     ))}
   </div>
-</fieldset>
+  </div>
+
                 <div>
                   <label className="block text-sm opacity-90 mb-1.5">Message</label>
                   <textarea name="message" rows={6} maxLength={1000} required value={message} onChange={(e) => setMessage(e.target.value)} className={field + " resize-y"} placeholder="What would you like to explore together?" />
@@ -173,7 +169,12 @@ export default function ContactPage() {
               </form>
             )}
           </section>
+          
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
+<div className="mx-auto max-w-[1200px] px-0 mt-10">
+  <hr className="border-t border-[var(--color-cream)]/22 mb-6" />
+</div>
+
 <div className="mx-auto max-w-[1200px] px-0">
   {/* Newsletter card (midnight blue) */}
   <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl">
@@ -200,7 +201,7 @@ export default function ContactPage() {
   </div>
 
   {/* Socials (left-justified, same as desktop vibe) */}
-  <div className="mt-5 flex justify-start">
+  <div className="mt-4">
     <SocialFooter />
   </div>
 
@@ -232,9 +233,8 @@ export default function ContactPage() {
   </div>
 </div>
 
-        </div>
         {/* removed the contained divider on mobile */}
-     
+      </div>
 
       {/* ============== DESKTOP (unchanged per your last version) ============== */}
       <div className="hidden md:block mx-auto max-w-[1200px] px-6 py-20">
@@ -297,8 +297,8 @@ export default function ContactPage() {
                 </div>
 
                 {/* Topic chips (radios) */}
-<fieldset className="m-0 p-0 border-0 mb-6">
-  <legend className="block text-sm opacity-90 mb-2">Topic</legend>
+<div role="group" aria-labelledby="d-topic-label" className="m-0 p-0 mb-6">
+  <p id="d-topic-label" className="block text-sm opacity-90 mb-2">Topic</p>
   <div className="flex flex-wrap gap-2">
     {topics.map((t, i) => (
       <div key={t.value}>
@@ -319,7 +319,7 @@ export default function ContactPage() {
       </div>
     ))}
   </div>
-</fieldset>
+</div>
 
 
                 <div className="mt-6">
