@@ -49,7 +49,7 @@ export default function RootLayout({ children }) {
 
 
       {/* single body (no nesting) */}
-      <body className="min-w-0 md:min-w-[1200px] bg-[#F4F1EA] text-[#0C1415] antialiased [text-rendering:optimizeLegibility] [-webkit-font-smoothing:antialiased]">
+ <body className="min-w-[1200px] bg-[#F4F1EA] text-[#0C1415] antialiased [text-rendering:optimizeLegibility] [-webkit-font-smoothing:antialiased]">
         <Header />
 
         {children}
