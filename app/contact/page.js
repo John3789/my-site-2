@@ -192,7 +192,7 @@ export default function ContactPage() {
                   </div>
                 </fieldset>
 
-                <div>
+                <div className="mt-6">
                   <label className="block text-sm opacity-90 mb-1.5">Message</label>
                   <textarea name="message" rows={6} maxLength={1000} required value={message} onChange={(e) => setMessage(e.target.value)} className={field + " resize-y"} placeholder="What would you like to explore together?" />
                   <div className="mt-1 flex items-center justify-between">
