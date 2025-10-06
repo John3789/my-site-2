@@ -96,8 +96,7 @@ export default function RootLayout({ children }) {
 
         {/* One-line bio */}
         <p className="text-[13px] leading-relaxed opacity-85 -mt-1 max-w-[750px]">
-          Dr. Salerno is a mental health scientist and personal growth expert helping people and organizations
-          live and lead with purpose and resilience. 
+          Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, professor, and 30x published and ~2000x cited peer-reviewed author. 
         </p>
       </div>
     </div>
