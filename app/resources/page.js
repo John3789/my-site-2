@@ -126,8 +126,8 @@ export default function ResourcesPage() {
           className={`md:contents origin-top [transform:scale(var(--z))] [width:calc(100%/var(--z))] mx-auto md:[transform:none] md:[width:100%] landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))] overflow-visible`}
         >
           {/* Title + Intro */}
-          <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-6">
-            <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-3">Resources</h1>
+          <div className="mx-auto max-w-[1200px] px-6 pt-10 pb-6">
+            <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-0">Resources</h1>
             <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 mx-auto mt-4 mb-6 rounded" />
 
             <section className="mx-auto max-w-[900px] px-6 text-center mb-6">
