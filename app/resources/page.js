@@ -300,28 +300,6 @@ export default function ResourcesPage() {
       <path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z"/>
     </svg>
   </a>
-
-  {/* LinkedIn */}
-  <a
-    href="https://www.linkedin.com/in/YOURHANDLE"
-    aria-label="LinkedIn"
-    className="opacity-90 hover:opacity-100"
-  >
-    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-      <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5zM3 9h3.96v12H3zM14.75 9c-2.21 0-3.25 1.22-3.81 2.08V9H7v12h3.94v-6.6c0-1.76.97-2.86 2.43-2.86 1.36 0 2.19.92 2.19 2.86V21H20V13.5C20 10.77 18.41 9 16.06 9c-1.14 0-1.99.43-2.56 1.05z"/>
-    </svg>
-  </a>
-
-  {/* X (Twitter) */}
-  <a
-    href="https://x.com/YOURHANDLE"
-    aria-label="X (Twitter)"
-    className="opacity-90 hover:opacity-100"
-  >
-    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-      <path d="M18.9 2H22l-7.6 8.7L22.8 22h-6.2l-4.9-6.5L5.9 22H2.8l8.2-9.4L2 2h6.3l4.4 5.9L18.9 2zm-2.2 18h1.4L7.4 4H6L16.7 20z"/>
-    </svg>
-  </a>
 </div>
 
       </div>
