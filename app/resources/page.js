@@ -169,7 +169,7 @@ export default function ResourcesPage() {
 
 
           {/* ===== Sections (now inside the same zoom on mobile) ===== */}
-          <section className="mx-auto max-w-[1200px] px-6 pt-2 md:pt-2 pb-20">
+          <section className="mx-auto max-w-[1200px] px-6 pt-0 md:pt-2 pb-20">
             <div className="space-y-7 md:space-y-14">
               {THEMES.map((theme, idx) => (
                 <section key={theme.slug} id={theme.slug} className="scroll-mt-28">
