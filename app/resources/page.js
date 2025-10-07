@@ -229,7 +229,7 @@ export default function ResourcesPage() {
               ))}
             </div>
 
-<div className="md:hidden mx-auto max-w-[1800px] px-1 mt-13">
+<div className="md:hidden mx-auto max-w-none px-0 mt-13">
   <hr className="border-t border-[var(--color-cream)]/22 mb-15" />
 </div>
 
