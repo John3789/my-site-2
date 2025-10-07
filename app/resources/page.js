@@ -1,3 +1,4 @@
+// app/resources/page.js
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -72,7 +73,7 @@ const THEMES = [
 ];
 
 export default function ResourcesPage() {
-  // 👇 Only while the Resources page is mounted
+  // Only while the Resources page is mounted
   useEffect(() => {
     document.body.classList.add("hide-footer-on-resources");
     return () => document.body.classList.remove("hide-footer-on-resources");
@@ -81,43 +82,6 @@ export default function ResourcesPage() {
   const [open, setOpen] = useState(false);
   const [activeCollection, setActiveCollection] = useState(null);
   const [currentId, setCurrentId] = useState(THEMES[0].slug);
-
-  // 🟩 Dynamic spacer to prevent overlap on mobile (portrait)
-  const headerZoomRef = useRef(null);
-  const mobileSpacerRef = useRef(null);
-
-  useEffect(() => {
-    function updateMobileSpacer() {
-      if (typeof window === "undefined") return;
-      if (window.innerWidth >= 768) {
-        if (mobileSpacerRef.current) mobileSpacerRef.current.style.height = "0px";
-        return;
-      }
-      const Z = 3.0;
-      const ZL = 1.6;
-      const isLandscape = window.matchMedia("(orientation: landscape)").matches;
-      const scale = isLandscape ? ZL : Z;
-
-      const el = headerZoomRef.current;
-      if (!el) return;
-      const h = el.offsetHeight || 0;
-      const extra = Math.max(0, h * (scale - 1));
-      if (mobileSpacerRef.current) mobileSpacerRef.current.style.height = `${extra}px`;
-    }
-
-    updateMobileSpacer();
-    const onResize = () => updateMobileSpacer();
-    const onOrient = () => updateMobileSpacer();
-    window.addEventListener("resize", onResize);
-    window.addEventListener("orientationchange", onOrient);
-    const t = setTimeout(updateMobileSpacer, 50);
-
-    return () => {
-      clearTimeout(t);
-      window.removeEventListener("resize", onResize);
-      window.removeEventListener("orientationchange", onOrient);
-    };
-  }, []);
 
   /* ========= Sticky pill nav: scroll affordances ========= */
   const navScrollRef = useRef(null);
@@ -168,7 +132,12 @@ export default function ResourcesPage() {
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  /* ========= Desktop sticky subnav (unchanged) ========= */
+  const openCollection = (col, themeTitle) => {
+    setActiveCollection({ ...col, theme: themeTitle });
+    setOpen(true);
+  };
+
+  /* ========= Sticky subnav with fades & chevrons (desktop only) ========= */
   const Nav = useMemo(() => {
     return (
       <div className="z-30 bg-transparent md:bg-[var(--color-teal-850)]/80">
@@ -240,19 +209,13 @@ export default function ResourcesPage() {
     );
   }, [currentId, canScrollLeft, canScrollRight]);
 
-  // Helper to open the modal with theme name
-  const openCollection = (col, themeTitle) => {
-    setActiveCollection({ ...col, theme: themeTitle });
-    setOpen(true);
-  };
-
   return (
     <>
       <main className="relative isolate min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
         {/* background guard to prevent mid-page tint on mobile */}
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]" />
 
-        {/* 1) ZOOM WRAPPER — Title + Intro + Mobile Nav (UNCHANGED STYLES) */}
+        {/* 1) ZOOM WRAPPER — Title + Intro + MOBILE NAV (unchanged classes) */}
         <div
           style={{ '--z': 3.0, '--zoomL': 1.60 }}
           className={`
@@ -265,28 +228,26 @@ export default function ResourcesPage() {
     overflow-visible
   `}
         >
-          <div ref={headerZoomRef}>
-            {/* Title + Intro (inside the zoom) */}
-            <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-6">
-              <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-3">
-                Resources
-              </h1>
-              <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 mx-auto mt-4 mb-6 rounded" />
+          {/* Title + Intro (inside the zoom) */}
+          <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-6">
+            <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-3">
+              Resources
+            </h1>
+            <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 mx-auto mt-4 mb-6 rounded" />
 
-              {/* Intro text (same as Meditations style) */}
-              <section className="mx-auto max-w-[900px] px-6 text-center mb-6">
-                <p className="text-lg md:text-xl opacity-90 leading-relaxed">
-                  A growing library of concise collections—shaped by science and lived
-                  experience—to sharpen your mind and uplift your life. Each theme is
-                  designed to meet you where you are and guide you toward greater
-                  confidence, balance, and intentional living.
-                </p>
-                <p className="mt-5 text-sm opacity-70">
-                  This page is under construction and will be updated periodically with
-                  new content.
-                </p>
-              </section>
-            </div>
+            {/* Intro text (matches Meditations style) */}
+            <section className="mx-auto max-w-[900px] px-6 text-center mb-6">
+              <p className="text-lg md:text-xl opacity-90 leading-relaxed">
+                A growing library of concise collections—shaped by science and lived
+                experience—to sharpen your mind and uplift your life. Each theme is
+                designed to meet you where you are and guide you toward greater
+                confidence, balance, and intentional living.
+              </p>
+              <p className="mt-5 text-sm opacity-70">
+                This page is under construction and will be updated periodically with
+                new content.
+              </p>
+            </section>
 
             {/* Mobile nav — simplest, blur-safe chip list */}
             <div className="md:hidden mt-4 grid grid-cols-3 gap-2">
@@ -309,24 +270,24 @@ export default function ResourcesPage() {
               })}
             </div>
 
-            {/* Mobile-only divider under the nav (above Motivation) */}
+            {/* Mobile-only divider under the nav (no negative margin) */}
             <div className="md:hidden">
-              <div className="mx-auto max-w-[1200px] px-6 mt-3 -mb-1">
+              <div className="mx-auto max-w-[1200px] px-6 mt-3">
                 <div className="h-px w-full bg-[var(--color-cream)]/15" />
               </div>
             </div>
           </div>
         </div>
 
-        {/* 🟩 Spacer dynamically sized for zoomed header on mobile */}
-        <div ref={mobileSpacerRef} className="md:hidden" />
+        {/* 🔹 Mobile-only spacer to separate zoomed header/intro/nav from sections */}
+        <div className="md:hidden h-10" />
 
         {/* Desktop sticky sub-nav (outside the zoom for crisp text) */}
         <div className="hidden md:block sticky top-[64px] z-30 bg-[var(--color-teal-850)]/80">
           {Nav}
         </div>
 
-        {/* 3) ZOOM WRAPPER — Sections ONLY (UNCHANGED STYLES) */}
+        {/* 2) ZOOM WRAPPER — Sections ONLY (unchanged classes) */}
         <div
           style={{ '--z': 3.0, '--zoomL': 1.60 }}
           className={`
@@ -340,7 +301,7 @@ export default function ResourcesPage() {
   `}
         >
           {/* Sections */}
-          <section className="mx-auto max-w-[1200px] px-6 pt-2 pb-20">
+          <section className="mx-auto max-w-[1200px] px-6 pt-10 md:pt-2 pb-20">
             <div className="space-y-14">
               {THEMES.map((theme, idx) => (
                 <section key={theme.slug} id={theme.slug} className="scroll-mt-28">
@@ -450,82 +411,87 @@ export default function ResourcesPage() {
                 </section>
               ))}
             </div>
+
+            {/* --- MOBILE divider + footer (inside zoom, after the sections) --- */}
+            <div className="md:hidden mx-auto max-w-[1200px] px-6 -mt-3">
+              <hr className="border-t border-[var(--color-cream)]/22 mb-17" />
+            </div>
+
+            <div className="md:hidden mx-auto max-w-[1200px] px-3">
+              {/* Newsletter card (midnight blue) */}
+              <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
+                <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
+                  Science, Soul, and a Bit of Magic — Every Month
+                </p>
+                <p className="text-sm opacity-85 mb-3">
+                  Practical wisdom for modern minds — best paired with coffee and curiosity.
+                </p>
+                <div className="flex gap-2">
+                  <input
+                    type="email"
+                    placeholder="you@example.com"
+                    className="flex-1 rounded-md border border-white/15 bg-white/5 px-3 py-2 placeholder-white/60 outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50"
+                  />
+                  <button
+                    type="button"
+                    className="shrink-0 rounded-md bg-[var(--color-gold)] text-black px-4 py-2 font-semibold"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+              </div>
+
+              {/* --- MOBILE Jay-style footer block --- */}
+              <div className="mt-6 text-[13px] leading-relaxed">
+                {/* 1) Heading */}
+                <p className="uppercase tracking-[0.18em] text-left opacity-70">
+                  Follow Dr. Salerno:
+                </p>
+
+                {/* 2) Socials row — centered & evenly spaced */}
+                <div className="mt-3 flex items-left justify-left gap-8">
+                  {/* TikTok */}
+                  <a href="https://www.tiktok.com/@YOURHANDLE" aria-label="TikTok" className="opacity-90 hover:opacity-100">
+                    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z"/></svg>
+                  </a>
+                  {/* Instagram */}
+                  <a href="https://www.instagram.com/YOURHANDLE" aria-label="Instagram" className="opacity-90 hover:opacity-100">
+                    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 0 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/></svg>
+                  </a>
+                  {/* YouTube */}
+                  <a href="https://www.youtube.com/@YOURHANDLE" aria-label="YouTube" className="opacity-90 hover:opacity-100">
+                    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z"/></svg>
+                  </a>
+                </div>
+
+                {/* 3) Bio line */}
+                <p className="mt-5 text-left opacity-85">
+                  Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, author and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
+                </p>
+
+                {/* 4) Name with © + ™ */}
+                <p className="mt-6 text-left opacity-85">
+                  © Dr. Juan Pablo Salerno™
+                </p>
+
+                {/* 5) Legal line (centered with dots) */}
+                <p className="mt-2 text-left opacity-85">
+                  <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
+                  <span className="mx-2 opacity-50">·</span>
+                  <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
+                  <span className="mx-2 opacity-50">·</span>
+                  <span>All rights reserved</span>
+                </p>
+              </div>
+
+              {/* removed the contained divider on mobile */}
+            </div>
+
+            {/* Home: section/bookend divider (aligns to 1200px container) */}
+            <div className="mx-auto max-w-[1200px] px-6">
+              <hr className="border-t border-[var(--color-cream)]/22" />
+            </div>
           </section>
-
-          {/* --- MOBILE divider + footer (inside zoom, after the sections) --- */}
-          <div className="md:hidden mx-auto max-w-[1200px] px-6 -mt-3">
-            <hr className="border-t border-[var(--color-cream)]/22 mb-17" />
-          </div>
-
-          <div className="md:hidden mx-auto max-w-[1200px] px-3">
-            {/* Newsletter card (midnight blue) */}
-            <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
-              <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
-                Science, Soul, and a Bit of Magic — Every Month
-              </p>
-              <p className="text-sm opacity-85 mb-3">
-                Practical wisdom for modern minds — best paired with coffee and curiosity.
-              </p>
-              <div className="flex gap-2">
-                <input
-                  type="email"
-                  placeholder="you@example.com"
-                  className="flex-1 rounded-md border border-white/15 bg-white/5 px-3 py-2 placeholder-white/60 outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50"
-                />
-                <button
-                  type="button"
-                  className="shrink-0 rounded-md bg-[var(--color-gold)] text-black px-4 py-2 font-semibold"
-                >
-                  Subscribe
-                </button>
-              </div>
-            </div>
-
-            {/* --- MOBILE Jay-style footer block --- */}
-            <div className="mt-6 text-[13px] leading-relaxed">
-              {/* 1) Heading */}
-              <p className="uppercase tracking-[0.18em] text-left opacity-70">
-                Follow Dr. Salerno:
-              </p>
-
-              {/* 2) Socials row */}
-              <div className="mt-3 flex items-left justify-left gap-8">
-                <a href="https://www.tiktok.com/@YOURHANDLE" aria-label="TikTok" className="opacity-90 hover:opacity-100">
-                  <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z"/></svg>
-                </a>
-                <a href="https://www.instagram.com/YOURHANDLE" aria-label="Instagram" className="opacity-90 hover:opacity-100">
-                  <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 0 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/></svg>
-                </a>
-                <a href="https://www.youtube.com/@YOURHANDLE" aria-label="YouTube" className="opacity-90 hover:opacity-100">
-                  <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z"/></svg>
-                </a>
-              </div>
-
-              {/* 3) Bio line */}
-              <p className="mt-5 text-left opacity-85">
-                Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, author and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
-              </p>
-
-              {/* 4) Name with © + ™ */}
-              <p className="mt-6 text-left opacity-85">
-                © Dr. Juan Pablo Salerno™
-              </p>
-
-              {/* 5) Legal line */}
-              <p className="mt-2 text-left opacity-85">
-                <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
-                <span className="mx-2 opacity-50">·</span>
-                <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
-                <span className="mx-2 opacity-50">·</span>
-                <span>All rights reserved</span>
-              </p>
-            </div>
-          </div>
-
-          {/* Home: section/bookend divider (aligns to 1200px container) */}
-          <div className="mx-auto max-w-[1200px] px-6">
-            <hr className="border-t border-[var(--color-cream)]/22" />
-          </div>
         </div>
       </main>
 
@@ -552,7 +518,7 @@ export default function ResourcesPage() {
         }
       `}</style>
 
-      {/* Modal mount */}
+      {/* ===== Modal (YouTube-only embed) ===== */}
       <CollectionModal
         open={open}
         onClose={() => setOpen(false)}
