@@ -230,11 +230,11 @@ export default function ResourcesPage() {
             </div>
 
             {/* Mobile divider + newsletter + footer */}
-            <div className="md:hidden mx-auto max-w-[1200px] px-6 mb-6">
+            <div className="md:hidden mx-auto max-w-[1400px] px-6 mb-6">
               <hr className="border-t border-[var(--color-cream)]/22 mt-16 mb-16" />
             </div>
 
-            <div className="md:hidden mx-auto max-w-[1200px] px-6">
+            <div className="md:hidden mx-auto max-w-[1400px] px-6">
               <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
                 <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">Science, Soul, and a Bit of Magic — Every Month</p>
                 <p className="text-sm opacity-85 mb-3">Practical wisdom for modern minds — best paired with coffee and curiosity.</p>
@@ -253,7 +253,7 @@ export default function ResourcesPage() {
                 </div>
                 <p className="mt-5 text-left opacity-85">Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, author and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.</p>
                 <p className="mt-6 text-left opacity-85">© Dr. Juan Pablo Salerno™</p>
-                <p className="-mt-3 text-left opacity-85">
+                <p className="mt-2 text-left opacity-85">
                   <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
                   <span className="mx-2 opacity-50">·</span>
                   <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
@@ -264,8 +264,8 @@ export default function ResourcesPage() {
             </div>
 
             {/* Desktop-aligned divider */}
-            <div className="hidden mx-auto max-w-[1200px] px-6">
-              <hr className="hidden border-t border-[var(--color-cream)]/22" />
+            <div className="hidden md:block mx-auto max-w-[1200px] px-6">
+              <hr className="hidden md:block border-t border-[var(--color-cream)]/22 mt-12" />
             </div>
           </section>
         </div>
