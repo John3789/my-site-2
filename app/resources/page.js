@@ -296,7 +296,7 @@ export default function ResourcesPage() {
                             <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]" />
 
           {/* 🔹 Mobile-only spacer to separate zoomed header/intro/nav from sections */}
-<div className="md:hidden h-30" />
+<div className="md:hidden h-45" />
 
 
           {/* Desktop sticky sub-nav (outside the zoom for crisp text) */}
