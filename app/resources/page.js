@@ -156,7 +156,7 @@ export default function ResourcesPage() {
 
             {/* Divider under mobile nav */}
             <div className="md:hidden">
-              <div className="mx-auto max-w-[1200px] -mb-3 px-6 mt-3">
+              <div className="mx-auto max-w-[1200px] px-6 mt-3">
                 <div className="h-px w-full bg-[var(--color-cream)]/15" />
               </div>
             </div>
