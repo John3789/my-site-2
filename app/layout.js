@@ -81,7 +81,7 @@ export default function RootLayout({ children }) {
                 Science, Soul, and a Bit of Magic — Every Month
               </p>
               <p className="text-base md:text-[15px] opacity-95">
-        Practical wisdom for modern souls — best paired with coffee and curiosity.
+        Practical wisdom for modern minds — best paired with coffee and curiosity.
                 
               </p>
             </div>

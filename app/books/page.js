@@ -340,7 +340,7 @@ export default function BooksPage() {
       Science, Soul, and a Bit of Magic — Every Month
     </p>
     <p className="text-sm opacity-85 mb-3">
-Practical wisdom for modern souls — best paired with coffee and curiosity.
+Practical wisdom for modern minds — best paired with coffee and curiosity.
 
     </p>
     <div className="flex gap-2">
