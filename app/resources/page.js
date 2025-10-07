@@ -235,7 +235,7 @@ export default function ResourcesPage() {
   <div className="mx-auto max-w-[1100px]">
     {/* Divider (optional) */}
     <div className="mt-0 mb-10">
-      <hr className="border-t border-[var(--color-cream)]/22 mb-15" />
+      <hr className="border-t border-[var(--color-cream)]/22 mt-15 mb-15" />
     </div>
 
     {/* Newsletter card */}
