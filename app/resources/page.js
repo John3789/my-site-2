@@ -229,11 +229,11 @@ export default function ResourcesPage() {
               ))}
             </div>
 
-<div className="md:hidden mx-auto max-w-none px-0 mt-13">
+<div className="md:hidden mx-auto max-w-[1200px] px-3 mt-13">
   <hr className="border-t border-[var(--color-cream)]/22 mb-15" />
 </div>
 
-<div className="md:hidden mx-auto max-w-none -mb-20 px-0">
+<div className="md:hidden mx-auto max-w-[1200px] -mb-20 px-6">
   {/* Newsletter card (midnight blue) */}
   <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
     <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
