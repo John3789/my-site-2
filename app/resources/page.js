@@ -282,6 +282,10 @@ export default function ResourcesPage() {
                 </button>
               );
             })}
+
+          {/* 🔹 Mobile-only spacer to separate zoomed header/intro/nav from sections */}
+<div className="md:hidden h-4" />
+
           </div>
 
 
