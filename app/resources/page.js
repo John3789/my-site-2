@@ -230,8 +230,8 @@ export default function ResourcesPage() {
             </div>
 
             {/* Mobile divider + newsletter + footer */}
-            <div className="md:hidden mx-auto max-w-[1200px] px-1">
-              <hr className="border-t border-[var(--color-cream)]/22 mb-17" />
+            <div className="md:hidden mx-auto max-w-[1200px] px-0 mb-6">
+              <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
             </div>
 
             <div className="md:hidden mx-auto max-w-[1200px] px-3">
