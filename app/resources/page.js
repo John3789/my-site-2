@@ -295,19 +295,7 @@ export default function ResourcesPage() {
 </div>
 
 
-          {/* 3) ZOOM WRAPPER — Sections ONLY */}
-          <div
-            style={{ '--z': 3.0, '--zoomL': 1.60 }}
-            className={`
-    md:contents
-    origin-top
-    [transform:scale(var(--z))] [width:calc(100%/var(--z))]
-    mx-auto
-    md:[transform:none] md:[width:100%]
-    landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
-    overflow-visible
-  `}
-          ></div>
+
 
           {/* Sections */}
           <section className="mx-auto max-w-[1200px] px-6 pt-2 pb-20">
