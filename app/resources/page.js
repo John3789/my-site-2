@@ -290,14 +290,11 @@ export default function ResourcesPage() {
           </div>
 
 
-          {/* 🔹 Mobile-only spacer to separate zoomed header/intro/nav from sections */}
-<div className="md:hidden h-4" />
-
-
           {/* Desktop sticky sub-nav (outside the zoom for crisp text) */}
           <div className="hidden md:block sticky top-[64px] z-30 bg-[var(--color-teal-850)]/80">
             {Nav}
           </div>
+
 
 
                     {/* Mobile-only divider under the nav (above Motivation) */}
@@ -306,6 +303,11 @@ export default function ResourcesPage() {
     <div className="h-px w-full bg-[var(--color-cream)]/15" />
   </div>
 </div>
+          {/* 🔹 Mobile-only spacer to separate zoomed header/intro/nav from sections */}
+<div className="md:hidden h-4" />
+
+
+
 
 
 
