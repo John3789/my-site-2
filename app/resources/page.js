@@ -242,23 +242,24 @@ export default function ResourcesPage() {
             <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-3">
               Resources
             </h1>
-            <div className="mx-auto h-[2px] w-16 bg-[var(--color-gold)]/85 rounded mb-15" />
+                            <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 mx-auto mt-4 mb-6 rounded" />
 
-            <div className="relative mx-auto max-w-[820px] mb-6 rounded-2xl ring-1 ring-white/10 bg-white/5 shadow-2xl">
 
-              <span className="pointer-events-none absolute left-0 top-1 bottom-1 w-[3px] rounded-l-2xl bg-[var(--color-gold)]/70" />
-              <div className="flex flex-col gap-3 p-5">
-                <p className="text-[18px] leading-relaxed opacity-90">
+            {/* ===== INTRO (text only, centered — matches Meditations) ===== */}
+<section className="mx-auto max-w-[900px] px-6 text-center mb-6">
+
+  <p className="text-lg md:text-xl opacity-90 leading-relaxed">
                   A growing library of concise collections—shaped by science and lived
                   experience—to sharpen your mind and uplift your life. Each theme is
                   designed to meet you where you are and guide you toward greater
-                  confidence, balance, and intentional living.
-                </p>
-                <div className="pt-3 text-xs opacity-70 border-t border-[var(--color-cream)]/15">
+                  confidence, balance, and intentional living.  </p>
+  <p className="mt-5 text-sm opacity-70">
                   This page is under construction and will be updated periodically with
                   new content.
-                </div>
-              </div>
+                    </p>
+</section>
+
+
             </div>
           </div>
 
@@ -503,7 +504,6 @@ Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal gro
 
       
 
-        </div>
                                         {/* Home: section/bookend divider (aligns to 1400px container) */}
 <div className="mx-auto max-w-[1200px] px-6">
   <hr className="border-t border-[var(--color-cream)]/22" />
