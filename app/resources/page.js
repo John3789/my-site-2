@@ -284,12 +284,6 @@ export default function ResourcesPage() {
             })}
           </div>
 
-                    {/* Mobile-only divider under the nav (above Motivation) */}
-<div className="md:hidden">
-  <div className="mx-auto max-w-[1200px] px-6 mt-3 -mb-1">
-    <div className="h-px w-full bg-[var(--color-cream)]/15" />
-  </div>
-</div>
 
 
             </div>
@@ -297,7 +291,7 @@ export default function ResourcesPage() {
 
 
           {/* 🔹 Mobile-only spacer to separate zoomed header/intro/nav from sections */}
-<div className="md:hidden h-45" />
+<div className="md:hidden h-4" />
 
 
           {/* Desktop sticky sub-nav (outside the zoom for crisp text) */}
@@ -306,6 +300,12 @@ export default function ResourcesPage() {
           </div>
 
 
+                    {/* Mobile-only divider under the nav (above Motivation) */}
+<div className="md:hidden">
+  <div className="mx-auto max-w-[1200px] px-6 mt-3 -mb-1">
+    <div className="h-px w-full bg-[var(--color-cream)]/15" />
+  </div>
+</div>
 
 
 
