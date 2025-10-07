@@ -224,10 +224,10 @@ export default function ResourcesPage() {
         {/* background guard to prevent mid-page tint on mobile */}
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]" />
 
-        {/* 1) ZOOM WRAPPER — Title + Intro ONLY */}
-        <div
-          style={{ '--z': 3.0, '--zoomL': 1.60 }}
-          className={`
+  {/* 1) ZOOM WRAPPER — Title + Intro ONLY */}
+<div
+  style={{ '--z': 3.0, '--zoomL': 1.60 }}
+  className={`
     md:contents
     origin-top
     [transform:scale(var(--z))] [width:calc(100%/var(--z))]
@@ -236,32 +236,29 @@ export default function ResourcesPage() {
     landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
     overflow-visible
   `}
-        >
-          {/* Title + Intro (now inside the zoom so sizes match) */}
-          <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-6">
-            <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-3">
-              Resources
-            </h1>
-                            <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 mx-auto mt-4 mb-6 rounded" />
+>
+  {/* Title + Intro (now correctly inside the zoom) */}
+  <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-6">
+    <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-3">
+      Resources
+    </h1>
+    <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 mx-auto mt-4 mb-6 rounded" />
 
-
-            {/* ===== INTRO (text only, centered — matches Meditations) ===== */}
-<section className="mx-auto max-w-[900px] px-6 text-center mb-6">
-
-  <p className="text-lg md:text-xl opacity-90 leading-relaxed">
-                  A growing library of concise collections—shaped by science and lived
-                  experience—to sharpen your mind and uplift your life. Each theme is
-                  designed to meet you where you are and guide you toward greater
-                  confidence, balance, and intentional living.  </p>
-  <p className="mt-5 text-sm opacity-70">
-                  This page is under construction and will be updated periodically with
-                  new content.
-                    </p>
-</section>
-
-
-            </div>
-          </div>
+    {/* Intro text (matches Meditations format) */}
+    <section className="mx-auto max-w-[900px] px-6 text-center mb-6">
+      <p className="text-lg md:text-xl opacity-90 leading-relaxed">
+        A growing library of concise collections—shaped by science and lived
+        experience—to sharpen your mind and uplift your life. Each theme is
+        designed to meet you where you are and guide you toward greater
+        confidence, balance, and intentional living.
+      </p>
+      <p className="mt-5 text-sm opacity-70">
+        This page is under construction and will be updated periodically with
+        new content.
+      </p>
+    </section>
+  </div>
+</div>
 
           {/* Desktop sticky sub-nav (outside the zoom for crisp text) */}
           <div className="hidden md:block sticky top-[64px] z-30 bg-[var(--color-teal-850)]/80">
