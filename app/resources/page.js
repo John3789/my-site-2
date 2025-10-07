@@ -234,7 +234,7 @@ export default function ResourcesPage() {
               <hr className="border-t border-[var(--color-cream)]/22 mt-16 mb-16" />
             </div>
 
-            <div className="md:hidden mx-auto max-w-[1200px] px-3">
+            <div className="md:hidden mx-auto max-w-[1400px] px-3">
               <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
                 <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">Science, Soul, and a Bit of Magic — Every Month</p>
                 <p className="text-sm opacity-85 mb-3">Practical wisdom for modern minds — best paired with coffee and curiosity.</p>
