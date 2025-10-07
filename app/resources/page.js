@@ -295,7 +295,8 @@ export default function ResourcesPage() {
             {Nav}
           </div>
 
-
+          {/* 🔹 Mobile-only spacer to separate zoomed header/intro/nav from sections */}
+<div className="md:hidden h-4" />
 
                     {/* Mobile-only divider under the nav (above Motivation) */}
 <div className="md:hidden">
@@ -303,10 +304,6 @@ export default function ResourcesPage() {
     <div className="h-px w-full bg-[var(--color-cream)]/15" />
   </div>
 </div>
-
-          {/* 🔹 Mobile-only spacer to separate zoomed header/intro/nav from sections */}
-<div className="md:hidden h-4" />
-
 
 {/* 3) ZOOM WRAPPER — Sections ONLY */}
 <div
