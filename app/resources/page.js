@@ -253,7 +253,7 @@ export default function ResourcesPage() {
                 </div>
                 <p className="mt-5 text-left opacity-85">Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, author and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.</p>
                 <p className="mt-6 text-left opacity-85">© Dr. Juan Pablo Salerno™</p>
-                <p className="mt-2 text-left opacity-85">
+                <p className="mt-0 text-left opacity-85">
                   <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
                   <span className="mx-2 opacity-50">·</span>
                   <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
@@ -264,7 +264,7 @@ export default function ResourcesPage() {
             </div>
 
             {/* Desktop-aligned divider */}
-            <div className="hidden mx-auto max-w-[1200px] px-6">
+            <div className="hidden mx-auto max-w-[1400px] px-6">
               <hr className="hidden border-t border-[var(--color-cream)]/22" />
             </div>
           </section>
