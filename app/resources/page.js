@@ -262,7 +262,7 @@ export default function ResourcesPage() {
 
 
           {/* Mobile nav — simplest, blur-safe chip list */}
-          <div className="md:hidden mt-4 mb-50 grid grid-cols-3 gap-2">
+          <div className="md:hidden mt-4 grid grid-cols-3 gap-2">
             {THEMES.map((t) => {
               const active = currentId === t.slug;
               return (
@@ -284,7 +284,7 @@ export default function ResourcesPage() {
 
                     {/* Mobile-only divider under the nav (above Motivation) */}
 <div className="md:hidden">
-  <div className="mx-auto max-w-[1200px] px-6 mt-3 mb-30">
+  <div className="mx-auto max-w-[1200px] px-6 mt-3 -mb-1">
     <div className="h-px w-full bg-[var(--color-cream)]/15" />
   </div>
 </div>
@@ -293,10 +293,10 @@ export default function ResourcesPage() {
             </div>
           </div>
 
-                            <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)] mb-30" />
+                            <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]" />
 
           {/* 🔹 Mobile-only spacer to separate zoomed header/intro/nav from sections */}
-<div className="md:hidden h-4" />
+<div className="md:hidden h-30" />
 
 
           {/* Desktop sticky sub-nav (outside the zoom for crisp text) */}
