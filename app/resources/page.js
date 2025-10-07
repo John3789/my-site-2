@@ -222,7 +222,6 @@ export default function ResourcesPage() {
     <>
       <main className="relative isolate min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
         {/* background guard to prevent mid-page tint on mobile */}
-        <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]" />
 
         {/* 1) ZOOM WRAPPER — Title + Intro ONLY */}
         <div
@@ -237,6 +236,9 @@ export default function ResourcesPage() {
     overflow-visible
   `}
         >
+
+                            <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]" />
+
           {/* Title + Intro (now inside the zoom so sizes match) */}
           <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-6">
             <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-3">
