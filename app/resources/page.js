@@ -310,7 +310,7 @@ Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal gro
 
             {/* Desktop-aligned divider */}
             <div className="hidden md:block mx-auto max-w-[1400px] px-6">
-              <hr className="hidden md:block border-t border-[var(--color-cream)]/22 mt-12" />
+              <hr className="hidden md:block border-t border-[var(--color-cream)]/22 mt-12 -mb-20" />
             </div>
           </section>
         </div>
