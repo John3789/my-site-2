@@ -226,17 +226,16 @@ export default function ResourcesPage() {
 
 {/* 1) ZOOM WRAPPER — Title + Intro ONLY */}
 <div
-  className="
-    zoomwrap
+          style={{ '--z': 3.0, '--zoomL': 1.60 }}
+          className={`
     md:contents
     origin-top
     [transform:scale(var(--z))] [width:calc(100%/var(--z))]
     mx-auto
     md:[transform:none] md:[width:100%]
     landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
-    overflow-hidden
-  "
-  style={{ '--z': '3', '--zoomL': '1.6' }}
+    overflow-visible
+  `}
 >
   {/* Title + Intro (inside the zoom) */}
   <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-6">
