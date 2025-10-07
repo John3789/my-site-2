@@ -155,7 +155,7 @@ export default function ResourcesPage() {
             </div>
 
             {/* Divider under mobile nav */}
-            <div className="md:hidden mt-3 -mb-5 px-2"> 
+            <div className="md:hidden mt-3 -mb-5 px-1"> 
                 <div className="h-px w-full bg-[var(--color-cream)]/15" />
             </div>
           </div>
@@ -230,7 +230,7 @@ export default function ResourcesPage() {
             </div>
 
             {/* Mobile divider + newsletter + footer */}
-            <div className="md:hidden mx-auto max-w-[1200px] px-6 -mt-3">
+            <div className="md:hidden mx-auto max-w-[1200px] px-1">
               <hr className="border-t border-[var(--color-cream)]/22 mb-17" />
             </div>
 
