@@ -90,7 +90,7 @@ html { scroll-behavior: smooth; }
 /* Make all body text cream by default */
 body {
   @apply text-[var(--color-cream)];
-  background-color: var(--color-teal-800); /* keep your background consistent */
+ background-color: var(--color-teal-800); /* keep your background consistent */
 }
 
 /* Headings also cream by default */

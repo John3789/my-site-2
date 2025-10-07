@@ -1,13 +1,21 @@
-// app/page.js
-import Link from 'next/link'
-import Image from 'next/image'
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
 import SocialFooter from "../components/SocialFooter";
+import NewsletterMeditationPopup from "../components/NewsletterMeditationPopup";
 
 export default function Home() {
   return (
-    <>
+        <main id="main" className="bg-[var(--color-teal-850)] text-[var(--color-cream)] text-[17px]">
+          <NewsletterMeditationPopup
+  isMeditationPage={false}
+  delayMs={30000}
+  freqDays={7}
+  formAction="/api/subscribe"
+/>
       {/* spacer to clear the fixed header (keep) */}
-      <div aria-hidden className="h-8" />
+      <div aria-hidden className="h-8 bg-[var(--color-teal-800)]" />
 
       {/* DESKTOP/TABLET nameplate — unchanged */}
       <section id="home" className="hidden md:block bg-[var(--color-teal-800)] !text-[var(--color-cream)]">
@@ -113,7 +121,7 @@ export default function Home() {
           overflow-hidden
         "
       >
-        <main id="main" className="bg-[var(--color-teal-850)] text-[var(--color-cream)] text-[17px]">
+
 
           {/* Mission */}
           <section className="w-full">
@@ -296,10 +304,10 @@ export default function Home() {
 <div className="mx-auto max-w-[1400px] px-6">
   <hr className="border-t border-[var(--color-cream)]/22" />
 </div>
+      </div>
+
         </main>
 
         
-      </div>
-    </>
   )
 }
