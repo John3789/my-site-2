@@ -308,11 +308,6 @@ export default function ResourcesPage() {
 <div className="md:hidden h-4" />
 
 
-
-
-
-
-
 {/* 3) ZOOM WRAPPER — Sections ONLY */}
 <div
   style={{ '--z': 3.0, '--zoomL': 1.60 }}
