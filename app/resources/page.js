@@ -264,7 +264,7 @@ export default function ResourcesPage() {
     {/* Socials + legal */}
     <div className="mt-6 text-[13px] leading-relaxed">
       <p className="uppercase tracking-[0.18em] text-left opacity-70">Follow Dr. Salerno:</p>
-      <div className="mt-2 flex items-left justify-left gap-8">
+      <div className="mt-1 flex items-left justify-left gap-8">
         {/* icons unchanged */}
         {/* Socials row */}
 <div className="mt-2 flex items-center gap-8">
