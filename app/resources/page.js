@@ -262,7 +262,7 @@ export default function ResourcesPage() {
 
 
           {/* Mobile nav — simplest, blur-safe chip list */}
-          <div className="md:hidden mt-4 grid grid-cols-3 gap-2">
+          <div className="md:hidden mt-4 mb-2 grid grid-cols-3 gap-2">
             {THEMES.map((t) => {
               const active = currentId === t.slug;
               return (
@@ -284,7 +284,7 @@ export default function ResourcesPage() {
 
                     {/* Mobile-only divider under the nav (above Motivation) */}
 <div className="md:hidden">
-  <div className="mx-auto max-w-[1200px] px-6 mt-3 -mb-1">
+  <div className="mx-auto max-w-[1200px] px-6 mt-3">
     <div className="h-px w-full bg-[var(--color-cream)]/15" />
   </div>
 </div>
