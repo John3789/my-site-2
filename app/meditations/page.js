@@ -1,6 +1,7 @@
 // app/meditations/page.js
 import TopOnMount from "../../components/TopOnMount";
 
+
 export default function MeditationsPage() {
   return (
     <TopOnMount>
