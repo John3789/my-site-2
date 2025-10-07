@@ -119,6 +119,7 @@ export default function ResourcesPage() {
       <main className="relative isolate min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]" />
 
+\
         {/* ===== SINGLE MOBILE ZOOM WRAPPER (title + intro + mobile nav + sections + mobile footer) ===== */}
         <div
           style={{ "--z": 3.0, "--zoomL": 1.6 }}
@@ -160,6 +161,12 @@ export default function ResourcesPage() {
               </div>
             </div>
           </div>
+
+          {/* Desktop sticky subnav — sits right under the intro on desktop */}
+<div className="hidden md:block sticky top-[64px] z-30 bg-[var(--color-teal-850)]/80">
+  {Nav}
+</div>
+
 
           {/* ===== Sections (now inside the same zoom on mobile) ===== */}
           <section className="mx-auto max-w-[1200px] px-6 pt-10 md:pt-2 pb-20">
@@ -265,8 +272,7 @@ export default function ResourcesPage() {
           </section>
         </div>
 
-        {/* Desktop sticky subnav (kept crisp, outside zoom) */}
-        <div className="hidden md:block sticky top-[64px] z-30 bg-[var(--color-teal-850)]/80">{Nav}</div>
+
       </main>
 
       <style jsx global>{`
