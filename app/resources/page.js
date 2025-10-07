@@ -326,7 +326,7 @@ export default function ResourcesPage() {
   <section className="mx-auto max-w-[1200px] px-6 pt-2 pb-20">
     <div className="space-y-14">
       {THEMES.map((theme, idx) => (
-        <section key={theme.slug} id={theme.slug} className="scroll-mt-28">
+        <section key={theme.slug} id={theme.slug} className="scroll-mt-36 md:scroll-mt-28">
           <header className="mb-4">
             <h2 className="font-serif text-[clamp(26px,3.3vw,34px)] opacity-95 mt-12">
               {theme.title}
