@@ -155,7 +155,7 @@ export default function ResourcesPage() {
             </div>
 
             {/* Divider under mobile nav */}
-            <div className="md:hidden mt-3 mb-6 px-6"> 
+            <div className="md:hidden mt-3 -mb-3 px-3"> 
                 <div className="h-px w-full bg-[var(--color-cream)]/15" />
             </div>
           </div>
