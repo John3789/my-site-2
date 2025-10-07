@@ -144,6 +144,10 @@ export default function AboutPage() {
             </div>
           </div>
 
+                                      {/* Home: section/bookend divider (aligns to 1400px container) */}
+<div className="mx-auto max-w-[1000px] px-6">
+  <hr className="border-t border-[var(--color-cream)]/22" />
+</div>
 
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="md:hidden mx-auto max-w-[1400px] px-6 mb-15 -mt-4">
@@ -225,10 +229,7 @@ author, and professor recognized for contributing 30+ peer-reviewed publications
         {/* removed the contained divider on mobile */}
       </div>
 
-                                      {/* Home: section/bookend divider (aligns to 1400px container) */}
-<div className="mx-auto max-w-[1400px] px-6">
-  <hr className="border-t border-[var(--color-cream)]/22" />
-</div>
+
 
         </main>
       </div>
