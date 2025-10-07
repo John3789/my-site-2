@@ -264,8 +264,8 @@ export default function ResourcesPage() {
             </div>
 
             {/* Desktop-aligned divider */}
-            <div className="mx-auto max-w-[1200px] px-6">
-              <hr className="border-t border-[var(--color-cream)]/22" />
+            <div className="hidden mx-auto max-w-[1200px] px-6">
+              <hr className="hidden border-t border-[var(--color-cream)]/22" />
             </div>
           </section>
         </div>
