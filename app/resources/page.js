@@ -230,15 +230,15 @@ export default function ResourcesPage() {
             </div>
 
             {/* Mobile divider + newsletter + footer */}
-            <div className="md:hidden mx-auto max-w-[1400px] px-6 mb-6">
+            <div className="md:hidden mx-auto max-w-[1400px] px-0 mb-6">
               <hr className="border-t border-[var(--color-cream)]/22 mt-16 mb-16" />
             </div>
 
-            <div className="md:hidden mx-auto max-w-[1400px] px-6">
+            <div className="md:hidden mx-auto max-w-[1400px] px-0">
               <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
                 <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">Science, Soul, and a Bit of Magic — Every Month</p>
                 <p className="text-sm opacity-85 mb-3">Practical wisdom for modern minds — best paired with coffee and curiosity.</p>
-                <div className="flex gap-2">
+                <div className="flex items-center gap-2">
                   <input type="email" placeholder="you@example.com" className="flex-1 rounded-md border border-white/15 bg-white/5 px-3 py-2 placeholder-white/60 outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50" />
                   <button type="button" className="shrink-0 rounded-md bg-[var(--color-gold)] text-black px-4 py-2 font-semibold">Subscribe</button>
                 </div>
@@ -257,7 +257,7 @@ export default function ResourcesPage() {
                   <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
                   <span className="mx-2 opacity-50">·</span>
                   <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
-                  <span className="mx-2 opacity-50">·</span>
+                  <span className="mx-2 -mb-5 opacity-50">·</span>
                   <span>All rights reserved</span>
                 </p>
               </div>
