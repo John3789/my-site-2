@@ -267,7 +267,7 @@ export default function ResourcesPage() {
       <div className="mt-2 flex items-left justify-left gap-8">
         {/* icons unchanged */}
         {/* Socials row */}
-<div className="mt-0 flex items-center gap-8">
+<div className="mt-2 flex items-center gap-8">
   {/* TikTok */}
   <a
     href="https://www.tiktok.com/@YOURHANDLE"
