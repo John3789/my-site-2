@@ -224,7 +224,6 @@ export default function ResourcesPage() {
         {/* background guard to prevent mid-page tint on mobile */}
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]" />
 
-
         {/* 1) ZOOM WRAPPER — Title + Intro ONLY */}
         <div
           style={{ '--z': 3.0, '--zoomL': 1.60 }}
@@ -238,8 +237,6 @@ export default function ResourcesPage() {
     overflow-visible
   `}
         >
-
-
           {/* Title + Intro (now inside the zoom so sizes match) */}
           <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-6">
             <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-3">
@@ -262,7 +259,6 @@ export default function ResourcesPage() {
                     </p>
 </section>
 
-
           {/* Mobile nav — simplest, blur-safe chip list */}
           <div className="md:hidden mt-4 grid grid-cols-3 gap-2">
             {THEMES.map((t) => {
@@ -282,25 +278,7 @@ export default function ResourcesPage() {
                 </button>
               );
             })}
-
-          {/* 🔹 Mobile-only spacer to separate zoomed header/intro/nav from sections */}
-<div className="md:hidden h-4" />
-
           </div>
-
-
-
-            </div>
-          </div>
-
-
-          {/* Desktop sticky sub-nav (outside the zoom for crisp text) */}
-          <div className="hidden md:block sticky top-[64px] z-30 bg-[var(--color-teal-850)]/80">
-            {Nav}
-          </div>
-
-          {/* 🔹 Mobile-only spacer to separate zoomed header/intro/nav from sections */}
-<div className="md:hidden h-4" />
 
                     {/* Mobile-only divider under the nav (above Motivation) */}
 <div className="md:hidden">
@@ -308,6 +286,23 @@ export default function ResourcesPage() {
     <div className="h-px w-full bg-[var(--color-cream)]/15" />
   </div>
 </div>
+
+
+            </div>
+          </div>
+
+          {/* 🔹 Mobile-only spacer to separate zoomed header/intro/nav from sections */}
+<div className="md:hidden h-4" />
+
+
+          {/* Desktop sticky sub-nav (outside the zoom for crisp text) */}
+          <div className="hidden md:block sticky top-[64px] z-30 bg-[var(--color-teal-850)]/80">
+            {Nav}
+          </div>
+
+
+
+
 
 {/* 3) ZOOM WRAPPER — Sections ONLY */}
 <div
@@ -326,7 +321,7 @@ export default function ResourcesPage() {
   <section className="mx-auto max-w-[1200px] px-6 pt-2 pb-20">
     <div className="space-y-14">
       {THEMES.map((theme, idx) => (
-        <section key={theme.slug} id={theme.slug} className="scroll-mt-36 md:scroll-mt-28">
+        <section key={theme.slug} id={theme.slug} className="scroll-mt-28">
           <header className="mb-4">
             <h2 className="font-serif text-[clamp(26px,3.3vw,34px)] opacity-95 mt-12">
               {theme.title}
