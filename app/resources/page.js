@@ -170,11 +170,11 @@ export default function ResourcesPage() {
 
           {/* ===== Sections (now inside the same zoom on mobile) ===== */}
           <section className="mx-auto max-w-[1200px] px-6 pt-0 md:pt-2 pb-20">
-            <div className="space-y-7 md:space-y-14">
+            <div className="space-y-8 md:space-y-14">
               {THEMES.map((theme, idx) => (
                 <section key={theme.slug} id={theme.slug} className="scroll-mt-28">
                   <header className="mb-4">
-                    <h2 className="font-serif text-[clamp(26px,3.3vw,34px)] opacity-95 mt-7 md:mt-12">{theme.title}</h2>
+                    <h2 className="font-serif text-[clamp(26px,3.3vw,34px)] opacity-95 mt-8 md:mt-12">{theme.title}</h2>
                     <div className="h-[2px] w-12 bg-[var(--color-gold)]/85 rounded mt-0" />
                     <p className="opacity-85 mt-3 max-w-3xl">{theme.blurb}</p>
                   </header>
