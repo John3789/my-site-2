@@ -5,22 +5,15 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
 
 type Props = {
-  /** true on the meditation page (disables 30s timer) */
   isMeditationPage?: boolean;
-  /** milliseconds before showing (ignored on meditation page); default 30000 */
   delayMs?: number;
-  /** suppression window in days after showing/submitting; default 7 */
   freqDays?: number;
-  /** localStorage key for suppression timestamp */
   lsKey?: string;
-  /** sessionStorage key to ensure single show per tab session */
   ssKey?: string;
-  /** id of <audio> element to watch for “N seconds from end” */
   audioElementId?: string;
-  /** trigger when playback is this close to end; default 10 */
   secondsFromEnd?: number;
-  /** newsletter endpoint; e.g. "/api/subscribe" */
   formAction?: string;
+  photoSrc?: string;
 };
 
 export default function NewsletterMeditationPopup({
@@ -32,15 +25,13 @@ export default function NewsletterMeditationPopup({
   audioElementId,
   secondsFromEnd = 10,
   formAction = "/api/subscribe",
+  photoSrc = "/bwhero20a.jpg",
 }: Props) {
   const [open, setOpen] = useState(false);
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
-
-  // used to prevent duplicate shows
   const shownRef = useRef<boolean>(false);
 
-  // --- helpers wrapped in useCallback to satisfy exhaustive-deps ---
   const suppressed = useCallback((): boolean => {
     try {
       const raw = localStorage.getItem(lsKey);
@@ -82,46 +73,32 @@ export default function NewsletterMeditationPopup({
     setOpen(true);
   }, [suppressed, sessionShown, markSessionShown]);
 
-  // --- A) Time-based (skip on meditation page) ---
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (isMeditationPage) return;
     if (suppressed() || sessionShown()) return;
 
-    // compute media queries inside effect so they don't need to be deps
-    const isDesktop = !!(window.matchMedia && window.matchMedia("(pointer:fine)").matches);
-    const isMobile = !!(window.matchMedia && window.matchMedia("(pointer:coarse)").matches);
-    if (!(isDesktop || isMobile)) return;
-
     const id = window.setTimeout(() => showOnce(), delayMs);
     return () => window.clearTimeout(id);
   }, [delayMs, isMeditationPage, suppressed, sessionShown, showOnce]);
 
-  // --- B) Exit intent: DISABLED by request ---
-  // (intentionally removed)
-
-  // --- C) Audio trigger (desktop & mobile): show when within N seconds from end ---
   useEffect(() => {
     if (typeof document === "undefined" || !audioElementId) return;
     if (suppressed() || sessionShown()) return;
-
     const el = document.getElementById(audioElementId) as HTMLAudioElement | null;
     if (!el) return;
 
     let armed = false;
-
     const onLoaded = () => {
       if (!el.duration || !Number.isFinite(el.duration)) return;
       armed = true;
     };
-
     const onTimeUpdate = () => {
       if (!armed || shownRef.current) return;
       if (!el.duration || !Number.isFinite(el.duration)) return;
       const threshold = Math.max(0, el.duration - secondsFromEnd);
       if (el.currentTime >= threshold) showOnce();
     };
-
     const onEnded = () => {
       if (!shownRef.current) showOnce();
     };
@@ -138,7 +115,6 @@ export default function NewsletterMeditationPopup({
     };
   }, [audioElementId, secondsFromEnd, suppressed, sessionShown, showOnce]);
 
-  // --- UI handlers ---
   const dismiss = useCallback(() => {
     setOpen(false);
     markSuppressed();
@@ -169,7 +145,6 @@ export default function NewsletterMeditationPopup({
       markSuppressed();
       setSuccess(true);
     } catch {
-      // allow preview flow even if endpoint isn't wired yet
       markSuppressed();
       setSuccess(true);
     } finally {
@@ -188,67 +163,109 @@ export default function NewsletterMeditationPopup({
       onKeyDown={onEsc}
       className="fixed inset-0 z-[100] flex items-center justify-center p-4"
     >
-      {/* backdrop */}
+      {/* Backdrop */}
       <button
         aria-label="Close popup"
         onClick={dismiss}
-        className="absolute inset-0 cursor-default bg-black/50"
+        className="absolute inset-0 cursor-default bg-black/55"
       />
 
-      {/* panel */}
-      <div className="relative w-full max-w-md rounded-2xl border border-white/15 bg-[var(--color-teal-850)] p-5 text-[var(--color-cream)] shadow-2xl">
+      {/* Card — visually identical to newsletter footer */}
+      <div
+        className="
+          relative w-full max-w-[640px]
+          rounded-xl
+          bg-[#0d1d2d] text-[var(--color-cream)]
+          ring-1 ring-white/10
+          shadow-[0_6px_25px_rgba(0,0,0,0.45)]
+          hover:bg-[#102438] transition
+          overflow-hidden p-[2px]
+        "
+      >
         <button
           onClick={dismiss}
           aria-label="Close"
-          className="absolute right-3 top-3 inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/20 text-sm opacity-80 hover:opacity-100"
+          className="absolute right-3 top-3 inline-flex h-8 w-8 items-center justify-center border border-white/15 text-sm opacity-80 hover:opacity-100 bg-transparent"
         >
           ✕
         </button>
 
         {!success ? (
-          <div className="flex flex-col gap-3">
-            <h3 className="font-serif text-xl leading-tight">I&rsquo;d love to gift this meditation to you</h3>
-            <p className="opacity-85 text-sm">
-              Get a 5-minute guided meditation you can download for everyday resets &mdash; and join my
-              monthly newsletter, <span className="italic">Science, Soul, and a Bit of Magic</span>, where I share
-              practical wisdom on mental health, personal growth, and wellbeing.
-            </p>
-
-            <form onSubmit={handleSubmit} className="mt-2 flex flex-col gap-2">
-              <input
-                type="email"
-                name="email"
-                required
-                placeholder="Your email"
-                className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 outline-none placeholder:opacity-60 focus:bg-white/[0.07]"
+          <div className="grid grid-cols-[170px_1fr] sm:grid-cols-[220px_1fr]">
+            {/* Photo */}
+            <div className="h-full w-full bg-black/20">
+              <img
+                src={photoSrc}
+                alt="Dr. Juan Pablo Salerno"
+                className="h-full w-full object-cover object-center rounded-l-xl"
               />
-              <button
-                type="submit"
-                disabled={loading}
-                className="inline-flex items-center justify-center rounded-xl border border-[var(--color-gold)] bg-[var(--color-gold)] px-4 py-3 text-black font-semibold shadow-sm hover:brightness-105 active:translate-y-[1px] disabled:opacity-80"
-              >
-                {loading ? "Sending…" : "Subscribe"}
-              </button>
-            </form>
+            </div>
 
-            <p className="text-[12px] opacity-70">No spam. Unsubscribe anytime.</p>
-            <button onClick={dismiss} className="self-start text-[12px] underline opacity-75 hover:opacity-100">
-              No thanks
-            </button>
+            {/* Text + form */}
+            <div className="p-5">
+              <h3 className="font-serif text-[27px] md:text-[30px] leading-tight mb-2 opacity-90">
+                Please receive this guided meditation as a personal gift
+              </h3>
+              <p className="text-[15px] md:text-[18px] opacity-90">
+ Enjoy my 5-minute reset meditation to help you recenter whenever you need it.{" "}
+  I’d be honored if you joined my monthly newsletter community,{" "}
+  <span className="italic">Science, Soul, and a Bit of Magic</span>, for practical wisdom to nourish
+your body, mind, and spirit.
+</p>
+
+              <form onSubmit={handleSubmit} className="mt-4 space-y-3">
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="you@example.com"
+                  className="
+                    w-full rounded-md border border-white/15 bg-white/5
+                    px-4 py-3 outline-none placeholder-white/60
+                    focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50
+                    text-[15px]
+                  "
+                />
+
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="
+                    inline-flex w-full items-center justify-center
+                    rounded-md bg-[var(--color-gold)] text-black
+                    px-4 py-3 font-semibold
+                    shadow-md hover:shadow-lg hover:-translate-y-[1px]
+                    transition disabled:opacity-80
+                  "
+                >
+                  {loading ? "Sending…" : "Subscribe"}
+                </button>
+              </form>
+
+
+              <button
+                onClick={dismiss}
+                className="mt-1 text-[12px] underline opacity-75 hover:opacity-100"
+              >
+              </button>
+            </div>
           </div>
         ) : (
-          <div className="flex flex-col items-center text-center gap-3 p-1">
-            <h3 className="font-serif text-xl leading-tight">Thank you &mdash; I&rsquo;m so glad you&rsquo;re here</h3>
-            <p className="text-sm opacity-85">
+          <div className="p-5 text-center">
+            <h3 className="font-serif text-[27px] md:text-[30px] leading-tight tracking-[0.02em] opacity-90">
+              Thank you — I’m so glad you’re here
+            </h3>
+            <p className="mt-2 text-[15px] md:text-[18px] opacity-90">
               Your 5-minute guided meditation download is waiting in your inbox.
               <br />
-              Your first <span className="italic">Science, Soul, and a Bit of Magic</span> newsletter will arrive soon
-              &mdash; one thoughtful note each month to support you in body, mind, and spirit.
+              Your first <span className="italic">Science, Soul, and a Bit of Magic</span> newsletter will arrive soon.
             </p>
 
             <Link
               href="/"
-              className="mt-3 inline-flex items-center justify-center rounded-xl border border-[var(--color-gold)] bg-[var(--color-gold)] px-5 py-3 text-black font-semibold shadow-sm hover:brightness-105 active:translate-y-[1px]"
+              onClick={dismiss}
+    className="inline-flex items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
+
             >
               Back to the website
             </Link>
