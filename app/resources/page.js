@@ -245,7 +245,6 @@ export default function ResourcesPage() {
             </h1>
                             <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 mx-auto mt-4 mb-6 rounded" />
 
-                            <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]" />
 
             {/* ===== INTRO (text only, centered — matches Meditations) ===== */}
 <section className="mx-auto max-w-[900px] px-6 text-center mb-6">
@@ -290,6 +289,7 @@ export default function ResourcesPage() {
   </div>
 </div>
 
+                            <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]" />
 
             </div>
           </div>
