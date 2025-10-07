@@ -230,7 +230,7 @@ export default function ResourcesPage() {
             </div>
 
 {/* MOBILE footer — match Consulting width */}
-<div className="md:hidden relative left-1/2 right-1/2 w-screen -mx-[50vw] px-3 mt-8">
+<div className="md:hidden relative left-1/2 right-1/2 w-screen -mx-[50vw] px-3 mt-8 -mb-20">
   {/* inner container to mirror Consulting’s feel */}
   <div className="mx-auto max-w-[1100px]">
     {/* Divider (optional) */}
