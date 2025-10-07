@@ -237,7 +237,6 @@ export default function ResourcesPage() {
   `}
         >
 
-                            <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]" />
 
           {/* Title + Intro (now inside the zoom so sizes match) */}
           <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-6">
@@ -260,6 +259,8 @@ export default function ResourcesPage() {
                   new content.
                     </p>
 </section>
+
+                            <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]" />
 
           {/* Mobile nav — simplest, blur-safe chip list */}
           <div className="md:hidden mt-4 grid grid-cols-3 gap-2">
