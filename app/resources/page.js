@@ -222,6 +222,8 @@ export default function ResourcesPage() {
     <>
       <main className="relative isolate min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
         {/* background guard to prevent mid-page tint on mobile */}
+        <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]" />
+
 
         {/* 1) ZOOM WRAPPER — Title + Intro ONLY */}
         <div
@@ -293,7 +295,6 @@ export default function ResourcesPage() {
             </div>
           </div>
 
-                            <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]" />
 
           {/* 🔹 Mobile-only spacer to separate zoomed header/intro/nav from sections */}
 <div className="md:hidden h-45" />
