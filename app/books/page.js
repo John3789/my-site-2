@@ -1,5 +1,6 @@
 import Link from "next/link";
 import TopOnMount from "../../components/TopOnMount";
+import NewsletterMeditationPopup from "../../components/NewsletterMeditationPopup";
 
 export default function BooksPage() {
   return (
@@ -428,6 +429,7 @@ Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal gro
           }
         `}</style>
       </>
+<NewsletterMeditationPopup delayMs={10000} />
     </TopOnMount>
   );
 }

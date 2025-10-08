@@ -18,7 +18,7 @@ type Props = {
 
 export default function NewsletterMeditationPopup({
   isMeditationPage = false,
-  delayMs = 30000,
+  delayMs = 25000,
   freqDays = 7,
   lsKey = "__popup_suppress_until__",
   ssKey = "__popup_shown_this_session__",
@@ -261,14 +261,13 @@ your body, mind, and spirit.
               Your first <span className="italic">Science, Soul, and a Bit of Magic</span> newsletter will arrive soon.
             </p>
 
-            <Link
-              href="/"
-              onClick={dismiss}
-    className="inline-flex items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 mt-3"
-
-            >
-              Back to the website
-            </Link>
+<button
+  type="button"
+  onClick={dismiss}
+  className="inline-flex items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 mt-3"
+>
+  Back to the website
+</button>
           </div>
         )}
       </div>

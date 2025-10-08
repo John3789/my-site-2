@@ -2,7 +2,7 @@
 import TopOnMount from "../../components/TopOnMount";
 import Image from "next/image";
 import Link from "next/link";
-
+import NewsletterMeditationPopup from "../../components/NewsletterMeditationPopup";
 
 export default function AboutPage() {
   return (
@@ -42,8 +42,8 @@ export default function AboutPage() {
                 <p className="space-y-6 text-lg mb-4 opacity-90 leading-loose">
                   Dr. Juan Pablo Salerno, also known in academic spaces as{" "}
                   <strong>Dr. John P. Salerno</strong>, is a mental health scientist, professor,
-                  personal growth expert, and 30x published peer-reviewed author, cited
-                  nearly 2000x in the last decade (2016 - present). He has over 14 years of experience
+                  personal growth expert, and author, recognized for 30 peer-reviewed publications with 
+                  over 2000 citations in the last decade (2016 - present). He has over 14 years of experience
                   working in top academic institutions, including Columbia University, George Washington
                   University, University of Maryland, and University of Miami. He is committed to sharing
                   his lived experience, wisdom, and expertise to guide others in overcoming mental health
@@ -234,6 +234,7 @@ Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal gro
         </main>
       </div>
     </>
+<NewsletterMeditationPopup delayMs={10000} />
                 </TopOnMount>
 
   );

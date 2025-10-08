@@ -11,7 +11,7 @@ export default function Home() {
           
           <NewsletterMeditationPopup
   isMeditationPage={false}
-  delayMs={30000}
+  delayMs={20000}
   freqDays={7}
   formAction="/api/subscribe"
 />

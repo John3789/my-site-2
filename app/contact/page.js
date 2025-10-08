@@ -4,6 +4,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import SocialFooter from '../../components/SocialFooter';
+import NewsletterMeditationPopup from "../../components/NewsletterMeditationPopup";
 
 export default function ContactPage() {
   const [sent, setSent] = useState(false);
@@ -430,6 +431,7 @@ Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal gro
 <div className="hidden md:block mx-auto max-w-[1200px] px-6 mt-12">
   <hr className="border-t border-[var(--color-cream)]/22" />
 </div>
+<NewsletterMeditationPopup delayMs={5000} />
     </main>
   );
 }

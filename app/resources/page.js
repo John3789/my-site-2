@@ -2,6 +2,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import NewsletterMeditationPopup from "../../components/NewsletterMeditationPopup";
 
 /* =========================
    THEMES DATA
@@ -331,7 +332,7 @@ export default function ResourcesPage() {
           </section>
         </div>
 
-
+<NewsletterMeditationPopup delayMs={20000} />
       </main>
 
       <style jsx global>{`
@@ -384,5 +385,6 @@ function CollectionModal({ open, onClose, collection }) {
         </div>
       </div>
     </div>
+    
   );
 }

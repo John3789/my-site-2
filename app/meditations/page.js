@@ -1,5 +1,7 @@
 // app/meditations/page.js
 import TopOnMount from "../../components/TopOnMount";
+import NewsletterMeditationPopup from "../../components/NewsletterMeditationPopup";
+
 
 
 export default function MeditationsPage() {
@@ -253,6 +255,7 @@ Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal gro
 
         </div>
       </>
+<NewsletterMeditationPopup delayMs={20000} />
     </TopOnMount>
   );
 }
