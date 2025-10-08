@@ -119,12 +119,28 @@ h1, h2, h3, h4, h5, h6 {
   /* default (portrait): nothing special; Tailwind handles it */
 }
 
+/* --- Newsletter card behaviors --- */
+
+/* Default (portrait): centered, capped like you have now */
+.newsletter-card {
+  width: 100%;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Landscape: make it extend full container width (like desktop) */
 @media (orientation: landscape) {
-  /* Use the short side as width, capped to your portrait max */
-  .footer-card-portrait {
-    width: min(100vh, 520px);
-    max-width: none;      /* ignore any max-w caps in landscape */
-    margin-left: auto;
-    margin-right: auto;   /* keep it centered */
+  .newsletter-card--extend {
+    max-width: none;     /* remove the 520px cap */
+    width: 100%;         /* fill the available width */
+  }
+}
+
+/* If you ever want the *same portrait width* in landscape instead, use this variant: */
+@media (orientation: landscape) {
+  .newsletter-card--portrait-lock {
+    width: min(100vh, 520px);  /* approximate portrait width using short side */
+    max-width: none;
   }
 }
