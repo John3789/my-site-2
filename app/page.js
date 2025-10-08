@@ -308,8 +308,27 @@ export default function Home() {
 </div>
 
 <div className="md:hidden mx-auto max-w-[1400px] px-3">
-  {/* Newsletter card (midnight blue) */}
-  <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
+ {/* Newsletter card — portrait unchanged; landscape = full-bleed + centered */}
+<div
+  className="
+    /* full-bleed wrapper applies only in landscape */
+    landscape:relative landscape:left-1/2 landscape:-translate-x-1/2
+    landscape:w-[100svw]
+    landscape:pl-[max(env(safe-area-inset-left),1rem)]
+    landscape:pr:[max(env(safe-area-inset-right),1rem)]
+  "
+>
+    </div>
+
+  <div
+    className="
+      rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl
+      w-full
+      landscape:text-center
+      /* optional sensible cap in landscape so it doesn’t get too wide on tablets */
+      landscape:mx-auto landscape:max-w-[1100px]
+    "
+  >
     <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
       Science, Soul, and a Bit of Magic — Every Month
     </p>
@@ -383,15 +402,13 @@ Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal gro
       </div>
 
 
-        
-          {/* Home: section/bookend divider (aligns to 1400px container) */}
-<div className="mx-auto max-w-[1400px] px-6">
-  <hr className="border-t border-[var(--color-cream)]/22" />
-</div>
-  </section>
-      </div>
+        </section>
 
-        </main>
-        
-  )
+       {/* Home: section/bookend divider (aligns to 1400px container) */}
+      <div className="mx-auto max-w-[1400px] px-6">
+        <hr className="border-t border-[var(--color-cream)]/22" />
+      </div>
+    </div> {/* end zoom wrapper */}
+  </main>
+  );
 }
