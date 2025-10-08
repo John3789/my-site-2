@@ -303,7 +303,8 @@ export default function Home() {
               </div>
             </div>
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
-<div className="md:hidden mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
+{/* show mobile footer up to lg (≥1024 becomes desktop) */}
+<div className="lg:hidden mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
   <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
 </div>
 
