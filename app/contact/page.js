@@ -3,7 +3,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import SocialFooter from '../../components/SocialFooter';
 import NewsletterMeditationPopup from "../../components/NewsletterMeditationPopup";
 
 export default function ContactPage() {
