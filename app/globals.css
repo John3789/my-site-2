@@ -113,3 +113,20 @@ h1, h2, h3, h4, h5, h6 {
 .nav-active {
   box-shadow: inset 0 -2px 0 0 var(--color-cream);
 }
+
+/* Home (mobile): tint ONLY the overflow area above <main> */
+@media (max-width: 767px) {
+  #main {
+    position: relative;        /* anchor the pseudo-element */
+  }
+  #main::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100%;              /* sit directly above <main> */
+    height: 200vh;             /* big enough to cover any overspill */
+    background: var(--color-teal-800);
+    pointer-events: none;      /* never block taps */
+  }
+}
