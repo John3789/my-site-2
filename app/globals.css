@@ -113,26 +113,3 @@ h1, h2, h3, h4, h5, h6 {
 .nav-active {
   box-shadow: inset 0 -2px 0 0 var(--color-cream);
 }
-
-/* Home (mobile): tint the ENTIRE area above <main> */
-@media (max-width: 767px) {
-  #main {
-    position: relative; /* anchor the pseudo-element */
-  }
-  #main::before {
-    content: "";
-    position: absolute;
-
-    /* Make it span the viewport, even if #main is narrower due to your zoom wrapper */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100vw;
-
-    /* Extend far above the top edge of <main> */
-    bottom: 100%;
-    height: 9999px;       /* go big so it always reaches */
-
-    background: var(--color-teal-800);
-    pointer-events: none;
-  }
-}
