@@ -113,11 +113,3 @@ h1, h2, h3, h4, h5, h6 {
 .nav-active {
   box-shadow: inset 0 -2px 0 0 var(--color-cream);
 }
-
-/* Normalize iOS text auto-scale */
-html { -webkit-text-size-adjust: 100%; }
-
-/* Stop iOS auto-zoom when focusing inputs */
-@media (max-width: 767px) {
-  input, select, textarea { font-size: 16px !important; }
-}
