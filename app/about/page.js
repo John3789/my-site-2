@@ -41,8 +41,8 @@ export default function AboutPage() {
               <div>
                 <p className="space-y-6 text-lg mb-4 opacity-90 leading-loose">
                   Dr. Juan Pablo Salerno, also known in academic spaces as{" "}
-                  <strong>Dr. John P. Salerno</strong>, is an award-winning mental health scientist, personal growth expert, professor
-                  and author—credited with more than 30 peer-reviewed publications and 
+                  <strong>Dr. John P. Salerno</strong>, is an award-winning mental health scientist, personal growth expert, author
+                  and professor—credited with more than 30 peer-reviewed publications and 
                   over 2000 citations in the last decade (2016 - present). He has over 14 years of experience
                   working in top academic institutions, including Columbia University, George Washington
                   University, University of Maryland, and University of Miami. He is committed to sharing
@@ -77,11 +77,12 @@ export default function AboutPage() {
               {/* Paragraph 3 */}
               <p className="space-y-6 text-lg opacity-90 leading-loose">
                 Dr. Salerno’s expertise is rooted in science and shaped by personal transformation.
-                Having experienced his own lowest point in mental health, he dedicated years to therapy
-                and recovery. After achieving remission, he expanded his self-improvement process by
-                exploring personal growth practices — including meditation, Feng Shui, and manifestation
-                — learning from some of the most well-known experts in the field. Through his journey,
-                he continues to transcend into his highest self and uncover his deeper purpose.
+                After reaching his lowest point in mental health, he devoted years to therapy
+                and recovery. But remission wasn't the destination - it was the beginning. Seeking 
+                something greater than the absence of suffering, he broadened his path to healing 
+                through personal growth practices such as meditation, Feng Shui, and manifestation,
+                learning from some of the most respected experts in the field. Through this journey,
+                he continues to ascend toward his highest self and uncover his deeper purpose.
               </p>
 
               {/* Mission */}
@@ -93,8 +94,8 @@ export default function AboutPage() {
                 <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto mt-3 mb-8 rounded" />
                 <p className="space-y-6 text-lg opacity-90 leading-loose">
                   To blend science and personal growth wisdom to help individuals and communities rise
-                  above mental health struggle, unlock hidden potential, and live abundant lives with
-                  higher purpose.
+                  above mental health challenges, unlock hidden potential, and live with greater purpose
+                  and abundance.
                 </p>
               </section>
 
@@ -106,14 +107,14 @@ export default function AboutPage() {
                 </h2>
                 <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto mt-3 mb-8 rounded" />
                 <p className="space-y-6 text-lg opacity-90 leading-loose">
-                  Today, Dr. Salerno continues conducting research with the goal of making scientific
-                  discoveries relevant for improving mental health. He also teaches at the university
-                  level, where he inspires the next generation of scholars and practitioners. Alongside
-                  his academic work, he is pursuing his personal growth journey and is currently working
-                  on a forthcoming book that weaves science and personal growth wisdom to guide others
-                  toward balance, purpose, fulfillment, and mental wellness. On this site, you can
-                  explore his offerings, including publications, consulting, public speaking, guided
-                  meditations, and resources for personal growth and mental health.
+                 Today, Dr. Salerno continues advancing research that bridges scientific discovery with 
+                 real-world impact on mental health. As a university educator, he mentors the next generation 
+                 of scholars and practitioners with a focus on purpose, wellbeing, and community. Alongside his 
+                 academic work, he is building a personal brand that integrates science and soul. His forthcoming 
+                 book weaves scientific insight and personal growth wisdom to guide others toward balance, purpose, fulfillment, 
+                 and mental wellness. On this site, you can explore his offerings - including organizational wellness
+                 consulting, public speaking, guided meditations, evidence-informed resources for personal growth 
+                 and mental health, and current publications.
                 </p>
               </section>
 
