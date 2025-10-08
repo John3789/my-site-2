@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import NewsletterMeditationPopup from "../components/NewsletterMeditationPopup";
-import SocialFooter from "../components/SocialFooter";
 import NewsletterSignup from "../components/NewsletterSignup";
 
 
