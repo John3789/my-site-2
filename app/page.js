@@ -308,7 +308,23 @@ export default function Home() {
 
 <div className="md:hidden mx-auto max-w-[1400px] px-3">
   {/* Newsletter card (midnight blue) */}
-  <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
+  <div
+    className="
+      w-full max-w-[520px] mx-auto
+      rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10
+
+      /* In landscape, keep the same *visual* width as portrait:
+         - use the short side (100vh) as width
+         - cap to the same max (520px)
+         - center it
+      */
+      [@media(orientation:landscape)]:w-[min(100vh,520px)]
+      [@media(orientation:landscape)]:max-w-none
+      [@media(orientation:landscape)]:mx-auto
+      [@media(orientation:landscape)]:col-span-full
+      [@media(orientation:landscape)]:basis-full
+    "
+  >
     <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
       Science, Soul, and a Bit of Magic — Every Month
     </p>
