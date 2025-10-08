@@ -15,10 +15,10 @@ export default function Home() {
   formAction="/api/subscribe"
 />
       {/* spacer to clear the fixed header (keep) */}
-      <div aria-hidden className="h-8 bg-[var(--color-teal-800)]" />
+      <div aria-hidden className="hidden md:block h-8 bg-[var(--color-teal-800)]" />
 
       {/* DESKTOP/TABLET nameplate — unchanged */}
-      <section id="home" className="bg-[var(--color-teal-800)] text-[var(--color-cream)]">
+      <section id="home" className="hidden md:block bg-[var(--color-teal-800)] text-[var(--color-cream)]">
         <div className="mx-auto max-w-[1400px] px-6 pt-0 pb-4">
           <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
             <span className="hidden md:block text-7xl hover:opacity-90 transition">
