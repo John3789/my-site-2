@@ -339,7 +339,7 @@ export default function Home() {
 
 
   {/* --- MOBILE Jay-style footer block --- */}
-<div className="md:hidden mt-6 text-[13px] leading-relaxed">
+<div className="lg:hidden mt-6 text-[13px] leading-relaxed">
 
   {/* 1) Heading */}
   <p className="uppercase tracking-[0.18em] text-left opacity-70">
