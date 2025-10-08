@@ -302,7 +302,7 @@ export default function Home() {
               </div>
             </div>
 {/* PAGE-LEVEL MOBILE FOOTER (portrait + landscape) */}
-<div className="block md:hidden">
+<div className="block lg:hidden">
   {/* --- divider --- */}
   <div className="w-full px-6 mb-14 -mt-5">
     <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
@@ -339,7 +339,7 @@ export default function Home() {
 
 
   {/* --- MOBILE Jay-style footer block --- */}
-<div className="block md:hidden mt-6 text-[13px] leading-relaxed">
+<div className="block lg:hidden mt-6 text-[13px] leading-relaxed">
 
   {/* 1) Heading */}
   <p className="uppercase tracking-[0.18em] text-left opacity-70">
