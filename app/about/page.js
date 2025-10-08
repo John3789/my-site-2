@@ -146,7 +146,7 @@ export default function AboutPage() {
 
                                       {/* Home: section/bookend divider (aligns to 1400px container) */}
 <div className="mx-auto max-w-[1000px] px-6">
-  <hr className="border-t border-[var(--color-cream)]/22 -mt-12" />
+  <hr className="border-t border-[var(--color-cream)]/22 -mt-10" />
 </div>
 
 <div className="md:hidden mx-auto max-w-[1400px] px-3">
