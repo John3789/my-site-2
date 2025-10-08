@@ -53,7 +53,7 @@ export default function RootLayout({ children }) {
  <body className="min-w-[1200px] bg-[#F4F1EA] text-[#0C1415] antialiased [text-rendering:optimizeLegibility] [-webkit-font-smoothing:antialiased]">
         <Header />
 
-<Script id="ios-viewport-nudge-2" strategy="afterInteractive">
+<Script id="ios-viewport-nudge-2" strategy="beforeInteractive">
 {`
   (function () {
     var isiOS = /iP(hone|ad|od)/.test(navigator.userAgent);
@@ -94,6 +94,9 @@ export default function RootLayout({ children }) {
     function blurIfNeeded() {
       var el = document.activeElement;
       if (!el) return;
+      // allow opt-out with data-allow-autofocus="true"
+      var allow = el.matches && el.matches('[data-allow-autofocus="true"]');
+      if (allow) return;
       if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.isContentEditable) el.blur();
     }
     document.addEventListener('DOMContentLoaded', () => setTimeout(blurIfNeeded, 0), { once: true });
