@@ -6,6 +6,7 @@ import SocialFooter from '../components/SocialFooter'
 import { Analytics } from '@vercel/analytics/react'
 import Header from '../components/Header'
 import NewsletterSignup from '../components/NewsletterSignup'
+import Script from 'next/script';
 
 // Sans font for body text
 const inter = Inter({
@@ -51,6 +52,48 @@ export default function RootLayout({ children }) {
       {/* single body (no nesting) */}
  <body className="min-w-[1200px] bg-[#F4F1EA] text-[#0C1415] antialiased [text-rendering:optimizeLegibility] [-webkit-font-smoothing:antialiased]">
         <Header />
+
+<Script id="ios-viewport-nudge" strategy="afterInteractive">
+{`
+  (function () {
+    var vp = document.querySelector('meta[name="viewport"]');
+    var base = 'width=device-width, initial-scale=1, viewport-fit=cover';
+    function nudge() {
+      if (!vp) {
+        vp = document.createElement('meta');
+        vp.name = 'viewport';
+        document.head.appendChild(vp);
+      }
+      try {
+        // Force iOS to recalc at 1.0…
+        vp.setAttribute('content', base + ', maximum-scale=1');
+        // …then immediately restore zoomability.
+        setTimeout(function(){ vp.setAttribute('content', base); }, 0);
+      } catch (e) {}
+    }
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      nudge();
+    } else {
+      document.addEventListener('DOMContentLoaded', nudge, { once: true });
+    }
+    window.addEventListener('pageshow', nudge);
+  })();
+`}
+</Script>
+
+<Script id="ios-blur-active-input" strategy="afterInteractive">
+{`
+  (function () {
+    function blurIfNeeded() {
+      var el = document.activeElement;
+      if (!el) return;
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.isContentEditable) el.blur();
+    }
+    document.addEventListener('DOMContentLoaded', () => setTimeout(blurIfNeeded, 0), { once: true });
+    window.addEventListener('pageshow', () => setTimeout(blurIfNeeded, 0));
+  })();
+`}
+</Script>
 
         {children}
 
