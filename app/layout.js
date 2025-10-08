@@ -109,7 +109,7 @@ export default function RootLayout({ children }) {
 
 <FooterGate>
           {/* DESKTOP-ONLY FOOTER (kept intentionally) */}
-  <footer className="hidden md:block py-10 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
+  <footer className="hidden lg:block py-10 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
     <div className="mx-auto w-full max-w-[1680px] grid grid-cols-1 md:grid-cols-[1fr_minmax(0,1.05fr)] gap-y-10 gap-x-24 items-end">
 
       {/* LEFT — Name + Terms + Privacy (perfect, unchanged) */}
