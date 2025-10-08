@@ -310,7 +310,7 @@ export default function Home() {
 
   {/* --- blue newsletter card --- */}
   <div className="w-full px-3">
-<div className="newsletter-card--extend rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
+<div className="newsletter-card--portrait-lock rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
       <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
         Science, Soul, and a Bit of Magic — Every Month
       </p>
