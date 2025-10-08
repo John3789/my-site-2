@@ -26,8 +26,8 @@ export default function Header() {
 
   // Header background logic (exactly what you wanted)
   const headerClass = isHome
-    ? "hidden fixed inset-x-0 top-0 z-[9999] !bg-transparent text-[var(--color-cream)] pointer-events-auto"
-    : "hidden fixed inset-x-0 top-0 z-[9999] !bg-transparent text-[var(--color-cream)] pointer-events-auto";
+    ? "fixed inset-x-0 top-0 z-[9999] !bg-transparent text-[var(--color-cream)] pointer-events-auto"
+    : "fixed inset-x-0 top-0 z-[9999] !bg-transparent text-[var(--color-cream)] pointer-events-auto";
 
   return (
     <>
