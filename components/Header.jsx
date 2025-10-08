@@ -26,8 +26,8 @@ export default function Header() {
 
   // Header background logic (exactly what you wanted)
   const headerClass = isHome
-    ? "fixed inset-x-0 top-0 z-[9999] !bg-transparent text-[var(--color-cream)] pointer-events-auto"
-    : "fixed inset-x-0 top-0 z-[9999] !bg-transparent text-[var(--color-cream)] pointer-events-auto";
+    ? "hidden fixed inset-x-0 top-0 z-[9999] !bg-transparent text-[var(--color-cream)] pointer-events-auto"
+    : "hidden fixed inset-x-0 top-0 z-[9999] !bg-transparent text-[var(--color-cream)] pointer-events-auto";
 
   return (
     <>
@@ -82,7 +82,7 @@ export default function Header() {
       leading-none
     "
   >
-    <span className="text-lg lg:text-xl">DR. JUAN PABLO SALERNO</span>
+    <span className="hidden text-lg lg:text-xl">DR. JUAN PABLO SALERNO</span>
     <sup className="text-lg align-super opacity-70">™</sup>
   </Link>
 )}
