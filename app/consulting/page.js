@@ -127,7 +127,7 @@ export default function ConsultingPage() {
             <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 rounded" />
             <p className="text-lg opacity-85 max-w-[780px] mx-auto mt-12 leading-relaxed">
               Evidence-based consulting that helps organizations design, implement, evaluate, and scale
-              strategies to strengthen mental health, wellbeing, resilience, and growth.sdfsdfsdf
+              strategies to strengthen mental health, wellbeing, resilience, and growth.
             </p>
           </section>
 
