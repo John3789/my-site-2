@@ -302,16 +302,15 @@ export default function Home() {
                 </div>
               </div>
             </div>
-{/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
-{/* show mobile footer up to lg (≥1024 becomes desktop) */}
-<div className="lg:hidden mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
+{/* --- MOBILE divider + footer --- */}
+<div className="lg:hidden w-full px-6 mb-14 -mt-5">
   <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
 </div>
 
-<div className="lg:hidden mx-auto max-w-[1400px] px-3">
+<div className="lg:hidden w-full px-3">
   {/* Newsletter card (midnight blue) */}
-  {/* force full width even when device is landscape */}
-  <div className="w-full rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10 landscape:w-full">
+  <div className="w-full max-w-none rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10
+                  [@media(orientation:landscape)]:w-full">
     <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
       Science, Soul, and a Bit of Magic — Every Month
     </p>
