@@ -229,7 +229,7 @@ Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal gro
         </main>
       </div>
     </>
-<NewsletterMeditationPopup delayMs={10000} />
+<NewsletterMeditationPopup delayMs={15000} />
                 </TopOnMount>
 
   );
