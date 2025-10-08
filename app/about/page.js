@@ -22,7 +22,7 @@ export default function AboutPage() {
           md:[width:100%]
           landscape:[transform:scale(var(--zoomL))]
           landscape:[width:calc(100%/var(--zoomL))]
-          overflow-hidden
+          overflow-visible
         "
       >
         <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
