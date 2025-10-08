@@ -3,6 +3,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import NewsletterMeditationPopup from "../components/NewsletterMeditationPopup";
+import SocialFooter from "../components/SocialFooter";
+import NewsletterSignup from "../components/NewsletterSignup";
+
 
 export default function Home() {
   return (
@@ -299,6 +302,40 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            {/* --- MOBILE footer (inside zoom, full-bleed like other pages) --- */}
+<div className="md:hidden relative left-1/2 right-1/2 w-screen -mx-[50vw] px-3 mt-8 -mb-20">
+  <div className="mx-auto max-w-[1100px]">
+    {/* Divider */}
+    <div className="mt-0 mb-10">
+      <hr className="border-t border-[var(--color-cream)]/22" />
+    </div>
+
+    {/* Newsletter card */}
+    <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl">
+      <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-1">
+        Science, Soul, and a Bit of Magic — Every Month
+      </p>
+      <p className="text-sm opacity-85 mb-3">
+        Practical wisdom for modern minds — best paired with coffee and curiosity.
+      </p>
+      <NewsletterSignup />
+    </div>
+
+    {/* Socials */}
+    <div className="mt-6">
+      <SocialFooter />
+    </div>
+
+    {/* Legal */}
+    <p className="mt-5 text-left opacity-85 text-[13px]">
+      © Dr. Juan Pablo Salerno™ · All rights reserved ·{" "}
+      <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
+      <span className="mx-2 opacity-50">·</span>
+      <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
+    </p>
+  </div>
+</div>
+
           </section>
           {/* Home: section/bookend divider (aligns to 1400px container) */}
 <div className="mx-auto max-w-[1400px] px-6">
