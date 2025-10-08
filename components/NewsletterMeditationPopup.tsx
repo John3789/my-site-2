@@ -204,13 +204,13 @@ export default function NewsletterMeditationPopup({
             {/* Text + form */}
             <div className="p-5">
               <h3 className="font-serif text-[27px] md:text-[30px] leading-tight mb-2 opacity-90">
-                Please receive this guided meditation as a personal gift
+                Please accept this guided meditation as a personal gift
               </h3>
-              <p className="text-[15px] md:text-[18px] opacity-90">
+              <p className="text-[14px] md:text-[17px] opacity-90">
  Enjoy my 5-minute reset meditation to help you recenter whenever you need it.{" "}
-  I’d be honored if you joined my monthly newsletter community,{" "}
-  <span className="italic">Science, Soul, and a Bit of Magic</span>, for practical wisdom to nourish
-your body, mind, and spirit.
+  I’d be honored if you joined my monthly newsletter,{" "}
+  <span className="italic">Science, Soul, and a Bit of Magic</span>, for practical wisdom (with
+  a little cheek) to nourish your body, mind, and spirit.
 </p>
 
               <form onSubmit={handleSubmit} className="mt-4 space-y-3">
