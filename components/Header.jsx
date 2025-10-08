@@ -82,7 +82,7 @@ export default function Header() {
       leading-none
     "
   >
-    <span className="text-lg lg:text-xl">DR. JUAN PABLO SALERNO</span>
+    <span className="hidden text-lg lg:text-xl">DR. JUAN PABLO SALERNO</span>
     <sup className="text-lg align-super opacity-70">™</sup>
   </Link>
 )}

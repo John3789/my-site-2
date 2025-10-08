@@ -7,7 +7,7 @@ import NewsletterMeditationPopup from "../components/NewsletterMeditationPopup";
 
 export default function Home() {
   return (
-        <main id="main" className="bg-[var(--color-teal-850)] text-[var(--color-cream)] text-[17px]">
+        <main id="main" className="!bg-[var(--color-teal-850)] text-[var(--color-cream)] text-[17px]">
           
           <NewsletterMeditationPopup
   isMeditationPage={false}
@@ -16,10 +16,10 @@ export default function Home() {
   formAction="/api/subscribe"
 />
       {/* spacer to clear the fixed header (keep) */}
-      <div aria-hidden className="h-8 bg-[var(--color-teal-800)]" />
+      <div aria-hidden className="h-8 !bg-[var(--color-teal-800)]" />
 
       {/* DESKTOP/TABLET nameplate — unchanged */}
-      <section id="home" className="bg-[var(--color-teal-800)] !text-[var(--color-cream)]">
+      <section id="home" className="!bg-[var(--color-teal-800)] !text-[var(--color-cream)]">
         <div className="mx-auto max-w-[1400px] px-6 pt-0 pb-4">
           <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
             <span className="block text-7xl hover:opacity-90 transition">
