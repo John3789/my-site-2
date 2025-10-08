@@ -162,7 +162,7 @@ export default function ResourcesPage() {
           </div>
 
           {/* Desktop sticky subnav — sits right under the intro on desktop */}
-<div className="hidden md:block sticky top-[64px] z-30 bg-[var(--color-teal-850)]/80">
+<div className="hidden md:block sticky top-[31px] z-30 bg-[var(--color-teal-850)]/80">
   {Nav}
 </div>
 
