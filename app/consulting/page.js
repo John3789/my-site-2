@@ -245,6 +245,7 @@ export default function ConsultingPage() {
               </p>
             </article>
 
+
             {/* Gold arrow toward Co-Design (mobile only, no animation to avoid blur) */}
 <div className="md:hidden flex justify-center -mt-2 mb-6" aria-hidden>
   <svg
@@ -654,6 +655,29 @@ Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal gro
               Understand your goals, challenges, stakeholders, and context—laying the foundation for success.
             </p>
           </article>
+
+{/* Four gold arrows toward the cards below (desktop only) */}
+<div
+  className="hidden md:grid grid-cols-4 gap-6 place-items-center -mt-2 mb-6"
+  aria-hidden="true"
+  style={{ color: "var(--color-gold)" }}
+>
+  {[0,1,2,3].map((i) => (
+    <svg
+      key={i}
+      viewBox="0 0 24 24"
+      className="h-8 w-8"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M12 4v12" />
+      <path d="M7 12l5 5 5-5" />
+    </svg>
+  ))}
+</div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[
