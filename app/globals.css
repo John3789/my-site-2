@@ -113,8 +113,8 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: inset 0 -2px 0 0 var(--color-cream);
 }
 
-html, body { overscroll-behavior-y: contain; }
+html, body { overscroll-behavior-y: none; }
 
-/* prevent rubber-band overscroll on iOS when using transformed sections */
+/* prevent rubber-band overscroll on iOS */
 html, body { overscroll-behavior-y: none; }
 
