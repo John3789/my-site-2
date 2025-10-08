@@ -156,11 +156,10 @@ export default function MeditationsPage() {
             
           {/* FINAL divider above footer — match two-column width, no bleed */}
 <div className="mx-auto max-w-[1400px] px-6">
-  <hr className="max-w-[1400px] border-t border-[var(--color-cream)]/22" />
+  <hr className="hidden md:block max-w-[1400px] border-t border-[var(--color-cream)]/22" />
 </div>
             {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
             <div className="md:hidden mx-auto max-w-[1100px] px-12 -mt-8">
-              <hr className="md:hidden border-t border-[var(--color-cream)]/22 mb-15" />
             </div>
 
             <div className="md:hidden mx-auto max-w-[1100px] px-3">
