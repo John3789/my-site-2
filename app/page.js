@@ -304,9 +304,9 @@ export default function Home() {
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="block lg:hidden mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
   <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
-</div>
 
-<div className="block lg:hidden mx-auto max-w-[1400px] px-3">
+
+<div className="mx-auto max-w-[1400px] px-3">
   {/* Newsletter card (midnight blue) */}
   <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
     <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
@@ -329,6 +329,7 @@ Practical wisdom for modern minds — best paired with coffee and curiosity.
         Subscribe
       </button>
     </div>
+  </div>
   </div>
 
   {/* --- MOBILE Jay-style footer block --- */}
@@ -353,7 +354,7 @@ Practical wisdom for modern minds — best paired with coffee and curiosity.
     <a href="https://www.youtube.com/@YOURHANDLE" aria-label="YouTube" className="opacity-90 hover:opacity-100">
       <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z"/></svg>
     </a>
-  </div>
+
 
   {/* 3) Bio line */}
   <p className="mt-5 text-left opacity-85">
@@ -375,7 +376,7 @@ Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal gro
     <span>All rights reserved</span>
   </p>
 </div>
-
+  </div>
 
 
         {/* removed the contained divider on mobile */}
