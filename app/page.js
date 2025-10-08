@@ -143,7 +143,7 @@ export default function Home() {
 
           {/* Consulting */}
           <section id="consulting" className="w-full">
-            <div className="mx-auto max-w-[1400px] px-6 pt-40 pb-12">
+            <div className="mx-auto max-w-[1400px] px-6 pt-40 pb-12 bg-[var(--color-teal-800)]">
               <hr className="border-t border-[var(--color-cream)]/22 mb-6" />
               <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Consulting</h5>
               <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
