@@ -144,3 +144,12 @@ h1, h2, h3, h4, h5, h6 {
     max-width: none;
   }
 }
+
+/* Cap the mobile footer width in landscape only */
+@media (orientation: landscape) {
+  .mobile-footer-cap {
+    max-width: 700px;     /* adjust as needed — try 600–800px */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
