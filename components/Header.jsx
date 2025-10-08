@@ -82,7 +82,7 @@ export default function Header() {
       leading-none
     "
   >
-    <span className="hidden text-lg lg:text-xl">DR. JUAN PABLO SALERNO</span>
+    <span className="text-lg lg:text-xl">DR. JUAN PABLO SALERNO</span>
     <sup className="text-lg align-super opacity-70">™</sup>
   </Link>
 )}
@@ -102,7 +102,7 @@ export default function Header() {
     <aside
       className="
         fixed inset-0 z-[10001]
-        bg-[var(--color-teal-850)] text-[var(--color-cream)]
+        bg-[var(--color-teal-800)] text-[var(--color-cream)]
         flex flex-col
         min-h-[100svh]   /* fills viewport; stable on iOS */
         overflow-y-auto   /* scroll if long */
