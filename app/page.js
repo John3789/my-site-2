@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import SocialFooter from "../components/SocialFooter";
 import NewsletterMeditationPopup from "../components/NewsletterMeditationPopup";
 
 export default function Home() {
@@ -19,7 +18,7 @@ export default function Home() {
       <div aria-hidden className="md:h-8 !bg-[var(--color-teal-800)]" />
 
       {/* DESKTOP/TABLET nameplate — unchanged */}
-      <section id="home" className="!md:bg-[var(--color-teal-800)] !text-[var(--color-cream)]">
+      <section id="home" className="md:bg-[var(--color-teal-800)] text-[var(--color-cream)]">
         <div className="mx-auto max-w-[1400px] px-6 pt-0 pb-4">
           <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
             <span className="hidden md:block text-7xl hover:opacity-90 transition">
@@ -308,7 +307,6 @@ export default function Home() {
       </div>
 
         </main>
-
         
   )
 }
