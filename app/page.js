@@ -309,7 +309,7 @@ export default function Home() {
 
 <div className="md:hidden mx-auto w-full max-w-[1400px] px-3">
   {/* Newsletter card (midnight blue) */}
-  <div className="w-full rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
+  <div className="w-full col-span-full  basis-full grow rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
     <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
       Science, Soul, and a Bit of Magic — Every Month
     </p>
