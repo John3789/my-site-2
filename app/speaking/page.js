@@ -208,7 +208,7 @@ export default function SpeakingPage() {
                   conferences, federal health organizations, leading universities,
                   research institutes, K–12 public schools, community-based mental
                   health and healthcare organizations, and county and state
-                  departments of health.
+                  departments of health, among others.
                 </p>
                 <p>
                   Presentations typically run between one to two hours and can be delivered
@@ -217,8 +217,8 @@ export default function SpeakingPage() {
                   attendees not only inspired but also equipped with actionable
                   strategies to enhance their well-being, leadership, and
                   fulfillment—whether in the workplace, at home, or in their
-                  personal lives. He is also available for panel discussions and
-                  collaborative speaking engagements.
+                  personal lives. He is also available for workshops, panel discussions, and
+                  collaborative speaking engagements (see details below).
                 </p>
               </div>
 

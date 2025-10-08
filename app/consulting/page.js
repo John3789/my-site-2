@@ -121,8 +121,8 @@ export default function ConsultingPage() {
         >
           {/* HERO (inside zoom) */}
           <section className="mx-auto max-w-[1100px] px-6 pt-16 pb-10 text-center" id="hero-m">
-            <h1 className="font-serif text-5xl leading-[1.06] opacity-95">
-              Consulting with Dr. Salerno
+            <h1 className="font-serif text-6xl leading-[1.06] opacity-95">
+              Organizational Wellness Consulting 
             </h1>
             <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 rounded" />
             <p className="text-lg opacity-85 max-w-[780px] mx-auto mt-12 leading-relaxed">
@@ -530,8 +530,8 @@ Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal gro
       <div className="hidden md:block" aria-label="Consulting desktop layout">
         {/* HERO */}
         <section className="mx-auto max-w-[1100px] px-6 pt-20 pb-10 text-center">
-          <h1 className="font-serif text-[clamp(34px,4.5vw,52px)] leading-[1.06] opacity-95">
-            Consulting with Dr. Salerno
+          <h1 className="font-serif text-6xl leading-[1.06] opacity-95">
+              Organizational Wellness Consulting
           </h1>
           <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 rounded" />
           <p className="text-xl opacity-85 max-w-[780px] mx-auto mt-12 leading-relaxed">
