@@ -308,9 +308,10 @@ export default function Home() {
   <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
 </div>
 
-<div className="md:hidden mx-auto max-w-[1400px] px-3">
+<div className="lg:hidden mx-auto max-w-[1400px] px-3">
   {/* Newsletter card (midnight blue) */}
-  <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
+  {/* force full width even when device is landscape */}
+  <div className="w-full rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10 landscape:w-full">
     <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
       Science, Soul, and a Bit of Magic — Every Month
     </p>
