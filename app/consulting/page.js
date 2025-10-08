@@ -171,7 +171,7 @@ export default function ConsultingPage() {
               I work with organizations committed to fostering wellbeing and sustainable impact.
               Each partnership is tailored to the unique needs, context, and goals of the people it serves.
             </p>
-            <p className="text-base opacity-90 leading-loose max-w-3xl -mb-3">
+            <p className="text-lg opacity-90 leading-loose max-w-3xl -mb-3">
               I bridge <span className="font-semibold">science</span> and{" "}
               <span className="font-semibold">growth wisdom</span> to help organizations build
               effective, culturally grounded, and sustainable wellbeing strategies. With expertise
