@@ -310,7 +310,7 @@ export default function Home() {
 
   {/* --- blue newsletter card --- */}
   <div className="w-full px-3">
-    <div className="w-full max-w-[520px] mx-auto rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
+<div className="newsletter-card--extend rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
       <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
         Science, Soul, and a Bit of Magic — Every Month
       </p>
@@ -339,7 +339,7 @@ export default function Home() {
 
 
   {/* --- MOBILE Jay-style footer block --- */}
-<div className="mt-6 text-[13px] leading-relaxed">
+<div className="md:hidden mt-6 text-[13px] leading-relaxed">
 
   {/* 1) Heading */}
   <p className="uppercase tracking-[0.18em] text-left opacity-70">
