@@ -53,30 +53,37 @@ export default function RootLayout({ children }) {
  <body className="min-w-[1200px] bg-[#F4F1EA] text-[#0C1415] antialiased [text-rendering:optimizeLegibility] [-webkit-font-smoothing:antialiased]">
         <Header />
 
-<Script id="ios-viewport-nudge" strategy="afterInteractive">
+<Script id="ios-viewport-nudge-2" strategy="afterInteractive">
 {`
   (function () {
+    var isiOS = /iP(hone|ad|od)/.test(navigator.userAgent);
+    if (!isiOS) return;
+
+    var base = "width=device-width, initial-scale=1, viewport-fit=cover";
     var vp = document.querySelector('meta[name="viewport"]');
-    var base = 'width=device-width, initial-scale=1, viewport-fit=cover';
-    function nudge() {
-      if (!vp) {
-        vp = document.createElement('meta');
-        vp.name = 'viewport';
-        document.head.appendChild(vp);
-      }
+    if (!vp) { vp = document.createElement("meta"); vp.name = "viewport"; document.head.appendChild(vp); }
+
+    function nudgeOnce() {
       try {
         // Force iOS to recalc at 1.0…
-        vp.setAttribute('content', base + ', maximum-scale=1');
-        // …then immediately restore zoomability.
-        setTimeout(function(){ vp.setAttribute('content', base); }, 0);
+        vp.setAttribute("content", base + ", maximum-scale=1");
+        // …then restore zoomability after layout settles (two RAFs)
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            vp.setAttribute("content", base);
+          });
+        });
       } catch (e) {}
     }
-    if (document.readyState === 'complete' || document.readyState === 'interactive') {
-      nudge();
-    } else {
-      document.addEventListener('DOMContentLoaded', nudge, { once: true });
-    }
-    window.addEventListener('pageshow', nudge);
+
+    function run() { setTimeout(nudgeOnce, 0); }
+
+    if (document.readyState === "complete" || document.readyState === "interactive") run();
+    else document.addEventListener("DOMContentLoaded", run, { once: true });
+
+    window.addEventListener("load", run, { once: true });
+    window.addEventListener("pageshow", run);           // bfcache restore
+    window.addEventListener("orientationchange", run);  // rotation
   })();
 `}
 </Script>
