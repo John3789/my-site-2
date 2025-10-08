@@ -78,7 +78,7 @@ export default function AboutPage() {
               <p className="space-y-6 text-lg opacity-90 leading-loose">
                 Dr. Salerno’s expertise is rooted in science and shaped by personal transformation.
                 After reaching his lowest point in mental health, he devoted years to therapy
-                and recovery. But remission wasn't the destination - it was the beginning. Seeking 
+                and recovery. But remission wasn’t the destination - it was the beginning. Seeking 
                 something greater than the absence of suffering, he broadened his path to healing 
                 through personal growth practices such as meditation, Feng Shui, and manifestation,
                 learning from some of the most respected experts in the field. Through this journey,
