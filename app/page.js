@@ -301,42 +301,35 @@ export default function Home() {
                 </div>
               </div>
             </div>
-{/* PAGE-LEVEL MOBILE FOOTER (portrait + landscape) */}
-<div className="block lg:hidden">
-  {/* --- divider --- */}
-  <div className="w-full px-6 mb-14 -mt-5">
-    <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
-  </div>
-
-  {/* --- blue newsletter card --- */}
-  <div className="w-full px-3">
-<div className="newsletter-card--portrait-lock rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
-      <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
-        Science, Soul, and a Bit of Magic — Every Month
-      </p>
-      <p className="text-sm opacity-85 mb-3">
-        Practical wisdom for modern minds — best paired with coffee and curiosity.
-      </p>
-      <div className="flex gap-2">
-        <input
-          type="email"
-          placeholder="you@example.com"
-          className="flex-1 rounded-md border border-white/15 bg-white/5 px-3 py-2 placeholder-white/60 outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50"
-        />
-        <button
-          type="button"
-          className="shrink-0 rounded-md bg-[var(--color-gold)] text-black px-4 py-2 font-semibold"
-        >
-          Subscribe
-        </button>
-      </div>
-    </div>
-  </div>
-
-  {/* --- mobile-only “Follow / legal” block --- */}
-  {/* ...keep your FOLLOW DR. SALERNO + legal lines here... */}
+{/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
+<div className="block lg:hidden mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
+  <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
 </div>
 
+<div className="block lg:hidden mx-auto max-w-[1400px] px-3">
+  {/* Newsletter card (midnight blue) */}
+  <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
+    <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
+      Science, Soul, and a Bit of Magic — Every Month
+    </p>
+    <p className="text-sm opacity-85 mb-3">
+Practical wisdom for modern minds — best paired with coffee and curiosity.
+
+    </p>
+    <div className="flex gap-2">
+      <input
+        type="email"
+        placeholder="you@example.com"
+        className="flex-1 rounded-md border border-white/15 bg-white/5 px-3 py-2 placeholder-white/60 outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50"
+      />
+      <button
+        type="button"
+        className="shrink-0 rounded-md bg-[var(--color-gold)] text-black px-4 py-2 font-semibold"
+      >
+        Subscribe
+      </button>
+    </div>
+  </div>
 
   {/* --- MOBILE Jay-style footer block --- */}
 <div className="block lg:hidden mt-6 text-[13px] leading-relaxed">
@@ -385,7 +378,11 @@ Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal gro
 
 
 
+        {/* removed the contained divider on mobile */}
+      </div>
 
+
+        
           {/* Home: section/bookend divider (aligns to 1400px container) */}
 <div className="mx-auto max-w-[1400px] px-6">
   <hr className="border-t border-[var(--color-cream)]/22" />
