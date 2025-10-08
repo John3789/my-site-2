@@ -302,21 +302,28 @@ export default function Home() {
                 </div>
               </div>
             </div>
-{/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
-<div className="md:hidden mx-auto w-full max-w-[1400px] px-6 mb-14 -mt-5">
+{/* --- Responsive divider + single footer (works in mobile portrait + landscape) --- */}
+<div className="lg:hidden w-full px-6 mb-14 -mt-5">
   <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
 </div>
 
-<div className="md:hidden mx-auto w-full max-w-[1400px] px-3">
+<div className="lg:hidden w-full px-3">
   {/* Newsletter card (midnight blue) */}
-  <div className="w-full col-span-full  basis-full grow rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
+  <div
+    className="
+      w-full max-w-none                       /* kill any width cap */
+      rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10
+      col-span-full basis-full grow           /* if parent becomes grid/flex */
+      [@media(orientation:landscape)]:w-full  /* stay full width in landscape */
+    "
+  >
     <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
       Science, Soul, and a Bit of Magic — Every Month
     </p>
     <p className="text-sm opacity-85 mb-3">
-Practical wisdom for modern minds — best paired with coffee and curiosity.
-
+      Practical wisdom for modern minds — best paired with coffee and curiosity.
     </p>
+
     <div className="flex gap-2">
       <input
         type="email"
@@ -331,6 +338,7 @@ Practical wisdom for modern minds — best paired with coffee and curiosity.
       </button>
     </div>
   </div>
+</div>
 
   {/* --- MOBILE Jay-style footer block --- */}
 <div className="mt-6 text-[13px] leading-relaxed">
@@ -378,9 +386,6 @@ Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal gro
 </div>
 
 
-
-        {/* removed the contained divider on mobile */}
-      </div>
 
 
         
