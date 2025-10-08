@@ -103,6 +103,24 @@ Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal gro
   </footer>
 </FooterGate>
         <Analytics />
+        import Script from 'next/script';
+
+// ...
+
+<Script id="ios-input-blur" strategy="afterInteractive">
+{`
+  (function () {
+    function blurIfInput() {
+      var el = document.activeElement;
+      if (!el) return;
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.isContentEditable) el.blur();
+    }
+    document.addEventListener('DOMContentLoaded', () => setTimeout(blurIfInput, 0), { once: true });
+    window.addEventListener('pageshow', () => setTimeout(blurIfInput, 0));
+  })();
+`}
+</Script>
+
       </body>
     </html>
   )
