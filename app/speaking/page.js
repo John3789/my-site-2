@@ -937,6 +937,11 @@ export default function SpeakingPage() {
             </div>
           </div>
 
+                                        {/* Home: section/bookend divider (aligns to 1400px container) */}
+<div className="mx-auto max-w-[1400px] px-6">
+  <hr className="border-t border-[var(--color-cream)]/22" />
+</div>
+
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="block lg:hidden">
   <div className="mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
@@ -1019,10 +1024,7 @@ export default function SpeakingPage() {
       </div>
 
         </div>
-                                        {/* Home: section/bookend divider (aligns to 1400px container) */}
-<div className="mx-auto max-w-[1400px] px-6">
-  <hr className="border-t border-[var(--color-cream)]/22" />
-</div>
+
       </main>
 
       {/* Global safeguards and crisp text styles */}
