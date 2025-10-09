@@ -939,7 +939,7 @@ export default function SpeakingPage() {
 
                                         {/* Home: section/bookend divider (aligns to 1400px container) */}
 <div className="mx-auto max-w-[1400px] px-6">
-  <hr className="border-t border-[var(--color-cream)]/22" />
+  <hr className="border-t border-[var(--color-cream)]/22 mb-15" />
 </div>
 
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
