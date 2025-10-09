@@ -108,53 +108,72 @@ export default function RootLayout({ children }) {
         {children}
 
 <FooterGate>
-          {/* DESKTOP-ONLY FOOTER (kept intentionally) */}
-  <footer className="hidden lg:block py-10 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
-    <div className="mx-auto w-full max-w-[1680px] grid grid-cols-1 lg:grid-cols-[1fr_minmax(0,1.05fr)] gap-y-10 gap-x-24 items-end">
-
-      {/* LEFT — Name + Terms + Privacy (perfect, unchanged) */}
-      <div className="flex flex-col justify-end pl-0">
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 opacity-90 text-[13px] leading-relaxed">
-<span>© Dr. Juan Pablo Salerno™</span>
-          <span className="opacity-50">·</span>
-          <span>All rights reserved</span>
-          <span className="opacity-50">·</span>
-          <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
-          <span className="opacity-50">·</span>
-          <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
-        </div>
-      </div>
-
-      {/* RIGHT — Newsletter + Socials + Bio (same placement, slightly narrower) */}
-      <div className="grid gap-5 text-left pr-4 lg:pr-10 justify-self-end max-w-[750px]">
-        {/* Newsletter block */}
-<div className="rounded-xl bg-[#081F2C] ring-1 ring-white/10 p-5 shadow-[0_10px_30px_rgba(0,0,0,0.55)] hover:bg-[#0C2634] transition">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <div className="min-w-0">
-              <p className="text-[13px] uppercase tracking-[0.18em] opacity-70 mb-1">
-                Science, Soul, and a Bit of Magic — Every Month
-              </p>
-              <p className="text-base lg:text-[15px] opacity-95">
-        Practical wisdom for modern minds — best paired with coffee and curiosity.
-                
-              </p>
-            </div>
-            <NewsletterSignup />
-          </div>
-        </div>
-
-        {/* Socials */}
-        <div className="flex items-center justify-start mt-2">
-          <SocialFooter />
-        </div>
-
-        {/* One-line bio */}
-        <p className="text-[13px] leading-relaxed opacity-85 -mt-1 max-w-[750px]">
-Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, author and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
-        </p>
+ {/* DESKTOP / LARGE-TABLET FOOTER */}
+<footer className="hidden lg:block py-10 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
+  <div
+    className="
+      mx-auto w-full max-w-[1680px]
+      grid gap-y-10 gap-x-12 items-end
+      lg:grid-cols-1
+      xl:grid-cols-[1fr_minmax(0,1.05fr)]
+    "
+  >
+    {/* LEFT — Name + Terms + Privacy */}
+    <div className="flex flex-col justify-end pl-0">
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 opacity-90 text-[13px] leading-relaxed">
+        <span>© Dr. Juan Pablo Salerno™</span>
+        <span className="opacity-50">·</span>
+        <span>All rights reserved</span>
+        <span className="opacity-50">·</span>
+        <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
+        <span className="opacity-50">·</span>
+        <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
       </div>
     </div>
-  </footer>
+
+    {/* RIGHT — Newsletter + Socials + Bio */}
+    <div
+      className="
+        grid gap-5 text-left
+        lg:max-w-[600px] lg:justify-self-start
+        xl:max-w-[750px] xl:justify-self-end xl:pr-10
+      "
+    >
+      {/* Newsletter block */}
+      <div
+        className="
+          rounded-xl p-0 ring-0 shadow-none bg-transparent transition
+          xl:bg-[#081F2C] xl:ring-1 xl:ring-white/10 xl:p-5
+          xl:shadow-[0_10px_30px_rgba(0,0,0,0.55)] xl:hover:bg-[#0C2634]
+        "
+      >
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div className="min-w-0">
+            <p className="text-[13px] uppercase tracking-[0.18em] opacity-70 mb-1">
+              Science, Soul, and a Bit of Magic — Every Month
+            </p>
+            <p className="text-base xl:text-[15px] opacity-95">
+              Practical wisdom for modern minds — best paired with coffee and curiosity.
+            </p>
+          </div>
+          {/* Keep your existing signup component */}
+          <NewsletterSignup />
+        </div>
+      </div>
+
+      {/* Socials */}
+      <div className="flex items-center justify-start mt-2">
+        <SocialFooter />
+      </div>
+
+      {/* One-line bio */}
+      <p className="text-[13px] leading-relaxed opacity-85 -mt-1 lg:max-w-[600px] xl:max-w-[750px]">
+        Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, author and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
+      </p>
+    </div>
+  </div>
+</footer>
+
 </FooterGate>
         <Analytics />
       </body>
