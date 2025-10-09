@@ -174,7 +174,20 @@ export default function ContactPage() {
               </form>
             )}
           </section>
-          
+
+                 {/* Bottom spacer */}
+          <div className="pb-10" />
+
+          {/* FINAL divider above footer — match two-column width, no bleed */}
+          <div className="mx-auto max-w-[1400px] px-6">
+            <hr className="hidden lg:block max-w-[1400px] border-t border-[var(--color-cream)]/22" />
+          </div>
+
+          <div className="block lg:hidden mx-auto max-w-[1100px] px-3">
+            {/* (mobile newsletter + socials unchanged) */}
+            {/* ... */}
+          </div>
+             
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="mx-auto max-w-[1200px] px-0 mt-11">
   <hr className="border-t border-[var(--color-cream)]/22 mb-8" />
