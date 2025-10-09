@@ -105,7 +105,7 @@ export default function ConsultingPage() {
   return (
     <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
       {/* ============== MOBILE (uses the exact working zoom wrapper) ============== */}
-      <div className="md:hidden" aria-label="Consulting mobile layout">
+      <div className="lg:hidden" aria-label="Consulting mobile layout">
         <div
           style={{ "--z": 3.0, "--zoomL": 1.60 }}
           className={`
@@ -539,7 +539,7 @@ export default function ConsultingPage() {
       </div> {/* closes outer md:hidden */}
 
       {/* ============== DESKTOP (unchanged content & spacing) ============== */}
-      <div className="hidden md:block" aria-label="Consulting desktop layout">
+      <div className="hidden lg:block" aria-label="Consulting desktop layout">
         {/* HERO */}
         <section className="mx-auto max-w-[1100px] px-6 pt-20 pb-10 text-center">
           <h1 className="font-serif text-6xl leading-[1.06] opacity-95">
