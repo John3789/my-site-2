@@ -226,7 +226,7 @@ export default function SpeakingPage() {
               <div className="mt-8 flex justify-center">
                 <a
                   href="/contact"
-                  className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs md:w-auto md:max-w-none md:relative md:top-8"
+                  className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs lg:w-auto lg:max-w-none lg:relative lg:top-8"
                 >
                   Book Dr. Salerno to Speak
                 </a>
@@ -421,7 +421,7 @@ export default function SpeakingPage() {
             </section>
 
             {/* Programs footer buttons (mobile only) — tighter */}
-            <div className="md:hidden -mt-12 mb-15 w-full">
+            <div className="lg:hidden -mt-12 mb-15 w-full">
               <div className="w-full flex justify-center">
                 <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
                   <button
@@ -677,7 +677,7 @@ export default function SpeakingPage() {
             </section>
 
             {/* Results footer buttons (mobile only) — slimmer + same spacing as Service Pillars */}
-            <div className="md:hidden -mt-12 mb-15 w-full">
+            <div className="lg:hidden -mt-12 mb-15 w-full">
               <div className="w-full flex justify-center">
                 <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
                   <button
@@ -704,8 +704,8 @@ export default function SpeakingPage() {
 
             {/* ===== Testimonials (mobile-only; now collapsible) ===== */}
             {/* Full-bleed divider above Testimonials (mobile only) */}
-            <hr className="md:hidden w-screen relative left-1/2 -translate-x-1/2 border-t border-[var(--color-cream)]/22 mb-6" />
-            <section id="testimonials" className="md:hidden mx-15">
+            <hr className="lg:hidden w-screen relative left-1/2 -translate-x-1/2 border-t border-[var(--color-cream)]/22 mb-6" />
+            <section id="testimonials" className="lg:hidden mx-15">
               <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">
                 Testimonials
               </p>
@@ -901,7 +901,7 @@ export default function SpeakingPage() {
             
 
             {/* Testimonials footer buttons (mobile only) — slimmer + centered + tight spacing */}
-            <div className="md:hidden -mt-7 mb-17  w-full">
+            <div className="lg:hidden -mt-7 mb-17  w-full">
               <div className="w-full flex justify-center">
                 <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
                   <button
@@ -927,10 +927,10 @@ export default function SpeakingPage() {
             </div>
 
             {/* CTA (unchanged) */}
-            <div className="flex justify-center translate-y-[-28px] md:translate-y-0">
+            <div className="flex justify-center translate-y-[-28px] lg:translate-y-0">
               <a
                 href="/contact"
-                className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black -mb-2 px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs md:w-auto md:max-w-none md:translate-y-[-45px]"
+                className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black -mb-2 px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs lg:w-auto lg:max-w-none lg:translate-y-[-45px]"
               >
                 Book Dr. Salerno to Speak
               </a>
@@ -948,7 +948,7 @@ export default function SpeakingPage() {
 </div>
 
 
-            <div className="md:hidden mx-auto max-w-[1100px] px-3">
+            <div className="lg:hidden mx-auto max-w-[1100px] px-3">
               {/* (mobile newsletter + socials unchanged) */}
               {/* ... */}
             </div>
