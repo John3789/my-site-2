@@ -228,113 +228,75 @@ export default function ResourcesPage() {
                   )}
                 </section>
               ))}
+            </div> {/* closes: space-y container */}
+          </section> {/* closes: outer content section (max-w-[1200px]) */}
+
+          {/* --- MOBILE divider + footer (inside zoom, after the sections) --- */}
+          <div className="block lg:hidden">
+            <div className="mx-auto max-w-[1000px] px-6 mb-14 -mt-5">
+              <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
             </div>
 
-{/* MOBILE footer — match Consulting width */}
-<div className="md:hidden relative left-1/2 right-1/2 w-screen -mx-[50vw] px-3 mt-8 -mb-20">
-  {/* inner container to mirror Consulting’s feel */}
-  <div className="mx-auto max-w-[1100px]">
-    {/* Divider (optional) */}
-    <div className="mt-0 mb-10">
-      <hr className="border-t border-[var(--color-cream)]/22 mt-15 mb-15" />
-    </div>
+            <div className="mobile-footer-cap">
+              <div className="mx-auto max-w-[1400px] px-3">
+                {/* Newsletter card */}
+                <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
+                  <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
+                    Science, Soul, and a Bit of Magic — Every Month
+                  </p>
+                  <p className="text-sm opacity-85 mb-3">
+                    Practical wisdom for modern minds — best paired with coffee and curiosity.
+                  </p>
+                  <div className="flex gap-2">
+                    <input
+                      type="email"
+                      placeholder="you@example.com"
+                      className="flex-1 rounded-md border border-white/15 bg-white/5 px-3 py-2 placeholder-white/60 outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50"
+                    />
+                    <button
+                      type="button"
+                      className="shrink-0 rounded-md bg-[var(--color-gold)] text-black px-4 py-2 font-semibold"
+                    >
+                      Subscribe
+                    </button>
+                  </div>
+                </div>
 
-    {/* Newsletter card */}
-    <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl">
-      <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
-        Science, Soul, and a Bit of Magic — Every Month
-      </p>
-      <p className="text-sm opacity-85 mb-3">
-        Practical wisdom for modern minds — best paired with coffee and curiosity.
-      </p>
-      <div className="flex gap-2">
-        <input
-          type="email"
-          placeholder="you@example.com"
-          className="flex-1 rounded-md border border-white/15 bg-white/5 px-3 py-2 placeholder-white/60 outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50"
-        />
-        <button
-          type="button"
-          className="shrink-0 rounded-md bg-[var(--color-gold)] text-black px-4 py-2 font-semibold"
-        >
-          Subscribe
-        </button>
-      </div>
-    </div>
+                {/* Jay-style footer */}
+                <div className="mt-6 text-[13px] leading-relaxed">
+                  <p className="uppercase tracking-[0.18em] text-left opacity-70">Follow Dr. Salerno:</p>
+                  <div className="mt-3 flex items-left justify-left gap-8">
+                    <a href="https://www.tiktok.com/@YOURHANDLE" aria-label="TikTok" className="opacity-90 hover:opacity-100">
+                      <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/YOURHANDLE" aria-label="Instagram" className="opacity-90 hover:opacity-100">
+                      <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/@YOURHANDLE" aria-label="YouTube" className="opacity-90 hover:opacity-100">
+                      <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z"/></svg>
+                    </a>
+                  </div>
 
-    {/* Socials + legal */}
-    <div className="mt-6 text-[13px] leading-relaxed">
-      <p className="uppercase tracking-[0.18em] text-left opacity-70">Follow Dr. Salerno:</p>
-      <div className="mt-1 flex items-left justify-left gap-8">
-        {/* icons unchanged */}
-        {/* Socials row */}
-<div className="mt-2 flex items-center gap-8">
-  {/* TikTok */}
-  <a
-    href="https://www.tiktok.com/@YOURHANDLE"
-    aria-label="TikTok"
-    className="opacity-90 hover:opacity-100"
-  >
-    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-      <path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z"/>
-    </svg>
-  </a>
-
-  {/* Instagram */}
-  <a
-    href="https://www.instagram.com/YOURHANDLE"
-    aria-label="Instagram"
-    className="opacity-90 hover:opacity-100"
-  >
-    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-      <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 0 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/>
-    </svg>
-  </a>
-
-  {/* YouTube */}
-  <a
-    href="https://www.youtube.com/@YOURHANDLE"
-    aria-label="YouTube"
-    className="opacity-90 hover:opacity-100"
-  >
-    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-      <path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z"/>
-    </svg>
-  </a>
-</div>
-
-      </div>
-
-      <p className="mt-5 text-left opacity-85">
-        Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, author and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
-      </p>
-
-      <p className="mt-6 text-left opacity-85">© Dr. Juan Pablo Salerno™</p>
-
-      <p className="mt-1 text-left opacity-85">
-        <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
-        <span className="mx-2 opacity-50">·</span>
-        <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
-        <span className="mx-2 opacity-50">·</span>
-        <span>All rights reserved</span>
-      </p>
-    </div>
-  </div>
-</div>
-
-
-
-
-            {/* Desktop-aligned divider */}
-            <div className="hidden md:block mx-auto max-w-[1400px] px-6">
-              <hr className="hidden md:block border-t border-[var(--color-cream)]/22 mt-12 -mb-20" />
+                  <p className="mt-5 text-left opacity-85">
+                    Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, author and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
+                  </p>
+                  <p className="mt-6 text-left opacity-85">© Dr. Juan Pablo Salerno™</p>
+                  <p className="mt-2 mb-5 text-left opacity-85">
+                    <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
+                    <span className="mx-2 opacity-50">·</span>
+                    <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
+                    <span className="mx-2 opacity-50">·</span>
+                    <span>All rights reserved</span>
+                  </p>
+                </div>
+              </div>
             </div>
-          </section>
-        </div>
+          </div> {/* closes: block lg:hidden footer wrapper */}
 
-<NewsletterMeditationPopup delayMs={20000} />
+        </div> {/* closes: ZOOM WRAPPER */}
       </main>
 
+      {/* Page-level styles + modal */}
       <style jsx global>{`
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
@@ -342,10 +304,14 @@ export default function ResourcesPage() {
         @supports (-webkit-touch-callout: none) { html, body { background: var(--color-teal-850) !important; } }
       `}</style>
 
-      <CollectionModal open={open} onClose={() => setOpen(false)} collection={activeCollection} />
+      <CollectionModal
+        open={open}
+        onClose={() => setOpen(false)}
+        collection={activeCollection}
+      />
     </>
   );
-}
+} // end ResourcesPage
 
 /* ===== Modal (YouTube-only embed) ===== */
 function CollectionModal({ open, onClose, collection }) {
@@ -376,7 +342,14 @@ function CollectionModal({ open, onClose, collection }) {
                   <h4 className="font-serif text-lg opacity-95">{it.title}</h4>
                   <p className="text-sm opacity-75">{it.promise}</p>
                   <div className="mt-3 aspect-video overflow-hidden rounded-lg border border-white/10">
-                    <iframe className="h-full w-full" src={it.url} title={it.title} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+                    <iframe
+                      className="h-full w-full"
+                      src={it.url}
+                      title={it.title}
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
                   </div>
                 </li>
               ))}
@@ -385,6 +358,5 @@ function CollectionModal({ open, onClose, collection }) {
         </div>
       </div>
     </div>
-    
   );
 }
