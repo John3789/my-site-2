@@ -119,7 +119,7 @@ export default function Home() {
           mx-auto
           lg:[transform:none]
           lg:[width:100%]
-          landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(50%/var(--zoomL))]
+          landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
           overflow-visible 
         "
       >
