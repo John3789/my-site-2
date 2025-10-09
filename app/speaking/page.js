@@ -225,7 +225,7 @@ export default function SpeakingPage() {
               </div>
 
               {/* CTA under intro, above the quick nav */}
-              <div className="mt-8 mb-0 landscape:mt-3 lg:landscape:mt-0 flex justify-center">
+              <div className="mt-8 -mb-10 flex justify-center">
                 <a
                   href="/contact"
                   className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs lg:w-auto lg:max-w-none lg:relative lg:top-8"
@@ -235,7 +235,7 @@ export default function SpeakingPage() {
               </div>
 
 {/* ---- MOBILE quick nav (numbered, Consulting pattern) ---- */}
-<div id="quicknav" className="lg:hidden mt-3 landscape:mt-3 landscape:mb-0">
+<div id="quicknav" className="lg:hidden mt-4 landscape:mt-3 landscape:-mb-10">
   {/* cap width + center only in landscape */}
   <div className="w-full landscape:max-w-[520px] mx-auto">
     <div className="grid grid-cols-2 gap-2 landscape:gap-1">
@@ -248,7 +248,7 @@ export default function SpeakingPage() {
           className={[
             "w-full rounded-full inline-flex items-center gap-1",
             "px-3.5 py-1.5 landscape:px-3",           // slightly narrower in landscape
-            "text-[12px] landscape:text-[13px] font-semibold tracking-wide truncate transition",
+            "text-[13px] landscape:text-[13px] font-semibold tracking-wide truncate transition",
             "active:scale-95 active:brightness-125",
             "border border-white/18 bg-[var(--color-teal-800)] text-[var(--color-cream)]",
             activeId === s.id &&
@@ -271,7 +271,7 @@ export default function SpeakingPage() {
 
           {/* ===== MAIN CONTENT ===== */}
           <div className="mx-auto max-w-[1400px] md:py-6 space-y-16 md:space-y-24" id="topics">
-            <hr className="border-t border-[var(--color-cream)]/22 md:mb-8 w-full mx-auto w-[93%] landscape:mt-2 landscape:mb-4" />
+            <hr className="border-t border-[var(--color-cream)]/22 md:mb-8 w-full mx-auto w-[93%]" />
 
             {/* Popular Topics (Programs) */}
             <section
