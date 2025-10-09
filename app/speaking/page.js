@@ -570,7 +570,7 @@ export default function SpeakingPage() {
             </section>
 
             {/* Formats footer buttons (mobile only) — slimmer + same spacing as Service Pillars */}
-            <div className="md:hidden -mt-12 mb-15 w-full">
+            <div className="lg:hidden -mt-12 mb-15 w-full">
               <div className="w-full flex justify-center">
                 <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
                   <button
