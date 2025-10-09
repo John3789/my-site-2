@@ -301,13 +301,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
-              <div className="mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
-  </div>
-              <hr className="border-t border-[var(--color-cream)]/22 mb-6" />
-
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="block lg:hidden mobile-footer-cap">
   <div className="mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
+    <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
   </div>
 
   <div className="mx-auto max-w-[1400px] px-3">
