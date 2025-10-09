@@ -944,7 +944,7 @@ export default function SpeakingPage() {
 
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="block lg:hidden">
-  <div className="mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
+  <div className="mx-auto max-w-[1400px] px-6 mb-0 mt-0">
   </div>
 
   <div className="mobile-footer-cap">
