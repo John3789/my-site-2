@@ -457,6 +457,8 @@ export default function ConsultingPage() {
             {/* ... */}
           </div>
 
+                  {/* removed the contained divider on mobile */}
+
           {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
           <div className="block lg:hidden">
             <div className="mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
