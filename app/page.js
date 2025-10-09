@@ -110,15 +110,15 @@ export default function Home() {
 
       {/* ===== PAGE BODY WRAPPER ===== */}
       <div
-        style={{ '--z': 3.00, '--zoomL': 3.00 }}
+        style={{ '--z': 3.00, '--zoomL': 2.00 }}
         className="
           md:contents
           origin-top
           [transform:scale(var(--z))]
           [width:calc(100%/var(--z))]
           mx-auto
-          md:[transform:none]
-          md:[width:100%]
+          lg:[transform:none]
+          lg:[width:100%]
           landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
           overflow-visible 
         "
