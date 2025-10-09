@@ -215,7 +215,7 @@ export default function ResourcesPage() {
                   </ul>
 
                   {/* Mobile section footer nav */}
-                  <div className="lg:hidden mt-6 flex items-center gap-4">
+                  <div className="lg:hidden mt-6 flex items-center justify-center gap-2">
                     <button onClick={() => handleJump(THEMES[Math.max(0, idx - 1)].slug)} className="rounded-full border border-white/15 bg-[var(--color-teal-800)] px-4 py-2.5 text-[14px] font-semibold text-[var(--color-cream)] active:scale-95 active:brightness-125">← Prev</button>
                     <button onClick={() => { const top = document.querySelector("h1"); if (top) top.scrollIntoView({ behavior: "smooth", block: "start" }); }} className="rounded-full border border-white/15 bg-[var(--color-teal-800)] px-4 py-2.5 text-[14px] font-semibold text-[var(--color-cream)] active:scale-95 active:brightness-125">All Themes</button>
                     <button onClick={() => handleJump(THEMES[Math.min(THEMES.length - 1, idx + 1)].slug)} className="rounded-full border border-white/15 bg-[var(--color-teal-800)] px-4 py-2.5 text-[14px] font-semibold text-[var(--color-cream)] active:scale-95 active:brightness-125">Next →</button>
