@@ -188,7 +188,7 @@ export default function SpeakingPage() {
           <section className="relative w-full pt-16 pb-9 lg:py-16" id="intro">
             {/* subtle hairline divider from hero */}
             <div className="absolute inset-x-0 top-0 h-px bg-[var(--color-cream)]/15" />
-            <div className="mx-auto md:max-w-[600px] lg:max-w-[1000px] px-6 text-left space-y-8">
+            <div className="mx-auto md:max-w-[700px] lg:max-w-[1000px] px-6 text-left space-y-8">
               <h2 className="font-serif text-2xl lg:text-4xl opacity-90 text-center font-semibold tracking-wide">
                 &ldquo;Engaging. Inspiring. Transformational.&rdquo;
               </h2>
@@ -223,10 +223,10 @@ export default function SpeakingPage() {
               </div>
 
               {/* CTA under intro, above the quick nav */}
-              <div className="mt-8 flex justify-center">
+              <div className="sm:mt-5 md:mt-2 md:mb-5 flex justify-center">
                 <a
                   href="/contact"
-                  className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs md:w-auto md:max-w-none md:relative md:top-8"
+                  className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition lg:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs md:w-auto md:max-w-none md:relative md:top-8"
                 >
                   Book Dr. Salerno to Speak
                 </a>
