@@ -188,7 +188,7 @@ export default function SpeakingPage() {
           <section className="relative w-full pt-16 pb-9 md:py-16" id="intro">
             {/* subtle hairline divider from hero */}
             <div className="absolute inset-x-0 top-0 h-px bg-[var(--color-cream)]/15" />
-            <div className="mx-auto max-w-[700px] px-6 text-left space-y-8">
+            <div className="mx-auto max-w-[1000px] px-6 text-left space-y-8">
               <h2 className="font-serif text-2xl md:text-4xl opacity-90 text-center font-semibold tracking-wide">
                 &ldquo;Engaging. Inspiring. Transformational.&rdquo;
               </h2>
@@ -226,7 +226,7 @@ export default function SpeakingPage() {
               <div className="mt-8 flex justify-center">
                 <a
                   href="/contact"
-                  className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs lg:w-auto lg:max-w-none lg:relative"
+                  className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs lg:w-auto lg:max-w-none lg:relative lg:top-8"
                 >
                   Book Dr. Salerno to Speak
                 </a>
