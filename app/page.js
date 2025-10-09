@@ -153,7 +153,7 @@ export default function Home() {
                 {/* Left: text */}
                 <div className="lg:col-span-6 w-full max-w-[680px] mx-auto lg:mx-0">
                   <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90 text-center lg:text-left">
-                    Purposeful Consulting Solutions
+                    Organizational Wellness Consulting
                   </h2>
                   <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto lg:mx-0 my-5 rounded" />
 
@@ -301,6 +301,17 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+          {/* FINAL divider above footer — match two-column width, no bleed */}
+          <div className="mx-auto max-w-[1400px] px-6">
+            <hr className="hidden lg:block max-w-[1400px] border-t border-[var(--color-cream)]/22" />
+          </div>
+
+          <div className="block lg:hidden mx-auto max-w-[1100px] px-3">
+            {/* (mobile newsletter + socials unchanged) */}
+            {/* ... */}
+          </div>
+
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="block lg:hidden">
   <div className="mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
