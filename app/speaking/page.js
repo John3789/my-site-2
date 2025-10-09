@@ -450,7 +450,7 @@ export default function SpeakingPage() {
             <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 w-full" />
             <section
               id="formats"
-              className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 lg:gap-x-0 mx-15 items-center"
+              className="grid grid-cols-1 md:grid-cols-12 gap-y-12 lg:gap-x-0 mx-15 items-center"
             >
               {/* Quotes (RIGHT column) — desktop only */}
               <div className="md:col-span-7 hidden md:flex flex-col gap-6 max-w-[640px] lg:pr-6">
@@ -599,7 +599,7 @@ export default function SpeakingPage() {
             <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 w-full" />
             <section
               id="results"
-              className="grid grid-cols-1 lg:grid-cols-12 gap-12 mx-15 items-start gap-y-12"
+              className="grid grid-cols-1 md:grid-cols-12 gap-12 mx-15 items-start gap-y-12"
             >
               <div className="md:col-span-5 lg:py-6">
                 {/* Overline added */}
