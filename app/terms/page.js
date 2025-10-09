@@ -6,7 +6,7 @@ export default function TermsPage() {
     <>
       {/* ===== PAGE BODY WRAPPER (zoom on mobile, normal on desktop) ===== */}
       <div
-        style={{ "--z": 3.0, "--zoomL": 1.6 }}
+        style={{ "--z": 3.0, "--zoomL": 1.4 }}
         className="
           lg:contents
           origin-top
