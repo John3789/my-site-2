@@ -225,7 +225,7 @@ export default function SpeakingPage() {
               </div>
 
               {/* CTA under intro, above the quick nav */}
-              <div className="mt-8 -mb-0 flex justify-center">
+              <div className="mt-8 -mb-0 landscape:-mb-8 lg:landscape:-mb-0 flex justify-center">
                 <a
                   href="/contact"
                   className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs lg:w-auto lg:max-w-none lg:relative lg:top-8"
@@ -235,7 +235,7 @@ export default function SpeakingPage() {
               </div>
 
 {/* ---- MOBILE quick nav (numbered, Consulting pattern) ---- */}
-<div id="quicknav" className="lg:hidden mt-4 landscape:mt-3 landscape:mb-2">
+<div id="quicknav" className="lg:hidden mt-0 landscape:mt-0 landscape:mb-0">
   {/* cap width + center only in landscape */}
   <div className="w-full landscape:max-w-[520px] mx-auto">
     <div className="grid grid-cols-2 gap-2 landscape:gap-1">
