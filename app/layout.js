@@ -109,8 +109,8 @@ export default function RootLayout({ children }) {
 
 <FooterGate>
           {/* DESKTOP-ONLY FOOTER (kept intentionally) */}
-  <footer className="hidden xl:block py-10 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
-    <div className="mx-auto w-full max-w-[1680px] grid grid-cols-1 md:grid-cols-[1fr_minmax(0,1.05fr)] gap-y-10 gap-x-24 items-end">
+  <footer className="hidden lg:block py-10 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
+    <div className="mx-auto w-full max-w-[1680px] grid grid-cols-1 lg:grid-cols-[1fr_minmax(0,1.05fr)] gap-y-10 gap-x-24 items-end">
 
       {/* LEFT — Name + Terms + Privacy (perfect, unchanged) */}
       <div className="flex flex-col justify-end pl-0">
@@ -126,7 +126,7 @@ export default function RootLayout({ children }) {
       </div>
 
       {/* RIGHT — Newsletter + Socials + Bio (same placement, slightly narrower) */}
-      <div className="grid gap-5 text-left pr-4 md:pr-10 justify-self-end max-w-[750px]">
+      <div className="grid gap-5 text-left pr-4 lg:pr-10 justify-self-end max-w-[750px]">
         {/* Newsletter block */}
 <div className="rounded-xl bg-[#081F2C] ring-1 ring-white/10 p-5 shadow-[0_10px_30px_rgba(0,0,0,0.55)] hover:bg-[#0C2634] transition">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -134,7 +134,7 @@ export default function RootLayout({ children }) {
               <p className="text-[13px] uppercase tracking-[0.18em] opacity-70 mb-1">
                 Science, Soul, and a Bit of Magic — Every Month
               </p>
-              <p className="text-base md:text-[15px] opacity-95">
+              <p className="text-base lg:text-[15px] opacity-95">
         Practical wisdom for modern minds — best paired with coffee and curiosity.
                 
               </p>
