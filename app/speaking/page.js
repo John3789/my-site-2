@@ -715,162 +715,111 @@ export default function SpeakingPage() {
     <p className="text-center text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Testimonials</p>
     <h2 className="text-center font-serif text-4xl mb-2">What People Say</h2>
     <div className="items-center h-[2px] w-12 bg-[var(--color-gold)]/75 mb-8 rounded mx-auto" />
+{/* Cards */}
+<div className="flex flex-col gap-6 w-full">
+  {/* Always-visible: first two cards */}
+  <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
+    <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+    <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
+      {/* OPEN QUOTE */}
+      <span className="absolute -left-4 landscape:-left-4 -top-1 text-4xl opacity-20 select-none">“</span>
+      <p>...an exceptional speaker: he is engaging, well-spoken, and clearly passionate about his work.</p>
+      {/* CLOSE QUOTE */}
+      <span className="absolute bottom-4 right-54 landscape:right-39 text-4xl opacity-20 select-none">”</span>
+    </blockquote>
+    <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+      — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting &amp; Expo
+    </figcaption>
+  </figure>
 
-    {/* Cards */}
-    <div className="flex flex-col gap-6 w-full">
-      {/* Always-visible: first two cards */}
-      <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
-        <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-        <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-          <span className="absolute -left-4 -top-1 text-4xl opacity-20 select-none">“</span>
-          <p>...an exceptional speaker: he is engaging, well-spoken, and clearly passionate about his work.</p>
-          <span className="absolute right-54 bottom-4 text-4xl opacity-20 select-none">”</span>
-        </blockquote>
-        <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-          — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting &amp; Expo
-        </figcaption>
-      </figure>
+  <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
+    <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" aria-hidden />
+    <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
+      <span className="absolute -left-4 landscape:-left-4 -top-1 text-4xl opacity-20 select-none">“</span>
+      <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
+      <span className="absolute bottom-4 right-23 landscape:right-85 text-4xl opacity-20 select-none">”</span>
+    </blockquote>
+    <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+      — <span className="text-[var(--color-gold)]">Audience member</span>, Society for Prevention Research Annual Meeting
+    </figcaption>
+  </figure>
 
-      <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
-        <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" aria-hidden />
-        <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-          <span className="absolute -left-4 -top-1 text-4xl opacity-20 select-none">“</span>
-          <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
-          <span className="absolute right-23 bottom-4 text-4xl opacity-20 select-none">”</span>
-        </blockquote>
-        <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-          — <span className="text-[var(--color-gold)]">Audience member</span>, Society for Prevention Research Annual Meeting
-        </figcaption>
-      </figure>
+  {/* Collapsible group: the rest of the cards */}
+  <div className={showAllTestimonials ? "flex flex-col gap-6 w-full" : "hidden"}>
+    <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
+      <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" aria-hidden />
+      <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
+        <span className="absolute -left-4 landscape:-left-4 -top-1 text-4xl opacity-20 select-none">“</span>
+        <p>Dr. Salerno has a way of blending data with human stories that makes science resonate.</p>
+        <span className="absolute bottom-4 right-47 landscape:right-45 text-4xl opacity-20 select-none">”</span>
+      </blockquote>
+      <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+        — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
+      </figcaption>
+    </figure>
 
-                {/* Collapsible group: the rest of the cards */}
-                <div className={showAllTestimonials ? "flex flex-col gap-6 w-full" : "hidden"}>
-                  <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
-                    <span
-                      className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl"
-                      aria-hidden
-                    />
-                    <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-                      <span className="absolute -left-4 -top-1 text-4xl opacity-20 select-none">
-                        “
-                      </span>
-                      <p>
-                        Dr. Salerno has a way of blending data with human stories that makes science resonate.
-                      </p>
-                      <span className="absolute right-47 bottom-4 text-4xl opacity-20 select-none">
-                        ”
-                      </span>
-                    </blockquote>
-                    <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-                      — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
-                    </figcaption>
-                  </figure>
+    <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
+      <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+      <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
+        <span className="absolute -left-4 landscape:-left-4 -top-1 text-4xl opacity-20 select-none">“</span>
+        <p>...gifted speaker whose engaging style &amp; clear communication bring complex ideas to life.</p>
+        <span className="absolute bottom-4 right-18 landscape:right-25 text-4xl opacity-20 select-none">”</span>
+      </blockquote>
+      <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+        — <span className="text-[var(--color-gold)]">Audience member</span>, Columbia University
+      </figcaption>
+    </figure>
 
-                  <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
-                    <span
-                      aria-hidden
-                      className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl"
-                    />
-                    <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-                      <span className="absolute -left-4 -top-1 text-4xl opacity-20 select-none">
-                        “
-                      </span>
-                      <p>
-                        ...gifted speaker whose engaging style &amp; clear communication bring complex ideas to life.
-                      </p>
-                      <span className="absolute right-18 bottom-4 text-4xl opacity-20 select-none">
-                        ”
-                      </span>
-                    </blockquote>
-                    <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-                      — <span className="text-[var(--color-gold)]">Audience member</span>, Columbia University
-                    </figcaption>
-                  </figure>
+    <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
+      <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+      <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
+        <span className="absolute -left-4 landscape:-left-4 -top-1 text-4xl opacity-20 select-none">“</span>
+        <p>...can communicate with diverse audiences, speaks with heart and dimensionality.</p>
+        <span className="absolute bottom-5 right-8 landscape:right-67 text-4xl opacity-20 select-none">”</span>
+      </blockquote>
+      <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+        — <span className="text-[var(--color-gold)]">Audience member</span>, Society of Behavioral Medicine Annual Meeting
+      </figcaption>
+    </figure>
 
-                  <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
-                    <span
-                      aria-hidden="true"
-                      className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl"
-                    />
-                    <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-                      <span className="absolute -left-4 -top-1 text-4xl opacity-20 select-none">
-                        “
-                      </span>
-                      <p>
-                        ...can communicate with diverse audiences, speaks with heart and dimensionality.
-                      </p>
-                      <span className="absolute right-8 bottom-5 text-4xl opacity-20 select-none">
-                        ”
-                      </span>
-                    </blockquote>
-                    <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-                      — <span className="text-[var(--color-gold)]">Audience member</span>, Society of Behavioral Medicine Annual Meeting
-                    </figcaption>
-                  </figure>
+    <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
+      <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" aria-hidden />
+      <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
+        <span className="absolute -left-4 landscape:-left-4 -top-1 text-4xl opacity-20 select-none">“</span>
+        <p>...brings a charming intensity and passion that inspires others with his presence and message.</p>
+        <span className="absolute bottom-4 right-48 landscape:right-40 text-4xl opacity-20 select-none">”</span>
+      </blockquote>
+      <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+        — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
+      </figcaption>
+    </figure>
 
-                  <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
-                    <span
-                      className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl"
-                      aria-hidden
-                    />
-                    <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-                      <span className="absolute -left-4 -top-1 text-4xl opacity-20 select-none">
-                        “
-                      </span>
-                      <p>
-                        ...brings a charming intensity and passion that inspires others with his presence and message.
-                      </p>
-                      <span className="absolute right-48 bottom-4 text-4xl opacity-20 select-none">
-                        ”
-                      </span>
-                    </blockquote>
-                    <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-                      — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
-                    </figcaption>
-                  </figure>
+    <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
+      <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+      <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
+        <span className="absolute -left-4 landscape:-left-4 -top-1 text-4xl opacity-20 select-none">“</span>
+        <p>...engaging, energetic, strong communication skills, proven ability to disseminate science.</p>
+        <span className="absolute bottom-5 -right-2 landscape:right-40 text-4xl opacity-20 select-none">”</span>
+      </blockquote>
+      <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+        — <span className="text-[var(--color-gold)]">Audience member</span>, University of Central Florida
+      </figcaption>
+    </figure>
 
-                  <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
-                    <span
-                      aria-hidden="true"
-                      className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl"
-                    />
-                    <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-                      <span className="absolute -left-4 -top-1 text-4xl opacity-20 select-none">
-                        “
-                      </span>
-                      <p>
-                        ...engaging, energetic, strong communication skills, proven ability to disseminate science.
-                      </p>
-                      <span className="absolute -right-2 bottom-5 text-4xl opacity-20 select-none">
-                        ”
-                      </span>
-                    </blockquote>
-                    <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-                      — <span className="text-[var(--color-gold)]">Audience member</span>, University of Central Florida
-                    </figcaption>
-                  </figure>
+    <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
+      <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+      <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
+        <span className="absolute -left-4 landscape:-left-4 -top-1 text-4xl opacity-20 select-none">“</span>
+        <p>...a highly engaging, knowledgeable, and skilled speaker...strongly recommended.</p>
+        <span className="absolute bottom-4 right-32 landscape:right-50 text-4xl opacity-20 select-none">”</span>
+      </blockquote>
+      <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+        — <span className="text-[var(--color-gold)]">Audience member</span>, University of California, Los Angeles
+      </figcaption>
+    </figure>
+  </div>
+</div>
 
-                  <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
-                    <span
-                      aria-hidden="true"
-                      className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl"
-                    />
-                    <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-                      <span className="absolute -left-4 -top-1 text-4xl opacity-20 select-none">
-                        “
-                      </span>
-                      <p>
-                        ...a highly engaging, knowledgeable, and skilled speaker...strongly recommended.
-                      </p>
-                      <span className="absolute right-32 bottom-4 text-4xl opacity-20 select-none">
-                        ”
-                      </span>
-                    </blockquote>
-                    <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-                      — <span className="text-[var(--color-gold)]">Audience member</span>, University of California, Los Angeles
-                    </figcaption>
-                  </figure>
-                </div>
 
 {/* Toggle button */}
 <div className="mt-4 flex justify-center w-full landscape:-mb-6">
@@ -884,7 +833,6 @@ export default function SpeakingPage() {
 </div>
 
               </div>
-                            </div>
 
             </section>
             
@@ -1106,65 +1054,6 @@ export default function SpeakingPage() {
 @media (hover: none) and (orientation: landscape) and (max-width: 1368px) {
   .quote-col {
     display: none !important;
-  }
-}
-
-@media (max-width: 767px) and (orientation: portrait) {
-  .quote-col {
-    display: flex !important;
-    flex-direction: column;
-    margin-top: 2rem;
-  }
-}
-
-/* SPEAKING — mobile LANDSCAPE: show quotes below section, narrower and centered */
-@media (max-width: 767px) and (orientation: landscape) {
-  .quote-col {
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .quote-col figure {
-    max-width: 600px;
-    width: 100%;
-    margin: 0 auto 1.5rem auto;
-    padding: 1.5rem;
-  }
-
-  .quote-col blockquote {
-    font-size: 1.35rem;
-    line-height: 1.5;
-    text-align: left;
-  }
-}
-
-@media (max-width: 767px) and (orientation: landscape) {
-  .quote-col {
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 90%;
-    margin: 1rem auto 2rem auto;
-  }
-}
-
-/* Force quotes to show on mobile landscape */
-@media (max-width: 767px) and (orientation: landscape) {
-  [data-page="speaking"] .quote-col {
-    display: flex !important;          /* override hidden + earlier rule */
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 90%;
-    margin: 1rem auto 2rem;
   }
 }
 
