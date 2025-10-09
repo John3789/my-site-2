@@ -1048,13 +1048,7 @@ export default function SpeakingPage() {
           }
         }
 
-        /* SPEAKING — mobile PORTRAIT: much larger */
-        @media (max-width: 767px) and (orientation: portrait) {
-          [data-page="speaking"] .s-hero .hero-title {
-            font-size: clamp(156px, 36vw, 300px) !important;
-            line-height: 1.02;
-            letter-spacing: -0.015em;
-          }
+
           [data-page="speaking"] .s-hero .hero-sub {
             font-size: clamp(52px, 12.5vw, 82px) !important;
             line-height: 1.24;
