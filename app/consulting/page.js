@@ -145,7 +145,6 @@ export default function ConsultingPage() {
                     "text-[12px] font-semibold tracking-wide truncate transition",
                     "active:scale-95 active:brightness-125",
                     "border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)]",
-                    activeId === s.id && "!bg-[var(--color-gold)] !text-black !border-[var(--color-gold)]"
                   ].join(" ")}
                 >
                   {/* Fixed-width numeric block ensures perfect alignment */}
