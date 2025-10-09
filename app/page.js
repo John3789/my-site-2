@@ -367,7 +367,7 @@ export default function Home() {
       </p>
 
       {/* 5) Legal line (centered with dots) */}
-      <p className="mt-2 mb-1 text-left opacity-85">
+      <p className="mt-2 mb-5 text-left opacity-85">
         <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
         <span className="mx-2 opacity-50">·</span>
         <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
