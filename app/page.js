@@ -110,9 +110,9 @@ export default function Home() {
 
       {/* ===== PAGE BODY WRAPPER ===== */}
       <div
-        style={{ '--z': 3.00, '--zoomL': 2.00 }}
+        style={{ '--z': 3.00, '--zoomL': 1.60 }}
         className="
-          md:contents
+          lg:contents
           origin-top
           [transform:scale(var(--z))]
           [width:calc(100%/var(--z))]
