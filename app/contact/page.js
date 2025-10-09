@@ -72,12 +72,12 @@ export default function ContactPage() {
             className="pointer-events-none absolute inset-0 -z-10"
             style={{
               background:
-                "radial-gradient(1200px 600px at 10% -10%, rgba(255,221,149,0.07), transparent 60%), radial-gradient(900px 500px at 110% 10%, rgba(255,221,149,0.06), transparent 60%)",
+                "radial-gradient(1400px 600px at 10% -10%, rgba(255,221,149,0.07), transparent 60%), radial-gradient(900px 500px at 110% 10%, rgba(255,221,149,0.06), transparent 60%)",
             }}
           />
 
           {/* ============== MOBILE (inside zoom) ============== */}
-          <div className="lg:hidden mx-auto max-w-[1200px] px-6 py-20">
+          <div className="lg:hidden mx-auto max-w-[1400px] px-4 py-20">
             {/* Zoomed mobile container */}
             <div className="zoomwrap origin-top mx-auto overflow-visible">
               {/* Page header */}
@@ -249,7 +249,7 @@ export default function ContactPage() {
 
               {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
               <div className="block lg:hidden">
-                <div className="mx-auto max-w-[1200px] px-6 mb-14 -mt-5">
+                <div className="mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
                   <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
                 </div>
 
