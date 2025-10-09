@@ -235,7 +235,6 @@ export default function SpeakingPage() {
               </div>
 
 {/* ---- MOBILE quick nav (numbered, Consulting pattern) ---- */}
-<div className="-mt-3 landscape:-mt-5">
 <div id="quicknav" className="lg:hidden mt-4 landscape:mt-3 landscape:mb-2">
   {/* cap width + center only in landscape */}
   <div className="w-full landscape:max-w-[520px] mx-auto">
@@ -264,8 +263,6 @@ export default function SpeakingPage() {
       ))}
     </div>
   </div>
-    </div>
-
 </div>
 {/* ---- /mobile quick nav ---- */}
 
@@ -274,7 +271,7 @@ export default function SpeakingPage() {
 
           {/* ===== MAIN CONTENT ===== */}
           <div className="mx-auto max-w-[1400px] md:py-6 space-y-16 md:space-y-24" id="topics">
-            <hr className="border-t border-[var(--color-cream)]/22 md:mb-8 w-full" />
+            <hr className="border-t border-[var(--color-cream)]/22 md:mb-8 w-full mx-auto w-[93%] landscape:mt-2 landscape:mb-4" />
 
             {/* Popular Topics (Programs) */}
             <section
@@ -457,7 +454,7 @@ export default function SpeakingPage() {
             </div>
 
             {/* Dr. Salerno Offers (Formats) */}
-            <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 w-full" />
+            <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 w-full mx-auto w-[93%]" />
             <section
               id="formats"
               className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 md:gap-x-0 mx-15 items-center"
@@ -606,7 +603,7 @@ export default function SpeakingPage() {
             </div>
 
             {/* Outcomes (Results) */}
-            <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 w-full" />
+            <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 mx-auto w-[93%]" />
             <section
               id="results"
               className="grid grid-cols-1 lg:grid-cols-12 gap-12 mx-15 items-start gap-y-12"
@@ -713,7 +710,7 @@ export default function SpeakingPage() {
             </div>
 
             {/* ===== Testimonials (mobile-only; now collapsible) ===== */}
-<hr className="lg:hidden w-screen relative left-1/2 -translate-x-1/2 border-t border-[var(--color-cream)]/22 mb-6" />
+<hr className="lg:hidden mx-auto w-[93%] relative left-1/2 -translate-x-1/2 border-t border-[var(--color-cream)]/22 mb-6" />
 
 <section id="testimonials" className="lg:hidden">
   {/* Centered container for everything in this section */}
@@ -947,7 +944,7 @@ export default function SpeakingPage() {
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="block lg:hidden">
   <div className="mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
-    <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
+    <hr className="border-t border-[var(--color-cream)]/22 mb-0 mx-auto w-[93%]" />
   </div>
 
   <div className="mobile-footer-cap">
