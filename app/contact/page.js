@@ -190,7 +190,6 @@ export default function ContactPage() {
             {/* ... */}
           </div>
 
-{/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="block lg:hidden">
   <div className="mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
     <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
