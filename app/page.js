@@ -132,8 +132,8 @@ export default function Home() {
               <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
               <div className="max-w-4xl mx-auto text-center">
                 <p className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90">
-                  “I believe everyone has the power to unlock hidden potential and live with a higher purpose —
-                  my mission is to blend science and growth wisdom to guide the way.”
+                  “I believe everyone has the power to unlock hidden potential and live with greater purpose —
+                  my mission is to blend scientific and growth wisdom to guide the way.”
                 </p>
                 <Link href="about" className="mt-8 inline-block link">
                   About Dr. Salerno →
@@ -168,11 +168,15 @@ export default function Home() {
                     </li>
                     <li className="flex gap-2">
                       <span className="text-[var(--color-gold)]">✔︎</span>
+                      <span><strong>Implement</strong> — Embed strategies that sustain growth &amp; wellbeing.</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-[var(--color-gold)]">✔︎</span>
                       <span><strong>Evaluate</strong> — Measure outcomes that matter and prove impact with data.</span>
                     </li>
                     <li className="flex gap-2">
                       <span className="text-[var(--color-gold)]">✔︎</span>
-                      <span><strong>Scale</strong> — Strengthen and integrate organizational resilience &amp; wellbeing.</span>
+                      <span><strong>Scale</strong> — Strengthen and integrate organizational resilience &amp; wellness.</span>
                     </li>
                   </ul>
 
