@@ -944,7 +944,7 @@ export default function SpeakingPage() {
 
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="block lg:hidden">
-  <div className="px-0 mb-14 -mt-5">
+  <div className="px-3 mb-14 -mt-5">
     <hr className="border-t border-[var(--color-cream)]/22 mb-0 mx-auto w-[93%]" />
   </div>
 
