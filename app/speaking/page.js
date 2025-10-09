@@ -234,34 +234,38 @@ export default function SpeakingPage() {
                 </a>
               </div>
 
-              {/* ---- MOBILE quick nav (numbered, Consulting pattern) ---- */}
-              <div id="quicknav" className="lg:hidden mt-4">
-                <div className="grid grid-cols-2 landscape:grid-cols-2 gap-2">
-                  {SECTIONS.map((s, idx) => (
-                    <button
-                      key={s.id}
-                      type="button"
-                      onClick={() => jump(s.id)}
-                      aria-current={activeId === s.id ? "true" : "false"}
-                      className={[
-                        "w-full rounded-full inline-flex items-center gap-1 rounded-full px-3.5 py-1.5",
-                        "text-[12px] font-semibold tracking-wide truncate transition",
-                        "active:scale-95 active:brightness-125",
-                        "border border-white/18 bg-[var(--color-teal-800)] text-[var(--color-cream)]",
-                        activeId === s.id &&
-                          "!bg-[var(--color-gold)] !text-black !border-[var(--color-gold)]",
-                      ].join(" ")}
-                    >
-                      {/* Fixed-width numeric block ensures perfect alignment */}
-                      <span className="inline-block w-[3ch] text-left tabular-nums leading-none">
-                        {idx + 1}.
-                      </span>
-                      <span className="truncate">{s.label}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-              {/* ---- /mobile quick nav ---- */}
+{/* ---- MOBILE quick nav (numbered, Consulting pattern) ---- */}
+<div id="quicknav" className="lg:hidden mt-4 landscape:mt-3 landscape:mb-2">
+  {/* cap width + center only in landscape */}
+  <div className="w-full landscape:max-w-[520px] mx-auto">
+    <div className="grid grid-cols-2 gap-2 landscape:gap-1">
+      {SECTIONS.map((s, idx) => (
+        <button
+          key={s.id}
+          type="button"
+          onClick={() => jump(s.id)}
+          aria-current={activeId === s.id ? "true" : "false"}
+          className={[
+            "w-full rounded-full inline-flex items-center gap-1",
+            "px-3.5 py-1.5 landscape:px-3",           // slightly narrower in landscape
+            "text-[12px] landscape:text-[11px] font-semibold tracking-wide truncate transition",
+            "active:scale-95 active:brightness-125",
+            "border border-white/18 bg-[var(--color-teal-800)] text-[var(--color-cream)]",
+            activeId === s.id &&
+              "!bg-[var(--color-gold)] !text-black !border-[var(--color-gold)]",
+          ].join(" ")}
+        >
+          <span className="inline-block w-[3ch] text-left tabular-nums leading-none">
+            {idx + 1}.
+          </span>
+          <span className="truncate">{s.label}</span>
+        </button>
+      ))}
+    </div>
+  </div>
+</div>
+{/* ---- /mobile quick nav ---- */}
+
             </div>
           </section>
 
