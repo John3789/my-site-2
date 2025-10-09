@@ -233,7 +233,7 @@ export default function SpeakingPage() {
               </div>
 
               {/* ---- MOBILE quick nav (numbered, Consulting pattern) ---- */}
-              <div id="quicknav" className="lg:hidden mt-10 -mb-5 -pb-5 pointer-events-auto">
+              <div id="quicknav" className="lg:hidden mt-10 -pb-15 pointer-events-auto">
                 <div className="grid grid-cols-2 landscape:grid-cols-3 gap-2">
                   {SECTIONS.map((s, idx) => (
                     <button
@@ -887,11 +887,11 @@ export default function SpeakingPage() {
                 </div>
 
                 {/* Toggle button */}
-                <div className="mt-4 w-full flex justify-center">
+                <div className="mt-4 flex justify-center">
                   <button
                     onClick={() => setShowAllTestimonials((s) => !s)}
                     aria-expanded={showAllTestimonials}
-                    className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition hover:bg-[var(--color-teal-700)] active:translate-y-[1px]"
+                    className="inline-flex items-center justify-center whitespace-nowrap rounded-full border border-white/20 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition hover:bg-[var(--color-teal-700)] active:translate-y-[1px]"
                   >
                     {showAllTestimonials ? "Show Less" : "Show All"}
                   </button>
