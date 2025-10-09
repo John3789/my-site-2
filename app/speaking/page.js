@@ -1098,25 +1098,6 @@ export default function SpeakingPage() {
   }
 }
 
-/* SPEAKING — Mobile Portrait: expand text width in Programs, Formats, and Results */
-@media (max-width: 767px) and (orientation: portrait) {
-  #programs > div,
-  #formats > div,
-  #results > div {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-    max-width: 95vw !important;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  #programs p,
-  #formats p,
-  #results p {
-    font-size: 1.05rem; /* optional: slightly larger text for readability */
-  }
-}
-
       `}</style>
     </>
   );
