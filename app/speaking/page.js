@@ -948,10 +948,6 @@ export default function SpeakingPage() {
 </div>
 
 
-            <div className="lg:hidden mx-auto max-w-[1100px] px-3">
-              {/* (mobile newsletter + socials unchanged) */}
-              {/* ... */}
-            </div>
 
 
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
