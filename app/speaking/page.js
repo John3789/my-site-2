@@ -934,16 +934,17 @@ export default function SpeakingPage() {
               >
                 Book Dr. Salerno to Speak
               </a>
-            </div>
-          </div>
-
-                                        {/* Home: section/bookend divider (aligns to 1400px container) */}
+                                                      {/* Home: section/bookend divider (aligns to 1400px container) */}
 <div className="mx-auto max-w-[1400px] px-6">
   <hr className="border-t border-[var(--color-cream)]/22" />
 </div>
 
+            </div>
+          </div>
+
+
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
-<div className="block lg:hidden mt-15">
+<div className="block lg:hidden mt-8">
   <div className="mx-auto max-w-[1400px] px-6 mb-0 mt-0">
   </div>
 
