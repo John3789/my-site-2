@@ -237,18 +237,18 @@ export default function ContactPage() {
               <div className="pb-10" />
 
               {/* FINAL divider above footer — no bleed on mobile */}
-              <div className="mx-auto max-w-[1800px] px-6">
-                <hr className="hidden lg:block max-w-[1400px] border-t border-[var(--color-cream)]/22" />
+              <div className="mx-auto max-w-[1200px] px-6">
+                <hr className="hidden lg:block max-w-[1200px] border-t border-[var(--color-cream)]/22" />
               </div>
 
               {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
               <div className="block lg:hidden">
-                <div className="mx-auto max-w-[1800px] px-6 mb-14 -mt-5">
+                <div className="mx-auto max-w-[1200px] px-6 mb-14 -mt-5">
                   <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
                 </div>
 
                 <div className="mobile-footer-cap">
-                  <div className="mx-auto max-w-[1800px] px-3">
+                  <div className="mx-auto max-w-[1400px] px-3">
                     {/* Newsletter card (midnight blue) */}
                     <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
                       <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
