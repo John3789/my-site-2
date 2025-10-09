@@ -301,14 +301,11 @@ export default function Home() {
                 </div>
               </div>
             </div>
-{/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="block lg:hidden mobile-footer-cap">
-  <div className="w-full mb-14 -mt-5">
-  <div className="mx-auto max-w-[1400px] px-6">
+  <div className="mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
     <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
   </div>
-    </div>
-
+{/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
   <div className="mx-auto max-w-[1400px] px-3">
     {/* Newsletter card (midnight blue) */}
     <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
