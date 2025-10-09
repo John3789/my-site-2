@@ -52,7 +52,7 @@ export default function ContactPage() {
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10" style={{ background: "radial-gradient(1200px 600px at 10% -10%, rgba(255,221,149,0.07), transparent 60%), radial-gradient(900px 500px at 110% 10%, rgba(255,221,149,0.06), transparent 60%)" }} />
 
       {/* ============== MOBILE (zoom wrapper) ============== */}
-      <div className="md:hidden mx-auto max-w-[1200px] px-6 py-20">
+      <div className="lg:hidden mx-auto max-w-[1200px] px-6 py-20">
         <div style={{ "--z": 3.0, "--zoomL": 1.6 }} className="zoomwrap origin-top [transform:scale(var(--z))] [width:calc(100%/var(--z))] mx-auto landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))] overflow-visible">
 {/* Page header now inside the zoom so it scales crisply */}
 <header className="max-w-3xl mx-auto text-center mb-10">
@@ -256,7 +256,7 @@ Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal gro
       </div>
 
       {/* ============== DESKTOP (unchanged per your last version) ============== */}
-      <div className="hidden md:block mx-auto max-w-[1200px] px-6 py-20">
+      <div className="hidden lg:block mx-auto max-w-[1200px] px-6 py-20">
        {/* Page header now inside the zoom so it scales crisply */}
 <header className="max-w-3xl mx-auto text-center mb-10">
   <div className="flex items-center justify-center gap-3 md:block">
