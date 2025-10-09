@@ -82,7 +82,7 @@ export default function ResourcesPage() {
   /* ========= Desktop sticky subnav (outside zoom) ========= */
   const Nav = useMemo(() => {
     return (
-      <div className="z-30 bg-transparent md:bg-[var(--color-teal-850)]/80">
+      <div className="z-30 bg-transparent lg:bg-[var(--color-teal-850)]/80">
         <div className="relative mx-auto max-w-[1200px] px-6 py-3">
           <div ref={navScrollRef} className="flex gap-2 overflow-x-auto no-scrollbar scroll-smooth" onScroll={updateNavScrollState}>
             {THEMES.map((t) => {
@@ -100,13 +100,13 @@ export default function ResourcesPage() {
             })}
           </div>
 
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <button onClick={() => scrollNavBy(-240)} disabled={!canScrollLeft} aria-label="Scroll left" className={["absolute left-1 top-1/2 -translate-y-1/2 rounded-full border px-2 py-1 text-sm", canScrollLeft ? "border-white/25 bg-white/10 hover:bg-white/20" : "border-white/10 bg-white/5 opacity-50 cursor-not-allowed"].join(" ")}>‹</button>
             <button onClick={() => scrollNavBy(240)} disabled={!canScrollRight} aria-label="Scroll right" className={["absolute right-1 top-1/2 -translate-y-1/2 rounded-full border px-2 py-1 text-sm", canScrollRight ? "border-white/25 bg-white/10 hover:bg-white/20" : "border-white/10 bg-white/5 opacity-50 cursor-not-allowed"].join(" ")}>›</button>
           </div>
         </div>
 
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="h-px w-full bg-[var(--color-cream)]/15" />
           </div>
@@ -139,7 +139,7 @@ export default function ResourcesPage() {
             </section>
 
             {/* Mobile nav chips */}
-            <div className="md:hidden mt-4 grid grid-cols-3 gap-2">
+            <div className="lg:hidden mt-4 grid grid-cols-3 gap-2">
               {THEMES.map((t) => {
                 const active = currentId === t.slug;
                 return (
@@ -156,13 +156,13 @@ export default function ResourcesPage() {
             </div>
 
             {/* Divider under mobile nav */}
-            <div className="md:hidden mt-3 -mb-5 px-0"> 
+            <div className="lg:hidden mt-3 -mb-5 px-0"> 
                 <div className="h-px w-full bg-[var(--color-cream)]/15" />
             </div>
           </div>
 
           {/* Desktop sticky subnav — sits right under the intro on desktop */}
-<div className="hidden md:block sticky top-[31px] z-30 bg-[var(--color-teal-850)]/80">
+<div className="hidden lg:block sticky top-[31px] z-30 bg-[var(--color-teal-850)]/80">
   {Nav}
 </div>
 
