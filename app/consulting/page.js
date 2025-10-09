@@ -875,7 +875,7 @@ export default function ConsultingPage() {
       `}</style>
 
       {/* Home: section/bookend divider (aligns to 1100px container) */}
-      <div className="mx-auto max-w-[1100px] px-6">
+      <div className="hidden lg:block mx-auto max-w-[1100px] px-6">
         <hr className="border-t border-[var(--color-cream)]/22" />
       </div>
     </main>
