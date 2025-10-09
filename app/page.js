@@ -45,8 +45,8 @@ export default function Home() {
       className="
         object-cover origin-center will-change-transform
         [transform:scaleX(1.00)_scaleY(1.00)]
-        lg:[transform:none]
-        object-[center_0%] lg:object-[center_0%]
+        md:[transform:none]
+        object-[center_0%] md:object-[center_0%]
       "
     />
     {/* 🔒 same overlay on mobile + desktop */}
@@ -110,7 +110,7 @@ export default function Home() {
 
       {/* ===== PAGE BODY WRAPPER ===== */}
       <div
-        style={{ '--z': 3.00, '--zoomL': 1.60 }}
+        style={{ '--z': 3.00, '--zoomL': 2.00 }}
         className="
           md:contents
           origin-top
