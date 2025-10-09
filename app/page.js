@@ -110,7 +110,7 @@ export default function Home() {
 
       {/* ===== PAGE BODY WRAPPER ===== */}
       <div
-        style={{ '--z': 3.00, '--zoomL': 1.20 }}
+        style={{ '--z': 3.00, '--zoomL': 1.30 }}
         className="
           lg:contents
           origin-top
