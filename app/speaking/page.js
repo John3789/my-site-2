@@ -223,10 +223,10 @@ export default function SpeakingPage() {
               </div>
 
               {/* CTA under intro, above the quick nav */}
-              <div className="sm:mt-5 md:mt-2 md:mb-5 flex justify-center">
+              <div className="mt-5 flex justify-center">
                 <a
                   href="/contact"
-                  className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition lg:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs md:w-auto md:max-w-none md:relative md:top-8"
+                  className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition lg:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs md:w-auto md:max-w-none"
                 >
                   Book Dr. Salerno to Speak
                 </a>
