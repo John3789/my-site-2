@@ -242,7 +242,7 @@ export default function SpeakingPage() {
                       onClick={() => jump(s.id)}
                       aria-current={activeId === s.id ? "true" : "false"}
                       className={[
-                        "w-full inline-flex items-center gap-1 rounded-full px-3.5 py-1.5",
+                        "w-full mx-auto inline-flex items-center gap-1 rounded-full px-3.5 py-1.5",
                         "text-[12px] font-semibold tracking-wide truncate transition",
                         "active:scale-95 active:brightness-125",
                         "border border-white/18 bg-[var(--color-teal-800)] text-[var(--color-cream)]",
@@ -271,6 +271,7 @@ export default function SpeakingPage() {
             <section
               id="programs"
               className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mx-15 gap-y-12"
+              
             >
               <div className="md:col-span-5 md:py-6">
                 {/* Overline (slightly dimmer) */}
@@ -377,7 +378,7 @@ export default function SpeakingPage() {
               </div>
 
               {/* Quotes (left column) — desktop only */}
-              <div className="md:col-span-7 ml-auto hidden md:flex flex-col gap-6 max-w-[640px]">
+<div className="md:col-span-7 ml-auto hidden md:flex flex-col gap-6 max-w-[640px] quote-col">
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
                   {/* Decorative quotes (no normal quotes in text) */}
@@ -453,7 +454,7 @@ export default function SpeakingPage() {
               className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 md:gap-x-0 mx-15 items-center"
             >
               {/* Quotes (RIGHT column) — desktop only */}
-              <div className="md:col-span-7 hidden md:flex flex-col gap-6 max-w-[640px] md:pr-6">
+                <div className="md:col-span-7 hidden md:flex flex-col gap-6 max-w-[640px] md:pr-6 quote-col">
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
@@ -643,7 +644,7 @@ export default function SpeakingPage() {
               </div>
 
               {/* Quotes (right column, Results) — desktop only */}
-              <div className="md:col-span-7 ml-auto hidden md:flex flex-col gap-6 max-w-[640px]">
+<div className="md:col-span-7 ml-auto hidden md:flex flex-col gap-6 max-w-[640px] quote-col">
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
                   <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
@@ -1095,6 +1096,12 @@ export default function SpeakingPage() {
     margin-left: auto !important;
     margin-right: auto !important;
     width: 88% !important; /* pulls in from full-bleed */
+  }
+}
+
+@media (hover: none) and (orientation: landscape) and (max-width: 1368px) {
+  .quote-col {
+    display: none !important;
   }
 }
 
