@@ -108,19 +108,18 @@ export default function RootLayout({ children }) {
         {children}
 
 <FooterGate>
- {/* DESKTOP / LARGE-TABLET FOOTER (with blue card on lg) */}
+ {/* DESKTOP / LARGE-TABLET FOOTER (compact, non-square) */}
 <footer className="hidden lg:block py-10 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
   <div
     className="
-      mx-auto w-full max-w-[1680px]
-      grid grid-cols-1
-      lg:grid-cols-[1fr_minmax(0,0.9fr)]
+      mx-auto w-full max-w-[1600px]
+      grid lg:grid-cols-[1fr_minmax(0,0.85fr)]
       xl:grid-cols-[1fr_minmax(0,1.05fr)]
-      gap-y-10 gap-x-16 items-end
+      gap-y-10 gap-x-14 items-end
     "
   >
     {/* LEFT — Name + Terms + Privacy */}
-    <div className="order-2 lg:order-1 flex flex-col justify-end">
+    <div className="flex flex-col justify-end">
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1 opacity-90 text-[13px] leading-relaxed">
         <span>© Dr. Juan Pablo Salerno™</span>
         <span className="opacity-50">·</span>
@@ -135,33 +134,31 @@ export default function RootLayout({ children }) {
     {/* RIGHT — Newsletter + Socials + Bio */}
     <div
       className="
-        order-1 lg:order-2
-        grid gap-5 text-left
-        lg:max-w-[640px] xl:max-w-[750px]
-        lg:justify-self-end xl:justify-self-end
-        lg:pr-6 xl:pr-10
+        grid gap-5 text-left justify-self-end
+        lg:max-w-[500px] xl:max-w-[700px]
+        lg:pr-4 xl:pr-10
       "
     >
-      {/* Newsletter card (kept on lg, just lighter) */}
+      {/* Newsletter Card */}
       <div
         className="
           rounded-xl bg-[#0f2334] ring-1 ring-white/10
-          p-4 lg:p-5
-          shadow-[0_8px_24px_rgba(0,0,0,0.45)]
-          hover:bg-[#0C2634] transition
+          p-4 lg:p-4 shadow-[0_6px_20px_rgba(0,0,0,0.45)]
+          hover:bg-[#102a3a] transition
         "
       >
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div className="grid gap-3 md:grid-cols-[1fr_auto] md:items-center">
           <div className="min-w-0">
             <p className="text-[13px] uppercase tracking-[0.18em] opacity-70 mb-1">
               Science, Soul, and a Bit of Magic — Every Month
             </p>
-            <p className="text-base xl:text-[15px] opacity-95">
+            <p className="text-[14px] lg:text-[14.5px] opacity-95 leading-snug">
               Practical wisdom for modern minds — best paired with coffee and curiosity.
             </p>
           </div>
-          {/* Your existing signup component */}
-          <NewsletterSignup />
+          <div className="justify-self-start md:justify-self-end shrink-0">
+            <NewsletterSignup />
+          </div>
         </div>
       </div>
 
@@ -171,7 +168,7 @@ export default function RootLayout({ children }) {
       </div>
 
       {/* One-line bio */}
-      <p className="text-[13px] leading-relaxed opacity-85 -mt-1 lg:max-w-[640px] xl:max-w-[750px]">
+      <p className="text-[13px] leading-relaxed opacity-85 -mt-1 lg:max-w-[500px] xl:max-w-[700px]">
         Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, author and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
       </p>
     </div>
