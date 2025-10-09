@@ -109,14 +109,13 @@ export default function RootLayout({ children }) {
 
 <FooterGate>
  {/* DESKTOP / LARGE-TABLET FOOTER (tight, non-square) */}
-{/* DESKTOP / LARGE-TABLET FOOTER (ultra-compact version) */}
 <footer className="hidden lg:block py-10 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
   <div
     className="
-      mx-auto w-full max-w-[1400px]
-      grid lg:grid-cols-[1fr_minmax(0,520px)]
-      xl:grid-cols-[1fr_minmax(0,600px)]
-      gap-y-8 gap-x-10 items-end
+      mx-auto w-full max-w-[1500px]
+      grid lg:grid-cols-[1fr_minmax(0,640px)]
+      xl:grid-cols-[1fr_minmax(0,720px)]
+      gap-y-10 gap-x-12 items-end
     "
   >
     {/* LEFT — Name + Terms + Privacy */}
@@ -132,23 +131,23 @@ export default function RootLayout({ children }) {
       </div>
     </div>
 
-    {/* RIGHT — Newsletter + Socials + Bio (drastically slimmer) */}
-    <div className="justify-self-end w-full lg:max-w-[480px] xl:max-w-[560px] grid gap-4 text-left">
-      {/* Newsletter Card (tightest layout) */}
+    {/* RIGHT — Newsletter + Socials + Bio (hard-capped widths) */}
+    <div className="justify-self-end w-full lg:max-w-[560px] xl:max-w-[680px] grid gap-5 text-left">
+      {/* Newsletter Card (blue) — strictly bounded */}
       <div
         className="
-          w-full max-w-[480px]
-          rounded-lg bg-[#0f2334] ring-1 ring-white/10
-          p-3.5 md:p-4 shadow-[0_4px_16px_rgba(0,0,0,0.45)]
+          w-full max-w-[540px]
+          rounded-xl bg-[#0f2334] ring-1 ring-white/10
+          p-4 md:p-5 shadow-[0_6px_20px_rgba(0,0,0,0.45)]
           hover:bg-[#102a3a] transition
         "
       >
-        <div className="grid gap-2.5 md:grid-cols-[1fr_auto] md:items-center">
+        <div className="grid gap-3 md:grid-cols-[1fr_auto] md:items-center">
           <div className="min-w-0">
-            <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-0.5">
+            <p className="text-[12.5px] uppercase tracking-[0.18em] opacity-70 mb-1">
               Science, Soul, and a Bit of Magic — Every Month
             </p>
-            <p className="text-[13.5px] opacity-95 leading-snug">
+            <p className="text-[14px] opacity-95 leading-snug">
               Practical wisdom for modern minds — best paired with coffee and curiosity.
             </p>
           </div>
@@ -164,13 +163,12 @@ export default function RootLayout({ children }) {
       </div>
 
       {/* One-line bio */}
-      <p className="text-[12.5px] leading-relaxed opacity-85 -mt-0.5 max-w-[480px]">
+      <p className="text-[13px] leading-relaxed opacity-85 -mt-1 max-w-[540px]">
         Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, author and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
       </p>
     </div>
   </div>
 </footer>
-
 
 </FooterGate>
         <Analytics />
