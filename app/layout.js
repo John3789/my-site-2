@@ -108,8 +108,7 @@ export default function RootLayout({ children }) {
         {children}
 
 <FooterGate>
- {/* DESKTOP / LARGE-TABLET FOOTER (tight, non-square) */}
-{/* DESKTOP / LARGE-TABLET FOOTER (centered card on tablets) */}
+{/* DESKTOP / LARGE-TABLET FOOTER (centered blue card layout) */}
 <footer className="hidden lg:block py-10 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
   <div
     className="
@@ -138,51 +137,62 @@ export default function RootLayout({ children }) {
       className="
         justify-self-center xl:justify-self-end
         w-full max-w-[520px] xl:max-w-[640px]
-        grid gap-5 text-center xl:text-left
+        grid gap-8 text-left
       "
     >
-      {/* Blue newsletter card */}
+      {/* Blue newsletter card — title, description, email+button */}
       <div
         className="
           rounded-xl bg-[#0f2334] ring-1 ring-white/10
-          p-4 shadow-[0_6px_20px_rgba(0,0,0,0.45)]
+          p-6 shadow-[0_6px_20px_rgba(0,0,0,0.45)]
           hover:bg-[#102a3a] transition
+          text-left
         "
       >
-        <div className="grid gap-3 md:grid-cols-[1fr_auto] md:items-center">
-          <div className="min-w-0">
-            <p className="text-[13px] uppercase tracking-[0.18em] opacity-70 mb-1">
-              Science, Soul, and a Bit of Magic — Every Month
-            </p>
-            <p className="text-[14px] opacity-95 leading-snug">
-              Practical wisdom for modern minds — best paired with coffee and curiosity.
-            </p>
-          </div>
-          <div className="justify-self-center md:justify-self-end shrink-0">
-            <NewsletterSignup />
-          </div>
+        <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-3">
+          Science, Soul, and a Bit of Magic — Every Month
+        </p>
+        <p className="text-[14px] opacity-95 leading-snug mb-5">
+          Practical wisdom for modern minds — best paired with coffee and curiosity.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-2">
+          <input
+            type="email"
+            placeholder="you@example.com"
+            className="flex-1 rounded-md border border-white/15 bg-white/5 px-3 py-2 placeholder-white/60 outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50"
+          />
+          <button
+            type="button"
+            className="shrink-0 rounded-md bg-[var(--color-gold)] text-black px-4 py-2 font-semibold"
+          >
+            Subscribe
+          </button>
         </div>
       </div>
 
-      {/* Socials */}
-      <div className="flex items-center justify-center xl:justify-start mt-2">
-        <SocialFooter />
-      </div>
+      {/* Centered group (socials, bio, copyright) */}
+      <div className="flex flex-col items-center text-left">
+        {/* Socials */}
+        <div className="w-full flex items-center justify-center mb-4">
+          <SocialFooter />
+        </div>
 
-      {/* Bio line */}
-      <p className="text-[13px] leading-relaxed opacity-85 -mt-1 max-w-[520px] mx-auto xl:mx-0">
-        Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, author and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
-      </p>
+        {/* Bio */}
+        <p className="text-[13px] leading-relaxed opacity-85 max-w-[520px] text-left mb-2">
+          Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, author and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
+        </p>
 
-      {/* Copyright (shows here on tablet) */}
-      <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 opacity-80 text-[12.5px] mt-2 xl:hidden">
-        <span>© Dr. Juan Pablo Salerno™</span>
-        <span className="opacity-50">·</span>
-        <span>All rights reserved</span>
+        {/* Copyright (for tablet view) */}
+        <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 opacity-80 text-[12.5px] mt-2 xl:hidden">
+          <span>© Dr. Juan Pablo Salerno™</span>
+          <span className="opacity-50">·</span>
+          <span>All rights reserved</span>
+        </div>
       </div>
     </div>
   </div>
 </footer>
+
 
 
 </FooterGate>
