@@ -64,7 +64,7 @@ export default function ContactPage() {
           overflow-visible
         "
       >
-        <main className="relative min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
+        <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
           {/* soft gradient wash */}
           <div
             aria-hidden
