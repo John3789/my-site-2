@@ -246,14 +246,12 @@ export default function SpeakingPage() {
           onClick={() => jump(s.id)}
           aria-current={activeId === s.id ? "true" : "false"}
           className={[
-            "w-full rounded-full inline-flex items-center gap-1",
-            "px-3.5 py-1.5 landscape:px-3",           // slightly narrower in landscape
-            "text-[12px] landscape:text-[13px] font-semibold tracking-wide truncate transition",
-            "active:scale-95 active:brightness-125",
-            "border border-white/18 bg-[var(--color-teal-800)] text-[var(--color-cream)]",
-            activeId === s.id &&
-              "!bg-[var(--color-gold)] !text-black !border-[var(--color-gold)]",
-          ].join(" ")}
+  "w-full rounded-full inline-flex items-center gap-1",
+  "px-3.5 py-1.5 landscape:px-3",
+  "text-[12px] landscape:text-[13px] font-semibold tracking-wide truncate transition",
+  "active:scale-95 active:brightness-125",
+  "border border-white/18 bg-[var(--color-teal-800)] text-[var(--color-cream)]",
+].join(" ")}
         >
           <span className="inline-block w-[3ch] text-left tabular-nums leading-none">
             {idx + 1}.
