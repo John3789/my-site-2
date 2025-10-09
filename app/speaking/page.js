@@ -937,18 +937,8 @@ export default function SpeakingPage() {
             </div>
           </div>
 
-
-
-        {/* removed the contained divider on mobile */}
-      </div>
-
-                                        {/* Home: section/bookend divider (aligns to 1400px container) */}
-<div className="mx-auto max-w-[1400px] px-6">
-  <hr className="border-t border-[var(--color-cream)]/22" />
-</div>
-
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
-<div className="block lg:hidden !block portrait:!block landscape:!block">
+<div className="block lg:hidden">
   <div className="mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
     <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
   </div>
@@ -1023,8 +1013,16 @@ export default function SpeakingPage() {
     </div>
   </div>
 </div>
+
+
+        {/* removed the contained divider on mobile */}
       </div>
 
+        </div>
+                                        {/* Home: section/bookend divider (aligns to 1400px container) */}
+<div className="mx-auto max-w-[1400px] px-6">
+  <hr className="border-t border-[var(--color-cream)]/22" />
+</div>
       </main>
 
       {/* Global safeguards and crisp text styles */}
