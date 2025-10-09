@@ -428,7 +428,7 @@ export default function SpeakingPage() {
             </section>
 
             {/* Programs footer buttons (mobile only) — tighter */}
-            <div className="lg:hidden -mt-16 mb-15 w-full">
+            <div className="lg:hidden -mt-12 landscape:-mt-16 mb-15 w-full">
               <div className="w-full flex justify-center">
                 <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
                   <button
@@ -577,7 +577,7 @@ export default function SpeakingPage() {
             </section>
 
             {/* Formats footer buttons (mobile only) — slimmer + same spacing as Service Pillars */}
-            <div className="lg:hidden -mt-16 mb-15 w-full">
+            <div className="lg:hidden -mt-12 landscape:-mt-16 mb-15 w-full">
               <div className="w-full flex justify-center">
                 <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
                   <button
@@ -684,7 +684,7 @@ export default function SpeakingPage() {
             </section>
 
             {/* Results footer buttons (mobile only) — slimmer + same spacing as Service Pillars */}
-            <div className="lg:hidden -mt-16 mb-15 w-full">
+            <div className="lg:hidden -mt-12 landscape:-mt-16 mb-15 w-full">
               <div className="w-full flex justify-center">
                 <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
                   <button
@@ -880,7 +880,7 @@ export default function SpeakingPage() {
                   <button
                     onClick={() => setShowAllTestimonials((s) => !s)}
                     aria-expanded={showAllTestimonials}
-                    className="flex items-center justify-center whitespace-nowrap rounded-full border border-white/20 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition hover:bg-[var(--color-teal-700)] active:translate-y-[1px]"
+                    className="items-center justify-center whitespace-nowrap rounded-full border border-white/20 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition hover:bg-[var(--color-teal-700)] active:translate-y-[1px]"
                   >
                     {showAllTestimonials ? "Show Less" : "Show All"}
                   </button>
