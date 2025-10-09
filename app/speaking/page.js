@@ -876,7 +876,7 @@ export default function SpeakingPage() {
                 </div>
 
 {/* Toggle button */}
-<div className="mt-4 flex justify-center">
+<div className="mt-4 flex justify-center w-full">
   <button
     onClick={() => setShowAllTestimonials((s) => !s)}
     aria-expanded={showAllTestimonials}
