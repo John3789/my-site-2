@@ -187,7 +187,9 @@ export default function SpeakingPage() {
           {/* ===== Intro Blurb ===== */}
           <section className="relative w-full pt-16 pb-9 md:py-16" id="intro">
             {/* subtle hairline divider from hero */}
-<div className="absolute top-0 h-px bg-[var(--color-cream)]/15 left-6 right-6 md:inset-x-0" />
+<div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1400px] px-6 md:max-w-none md:px-0">
+  <div className="h-px bg-[var(--color-cream)]/15" />
+</div>
             <div className="mx-auto max-w-[1000px] px-6 text-left space-y-8">
               <h2 className="font-serif text-2xl md:text-4xl opacity-90 text-center font-semibold tracking-wide">
                 &ldquo;Engaging. Inspiring. Transformational.&rdquo;
@@ -265,7 +267,9 @@ export default function SpeakingPage() {
 
           {/* ===== MAIN CONTENT ===== */}
           <div className="mx-auto max-w-[1400px] md:py-6 space-y-16 md:space-y-24" id="topics">
-            <hr className="border-t border-[var(--color-cream)]/22 md:mb-8 w-full" />
+<div className="mx-auto w-full max-w-[1400px] px-6 md:max-w-none md:px-0">
+  <hr className="border-t border-[var(--color-cream)]/22 md:mb-8" />
+</div>
 
             {/* Popular Topics (Programs) */}
             <section
@@ -447,7 +451,9 @@ export default function SpeakingPage() {
             </div>
 
             {/* Dr. Salerno Offers (Formats) */}
-            <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 w-full" />
+<div className="mx-auto w-full max-w-[1400px] px-6 md:max-w-none md:px-0">
+  <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8" />
+</div>
             <section
               id="formats"
               className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 lg:gap-x-0 mx-15 items-center"
@@ -596,7 +602,9 @@ export default function SpeakingPage() {
             </div>
 
             {/* Outcomes (Results) */}
-            <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 w-full" />
+<div className="mx-auto w-full max-w-[1400px] px-6 md:max-w-none md:px-0">
+  <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8" />
+</div>
             <section
               id="results"
               className="grid grid-cols-1 lg:grid-cols-12 gap-12 mx-15 items-start gap-y-12"

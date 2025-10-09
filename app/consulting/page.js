@@ -131,32 +131,31 @@ export default function ConsultingPage() {
             </p>
           </section>
 
- {/* ---- MOBILE quick nav (numbered) ---- */}
-<div id="quicknav" className="md:hidden mt-6 pointer-events-auto">
-  <div className="grid grid-cols-2 landscape:grid-cols-3 gap-2">
-    {SECTIONS.map((s, idx) => (
-      <button
-  key={s.id}
-  type="button"
-  onClick={() => jump(`${s.id}-m`)}
-  aria-current={activeId === s.id ? "true" : "false"}
-  className={[
-    "w-full inline-flex items-center gap-1 rounded-full px-3.5 py-1.5",
-    "text-[12px] font-semibold tracking-wide truncate transition",
-    "active:scale-95 active:brightness-125",
-    "border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)]",
-    activeId === s.id && "!bg-[var(--color-gold)] !text-black !border-[var(--color-gold)]"
-  ].join(" ")}
->
-  {/* Fixed-width numeric block ensures perfect alignment */}
-  <span className="inline-block w-[3ch] text-left tabular-nums leading-none">
-    {idx + 1}.
-  </span>
-  <span className="truncate">{s.label}</span>
-</button>
-
-    ))}
-  </div>
+          {/* ---- MOBILE quick nav (numbered) ---- */}
+          <div id="quicknav" className="md:hidden mt-6 pointer-events-auto">
+            <div className="grid grid-cols-2 landscape:grid-cols-3 gap-2">
+              {SECTIONS.map((s, idx) => (
+                <button
+                  key={s.id}
+                  type="button"
+                  onClick={() => jump(`${s.id}-m`)}
+                  aria-current={activeId === s.id ? "true" : "false"}
+                  className={[
+                    "w-full inline-flex items-center gap-1 rounded-full px-3.5 py-1.5",
+                    "text-[12px] font-semibold tracking-wide truncate transition",
+                    "active:scale-95 active:brightness-125",
+                    "border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)]",
+                    activeId === s.id && "!bg-[var(--color-gold)] !text-black !border-[var(--color-gold)]"
+                  ].join(" ")}
+                >
+                  {/* Fixed-width numeric block ensures perfect alignment */}
+                  <span className="inline-block w-[3ch] text-left tabular-nums leading-none">
+                    {idx + 1}.
+                  </span>
+                  <span className="truncate">{s.label}</span>
+                </button>
+              ))}
+            </div>
 
             {/* divider same width as container */}
             <div className="mt-2 h-px w-full bg-[var(--color-cream)]/15" />
@@ -214,7 +213,7 @@ export default function ConsultingPage() {
                   key={i}
                   className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl hover:bg-white/[0.06] transition"
                 >
-                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+                  <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
                   <h3 className="font-serif text-2xl mb-2">{card.title}</h3>
                   <p className="opacity-90 leading-relaxed mb-3">{card.text}</p>
                   <a href="/contact" className="text-sm underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">
@@ -238,29 +237,28 @@ export default function ConsultingPage() {
             </p>
 
             <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl text-center mb-10">
-              <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+              <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
               <h3 className="font-serif text-2xl mb-2">Discovery</h3>
               <p className="opacity-90 leading-relaxed">
                 Understand your goals, challenges, stakeholders, and context—laying the foundation for success.
               </p>
             </article>
 
-
             {/* Gold arrow toward Co-Design (mobile only, no animation to avoid blur) */}
-<div className="md:hidden flex justify-center -mt-2 mb-6" aria-hidden>
-  <svg
-    viewBox="0 0 24 24"
-    className="h-7 w-7 text-[var(--color-gold)]"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M12 4v12" />
-    <path d="M7 12l5 5 5-5" />
-  </svg>
-</div>
+            <div className="md:hidden flex justify-center -mt-2 mb-6" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                className="h-7 w-7 text-[var(--color-gold)]"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M12 4v12" />
+                <path d="M7 12l5 5 5-5" />
+              </svg>
+            </div>
 
             <div className="grid grid-cols-1 gap-6">
               {[
@@ -270,7 +268,7 @@ export default function ConsultingPage() {
                 ["Scaling", "Expand programming more widely to increase reach and impact across your organization."],
               ].map(([title, text]) => (
                 <article key={title} className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl hover:bg-white/[0.06] transition">
-                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+                  <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
                   <h3 className="font-serif text-xl mb-2">{title}</h3>
                   <p className="opacity-90 leading-relaxed">{text}</p>
                 </article>
@@ -332,7 +330,7 @@ export default function ConsultingPage() {
                 ["Ongoing Support", "Monthly or quarterly check-ins, trainings, and refreshers to sustain momentum, reduce burnout, and keep wellbeing practices alive across teams.", "Set Up Support →"],
               ].map(([title, text, cta], i) => (
                 <article key={i} className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl hover:bg-white/[0.06] transition">
-                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+                  <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
                   <h3 className="font-serif text-xl mb-2">{title}</h3>
                   <p className="opacity-90 leading-relaxed mb-3">{text}</p>
                   <a href="/contact" className="text-sm underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">{cta}</a>
@@ -395,11 +393,11 @@ export default function ConsultingPage() {
                 },
               ].map((t, idx) => (
                 <figure key={idx} className="relative w-full rounded-xl bg-white/5 p-6 ring-1 ring-white/10 shadow-2xl">
-                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+                  <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
                   <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-                    <span aria-hidden className={`absolute text-4xl opacity-20 select-none ${t.lq}`}>“</span>
+                    <span aria-hidden="true" className={`absolute text-4xl opacity-20 select-none ${t.lq}`}>“</span>
                     <p>{t.q}</p>
-                    <span aria-hidden className={`absolute text-4xl opacity-20 select-none ${t.rq}`}>”</span>
+                    <span aria-hidden="true" className={`absolute text-4xl opacity-20 select-none ${t.rq}`}>”</span>
                   </blockquote>
                   <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">— {t.a}</figcaption>
                 </figure>
@@ -421,11 +419,11 @@ export default function ConsultingPage() {
                   },
                 ].map((t, idx) => (
                   <figure key={`more-${idx}`} className="relative w-full rounded-xl bg-white/5 p-6 ring-1 ring-white/10 shadow-2xl">
-                    <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+                    <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
                     <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-                      <span aria-hidden className={`absolute text-4xl opacity-20 select-none ${t.lq}`}>“</span>
+                      <span aria-hidden="true" className={`absolute text-4xl opacity-20 select-none ${t.lq}`}>“</span>
                       <p>{t.q}</p>
-                      <span aria-hidden className={`absolute text-4xl opacity-20 select-none ${t.rq}`}>”</span>
+                      <span aria-hidden="true" className={`absolute text-4xl opacity-20 select-none ${t.rq}`}>”</span>
                     </blockquote>
                     <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">— {t.a}</figcaption>
                   </figure>
@@ -446,102 +444,99 @@ export default function ConsultingPage() {
             <MobileSectionFooter baseId="testimonials" />
           </section>
 
+          {/* Bottom spacer */}
+          <div className="pb-10" />
 
-
-            {/* Bottom spacer */}
-            <div className="pb-10" />
-            
           {/* FINAL divider above footer — match two-column width, no bleed */}
-<div className="mx-auto max-w-[1400px] px-6">
-  <hr className="hidden lg:block max-w-[1400px] border-t border-[var(--color-cream)]/22" />
-</div>
+          <div className="mx-auto max-w-[1400px] px-6">
+            <hr className="hidden lg:block max-w-[1400px] border-t border-[var(--color-cream)]/22" />
+          </div>
 
+          <div className="md:hidden mx-auto max-w-[1100px] px-3">
+            {/* (mobile newsletter + socials unchanged) */}
+            {/* ... */}
+          </div>
 
-            <div className="md:hidden mx-auto max-w-[1100px] px-3">
-              {/* (mobile newsletter + socials unchanged) */}
-              {/* ... */}
+          {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
+          <div className="block lg:hidden">
+            <div className="mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
+              <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
             </div>
 
+            <div className="mobile-footer-cap">
+              <div className="mx-auto max-w-[1400px] px-3">
+                {/* Newsletter card (midnight blue) */}
+                <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
+                  <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
+                    Science, Soul, and a Bit of Magic — Every Month
+                  </p>
+                  <p className="text-sm opacity-85 mb-3">
+                    Practical wisdom for modern minds — best paired with coffee and curiosity.
+                  </p>
+                  <div className="flex gap-2">
+                    <input
+                      type="email"
+                      placeholder="you@example.com"
+                      className="flex-1 rounded-md border border-white/15 bg-white/5 px-3 py-2 placeholder-white/60 outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50"
+                    />
+                    <button
+                      type="button"
+                      className="shrink-0 rounded-md bg-[var(--color-gold)] text-black px-4 py-2 font-semibold"
+                    >
+                      Subscribe
+                    </button>
+                  </div>
+                </div>
 
-{/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
-<div className="block lg:hidden">
-  <div className="mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
-    <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
-  </div>
+                {/* --- MOBILE Jay-style footer block --- */}
+                <div className="mt-6 text-[13px] leading-relaxed">
+                  {/* 1) Heading */}
+                  <p className="uppercase tracking-[0.18em] text-left opacity-70">
+                    Follow Dr. Salerno:
+                  </p>
 
-  <div className="mobile-footer-cap">
+                  {/* 2) Socials row — centered & evenly spaced */}
+                  <div className="mt-3 flex items-left justify-left gap-8">
+                    {/* TikTok */}
+                    <a href="https://www.tiktok.com/@YOURHANDLE" aria-label="TikTok" className="opacity-90 hover:opacity-100">
+                      <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z"/></svg>
+                    </a>
+                    {/* Instagram */}
+                    <a href="https://www.instagram.com/YOURHANDLE" aria-label="Instagram" className="opacity-90 hover:opacity-100">
+                      <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/></svg>
+                    </a>
+                    {/* YouTube */}
+                    <a href="https://www.youtube.com/@YOURHANDLE" aria-label="YouTube" className="opacity-90 hover:opacity-100">
+                      <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z"/></svg>
+                    </a>
+                  </div>
 
-  <div className="mx-auto max-w-[1400px] px-3">
-    {/* Newsletter card (midnight blue) */}
-    <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
-      <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
-        Science, Soul, and a Bit of Magic — Every Month
-      </p>
-      <p className="text-sm opacity-85 mb-3">
-        Practical wisdom for modern minds — best paired with coffee and curiosity.
-      </p>
-      <div className="flex gap-2">
-        <input
-          type="email"
-          placeholder="you@example.com"
-          className="flex-1 rounded-md border border-white/15 bg-white/5 px-3 py-2 placeholder-white/60 outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50"
-        />
-        <button
-          type="button"
-          className="shrink-0 rounded-md bg-[var(--color-gold)] text-black px-4 py-2 font-semibold"
-        >
-          Subscribe
-        </button>
-      </div>
-    </div>
+                  {/* 3) Bio line */}
+                  <p className="mt-5 text-left opacity-85">
+                    Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, author and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
+                  </p>
 
-    {/* --- MOBILE Jay-style footer block --- */}
-    <div className="mt-6 text-[13px] leading-relaxed">
-      {/* 1) Heading */}
-      <p className="uppercase tracking-[0.18em] text-left opacity-70">
-        Follow Dr. Salerno:
-      </p>
+                  {/* 4) Name with © + ™ */}
+                  <p className="mt-6 text-left opacity-85">
+                    © Dr. Juan Pablo Salerno™
+                  </p>
 
-      {/* 2) Socials row — centered & evenly spaced */}
-      <div className="mt-3 flex items-left justify-left gap-8">
-        {/* TikTok */}
-        <a href="https://www.tiktok.com/@YOURHANDLE" aria-label="TikTok" className="opacity-90 hover:opacity-100">
-          <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z"/></svg>
-        </a>
-        {/* Instagram */}
-        <a href="https://www.instagram.com/YOURHANDLE" aria-label="Instagram" className="opacity-90 hover:opacity-100">
-          <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/></svg>
-        </a>
-        {/* YouTube */}
-        <a href="https://www.youtube.com/@YOURHANDLE" aria-label="YouTube" className="opacity-90 hover:opacity-100">
-          <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z"/></svg>
-        </a>
-      </div>
+                  {/* 5) Legal line (centered with dots) */}
+                  <p className="mt-2 mb-5 text-left opacity-85">
+                    <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
+                    <span className="mx-2 opacity-50">·</span>
+                    <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
+                    <span className="mx-2 opacity-50">·</span>
+                    <span>All rights reserved</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-      {/* 3) Bio line */}
-      <p className="mt-5 text-left opacity-85">
-        Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, author and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
-      </p>
-
-      {/* 4) Name with © + ™ */}
-      <p className="mt-6 text-left opacity-85">
-        © Dr. Juan Pablo Salerno™
-      </p>
-
-      {/* 5) Legal line (centered with dots) */}
-      <p className="mt-2 mb-5 text-left opacity-85">
-        <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
-        <span className="mx-2 opacity-50">·</span>
-        <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
-        <span className="mx-2 opacity-50">·</span>
-        <span>All rights reserved</span>
-      </p>
-    </div>
-  </div>
-</div>
-
-        {/* removed the contained divider on mobile */}
-      </div>
+          {/* removed the contained divider on mobile */}
+        </div> {/* closes zoomwrap */}
+      </div> {/* closes outer md:hidden */}
 
       {/* ============== DESKTOP (unchanged content & spacing) ============== */}
       <div className="hidden md:block" aria-label="Consulting desktop layout">
@@ -614,7 +609,7 @@ export default function ConsultingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* cards unchanged; include backdrop-blur on desktop only */}
             <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
-              <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+              <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
               <h3 className="font-serif text-2xl mb-2">Partner in Research</h3>
               <p className="opacity-90 leading-relaxed mb-3">
                 Partner with a federally-funded scientist across all phases of programming and research—bringing credibility and depth to your initiatives.
@@ -623,7 +618,7 @@ export default function ConsultingPage() {
             </article>
 
             <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
-              <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+              <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
               <h3 className="font-serif text-2xl mb-2">Design with Science</h3>
               <p className="opacity-90 leading-relaxed mb-3">
                 Translate cutting-edge research into programs that resonate with your organization or community.
@@ -633,7 +628,7 @@ export default function ConsultingPage() {
             </article>
 
             <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:-translate-y-[2px] transition">
-              <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+              <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
               <h3 className="font-serif text-2xl mb-2">Evaluate What Works</h3>
               <p className="opacity-90 leading-relaxed mb-3">
                 Build confidence that your program delivers real impact through rigorous
@@ -644,7 +639,7 @@ export default function ConsultingPage() {
             </article>
 
             <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:-translate-y-[2px] transition">
-              <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+              <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
               <h3 className="font-serif text-2xl mb-2">Scale Across Your Organization</h3>
               <p className="opacity-90 leading-relaxed mb-3">
                 Strengthen and integrate organizational programs that foster mental health, resilience, and wellbeing — from mindfulness and stress management to practices that support sustainable growth.
@@ -666,35 +661,35 @@ export default function ConsultingPage() {
           </p>
 
           <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl backdrop-blur-sm text-center mb-10">
-            <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+            <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
             <h3 className="font-serif text-2xl mb-2">Discovery</h3>
             <p className="opacity-90 leading-relaxed">
               Understand your goals, challenges, stakeholders, and context—laying the foundation for success.
             </p>
           </article>
 
-{/* Four gold arrows toward the cards below (desktop only) */}
-<div
-  className="hidden md:grid grid-cols-4 gap-6 place-items-center -mt-2 mb-6"
-  aria-hidden="true"
-  style={{ color: "var(--color-gold)" }}
->
-  {[0,1,2,3].map((i) => (
-    <svg
-      key={i}
-      viewBox="0 0 24 24"
-      className="h-8 w-8"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M12 4v12" />
-      <path d="M7 12l5 5 5-5" />
-    </svg>
-  ))}
-</div>
+          {/* Four gold arrows toward the cards below (desktop only) */}
+          <div
+            className="hidden md:grid grid-cols-4 gap-6 place-items-center -mt-2 mb-6"
+            aria-hidden="true"
+            style={{ color: "var(--color-gold)" }}
+          >
+            {[0,1,2,3].map((i) => (
+              <svg
+                key={i}
+                viewBox="0 0 24 24"
+                className="h-8 w-8"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M12 4v12" />
+                <path d="M7 12l5 5 5-5" />
+              </svg>
+            ))}
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[
@@ -704,7 +699,7 @@ export default function ConsultingPage() {
               ["Scaling", "Expand programming more widely to increase reach and impact across your organization."],
             ].map(([title, text]) => (
               <article key={title} className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl backdrop-blur-sm hover:bg-white/[0.06] transition">
-                <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+                <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
                 <h3 className="font-serif text-xl mb-2">{title}</h3>
                 <p className="opacity-90 leading-relaxed">{text}</p>
               </article>
@@ -755,19 +750,19 @@ export default function ConsultingPage() {
           <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
-              <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+              <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
               <h3 className="font-serif text-xl mb-2">Short Sprints</h3>
               <p className="opacity-90 leading-relaxed mb-3">2–6 weeks to quickly understand needs, run listening sessions, and surface actionable insights—so you can make a confident next step.</p>
               <a href="/contact" className="text-sm underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">Start a Sprint →</a>
             </article>
             <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
-              <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+              <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
               <h3 className="font-serif text-xl mb-2">Deep Partnerships</h3>
               <p className="opacity-90 leading-relaxed mb-3">3–12 months to co-design programs, support implementation, and learn as you go— grounding decisions in evidence while staying human-centered.</p>
               <a href="/contact" className="text-sm underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">Explore a Partnership →</a>
             </article>
             <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] hover:-translate-y-[2px] transition">
-              <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+              <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
               <h3 className="font-serif text-xl mb-2">Ongoing Support</h3>
               <p className="opacity-90 leading-relaxed mb-3">Monthly or quarterly check-ins, trainings, and refreshers to sustain momentum, reduce burnout, and keep wellbeing practices alive across teams.</p>
               <a href="/contact" className="text-sm underline underline-offset-4 decoration-[var(--color-gold)] hover:opacity-80">Set Up Support →</a>
@@ -833,11 +828,11 @@ export default function ConsultingPage() {
               },
             ].map((t, idx) => (
               <figure key={idx} className="relative w-full rounded-xl bg-white/5 p-6 ring-1 ring-white/10 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition">
-                <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+                <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
                 <blockquote className="font-serif text-2xl leading-relaxed opacity-90 relative">
-                  <span aria-hidden className={`absolute text-4xl opacity-20 select-none ${t.lq || "-left-4 -top-1"}`}>“</span>
+                  <span aria-hidden="true" className={`absolute text-4xl opacity-20 select-none ${t.lq || "-left-4 -top-1"}`}>“</span>
                   <p>{t.q}</p>
-                  <span aria-hidden className={`absolute text-4xl opacity-20 select-none ${t.rq || "right-[2rem] bottom-[0.5rem]"}`}>”</span>
+                  <span aria-hidden="true" className={`absolute text-4xl opacity-20 select-none ${t.rq || "right-[2rem] bottom-[0.5rem]"}`}>”</span>
                 </blockquote>
                 <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">— {t.a}</figcaption>
               </figure>
@@ -859,7 +854,7 @@ export default function ConsultingPage() {
             url: "https://your-domain.com/consulting",
           }),
         }}
-      />
+      ></script>
 
       {/* Global crisp text & iOS guard (same as your other pages) */}
       <style jsx global>{`
@@ -879,13 +874,11 @@ export default function ConsultingPage() {
           }
         }
       `}</style>
-                                      {/* Home: section/bookend divider (aligns to 1400px container) */}
-<div className="mx-auto max-w-[1100px] px-6">
-  <hr className="border-t border-[var(--color-cream)]/22" />
-</div>
-</div>
-</div>
 
+      {/* Home: section/bookend divider (aligns to 1100px container) */}
+      <div className="mx-auto max-w-[1100px] px-6">
+        <hr className="border-t border-[var(--color-cream)]/22" />
+      </div>
     </main>
   );
 }
