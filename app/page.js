@@ -79,7 +79,7 @@ export default function Home() {
   </div>
 
   {/* Desktop/tablet buttons only (mobile CTAs are hidden) */}
-  <div className="hidden sm:landscape:hidden lg:block absolute inset-x-0 bottom-6 z-30">
+  <div className="hidden lg:block absolute inset-x-0 bottom-6 z-30">
     <div className="mx-auto max-w-[1400px] px-6 relative">
       <Link
         href="speaking"
