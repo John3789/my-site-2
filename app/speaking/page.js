@@ -194,7 +194,7 @@ export default function SpeakingPage() {
               </h2>
 
 <div
-  className="space-y-6 opacity-85 text-lg md:text-xl leading-loose mx-auto max-w-none landscape:max-w-[560px] lg:landscape:max-w-none"
+  className="space-y-6 opacity-85 text-lg md:text-xl leading-loose mx-auto max-w-none landscape:max-w-[700px] lg:landscape:max-w-none"
 >
                 <p>
                   Dr. Juan Pablo Salerno is a respected mental health scientist,
@@ -235,8 +235,8 @@ export default function SpeakingPage() {
               </div>
 
               {/* ---- MOBILE quick nav (numbered, Consulting pattern) ---- */}
-              <div id="quicknav" className="lg:hidden mt-10 -mb-7 -pb-30 pointer-events-auto">
-                <div className="grid grid-cols-2 landscape:grid-cols-3 gap-2">
+              <div id="quicknav" className="lg:hidden mt-10 -mb-7 -pb-30 pointer-events-auto landscape:-mb-5 lg:landscape:-mb-none">
+                <div className="grid grid-cols-2 landscape:grid-cols-2 gap-2">
                   {SECTIONS.map((s, idx) => (
                     <button
                       key={s.id}
@@ -244,7 +244,7 @@ export default function SpeakingPage() {
                       onClick={() => jump(s.id)}
                       aria-current={activeId === s.id ? "true" : "false"}
                       className={[
-                        "w-full mx-auto inline-flex items-center gap-1 rounded-full px-3.5 py-1.5",
+                        "w-full landscape:max-w-[520px] mx-auto inline-flex items-center gap-1 rounded-full px-3.5 py-1.5",
                         "text-[12px] font-semibold tracking-wide truncate transition",
                         "active:scale-95 active:brightness-125",
                         "border border-white/18 bg-[var(--color-teal-800)] text-[var(--color-cream)]",
