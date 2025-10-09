@@ -273,9 +273,7 @@ export default function SpeakingPage() {
 
             {/* Popular Topics (Programs) */}
             <section
-               className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mx-15 gap-y-12 
-                portrait:mx-0 portrait:px-3 
-                landscape:max-w-[760px] landscape:mx-auto landscape:px-3"
+               className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mx-15 gap-y-12 portrait:mx-0 portrait:px-3 landscape:max-w-[760px] landscape:mx-auto landscape:px-3"
               
             >
               <div className="md:col-span-5 md:py-6">
