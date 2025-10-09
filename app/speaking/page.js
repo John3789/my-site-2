@@ -454,7 +454,7 @@ export default function SpeakingPage() {
             </div>
 
             {/* Dr. Salerno Offers (Formats) */}
-            <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 w-full mx-auto w-[93%]" />
+            <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 mx-auto w-[93%]" />
             <section
               id="formats"
               className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 md:gap-x-0 mx-15 items-center"
@@ -710,7 +710,7 @@ export default function SpeakingPage() {
             </div>
 
             {/* ===== Testimonials (mobile-only; now collapsible) ===== */}
-<hr className="lg:hidden mx-auto w-[93%] relative left-1/2 -translate-x-1/2 border-t border-[var(--color-cream)]/22 mb-6" />
+<hr className="lg:hidden mx-auto w-[93%] border-t border-[var(--color-cream)]/22 mb-6" />
 
 <section id="testimonials" className="lg:hidden">
   {/* Centered container for everything in this section */}
