@@ -880,7 +880,7 @@ export default function SpeakingPage() {
                   <button
                     onClick={() => setShowAllTestimonials((s) => !s)}
                     aria-expanded={showAllTestimonials}
-                    className="items-center justify-center whitespace-nowrap rounded-full border border-white/20 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition hover:bg-[var(--color-teal-700)] active:translate-y-[1px]"
+                    className="flex items-center justify-center whitespace-nowrap rounded-full border border-white/20 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition hover:bg-[var(--color-teal-700)] active:translate-y-[1px]"
                   >
                     {showAllTestimonials ? "Show Less" : "Show All"}
                   </button>
