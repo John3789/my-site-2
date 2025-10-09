@@ -121,7 +121,7 @@ export default function ConsultingPage() {
         >
           {/* HERO (inside zoom) */}
           <section className="mx-auto max-w-[1100px] px-6 pt-16 pb-10 text-center" id="hero-m">
-            <h1 className="font-serif text-6xl leading-[1.06] opacity-95">
+            <h1 className="font-serif text-5xl leading-[1.06] opacity-95">
               Organizational Wellness Consulting 
             </h1>
             <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 rounded" />
