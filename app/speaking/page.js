@@ -1098,6 +1098,11 @@ export default function SpeakingPage() {
   }
 }
 
+@media (max-width: 1024px) and (orientation: landscape) {
+  .hide-landscape {
+    display: none !important;
+  }
+}
 
       `}</style>
     </>
