@@ -171,9 +171,9 @@ export default function RootLayout({ children }) {
       </div>
 
       {/* Centered group (socials, bio, copyright) */}
-      <div className="flex flex-col items-center text-left">
+      <div className="flex flex-col items-left text-left">
         {/* Socials */}
-        <div className="w-full flex items-center justify-center mb-4">
+        <div className="w-full flex items-left justify-left mb-4">
           <SocialFooter />
         </div>
 
@@ -183,7 +183,7 @@ export default function RootLayout({ children }) {
         </p>
 
         {/* Copyright (for tablet view) */}
-        <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 opacity-80 text-[12.5px] mt-2 xl:hidden">
+        <div className="flex flex-wrap items-left justify-left gap-x-3 gap-y-1 opacity-80 text-[12.5px] mt-2 xl:hidden">
           <span>© Dr. Juan Pablo Salerno™</span>
           <span className="opacity-50">·</span>
           <span>All rights reserved</span>
