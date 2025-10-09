@@ -187,9 +187,7 @@ export default function SpeakingPage() {
           {/* ===== Intro Blurb ===== */}
           <section className="relative w-full pt-16 pb-9 md:py-16" id="intro">
             {/* subtle hairline divider from hero */}
-<div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1400px] px-6 md:max-w-none md:px-0">
-  <div className="h-px bg-[var(--color-cream)]/15" />
-</div>
+            <div className="absolute inset-x-0 top-0 h-px bg-[var(--color-cream)]/15" />
             <div className="mx-auto max-w-[1000px] px-6 text-left space-y-8">
               <h2 className="font-serif text-2xl md:text-4xl opacity-90 text-center font-semibold tracking-wide">
                 &ldquo;Engaging. Inspiring. Transformational.&rdquo;
@@ -267,9 +265,7 @@ export default function SpeakingPage() {
 
           {/* ===== MAIN CONTENT ===== */}
           <div className="mx-auto max-w-[1400px] md:py-6 space-y-16 md:space-y-24" id="topics">
-<div className="mx-auto w-full max-w-[1400px] px-6 md:max-w-none md:px-0">
-  <hr className="border-t border-[var(--color-cream)]/22 md:mb-8" />
-</div>
+            <hr className="border-t border-[var(--color-cream)]/22 md:mb-8 w-full" />
 
             {/* Popular Topics (Programs) */}
             <section
@@ -451,9 +447,7 @@ export default function SpeakingPage() {
             </div>
 
             {/* Dr. Salerno Offers (Formats) */}
-<div className="mx-auto w-full max-w-[1400px] px-6 md:max-w-none md:px-0">
-  <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8" />
-</div>
+            <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 w-full" />
             <section
               id="formats"
               className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 lg:gap-x-0 mx-15 items-center"
@@ -602,9 +596,7 @@ export default function SpeakingPage() {
             </div>
 
             {/* Outcomes (Results) */}
-<div className="mx-auto w-full max-w-[1400px] px-6 md:max-w-none md:px-0">
-  <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8" />
-</div>
+            <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 w-full" />
             <section
               id="results"
               className="grid grid-cols-1 lg:grid-cols-12 gap-12 mx-15 items-start gap-y-12"
@@ -712,9 +704,7 @@ export default function SpeakingPage() {
 
             {/* ===== Testimonials (mobile-only; now collapsible) ===== */}
             {/* Full-bleed divider above Testimonials (mobile only) */}
-<div className="md:hidden mx-auto max-w-[1400px] px-6">
-  <hr className="border-t border-[var(--color-cream)]/22 mb-6" />
-</div>
+            <hr className="md:hidden w-screen relative left-1/2 -translate-x-1/2 border-t border-[var(--color-cream)]/22 mb-6" />
             <section id="testimonials" className="md:hidden mx-15">
               <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">
                 Testimonials

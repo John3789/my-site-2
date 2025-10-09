@@ -452,10 +452,7 @@ export default function ConsultingPage() {
             <hr className="hidden lg:block max-w-[1400px] border-t border-[var(--color-cream)]/22" />
           </div>
 
-          <div className="md:hidden mx-auto max-w-[1100px] px-3">
-            {/* (mobile newsletter + socials unchanged) */}
-            {/* ... */}
-          </div>
+
 
           {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
           <div className="block lg:hidden">
