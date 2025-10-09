@@ -303,7 +303,7 @@ export default function Home() {
             </div>
 
           {/* FINAL divider above footer — match two-column width, no bleed */}
-          <div className="mx-auto max-w-[1400px] px-6 mt-18">
+          <div className="mx-auto max-w-[1400px] px-6 mt-16">
             <hr className="hidden lg:block max-w-[1400px] border-t border-[var(--color-cream)]/22" />
           </div>
 
