@@ -185,15 +185,15 @@ export default function SpeakingPage() {
           `}
         >
           {/* ===== Intro Blurb ===== */}
-          <section className="relative w-full pt-16 pb-9 md:py-16" id="intro">
+          <section className="relative w-full pt-16 pb-9 lg:py-16" id="intro">
             {/* subtle hairline divider from hero */}
             <div className="absolute inset-x-0 top-0 h-px bg-[var(--color-cream)]/15" />
             <div className="mx-auto max-w-[1000px] px-6 text-left space-y-8">
-              <h2 className="font-serif text-2xl md:text-4xl opacity-90 text-center font-semibold tracking-wide">
+              <h2 className="font-serif text-2xl lg:text-4xl opacity-90 text-center font-semibold tracking-wide">
                 &ldquo;Engaging. Inspiring. Transformational.&rdquo;
               </h2>
 
-              <div className="space-y-6 opacity-85 text-lg md:text-xl leading-loose">
+              <div className="space-y-6 opacity-85 text-lg lg:text-xl leading-loose">
                 <p>
                   Dr. Juan Pablo Salerno is a respected mental health scientist,
                   personal growth expert, and engaging speaker whose work bridges
@@ -226,7 +226,7 @@ export default function SpeakingPage() {
               <div className="mt-8 flex justify-center">
                 <a
                   href="/contact"
-                  className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs lg:w-auto lg:max-w-none lg:relative lg:top-8"
+                  className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs md:w-auto md:max-w-none md:relative md:top-8"
                 >
                   Book Dr. Salerno to Speak
                 </a>
@@ -264,15 +264,15 @@ export default function SpeakingPage() {
           </section>
 
           {/* ===== MAIN CONTENT ===== */}
-          <div className="mx-auto max-w-[1400px] md:py-6 space-y-16 md:space-y-24" id="topics">
-            <hr className="border-t border-[var(--color-cream)]/22 md:mb-8 mx-auto w-[93%]" />
+          <div className="mx-auto max-w-[1400px] lg:py-6 space-y-16 lg:space-y-24" id="topics">
+            <hr className="border-t border-[var(--color-cream)]/22 lg:mb-8 mx-auto w-[93%]" />
 
             {/* Popular Topics (Programs) */}
             <section
               id="programs"
-              className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mx-15 gap-y-12"
+              className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mx-15 gap-y-12"
             >
-              <div className="md:col-span-5 md:py-6">
+              <div className="lg:col-span-5 lg:py-6">
                 {/* Overline (slightly dimmer) */}
                 <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">
                   Programs
@@ -377,11 +377,11 @@ export default function SpeakingPage() {
               </div>
 
               {/* Quotes (left column) — desktop only */}
-              <div className="md:col-span-7 ml-auto hidden md:flex flex-col gap-6 max-w-[640px]">
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+              <div className="lg:col-span-7 ml-auto hidden lg:flex flex-col gap-6 max-w-[640px]">
+                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 lg:ring-1 lg:ring-white/10 lg:shadow-2xl lg:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
                   {/* Decorative quotes (no normal quotes in text) */}
-                  <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+                  <blockquote className="font-serif text-2xl lg:text-3xl leading-snug opacity-90 relative">
                     <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>
                       ...an exceptional speaker: he is engaging, well-spoken, and clearly
@@ -394,9 +394,9 @@ export default function SpeakingPage() {
                   </figcaption>
                 </figure>
 
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 lg:ring-1 lg:ring-white/10 lg:shadow-2xl lg:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-                  <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+                  <blockquote className="font-serif text-2xl lg:text-3xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
                     <span className="absolute right-24 bottom-5 text-4xl opacity-20 select-none">”</span>
@@ -406,9 +406,9 @@ export default function SpeakingPage() {
                   </figcaption>
                 </figure>
 
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 lg:ring-1 lg:ring-white/10 lg:shadow-2xl lg:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-                  <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+                  <blockquote className="font-serif text-2xl lg:text-3xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>Dr. Salerno has a way of blending data with human stories that makes science resonate.</p>
                     <span aria-hidden className="absolute right-14 bottom-5 text-4xl opacity-20 select-none">”</span>
@@ -447,16 +447,16 @@ export default function SpeakingPage() {
             </div>
 
             {/* Dr. Salerno Offers (Formats) */}
-            <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 mx-auto w-[93%]" />
+            <hr className="border-t border-[var(--color-cream)]/22 mb-16 lg:mb-8 mx-auto w-[93%]" />
             <section
               id="formats"
-              className="grid grid-cols-1 md:grid-cols-12 gap-y-12 md:gap-x-0 mx-15 items-center"
+              className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 lg:gap-x-0 mx-15 items-center"
             >
               {/* Quotes (RIGHT column) — desktop only */}
-              <div className="md:col-span-7 hidden md:flex flex-col gap-6 max-w-[640px] md:pr-6">
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+              <div className="lg:col-span-7 hidden lg:flex flex-col gap-6 max-w-[640px] lg:pr-6">
+                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 lg:ring-1 lg:ring-white/10 lg:shadow-2xl lg:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-                  <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+                  <blockquote className="font-serif text-2xl lg:text-3xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>
                       ...gifted speaker whose engaging style &amp; clear communication bring
@@ -469,9 +469,9 @@ export default function SpeakingPage() {
                   </figcaption>
                 </figure>
 
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 lg:ring-1 lg:ring-white/10 lg:shadow-2xl lg:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" aria-hidden />
-                  <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+                  <blockquote className="font-serif text-2xl lg:text-3xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>
                       ...can communicate with diverse audiences, speaks with heart and
@@ -484,9 +484,9 @@ export default function SpeakingPage() {
                   </figcaption>
                 </figure>
 
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 lg:ring-1 lg:ring-white/10 lg:shadow-2xl lg:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" aria-hidden />
-                  <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+                  <blockquote className="font-serif text-2xl lg:text-3xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>
                       ...brings a charming intensity and passion that inspires others with his
@@ -501,7 +501,7 @@ export default function SpeakingPage() {
               </div>
 
               {/* Formats list */}
-              <div className="md:col-span-5 order-1 md:order-2 md:py-6 space-y-8 md:pl-6">
+              <div className="lg:col-span-5 order-1 lg:order-2 lg:py-6 space-y-8 lg:pl-6">
                 {/* Overline added */}
                 <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">
                   Formats
@@ -596,12 +596,12 @@ export default function SpeakingPage() {
             </div>
 
             {/* Outcomes (Results) */}
-            <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 mx-auto w-[93%]" />
+            <hr className="border-t border-[var(--color-cream)]/22 mb-16 lg:mb-8 mx-auto w-[93%]" />
             <section
               id="results"
-              className="grid grid-cols-1 md:grid-cols-12 gap-12 mx-15 items-start gap-y-12"
+              className="grid grid-cols-1 lg:grid-cols-12 gap-12 mx-15 items-start gap-y-12"
             >
-              <div className="md:col-span-5 md:py-6">
+              <div className="lg:col-span-5 lg:py-6">
                 {/* Overline added */}
                 <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">
                   Results
@@ -643,10 +643,10 @@ export default function SpeakingPage() {
               </div>
 
               {/* Quotes (right column, Results) — desktop only */}
-              <div className="md:col-span-7 ml-auto hidden md:flex flex-col gap-6 max-w-[640px]">
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+              <div className="lg:col-span-7 ml-auto hidden lg:flex flex-col gap-6 max-w-[640px]">
+                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 lg:ring-1 lg:ring-white/10 lg:shadow-2xl lg:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-                  <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+                  <blockquote className="font-serif text-2xl lg:text-3xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>
                       ...engaging, energetic, strong communication skills, proven ability to
@@ -659,9 +659,9 @@ export default function SpeakingPage() {
                   </figcaption>
                 </figure>
 
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 lg:ring-1 lg:ring-white/10 lg:shadow-2xl lg:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" aria-hidden />
-                  <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+                  <blockquote className="font-serif text-2xl lg:text-3xl leading-snug opacity-90 relative">
                     <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
                     <p>
                       ...a highly engaging, knowledgeable, and skilled speaker...strongly
