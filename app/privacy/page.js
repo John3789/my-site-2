@@ -6,7 +6,7 @@ export default function PrivacyPage() {
     <>
       {/* ===== PAGE BODY WRAPPER (zoom on mobile, normal on desktop) ===== */}
       <div
-        style={{ "--z": 3.0, "--zoomL": 1.6 }}
+        style={{ "--z": 3.0, "--zoomL": 1.3 }}
         className="
           lg:contents
           origin-top

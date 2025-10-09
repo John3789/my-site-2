@@ -172,7 +172,7 @@ export default function SpeakingPage() {
 
         {/* ===== Intro + Main (zoomed for mobile only) ===== */}
         <div
-          style={{ "--z": 3.0, "--zoomL": 1.4 }}
+          style={{ "--z": 3.0, "--zoomL": 1.3 }}
           className={`
             zoomwrap
             lg:contents

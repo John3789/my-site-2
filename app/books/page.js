@@ -8,15 +8,15 @@ export default function BooksPage() {
       <>
         {/* ===== PAGE BODY WRAPPER (same zoom as home/about) ===== */}
         <div
-          style={{ "--z": 3.0, "--zoomL": 1.6 }}
+          style={{ "--z": 3.0, "--zoomL": 1.3 }}
           className={`
-            md:contents
+            lg:contents
             origin-top
             [transform:scale(var(--z))]
             [width:calc(100%/var(--z))]
             mx-auto
-            md:[transform:none]
-            md:[width:100%]
+            lg:[transform:none]
+            lg:[width:100%]
             landscape:[transform:scale(var(--zoomL))]
             landscape:[width:calc(100%/var(--zoomL))]
             overflow-visible
