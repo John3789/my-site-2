@@ -108,18 +108,19 @@ export default function RootLayout({ children }) {
         {children}
 
 <FooterGate>
- {/* DESKTOP / LARGE-TABLET FOOTER */}
+ {/* DESKTOP / LARGE-TABLET FOOTER (with blue card on lg) */}
 <footer className="hidden lg:block py-10 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
   <div
     className="
       mx-auto w-full max-w-[1680px]
-      grid gap-y-10 gap-x-12 items-end
-      lg:grid-cols-1
+      grid grid-cols-1
+      lg:grid-cols-[1fr_minmax(0,0.9fr)]
       xl:grid-cols-[1fr_minmax(0,1.05fr)]
+      gap-y-10 gap-x-16 items-end
     "
   >
     {/* LEFT — Name + Terms + Privacy */}
-    <div className="flex flex-col justify-end pl-0">
+    <div className="order-2 lg:order-1 flex flex-col justify-end">
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1 opacity-90 text-[13px] leading-relaxed">
         <span>© Dr. Juan Pablo Salerno™</span>
         <span className="opacity-50">·</span>
@@ -134,17 +135,20 @@ export default function RootLayout({ children }) {
     {/* RIGHT — Newsletter + Socials + Bio */}
     <div
       className="
+        order-1 lg:order-2
         grid gap-5 text-left
-        lg:max-w-[600px] lg:justify-self-start
-        xl:max-w-[750px] xl:justify-self-end xl:pr-10
+        lg:max-w-[640px] xl:max-w-[750px]
+        lg:justify-self-end xl:justify-self-end
+        lg:pr-6 xl:pr-10
       "
     >
-      {/* Newsletter block */}
+      {/* Newsletter card (kept on lg, just lighter) */}
       <div
         className="
-          rounded-xl p-0 ring-0 shadow-none bg-transparent transition
-          xl:bg-[#081F2C] xl:ring-1 xl:ring-white/10 xl:p-5
-          xl:shadow-[0_10px_30px_rgba(0,0,0,0.55)] xl:hover:bg-[#0C2634]
+          rounded-xl bg-[#0f2334] ring-1 ring-white/10
+          p-4 lg:p-5
+          shadow-[0_8px_24px_rgba(0,0,0,0.45)]
+          hover:bg-[#0C2634] transition
         "
       >
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -156,7 +160,7 @@ export default function RootLayout({ children }) {
               Practical wisdom for modern minds — best paired with coffee and curiosity.
             </p>
           </div>
-          {/* Keep your existing signup component */}
+          {/* Your existing signup component */}
           <NewsletterSignup />
         </div>
       </div>
@@ -167,7 +171,7 @@ export default function RootLayout({ children }) {
       </div>
 
       {/* One-line bio */}
-      <p className="text-[13px] leading-relaxed opacity-85 -mt-1 lg:max-w-[600px] xl:max-w-[750px]">
+      <p className="text-[13px] leading-relaxed opacity-85 -mt-1 lg:max-w-[640px] xl:max-w-[750px]">
         Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, author and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
       </p>
     </div>
