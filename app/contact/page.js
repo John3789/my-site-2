@@ -189,7 +189,6 @@ export default function ContactPage() {
   <hr className="border-t border-[var(--color-cream)]/22 mb-8" />
 </div>
 
-            <div className="mobile-footer-cap">
 <div className="mx-auto max-w-[1200px] px-0">
   {/* Newsletter card (midnight blue) */}
   <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
@@ -213,7 +212,6 @@ Practical wisdom for modern minds — best paired with coffee and curiosity.
         Subscribe
       </button>
     </div>
-  </div>
   </div>
 
 
