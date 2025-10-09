@@ -233,14 +233,14 @@ export default function ResourcesPage() {
 
 {/* --- DESKTOP divider above newsletter --- */}
 <div className="hidden lg:block mx-auto max-w-[1200px] px-6">
-  <hr className="border-t border-[var(--color-cream)]/22 mt-0 mb-10" />
+  <hr className="border-t border-[var(--color-cream)]/22 mt-0 mb-0" />
 </div>
 
 
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="block lg:hidden">
   <div className="mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
-    <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
+    <hr className="border-t border-[var(--color-cream)]/22 mt-12" />
   </div>
 
   <div className="mobile-footer-cap">
