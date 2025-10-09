@@ -110,7 +110,7 @@ export default function Home() {
 
       {/* ===== PAGE BODY WRAPPER ===== */}
       <div
-        style={{ '--z': 3.00, '--zoomL': 2.00 }}
+        style={{ '--z': 3.00, '--zoomL': 1.60 }}
         className="
           md:contents
           origin-top
@@ -301,9 +301,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
+              <div className="mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
+
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="block lg:hidden mobile-footer-cap">
-  <div className="mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
     <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
   </div>
 
