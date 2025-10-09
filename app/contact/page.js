@@ -187,6 +187,7 @@ export default function ContactPage() {
             {/* (mobile newsletter + socials unchanged) */}
             {/* ... */}
           </div>
+                  {/* removed the contained divider on mobile */}
 
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
           <div className="block lg:hidden">
@@ -271,7 +272,7 @@ Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal gro
 </div>
 
 
-        {/* removed the contained divider on mobile */}
+
       </div>
 
       {/* ============== DESKTOP (unchanged per your last version) ============== */}
