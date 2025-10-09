@@ -1049,7 +1049,7 @@ export default function SpeakingPage() {
         }
 
         /* SPEAKING — mobile PORTRAIT: much larger */
-        @media (max-width: 1000px) and (orientation: portrait) {
+        @media (max-width: 767px) and (orientation: portrait) {
           [data-page="speaking"] .s-hero .hero-title {
             font-size: clamp(156px, 36vw, 300px) !important;
             line-height: 1.02;
@@ -1098,6 +1098,24 @@ export default function SpeakingPage() {
   }
 }
 
+  /* 2) Expand text width in Programs / Formats / Results */
+  /* Target the immediate content wrappers inside each section */
+  [data-page="speaking"] section#programs > div,
+  [data-page="speaking"] section#formats > div,
+  [data-page="speaking"] section#results > div {
+    max-width: 95vw !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* If you used a custom .mx-15 class for side margins, null it on portrait */
+  [data-page="speaking"] .mx-15 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
       `}</style>
     </>
   );
