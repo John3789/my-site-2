@@ -45,8 +45,8 @@ export default function Home() {
       className="
         object-cover origin-center will-change-transform
         [transform:scaleX(1.00)_scaleY(1.00)]
-        md:[transform:none]
-        object-[center_0%] md:object-[center_0%]
+        lg:[transform:none]
+        object-[center_0%] lg:object-[center_0%]
       "
     />
     {/* 🔒 same overlay on mobile + desktop */}
