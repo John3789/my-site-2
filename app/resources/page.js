@@ -237,7 +237,7 @@ export default function ResourcesPage() {
 </div>
           {/* --- MOBILE divider + footer (inside zoom, after the sections) --- */}
           <div className="block lg:hidden">
-            <div className="mx-auto max-w-[1000px] px-6 mb-14 -mt-5">
+            <div className="mx-auto max-w-[1200px] px-6 mb-14 -mt-5">
               <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
             </div>
 
