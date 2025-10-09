@@ -35,7 +35,7 @@ export default function Header() {
       <header className={headerClass}>
         <div className="mx-auto max-w-7xl px-6 h-10 flex items-center">
           {/* Desktop / tablet nav (unchanged) */}
-          <nav className="hidden md:flex w-full items-center justify-center gap-6 text-[13px] tracking-wide uppercase">
+          <nav className="hidden lg:flex w-full items-center justify-center gap-6 text-[13px] tracking-wide uppercase">
             <Link href="/about" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/about") ? "nav-active" : ""}`}>About</Link>
             <Link href="/books" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/books") ? "nav-active" : ""}`}>Books & Publications</Link>
             <Link href="/meditations" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/meditations") ? "nav-active" : ""}`}>Meditations</Link>
@@ -50,7 +50,7 @@ export default function Header() {
   type="button"
   aria-label="Open menu"
   onClick={() => setOpen(true)}
-  className="md:hidden mr-auto -mr-1 -ml-1 p-3 translate-y-14"
+  className="lg:hidden mr-auto -mr-1 -ml-1 p-3 translate-y-14"
 >
   {/* 3-line icon (cream) */}
   <svg
@@ -74,7 +74,7 @@ export default function Header() {
   <Link
     href="/"
     className="
-      hidden md:block absolute
+      hidden lg:block absolute
        top-9 right-15
       z-[201] pt-1 pr-3
       font-serif uppercase tracking-wide
