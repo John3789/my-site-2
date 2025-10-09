@@ -108,53 +108,68 @@ export default function RootLayout({ children }) {
         {children}
 
 <FooterGate>
-          {/* DESKTOP-ONLY FOOTER (kept intentionally) */}
-  <footer className="hidden lg:block py-10 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
-    <div className="mx-auto w-full max-w-[1680px] grid grid-cols-1 lg:grid-cols-[1fr_minmax(0,1.05fr)] gap-y-10 gap-x-24 items-end">
-
-      {/* LEFT — Name + Terms + Privacy (perfect, unchanged) */}
-      <div className="flex flex-col justify-end pl-0">
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 opacity-90 text-[13px] leading-relaxed">
-<span>© Dr. Juan Pablo Salerno™</span>
-          <span className="opacity-50">·</span>
-          <span>All rights reserved</span>
-          <span className="opacity-50">·</span>
-          <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
-          <span className="opacity-50">·</span>
-          <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
-        </div>
+ {/* DESKTOP / LARGE-TABLET FOOTER (tight, non-square) */}
+<footer className="hidden lg:block py-10 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
+  <div
+    className="
+      mx-auto w-full max-w-[1500px]
+      grid lg:grid-cols-[1fr_minmax(0,640px)]
+      xl:grid-cols-[1fr_minmax(0,720px)]
+      gap-y-10 gap-x-12 items-end
+    "
+  >
+    {/* LEFT — Name + Terms + Privacy */}
+    <div className="flex flex-col justify-end">
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 opacity-90 text-[13px] leading-relaxed">
+        <span>© Dr. Juan Pablo Salerno™</span>
+        <span className="opacity-50">·</span>
+        <span>All rights reserved</span>
+        <span className="opacity-50">·</span>
+        <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
+        <span className="opacity-50">·</span>
+        <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
       </div>
+    </div>
 
-      {/* RIGHT — Newsletter + Socials + Bio (same placement, slightly narrower) */}
-      <div className="grid gap-5 text-left pr-4 lg:pr-10 justify-self-end max-w-[750px]">
-        {/* Newsletter block */}
-<div className="rounded-xl bg-[#081F2C] ring-1 ring-white/10 p-5 shadow-[0_10px_30px_rgba(0,0,0,0.55)] hover:bg-[#0C2634] transition">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <div className="min-w-0">
-              <p className="text-[13px] uppercase tracking-[0.18em] opacity-70 mb-1">
-                Science, Soul, and a Bit of Magic — Every Month
-              </p>
-              <p className="text-base lg:text-[15px] opacity-95">
-        Practical wisdom for modern minds — best paired with coffee and curiosity.
-                
-              </p>
-            </div>
+    {/* RIGHT — Newsletter + Socials + Bio (hard-capped widths) */}
+    <div className="justify-self-end w-full lg:max-w-[560px] xl:max-w-[680px] grid gap-5 text-left">
+      {/* Newsletter Card (blue) — strictly bounded */}
+      <div
+        className="
+          w-full max-w-[540px]
+          rounded-xl bg-[#0f2334] ring-1 ring-white/10
+          p-4 md:p-5 shadow-[0_6px_20px_rgba(0,0,0,0.45)]
+          hover:bg-[#102a3a] transition
+        "
+      >
+        <div className="grid gap-3 md:grid-cols-[1fr_auto] md:items-center">
+          <div className="min-w-0">
+            <p className="text-[12.5px] uppercase tracking-[0.18em] opacity-70 mb-1">
+              Science, Soul, and a Bit of Magic — Every Month
+            </p>
+            <p className="text-[14px] opacity-95 leading-snug">
+              Practical wisdom for modern minds — best paired with coffee and curiosity.
+            </p>
+          </div>
+          <div className="justify-self-start md:justify-self-end shrink-0">
             <NewsletterSignup />
           </div>
         </div>
-
-        {/* Socials */}
-        <div className="flex items-center justify-start mt-2">
-          <SocialFooter />
-        </div>
-
-        {/* One-line bio */}
-        <p className="text-[13px] leading-relaxed opacity-85 -mt-1 max-w-[750px]">
-Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, author and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
-        </p>
       </div>
+
+      {/* Socials */}
+      <div className="flex items-center justify-start mt-1">
+        <SocialFooter />
+      </div>
+
+      {/* One-line bio */}
+      <p className="text-[13px] leading-relaxed opacity-85 -mt-1 max-w-[540px]">
+        Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, author and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
+      </p>
     </div>
-  </footer>
+  </div>
+</footer>
+
 </FooterGate>
         <Analytics />
       </body>
