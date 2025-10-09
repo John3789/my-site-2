@@ -25,7 +25,7 @@ export default function Home() {
           <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
             <span className="hidden md:block text-7xl hover:opacity-90 transition">
               DR. JUAN PABLO SALERNO
-              <sup className="text-2xl align-super opacity-70">™</sup>
+              <sup className="text-2xl align-super opacity-70">™</sup>  
             </span>
           </h1>
         </div>
