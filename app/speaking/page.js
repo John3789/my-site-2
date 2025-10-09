@@ -708,10 +708,10 @@ export default function SpeakingPage() {
 
 <section id="testimonials" className="lg:hidden">
   {/* Centered container for everything in this section */}
-  <div className="mx-auto w-full max-w-[640px] px-6 text-center">
-    <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Testimonials</p>
-    <h2 className="font-serif text-4xl mb-2">What People Say</h2>
-    <div className="h-[2px] w-12 bg-[var(--color-gold)]/75 mb-8 rounded mx-auto" />
+  <div className="mx-auto w-full max-w-[640px] px-6">
+    <p className="text-center text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Testimonials</p>
+    <h2 className="text-center font-serif text-4xl mb-2">What People Say</h2>
+    <div className="items-center h-[2px] w-12 bg-[var(--color-gold)]/75 mb-8 rounded mx-auto" />
 
     {/* Cards */}
     <div className="flex flex-col gap-6 w-full">
