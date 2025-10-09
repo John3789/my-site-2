@@ -272,7 +272,7 @@ export default function SpeakingPage() {
               id="programs"
               className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mx-15 gap-y-12"
             >
-              <div className="md:col-span-5 lg:py-6">
+              <div className="md:col-span-5 md:py-6">
                 {/* Overline (slightly dimmer) */}
                 <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">
                   Programs
@@ -601,7 +601,7 @@ export default function SpeakingPage() {
               id="results"
               className="grid grid-cols-1 md:grid-cols-12 gap-12 mx-15 items-start gap-y-12"
             >
-              <div className="md:col-span-5 lg:py-6">
+              <div className="md:col-span-5 md:py-6">
                 {/* Overline added */}
                 <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">
                   Results
@@ -706,13 +706,13 @@ export default function SpeakingPage() {
             {/* Full-bleed divider above Testimonials (mobile only) */}
             <hr className="lg:hidden w-screen relative left-1/2 -translate-x-1/2 border-t border-[var(--color-cream)]/22 mb-6" />
             <section id="testimonials" className="lg:hidden mx-15">
-              <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">
+              <p className="text-center justify-center text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">
                 Testimonials
               </p>
-              <h2 className="font-serif text-4xl mb-2">What People Say</h2>
-              <div className="h-[2px] w-12 bg-[var(--color-gold)]/75 mb-8 rounded" />
+              <h2 className="text-center justify-center font-serif text-4xl mb-2">What People Say</h2>
+              <div className="items-center justify-center h-[2px] w-12 bg-[var(--color-gold)]/75 mb-8 rounded" />
 
-              <div className="flex flex-col gap-6 max-w-[640px]">
+              <div className="flex flex-col justify-center items-center gap-6 max-w-[640px]">
                 {/* Always-visible: first two cards */}
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
                   <span
