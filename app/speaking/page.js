@@ -234,7 +234,7 @@ export default function SpeakingPage() {
 
               {/* ---- MOBILE quick nav (numbered, Consulting pattern) ---- */}
               <div id="quicknav" className="lg:hidden mt-10 -mb-7 -pb-30 pointer-events-auto">
-                <div className="grid grid-cols-2 landscape:grid-cols-4 gap-2">
+                <div className="grid grid-cols-2 landscape:grid-cols-2 gap-2">
                   {SECTIONS.map((s, idx) => (
                     <button
                       key={s.id}
@@ -270,7 +270,7 @@ export default function SpeakingPage() {
             {/* Popular Topics (Programs) */}
             <section
               id="programs"
-              className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mx-15 gap-y-12"
+              className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-left mx-15 gap-y-12"
             >
               <div className="lg:col-span-5 lg:py-6">
                 {/* Overline (slightly dimmer) */}
@@ -501,6 +501,7 @@ export default function SpeakingPage() {
               </div>
 
               {/* Formats list */}
+                          <div className="mx-auto md:max-w-[700px] lg:max-w-[1000px] px-6 text-left space-y-8">
               <div className="lg:col-span-5 order-1 lg:order-2 lg:py-6 space-y-8 lg:pl-6">
                 {/* Overline added */}
                 <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">
@@ -567,6 +568,7 @@ export default function SpeakingPage() {
                   </p>
                 </div>
               </div>
+              </div>
             </section>
 
             {/* Formats footer buttons (mobile only) — slimmer + same spacing as Service Pillars */}
@@ -596,6 +598,7 @@ export default function SpeakingPage() {
             </div>
 
             {/* Outcomes (Results) */}
+                                      <div className="mx-auto md:max-w-[700px] lg:max-w-[1000px] px-6 text-left space-y-8">
             <hr className="border-t border-[var(--color-cream)]/22 mb-16 lg:mb-8 mx-auto w-[93%]" />
             <section
               id="results"
@@ -718,11 +721,11 @@ export default function SpeakingPage() {
       <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
         <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
         <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-          <span className="absolute -left-4 -top-1 text-4xl opacity-20 select-none">“</span>
+          <span className="text-left absolute -left-4 -top-1 text-4xl opacity-20 select-none">“</span>
           <p>...an exceptional speaker: he is engaging, well-spoken, and clearly passionate about his work.</p>
           <span className="absolute right-13 bottom-4 text-4xl opacity-20 select-none">”</span>
         </blockquote>
-        <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+        <figcaption className="text-left mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
           — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting &amp; Expo
         </figcaption>
       </figure>
@@ -730,12 +733,12 @@ export default function SpeakingPage() {
       <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
         <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" aria-hidden />
         <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-          <span className="absolute -left-4 -top-1 text-4xl opacity-20 select-none">“</span>
+          <span className="text-left absolute -left-4 -top-1 text-4xl opacity-20 select-none">“</span>
           <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
           <span className="absolute right-6 bottom-4 text-4xl opacity-20 select-none">”</span>
         </blockquote>
         <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-          — <span className="text-[var(--color-gold)]">Audience member</span>, Society for Prevention Research Annual Meeting
+          — <span className="text-left text-[var(--color-gold)]">Audience member</span>, Society for Prevention Research Annual Meeting
         </figcaption>
       </figure>
 
@@ -747,7 +750,7 @@ export default function SpeakingPage() {
                       aria-hidden
                     />
                     <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-                      <span className="absolute -left-4 -top-1 text-4xl opacity-20 select-none">
+                      <span className="text-left absolute -left-4 -top-1 text-4xl opacity-20 select-none">
                         “
                       </span>
                       <p>
@@ -758,7 +761,7 @@ export default function SpeakingPage() {
                       </span>
                     </blockquote>
                     <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-                      — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
+                      — <span className="text-left text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
                     </figcaption>
                   </figure>
 
@@ -768,7 +771,7 @@ export default function SpeakingPage() {
                       className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl"
                     />
                     <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-                      <span className="absolute -left-4 -top-1 text-4xl opacity-20 select-none">
+                      <span className="text-left absolute -left-4 -top-1 text-4xl opacity-20 select-none">
                         “
                       </span>
                       <p>
@@ -779,7 +782,7 @@ export default function SpeakingPage() {
                       </span>
                     </blockquote>
                     <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-                      — <span className="text-[var(--color-gold)]">Audience member</span>, Columbia University
+                      — <span className="text-left text-[var(--color-gold)]">Audience member</span>, Columbia University
                     </figcaption>
                   </figure>
 
@@ -789,7 +792,7 @@ export default function SpeakingPage() {
                       className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl"
                     />
                     <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-                      <span className="absolute -left-4 -top-1 text-4xl opacity-20 select-none">
+                      <span className="text-left absolute -left-4 -top-1 text-4xl opacity-20 select-none">
                         “
                       </span>
                       <p>
@@ -800,7 +803,7 @@ export default function SpeakingPage() {
                       </span>
                     </blockquote>
                     <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-                      — <span className="text-[var(--color-gold)]">Audience member</span>, Society of Behavioral Medicine Annual Meeting
+                      — <span className="text-left text-[var(--color-gold)]">Audience member</span>, Society of Behavioral Medicine Annual Meeting
                     </figcaption>
                   </figure>
 
@@ -810,7 +813,7 @@ export default function SpeakingPage() {
                       aria-hidden
                     />
                     <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-                      <span className="absolute -left-4 -top-1 text-4xl opacity-20 select-none">
+                      <span className="text-left absolute -left-4 -top-1 text-4xl opacity-20 select-none">
                         “
                       </span>
                       <p>
@@ -821,7 +824,7 @@ export default function SpeakingPage() {
                       </span>
                     </blockquote>
                     <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-                      — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
+                      — <span className="text-left text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
                     </figcaption>
                   </figure>
 
@@ -831,7 +834,7 @@ export default function SpeakingPage() {
                       className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl"
                     />
                     <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-                      <span className="absolute -left-4 -top-1 text-4xl opacity-20 select-none">
+                      <span className="text-left absolute -left-4 -top-1 text-4xl opacity-20 select-none">
                         “
                       </span>
                       <p>
@@ -842,7 +845,7 @@ export default function SpeakingPage() {
                       </span>
                     </blockquote>
                     <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-                      — <span className="text-[var(--color-gold)]">Audience member</span>, University of Central Florida
+                      — <span className="text-left text-[var(--color-gold)]">Audience member</span>, University of Central Florida
                     </figcaption>
                   </figure>
 
@@ -852,7 +855,7 @@ export default function SpeakingPage() {
                       className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl"
                     />
                     <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-                      <span className="absolute -left-4 -top-1 text-4xl opacity-20 select-none">
+                      <span className="text-left absolute -left-4 -top-1 text-4xl opacity-20 select-none">
                         “
                       </span>
                       <p>
@@ -863,7 +866,7 @@ export default function SpeakingPage() {
                       </span>
                     </blockquote>
                     <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-                      — <span className="text-[var(--color-gold)]">Audience member</span>, University of California, Los Angeles
+                      — <span className="text-left text-[var(--color-gold)]">Audience member</span>, University of California, Los Angeles
                     </figcaption>
                   </figure>
                 </div>
@@ -1010,6 +1013,8 @@ export default function SpeakingPage() {
     </div>
   </div>
 </div>
+</div>
+
 
 
         {/* removed the contained divider on mobile */}
