@@ -132,7 +132,7 @@ export default function ConsultingPage() {
           </section>
 
           {/* ---- MOBILE quick nav (numbered) ---- */}
-          <div id="quicknav" className="md:hidden mt-6 pointer-events-auto">
+          <div id="quicknav" className="lg:hidden mt-6 pointer-events-auto">
             <div className="grid grid-cols-2 landscape:grid-cols-3 gap-2">
               {SECTIONS.map((s, idx) => (
                 <button
