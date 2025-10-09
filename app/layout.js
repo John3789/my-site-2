@@ -108,20 +108,18 @@ export default function RootLayout({ children }) {
         {children}
 
 <FooterGate>
-{/* DESKTOP / LARGE-TABLET FOOTER (centered blue card layout) */}
+{/* DESKTOP / LARGE-TABLET FOOTER — ORIGINAL LAYOUT RESTORED */}
 <footer className="hidden lg:block py-10 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
   <div
     className="
-      mx-auto w-full max-w-[1500px]
-      grid
-      lg:grid-cols-1 xl:grid-cols-[1fr_minmax(0,640px)]
-      gap-y-10 gap-x-14 items-end
-      text-center lg:text-center xl:text-left
+      mx-auto w-full max-w-[1680px]
+      grid grid-cols-1 lg:grid-cols-[1fr_minmax(0,1.05fr)]
+      gap-y-10 gap-x-24 items-end
     "
   >
-    {/* LEFT — copyright (hidden on tablet, visible on desktop) */}
-    <div className="hidden xl:flex flex-col justify-end">
-      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 opacity-90 text-[13px] leading-relaxed justify-center xl:justify-start">
+    {/* LEFT — Name + Terms + Privacy (unchanged) */}
+    <div className="flex flex-col justify-end pl-0">
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 opacity-90 text-[13px] leading-relaxed">
         <span>© Dr. Juan Pablo Salerno™</span>
         <span className="opacity-50">·</span>
         <span>All rights reserved</span>
@@ -133,28 +131,25 @@ export default function RootLayout({ children }) {
     </div>
 
     {/* RIGHT — Newsletter + Socials + Bio */}
-    <div
-      className="
-        justify-self-center xl:justify-self-end
-        w-full max-w-[520px] xl:max-w-[640px]
-        grid gap-8 text-left
-      "
-    >
-      {/* Blue newsletter card — title, description, email+button */}
+    <div className="grid gap-5 text-left pr-4 lg:pr-10 justify-self-end max-w-[750px]">
+      {/* Newsletter block (improved version) */}
       <div
         className="
-          rounded-xl bg-[#0f2334] ring-1 ring-white/10
-          p-6 shadow-[0_6px_20px_rgba(0,0,0,0.45)]
+          rounded-xl bg-[#0f2334]
+          ring-1 ring-white/10 p-6
+          shadow-[0_10px_30px_rgba(0,0,0,0.55)]
           hover:bg-[#102a3a] transition
-          text-left
         "
       >
+        {/* Title + Description */}
         <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-3">
           Science, Soul, and a Bit of Magic — Every Month
         </p>
         <p className="text-[14px] opacity-95 leading-snug mb-5">
           Practical wisdom for modern minds — best paired with coffee and curiosity.
         </p>
+
+        {/* Email + Subscribe */}
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-2">
           <input
             type="email"
@@ -170,28 +165,19 @@ export default function RootLayout({ children }) {
         </div>
       </div>
 
-      {/* Centered group (socials, bio, copyright) */}
-      <div className="flex flex-col items-left text-left">
-        {/* Socials */}
-        <div className="w-full flex items-left justify-left mb-4">
-          <SocialFooter />
-        </div>
-
-        {/* Bio */}
-        <p className="text-[13px] leading-relaxed opacity-85 max-w-[520px] text-left mb-2">
-          Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, author and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
-        </p>
-
-        {/* Copyright (for tablet view) */}
-        <div className="flex flex-wrap items-left justify-left gap-x-3 gap-y-1 opacity-80 text-[12.5px] mt-2 xl:hidden">
-          <span>© Dr. Juan Pablo Salerno™</span>
-          <span className="opacity-50">·</span>
-          <span>All rights reserved</span>
-        </div>
+      {/* Socials */}
+      <div className="flex items-center justify-start mt-2">
+        <SocialFooter />
       </div>
+
+      {/* Bio */}
+      <p className="text-[13px] leading-relaxed opacity-85 -mt-1 max-w-[750px]">
+        Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, author and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
+      </p>
     </div>
   </div>
 </footer>
+
 
 
 
