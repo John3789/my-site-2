@@ -226,55 +226,85 @@ export default function ConsultingPage() {
 
           <div className="mx-auto max-w-[1100px] px-6"><div className="h-px w-full bg-[var(--color-cream)]/15" /></div>
 
-          <section id={toMobile("process")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14">
-            <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Process</p>
-            <h2 className="font-serif text-3xl opacity-95">How We Work Together</h2>
-            <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" />
-            <p className="opacity-85 max-w-3xl mb-10 leading-relaxed">
-              Every engagement begins with <span className="font-semibold">Discovery</span>. From there, we co-create a pathway
-              that may include program design, implementation, evaluation, and/or scaling—depending on your organization’s priorities.
-            </p>
+<section id={toMobile("process")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14">
+  <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Process</p>
+  <h2 className="font-serif text-3xl opacity-95">How We Work Together</h2>
+  <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" />
 
-            <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl text-center mb-10">
-              <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-              <h3 className="font-serif text-2xl mb-2">Discovery</h3>
-              <p className="opacity-90 leading-relaxed">
-                Understand your goals, challenges, stakeholders, and context—laying the foundation for success.
-              </p>
-            </article>
+  <p className="opacity-85 max-w-3xl mb-10 leading-relaxed">
+    Every engagement begins with <span className="font-semibold">Discovery</span>. From there, we co-create a pathway
+    that may include program design, implementation, evaluation, and/or scaling—depending on your organization’s priorities.
+  </p>
 
-            {/* Gold arrow toward Co-Design (mobile only, no animation to avoid blur) */}
-            <div className="md:hidden flex justify-center -mt-2 mb-6" aria-hidden="true">
-              <svg
-                viewBox="0 0 24 24"
-                className="h-7 w-7 text-[var(--color-gold)]"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M12 4v12" />
-                <path d="M7 12l5 5 5-5" />
-              </svg>
-            </div>
+  <article className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl text-center mb-10">
+    <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+    <h3 className="font-serif text-2xl mb-2">Discovery</h3>
+    <p className="opacity-90 leading-relaxed">
+      Understand your goals, challenges, stakeholders, and context—laying the foundation for success.
+    </p>
+  </article>
 
-            <div className="grid grid-cols-1 gap-6">
-              {[
-                ["Co-Design", "Develop tailored, evidence-based strategies that fit your organization’s unique needs and context."],
-                ["Implementation", "Support program rollout with facilitator toolkits, trainings, and change-management resources."],
-                ["Evaluation", "Measure program outcomes, refine designs, and assess true organizational-level impact."],
-                ["Scaling", "Expand programming more widely to increase reach and impact across your organization."],
-              ].map(([title, text]) => (
-                <article key={title} className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl hover:bg-white/[0.06] transition">
-                  <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-                  <h3 className="font-serif text-xl mb-2">{title}</h3>
-                  <p className="opacity-90 leading-relaxed">{text}</p>
-                </article>
-              ))}
-            </div>
-            <MobileSectionFooter baseId="process" />
-          </section>
+  {/* Arrows from Discovery -> next cards */}
+  {/* Portrait: single centered arrow */}
+  <div className="md:hidden portrait:flex landscape:hidden justify-center -mt-2 mb-6" aria-hidden="true">
+    <svg
+      viewBox="0 0 24 24"
+      className="h-7 w-7 text-[var(--color-gold)]"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M12 4v12" />
+      <path d="M7 12l5 5 5-5" />
+    </svg>
+  </div>
+
+  {/* Landscape: four gold arrows aligned over each card */}
+  <div
+    className="md:hidden hidden landscape:grid grid-cols-4 gap-6 place-items-center -mt-2 mb-6 text-[var(--color-gold)]"
+    aria-hidden="true"
+  >
+    {[0, 1, 2, 3].map((i) => (
+      <svg
+        key={i}
+        viewBox="0 0 24 24"
+        className="h-7 w-7"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M12 4v12" />
+        <path d="M7 12l5 5 5-5" />
+      </svg>
+    ))}
+  </div>
+
+  {/* Cards: 1-col portrait, 4-col landscape */}
+  <div className="grid grid-cols-1 landscape:grid-cols-4 gap-6">
+    {[
+      ["Co-Design", "Develop tailored, evidence-based strategies that fit your organization’s unique needs and context."],
+      ["Implementation", "Support program rollout with facilitator toolkits, trainings, and change-management resources."],
+      ["Evaluation", "Measure program outcomes, refine designs, and assess true organizational-level impact."],
+      ["Scaling", "Expand programming more widely to increase reach and impact across your organization."],
+    ].map(([title, text]) => (
+      <article
+        key={title}
+        className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl hover:bg-white/[0.06] transition"
+      >
+        <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+        <h3 className="font-serif text-xl mb-2">{title}</h3>
+        <p className="opacity-90 leading-relaxed">{text}</p>
+      </article>
+    ))}
+  </div>
+
+  <MobileSectionFooter baseId="process" />
+</section>
+
 
           <div className="mx-auto max-w-[1100px] px-6"><div className="h-px w-full bg-[var(--color-cream)]/15" /></div>
 
@@ -382,13 +412,13 @@ export default function ConsultingPage() {
                   q: "I found Dr. Salerno to be very well-versed in the subject matter. He definitely helped us grow and I genuinely appreciated his excellence.",
                   a: "New York University",
                   lq: "-left-4 -top-1",
-                  rq: "right-[2.5rem] bottom-[0.5rem]",
+                  rq: "right-[2.5rem] landscape:right-90 landscape:bottom-4 bottom-[0.5rem]",
                 },
                 {
                   q: "Dr. Salerno is an expert in mental health equity research, highly skilled and incorporates attention to community priorities.",
                   a: "University of California, Los Angeles",
                   lq: "-left-4 -top-1",
-                  rq: "right-[12.25rem] bottom-[0.5rem]",
+                  rq: "right-[12.25rem] landscape:right-91 landscape:bottom-4 bottom-[0.5rem]",
                 },
               ].map((t, idx) => (
                 <figure key={idx} className="relative w-full rounded-xl bg-white/5 p-6 ring-1 ring-white/10 shadow-2xl">
@@ -408,13 +438,13 @@ export default function ConsultingPage() {
                     q: "Dr. Salerno has a strong command of various research methods and an undeniable passion for his work in the public health sphere.",
                     a: "Columbia University",
                     lq: "-left-4 -top-1",
-                    rq: "right-[5.75rem] bottom-[0.5rem]",
+                    rq: "right-[5.75rem] landscape:right-90 landscape:bottom-4 bottom-[0.5rem]",
                   },
                   {
                     q: "Dr. Salerno is incredibly intelligent and insightful with a deep, nuanced understanding of and appreciation for research.",
                     a: "Columbia University",
                     lq: "-left-4 -top-1",
-                    rq: "right-[0.5rem] bottom-[0.5rem]",
+                    rq: "right-[0.5rem] landscape:right-126 landscape:bottom-4 bottom-[0.5rem]",
                   },
                 ].map((t, idx) => (
                   <figure key={`more-${idx}`} className="relative w-full rounded-xl bg-white/5 p-6 ring-1 ring-white/10 shadow-2xl">
