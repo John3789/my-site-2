@@ -235,7 +235,7 @@ export default function SpeakingPage() {
               </div>
 
 {/* ---- MOBILE quick nav (numbered, Consulting pattern) ---- */}
-<div id="quicknav" className="lg:hidden mt-4 landscape:mt-3 landscape:mb-2">
+<div id="quicknav" className="lg:hidden mt-3 landscape:mt-3 landscape:mb-0">
   {/* cap width + center only in landscape */}
   <div className="w-full landscape:max-w-[520px] mx-auto">
     <div className="grid grid-cols-2 gap-2 landscape:gap-1">
@@ -248,7 +248,7 @@ export default function SpeakingPage() {
           className={[
             "w-full rounded-full inline-flex items-center gap-1",
             "px-3.5 py-1.5 landscape:px-3",           // slightly narrower in landscape
-            "text-[13px] landscape:text-[13px] font-semibold tracking-wide truncate transition",
+            "text-[12px] landscape:text-[13px] font-semibold tracking-wide truncate transition",
             "active:scale-95 active:brightness-125",
             "border border-white/18 bg-[var(--color-teal-800)] text-[var(--color-cream)]",
             activeId === s.id &&
