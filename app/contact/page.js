@@ -238,11 +238,11 @@ export default function ContactPage() {
               <div className="pb-10" />
 
               {/* FINAL divider above footer — no bleed on mobile */}
-              <div className="mx-auto max-w-[1200px] px-6">
-                <hr className="hidden lg:block max-w-[1000px] border-t border-[var(--color-cream)]/22" />
+              <div className="mx-auto max-w-[1400px] px-6">
+                <hr className="hidden lg:block max-w-[1400px] border-t border-[var(--color-cream)]/22" />
               </div>
 
-                   <div className="block lg:hidden mx-auto max-w-[1200px] px-3">
+                   <div className="block lg:hidden mx-auto max-w-[1100px] px-3">
             {/* (mobile newsletter + socials unchanged) */}
             {/* ... */}
           </div>
