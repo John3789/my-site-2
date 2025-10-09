@@ -233,7 +233,7 @@ export default function SpeakingPage() {
               </div>
 
               {/* ---- MOBILE quick nav (numbered, Consulting pattern) ---- */}
-              <div id="quicknav" className="md:hidden mt-10 mb-0 pointer-events-auto">
+              <div id="quicknav" className="lg:hidden mt-10 mb-0 pointer-events-auto">
                 <div className="grid grid-cols-2 landscape:grid-cols-3 gap-2">
                   {SECTIONS.map((s, idx) => (
                     <button
