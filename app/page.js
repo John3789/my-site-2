@@ -32,7 +32,7 @@ export default function Home() {
       </section>
 
 {/* HERO — mobile full-screen; desktop unchanged */}
-<section className="relative h-[100dvh] md:h-[88.8svh] overflow-hidden">
+<section className="relative h-[100dvh] lg:h-[88.8svh] overflow-hidden">
   {/* Image layer fills the section */}
   <div className="absolute inset-0">
     <Image
@@ -78,15 +78,15 @@ export default function Home() {
 </h1>
   </div>
 
-  {/* Desktop buttons only (mobile CTAs are hidden) */}
-  <div className="hidden md:block absolute inset-x-0 bottom-6 z-30">
+  {/* Desktop/tablet buttons only (mobile CTAs are hidden) */}
+  <div className="hidden lg:block absolute inset-x-0 bottom-6 z-30">
     <div className="mx-auto max-w-[1400px] px-6 relative">
       <Link
         href="speaking"
         className="
           inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-7 py-3
           font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md
-          hover:-translate-y-[1px] transition absolute left-6 lg:left-61 bottom-0
+          hover:-translate-y-[1px] transition absolute left-6 lg:left-61 bottom-5
         "
       >
         Book Dr. Salerno to speak
@@ -97,7 +97,7 @@ export default function Home() {
         className="
           inline-flex items-center rounded-md !bg-[var(--color-teal-700)] !text-[var(--color-cream)] px-7 py-3
           font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md
-          hover:-translate-y-[1px] transition absolute right-6 lg:right-34 bottom-0
+          hover:-translate-y-[1px] transition absolute right-6 lg:right-34 bottom-5
         "
       >
         Book consulting with Dr. Salerno
