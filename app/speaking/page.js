@@ -703,62 +703,44 @@ export default function SpeakingPage() {
             </div>
 
             {/* ===== Testimonials (mobile-only; now collapsible) ===== */}
-            {/* Full-bleed divider above Testimonials (mobile only) */}
-            <hr className="lg:hidden w-screen relative left-1/2 -translate-x-1/2 border-t border-[var(--color-cream)]/22 mb-6" />
-            <section id="testimonials" className="lg:hidden mx-15">
-              <p className="text-center justify-center text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">
-                Testimonials
-              </p>
-              <h2 className="text-center justify-center font-serif text-4xl mb-2">What People Say</h2>
-              <div className="items-center justify-center h-[2px] w-12 bg-[var(--color-gold)]/75 mb-8 rounded" />
+<hr className="lg:hidden w-screen relative left-1/2 -translate-x-1/2 border-t border-[var(--color-cream)]/22 mb-6" />
 
-              <div className="flex flex-col justify-center items-center gap-6 max-w-[640px]">
-                {/* Always-visible: first two cards */}
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
-                  <span
-                    aria-hidden
-                    className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl"
-                  />
-                  <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-                    <span className="absolute -left-4 -top-1 text-4xl opacity-20 select-none">
-                      “
-                    </span>
-                    <p>
-                      ...an exceptional speaker: he is engaging, well-spoken, and clearly
-                      passionate about his work.
-                    </p>
-                    <span className="absolute right-13 bottom-4 text-4xl opacity-20 select-none">
-                      ”
-                    </span>
-                  </blockquote>
-                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-                    — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting &amp; Expo
-                  </figcaption>
-                </figure>
+<section id="testimonials" className="lg:hidden">
+  {/* Centered container for everything in this section */}
+  <div className="mx-auto w-full max-w-[640px] px-6 text-center">
+    <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Testimonials</p>
+    <h2 className="font-serif text-4xl mb-2">What People Say</h2>
+    <div className="h-[2px] w-12 bg-[var(--color-gold)]/75 mb-8 rounded mx-auto" />
 
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
-                  <span
-                    className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl"
-                    aria-hidden
-                  />
-                  <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-                    <span className="absolute -left-4 -top-1 text-4xl opacity-20 select-none">
-                      “
-                    </span>
-                    <p>
-                      He communicates with clarity and confidence...leaves a lasting impression.
-                    </p>
-                    <span className="absolute right-6 bottom-4 text-4xl opacity-20 select-none">
-                      ”
-                    </span>
-                  </blockquote>
-                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-                    — <span className="text-[var(--color-gold)]">Audience member</span>, Society for Prevention Research Annual Meeting
-                  </figcaption>
-                </figure>
+    {/* Cards */}
+    <div className="flex flex-col gap-6 w-full">
+      {/* Always-visible: first two cards */}
+      <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
+        <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+        <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
+          <span className="absolute -left-4 -top-1 text-4xl opacity-20 select-none">“</span>
+          <p>...an exceptional speaker: he is engaging, well-spoken, and clearly passionate about his work.</p>
+          <span className="absolute right-13 bottom-4 text-4xl opacity-20 select-none">”</span>
+        </blockquote>
+        <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+          — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting &amp; Expo
+        </figcaption>
+      </figure>
+
+      <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
+        <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" aria-hidden />
+        <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
+          <span className="absolute -left-4 -top-1 text-4xl opacity-20 select-none">“</span>
+          <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
+          <span className="absolute right-6 bottom-4 text-4xl opacity-20 select-none">”</span>
+        </blockquote>
+        <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+          — <span className="text-[var(--color-gold)]">Audience member</span>, Society for Prevention Research Annual Meeting
+        </figcaption>
+      </figure>
 
                 {/* Collapsible group: the rest of the cards */}
-                <div className={showAllTestimonials ? "flex flex-col gap-6" : "hidden"}>
+                <div className={showAllTestimonials ? "flex flex-col gap-6 w-full" : "hidden"}>
                   <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
                     <span
                       className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl"
@@ -887,7 +869,7 @@ export default function SpeakingPage() {
                 </div>
 
                 {/* Toggle button */}
-                <div className="mt-4 flex justify-center">
+                <div className="mt-2">
                   <button
                     onClick={() => setShowAllTestimonials((s) => !s)}
                     aria-expanded={showAllTestimonials}
