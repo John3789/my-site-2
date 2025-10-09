@@ -265,7 +265,7 @@ export default function SpeakingPage() {
 
           {/* ===== MAIN CONTENT ===== */}
           <div className="mx-auto max-w-[1400px] md:py-6 space-y-16 md:space-y-24" id="topics">
-            <hr className="border-t border-[var(--color-cream)]/22 md:mb-8 mx-auto" />
+            <hr className="border-t border-[var(--color-cream)]/22 md:mb-8 mx-auto w-[93%]" />
 
             {/* Popular Topics (Programs) */}
             <section
@@ -447,7 +447,7 @@ export default function SpeakingPage() {
             </div>
 
             {/* Dr. Salerno Offers (Formats) */}
-            <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 mx-auto" />
+            <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 mx-auto w-[93%]" />
             <section
               id="formats"
               className="grid grid-cols-1 md:grid-cols-12 gap-y-12 md:gap-x-0 mx-15 items-center"
@@ -596,7 +596,7 @@ export default function SpeakingPage() {
             </div>
 
             {/* Outcomes (Results) */}
-            <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 mx-auto" />
+            <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 mx-auto w-[93%]" />
             <section
               id="results"
               className="grid grid-cols-1 md:grid-cols-12 gap-12 mx-15 items-start gap-y-12"
@@ -703,7 +703,7 @@ export default function SpeakingPage() {
             </div>
 
             {/* ===== Testimonials (mobile-only; now collapsible) ===== */}
-<hr className="lg:hidden mx-auto w-[88%] border-t border-[var(--color-cream)]/22 mb-6" />
+<hr className="lg:hidden mx-auto w-[93%] border-t border-[var(--color-cream)]/22 mb-6" />
 
 <section id="testimonials" className="lg:hidden">
   {/* Centered container for everything in this section */}
@@ -936,7 +936,7 @@ export default function SpeakingPage() {
 
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="block lg:hidden">
-  <div className="mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
+  <div className="mx-auto w-[93%] px-6 mb-14 -mt-5">
     <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
   </div>
 
