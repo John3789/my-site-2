@@ -193,7 +193,9 @@ export default function SpeakingPage() {
                 &ldquo;Engaging. Inspiring. Transformational.&rdquo;
               </h2>
 
-              <div className="space-y-6 opacity-85 text-lg md:text-xl leading-loose">
+<div
+  className="space-y-6 opacity-85 text-lg md:text-xl leading-loose mx-auto max-w-none landscape:max-w-[560px] md:landscape:max-w-none"
+>
                 <p>
                   Dr. Juan Pablo Salerno is a respected mental health scientist,
                   personal growth expert, and engaging speaker whose work bridges
