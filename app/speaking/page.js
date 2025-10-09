@@ -270,7 +270,7 @@ export default function SpeakingPage() {
             {/* Popular Topics (Programs) */}
             <section
               id="programs"
-              className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mx-15 gap-y-12"
+              className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mx-15 gap-y-12"
             >
               <div className="md:col-span-5 md:py-6">
                 {/* Overline (slightly dimmer) */}
@@ -377,7 +377,7 @@ export default function SpeakingPage() {
               </div>
 
               {/* Quotes (left column) — desktop only */}
-              <div className="sm:hidden md:col-span-7 ml-auto hidden md:flex flex-col gap-6 max-w-[640px]">
+              <div className="md:col-span-7 ml-auto hidden md:flex flex-col gap-6 max-w-[640px]">
                 <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
                   {/* Decorative quotes (no normal quotes in text) */}
