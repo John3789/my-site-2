@@ -188,7 +188,7 @@ export default function SpeakingPage() {
           <section className="relative w-full pt-16 pb-9 lg:py-16" id="intro">
             {/* subtle hairline divider from hero */}
             <div className="absolute inset-x-0 top-0 h-px bg-[var(--color-cream)]/15" />
-            <div className="mx-auto max-w-[1000px] px-6 text-left space-y-8">
+            <div className="mx-auto md:max-w-[600px] lg:max-w-[1000px] px-6 text-left space-y-8">
               <h2 className="font-serif text-2xl lg:text-4xl opacity-90 text-center font-semibold tracking-wide">
                 &ldquo;Engaging. Inspiring. Transformational.&rdquo;
               </h2>
