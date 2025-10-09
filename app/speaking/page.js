@@ -273,7 +273,7 @@ export default function SpeakingPage() {
 
             {/* Popular Topics (Programs) */}
             <section
-               className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mx-15 gap-y-12 portrait:mx-0 portrait:px-3 landscape:max-w-[760px] landscape:mx-auto landscape:px-3"
+               className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mx-15 gap-y-12 portrait:mx-0 portrait:px-3 landscape:max-w-[760px] landscape:mx-auto landscape:px-3 lg:landscape:max-w-[1400px] lg:landscape:mx-15 lg:landscape:px-0"
               
             >
               <div className="md:col-span-5 md:py-6">
@@ -454,7 +454,7 @@ export default function SpeakingPage() {
             <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 mx-auto w-[93%]" />
             <section
               id="formats"
-              className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 md:gap-x-0 mx-15 items-center portrait:mx-0 portrait:px-6"
+              className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 md:gap-x-0 mx-15 items-center portrait:mx-0 portrait:px-6 landscape:max-w-[760px] landscape:mx-auto landscape:px-3 lg:landscape:max-w-[1400px] lg:landscape:mx-15 lg:landscape:px-0"
             >
               {/* Quotes (RIGHT column) — desktop only */}
                 <div className="md:col-span-7 hidden md:flex flex-col gap-6 max-w-[640px] md:pr-6 quote-col">
@@ -603,7 +603,7 @@ export default function SpeakingPage() {
             <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 mx-auto w-[93%]" />
             <section
               id="results"
-              className="grid grid-cols-1 lg:grid-cols-12 gap-12 mx-15 items-start gap-y-12 portrait:mx-0 portrait:px-6"
+              className="grid grid-cols-1 lg:grid-cols-12 gap-12 mx-15 items-start gap-y-12 portrait:mx-0 portrait:px-6 landscape:max-w-[760px] landscape:mx-auto landscape:px-3 lg:landscape:max-w-[1400px] lg:landscape:mx-15 lg:landscape:px-0"
             >
               <div className="md:col-span-5 md:py-6">
                 {/* Overline added */}
