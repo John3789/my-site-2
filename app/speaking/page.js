@@ -188,7 +188,7 @@ export default function SpeakingPage() {
           <section className="relative w-full pt-16 pb-9 md:py-16" id="intro">
             {/* subtle hairline divider from hero */}
             <div className="absolute inset-x-0 top-0 h-px bg-[var(--color-cream)]/15" />
-            <div className="mx-auto max-w-[1000px] px-6 text-left space-y-8 landscape:space-y-2 lg:landscape:space-y-0">
+            <div className="mx-auto max-w-[1000px] px-6 text-left space-y-8">
               <h2 className="font-serif text-2xl md:text-4xl opacity-90 text-center font-semibold tracking-wide">
                 &ldquo;Engaging. Inspiring. Transformational.&rdquo;
               </h2>
@@ -235,6 +235,7 @@ export default function SpeakingPage() {
               </div>
 
 {/* ---- MOBILE quick nav (numbered, Consulting pattern) ---- */}
+<div className="-mt-3 landscape:-mt-5">
 <div id="quicknav" className="lg:hidden mt-4 landscape:mt-3 landscape:mb-2">
   {/* cap width + center only in landscape */}
   <div className="w-full landscape:max-w-[520px] mx-auto">
@@ -248,7 +249,7 @@ export default function SpeakingPage() {
           className={[
             "w-full rounded-full inline-flex items-center gap-1",
             "px-3.5 py-1.5 landscape:px-3",           // slightly narrower in landscape
-            "text-[15px] landscape:text-[11px] font-semibold tracking-wide truncate transition",
+            "text-[13px] landscape:text-[11px] font-semibold tracking-wide truncate transition",
             "active:scale-95 active:brightness-125",
             "border border-white/18 bg-[var(--color-teal-800)] text-[var(--color-cream)]",
             activeId === s.id &&
@@ -263,6 +264,8 @@ export default function SpeakingPage() {
       ))}
     </div>
   </div>
+    </div>
+
 </div>
 {/* ---- /mobile quick nav ---- */}
 
