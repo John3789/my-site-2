@@ -237,8 +237,8 @@ export default function SpeakingPage() {
 {/* ---- MOBILE quick nav (numbered, Consulting pattern) ---- */}
 <div id="quicknav" className="lg:hidden mt-0 landscape:mt-0 landscape:-mb-15">
   {/* cap width + center only in landscape */}
-  <div className="w-full landscape:max-w-[520px] mx-auto">
-    <div className="grid grid-cols-2 gap-2 landscape:gap-1">
+  <div className="w-full landscape:max-w-[520px] mx-auto landscape:-mb-15">
+    <div className="grid grid-cols-2 gap-2 landscape:gap-1 landscape:-mb-15">
       {SECTIONS.map((s, idx) => (
         <button
           key={s.id}
@@ -428,7 +428,7 @@ export default function SpeakingPage() {
             </section>
 
             {/* Programs footer buttons (mobile only) — tighter */}
-            <div className="lg:hidden -mt-12 mb-15 w-full">
+            <div className="lg:hidden -mt-16 mb-15 w-full">
               <div className="w-full flex justify-center">
                 <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
                   <button
@@ -577,7 +577,7 @@ export default function SpeakingPage() {
             </section>
 
             {/* Formats footer buttons (mobile only) — slimmer + same spacing as Service Pillars */}
-            <div className="lg:hidden -mt-12 mb-15 w-full">
+            <div className="lg:hidden -mt-16 mb-15 w-full">
               <div className="w-full flex justify-center">
                 <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
                   <button
@@ -684,7 +684,7 @@ export default function SpeakingPage() {
             </section>
 
             {/* Results footer buttons (mobile only) — slimmer + same spacing as Service Pillars */}
-            <div className="lg:hidden -mt-12 mb-15 w-full">
+            <div className="lg:hidden -mt-16 mb-15 w-full">
               <div className="w-full flex justify-center">
                 <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
                   <button
