@@ -235,7 +235,7 @@ export default function SpeakingPage() {
               </div>
 
               {/* ---- MOBILE quick nav (numbered, Consulting pattern) ---- */}
-              <div id="quicknav" className="lg:hidden pointer-events-auto">
+              <div id="quicknav" className="lg:hidden pointer-events-auto landscape:max-w-[300px] lg:landscape:max-w-none">
                 <div className="grid grid-cols-2 landscape:grid-cols-2 gap-2">
                   {SECTIONS.map((s, idx) => (
                     <button
