@@ -187,7 +187,7 @@ export default function SpeakingPage() {
           {/* ===== Intro Blurb ===== */}
           <section className="relative w-full pt-16 pb-9 md:py-16" id="intro">
             {/* subtle hairline divider from hero */}
-            <div className="absolute inset-x-0 top-0 h-px bg-[var(--color-cream)]/15" />
+<div className="absolute top-0 h-px bg-[var(--color-cream)]/15 left-6 right-6 md:inset-x-0" />
             <div className="mx-auto max-w-[1000px] px-6 text-left space-y-8">
               <h2 className="font-serif text-2xl md:text-4xl opacity-90 text-center font-semibold tracking-wide">
                 &ldquo;Engaging. Inspiring. Transformational.&rdquo;
@@ -704,7 +704,9 @@ export default function SpeakingPage() {
 
             {/* ===== Testimonials (mobile-only; now collapsible) ===== */}
             {/* Full-bleed divider above Testimonials (mobile only) */}
-            <hr className="md:hidden w-screen relative left-1/2 -translate-x-1/2 border-t border-[var(--color-cream)]/22 mb-6" />
+<div className="md:hidden mx-auto max-w-[1400px] px-6">
+  <hr className="border-t border-[var(--color-cream)]/22 mb-6" />
+</div>
             <section id="testimonials" className="md:hidden mx-15">
               <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">
                 Testimonials
