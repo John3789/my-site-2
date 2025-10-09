@@ -937,7 +937,7 @@ export default function SpeakingPage() {
             </div>
                                                                   {/* Home: section/bookend divider (aligns to 1400px container) */}
 <div className="mx-auto max-w-[1400px] px-6">
-  <hr className="border-t border-[var(--color-cream)]/22" />
+  <hr className="border-t border-[var(--color-cream)]/22 -mb-10" />
 </div>
 
           </div>
