@@ -244,7 +244,7 @@ export default function SpeakingPage() {
                       onClick={() => jump(s.id)}
                       aria-current={activeId === s.id ? "true" : "false"}
                       className={[
-                        "landscape:max-w-[300x] lg:landscape:max-w-none w-full inline-flex items-center gap-1 rounded-full px-3.5 py-1.5",
+                        "landscape:max-w-[300x] lg:landscape:max-w-none mx-auto w-full inline-flex items-center gap-1 rounded-full px-3.5 py-1.5",
                         "text-[12px] font-semibold tracking-wide truncate transition",
                         "active:scale-95 active:brightness-125",
                         "border border-white/18 bg-[var(--color-teal-800)] text-[var(--color-cream)]",
