@@ -219,6 +219,8 @@ Practical wisdom for modern minds — best paired with coffee and curiosity.
       </button>
     </div>
   </div>
+  </div>
+
 
   {/* --- MOBILE Jay-style footer block --- */}
 <div className="mt-6 text-[13px] leading-relaxed">
@@ -263,7 +265,6 @@ Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal gro
     <span className="mx-2 opacity-50">·</span>
     <span>All rights reserved</span>
   </p>
-</div>
 </div>
 </div>
 </div>
