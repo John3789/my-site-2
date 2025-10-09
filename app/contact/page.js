@@ -183,6 +183,8 @@ export default function ContactPage() {
             <hr className="hidden lg:block max-w-[1400px] border-t border-[var(--color-cream)]/22" />
           </div>
 
+</div> {/* END zoomwrap */}
+
           <div className="block lg:hidden mx-auto max-w-[1100px] px-3">
             {/* (mobile newsletter + socials unchanged) */}
             {/* ... */}
@@ -255,9 +257,6 @@ export default function ContactPage() {
 </div>
 
 </div>
-
-        {/* removed the contained divider on mobile */}
-      </div>
 
       {/* ============== DESKTOP (unchanged per your last version) ============== */}
       <div className="hidden lg:block mx-auto max-w-[1200px] px-6 py-20">
