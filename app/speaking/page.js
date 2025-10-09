@@ -1004,7 +1004,7 @@ export default function SpeakingPage() {
         <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
         <span className="mx-2 opacity-50">·</span>
         <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
-        <span className="mx-2 opacity-50">·</span>
+        <span className="mb-8 mx-2 opacity-50">·</span>
         <span>All rights reserved</span>
       </p>
     </div>
@@ -1088,6 +1088,35 @@ export default function SpeakingPage() {
             height: 2px !important; /* h-[2px] */
           }
         }
+
+        /* SPEAKING — Mobile Portrait: shorten horizontal rules (borders) */
+@media (max-width: 767px) and (orientation: portrait) {
+  [data-page="speaking"] hr {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 88% !important; /* pulls in from full-bleed */
+  }
+}
+
+/* SPEAKING — Mobile Portrait: expand text width in Programs, Formats, and Results */
+@media (max-width: 767px) and (orientation: portrait) {
+  #programs > div,
+  #formats > div,
+  #results > div {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    max-width: 95vw !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #programs p,
+  #formats p,
+  #results p {
+    font-size: 1.05rem; /* optional: slightly larger text for readability */
+  }
+}
+
       `}</style>
     </>
   );
