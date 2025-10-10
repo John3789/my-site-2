@@ -48,26 +48,10 @@ export default function ContactPage() {
 
   return (
     <>
-     
+      {/* ===== PAGE BODY (no page-level transform) ===== */}
+      <div className="mx-auto">
         <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
           {/* soft gradient wash */}
-           {/* ===== PAGE BODY WRAPPER (same zoom pattern as About) ===== */}
-      <div
-        style={{ "--z": 3.0, "--zoomL": 1.3 }}
-        className="
-          zoomwrap
-          lg:contents
-          origin-top
-          [transform:scale(var(--z))]
-          [width:calc(100%/var(--z))]
-          mx-auto
-          lg:[transform:none]
-          lg:[width:100%]
-          landscape:[transform:scale(var(--zoomL))]
-          landscape:[width:calc(100%/var(--zoomL))]
-          overflow-visible
-        "
-      ></div>
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0 -z-10"
@@ -77,10 +61,16 @@ export default function ContactPage() {
             }}
           />
 
-          {/* ============== MOBILE (inside zoom) ============== */}
-          <div className="lg:hidden mx-auto max-w-[1400px] px-3 py-20">
-            {/* Zoomed mobile container */}
-            <div className="zoomwrap origin-top mx-auto overflow-visible">
+          {/* ============== MOBILE (zoom lives INSIDE here) ============== */}
+          <div className="lg:hidden mx-auto max-w-[1400px] px-3 pt-16 pb-0">
+            <div
+              style={{ "--z": 3.0, "--zoomL": 1.3 }}
+              className={`zoomwrap origin-top
+                [transform:scale(var(--z))] [width:calc(100%/var(--z))]
+                mx-auto
+                landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
+                overflow-visible`}
+            >
               {/* Page header */}
               <header className="max-w-3xl mx-auto text-center mb-10">
                 <div className="md:hidden flex items-center justify-center gap-3">
@@ -243,10 +233,10 @@ export default function ContactPage() {
                 <hr className="hidden lg:block max-w-[1400px] border-t border-[var(--color-cream)]/22" />
               </div>
 
-                   <div className="block lg:hidden mx-auto max-w-[1100px] px-3">
-            {/* (mobile newsletter + socials unchanged) */}
-            {/* ... */}
-          </div>
+              <div className="block lg:hidden mx-auto max-w-[1100px] px-3">
+                {/* (mobile newsletter + socials unchanged) */}
+                {/* ... */}
+              </div>
 
               {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
               <div className="block lg:hidden">
@@ -255,7 +245,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="mobile-footer-cap">
-                  <div className="mx-auto max-w-[1400px] px-0"> 
+                  <div className="mx-auto max-w-[1400px] px-0">
                     {/* Newsletter card (midnight blue) */}
                     <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
                       <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
@@ -570,8 +560,9 @@ export default function ContactPage() {
             <hr className="border-t border-[var(--color-cream)]/22" />
           </div>
         </main>
+      </div>
 
-      {/* Popup mounted after the zoom wrapper, like About */}
+      {/* Popup mounted after the zoom wrapper */}
       <NewsletterMeditationPopup delayMs={5000} />
     </>
   );
