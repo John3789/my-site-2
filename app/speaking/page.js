@@ -707,7 +707,7 @@ export default function SpeakingPage() {
             </div>
 
             {/* ===== Testimonials (mobile-only; now collapsible) ===== */}
-<hr className="mx-auto w-[93%] border-t border-[var(--color-cream)]/22 mb-6" />
+<hr className="lg:hidden mx-auto w-[93%] border-t border-[var(--color-cream)]/22 mb-6" />
 
 <section id="testimonials" className="lg:hidden">
   {/* Centered container for everything in this section */}
@@ -1068,7 +1068,7 @@ export default function SpeakingPage() {
   /* iPad-ish tablet landscape only (1023–1370px) */
   @media (orientation: landscape) and (min-width: 1023px) and (max-width: 1370px) {
     span[data-quote="closing"] {
-      right: 50rem !important; /* tweak this number until alignment looks perfect */
+      right: 11rem !important; /* tweak this number until alignment looks perfect */
     }
   }
 
