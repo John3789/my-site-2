@@ -133,7 +133,7 @@ export default function ResourcesPage() {
 
             <section className="mx-auto max-w-[900px] px-6 text-center mb-6">
               <p className="text-lg md:text-xl opacity-90 leading-relaxed">
-                A growing library of concise collections—shaped by science and lived experience—to sharpen your mind and uplift your life. Each theme is designed to meet you where you are and guide you toward greater confidence, balance, and intentional living.
+                A growing library of concise media collections—shaped by science and lived experience—to sharpen your mind and uplift your life. Each theme is designed to meet you where you are and guide you toward greater confidence, balance, and intentional living.
               </p>
               <p className="mt-5 text-sm opacity-70">This page is under construction and will be updated periodically with new content.</p>
             </section>
