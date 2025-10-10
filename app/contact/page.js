@@ -50,7 +50,7 @@ export default function ContactPage() {
     <>
       {/* ===== PAGE BODY (no page-level transform) ===== */}
       <div className="mx-auto">
-        <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
+<main className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] min-h-0 lg:min-h-screen">
           {/* soft gradient wash */}
           <div
             aria-hidden
