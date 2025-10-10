@@ -32,14 +32,14 @@ export default function AboutPage() {
               <h1 className="font-serif text-6xl leading-[1.06] opacity-90 mt-2">
                 About Dr. Salerno
               </h1>
-              <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto mt-4 rounded" />
+              <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto mt-4 rounded" /> 
             </div>
 
             {/* Row 1: first two paragraphs + photo side-by-side */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start mb-12">
-             {/* Left: first two paragraphs */}
+             {/* Left: first two paragraphs */}  
 <div className="mx-auto w-full [@media(orientation:landscape)_and_(max-width:999px)]:max-w-[75ch] lg:pr-6 xl:max-w-none">
-  <p className="text-lg mb-4 opacity-90 leading-loose">...</p>
+  <p className="text-lg mb-4 opacity-90 leading-loose"></p> 
                   Dr. Juan Pablo Salerno, also known in academic spaces as{" "}
                   <strong>Dr. John P. Salerno</strong>, is an award-winning mental health scientist, personal growth expert, author
                   and professor—credited with more than 30 peer-reviewed publications and 
