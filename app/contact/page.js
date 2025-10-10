@@ -536,14 +536,6 @@ export default function ContactPage() {
             </div>
           </div>
 
-               {/* Bookend divider (desktop) */}
-          <div className="hidden lg:block mx-auto max-w-[1200px] px-6 mt-12">
-            <hr className="border-t border-[var(--color-cream)]/22" />
-          </div>
-        </main>
-      </div>
-
-
           {/* Global crisp text & iOS guard + mobile-only fieldset tweaks */}
           <style jsx global>{`
             @supports (-webkit-touch-callout: none) {
@@ -569,7 +561,13 @@ export default function ContactPage() {
             }
           `}</style>
 
-     
+          {/* Bookend divider (desktop) */}
+          <div className="">
+            <hr className="" />
+          </div>
+        </main>
+      </div>
+
       {/* Popup mounted after the zoom wrapper, like About */}
       <NewsletterMeditationPopup delayMs={5000} />
     </>
