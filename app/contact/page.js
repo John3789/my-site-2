@@ -236,7 +236,7 @@ export default function ContactPage() {
 
               {/* FINAL divider above footer — no bleed on mobile */}
               <div className="mx-auto max-w-[1400px] px-6">
-                <hr className="hidden lg:block max-w-[1400px] border-t border-[var(--color-cream)]/22" />
+                <hr className="max-w-[1400px] border-t border-[var(--color-cream)]/22" />
               </div>
 
                    <div className="block lg:hidden mx-auto max-w-[1100px] px-3">
