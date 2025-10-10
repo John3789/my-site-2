@@ -77,7 +77,7 @@ export default function ContactPage() {
           />
 
           {/* ============== MOBILE (inside zoom) ============== */}
-          <div className="lg:hidden mx-auto max-w-[1400px] px-3 py-80">
+          <div className="lg:hidden mx-auto max-w-[1400px] px-3 pt-12 pb-0">
               {/* Page header */}
               <header className="max-w-3xl mx-auto text-center mb-10">
                 <div className="md:hidden flex items-center justify-center gap-3">
@@ -241,12 +241,12 @@ export default function ContactPage() {
 
               {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
               <div className="block lg:hidden">
-                <div className="mx-auto max-w-[1400px] px-0 mb-14 -mt-5">
+                <div className="mx-auto max-w-[1400px] px-6 mb-8 -mt-2">
                   <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
                 </div>
 
                 <div className="mobile-footer-cap">
-                  <div className="mx-auto max-w-[1400px] px-0"> 
+                  <div className="mx-auto max-w-[1400px] px-6"> 
                     {/* Newsletter card (midnight blue) */}
                     <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
                       <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
@@ -331,7 +331,7 @@ export default function ContactPage() {
           {/* ============== DESKTOP (unchanged layout) ============== */}
           <div className="hidden lg:block mx-auto max-w-[1200px] px-6 py-20">
             {/* Page header */}
-            <header className="max-w-3xl mx-auto text-center mb-10">
+            <header className="max-w-3xl mx-auto text-center mb-8">
               <div className="flex items-center justify-center gap-3 md:block">
                 <h1 className="font-serif text-5xl leading-[1.06] opacity-90">Contact</h1>
                 <img
