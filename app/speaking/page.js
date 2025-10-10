@@ -133,7 +133,7 @@ export default function SpeakingPage() {
         {/* ===== HERO IMAGE with overlay text ===== */}
         <section className="relative w-full">
           {/* black backdrop so there’s never a green flash */}
-          <div className="relative h-[50dvh] bg-black">
+          <div className="relative md:h-[70dvh] lg:h-[50dvh] bg-black">
             {/* Background image */}
             <img
               aria-hidden="true"
