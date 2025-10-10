@@ -234,9 +234,6 @@ export default function ContactPage() {
                 )}
               </section>
 
-              {/* Bottom spacer */}
-              <div className="pb-10" />
-
               {/* FINAL divider above footer — no bleed on mobile */}
               <div className="mx-auto max-w-[1400px] px-6">
                 <hr className="hidden lg:block max-w-[1400px] border-t border-[var(--color-cream)]/22" />
