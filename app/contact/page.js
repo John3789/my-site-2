@@ -77,7 +77,7 @@ export default function ContactPage() {
           />
 
           {/* ============== MOBILE (inside zoom) ============== */}
-          <div className="lg:hidden mx-auto max-w-[1400px] px-6 pt-16 pb-6">
+          <div className="lg:hidden mx-auto max-w-[1400px] px-3 pt-16 pb-0">
             {/* Zoomed mobile container */}
             <div className="zoomwrap origin-top mx-auto overflow-visible">
               {/* Page header */}
