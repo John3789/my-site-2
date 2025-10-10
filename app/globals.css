@@ -153,3 +153,20 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: auto;
   }
 }
+
+/* iPad Safari only + the two orientations of the 1366×1024 iPad Pro (and you can add others) */
+@supports (-webkit-touch-callout: none) {
+  @media screen and (width: 1366px) and (height: 1024px),
+         screen and (width: 1024px) and (height: 1366px) {
+    html, body { overflow-x: clip; }      /* or overflow-x: hidden; */
+    .zoomwrap { overflow: clip; }         /* clip any transform “leak” */
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  @media screen and (width: 1024px) and (height: 768px),
+         screen and (width: 768px) and (height: 1024px) {
+    html, body { overflow-x: clip; }
+    .zoomwrap { overflow: clip; }
+  }
+}
