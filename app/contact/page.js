@@ -561,10 +561,7 @@ export default function ContactPage() {
             }
           `}</style>
 
-          {/* Bookend divider (desktop) */}
-          <div className="">
-            <hr className="" />
-          </div>
+      
         </main>
       </div>
 
