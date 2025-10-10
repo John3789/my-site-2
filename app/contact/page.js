@@ -236,7 +236,7 @@ export default function ContactPage() {
 
               {/* FINAL divider above footer — no bleed on mobile */}
               <div className="mx-auto max-w-[1400px] px-6">
-                <hr className="max-w-[1400px] border-t border-[var(--color-cream)]/22" />
+                <hr className="hidden lg:block max-w-[1400px] border-t border-[var(--color-cream)]/22" />
               </div>
 
                    <div className="block lg:hidden mx-auto max-w-[1100px] px-3">
@@ -335,7 +335,7 @@ export default function ContactPage() {
           </div>
 
           {/* ============== DESKTOP (unchanged layout) ============== */}
-          <div className="hidden lg:block mx-auto max-w-[1200px] px-6 py-5">
+          <div className="hidden lg:block mx-auto max-w-[1200px] px-6 py-20">
             {/* Page header */}
             <header className="max-w-3xl mx-auto text-center mb-10">
               <div className="flex items-center justify-center gap-3 md:block">
