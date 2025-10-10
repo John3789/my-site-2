@@ -1051,9 +1051,9 @@ export default function SpeakingPage() {
   }
 }
 
-/* Hide quotes below 1024px landscape or below 768px portrait */
-@media (max-width: 1024px) and (orientation: landscape),
-       (max-width: 768px) and (orientation: portrait) {
+/* Hide quotes below 1023px landscape or below 767px portrait */
+@media (max-width: 1023px) and (orientation: landscape),
+       (max-width: 767px) and (orientation: portrait) {
   .quote-col {
     display: none !important;
   }
