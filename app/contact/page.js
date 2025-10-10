@@ -77,7 +77,7 @@ export default function ContactPage() {
           />
 
           {/* ============== MOBILE (inside zoom) ============== */}
-          <div className="lg:hidden mx-auto max-w-[1400px] px-3 pt-16 pb-0">
+          <div className="lg:hidden mx-auto max-w-[1400px] px-3 py-20">
             {/* Zoomed mobile container */}
             <div className="zoomwrap origin-top mx-auto overflow-visible">
               {/* Page header */}
@@ -233,6 +233,9 @@ export default function ContactPage() {
                   </form>
                 )}
               </section>
+
+              {/* Bottom spacer */}
+              <div className="pb-10" />
 
               {/* FINAL divider above footer — no bleed on mobile */}
               <div className="mx-auto max-w-[1400px] px-6">
