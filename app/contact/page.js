@@ -335,7 +335,7 @@ export default function ContactPage() {
           </div>
 
           {/* ============== DESKTOP (unchanged layout) ============== */}
-          <div className="hidden lg:block mx-auto max-w-[1200px] px-6 py-20">
+          <div className="hidden lg:block mx-auto max-w-[1200px] px-6 py-5">
             {/* Page header */}
             <header className="max-w-3xl mx-auto text-center mb-10">
               <div className="flex items-center justify-center gap-3 md:block">
@@ -561,7 +561,10 @@ export default function ContactPage() {
             }
           `}</style>
 
-      
+          {/* Bookend divider (desktop) */}
+          <div className="hidden lg:block mx-auto max-w-[1200px] px-6 mt-12">
+            <hr className="border-t border-[var(--color-cream)]/22" />
+          </div>
         </main>
       </div>
 
