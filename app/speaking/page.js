@@ -380,48 +380,48 @@ export default function SpeakingPage() {
                 </div>
               </div>
 
-              {/* Quotes (left column) — desktop only */}
-<div className="md:col-span-7 ml-auto hidden md:flex flex-col gap-6 max-w-[640px] quote-col">
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
-                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-                  {/* Decorative quotes (no normal quotes in text) */}
-                  <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
-                    <span aria-hidden className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
-                    <p>
-                      ...an exceptional speaker: he is engaging, well-spoken, and clearly
-                      passionate about his work.
-                    </p>
-                    <span aria-hidden className="absolute right-4 bottom-5 text-4xl opacity-20 select-none">”</span>
-                  </blockquote>
-                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-                    — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting &amp; Expo
-                  </figcaption>
-                </figure>
+ {/* Quotes (left column) — desktop only */}
+<div
+  className="md:col-span-7 ml-auto hidden md:flex flex-col gap-6 max-w-[640px] quote-col"
+  data-section="testimonials-desktop"   // ← add this
+>
+  <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+    <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+      <span aria-hidden data-quote="open"  className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+      <p>...an exceptional speaker: he is engaging, well-spoken, and clearly passionate about his work.</p>
+      <span aria-hidden data-quote="close" className="absolute right-4 bottom-5 text-4xl opacity-20 select-none">”</span>
+    </blockquote>
+    <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+      — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting &amp; Expo
+    </figcaption>
+  </figure>
 
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
-                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-                  <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
-                    <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
-                    <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
-                    <span className="absolute right-24 bottom-5 text-4xl opacity-20 select-none">”</span>
-                  </blockquote>
-                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-                    — <span className="text-[var(--color-gold)]">Audience member</span>, Society for Prevention Research Annual Meeting
-                  </figcaption>
-                </figure>
+  <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+    <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+      <span aria-hidden data-quote="open"  className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+      <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
+      <span aria-hidden data-quote="close" className="absolute right-24 bottom-5 text-4xl opacity-20 select-none">”</span>
+    </blockquote>
+    <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+      — <span className="text-[var(--color-gold)]">Audience member</span>, Society for Prevention Research Annual Meeting
+    </figcaption>
+  </figure>
 
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
-                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-                  <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
-                    <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
-                    <p>Dr. Salerno has a way of blending data with human stories that makes science resonate.</p>
-                    <span aria-hidden className="absolute right-14 bottom-5 text-4xl opacity-20 select-none">”</span>
-                  </blockquote>
-                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-                    — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
-                  </figcaption>
-                </figure>
-              </div>
+  <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+    <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+      <span aria-hidden data-quote="open"  className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+      <p>Dr. Salerno has a way of blending data with human stories that makes science resonate.</p>
+      <span aria-hidden data-quote="close" className="absolute right-14 bottom-5 text-4xl opacity-20 select-none">”</span>
+    </blockquote>
+    <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+      — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
+    </figcaption>
+  </figure>
+</div>
+
             </section>
 
             {/* Programs footer buttons (mobile only) — tighter */}
@@ -1059,8 +1059,27 @@ export default function SpeakingPage() {
   }
 }
 
+/* Tablet landscape only (roughly iPad widths), adjust positions just for desktop testimonials */
+@media (orientation: landscape) and (min-width: 1023px) and (max-width: 1371px) {
+  /* opening marks (optional—tweak or remove if not needed) */
+  [data-section="testimonials-desktop"] span[data-quote="open"] {
+    left: -0.75rem !important;
+    top: -0.25rem !important;
+  }
+
+  /* closing marks — you can fine-tune each card independently */
+  [data-section="testimonials-desktop"] figure:nth-of-type(1) span[data-quote="close"] {
+    right: 4.75rem !important;   /* was right-4 on desktop */
+    bottom: 0.5rem !important;
+  }
+  [data-section="testimonials-desktop"] figure:nth-of-type(2) span[data-quote="close"] {
+    right: 6rem !important;      /* was right-24 on desktop */
+  }
+  [data-section="testimonials-desktop"] figure:nth-of-type(3) span[data-quote="close"] {
+    right: 3.5rem !important;    /* was right-14 on desktop */
   }
 }
+
 
       `}</style>
     </>
