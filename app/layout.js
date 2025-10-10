@@ -1,6 +1,5 @@
 // app/layout.js
 import './globals.css'
-import FooterGate from '../components/FooterGate'
 import { Inter, Cormorant_Garamond } from 'next/font/google'
 import SocialFooter from '../components/SocialFooter'
 import { Analytics } from '@vercel/analytics/react'
@@ -107,7 +106,6 @@ export default function RootLayout({ children }) {
 
         {children}
 
-<FooterGate>
 {/* DESKTOP / LARGE-TABLET FOOTER — ORIGINAL LAYOUT RESTORED */}
 <footer className="hidden lg:block py-10 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
   <div
@@ -181,7 +179,6 @@ export default function RootLayout({ children }) {
 
 
 
-</FooterGate>
         <Analytics />
       </body>
     </html>

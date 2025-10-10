@@ -119,10 +119,17 @@ export default function PrivacyPage() {
             <div className="pb-10" />
           </div>
 
-          {/* Optional divider above your global footer */}
-          <div className="hidden lg:block mx-auto max-w-[1000px] px-6">
-            <hr className="border-t border-[var(--color-cream)]/22" />
-          </div>
+
+          <style jsx global>{`
+  footer {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+`}</style>
+
         </main>
       </div>
     </>
