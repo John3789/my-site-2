@@ -707,9 +707,9 @@ export default function SpeakingPage() {
             </div>
 
             {/* ===== Testimonials (mobile-only; now collapsible) ===== */}
-<hr className="lg:hidden mx-auto w-[93%] border-t border-[var(--color-cream)]/22 mb-6" />
+<hr className="xl:hidden mx-auto w-[93%] border-t border-[var(--color-cream)]/22 mb-6" />
 
-<section id="testimonials" className="lg:hidden">
+<section id="testimonials" className="xl:hidden">
   {/* Centered container for everything in this section */}
   <div className="mx-auto w-full max-w-[640px] px-6">
     <p className="text-center text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Testimonials</p>
