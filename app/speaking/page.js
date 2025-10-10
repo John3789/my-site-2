@@ -707,7 +707,7 @@ export default function SpeakingPage() {
             </div>
 
             {/* ===== Testimonials (mobile-only; now collapsible) ===== */}
-<hr className="lg:hidden mx-auto w-[93%] border-t border-[var(--color-cream)]/22 mb-6" />
+<hr className="xl:hidden mx-auto w-[93%] border-t border-[var(--color-cream)]/22 mb-6" />
 
 <section id="testimonials" className="lg:hidden">
   {/* Centered container for everything in this section */}
@@ -1051,9 +1051,9 @@ export default function SpeakingPage() {
   }
 }
 
-/* Hide quotes below 1024px landscape or below 768px portrait */
-@media (max-width: 1024px) and (orientation: landscape),
-       (max-width: 768px) and (orientation: portrait) {
+/* Hide quotes below 1023px landscape or below 767px portrait */
+@media (max-width: 1023px) and (orientation: landscape),
+       (max-width: 767px) and (orientation: portrait) {
   .quote-col {
     display: none !important;
   }

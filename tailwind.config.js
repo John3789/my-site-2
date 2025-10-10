@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       screens: {
         // Custom screen for tablet landscape
-        'tab-land': { 'raw': '(orientation: landscape) and (min-width: 1000px) and (max-width: 1400px)' },
+        'tab-land': { 'raw': '(orientation: landscape) and (min-width: 900px) and (max-width: 1400px)' },
       },
     },
   },
