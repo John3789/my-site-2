@@ -456,53 +456,53 @@ export default function SpeakingPage() {
               id="formats"
               className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 md:gap-x-0 mx-15 items-center portrait:mx-0 portrait:px-6 landscape:max-w-[700px] landscape:mx-auto landscape:px-3 lg:landscape:max-w-[1400px] lg:landscape:mx-15 lg:landscape:px-0"
             >
-              {/* Quotes (RIGHT column) — desktop only */}
-                <div className="md:col-span-7 hidden md:flex flex-col gap-6 max-w-[640px] md:pr-6 quote-col">
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
-                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-                  <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
-                    <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
-                    <p>
-                      ...gifted speaker whose engaging style &amp; clear communication bring
-                      complex ideas to life.
-                    </p>
-                    <span className="absolute right-6 bottom-5 text-4xl opacity-20 select-none">”</span>
-                  </blockquote>
-                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-                    — <span className="text-[var(--color-gold)]">Audience member</span>, Columbia University
-                  </figcaption>
-                </figure>
+ {/* Quotes (RIGHT column) — desktop only */}
+<div
+  className="md:col-span-7 hidden md:flex flex-col gap-6 max-w-[640px] md:pr-6 quote-col"
+  data-section="testimonials-desktop-right"
+>
+  <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+    <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+      <span aria-hidden data-quote="open"  className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+      <p>
+        ...gifted speaker whose engaging style &amp; clear communication bring
+        complex ideas to life.
+      </p>
+      <span aria-hidden data-quote="close" className="absolute right-6 bottom-5 text-4xl opacity-20 select-none">”</span>
+    </blockquote>
+    <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+      — <span className="text-[var(--color-gold)]">Audience member</span>, Columbia University
+    </figcaption>
+  </figure>
 
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
-                  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" aria-hidden />
-                  <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
-                    <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
-                    <p>
-                      ...can communicate with diverse audiences, speaks with heart and
-                      dimensionality.
-                    </p>
-                    <span className="absolute right-23 bottom-5 text-4xl opacity-20 select-none">”</span>
-                  </blockquote>
-                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-                    — <span className="text-[var(--color-gold)]">Audience member</span>, Society of Behavioral Medicine Annual Meeting
-                  </figcaption>
-                </figure>
+  <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+    <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+      <span aria-hidden data-quote="open"  className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+      <p>...can communicate with diverse audiences, speaks with heart and dimensionality.</p>
+      <span aria-hidden data-quote="close" className="absolute right-23 bottom-5 text-4xl opacity-20 select-none">”</span>
+    </blockquote>
+    <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+      — <span className="text-[var(--color-gold)]">Audience member</span>, Society of Behavioral Medicine Annual Meeting
+    </figcaption>
+  </figure>
 
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
-                  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" aria-hidden />
-                  <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
-                    <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
-                    <p>
-                      ...brings a charming intensity and passion that inspires others with his
-                      presence and message.
-                    </p>
-                    <span className="absolute right-0 bottom-5 text-4xl opacity-20 select-none">”</span>
-                  </blockquote>
-                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-                    — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
-                  </figcaption>
-                </figure>
-              </div>
+  <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+    <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+      <span aria-hidden data-quote="open"  className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+      <p>
+        ...brings a charming intensity and passion that inspires others with his
+        presence and message.
+      </p>
+      <span aria-hidden data-quote="close" className="absolute right-0 bottom-5 text-4xl opacity-20 select-none">”</span>
+    </blockquote>
+    <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+      — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
+    </figcaption>
+  </figure>
+</div>
 
               {/* Formats list */}
               <div className="md:col-span-5 order-1 md:order-2 md:py-6 space-y-8 md:pl-6">
@@ -646,38 +646,42 @@ export default function SpeakingPage() {
                 </p>
               </div>
 
-              {/* Quotes (right column, Results) — desktop only */}
-<div className="md:col-span-7 ml-auto hidden md:flex flex-col gap-6 max-w-[640px] quote-col">
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
-                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-                  <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
-                    <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
-                    <p>
-                      ...engaging, energetic, strong communication skills, proven ability to
-                      disseminate science.
-                    </p>
-                    <span className="absolute right-13 bottom-5 text-4xl opacity-20 select-none">”</span>
-                  </blockquote>
-                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-                    — <span className="text-[var(--color-gold)]">Audience member</span>, University of Central Florida
-                  </figcaption>
-                </figure>
+{/* Quotes (right column, Results) — desktop only */}
+<div
+  className="md:col-span-7 ml-auto hidden md:flex flex-col gap-6 max-w-[640px] quote-col"
+  data-section="results-desktop-right"
+>
+  <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+    <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+      <span aria-hidden data-quote="open"  className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+      <p>
+        ...engaging, energetic, strong communication skills, proven ability to
+        disseminate science.
+      </p>
+      <span aria-hidden data-quote="close" className="absolute right-13 bottom-5 text-4xl opacity-20 select-none">”</span>
+    </blockquote>
+    <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+      — <span className="text-[var(--color-gold)]">Audience member</span>, University of Central Florida
+    </figcaption>
+  </figure>
 
-                <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
-                  <span className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" aria-hidden />
-                  <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
-                    <span className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
-                    <p>
-                      ...a highly engaging, knowledgeable, and skilled speaker...strongly
-                      recommended.
-                    </p>
-                    <span className="absolute right-44 bottom-5 text-4xl opacity-20 select-none">”</span>
-                  </blockquote>
-                  <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-                    — <span className="text-[var(--color-gold)]">Audience member</span>, University of California, Los Angeles
-                  </figcaption>
-                </figure>
-              </div>
+  <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+    <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+      <span aria-hidden data-quote="open"  className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+      <p>
+        ...a highly engaging, knowledgeable, and skilled speaker...strongly
+        recommended.
+      </p>
+      <span aria-hidden data-quote="close" className="absolute right-44 bottom-5 text-4xl opacity-20 select-none">”</span>
+    </blockquote>
+    <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+      — <span className="text-[var(--color-gold)]">Audience member</span>, University of California, Los Angeles
+    </figcaption>
+  </figure>
+</div>
+
             </section>
 
             {/* Results footer buttons (mobile only) — slimmer + same spacing as Service Pillars */}
@@ -1063,20 +1067,66 @@ export default function SpeakingPage() {
 @media (orientation: landscape) and (min-width: 1023px) and (max-width: 1371px) {
   /* opening marks (optional—tweak or remove if not needed) */
   [data-section="testimonials-desktop"] span[data-quote="open"] {
-    left: -0.75rem !important;
-    top: -0.25rem !important;
+    left: 
+    top:
   }
 
   /* closing marks — you can fine-tune each card independently */
   [data-section="testimonials-desktop"] figure:nth-of-type(1) span[data-quote="close"] {
-    right: 4.75rem !important;   /* was right-4 on desktop */
-    bottom: 0.5rem !important;
+    right: -0.75rem !important;   /* was right-4 on desktop */
+    bottom: 1.75rem !important;
   }
   [data-section="testimonials-desktop"] figure:nth-of-type(2) span[data-quote="close"] {
-    right: 6rem !important;      /* was right-24 on desktop */
+    right: 4.25rem !important;
+    bottom: 1.75rem !important;      /* was right-24 on desktop */
   }
   [data-section="testimonials-desktop"] figure:nth-of-type(3) span[data-quote="close"] {
-    right: 3.5rem !important;    /* was right-14 on desktop */
+    right: 1.75rem !important;  
+    bottom: 1.75rem !important;   /* was right-14 on desktop */
+  }
+}
+
+/* Tablet landscape only (≈ iPad widths). Adjust ONLY the right-column desktop quotes. */
+@media (orientation: landscape) and (min-width: 1023px) and (max-width: 1371px) {
+/* opening marks (optional—tweak or remove if not needed) */
+  [data-section="testimonials-desktop-right"] span[data-quote="open"] {
+    left: 
+    top: 
+  }
+
+  /* close marks per card (fine-tune these on device with DevTools) */
+  [data-section="testimonials-desktop-right"] figure:nth-of-type(1) span[data-quote="close"] {
+    right: 1rem !important;   /* was right-6 (~1.5rem) on desktop */
+    bottom: 1.75rem !important;
+  }
+  [data-section="testimonials-desktop-right"] figure:nth-of-type(2) span[data-quote="close"] {
+    right: 5.25rem !important;   /* was right-23 (~5.75rem) */
+    bottom: 1.75rem !important;
+  }
+  [data-section="testimonials-desktop-right"] figure:nth-of-type(3) span[data-quote="close"] {
+    right: 26.5rem !important;   /* was right-0 */
+    bottom: 1.75rem !important;
+  }
+}
+
+/* Tablet landscape only (≈ iPad widths) — adjust Results RIGHT column quotes */
+@media (orientation: landscape) and (min-width: 1024px) and (max-width: 1370px) {
+  /* open quotes Optional: tiny open-quote tweak */
+  [data-section="results-desktop-right"] span[data-quote="open"] {
+    left: 
+    top: 
+  }
+
+  /* 1st card closing quote */
+  [data-section="results-desktop-right"] figure:nth-of-type(1) span[data-quote="close"] {
+    right: 1.25rem !important;   /* was right-13 (~3.25rem) */
+    bottom: 1.75rem !important;
+  }
+
+  /* 2nd card closing quote */
+  [data-section="results-desktop-right"] figure:nth-of-type(2) span[data-quote="close"] {
+    right: 3.75rem !important;      /* was right-44 (11rem) — bring in a bit on iPad */
+    bottom: 1.75rem !important;
   }
 }
 
