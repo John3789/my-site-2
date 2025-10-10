@@ -48,7 +48,10 @@ export default function ContactPage() {
 
   return (
     <>
-      {/* ===== PAGE BODY WRAPPER (same zoom pattern as About) ===== */}
+     
+        <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
+          {/* soft gradient wash */}
+           {/* ===== PAGE BODY WRAPPER (same zoom pattern as About) ===== */}
       <div
         style={{ "--z": 3.0, "--zoomL": 1.3 }}
         className="
@@ -64,9 +67,7 @@ export default function ContactPage() {
           landscape:[width:calc(100%/var(--zoomL))]
           overflow-visible
         "
-      >
-        <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
-          {/* soft gradient wash */}
+      ></div>
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0 -z-10"
@@ -77,7 +78,7 @@ export default function ContactPage() {
           />
 
           {/* ============== MOBILE (inside zoom) ============== */}
-          <div className="lg:hidden mx-auto max-w-[1400px] px-6 pt-16 pb-0">
+          <div className="lg:hidden mx-auto max-w-[1400px] px-3 py-20">
             {/* Zoomed mobile container */}
             <div className="zoomwrap origin-top mx-auto overflow-visible">
               {/* Page header */}
@@ -242,9 +243,14 @@ export default function ContactPage() {
                 <hr className="hidden lg:block max-w-[1400px] border-t border-[var(--color-cream)]/22" />
               </div>
 
+                   <div className="block lg:hidden mx-auto max-w-[1100px] px-3">
+            {/* (mobile newsletter + socials unchanged) */}
+            {/* ... */}
+          </div>
+
               {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
               <div className="block lg:hidden">
-                <div className="mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
+                <div className="mx-auto max-w-[1400px] px-0 mb-14 -mt-5">
                   <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
                 </div>
 
@@ -564,7 +570,6 @@ export default function ContactPage() {
             <hr className="border-t border-[var(--color-cream)]/22" />
           </div>
         </main>
-      </div>
 
       {/* Popup mounted after the zoom wrapper, like About */}
       <NewsletterMeditationPopup delayMs={5000} />
