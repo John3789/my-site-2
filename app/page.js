@@ -32,7 +32,7 @@ export default function Home() {
       </section>
 
 {/* HERO — mobile full-screen; desktop unchanged */}
-<section className="relative h-[100dvh] lg:h-[88.8svh] overflow-hidden">
+<section className="relative h-[100dvh] lg:h-[88.8svh] !overflow-clip">
   {/* Image layer fills the section */}
   <div className="absolute inset-0">
     <Image
