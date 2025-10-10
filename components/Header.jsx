@@ -44,6 +44,23 @@ export default function Header() {
             <Link href="/consulting" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/consulting") ? "nav-active" : ""}`}>Consulting</Link>
             <Link href="/contact" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/contact") ? "nav-active" : ""}`}>Contact</Link>
           </nav>
+{/* Desktop top-right home link (non-home pages only) */}
+{!isHome && (
+  <Link
+    href="/"
+    className="
+      hidden lg:block fixed
+      top-9 lg:[right:0rem] xl:[right:1rem] xxl:[right:3.75rem]
+      z-[9999] pt-1 pr-3
+      font-serif uppercase tracking-wide
+      text-[var(--color-cream)] hover:opacity-90 transition
+      leading-none
+    "
+  >
+    <span className="text-lg lg:text-xl">DR. JUAN PABLO SALERNO</span>
+    <sup className="text-lg align-super opacity-70">™</sup>
+  </Link>
+)}
 
           {/* Mobile hamburger — moved to LEFT and bigger (portrait), smaller (landscape) */}
 <button
@@ -69,23 +86,7 @@ export default function Header() {
         </div>
       </header>
 
-{/* Desktop top-right home link (non-home pages only) */}
-{!isHome && (
-  <Link
-    href="/"
-    className="
-      hidden lg:block absolute
-       top-9 right-15
-      z-[201] pt-1 pr-3
-      font-serif uppercase tracking-wide
-      text-[var(--color-cream)] hover:opacity-90 transition
-      leading-none
-    "
-  >
-    <span className="text-lg lg:text-xl">DR. JUAN PABLO SALERNO</span>
-    <sup className="text-lg align-super opacity-70">™</sup>
-  </Link>
-)}
+
 
 
 
