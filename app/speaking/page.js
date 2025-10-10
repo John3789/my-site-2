@@ -707,7 +707,7 @@ export default function SpeakingPage() {
             </div>
 
             {/* ===== Testimonials (mobile-only; now collapsible) ===== */}
-<hr className="xl:hidden mx-auto w-[93%] border-t border-[var(--color-cream)]/22 mb-6" />
+<hr className="mx-auto w-[93%] border-t border-[var(--color-cream)]/22 mb-6" />
 
 <section id="testimonials" className="lg:hidden">
   {/* Centered container for everything in this section */}
@@ -725,7 +725,7 @@ export default function SpeakingPage() {
       <span className="absolute -left-4 landscape:-left-4 -top-1 text-4xl opacity-20 select-none">“</span>
       <p>...an exceptional speaker: he is engaging, well-spoken, and clearly passionate about his work.</p>
       {/* CLOSE QUOTE */}
-      <span className="absolute bottom-4 right-54 landscape:right-39 text-4xl opacity-20 select-none">”</span>
+      <span data-quote="closing" className="absolute bottom-4 right-54 landscape:right-39 text-4xl opacity-20 select-none">”</span>
     </blockquote>
     <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
       — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting &amp; Expo
@@ -1059,8 +1059,18 @@ export default function SpeakingPage() {
   }
 }
 
+ @media (orientation: landscape) and (min-width: 1023px) and (max-width: 1370px) {
+    .tabland\\:right-44 {
+      right: 11rem; /* adjust this value until it looks perfect on your iPad */
+    }
   }
-}
+
+  /* iPad-ish tablet landscape only (1023–1370px) */
+  @media (orientation: landscape) and (min-width: 1023px) and (max-width: 1370px) {
+    span[data-quote="closing"] {
+      right: 50rem !important; /* tweak this number until alignment looks perfect */
+    }
+  }
 
       `}</style>
     </>
