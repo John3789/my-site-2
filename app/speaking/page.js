@@ -707,9 +707,9 @@ export default function SpeakingPage() {
             </div>
 
             {/* ===== Testimonials (mobile-only; now collapsible) ===== */}
-<hr className="lg:hidden mx-auto w-[93%] border-t border-[var(--color-cream)]/22 mb-6" />
+<hr className="2xl:hidden mx-auto w-[93%] border-t border-[var(--color-cream)]/22 mb-6" />
 
-<section id="testimonials" className="lg:hidden">
+<section id="testimonials" className="2xl:hidden">
   {/* Centered container for everything in this section */}
   <div className="mx-auto w-full max-w-[640px] px-6">
     <p className="text-center text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Testimonials</p>
@@ -725,7 +725,7 @@ export default function SpeakingPage() {
       <span className="absolute -left-4 landscape:-left-4 -top-1 text-4xl opacity-20 select-none">“</span>
       <p>...an exceptional speaker: he is engaging, well-spoken, and clearly passionate about his work.</p>
       {/* CLOSE QUOTE */}
-      <span data-quote="closing" className="absolute bottom-4 right-54 landscape:right-39 text-4xl opacity-20 select-none">”</span>
+      <span data-quote="closing" className="absolute bottom-4 right-54 landscape:right-10 text-4xl opacity-20 select-none">”</span>
     </blockquote>
     <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
       — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting &amp; Expo
@@ -1059,19 +1059,20 @@ export default function SpeakingPage() {
   }
 }
 
- @media (orientation: landscape) and (min-width: 1023px) and (max-width: 1370px) {
-    .tabland\\:right-44 {
-      right: 11rem; /* adjust this value until it looks perfect on your iPad */
-    }
-  }
-
-  /* iPad-ish tablet landscape only (1023–1370px) */
+    /* iPad / tablet landscape override only (Tailwind's 'lg' range) */
   @media (orientation: landscape) and (min-width: 1023px) and (max-width: 1370px) {
-    span[data-quote="closing"] {
-      right: 11rem !important; /* tweak this number until alignment looks perfect */
+    /* adjust closing mark */
+    span[data-quote="close"] {
+      right: 4.5rem !important;   /* tweak this value as needed */
+      bottom: 0.5rem !important;  /* tweak if baseline feels off */
     }
+    /* adjust opening mark (optional—uncomment if you need it)
+    span[data-quote="open"] {
+      left: -1rem !important;
+      top: -0.25rem !important;
+    }
+    */
   }
-
       `}</style>
     </>
   );
