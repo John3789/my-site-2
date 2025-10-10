@@ -77,7 +77,7 @@ export default function ContactPage() {
           />
 
           {/* ============== MOBILE (inside zoom) ============== */}
-          <div className="lg:hidden mx-auto max-w-[1400px] px-3 py-20">
+          <div className="lg:hidden mx-auto max-w-[1400px] px-3 py-80">
               {/* Page header */}
               <header className="max-w-3xl mx-auto text-center mb-10">
                 <div className="md:hidden flex items-center justify-center gap-3">
