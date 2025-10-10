@@ -338,7 +338,7 @@ export default function ContactPage() {
           </div>
 
           {/* ============== DESKTOP (unchanged layout) ============== */}
-          <div className="hidden lg:block mx-auto max-w-[1200px] px-6 py-20">
+          <div className="hidden xl:block mx-auto max-w-[1200px] px-6 py-20">
             {/* Page header */}
             <header className="max-w-3xl mx-auto text-center mb-10">
               <div className="flex items-center justify-center gap-3 md:block">
