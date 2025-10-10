@@ -78,8 +78,6 @@ export default function ContactPage() {
 
           {/* ============== MOBILE (inside zoom) ============== */}
           <div className="lg:hidden mx-auto max-w-[1400px] px-3 py-20">
-            {/* Zoomed mobile container */}
-            <div className="zoomwrap origin-top mx-auto overflow-visible">
               {/* Page header */}
               <header className="max-w-3xl mx-auto text-center mb-10">
                 <div className="md:hidden flex items-center justify-center gap-3">
@@ -328,7 +326,6 @@ export default function ContactPage() {
                 </div>
               </div>
               {/* end mobile zoom content */}
-            </div>
           </div>
 
           {/* ============== DESKTOP (unchanged layout) ============== */}
