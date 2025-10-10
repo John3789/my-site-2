@@ -69,7 +69,7 @@ export default function Header() {
   </svg>
 </button>
         </div>
-      </header>
+      </header> 
 
 {/* Desktop top-right home link (non-home pages only) */}
 {!isHome && (
@@ -77,7 +77,7 @@ export default function Header() {
     href="/"
     className="
   hidden lg:block absolute
-  top-9 lg:[right:-10rem] xl:[right:1rem] xxl:[right:3.75rem]
+  top-9 lg:[right:0rem] xl:[right:1rem] xxl:[right:3.75rem]
   z-[201] pt-1 pr-3
   font-serif uppercase tracking-wide
   text-[var(--color-cream)] hover:opacity-90 transition
