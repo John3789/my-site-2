@@ -39,7 +39,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start mb-12">
               {/* Left: first two paragraphs */}
               <div>
-                <p className="mx-auto text-center space-y-6 text-lg mb-4 opacity-90 leading-loose [@media(orientation:landscape)_and_(max-width:999px)]:max-w-[70ch]">
+                <p className="mx-auto text-left space-y-6 text-lg mb-4 opacity-90 leading-loose [@media(orientation:landscape)_and_(max-width:999px)]:max-w-[70ch]">
                   Dr. Juan Pablo Salerno, also known in academic spaces as{" "}
                   <strong>Dr. John P. Salerno</strong>, is an award-winning mental health scientist, personal growth expert, author
                   and professor—credited with more than 30 peer-reviewed publications and 
@@ -51,7 +51,7 @@ export default function AboutPage() {
                   and purpose.
                 </p>
 
-                <p className="mx-auto text-center space-y-6 text-lg opacity-90 leading-loose [@media(orientation:landscape)_and_(max-width:999px)]:max-w-[70ch]">
+                <p className="mx-auto text-left space-y-6 text-lg opacity-90 leading-loose [@media(orientation:landscape)_and_(max-width:999px)]:max-w-[70ch]">
                   His research has been published in leading journals such as Psychiatry Research,
                   Psychological Trauma, Epidemiology &amp; Psychiatric Sciences, Drug &amp; Alcohol
                   Dependence, Psychology of Sexual Orientation &amp; Gender Diversity, and Preventing
