@@ -247,6 +247,7 @@ export default function AboutPage() {
   </Link>
 </div>
 
+
 {/* ===== Section Footer Buttons (mobile-only, final) ===== */}
 <div className="lg:hidden -mt-8 pb-5 w-full text-base leading-none">
   <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
@@ -270,6 +271,7 @@ export default function AboutPage() {
     </a>
   </div>
   </div>
+</div>
 
 
   
@@ -365,7 +367,6 @@ export default function AboutPage() {
         {/* removed the contained divider on mobile */}
       </div>
 
-            </div>
 
 
 
