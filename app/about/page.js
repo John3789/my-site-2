@@ -253,7 +253,7 @@ export default function AboutPage() {
 
 {/* ===== Section Footer Buttons (mobile-only, final) ===== */}
 <div className="lg:hidden -mt-8 mb-20 pb-0 w-full">
-  <div className="mx-auto w-full max-w-[500px] px-3 grid grid-cols-[1fr_1.35fr_1fr] gap-4">
+  <div className="mx-auto w-full max-w-[500px] px-6 grid grid-cols-[1fr_1.35fr_1fr] gap-4">
     <a
       href="#credentials"
       className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
