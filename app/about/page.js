@@ -14,8 +14,10 @@ export default function AboutPage() {
   useIosZoomVars(wrapRef, {
     portraitTarget: 400,
     landscapeTarget: 900,
-    min: 1,
-    max: 2,
+    portraitMin: 3,
+    portraitMax: 3,
+    landscapeMin: 1.3,
+    landscapeMax: 1.3, // tighter to prevent over-zooming on iPhone landscape
   });
 
   return (
