@@ -39,10 +39,15 @@ export default function Home() {
       src="/hero17.jpg?v=25"
       alt="Portrait of Dr. Salerno"
       fill
-      priority={false}
+      priority
       quality={95}
       sizes="448px" 
-      fetchPriority="high"   
+      className="
+        object-cover origin-center will-change-transform
+        [transform:scaleX(1.00)_scaleY(1.00)]
+        md:[transform:none]
+        object-[center_0%] md:object-[center_0%]
+      "
     />
     {/* 🔒 same overlay on mobile + desktop */}
     <div className="absolute inset-0 bg-black/30 pointer-events-none" />
