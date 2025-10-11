@@ -4,15 +4,19 @@ import NewsletterMeditationPopup from "../../components/NewsletterMeditationPopu
 import Image from "next/image";
 import { headers } from "next/headers";
 
-// ✅ iPhone-only optimization (no iPads or iPadOS)
-function IOSAwareImage(props) {
-  const ua = headers().get("user-agent") || "";
+/** Optimize on iPhone only; everywhere else serve original (unoptimized) */
+function IOSAwareImageClient(props) {
+  const [isIphone, setIsIphone] = useState(false);
 
-  // Detect iPhone / iPod only — exclude iPads and desktop Safari
-  const isIphoneOnly = /\biPhone\b|\biPod\b/.test(ua);
+  useEffect(() => {
+    // Safe on client only
+    const ua = navigator.userAgent || navigator.vendor || "";
+    setIsIphone(/\biPhone\b|\biPod\b/.test(ua));
+  }, []);
 
-  // Optimize only on iPhone; all other devices (iPad, desktop, etc.) get unoptimized originals
-  return <Image {...props} unoptimized={!isIphoneOnly} />;
+  // Before mount we don’t know yet → default to unoptimized (max quality)
+  // After mount, iPhone flips to optimized automatically
+  return <Image {...props} unoptimized={!isIphone} />;
 }
 
 export default function BooksPage() {
@@ -87,7 +91,7 @@ export default function BooksPage() {
 
 {/* Right column image (plain) - optimized only on iPhone */}
 <div className="flex justify-center [transform:none] [width:auto]">
-  <IOSAwareImage
+  <HeroImageIphoneAware
     src="/award2.jpg"
     alt="Book or award"
     width={3024}
