@@ -85,7 +85,7 @@ export default function AboutPage() {
               </div>
 
 {/* Right: photo */}
-<div className="flex justify-center">
+<div className="flex justify-center [transform:none] [width:auto]">
   <Image
     src="/heroabout.jpg"
     alt="Dr. Juan Pablo Salerno"

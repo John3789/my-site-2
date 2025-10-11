@@ -74,17 +74,17 @@ export default function BooksPage() {
                 </div>
 
 {/* Right column image (plain) */}
-<div className="flex justify-center">
+<div className="flex justify-center [transform:none] [width:auto]">
   <Image
     src="/award2.jpg"
     alt="Book or award"
     width={4284}          // use the real pixel width if known (e.g. from file metadata)
     height={5712}         // use the real pixel height if known
     className="w-full max-w-md h-auto shadow-lg object-cover object-center mt-3"
-    sizes="(max-width: 768px) 92vw, 448px"  // tells browser: ~448px max on desktop
+    sizes="(max-width: 768px) 95vw, 448px"  // tells browser: ~448px max on desktop
     quality={95}                           // sharper compression for crispness
     fetchPriority="high"                   // loads sooner on desktop
-    priority={false}                       // keep lazy on mobile
+    priority={true}                       // keep lazy on mobile
   />
 </div>
 
