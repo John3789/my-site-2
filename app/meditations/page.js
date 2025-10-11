@@ -136,7 +136,7 @@ export default function MeditationsPage() {
               <p className=" flex justify-center text-[12px] uppercase tracking-[0.18em] opacity-60 mb-2">Custom</p>
               <h2 className="flex justify-center font-serif text-4xl md:text-5xl opacity-95">Custom-Made Sessions</h2>
               <div className="mx-auto h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-6 rounded" />
-              <p className="mx-auto text-lg md:text-xl opacity-90 max-w-4xl leading-relaxed">
+              <p className="mx-auto flex justify-center text-lg md:text-xl opacity-90 max-w-4xl leading-relaxed">
                 I design custom meditations tailored to your goals and challenges — whether it’s
                 cultivating resilience, deepening focus, easing stress, creating space for empowerment
                 and manifestation, or something uniquely yours. Each recording becomes a personalized
