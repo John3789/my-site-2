@@ -835,25 +835,25 @@ export default function ConsultingPage() {
                 q: "I found Dr. Salerno to be very well-versed in the subject matter. He definitely helped us grow and I genuinely appreciated his excellence.",
                 a: "New York University",
                 lq: "-left-4 -top-1",
-                rq: "right-[2.5rem] bottom-[0.5rem]",
+                rq: "right-[2.5rem] bottom-[0.75rem]",
               },
               {
                 q: "Dr. Salerno is an expert in mental health equity research, highly skilled and incorporates attention to community priorities.",
                 a: "University of California, Los Angeles",
                 lq: "-left-4 -top-1",
-                rq: "right-[7rem] bottom-[0.5rem]",
+                rq: "right-[7rem] bottom-[0.75rem]",
               },
               {
                 q: "Dr. Salerno has a strong command of various research methods and an undeniable passion for his work in the public health sphere.",
                 a: "Columbia University",
                 lq: "-left-3 -top-2",
-                rq: "right-[6rem] bottom-[0.5rem]",
+                rq: "right-[6rem] bottom-[0.75rem]",
               },
               {
                 q: "Dr. Salerno is incredibly intelligent and insightful with a deep, nuanced understanding of and appreciation for research.",
                 a: "Columbia University",
                 lq: "-left-4 -top-1",
-                rq: "right-[8.5rem] bottom-[0.5rem]",
+                rq: "right-[8.25rem] bottom-[0.75rem]",
               },
             ].map((t, idx) => (
               <figure key={idx} className="relative w-full rounded-xl bg-white/5 p-6 ring-1 ring-white/10 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition">
