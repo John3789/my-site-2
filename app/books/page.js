@@ -3,7 +3,7 @@ import TopOnMount from "../../components/TopOnMount";
 import NewsletterMeditationPopup from "../../components/NewsletterMeditationPopup";
 import Image from "next/image";
 import { headers } from "next/headers";
-import HeroImageIphoneAware from "../components/HeroImageIphoneAware";
+import HeroImageIphoneAware from "../../components/HeroImageIphoneAware";
 
 export default function BooksPage() {
   return (
