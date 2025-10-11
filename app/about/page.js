@@ -51,7 +51,7 @@ export default function AboutPage() {
                   and purpose.
                 </p>
 
-                <p className="space-y-6 text-lg opacity-90 leading-loose">
+                <p className="space-y-6 text-lg opacity-90 leading-loose [@media(orientation:landscape)_and_(max-width:999px)]:max-w-[75ch]">
                   His research has been published in leading journals such as Psychiatry Research,
                   Psychological Trauma, Epidemiology &amp; Psychiatric Sciences, Drug &amp; Alcohol
                   Dependence, Psychology of Sexual Orientation &amp; Gender Diversity, and Preventing
