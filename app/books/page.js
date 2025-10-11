@@ -3,21 +3,7 @@ import TopOnMount from "../../components/TopOnMount";
 import NewsletterMeditationPopup from "../../components/NewsletterMeditationPopup";
 import Image from "next/image";
 import { headers } from "next/headers";
-
-/** Optimize on iPhone only; everywhere else serve original (unoptimized) */
-function IOSAwareImageClient(props) {
-  const [isIphone, setIsIphone] = useState(false);
-
-  useEffect(() => {
-    // Safe on client only
-    const ua = navigator.userAgent || navigator.vendor || "";
-    setIsIphone(/\biPhone\b|\biPod\b/.test(ua));
-  }, []);
-
-  // Before mount we don’t know yet → default to unoptimized (max quality)
-  // After mount, iPhone flips to optimized automatically
-  return <Image {...props} unoptimized={!isIphone} />;
-}
+import HeroImageIphoneAware from "../components/HeroImageIphoneAware";
 
 export default function BooksPage() {
   return (
