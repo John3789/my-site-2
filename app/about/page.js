@@ -249,10 +249,10 @@ export default function AboutPage() {
 </div>
 
 {/* put the final mobile buttons INSIDE a padded container, like the sections above */}
-<div className="mx-auto max-w-none md:max-w-[1000px] px-2 md:px-6 space-y-12">
+<div className="mx-auto max-w-[1000px] px-2 md:px-6">
 
 {/* ===== Section Footer Buttons (mobile-only, final) ===== */}
-<div className="lg:hidden -mt-8 pb-0 w-full">
+<div className="lg:hidden -mt-8 mb-20 pb-0 w-full">
   <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
     <a
       href="#credentials"
@@ -285,17 +285,13 @@ export default function AboutPage() {
 </div>
 
 
-            <div className="md:hidden mx-auto max-w-[1100px] px-3">
-              {/* (mobile newsletter + socials unchanged) */}
-              {/* ... */}
-            </div>
 
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="block lg:hidden">
-  <div className="mx-auto max-w-[1000px] px-6 mb-14 -mt-8">
+  <div className="mx-auto w-full max-w-[1000px] px-6 mb-14 -mt-8">
   </div>
 
-  <div className="border-t border-[var(--color-cream)]/22 mb-0 mobile-footer-cap w-[93%]">
+  <div className="border-t border-[var(--color-cream)]/22 mb-0 mobile-footer-cap px-0"> 
 
   <div className="mx-auto max-w-[1400px] px-3">
     {/* Newsletter card (midnight blue) */}
