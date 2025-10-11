@@ -42,6 +42,7 @@ export default function Home() {
       alt="Portrait of Dr. Salerno"
       fill
       priority
+      fetchPriority="high"
       quality={95}
       sizes="100vw" 
       className="

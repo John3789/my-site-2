@@ -145,6 +145,8 @@ export default function SpeakingPage() {
   quality={95}
   sizes="100vw"
   className="object-cover object-[50%_35%]"
+  fetchPriority="high"
+
 />
 
 
