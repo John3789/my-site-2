@@ -433,9 +433,9 @@ export default function BooksPage() {
         <style>{`
           @media (max-width: 767px) {
             /* Hide items 3+ until the checkbox for that card is checked */
-            #more-c1:not(:checked) ~ ul > li:nth-child(n + 3),
-            #more-c2:not(:checked) ~ ul > li:nth-child(n + 3),
-            #more-c3:not(:checked) ~ ul > li:nth-child(n + 3) {
+            #more-c1:not(:checked) ~ ul > li:nth-child(n + 2),
+            #more-c2:not(:checked) ~ ul > li:nth-child(n + 2),
+            #more-c3:not(:checked) ~ ul > li:nth-child(n + 2) {
               display: none !important;
             }
           }
