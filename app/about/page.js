@@ -248,10 +248,13 @@ export default function AboutPage() {
 </div>
 </div>
 
-
+{/* put the final mobile buttons INSIDE a padded container, like the sections above */}
+<div className="mx-auto max-w-[1000px] px-2 md:px-6">
+  {/* match non–full-bleed rule like other sections */}
+  <hr className="border-t border-[var(--color-cream)]/22 mx-auto w-[93%] mb-5" />
 
 {/* ===== Section Footer Buttons (mobile-only, final) ===== */}
-<div className="lg:hidden -mt-4 pb-0 w-full">
+<div className="lg:hidden -mt-8 pb-0 w-full">
   <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
     <a
       href="#credentials"
@@ -273,6 +276,7 @@ export default function AboutPage() {
     </a>
   </div>
   </div>
+</div>
 
 
   
