@@ -2,7 +2,7 @@
 const nextConfig = {
   images: {
     // ✅ Use modern formats (Next automatically falls back to JPEG/PNG)
-    formats: ['image/avif', 'image/webp'],
+    formats: ['image/webp'],
 
     // ✅ Target device widths that cover all your actual breakpoints + retina variants
     //  - 896 = 448 × 2 (for DPR=2 Retina)
