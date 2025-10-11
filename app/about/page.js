@@ -28,9 +28,7 @@ export default function AboutPage() {
         "
       >
 <main data-page="about" className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
-<div
-  className="mx-auto max-w-[1400px] px-6 py-20 [@media(orientation:portrait)_and_(max-width:915px)]:max-w-none [@media(orientation:portrait)_and_(max-width:915px)]:w-[92vw]">
-
+          <div className="mx-auto max-w-[1400px] px-6 py-20">
             {/* Page title with kicker + gold bar */}
             <div className="text-center mb-12">
               <h1 className="font-serif text-6xl leading-[1.06] opacity-90 mt-2">
@@ -237,17 +235,6 @@ export default function AboutPage() {
               </section>
             </div>
 
-            {/* CTA with faint outline */}
-            <div className="mt-8 mb-0 flex justify-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition ring-1 ring-black/10"
-              >
-                Get in Touch
-              </Link>
-            </div>
-          </div>
-
 {/* ===== Section Footer Buttons (mobile-only, final) ===== */}
 <div className="lg:hidden -mt-8 pb-5 w-full">
   <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
@@ -269,8 +256,20 @@ export default function AboutPage() {
     >
       Next →
     </a>
+      </div>
   </div>
-  </div>
+
+                {/* CTA with faint outline */}
+            <div className="mt-8 mb-0 flex justify-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition ring-1 ring-black/10"
+              >
+                Get in Touch
+              </Link>
+            </div>
+          </div>
+
 
 
   
