@@ -250,8 +250,6 @@ export default function AboutPage() {
 
 {/* put the final mobile buttons INSIDE a padded container, like the sections above */}
 <div className="mx-auto max-w-[1000px] px-2 md:px-6">
-  {/* match non–full-bleed rule like other sections */}
-  <hr className="border-t border-[var(--color-cream)]/22 mx-auto w-[93%] mb-5" />
 
 {/* ===== Section Footer Buttons (mobile-only, final) ===== */}
 <div className="lg:hidden -mt-8 pb-0 w-full">
@@ -297,7 +295,7 @@ export default function AboutPage() {
   <div className="mx-auto max-w-[1000px] px-6 mb-14 -mt-8">
   </div>
 
-  <div className="border-t border-[var(--color-cream)]/22 mb-0 mobile-footer-cap">
+  <div className="border-t border-[var(--color-cream)]/22 mb-0 mobile-footer-cap w-[93%]">
 
   <div className="mx-auto max-w-[1400px] px-3">
     {/* Newsletter card (midnight blue) */}
