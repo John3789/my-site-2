@@ -36,7 +36,7 @@ export default function BooksPage() {
             </div>
 
             {/* Intro + image */}
-            <div className="mx-auto max-w-[1400px] px-6 pb-20">
+            <div className="mx-auto max-w-[1400px] px-6 pb-20  landscape:max-w-[700px] lg:landscape:max-w-none">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
                 {/* Left column */}
                 <div>
@@ -94,7 +94,7 @@ export default function BooksPage() {
             </div>
 
             {/* Selected Publications */}
-            <div className="mx-auto max-w-[1400px] px-6 pb-20">
+            <div className="mx-auto max-w-[1400px] px-6 pb-20  landscape:max-w-[700px] lg:landscape:max-w-none">
               <hr className="border-t border-[var(--color-cream)]/22 mb-8" />
               <h2 className="font-serif text-[clamp(28px,3.8vw,40px)] leading-[1.08] text-center opacity-90">
                 Selected Publications
