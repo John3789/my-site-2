@@ -136,7 +136,7 @@ export default function ResourcesPage() {
         <div
           ref={wrapRef}
           style={{ "--z": 3.0, "--zoomL": 1.3 }} 
-          className={`will-change-[transform] lg:contents origin-top [transform:scale(var(--z))] [width:calc(100%/var(--z))] mx-auto lg:[transform:none] lg:[width:100%] landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))] overflow-visible`}
+          className={`lg:contents origin-top [transform:scale(var(--z))] [width:calc(100%/var(--z))] mx-auto lg:[transform:none] lg:[width:100%] landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))] overflow-visible`}
         >
           {/* Title + Intro */}
           <div className="mx-auto max-w-[1200px] px-6 pt-10 pb-6">

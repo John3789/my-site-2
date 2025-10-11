@@ -191,7 +191,6 @@ export default function SpeakingPage() {
           ref={wrapRef}
           style={{ "--z": 3.0, "--zoomL": 1.3 }}
           className={`
-            will-change-[transform]
             lg:contents
             origin-top
             [transform:scale(var(--z))] [width:calc(100%/var(--z))]
