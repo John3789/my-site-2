@@ -102,7 +102,7 @@ export default function AboutPage() {
             </div>
 
             {/* Row 2+: everything else centered below */}
-<div className="mx-auto max-w-[1000px] px-6 space-y-12 mw-iphone-wide">
+<div className="mx-auto max-w-none md:max-w-[1000px] px-3 md:px-6 space-y-12">
               {/* Paragraph 3 */}
               <p className="mx-auto space-y-6 text-lg opacity-90 leading-loose [@media(orientation:landscape)_and_(max-width:999px)]:max-w-[70ch]">
                 Dr. Salerno’s expertise is rooted in science and shaped by personal transformation.
@@ -370,8 +370,8 @@ export default function AboutPage() {
     @media (max-width: 767px) and (orientation: portrait) {
       [data-page="about"] .mw-iphone-wide {
         /* override Tailwind's max-w-[1000px] */
-        max-width: 1400px !important;
-        width: 1400px;
+        max-width: 92vw !important;
+        width: 92vw;
     }
   }
 `}</style>
