@@ -2,7 +2,7 @@
 "use client";
 
 import { useRef } from "react";
-import { useIosZoomVars } from "../components/useIosZoom";
+import { useIosZoomVars } from "../,,/components/useIosZoom";
 
 
 export default function TermsPage() {

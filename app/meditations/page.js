@@ -1,9 +1,9 @@
 // app/meditations/page.js
 import TopOnMount from "../../components/TopOnMount";
-import NewsletterMeditationPopup from "../../components/NewsletterMeditationPopup";
-import HeroImageIphoneAware from "../../components/HeroImageIphoneAware";
+import NewsletterMeditationPopup from "../components/NewsletterMeditationPopup";
+import HeroImageIphoneAware from "../components/HeroImageIphoneAware";
 import { useRef } from "react";
-import { useIosZoomVars } from "../components/useIosZoom";
+import { useIosZoomVars } from "../../components/useIosZoom";
 
 
 
