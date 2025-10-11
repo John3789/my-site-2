@@ -236,7 +236,7 @@ export default function AboutPage() {
             </div>
 
 {/* CTA with faint outline */}
-<div className="mt-8 mb-0 justify-center">
+<div className="mt-8 mb-0 flex justify-center">
   <Link
     href="/contact"
     className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3
@@ -251,7 +251,7 @@ export default function AboutPage() {
 
 
 {/* ===== Section Footer Buttons (mobile-only, final) ===== */}
-<div className="lg:hidden -mt-8 pb-5 w-full text-base leading-none">
+<div className="lg:hidden -mt-4 pb-0 w-full">
   <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
     <a
       href="#credentials"
