@@ -126,6 +126,7 @@ export default function Home() {
       ref={wrapRef}
         style={{ '--z': 3.00, '--zoomL': 1.30 }}
         className="
+          will-change-[transform]
           lg:contents
           origin-top
           [transform:scale(var(--z))]
