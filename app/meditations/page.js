@@ -29,7 +29,6 @@ export default function MeditationsPage() {
           ref={wrapRef}
           style={{ "--z": 3.0, "--zoomL": 1.3 }}
           className="
-            will-change-[transform]
             lg:contents
             origin-top
             [transform:scale(var(--z))]
