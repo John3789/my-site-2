@@ -15,7 +15,7 @@ export default function AboutPage() {
     portraitTarget: 400,
     landscapeTarget: 900,
     min: 1,
-    max: 1,
+    max: 2,
   });
 
   return (
