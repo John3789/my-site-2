@@ -5,10 +5,20 @@ import Image from "next/image";
 import NewsletterMeditationPopup from "../components/NewsletterMeditationPopup";
 import NewsletterSignup from "../components/NewsletterSignup";
 import HeroImageIphoneAware from "../components/HeroImageIphoneAware";
-
+import { useRef } from "react";
+import { useIosZoomVars } from "../components/useIosZoom";
 
 
 export default function Home() {
+    const wrapRef = useRef<HTMLDivElement | null>(null);
+  // Dynamic iOS-only scaling (tune targets if needed)
+  useIosZoomVars(wrapRef.current, {
+    portraitTarget: 390,    // try 360–420 to taste
+    landscapeTarget: 560,   // try 520–620 to taste
+    min: 1,
+    max: 3,
+  });
+
   return (
         <main id="main" className="!bg-[var(--color-teal-850)] text-[var(--color-cream)] text-[17px]">
           
@@ -113,6 +123,7 @@ export default function Home() {
 
       {/* ===== PAGE BODY WRAPPER ===== */}
       <div
+      ref={wrapRef}
         style={{ '--z': 3.00, '--zoomL': 1.30 }}
         className="
           lg:contents
