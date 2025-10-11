@@ -41,7 +41,7 @@ export default function AboutPage() {
           overflow-visible
         "
       >
-        <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
+<main data-page="about" className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
           <div className="mx-auto max-w-[1400px] px-6 py-20">
             {/* Page title with kicker + gold bar */}
             <div className="text-center mb-12">
@@ -102,7 +102,7 @@ export default function AboutPage() {
 
 {/* Right: photo — optimized only on iPhone */}
 <div className="flex justify-center [transform:none] [width:auto]">
-  <IOSAwareImageClient
+  <IOSAwareImage
     src="/heroabout.jpg"
     alt="Dr. Juan Pablo Salerno"
     width={3024}
@@ -117,7 +117,7 @@ export default function AboutPage() {
             </div>
 
             {/* Row 2+: everything else centered below */}
-            <div className="mx-auto max-w-[1000px] px-6 space-y-12">
+<div className="mx-auto max-w-[1000px] px-6 space-y-12 mw-iphone-wide">
               {/* Paragraph 3 */}
               <p className="mx-auto space-y-6 text-lg opacity-90 leading-loose [@media(orientation:landscape)_and_(max-width:999px)]:max-w-[70ch]">
                 Dr. Salerno’s expertise is rooted in science and shaped by personal transformation.
@@ -379,6 +379,16 @@ export default function AboutPage() {
         {/* removed the contained divider on mobile */}
       </div>
 
+<style jsx global>{`
+  /* iPhone Safari only + portrait */
+  @supports (-webkit-touch-callout: none) {
+    @media (max-width: 767px) and (orientation: portrait) {
+      [data-page="about"] .mw-iphone-wide {
+        max-width: 1400px !important; /* match the first section's width */
+      }
+    }
+  }
+`}</style>
 
 
         </main>
