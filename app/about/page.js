@@ -145,8 +145,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Bottom spacer */}
-            <div className="pb-10" />
+  
             
           {/* FINAL divider above footer — match two-column width, no bleed */}
 <div className="mx-auto max-w-[1000px] px-6">
