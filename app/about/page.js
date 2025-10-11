@@ -35,6 +35,27 @@ export default function AboutPage() {
               <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto mt-4 rounded" />
             </div>
 
+{/* Invisible anchor for "About" target */}
+<div id="about" className="sr-only" />
+
+{/* Mobile quick-nav (iPhone portrait & landscape only) */}
+<nav id="quicknav" className="block lg:hidden mt-6 pointer-events-auto">
+  <div className="grid grid-cols-2 landscape:grid-cols-3 gap-2">
+    <a href="#about" className="w-full inline-flex items-center gap-1 rounded-full px-3.5 py-1.5 text-[12px] font-semibold tracking-wide truncate transition active:scale-95 active:brightness-110 border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)]">
+      <span className="inline-block w-[3ch] text-left tabular-nums leading-none">1.</span><span className="truncate">About</span>
+    </a>
+    <a href="#mission" className="w-full inline-flex items-center gap-1 rounded-full px-3.5 py-1.5 text-[12px] font-semibold tracking-wide truncate transition active:scale-95 active:brightness-110 border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)]">
+      <span className="inline-block w-[3ch] text-left tabular-nums leading-none">2.</span><span className="truncate">Mission</span>
+    </a>
+    <a href="#projects" className="w-full inline-flex items-center gap-1 rounded-full px-3.5 py-1.5 text-[12px] font-semibold tracking-wide truncate transition active:scale-95 active:brightness-110 border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)]">
+      <span className="inline-block w-[3ch] text-left tabular-nums leading-none">3.</span><span className="truncate">Projects</span>
+    </a>
+    <a href="#credentials" className="w-full inline-flex items-center gap-1 rounded-full px-3.5 py-1.5 text-[12px] font-semibold tracking-wide truncate transition active:scale-95 active:brightness-110 border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)]">
+      <span className="inline-block w-[3ch] text-left tabular-nums leading-none">4.</span><span className="truncate">Credentials</span>
+    </a>
+  </div>
+</nav>
+
             {/* Row 1: first two paragraphs + photo side-by-side */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start mb-12">
               {/* Left: first two paragraphs */}
