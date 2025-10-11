@@ -84,7 +84,7 @@ export default function BooksPage() {
     sizes="(max-width: 768px) 100vw, 512px"  // tells browser: ~448px max on desktop
     quality={95}                           // sharper compression for crispness
     fetchPriority="high"                   // loads sooner on desktop
-    priority={false}                       // keep lazy on mobile
+    priority={true}                       // keep lazy on mobile
   />
 </div>
 
