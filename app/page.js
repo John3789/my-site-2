@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import NewsletterMeditationPopup from "../components/NewsletterMeditationPopup";
 import NewsletterSignup from "../components/NewsletterSignup";
+import HeroImageIphoneAware from "../components/HeroImageIphoneAware";
+
 
 
 export default function Home() {
@@ -35,13 +37,13 @@ export default function Home() {
 <section className="relative h-[100dvh] xl:h-[88.8svh] overflow-hidden">
   {/* Image layer fills the section */}
   <div className="absolute inset-0">
-    <Image
+<HeroImageIphoneAware
       src="/hero17.jpg?v=25"
       alt="Portrait of Dr. Salerno"
       fill
       priority
       quality={95}
-      sizes="448px" 
+      sizes="100vw" 
       className="
         object-cover origin-center will-change-transform
         [transform:scaleX(1.00)_scaleY(1.00)]
@@ -188,7 +190,7 @@ export default function Home() {
                 {/* Right: image */}
                 <div className="lg:col-span-6 w-full max-w-[680px] lg:max-w-[780px] mx-auto lg:mx-0">
                   <div className="relative w-full aspect-[3/2] shadow-2xl overflow-hidden">
-                    <Image
+<HeroImageIphoneAware
                       src="/plant1.jpg"
                       alt="Consulting collaboration"
                       fill
@@ -234,7 +236,7 @@ export default function Home() {
                 {/* Left: image */}
                 <div className="lg:col-span-6 w-full max-w-[680px] lg:max-w-[780px] mx-auto lg:mx-0">
                   <div className="relative w-full aspect-[3/2] shadow-2xl overflow-hidden">
-                    <Image
+<HeroImageIphoneAware
                       src="/beach1.jpg"
                       alt="Meditation practice, calm beach"
                       fill
@@ -291,7 +293,7 @@ export default function Home() {
                 {/* Right: image */}
                 <div className="lg:col-span-6 w-full max-w-[680px] lg:max-w-[780px] mx-auto lg:mx-0">
                   <div className="relative w-full aspect-[3/2] shadow-2xl overflow-hidden">
-                    <Image
+<HeroImageIphoneAware
                       src="/tree90.jpg"
                       alt="Resources illustration, growth tree"
                       fill

@@ -3,6 +3,22 @@ import TopOnMount from "../../components/TopOnMount";
 import Image from "next/image";
 import Link from "next/link";
 import NewsletterMeditationPopup from "../../components/NewsletterMeditationPopup";
+import { useEffect, useState } from "react";
+
+/** Optimize on iPhone only; everywhere else serve original (unoptimized) */
+function IOSAwareImageClient(props) {
+  const [isIphone, setIsIphone] = useState(false);
+
+  useEffect(() => {
+    // Safe on client only
+    const ua = navigator.userAgent || navigator.vendor || "";
+    setIsIphone(/\biPhone\b|\biPod\b/.test(ua));
+  }, []);
+
+  // Before mount we don’t know yet → default to unoptimized (max quality)
+  // After mount, iPhone flips to optimized automatically
+  return <Image {...props} unoptimized={!isIphone} />;
+}
 
 export default function AboutPage() {
   return (
@@ -84,18 +100,18 @@ export default function AboutPage() {
                 </p>
               </div>
 
-{/* Right: photo */}
+{/* Right: photo — optimized only on iPhone */}
 <div className="flex justify-center [transform:none] [width:auto]">
-  <Image
+  <IOSAwareImageClient
     src="/heroabout.jpg"
     alt="Dr. Juan Pablo Salerno"
     width={3024}
     height={4032}
     className="w-full max-w-md h-auto shadow-lg object-cover mt-4"
-    sizes="448px"  // tells browser: ~448px max on desktop
-    priority={false} // keep lazy on mobile
-    quality={95}  // sharper compression for crispness
-    fetchPriority="high"               // loads sooner on desktop    
+    sizes="(max-width: 768px) 95vw, 448px"
+    quality={95}
+    priority
+    fetchPriority="high"
   />
 </div>
             </div>

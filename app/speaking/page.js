@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import Image from "next/image";
+import HeroImageIphoneAware from "../../components/HeroImageIphoneAware";
 
 export default function SpeakingPage() {
   const videoRef = useRef(null);
@@ -134,16 +136,17 @@ export default function SpeakingPage() {
         <section className="relative w-full">
           {/* black backdrop so there’s never a green flash */}
           <div className="relative h-[70vh] bg-black">
-            {/* Background image */}
-            <img
-              aria-hidden="true"
-              src="/bwspeaking1.jpg"
-              alt=""
-              decoding="async"
-              loading="eager"
-              fetchPriority="high"
-              className="absolute inset-0 h-full w-full object-cover object-[50%_35%]"
-            />
+{/* Background image (optimized, iPhone-aware) */}
+<HeroImageIphoneAware
+  src="/bwspeaking1.jpg"
+  alt=""
+  fill
+  priority
+  quality={95}
+  sizes="100vw"
+  className="object-cover object-[50%_35%]"
+/>
+
 
             {/* Solid overlay (no gradient) */}
 <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/30 to-black/60" />

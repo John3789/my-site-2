@@ -2,6 +2,18 @@ import Link from "next/link";
 import TopOnMount from "../../components/TopOnMount";
 import NewsletterMeditationPopup from "../../components/NewsletterMeditationPopup";
 import Image from "next/image";
+import { headers } from "next/headers";
+
+// ✅ iPhone-only optimization (no iPads or iPadOS)
+function IOSAwareImage(props) {
+  const ua = headers().get("user-agent") || "";
+
+  // Detect iPhone / iPod only — exclude iPads and desktop Safari
+  const isIphoneOnly = /\biPhone\b|\biPod\b/.test(ua);
+
+  // Optimize only on iPhone; all other devices (iPad, desktop, etc.) get unoptimized originals
+  return <Image {...props} unoptimized={!isIphoneOnly} />;
+}
 
 export default function BooksPage() {
   return (
@@ -73,18 +85,18 @@ export default function BooksPage() {
                   </section>
                 </div>
 
-{/* Right column image (plain) */}
+{/* Right column image (plain) - optimized only on iPhone */}
 <div className="flex justify-center [transform:none] [width:auto]">
-  <Image
+  <IOSAwareImage
     src="/award2.jpg"
     alt="Book or award"
-    width={4284}          // use the real pixel width if known (e.g. from file metadata)
-    height={5712}         // use the real pixel height if known
+    width={3024}
+    height={4032}
     className="w-full max-w-md h-auto shadow-lg object-cover object-center mt-3"
-    sizes="448px" // tells browser: ~448px max on desktop
-    quality={95}                           // sharper compression for crispness
-    fetchPriority="high"                   // loads sooner on desktop
-    priority={true}                       // keep lazy on mobile
+    sizes="(max-width: 768px) 95vw, 448px"
+    quality={95}
+    priority
+    fetchPriority="high"
   />
 </div>
 

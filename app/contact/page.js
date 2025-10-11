@@ -4,6 +4,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import NewsletterMeditationPopup from "../../components/NewsletterMeditationPopup";
+import HeroImageIphoneAware from "../../components/HeroImageIphoneAware";
+
 
 export default function ContactPage() {
   const [sent, setSent] = useState(false);
@@ -74,12 +76,17 @@ export default function ContactPage() {
               {/* Page header */}
               <header className="max-w-3xl mx-auto text-center mb-10">
                 <div className="md:hidden flex items-center justify-center gap-3">
-                  <img
-                    src="/headshot.jpg"
-                    alt="Dr. Juan Pablo Salerno"
-                    className="w-14 h-14 rounded-full object-cover border border-white/15"
-                  />
-                  <h1 className="font-serif text-5xl leading-[1.06] opacity-90">Contact</h1>
+<HeroImageIphoneAware
+  src="/headshot.jpg"
+  alt="Dr. Juan Pablo Salerno"
+  width={800}
+  height={800}
+  className="w-14 h-14 rounded-full object-cover border border-white/15"
+  sizes="56px"
+  priority
+  fetchPriority="high"
+/>
+                  <h1 className="font-serif lg:text-6xl leading-[1.06] opacity-90">Contact</h1>
                   <span className="w-14 h-14" aria-hidden />
                 </div>
 
@@ -334,11 +341,16 @@ export default function ContactPage() {
             <header className="max-w-3xl mx-auto text-center mb-10">
               <div className="flex items-center justify-center gap-3 md:block">
                 <h1 className="font-serif text-5xl leading-[1.06] opacity-90">Contact</h1>
-                <img
-                  src="/headshot.jpg"
-                  alt="Dr. Juan Pablo Salerno"
-                  className="w-14 h-14 rounded-full object-cover border border-white/15 md:hidden"
-                />
+  <HeroImageIphoneAware
+  src="/headshot.jpg"
+  alt="Dr. Juan Pablo Salerno"
+  width={800}
+  height={800}
+  className="w-14 h-14 rounded-full object-cover border border-white/15 md:hidden"
+  sizes="56px"
+  priority
+/>
+
               </div>
               <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 rounded" />
               <p className="text-base opacity-90 mt-6">
@@ -475,13 +487,17 @@ export default function ContactPage() {
                 <div className="sticky top-24 rounded-2xl bg-white/5 ring-1 ring-white/10 shadow-2xl md:backdrop-blur-sm p-5 hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
                   <div className="flex items-center gap-3 mb-4 relative z-10">
                     <div className="h-14 w-14 overflow-hidden rounded-full ring-1 ring-white/25 shadow-md">
-                      <img
-                        src="/headshot.jpg"
-                        alt="Dr. Juan Pablo Salerno headshot"
-                        className="h-full w-full object-cover"
-                        loading="lazy"
-                        decoding="async"
-                      />
+<HeroImageIphoneAware
+  src="/headshot.jpg"
+  alt="Dr. Juan Pablo Salerno headshot"
+  width={800}
+  height={800}
+  className="h-full w-full object-cover"
+  sizes="72px"
+  quality={95}
+  loading="lazy"
+/>
+
                     </div>
                     <div className="min-w-0">
                       <p className="text-sm opacity-85 truncate">Thanks for reaching out!</p>

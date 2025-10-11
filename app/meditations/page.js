@@ -1,6 +1,8 @@
 // app/meditations/page.js
 import TopOnMount from "../../components/TopOnMount";
 import NewsletterMeditationPopup from "../../components/NewsletterMeditationPopup";
+import HeroImageIphoneAware from "../../components/HeroImageIphoneAware";
+
 
 
 
@@ -115,15 +117,21 @@ export default function MeditationsPage() {
                   </article>
                 </div>
 
-                {/* RIGHT COLUMN — your photo (no rounding) */}
-                <div className="flex justify-center">
-                  <img
-                    src="/hero20.jpg"
-                    alt="Dr. Juan Pablo Salerno"
-                    className="w-full max-w-md h-full shadow-2xl ring-1 ring-white/10 object-cover"
-                  />
-                </div>
-              </div>
+{/* RIGHT COLUMN — iPhone-optimized photo */}
+<div className="flex justify-center">
+  <div className="relative w-full max-w-md aspect-[3/4] shadow-2xl ring-1 ring-white/10 overflow-hidden">
+    <HeroImageIphoneAware
+      src="/hero20.jpg"
+      alt="Dr. Juan Pablo Salerno"
+      fill
+      sizes="(min-width: 768px) 50vw, 100vw"
+      className="object-cover"
+      quality={95}
+      priority={false}
+    />
+  </div>
+  </div>
+</div>
             </section>
 
             {/* Divider — match two-column container width */}
