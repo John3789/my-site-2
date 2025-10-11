@@ -84,14 +84,20 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              {/* Right: photo */}
-              <div className="flex justify-center">
-                <img
-                  src="/heroabout.jpg"
-                  alt="Dr. Juan Pablo Salerno"
-                  className="w-full max-w-md h-full shadow-lg object-cover mt-4"
-                />
-              </div>
+{/* Right: photo */}
+<div className="flex justify-center">
+  <Image
+    src="/heroabout.jpg"
+    alt="Dr. Juan Pablo Salerno"
+    width={3024}
+    height={4032}
+    className="w-full max-w-md h-auto shadow-lg object-cover mt-4"
+    sizes="448px"
+    priority={false}
+    quality={95}
+    fetchPriority="high"
+  />
+</div>
             </div>
 
             {/* Row 2+: everything else centered below */}
