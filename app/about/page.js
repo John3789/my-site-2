@@ -28,7 +28,9 @@ export default function AboutPage() {
         "
       >
 <main data-page="about" className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
-          <div className="mx-auto max-w-[1400px] px-6 py-20">
+<div
+  className="mx-auto max-w-[1400px] px-6 py-20 [@media(orientation:portrait)_and_(max-width:915px)]:max-w-none [@media(orientation:portrait)_and_(max-width:915px)]:w-[92vw]">
+
             {/* Page title with kicker + gold bar */}
             <div className="text-center mb-12">
               <h1 className="font-serif text-6xl leading-[1.06] opacity-90 mt-2">
