@@ -246,6 +246,8 @@ export default function AboutPage() {
     Get in Touch
   </Link>
 </div>
+</div>
+
 
 
 {/* ===== Section Footer Buttons (mobile-only, final) ===== */}
@@ -271,7 +273,6 @@ export default function AboutPage() {
     </a>
   </div>
   </div>
-</div>
 
 
   
