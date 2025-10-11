@@ -13,7 +13,7 @@ export default function AboutPage() {
 
   useIosZoomVars(wrapRef, {
     portraitTarget: 390,
-    landscapeTarget: 560,
+    landscapeTarget: 520,
     min: 1,
     max: 3,
   });
