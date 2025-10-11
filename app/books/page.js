@@ -82,7 +82,7 @@ export default function BooksPage() {
     alt="Book or award"
     width={3024}
     height={4032}
-    className="w-full max-w-md h-auto shadow-lg object-cover object-center mt-3"
+    className="w-full max-w-md h-auto shadow-lg object-cover mt-3"
     sizes="(max-width: 768px) 95vw, 448px"
     quality={95}
     priority
