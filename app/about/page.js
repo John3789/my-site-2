@@ -225,7 +225,7 @@ export default function AboutPage() {
       All About
     </a>
     <a
-      href="#projects"
+      href="#credentials"
       className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
     >
       Next →
