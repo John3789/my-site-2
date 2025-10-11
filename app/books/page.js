@@ -1,6 +1,7 @@
 import Link from "next/link";
 import TopOnMount from "../../components/TopOnMount";
 import NewsletterMeditationPopup from "../../components/NewsletterMeditationPopup";
+import Image from "next/image";
 
 export default function BooksPage() {
   return (
@@ -72,14 +73,21 @@ export default function BooksPage() {
                   </section>
                 </div>
 
-                {/* Right column image (plain) */}
-                <div className="flex justify-center">
-                  <img
-                    src="/award2.jpg"
-                    alt="Book or award"
-                    className="w-full max-w-md h-full shadow-lg object-cover object-center mt-3"
-                  />
-                </div>
+{/* Right column image (plain) */}
+<div className="flex justify-center">
+  <Image
+    src="/award2.jpg"
+    alt="Book or award"
+    width={4284}          // use the real pixel width if known (e.g. from file metadata)
+    height={5712}         // use the real pixel height if known
+    className="w-full max-w-md h-auto shadow-lg object-cover object-center mt-3"
+    sizes="(max-width: 768px) 92vw, 448px"  // tells browser: ~448px max on desktop
+    quality={95}                           // sharper compression for crispness
+    fetchPriority="high"                   // loads sooner on desktop
+    priority={false}                       // keep lazy on mobile
+  />
+</div>
+
               </div>
             </div>
 
