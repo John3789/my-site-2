@@ -1,4 +1,6 @@
 // app/meditations/page.js
+"use client";
+
 import TopOnMount from "../../components/TopOnMount";
 import NewsletterMeditationPopup from "../components/NewsletterMeditationPopup";
 import HeroImageIphoneAware from "../components/HeroImageIphoneAware";
