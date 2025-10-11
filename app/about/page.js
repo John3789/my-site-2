@@ -128,11 +128,6 @@ export default function AboutPage() {
       Next →
     </a>
   </div>
-  <div className="md:hidden mt-6">
-    <div className="mx-auto max-w-[1100px] px-6">
-      <div className="h-px w-full bg-[var(--color-cream)]/15" />
-    </div>
-  </div>
 </div>
 
               {/* Mission */}
@@ -170,11 +165,6 @@ export default function AboutPage() {
     >
       Next →
     </a>
-  </div>
-  <div className="md:hidden mt-6">
-    <div className="mx-auto max-w-[1100px] px-6">
-      <div className="h-px w-full bg-[var(--color-cream)]/15" />
-    </div>
   </div>
 </div>
 
@@ -219,11 +209,6 @@ export default function AboutPage() {
       Next →
     </a>
   </div>
-  <div className="md:hidden mt-6">
-    <div className="mx-auto max-w-[1100px] px-6">
-      <div className="h-px w-full bg-[var(--color-cream)]/15" />
-    </div>
-  </div>
 </div>
 
               {/* Credentials */}
@@ -252,6 +237,31 @@ export default function AboutPage() {
               </Link>
             </div>
           </div>
+
+{/* ===== Section Footer Buttons (mobile-only, final) ===== */}
+<div className="lg:hidden mt-8 pb-3 w-full">
+  <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
+    <a
+      href="#credentials"
+      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+    >
+      ← Prev
+    </a>
+    <a
+      href="#about"
+      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+    >
+      All About
+    </a>
+    <a
+      href="#about"
+      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+    >
+      Next →
+    </a>
+  </div>
+  </div>
+
 
   
             
