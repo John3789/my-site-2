@@ -249,7 +249,7 @@ export default function AboutPage() {
 </div>
 
 {/* put the final mobile buttons INSIDE a padded container, like the sections above */}
-<div className="mx-auto max-w-[1000px] px-2 md:px-6">
+<div className="mx-auto max-w-none md:max-w-[1000px] px-2 md:px-6 space-y-12">
 
 {/* ===== Section Footer Buttons (mobile-only, final) ===== */}
 <div className="lg:hidden -mt-8 pb-0 w-full">
