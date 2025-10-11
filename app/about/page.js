@@ -107,7 +107,7 @@ export default function AboutPage() {
               </p>
 
 {/* ===== Section Footer Buttons (mobile-only) ===== */}
-<div className="lg:hidden mt-8 pb-3 w-full">
+<div className="lg:hidden -mt-4 pb-0 w-full">
   <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
     <a
       href="#mission"
@@ -145,7 +145,7 @@ export default function AboutPage() {
               </section>
 
 {/* ===== Section Footer Buttons (mobile-only) ===== */}
-<div className="lg:hidden mt-8 pb-3 w-full">
+<div className="lg:hidden -mt-4 pb-0 w-full">
   <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
     <a
       href="#mission"
@@ -188,7 +188,7 @@ export default function AboutPage() {
               </section>
 
 {/* ===== Section Footer Buttons (mobile-only) ===== */}
-<div className="lg:hidden mt-8 pb-3 w-full">
+<div className="lg:hidden -mt-4 pb-0 w-full">
   <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
     <a
       href="#mission"
