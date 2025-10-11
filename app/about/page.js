@@ -32,14 +32,14 @@ export default function AboutPage() {
               <h1 className="font-serif text-6xl leading-[1.06] opacity-90 mt-2">
                 About Dr. Salerno
               </h1>
-              <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto mt-4 rounded" /> 
+              <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto mt-4 rounded" />
             </div>
 
             {/* Row 1: first two paragraphs + photo side-by-side */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start mb-12">
-             {/* Left: first two paragraphs */}  
-<div className="[@media(orientation:landscape)_and_(max-width:999px)]:max-w-[75ch] xl:max-w-none">
-  <p className="space-y-6 text-lg mb-4 opacity-90 leading-loose"></p> 
+              {/* Left: first two paragraphs */}
+              <div>
+                <p className="space-y-6 text-lg mb-4 opacity-90 leading-loose [@media(orientation:landscape)_and_(max-width:915px)]:max-w-[58ch]">
                   Dr. Juan Pablo Salerno, also known in academic spaces as{" "}
                   <strong>Dr. John P. Salerno</strong>, is an award-winning mental health scientist, personal growth expert, author
                   and professor—credited with more than 30 peer-reviewed publications and 
@@ -49,9 +49,9 @@ export default function AboutPage() {
                   his lived experience, wisdom, and expertise to guide others in overcoming mental health
                   struggles, awakening potential, and living abundantly through self-love, fulfillment,
                   and purpose.
+                </p>
 
                 <p className="space-y-6 text-lg opacity-90 leading-loose">
-                  
                   His research has been published in leading journals such as Psychiatry Research,
                   Psychological Trauma, Epidemiology &amp; Psychiatric Sciences, Drug &amp; Alcohol
                   Dependence, Psychology of Sexual Orientation &amp; Gender Diversity, and Preventing
