@@ -91,7 +91,7 @@ export default function ContactPage() {
                 </div>
 
                 <h1 className="hidden md:block font-serif text-5xl leading-[1.06] opacity-90">Contact</h1>
-                <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-0 md:mt-4 rounded" />
+                <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-1 md:mt-4 rounded" />
                 <p className="text-base opacity-90 mt-6">
                   I’m glad you’re here. Share a few details below or email{" "}
                   <a
