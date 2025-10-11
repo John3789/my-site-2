@@ -102,7 +102,7 @@ export default function AboutPage() {
             </div>
 
             {/* Row 2+: everything else centered below */}
-<div className="mx-auto max-w-none md:max-w-[1000px] px-2 md:px-6 space-y-12">
+<div className="mx-auto max-w-[1000px] px-2 px-6 space-y-12">
               {/* Paragraph 3 */}
               <p className="mx-auto space-y-6 text-lg opacity-90 leading-loose [@media(orientation:landscape)_and_(max-width:999px)]:max-w-[70ch]">
                 Dr. Salerno’s expertise is rooted in science and shaped by personal transformation.
@@ -291,7 +291,7 @@ export default function AboutPage() {
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="block lg:hidden">
 
-  <hr className="mx-auto w-[90%] border-t border-[var(--color-cream)]/22 mb-0"/> 
+  <hr className="mx-auto w-[93%] border-t border-[var(--color-cream)]/22 mb-0"/> 
   <div className="mobile-footer-cap px-3">
   <div className="mx-auto max-w-[1400px] px-3">
     {/* Newsletter card (midnight blue) */}
