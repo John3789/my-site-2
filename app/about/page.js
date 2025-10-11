@@ -101,7 +101,7 @@ export default function AboutPage() {
 </div>
             </div>
 
-              {/* Row 2+: shared container — FULL width on iPhone, 1000px cap from md+ */}
+            {/* Row 2+: everything else centered below */}
 <div className="mx-auto max-w-none md:max-w-[1000px] px-2 md:px-6 space-y-12">
               {/* Paragraph 3 */}
               <p className="mx-auto space-y-6 text-lg opacity-90 leading-loose [@media(orientation:landscape)_and_(max-width:999px)]:max-w-[70ch]">
@@ -235,8 +235,20 @@ export default function AboutPage() {
               </section>
             </div>
 
+{/* CTA with faint outline */}
+<div className="mt-8 mb-0 flex justify-center">
+  <Link
+    href="/contact"
+    className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3
+               font-semibold uppercase tracking-wide text-sm shadow-md transition
+               hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
+  >
+    Get in Touch
+  </Link>
+</div>
+
 {/* ===== Section Footer Buttons (mobile-only, final) ===== */}
-<div className="lg:hidden -mt-8 pb-5 w-full">
+<div className="lg:hidden -mt-8 pb-5 w-full text-base leading-none">
   <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
     <a
       href="#credentials"
@@ -256,20 +268,8 @@ export default function AboutPage() {
     >
       Next →
     </a>
-      </div>
   </div>
-
-                {/* CTA with faint outline */}
-            <div className="mt-8 mb-0 flex justify-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition ring-1 ring-black/10"
-              >
-                Get in Touch
-              </Link>
-            </div>
-          </div>
-
+  </div>
 
 
   
@@ -365,6 +365,7 @@ export default function AboutPage() {
         {/* removed the contained divider on mobile */}
       </div>
 
+            </div>
 
 
 
