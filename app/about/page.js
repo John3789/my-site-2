@@ -38,7 +38,7 @@ export default function AboutPage() {
             {/* Row 1: first two paragraphs + photo side-by-side */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start mb-12">
              {/* Left: first two paragraphs */}  
-<div className="mx-auto w-full [@media(orientation:landscape)_and_(max-width:999px)]:max-w-[75ch] lg:pr-6 xl:max-w-none">
+<div className="[@media(orientation:landscape)_and_(max-width:999px)]:max-w-[75ch] xl:max-w-none">
   <p className="space-y-6 text-lg mb-4 opacity-90 leading-loose"></p> 
                   Dr. Juan Pablo Salerno, also known in academic spaces as{" "}
                   <strong>Dr. John P. Salerno</strong>, is an award-winning mental health scientist, personal growth expert, author
