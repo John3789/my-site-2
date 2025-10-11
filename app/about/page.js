@@ -12,8 +12,8 @@ export default function AboutPage() {
   const wrapRef = useRef(null);
 
   useIosZoomVars(wrapRef, {
-    portraitTarget: 390,
-    landscapeTarget: 590,
+    portraitTarget: 400,
+    landscapeTarget: 700,
     min: 1,
     max: 3,
   });
