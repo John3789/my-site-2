@@ -3,6 +3,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import NewsletterMeditationPopup from "../../components/NewsletterMeditationPopup";
+import { useIosZoomVars } from "../../components/useIosZoom";
 
 /* =========================
    THEMES DATA
@@ -18,6 +19,16 @@ const THEMES = [
 ];
 
 export default function ResourcesPage() {
+  const wrapRef = useRef(null); 
+
+  useIosZoomVars(wrapRef, {
+    portraitTarget: 390,
+    landscapeTarget: 560,
+    min: 1,
+    max: 3,
+  });
+
+
   useEffect(() => {
     document.body.classList.add("hide-footer-on-resources");
     return () => document.body.classList.remove("hide-footer-on-resources");
@@ -123,8 +134,9 @@ export default function ResourcesPage() {
 \
         {/* ===== SINGLE MOBILE ZOOM WRAPPER (title + intro + mobile nav + sections + mobile footer) ===== */}
         <div
-          style={{ "--z": 3.0, "--zoomL": 1.3 }}
-          className={`lg:contents origin-top [transform:scale(var(--z))] [width:calc(100%/var(--z))] mx-auto lg:[transform:none] lg:[width:100%] landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))] overflow-visible`}
+          ref={wrapRef}
+          style={{ "--z": 3.0, "--zoomL": 1.3 }} 
+          className={`will-change-[transform] lg:contents origin-top [transform:scale(var(--z))] [width:calc(100%/var(--z))] mx-auto lg:[transform:none] lg:[width:100%] landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))] overflow-visible`}
         >
           {/* Title + Intro */}
           <div className="mx-auto max-w-[1200px] px-6 pt-10 pb-6">

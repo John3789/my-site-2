@@ -2,8 +2,20 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { useRef } from "react";
+import { useIosZoomVars } from "../../components/useIosZoom";
 
 export default function ConsultingPage() {
+  const wrapRef = useRef(null); 
+
+  useIosZoomVars(wrapRef, {
+    portraitTarget: 390,
+    landscapeTarget: 560,
+    min: 1,
+    max: 3,
+  });
+
+
   const SECTIONS = useMemo(
     () => [
       { id: "approach", label: "Approach" },
@@ -105,11 +117,11 @@ export default function ConsultingPage() {
   return (
     <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
       {/* ============== MOBILE (uses the exact working zoom wrapper) ============== */}
-      <div className="lg:hidden" aria-label="Consulting mobile layout">
         <div
+          ref={wrapRef}
           style={{ "--z": 3.0, "--zoomL": 1.30 }}
           className={`
-            zoomwrap
+            will-change[transform]
             lg:contents
             origin-top
             [transform:scale(var(--z))] [width:calc(100%/var(--z))]
@@ -561,7 +573,7 @@ export default function ConsultingPage() {
                 </div>
               </div>
             </div>
-          </div>
+
 
           {/* removed the contained divider on mobile */}
         </div> {/* closes zoomwrap */}

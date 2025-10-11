@@ -3,8 +3,19 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import HeroImageIphoneAware from "../../components/HeroImageIphoneAware";
+import { useIosZoomVars } from "../../components/useIosZoom";
 
 export default function SpeakingPage() {
+  const wrapRef = useRef(null); 
+
+  useIosZoomVars(wrapRef, {
+    portraitTarget: 390,
+    landscapeTarget: 560,
+    min: 1,
+    max: 3,
+  });
+
+
   const videoRef = useRef(null);
   const [ready, setReady] = useState(false);
   const [showAllTestimonials, setShowAllTestimonials] = useState(false);
@@ -177,9 +188,10 @@ export default function SpeakingPage() {
 
         {/* ===== Intro + Main (zoomed for mobile only) ===== */}
         <div
+          ref={wrapRef}
           style={{ "--z": 3.0, "--zoomL": 1.3 }}
           className={`
-            zoomwrap
+            will-change-[transform]
             lg:contents
             origin-top
             [transform:scale(var(--z))] [width:calc(100%/var(--z))]

@@ -5,9 +5,20 @@ import { useState } from "react";
 import Link from "next/link";
 import NewsletterMeditationPopup from "../../components/NewsletterMeditationPopup";
 import HeroImageIphoneAware from "../../components/HeroImageIphoneAware";
+import { useRef } from "react";
+import { useIosZoomVars } from "../../components/useIosZoom";
 
 
 export default function ContactPage() {
+  const wrapRef = useRef(null); 
+
+  useIosZoomVars(wrapRef, {
+    portraitTarget: 390,
+    landscapeTarget: 560,
+    min: 1,
+    max: 3,
+  });
+
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
@@ -64,15 +75,11 @@ export default function ContactPage() {
           />
 
           {/* ============== MOBILE (zoom lives INSIDE here) ============== */}
-          <div className="lg:hidden mx-auto max-w-[1400px] px-3 pt-16 pb-0">
             <div
+              ref={wrapRef}
               style={{ "--z": 3.0, "--zoomL": 1.3 }}
-              className={`zoomwrap origin-top
-                [transform:scale(var(--z))] [width:calc(100%/var(--z))]
-                mx-auto
-                landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
-                overflow-visible`}
-            >
+              className={`will-change-[transform] lg:contents origin-top [transform:scale(var(--z))] [width:calc(100%/var(--z))] mx-auto lg:[transform:none] lg:[width:100%] landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))] overflow-visible`}>
+
               {/* Page header */}
               <header className="max-w-3xl mx-auto text-center mb-10">
                 <div className="md:hidden flex items-center justify-center gap-3">
@@ -325,7 +332,6 @@ export default function ContactPage() {
               </div>
               {/* end mobile zoom content */}
             </div>
-          </div>
 
           {/* ============== DESKTOP (unchanged layout) ============== */}
           <div className="hidden lg:block mx-auto max-w-[1200px] px-6 py-20">

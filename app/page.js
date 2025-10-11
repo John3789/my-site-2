@@ -10,14 +10,15 @@ import { useIosZoomVars } from "../components/useIosZoom";
 
 
 export default function Home() {
-    const wrapRef = useRef<HTMLDivElement | null>(null);
-  // Dynamic iOS-only scaling (tune targets if needed)
-  useIosZoomVars(wrapRef.current, {
-    portraitTarget: 390,    // try 360–420 to taste
-    landscapeTarget: 560,   // try 520–620 to taste
+  const wrapRef = useRef(null); 
+
+  useIosZoomVars(wrapRef, {
+    portraitTarget: 390,
+    landscapeTarget: 560,
     min: 1,
     max: 3,
   });
+
 
   return (
         <main id="main" className="!bg-[var(--color-teal-850)] text-[var(--color-cream)] text-[17px]">

@@ -1,18 +1,32 @@
+"use client";
+
 import Link from "next/link";
 import TopOnMount from "../../components/TopOnMount";
 import NewsletterMeditationPopup from "../../components/NewsletterMeditationPopup";
 import Image from "next/image";
-import { headers } from "next/headers";
 import HeroImageIphoneAware from "../../components/HeroImageIphoneAware";
+import { useRef } from "react";
+import { useIosZoomVars } from "../../components/useIosZoom";
 
 export default function BooksPage() {
+    const wrapRef = useRef(null);
+
+  useIosZoomVars(wrapRef, {
+    portraitTarget: 390,
+    landscapeTarget: 560,
+    min: 1,
+    max: 3,
+  });
+
   return (
     <TopOnMount>
       <>
         {/* ===== PAGE BODY WRAPPER (same zoom as home/about) ===== */}
         <div
+          red={wrapRef}
           style={{ "--z": 3.0, "--zoomL": 1.3 }}
           className={`
+            will-change-[transform]
             lg:contents
             origin-top
             [transform:scale(var(--z))]
@@ -36,7 +50,7 @@ export default function BooksPage() {
             </div>
 
             {/* Intro + image */}
-            <div className="mx-auto max-w-[1400px] px-6 pb-20  landscape:max-w-[700px] lg:landscape:max-w-none">
+            <div className="mx-auto max-w-[1400px] px-6 pb-20">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
                 {/* Left column */}
                 <div>
@@ -94,7 +108,7 @@ export default function BooksPage() {
             </div>
 
             {/* Selected Publications */}
-            <div className="mx-auto max-w-[1400px] px-6 pb-20  landscape:max-w-[700px] lg:landscape:max-w-none">
+            <div className="mx-auto max-w-[1400px] px-6 pb-20">
               <hr className="border-t border-[var(--color-cream)]/22 mb-8" />
               <h2 className="font-serif text-[clamp(28px,3.8vw,40px)] leading-[1.08] text-center opacity-90">
                 Selected Publications

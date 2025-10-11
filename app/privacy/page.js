@@ -1,13 +1,27 @@
 // app/privacy/page.js
 "use client";
 
+import { useRef } from "react";
+import { useIosZoomVars } from "../components/useIosZoom";
+
 export default function PrivacyPage() {
+  const wrapRef = useRef(null); 
+
+  useIosZoomVars(wrapRef, {
+    portraitTarget: 390,
+    landscapeTarget: 560,
+    min: 1,
+    max: 3,
+  });
+
   return (
     <>
       {/* ===== PAGE BODY WRAPPER (zoom on mobile, normal on desktop) ===== */}
       <div
+        ref={wrapRef}
         style={{ "--z": 3.0, "--zoomL": 1.3 }}
         className="
+          will-change-[transform]
           lg:contents
           origin-top
           [transform:scale(var(--z))]

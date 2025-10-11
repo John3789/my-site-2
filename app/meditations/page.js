@@ -2,18 +2,32 @@
 import TopOnMount from "../../components/TopOnMount";
 import NewsletterMeditationPopup from "../../components/NewsletterMeditationPopup";
 import HeroImageIphoneAware from "../../components/HeroImageIphoneAware";
+import { useRef } from "react";
+import { useIosZoomVars } from "../components/useIosZoom";
 
 
 
 
 export default function MeditationsPage() {
+  const wrapRef = useRef(null);
+
+  useIosZoomVars(wrapRef, {
+    portraitTarget: 390,
+    landscapeTarget: 560,
+    min: 1,
+    max: 3,
+  });
+
+
   return (
     <TopOnMount>
       <>
         {/* Mobile zoom wrapper (same pattern as Books/About). Desktop (md+) is unchanged. */}
         <div
+          ref={wrapRef}
           style={{ "--z": 3.0, "--zoomL": 1.3 }}
           className="
+            will-change-[transform]
             lg:contents
             origin-top
             [transform:scale(var(--z))]

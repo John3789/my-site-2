@@ -5,16 +5,29 @@ import Link from "next/link";
 import NewsletterMeditationPopup from "../../components/NewsletterMeditationPopup";
 import { useEffect, useState } from "react";
 import HeroImageIphoneAware from "../../components/HeroImageIphoneAware";
+import { useRef } from "react";
+import { useIosZoomVars } from "../../components/useIosZoom";
 
 export default function AboutPage() {
+  const wrapRef = useRef(null);
+
+  useIosZoomVars(wrapRef, {
+    portraitTarget: 390,
+    landscapeTarget: 560,
+    min: 1,
+    max: 3,
+  });
+
   return (
     <TopOnMount>
     <>
 
       {/* ===== PAGE BODY WRAPPER (same zoom as home) ===== */}
       <div
+        ref={wrapRef}
         style={{ '--z': 3.00, '--zoomL': 1.30 }}
         className="
+          will-change-[transform]
           lg:contents
           origin-top
           [transform:scale(var(--z))]

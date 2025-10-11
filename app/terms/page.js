@@ -1,14 +1,29 @@
 // app/terms/page.js (or wherever your TermsPage lives)
 "use client";
 
+import { useRef } from "react";
+import { useIosZoomVars } from "../components/useIosZoom";
+
+
 export default function TermsPage() {
+  const wrapRef = useRef(null); 
+
+  useIosZoomVars(wrapRef, {
+    portraitTarget: 390,
+    landscapeTarget: 560,
+    min: 1,
+    max: 3,
+  });
+
   return (
     <>
       {/* ===== PAGE BODY WRAPPER (zoom on mobile, normal on desktop) ===== */}
       <div
+      ref={wrapRef}
         style={{ "--z": 3.0, "--zoomL": 1.3 }}
         className="
-          lg:contents
+        will-change-[transform]  
+        lg:contents
           origin-top
           [transform:scale(var(--z))]
           [width:calc(100%/var(--z))]
