@@ -74,18 +74,26 @@ export default function BooksPage() {
                 </div>
 
 {/* Right column image (plain) */}
-<div className="flex justify-center [transform:none] [width:auto]">
-  <Image
-    src="/award2.jpg"
-    alt="Book or award"
-    width={4284}          // use the real pixel width if known (e.g. from file metadata)
-    height={5712}         // use the real pixel height if known
-    className="w-full max-w-md h-auto shadow-lg object-cover object-center mt-3"
-    sizes="(max-width: 768px) 100vw, 512px"  // tells browser: ~448px max on desktop
-    quality={95}                           // sharper compression for crispness
-    fetchPriority="high"                   // loads sooner on desktop
-    priority={true}                       // keep lazy on mobile
-  />
+<div className="flex justify-center">
+  {/* Custom loader ensures retina-sharp rendering */}
+  {(() => {
+    const dpr2xLoader = ({ src, width, quality }) =>
+      `${src}?w=${width * 2}&q=${quality || 90}`; // doubles pixel density
+
+    return (
+      <Image
+        loader={dpr2xLoader}
+        src="/award2.jpg"
+        alt="Book or award"
+        width={3024}
+        height={4032}
+        className="w-full max-w-md h-auto shadow-lg object-cover object-center mt-3"
+        sizes="448px"
+        quality={95}
+        priority
+      />
+    );
+  })()}
 </div>
 
               </div>

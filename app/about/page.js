@@ -92,7 +92,7 @@ export default function AboutPage() {
     width={3024}
     height={4032}
     className="w-full max-w-md h-auto shadow-lg object-cover mt-4"
-    sizes="(max-width: 768px) 100vw, 512px"  // tells browser: ~448px max on desktop
+    sizes="448px"  // tells browser: ~448px max on desktop
     priority={false} // keep lazy on mobile
     quality={95}  // sharper compression for crispness
     fetchPriority="high"               // loads sooner on desktop    
