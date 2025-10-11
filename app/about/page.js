@@ -56,8 +56,7 @@ export default function AboutPage() {
 
 {/* Mobile quick-nav (iPhone portrait & landscape only) */}
 <nav id="quicknav" className="block lg:hidden mt-6 mb-8 pointer-events-auto">
-<div className="grid grid-cols-2 gap-2 mx-auto 
-  [@media(orientation:landscape)_and_(max-width:915px)]:max-w-[420px]">
+<div className="grid grid-cols-2 gap-2 mx-auto [@media(orientation:landscape)_and_(max-width:915px)]:max-w-[420px]">
         <a href="#about" className="w-full inline-flex items-center gap-1 rounded-full px-3.5 py-1.5 text-[12px] font-semibold tracking-wide truncate transition active:scale-95 active:brightness-110 border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)]">
       <span className="inline-block w-[3ch] text-left tabular-nums leading-none">1.</span><span className="truncate">About</span>
     </a>
