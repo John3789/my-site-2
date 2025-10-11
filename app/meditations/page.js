@@ -123,7 +123,8 @@ export default function MeditationsPage() {
     <HeroImageIphoneAware
       src="/hero20.jpg"
       alt="Dr. Juan Pablo Salerno"
-      fill
+      width={3024}
+      height={4032}
       sizes="(min-width: 768px) 50vw, 100vw"
       className="object-cover"
       quality={95}
