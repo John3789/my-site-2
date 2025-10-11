@@ -39,8 +39,8 @@ export default function AboutPage() {
 <div id="about" className="sr-only" />
 
 {/* Mobile quick-nav (iPhone portrait & landscape only) */}
-<nav id="quicknav" className="block lg:hidden mt-6 mb-6 pointer-events-auto">
-  <div className="grid grid-cols-2 landscape:grid-cols-3 gap-2">
+<nav id="quicknav" className="block lg:hidden mt-6 mb-8 pointer-events-auto">
+  <div className="grid grid-cols-2 landscape:grid-cols-2 gap-2">
     <a href="#about" className="w-full inline-flex items-center gap-1 rounded-full px-3.5 py-1.5 text-[12px] font-semibold tracking-wide truncate transition active:scale-95 active:brightness-110 border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)]">
       <span className="inline-block w-[3ch] text-left tabular-nums leading-none">1.</span><span className="truncate">About</span>
     </a>
@@ -239,7 +239,7 @@ export default function AboutPage() {
           </div>
 
 {/* ===== Section Footer Buttons (mobile-only, final) ===== */}
-<div className="lg:hidden mt-8 pb-3 w-full">
+<div className="lg:hidden -mt-8 pb-5 w-full">
   <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
     <a
       href="#credentials"
@@ -278,7 +278,7 @@ export default function AboutPage() {
 
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="block lg:hidden">
-  <div className="mx-auto max-w-[1000px] px-6 mb-14 -mt-5">
+  <div className="mx-auto max-w-[1000px] px-6 mb-14 -mt-8">
   </div>
 
   <div className="border-t border-[var(--color-cream)]/22 mb-0 mobile-footer-cap">
