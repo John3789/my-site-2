@@ -365,12 +365,13 @@ export default function AboutPage() {
       </div>
 
 <style jsx global>{`
-  /* iPhone Safari only + portrait */
+  /* iPhone-only + portrait: widen sections marked mw-iphone-wide */
   @supports (-webkit-touch-callout: none) {
     @media (max-width: 767px) and (orientation: portrait) {
       [data-page="about"] .mw-iphone-wide {
-        max-width: 1400px !important; /* match the first section's width */
-      }
+        /* override Tailwind's max-w-[1000px] */
+        max-width: 92vw !important;
+        width: 92vw;
     }
   }
 `}</style>
