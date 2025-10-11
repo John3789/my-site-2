@@ -370,8 +370,8 @@ export default function AboutPage() {
     @media (max-width: 767px) and (orientation: portrait) {
       [data-page="about"] .mw-iphone-wide {
         /* override Tailwind's max-w-[1000px] */
-        max-width: 92vw !important;
-        width: 92vw;
+        max-width: 1400px !important;
+        width: 1400px;
     }
   }
 `}</style>
