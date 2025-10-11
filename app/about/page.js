@@ -236,7 +236,7 @@ export default function AboutPage() {
             </div>
 
 {/* CTA with faint outline */}
-<div className="mt-8 mb-0 flex justify-center">
+<div className="mt-8 mb-0 justify-center">
   <Link
     href="/contact"
     className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3
