@@ -101,7 +101,7 @@ export default function AboutPage() {
 </div>
             </div>
 
-            {/* Row 2+: everything else centered below */}
+              {/* Row 2+: shared container — FULL width on iPhone, 1000px cap from md+ */}
 <div className="mx-auto max-w-none md:max-w-[1000px] px-2 md:px-6 space-y-12">
               {/* Paragraph 3 */}
               <p className="mx-auto space-y-6 text-lg opacity-90 leading-loose [@media(orientation:landscape)_and_(max-width:999px)]:max-w-[70ch]">
