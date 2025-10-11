@@ -235,19 +235,11 @@ export default function ContactPage() {
               {/* Bottom spacer */}
               <div className="pb-10" />
 
-              {/* FINAL divider above footer — no bleed on mobile */}
-              <div className="mx-auto max-w-[1400px] px-6">
-                <hr className="hidden lg:block max-w-[1400px] border-t border-[var(--color-cream)]/22" />
-              </div>
 
-              <div className="block lg:hidden mx-auto max-w-[1100px] px-3">
-                {/* (mobile newsletter + socials unchanged) */}
-                {/* ... */}
-              </div>
 
               {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
               <div className="block lg:hidden">
-                <div className="mx-auto max-w-[1400px] px-0 mb-14 -mt-5">
+                <div className="mx-auto max-w-[1400px] px-0 mb-14 mt-4">
                   <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
                 </div>
 
@@ -572,7 +564,7 @@ export default function ContactPage() {
           `}</style>
 
           {/* Bookend divider (desktop) */}
-          <div className="hidden lg:block mx-auto max-w-[1200px] px-6 mt-12">
+          <div className="hidden lg:block mx-auto max-w-[1200px] px-6 mt-6">
             <hr className="border-t border-[var(--color-cream)]/22" />
           </div>
         </main>
