@@ -76,7 +76,7 @@ export default function ContactPage() {
               className={`zoomwrap lg:contents origin-top [transform:scale(var(--z))] [width:calc(100%/var(--z))] mx-auto lg:[transform:none] lg:[width:100%] landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))] overflow-visible`}>
 
               {/* Page header */}
-              <header className="max-w-3xl mx-auto text-center mb-10 px-3">
+              <header className="max-w-3xl mx-auto text-center mb-10">
                 <div className="md:hidden flex items-center justify-center gap-3">
 <HeroImageIphoneAware
   src="/headshot.jpg"
@@ -88,7 +88,7 @@ export default function ContactPage() {
   priority
   fetchPriority="high"
 />
-                  <h1 className="font-serif text-6xl leading-[1.06] opacity-90">Contact</h1>
+                  <h1 className="font-serif md:text-5xl lg:text-6xl leading-[1.06] opacity-90">Contact</h1>
                   <span className="w-14 h-14" aria-hidden />
                 </div>
 
@@ -106,7 +106,7 @@ export default function ContactPage() {
               </header>
 
               {/* SINGLE form card */}
-              <section className="relative overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
+              <section className="relative mx-auto max-w-[640px] overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
                 <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
 
                 {sent ? (
