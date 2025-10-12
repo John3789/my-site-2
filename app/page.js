@@ -76,8 +76,8 @@ export default function Home() {
         text-[var(--color-cream)] text-center leading-[1.00]
         drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]
         /* Make it span the full width */
-        text-[clamp(28px, 18vw, 56px)]   /* tweak 8.5–10vw if you want more/less */
-            landscape:text-[7vw]   /* shrink text in landscape */
+        text-[clamp(32px, 20vw, 64px)]   /* tweak 8.5–10vw if you want more/less */
+            landscape:text-[6.5vw]   /* shrink text in landscape */
       "
 >
   DR. JUAN PABLO SALERNO

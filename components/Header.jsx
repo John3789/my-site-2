@@ -114,8 +114,8 @@ export default function Header() {
     >
       <div className="flex items-center justify-between px-6 h-16 pr-25">
   {/* Bigger Menu label with landscape adjustment */}
-  <span className="font-serif 
-                  text-[13vw] landscape:text-[4vw]">
+ <span className="font-serif text-[clamp(22px,7vw,32px)] landscape:text-[2.6vw]">
+
     Menu
   </span>
 
@@ -127,15 +127,10 @@ export default function Header() {
     className="p-3 -mr-2 ml-8 landscape:ml-0"
   >
     <svg 
-      width="20vw" height="20vw"  /* scales in portrait */
-      className="landscape:w-[6vw] landscape:h-[6vw]"  /* smaller in landscape */
-      viewBox="0 0 24 24" fill="none" aria-hidden="true"
+      className="w-8 h-8 landscape:w-6 landscape:h-6" viewBox="0 0 24 24" fill="none" aria-hidden="true"
     >
-      <path 
-        d="M6 6l12 12M18 6l-12 12" 
-        stroke="var(--color-cream)" 
-        strokeWidth="3" strokeLinecap="round"
-      />
+<path d="M6 6l12 12M18 6l-12 12" stroke="var(--color-cream)" strokeWidth="2.5" strokeLinecap="round" />
+
     </svg>
   </button>
 </div>

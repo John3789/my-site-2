@@ -162,7 +162,7 @@ export default function SpeakingPage() {
             {/* Overlay headline + subheadline */}
             <div className="hero-overlay absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
               <div className="relative px-6 s-hero narrow-landscape mx-auto">
-        <h1 className="hero-title font-serif opacity-95 md:drop-shadow-lg md:text-6xl text-[clamp(36px,10vw,48px)] landscape:text-[7vw]">
+        <h1 className="hero-title font-serif opacity-95 md:drop-shadow-lg md:text-6xl text-[clamp(32px,8.5vw,44px)] landscape:text-[6.2vw]">
                   Speaking
                 </h1>
                 <div className="hero-hr h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 mb-3 rounded" />
