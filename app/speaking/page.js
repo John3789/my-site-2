@@ -172,7 +172,7 @@ export default function SpeakingPage() {
                 </p>
 
                 {/* Desktop/tablet original subheadline (unchanged) */}
-                <p className="hero-sub hidden md:block opacity-90 max-w-2xl mx-auto !text-[clamp(16px,4.5vw,20px)] md:drop-shadow-md md:text-xl">
+                <p className="hero-sub hidden md:block opacity-90 max-w-lg mx-auto !text-[clamp(16px,4.5vw,20px)] md:drop-shadow-md md:text-xl leading-normal">
                   Science-backed, story-driven talks that spark resilience, growth, and
                   lasting change.
                 </p>
