@@ -458,15 +458,7 @@ export default function BooksPage() {
             }
           }
 
-/* iPhone-ish landscape: narrow height + landscape */
-@media (orientation: landscape) and (max-width: 900px) and (max-height: 430px) {
-  .narrow-landscape {
-    max-width: 90ch;       /* ≈ 90 characters per line  */
-    margin-left: auto;
-    margin-right: auto;     /* centers the block */
-    justify-self: center;   /* centers inside grid if needed */
-  }
-}
+
         `}</style>
       </>
 <NewsletterMeditationPopup delayMs={10000} />
