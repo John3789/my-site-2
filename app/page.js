@@ -24,8 +24,15 @@ export default function Home() {
   freqDays={7}
   formAction="/api/subscribe"
 />
-      {/* spacer to clear the fixed header (keep) */}
-      <div aria-hidden className="hidden md:block h-8 bg-[var(--color-teal-800)]" />
+{/* spacer to clear the fixed header (keep) */}
+<div
+  aria-hidden
+  className="
+    hidden md:block h-8 bg-[var(--color-teal-800)]
+    [@media(orientation:landscape)_and_(max-width:900px)]:block
+    [@media(orientation:landscape)_and_(max-width:900px)]:h-4
+  "
+/>
 
       {/* DESKTOP/TABLET nameplate — unchanged */}
       <section id="home" className="hidden md:block bg-[var(--color-teal-800)] text-[var(--color-cream)]">
@@ -77,7 +84,7 @@ export default function Home() {
     drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]
   "
   style={{
-    fontSize: 'clamp(32px,20vw,55px)', // ← adjust here and it WILL take effect
+    fontSize: 'clamp(32px,20vw,45px)', // ← adjust here and it WILL take effect
     lineHeight: 1,
     WebkitTextSizeAdjust: '100%',
   }}
