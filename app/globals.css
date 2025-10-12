@@ -192,23 +192,6 @@ input, select, textarea {
   .use-stable-vh { height: 100svh; }
 }
 
-/* =========================================
-   1) Zoom CSS variables (defaults + guards)
-   Your wrappers already read:
-     --z     (portrait)
-     --zoomL (landscape)
-   ========================================= */
-
-/* Default to "no zoom" — the hook will set real values under 900px */
-:root {
-  --z: 1;
-  --zoomL: 1;
-}
-
-/* Guard: never zoom on viewports >= 999px (desktop, iPads, etc.) */
-@media (min-width: 999px) {
-  :root { --z: 1; --zoomL: 1; }
-}
 
 /* Optional SSR fallback for phones (so first paint looks right even before JS):
    You can set your typical phone zooms here; the hook will overwrite the same vars
