@@ -47,7 +47,7 @@ export default function BooksPage() {
             <div className="mx-auto max-w-[1400px] px-6 pb-20">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
                 {/* Left column */}
-<div className="mx-auto [@media(orientation:landscape)_and_(max-width:1200px)_and_(max-height:430px)]:max-w-[70ch] [@media(orientation:landscape)_and_(max-width:999px)_and_(max-height:430px)]:justify-self-center">
+<div className="mx-auto [@media(orientation:landscape)_and_(max-width:1200px)_and_(max-height:430px)]:max-w-[70ch] [@media(orientation:landscape)_and_(max-width:1200px)_and_(max-height:430px)]:justify-self-center">
                   <p className="text-[clamp(17px,1.6vw,22px)] opacity-90 mb-8 leading-loose">
                     Here you’ll find Dr. Salerno’s published works, where science and personal growth come together.
                     His research explores pathways to mental health, resilience, and wellbeing, with a focus on uplifting
@@ -112,7 +112,7 @@ export default function BooksPage() {
               <div className="space-y-10">
 
 {/* CARD 1 */}
-<article className="w-full mx-auto bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-0 md:backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10 [@media(orientation:landscape)_and_(max-width:1200px)_and_(max-height:430px)]:max-w-[70ch] [@media(orientation:landscape)_and_(max-width:999px)_and_(max-height:430px)]:justify-self-center">
+<article className="w-full mx-auto bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-0 md:backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10 [@media(orientation:landscape)_and_(max-width:1200px)_and_(max-height:430px)]:max-w-[70ch] [@media(orientation:landscape)_and_(max-width:1200px)_and_(max-height:430px)]:justify-self-center">
   <div className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/60 rounded-l-xl" />
   <div className="flex flex-col lg:flex-row gap-7 sm:gap-8 lg:gap-12">
     <div className="lg:w-1/3">
@@ -197,7 +197,7 @@ export default function BooksPage() {
 </article>
 
  {/* CARD 2 */}
-<article className="w-full mx-auto bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-0 md:backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10 [@media(orientation:landscape)_and_(max-width:1200px)_and_(max-height:430px)]:max-w-[70ch] [@media(orientation:landscape)_and_(max-width:999px)_and_(max-height:430px)]:justify-self-center">
+<article className="w-full mx-auto bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-0 md:backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10 [@media(orientation:landscape)_and_(max-width:1200px)_and_(max-height:430px)]:max-w-[70ch] [@media(orientation:landscape)_and_(max-width:1200px)_and_(max-height:430px)]:justify-self-center">
   <div className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/60 rounded-l-xl" />
   <div className="flex flex-col lg:flex-row gap-7 sm:gap-8 lg:gap-12">
     <div className="lg:w-1/3">
