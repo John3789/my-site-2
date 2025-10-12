@@ -112,7 +112,7 @@ export default function BooksPage() {
               <div className="space-y-10">
 
 {/* CARD 1 */}
-<article className="narrow-landscape w-full bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-0 md:backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10">
+<article className="w-full mx-auto bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-0 md:backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10 [@media(orientation:landscape)_and_(max-width:999px)_and_(max-height:430px)]:max-w-[70ch] [@media(orientation:landscape)_and_(max-width:999px)_and_(max-height:430px)]:justify-self-center">
   <div className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/60 rounded-l-xl" />
   <div className="flex flex-col lg:flex-row gap-7 sm:gap-8 lg:gap-12">
     <div className="lg:w-1/3">
