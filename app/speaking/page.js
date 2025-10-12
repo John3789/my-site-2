@@ -167,7 +167,7 @@ export default function SpeakingPage() {
                 </h1>
  <div className="hero-hr h-[2px] w-8 landscape:w-10 md:w-16 bg-[var(--color-gold)]/85 mx-auto mt-3 mb-2 rounded" />
                 {/* Mobile-only shorter subheadline */}
-                <p className="hero-sub md:hidden opacity-90 max-w-3xl mx-auto !text-[clamp(20px,7vw,30px)] leading-snug">
+                <p className="hero-sub md:hidden opacity-90 max-w-3xl mx-auto !text-[clamp(16px,4.5vw,20px)] leading-snug">
                   Talks that spark resilience, growth, and lasting change.
                 </p>
 
