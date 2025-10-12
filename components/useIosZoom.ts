@@ -12,21 +12,31 @@ export function useIosZoomVars(
     if (!el) return;
 
     const setVars = (pz: number, lz: number) => {
-      el.style.setProperty("--z", String(pz));      // portrait zoom var
-      el.style.setProperty("--zoomL", String(lz));  // landscape zoom var
+      el.style.setProperty("--z", String(pz));      // portrait
+      el.style.setProperty("--zoomL", String(lz));  // landscape
     };
 
-    // Decide based on the *current, stable* viewport width
+    const effectiveWidth = () => {
+      const vv = window.visualViewport;
+      const a = vv?.width ?? Number.POSITIVE_INFINITY;
+      const b = window.innerWidth;
+      const c = document.documentElement.clientWidth;
+      return Math.min(a, b, c);
+    };
+
+    // Treat Safari's transient 980px layout width as "phone"
+    const PHONE_MAX = 999; // was 900 — 980 catches iOS's temporary large width
+
     const applyForCurrentWidth = () => {
-      const w = (window.visualViewport?.width ?? window.innerWidth);
-      if (w < 999) {
+      const w = effectiveWidth();
+      if (w <= PHONE_MAX) {
         setVars(portraitZoom, landscapeZoom);
       } else {
-        setVars(1, 1); // never zoom on ≥900px
+        setVars(1, 1);
       }
     };
 
-    // Wait a moment for iOS URL bar / visual viewport to settle
+    // Wait until viewport settles, then apply
     let raf1 = 0, raf2 = 0, settleTimer: number | undefined;
     const settleAndApply = () => {
       cancelAnimationFrame(raf1);
@@ -35,9 +45,13 @@ export function useIosZoomVars(
 
       raf1 = requestAnimationFrame(() => {
         raf2 = requestAnimationFrame(() => {
-          // tiny nudge encourages toolbar collapse in iOS landscape
+          // tiny nudge helps iOS collapse toolbar in landscape
           window.scrollTo(window.scrollX, Math.max(0, window.scrollY) + 0.1);
-          settleTimer = window.setTimeout(applyForCurrentWidth, 80);
+          settleTimer = window.setTimeout(() => {
+            applyForCurrentWidth();
+            // late double-check in case URL bar collapses after our apply
+            window.setTimeout(applyForCurrentWidth, 180);
+          }, 80);
         });
       });
     };
@@ -49,7 +63,7 @@ export function useIosZoomVars(
       debounceTimer = window.setTimeout(settleAndApply, 140);
     };
 
-    // Initial run (also covers bfcache restores)
+    // Initial run (also covers BFCache restores)
     settleAndApply();
 
     // Re-apply on visual viewport changes & orientation/page restores

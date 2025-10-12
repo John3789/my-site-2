@@ -126,7 +126,7 @@ export default function ResourcesPage() {
       <main className="relative isolate min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]" />
 
-\
+
         {/* ===== SINGLE MOBILE ZOOM WRAPPER (title + intro + mobile nav + sections + mobile footer) ===== */}
         <div
           ref={wrapRef}
