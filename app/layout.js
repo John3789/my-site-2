@@ -38,7 +38,6 @@ export default function RootLayout({ children }) {
             'html.zoom-not-ready [class*="\\\\[transform:scale(var(--zoomL))\\\\]"]{transform:none !important;}\\n' +
             'html.zoom-not-ready [class*="\\\\[width:calc(100%/var(--z))\\\\]"],\\n' +
             'html.zoom-not-ready [class*="\\\\[width:calc(100%/var(--zoomL))\\\\]"]{width:100% !important;}\\n' +
-            'html.zoom-not-ready body{opacity:0;}';
   var style = document.createElement('style');
   style.setAttribute('data-zoom-kill','true');
   style.appendChild(document.createTextNode(css));
@@ -66,8 +65,8 @@ export default function RootLayout({ children }) {
 
 
       {/* single body (no nesting) */}
- <body className="min-w-[1200px] bg-[#F4F1EA] text-[#0C1415] antialiased [text-rendering:optimizeLegibility] [-webkit-font-smoothing:antialiased]">
-        <Header />
+<body className="lg:min-w-[1200px] bg-[#F4F1EA] text-[#0C1415] antialiased [text-rendering:optimizeLegibility] [-webkit-font-smoothing:antialiased]">
+          <Header />
 
 <Script id="ios-viewport-nudge-2" strategy="beforeInteractive">
 {`
