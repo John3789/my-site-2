@@ -84,7 +84,7 @@ export default function Home() {
     drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]
   "
   style={{
-    fontSize: 'clamp(28px,15vw,45px)', // ← adjust here and it WILL take effect
+    fontSize: 'clamp(28px,15vw,42px)', // ← adjust here and it WILL take effect
     lineHeight: 1,
     WebkitTextSizeAdjust: '100%',
   }}
