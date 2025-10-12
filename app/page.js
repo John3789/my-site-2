@@ -76,7 +76,7 @@ export default function Home() {
         text-[var(--color-cream)] text-center leading-[1.00]
         drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]
         /* Make it span the full width */
-        !text-[clamp(36px, 22vw, 72px)]   /* tweak 8.5–10vw if you want more/less */
+        !text-[clamp(40px, 23vw, 84px)]   /* tweak 8.5–10vw if you want more/less */
       "
 >
   DR. JUAN PABLO SALERNO
