@@ -73,7 +73,8 @@ export default function ContactPage() {
             <div
               ref={wrapRef}
               style={{ "--z": 3.0, "--zoomL": 1.3 }}
-              className={`lg:contents origin-top [transform:scale(var(--z))] [width:calc(100%/var(--z))] mx-auto lg:[transform:none] lg:[width:100%] landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))] overflow-visible`}>
+              className={`zoomwrap origin-top [transform:scale(var(--z))] [width:calc(100%/var(--z))] mx-auto landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))] overflow-visible`}
+              >
 
               {/* Page header */}
               <header className="max-w-3xl mx-auto text-center mb-10">
@@ -328,6 +329,7 @@ export default function ContactPage() {
               {/* end mobile zoom content */}
             </div>
               </div>
+              
 
           {/* ============== DESKTOP (unchanged layout) ============== */}
           <div className="hidden lg:block mx-auto max-w-[1200px] px-6 py-20">
