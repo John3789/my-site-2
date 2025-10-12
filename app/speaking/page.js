@@ -162,10 +162,10 @@ export default function SpeakingPage() {
             {/* Overlay headline + subheadline */}
             <div className="hero-overlay absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
               <div className="relative px-6 s-hero">
-        <h1 className="hero-title font-serif opacity-95 md:drop-shadow-lg md:text-6xl !text-[clamp(48px,12.5vw,68px)] landscape:!text-[6vw]">
+        <h1 className="hero-title font-serif opacity-95 md:drop-shadow-lg md:text-6xl !text-[clamp(56px,14vw,78px)] landscape:!text-[6vw]">
                   Speaking
                 </h1>
- <div className="hero-hr h-[2px] w-8 landscape:w-10 md:w-16 bg-[var(--color-gold)]/85 mx-auto mt-3 mb-2 rounded" />
+ <div className="hero-hr h-px w-6 landscape:w-10 md:w-16 bg-[var(--color-gold)]/85 mx-auto mt-2 mb-1 rounded" />
                 {/* Mobile-only shorter subheadline */}
                 <p className="hero-sub md:hidden opacity-90 max-w-3xl mx-auto !text-[clamp(16px,4.5vw,20px)] leading-snug">
                   Talks that spark resilience, growth, and lasting change.
