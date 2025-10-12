@@ -114,7 +114,6 @@ export default function ConsultingPage() {
       <div className="lg:hidden">                {/* HIDE mobile on desktop */}
         <div
           ref={wrapRef}
-          style={{ "--z": 3.0, "--zoomL": 1.30 }}
           className={`
             lg:contents
             origin-top

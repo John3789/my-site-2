@@ -70,7 +70,6 @@ export default function ContactPage() {
           <div className="lg:hidden mx-auto max-w-[1400px] px-3 pt-16 pb-0">
             <div
               ref={wrapRef}
-              style={{ "--z": 3.0, "--zoomL": 1.3 }}
               className={`zoomwrap lg:contents origin-top
                 [transform:scale(var(--z))] [width:calc(100%/var(--z))]
                 mx-auto

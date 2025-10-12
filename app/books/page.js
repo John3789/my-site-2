@@ -19,7 +19,6 @@ export default function BooksPage() {
         {/* ===== PAGE BODY WRAPPER (same zoom as home/about) ===== */}
         <div
           ref={wrapRef}
-          style={{ "--z": 3.0, "--zoomL": 1.3 }}
           className={`
             lg:contents
             origin-top

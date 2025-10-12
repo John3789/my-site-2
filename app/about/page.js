@@ -19,7 +19,6 @@ export default function AboutPage() {
       {/* ===== PAGE BODY WRAPPER (same zoom as home) ===== */}
       <div
         ref={wrapRef}
-        style={{ '--z': 3.00, '--zoomL': 1.30 }}
         className="
           lg:contents
           origin-top

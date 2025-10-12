@@ -184,7 +184,6 @@ export default function SpeakingPage() {
         {/* ===== Intro + Main (zoomed for mobile only) ===== */}
         <div
           ref={wrapRef}
-          style={{ "--z": 3.0, "--zoomL": 1.3 }}
           className={`
             lg:contents
             origin-top

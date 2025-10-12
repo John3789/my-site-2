@@ -22,7 +22,6 @@ export default function MeditationsPage() {
         {/* Mobile zoom wrapper (same pattern as Books/About). Desktop (md+) is unchanged. */}
         <div
           ref={wrapRef}
-          style={{ "--z": 3.0, "--zoomL": 1.3 }}
           className="
             lg:contents
             origin-top
