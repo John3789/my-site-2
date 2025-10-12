@@ -56,7 +56,7 @@ export default function Header() {
 >
   {/* 3-line icon (cream) */}
   <svg
- className="w-[56px] h-[56px] landscape:w-[48px] landscape:h-[48px]"
+ className="w-[40px] h-[40px] landscape:w-[40px] landscape:h-[40px]"
     viewBox="0 0 24 24"
     fill="none"
   >
@@ -97,7 +97,7 @@ export default function Header() {
   <>
     {/* Backdrop */}
     <div
-      className="fixed inset-0 z-[10000] bg-black/40"
+      className="fixed inset-0 z-[10000] bg-black/40 zoom-exempt"
       onClick={() => setOpen(false)}
     />
 

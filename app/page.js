@@ -31,7 +31,7 @@ export default function Home() {
       <section id="home" className="hidden md:block bg-[var(--color-teal-800)] text-[var(--color-cream)]">
         <div className="mx-auto max-w-[1400px] px-6 pt-0 pb-4">
           <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
-            <span className="hidden md:block text-7xl hover:opacity-90 transition">
+            <span className="hidden md:block text-7xl hover:opacity-90 transition [@media(orientation:landscape)_and_(max-width:900px)]:text-5xl">
               DR. JUAN PABLO SALERNO
               <sup className="text-2xl align-super opacity-70">™</sup>  
             </span>
@@ -76,8 +76,8 @@ export default function Home() {
         text-[var(--color-cream)] text-center leading-[1.00]
         drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]
         /* Make it span the full width */
-        text-[32vw]   /* tweak 8.5–10vw if you want more/less */
-            landscape:text-[7.5vw]   /* shrink text in landscape */
+        text-[22vw]   /* tweak 8.5–10vw if you want more/less */
+            landscape:text-[6vw]   /* shrink text in landscape */
       "
 >
   DR. JUAN PABLO SALERNO
