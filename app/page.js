@@ -72,8 +72,8 @@ export default function Home() {
   >
 <h1
   className="
-    font-serif font-semibold uppercase tracking-[0.02em]
-    text-[var(--color-cream)] text-center leading-[1.00]
+    font-serif font-semibold uppercase tracking-[0.05em]
+    text-[var(--color-cream)] text-center leading-[1.05]
     drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]
   "
   style={{
