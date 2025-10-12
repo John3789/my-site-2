@@ -48,7 +48,7 @@ export default function BooksPage() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
                 {/* Left column */}
 <div className="narrow-landscape mx-auto [@media(orientation:landscape)_and_(max-width:999px)_and_(max-height:430px)]:max-w-[70ch] [@media(orientation:landscape)_and_(max-width:999px)_and_(max-height:430px)]:justify-self-center">
-                  <p className="text-lg opacity-90 mb-8 leading-loose">
+                  <p className="text-[clamp(17px,1.6vw,22px)] opacity-90 mb-8 leading-loose">
                     Here you’ll find Dr. Salerno’s published works, where science and personal growth come together.
                     His research explores pathways to mental health, resilience, and wellbeing, with a focus on uplifting
                     communities too often overlooked. Each piece reflects his belief that science should empower communities,
@@ -62,7 +62,7 @@ export default function BooksPage() {
                     </h2>
                     <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 rounded mb-5" />
 
-                    <p className="text-lg opacity-90 max-w-3xl mb-6 leading-loose">
+                    <p className="text-[clamp(17px,1.6vw,22px)] opacity-90 max-w-3xl mb-6 leading-loose">
                       A powerful blend of science and personal growth wisdom, this forthcoming book by Dr. Salerno
                       offers an accessible, inspiring, and transformative framework for overcoming mental health
                       struggles and living with greater purpose, balance, and fulfillment.
@@ -121,7 +121,7 @@ export default function BooksPage() {
       <h3 className="font-serif text-3xl mb-3">
         Advancing Mental Health Equity Among Latinx Youth &amp; Other Communities of Color
       </h3>
-      <p className="text-lg opacity-90 leading-relaxed">
+      <p className="text-[clamp(17px,1.6vw,22px)] opacity-90 leading-relaxed">
         Research focused on mental health among Latinx youth communities and other people of color—centered on
         risk and resilience factors for mental wellbeing.
       </p>
