@@ -171,5 +171,14 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* globals.css */
+/* iOS: don't auto-resize text, and use stable viewport height when available */
 html { -webkit-text-size-adjust: 100%; }
+
+@supports (height: 100svh) {
+  /* If you already use 100vh anywhere, Safari’s URL bar can shift it.
+     100svh is the stable value; this maps it automatically. */
+  .use-stable-vh { height: 100svh; }
+}
+
+/* Optional: smooths out fractional transform rendering on iOS */
+html { -webkit-font-smoothing: antialiased; }
