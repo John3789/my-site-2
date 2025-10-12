@@ -25,7 +25,7 @@ export default function Home() {
   formAction="/api/subscribe"
 />
       {/* spacer to clear the fixed header (keep) */}
-      <div aria-hidden className="hidden md:block md:h-4 h-8 bg-[var(--color-teal-800)]" />
+      <div aria-hidden className="hidden md:block h-8 bg-[var(--color-teal-800)]" />
 
       {/* DESKTOP/TABLET nameplate — unchanged */}
       <section id="home" className="hidden md:block bg-[var(--color-teal-800)] text-[var(--color-cream)]">
