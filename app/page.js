@@ -11,7 +11,7 @@ import { useIosZoomVars } from "../components/useIosZoom";
 
 export default function Home() {
   const wrapRef = useRef(null);
-  useIosZoomVars(wrapRef, { portraitZoom: 3.0, landscapeZoom: 1.05 });
+  useIosZoomVars(wrapRef, { portraitZoom: 3.0, landscapeZoom: 1.00 });
 
 
 

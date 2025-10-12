@@ -7,7 +7,7 @@ import { useIosZoomVars } from "../../components/useIosZoom";
 
 export default function ConsultingPage() {
   const wrapRef = useRef(null);
-  useIosZoomVars(wrapRef, { portraitZoom: 3.0, landscapeZoom: 1.05 });
+  useIosZoomVars(wrapRef, { portraitZoom: 3.0, landscapeZoom: 1.00 });
 
 
   const SECTIONS = useMemo(
