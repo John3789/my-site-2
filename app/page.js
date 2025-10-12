@@ -141,7 +141,7 @@ export default function Home() {
               <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Mission</h5>
               <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
               <div className="max-w-4xl mx-auto text-center landscape:max-w-2xl lg:landscape:max-w-4xl">
-                <p className="font-serif leading-[1.08] text-5xl opacity-90">
+                <p className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90">
                   “I believe everyone has the power to unlock hidden potential and live with greater purpose —
                   my mission is to blend scientific and growth wisdom to guide the way.”
                 </p>
@@ -162,7 +162,7 @@ export default function Home() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start lg:items-center justify-items-stretch">
                 {/* Left: text */}
                 <div className="lg:col-span-6 w-full max-w-[680px] mx-auto lg:mx-0">
-                  <h2 className="font-serif leading-[1.08] text-5xl opacity-90 text-center lg:text-left">
+                  <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90 text-center lg:text-left">
                     Organizational Wellness Consulting
                   </h2>
                   <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto lg:mx-0 my-5 rounded" />
@@ -221,7 +221,7 @@ export default function Home() {
               <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
 
               <div className="max-w-4xl mx-auto text-center landscape:max-w-2xl lg:landscape:max-w-4xl">
-                <p className="font-serif leading-[1.08] text-5xl opacity-90">
+                <p className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90">
                   Dr. Salerno is a highly regarded expert and dynamic speaker who has inspired audiences on stages large and small.
                   Book him for interactive, science-backed presentations that spark growth, strengthen mental health,
                   and promote lasting wellness.
@@ -258,7 +258,7 @@ export default function Home() {
 
                 {/* Right: text */}
                 <div className="lg:col-span-6 w-full max-w-[680px] mx-auto lg:mx-0">
-                  <h2 className="font-serif leading-[1.08] text-5xl opacity-90 text-center lg:text-left">
+                  <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90 text-center lg:text-left">
                     Short Meditations with Dr. Salerno
                   </h2>
                   <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto lg:mx-0 my-5 rounded" />
@@ -285,7 +285,7 @@ export default function Home() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start lg:items-center justify-items-stretch">
                 {/* Left: text */}
                 <div className="lg:col-span-6 w-full max-w-[680px] mx-auto lg:mx-0">
-                  <h2 className="font-serif leading-[1.08] text-5xl opacity-90 text-center lg:text-left">
+                  <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90 text-center lg:text-left">
                     Resources for Self-Elevation
                   </h2>
                   <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto lg:mx-0 my-5 rounded" />
