@@ -47,8 +47,8 @@ export default function BooksPage() {
             <div className="mx-auto max-w-[1400px] px-6 pb-20">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
                 {/* Left column */}
-                <div>
-                  <p className="narrow-landscape text-lg opacity-90 mb-8 leading-loose">
+<div className="narrow-landscape mx-auto [@media(orientation:landscape)_and_(max-width:999px)_and_(max-height:430px)]:max-w-[70ch] [@media(orientation:landscape)_and_(max-width:999px)_and_(max-height:430px)]:justify-self-center">
+                  <p className="text-lg opacity-90 mb-8 leading-loose">
                     Here you’ll find Dr. Salerno’s published works, where science and personal growth come together.
                     His research explores pathways to mental health, resilience, and wellbeing, with a focus on uplifting
                     communities too often overlooked. Each piece reflects his belief that science should empower communities,
@@ -57,12 +57,12 @@ export default function BooksPage() {
 
                   {/* Featured Book */}
                   <section className="mb-12">
-                    <h2 className="narrow-landscape font-serif text-4xl font-semibold opacity-90 mb-2">
+                    <h2 className="font-serif text-4xl font-semibold opacity-90 mb-2">
                       Featured Book → <span className="text-[var(--color-gold)]">Coming Soon</span>
                     </h2>
                     <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 rounded mb-5" />
 
-                    <p className="narrow-landscape text-lg opacity-90 max-w-3xl mb-6 leading-loose">
+                    <p className="text-lg opacity-90 max-w-3xl mb-6 leading-loose">
                       A powerful blend of science and personal growth wisdom, this forthcoming book by Dr. Salerno
                       offers an accessible, inspiring, and transformative framework for overcoming mental health
                       struggles and living with greater purpose, balance, and fulfillment.
