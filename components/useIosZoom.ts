@@ -12,58 +12,60 @@ export function useIosZoomVars(
     if (!el) return;
 
     const setVars = (pz: number, lz: number) => {
-      el.style.setProperty("--z", String(pz));      // portrait
-      el.style.setProperty("--zoomL", String(lz));  // landscape
+      el.style.setProperty("--z", String(pz));      // portrait zoom var
+      el.style.setProperty("--zoomL", String(lz));  // landscape zoom var
     };
 
+    // A more stable width heuristic: take the smallest reported width
+    // (screen.width is very stable on iPhone; vv/inner/client can bounce)
     const effectiveWidth = () => {
-      const vv = window.visualViewport;
-      const a = vv?.width ?? Number.POSITIVE_INFINITY;
-      const b = window.innerWidth;
-      const c = document.documentElement.clientWidth;
-      return Math.min(a, b, c);
+      const wScreen = (typeof window.screen?.width === "number" ? window.screen.width : Number.POSITIVE_INFINITY);
+      const wVV = (window.visualViewport?.width ?? Number.POSITIVE_INFINITY);
+      const wInner = window.innerWidth;
+      const wClient = document.documentElement.clientWidth;
+      return Math.min(wScreen, wVV, wInner, wClient);
     };
 
-    // Treat Safari's transient 980px layout width as "phone"
-    const PHONE_MAX = 999; // was 900 — 980 catches iOS's temporary large width
+    const PHONE_MAX = 999; // your rule: zoom only below 900px
 
     const applyForCurrentWidth = () => {
       const w = effectiveWidth();
-      if (w <= PHONE_MAX) {
+      if (w < PHONE_MAX) {
         setVars(portraitZoom, landscapeZoom);
       } else {
-        setVars(1, 1);
+        setVars(1, 1); // never zoom on >= 900px
       }
     };
 
-    // Wait until viewport settles, then apply
-    let raf1 = 0, raf2 = 0, settleTimer: number | undefined;
+    // Wait until viewport settles, then apply; also do a late second pass
+    let raf1 = 0, raf2 = 0, settleTimer: number | undefined, lateTimer: number | undefined;
     const settleAndApply = () => {
       cancelAnimationFrame(raf1);
       cancelAnimationFrame(raf2);
       if (settleTimer) clearTimeout(settleTimer);
+      if (lateTimer) clearTimeout(lateTimer);
 
       raf1 = requestAnimationFrame(() => {
         raf2 = requestAnimationFrame(() => {
-          // tiny nudge helps iOS collapse toolbar in landscape
+          // small nudge helps iOS collapse the toolbar in landscape
           window.scrollTo(window.scrollX, Math.max(0, window.scrollY) + 0.1);
           settleTimer = window.setTimeout(() => {
             applyForCurrentWidth();
-            // late double-check in case URL bar collapses after our apply
-            window.setTimeout(applyForCurrentWidth, 180);
+            // late second pass to catch post-paint URL bar collapse
+            lateTimer = window.setTimeout(applyForCurrentWidth, 220);
           }, 80);
         });
       });
     };
 
-    // Debounce noisy vv changes so we compute only after it stops bouncing
+    // Debounce noisy events so we compute only after changes finish
     let debounceTimer: number | undefined;
     const debounced = () => {
       if (debounceTimer) clearTimeout(debounceTimer);
       debounceTimer = window.setTimeout(settleAndApply, 140);
     };
 
-    // Initial run (also covers BFCache restores)
+    // Initial run (also handles bfcache restores)
     settleAndApply();
 
     // Re-apply on visual viewport changes & orientation/page restores
@@ -81,6 +83,7 @@ export function useIosZoomVars(
       cancelAnimationFrame(raf1);
       cancelAnimationFrame(raf2);
       if (settleTimer) clearTimeout(settleTimer);
+      if (lateTimer) clearTimeout(lateTimer);
       if (debounceTimer) clearTimeout(debounceTimer);
     };
   }, [ref, portraitZoom, landscapeZoom]);
