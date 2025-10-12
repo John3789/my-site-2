@@ -106,9 +106,7 @@ export default function Header() {
       className="
      fixed inset-0 z-[10001] zoom-exempt
      !bg-[var(--color-teal-850)] text-[var(--color-cream)]
-     flex flex-col
-     min-h-[100svh]
-     overflow-y-auto overscroll-contain
+     flex flex-col min-h-[100svh] overflow-y-auto overscroll-contain
      [transform-origin:top_left]
      [transform:scale(calc(1/var(--z)))] [width:calc(100%*var(--z))]
      landscape:[transform:scale(calc(1/var(--zoomL)))]
