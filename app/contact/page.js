@@ -81,16 +81,6 @@ export default function ContactPage() {
               {/* Header */}
               <header className="max-w-3xl mx-auto text-center mb-10">
                 <div className="md:hidden flex items-center justify-center gap-3">
-                  <HeroImageIphoneAware
-                    src="/headshot.jpg"
-                    alt="Dr. Juan Pablo Salerno"
-                    width={800}
-                    height={800}
-                    className="w-14 h-14 rounded-full object-cover border border-white/15"
-                    sizes="56px"
-                    priority
-                    fetchPriority="high"
-                  />
                   <h1 className="font-serif text-5xl leading-[1.06] opacity-90">Contact</h1>
                   <span className="w-14 h-14" aria-hidden />
                 </div>
