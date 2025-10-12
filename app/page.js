@@ -76,11 +76,11 @@ export default function Home() {
         text-[var(--color-cream)] text-center leading-[1.00]
         drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]
         /* Make it span the full width */
-        text-[clamp(72px, 44vw, 144px)]   /* tweak 8.5–10vw if you want more/less */
+        !text-[clamp(48px,24vw,96px)] /* tweak 8.5–10vw if you want more/less */
       "
 >
   DR. JUAN PABLO SALERNO
-  <span className="relative text-[0.40em] opacity-70 ml-1 -top-14 landscape:-top-8">™</span>
+  <span className="relative text-[0.40em] opacity-70 ml-1 -top-14">™</span>
 </h1>
   </div>
 
