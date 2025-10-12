@@ -253,3 +253,12 @@ html.zoom-not-ready [class*="\[width:calc(100%/var(--zoomL))\]"] {
 
 /* Optional: tame layout jank without flashing */
 html.zoom-not-ready * { transition: none !important; }
+
+html { -webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+input, select, textarea { font-size: 16px; }
+@supports (height: 100svh) { .use-stable-vh { height: 100svh; } }
+
+:root { --z: 1; --zoomL: 1; }
+@media (min-width: 900px) { :root { --z: 1; --zoomL: 1; } }
+
+/* (Do NOT include opacity: 0 in any kill-switch CSS in globals) */

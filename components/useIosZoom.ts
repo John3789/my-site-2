@@ -4,11 +4,20 @@ import { useEffect } from "react";
 type Opts = { portraitZoom: number; landscapeZoom: number };
 
 /**
- * Zoom hook:
- * - Decides phone vs not using a stable width heuristic
- * - Applies --z / --zoomL only after the viewport settles
- * - Enables wrapper zoom via data-zoom="on"
- * - Flips off the global kill-switch html.zoom-not-ready
+ * Stable iOS zoom hook:
+ * - Decides phone vs not after the visual viewport settles.
+ * - Writes CSS vars: --z (portrait) and --zoomL (landscape).
+ * - Enables wrapper scaling via data-zoom="on" (Option A gating).
+ * - Removes the global kill-switch class 'zoom-not-ready' after applying.
+ *
+ * Requirements elsewhere:
+ * - layout.js adds 'zoom-not-ready' + inline kill-switch CSS (beforeInteractive).
+ * - Wrappers use data-gated utilities:
+ *     data-[zoom=on]:[transform:scale(var(--z))]
+ *     data-[zoom=on]:[width:calc(100%/var(--z))]
+ *     landscape:data-[zoom=on]:[transform:scale(var(--zoomL))]
+ *     landscape:data-[zoom=on]:[width:calc(100%/var(--zoomL))]
+ * - No inline SSR defaults for --z / --zoomL.
  */
 export function useIosZoomVars(
   ref: React.RefObject<HTMLElement>,
@@ -18,21 +27,29 @@ export function useIosZoomVars(
     const el = ref.current;
     if (!el) return;
 
-    const PHONE_MAX = 1000; // catch iOS first-paint widths (980–1024) so phones still zoom
+    // Your preferred cutoff (phones only). Tablets are excluded by guard below.
+    const PHONE_MAX = 1000;
 
-    // Write CSS vars that your wrappers already use
+    // Tablet guard (iPadOS 13+ can masquerade as Mac).
+    const ua = navigator.userAgent;
+    const isIPad =
+      /\biPad\b/.test(ua) ||
+      (/\bMacintosh\b/.test(ua) && (navigator as any).maxTouchPoints > 1);
+    const isTabletLike =
+      isIPad ||
+      (!/iPhone|Android.+Mobile/.test(ua) &&
+        Math.min(window.screen.width, window.screen.height) >= 600);
+
     const setVars = (pz: number, lz: number) => {
       el.style.setProperty("--z", String(pz));
       el.style.setProperty("--zoomL", String(lz));
     };
 
-    // 🔑 Flip the global kill-switch after we’ve applied a decision
     const flipReady = () =>
       requestAnimationFrame(() =>
         document.documentElement.classList.remove("zoom-not-ready")
       );
 
-    // Gate your wrapper transforms via data-zoom (Option A)
     const enableZoom = () => {
       el.setAttribute("data-zoom", "on");
       flipReady();
@@ -42,7 +59,7 @@ export function useIosZoomVars(
       flipReady();
     };
 
-    // Use a stable width heuristic (min of several reports)
+    // Use the smallest reported width for stability on iOS.
     const effectiveWidth = () => {
       const wScreen =
         typeof window.screen?.width === "number"
@@ -54,50 +71,55 @@ export function useIosZoomVars(
       return Math.min(wScreen, wVV, wInner, wClient);
     };
 
-    // Apply zoom or not for the current (settled) width
     const applyForCurrentWidth = () => {
       const w = effectiveWidth();
-      if (w < PHONE_MAX) {
+      const shouldZoom = !isTabletLike && w <= PHONE_MAX;
+
+      if (shouldZoom) {
         setVars(portraitZoom, landscapeZoom);
-        enableZoom();   // <- sets data-zoom="on" and removes zoom-not-ready next frame
+        enableZoom();
       } else {
         setVars(1, 1);
-        disableZoom();  // <- removes zoom-not-ready next frame even when not zooming
+        disableZoom();
       }
     };
 
-    // Wait until viewport settles; also do a late second pass
-    let raf1 = 0, raf2 = 0, settleTimer: number | undefined, lateTimer: number | undefined;
-    const settleAndApply = () => {
-      cancelAnimationFrame(raf1);
-      cancelAnimationFrame(raf2);
-      if (settleTimer) clearTimeout(settleTimer);
-      if (lateTimer) clearTimeout(lateTimer);
+    // Wait until viewport settles; include a late second pass.
+    let r1 = 0,
+      r2 = 0,
+      t1: number | undefined,
+      t2: number | undefined;
 
-      raf1 = requestAnimationFrame(() => {
-        raf2 = requestAnimationFrame(() => {
-          // small nudge helps iOS collapse toolbar in landscape
+    const settleAndApply = () => {
+      cancelAnimationFrame(r1);
+      cancelAnimationFrame(r2);
+      if (t1) clearTimeout(t1);
+      if (t2) clearTimeout(t2);
+
+      r1 = requestAnimationFrame(() => {
+        r2 = requestAnimationFrame(() => {
+          // tiny nudge helps iOS collapse toolbar in landscape
           window.scrollTo(window.scrollX, Math.max(0, window.scrollY) + 0.1);
-          settleTimer = window.setTimeout(() => {
+          t1 = window.setTimeout(() => {
             applyForCurrentWidth();
-            // late second pass to catch post-paint URL bar collapse
-            lateTimer = window.setTimeout(applyForCurrentWidth, 220);
+            // late pass to catch URL bar collapse post-paint
+            t2 = window.setTimeout(applyForCurrentWidth, 280);
           }, 80);
         });
       });
     };
 
-    // Debounce noisy events so we compute only after changes finish
-    let debounceTimer: number | undefined;
+    // Debounce noisy events so we compute after changes finish.
+    let debounce: number | undefined;
     const debounced = () => {
-      if (debounceTimer) clearTimeout(debounceTimer);
-      debounceTimer = window.setTimeout(settleAndApply, 140);
+      if (debounce) clearTimeout(debounce);
+      debounce = window.setTimeout(settleAndApply, 140);
     };
 
-    // Initial run (also handles bfcache restores)
+    // Initial run (also covers bfcache restores).
     settleAndApply();
 
-    // Re-apply on visual viewport changes & orientation/page restores
+    // Re-apply on visual viewport changes & orientation/page restores.
     const vv = window.visualViewport;
     vv?.addEventListener("resize", debounced);
     vv?.addEventListener("scroll", debounced);
@@ -109,11 +131,11 @@ export function useIosZoomVars(
       vv?.removeEventListener("scroll", debounced);
       window.removeEventListener("orientationchange", debounced);
       window.removeEventListener("pageshow", debounced);
-      cancelAnimationFrame(raf1);
-      cancelAnimationFrame(raf2);
-      if (settleTimer) clearTimeout(settleTimer);
-      if (lateTimer) clearTimeout(lateTimer);
-      if (debounceTimer) clearTimeout(debounceTimer);
+      cancelAnimationFrame(r1);
+      cancelAnimationFrame(r2);
+      if (t1) clearTimeout(t1);
+      if (t2) clearTimeout(t2);
+      if (debounce) clearTimeout(debounce);
     };
   }, [ref, portraitZoom, landscapeZoom]);
 }
