@@ -74,7 +74,7 @@ export default function Home() {
 
     style={{
       // lift above the Safari URL bar / home indicator
-      marginBottom: 'calc(env(safe-area-inset-bottom) + 15px)',
+      marginBottom: 'calc(env(safe-area-inset-bottom) + 10px)',
     }}
   >
 <h1
