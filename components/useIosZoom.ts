@@ -18,7 +18,7 @@ export function useIosZoomVars(
     const el = ref.current;
     if (!el) return;
 
-    const PHONE_MAX = 999; // zoom only when effective width < 900
+    const PHONE_MAX = 1000; // catch iOS first-paint widths (980–1024) so phones still zoom
 
     // Write CSS vars that your wrappers already use
     const setVars = (pz: number, lz: number) => {
