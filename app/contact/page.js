@@ -1,15 +1,14 @@
 // app/contact/page.js
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import NewsletterMeditationPopup from "../../components/NewsletterMeditationPopup";
 import HeroImageIphoneAware from "../../components/HeroImageIphoneAware";
-import { useRef } from "react";
 import { useIosZoomVars } from "../../components/useIosZoom";
 
-
 export default function ContactPage() {
+  // iOS zoom controller (portrait 3.0, landscape 1.3)
   const wrapRef = useRef(null);
   useIosZoomVars(wrapRef, { portraitZoom: 3.0, landscapeZoom: 1.3 });
 
@@ -32,7 +31,7 @@ export default function ContactPage() {
       return;
     }
 
-    // TODO: replace with real submission (API route / Formspree / Resend)
+    // TODO: wire to real backend
     setTimeout(() => {
       setLoading(false);
       setSent(true);
@@ -55,9 +54,8 @@ export default function ContactPage() {
 
   return (
     <>
-      {/* ===== PAGE BODY (no page-level transform) ===== */}
       <div className="mx-auto">
-<main className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] min-h-screen md:min-h-0">
+        <main className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] min-h-screen md:min-h-0">
           {/* soft gradient wash */}
           <div
             aria-hidden
@@ -69,26 +67,31 @@ export default function ContactPage() {
           />
 
           {/* ============== MOBILE (zoom lives INSIDE here) ============== */}
-            <div className="lg:hidden mx-auto max-w-[1400px] px-3 pt-16 pb-0">
+          <div className="lg:hidden mx-auto max-w-[1400px] px-3 pt-16 pb-0">
             <div
               ref={wrapRef}
               style={{ "--z": 3.0, "--zoomL": 1.3 }}
-              className={`zoomwrap lg:contents origin-top [transform:scale(var(--z))] [width:calc(100%/var(--z))] mx-auto lg:[transform:none] lg:[width:100%] landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))] overflow-visible`}>
-
-              {/* Page header */}
+              className={`zoomwrap lg:contents origin-top
+                [transform:scale(var(--z))] [width:calc(100%/var(--z))]
+                mx-auto
+                lg:[transform:none] lg:[width:100%]
+                landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
+                overflow-visible`}
+            >
+              {/* Header */}
               <header className="max-w-3xl mx-auto text-center mb-10">
                 <div className="md:hidden flex items-center justify-center gap-3">
-<HeroImageIphoneAware
-  src="/headshot.jpg"
-  alt="Dr. Juan Pablo Salerno"
-  width={800}
-  height={800}
-  className="w-14 h-14 rounded-full object-cover border border-white/15"
-  sizes="56px"
-  priority
-  fetchPriority="high"
-/>
-                  <h1 className="font-serif sm:text-5xl md:text-5xl lg:text-6xl leading-[1.06] opacity-90">Contact</h1>
+                  <HeroImageIphoneAware
+                    src="/headshot.jpg"
+                    alt="Dr. Juan Pablo Salerno"
+                    width={800}
+                    height={800}
+                    className="w-14 h-14 rounded-full object-cover border border-white/15"
+                    sizes="56px"
+                    priority
+                    fetchPriority="high"
+                  />
+                  <h1 className="font-serif text-5xl leading-[1.06] opacity-90">Contact</h1>
                   <span className="w-14 h-14" aria-hidden />
                 </div>
 
@@ -105,149 +108,143 @@ export default function ContactPage() {
                 </p>
               </header>
 
-              {/* SINGLE form card */}
-              <section className="relative overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
-                <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+              {/* SINGLE form card (mobile) — same width as divider + footer below */}
+              <div className="mx-auto w-full max-w-[700px] px-3">
+                <section className="relative overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
+                  <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
 
-                {sent ? (
-                  <div role="status" aria-live="polite" className="text-center py-4">
-                    <div className="mx-auto mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-gold)]/90 text-black">
-                      ✓
-                    </div>
-                    <p className="font-semibold opacity-95 text-lg">Got it—thanks for reaching out!</p>
-                    <p className="opacity-80 mt-1">I’ll follow up shortly.</p>
-
-                    <div className="mt-6 flex items-center justify-center gap-3">
-                      <Link
-                        href="/resources"
-                        className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm hover:bg-white/10 transition"
-                      >
-                        Browse Resources
-                      </Link>
-                      <Link
-                        href="/"
-                        className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm hover:bg-white/10 transition"
-                      >
-                        Return Home
-                      </Link>
-                    </div>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    {/* Honeypot anti-spam */}
-                    <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
-
-                    <div className="grid gap-4 sm:grid-cols-2">
-                      <div>
-                        <label className="block text-sm opacity-90 mb-1.5">Name</label>
-                        <input type="text" name="name" required className={field} placeholder="Your name" />
-                        <p className="mt-1 text-[12px] opacity-70">How you’d like to be addressed.</p>
+                  {sent ? (
+                    <div role="status" aria-live="polite" className="text-center py-4">
+                      <div className="mx-auto mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-gold)]/90 text-black">
+                        ✓
                       </div>
-                      <div>
-                        <label className="block text-sm opacity-90 mb-1.5">Email</label>
-                        <input type="email" name="email" required className={field} placeholder="you@example.com" />
-                        <p className="mt-1 text-[12px] opacity-70">I’ll reply here.</p>
+                      <p className="font-semibold opacity-95 text-lg">Got it—thanks for reaching out!</p>
+                      <p className="opacity-80 mt-1">I’ll follow up shortly.</p>
+
+                      <div className="mt-6 flex items-center justify-center gap-3">
+                        <Link
+                          href="/resources"
+                          className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm hover:bg-white/10 transition"
+                        >
+                          Browse Resources
+                        </Link>
+                        <Link
+                          href="/"
+                          className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm hover:bg-white/10 transition"
+                        >
+                          Return Home
+                        </Link>
                       </div>
                     </div>
+                  ) : (
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      {/* Honeypot anti-spam */}
+                      <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
 
-                    {/* Topic chips (radios) — MOBILE */}
-                    <div
-                      role="group"
-                      aria-labelledby="topic-label"
-                      className="m-0 p-0 relative isolate before:content-[''] before:absolute before:inset-x-0 before:-top-px before:h-[0px] before:bg-[var(--color-teal-850)]"
-                    >
-                      <p id="topic-label" className="block text-sm opacity-90 mb-2">
-                        Topic
+                      <div className="grid gap-4 sm:grid-cols-2">
+                        <div>
+                          <label className="block text-sm opacity-90 mb-1.5">Name</label>
+                          <input type="text" name="name" required className={field} placeholder="Your name" />
+                          <p className="mt-1 text-[12px] opacity-70">How you’d like to be addressed.</p>
+                        </div>
+                        <div>
+                          <label className="block text-sm opacity-90 mb-1.5">Email</label>
+                          <input type="email" name="email" required className={field} placeholder="you@example.com" />
+                          <p className="mt-1 text-[12px] opacity-70">I’ll reply here.</p>
+                        </div>
+                      </div>
+
+                      {/* Topic chips (radios) — MOBILE */}
+                      <div role="group" aria-labelledby="topic-label" className="m-0 p-0">
+                        <p id="topic-label" className="block text-sm opacity-90 mb-2">
+                          Topic
+                        </p>
+                        <div className="flex flex-wrap gap-2 pb-8 mt-2">
+                          {topics.map((t, i) => (
+                            <div key={t.value} className="relative">
+                              <input
+                                id={`m-topic-${i}`}
+                                type="radio"
+                                name="topic"
+                                value={t.value}
+                                defaultChecked={i === 0}
+                                className="peer sr-only"
+                              />
+                              <label
+                                htmlFor={`m-topic-${i}`}
+                                className={[
+                                  "inline-flex items-center gap-2 cursor-pointer select-none",
+                                  "rounded-full border border-white/20 px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition",
+                                  "bg-[var(--color-teal-800)] hover:bg-[var(--color-teal-800)]",
+                                  "peer-checked:bg-[var(--color-gold)] peer-checked:text-black peer-checked:border-[var(--color-gold)]",
+                                  "focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-gold)]/50",
+                                  "peer-checked:shadow-md peer-checked:-translate-y-[1px]",
+                                ].join(" ")}
+                              >
+                                <span className="h-1.5 w-1.5 rounded-full bg-white/35 peer-checked:bg-black/70 transition" />
+                                {t.label}
+                              </label>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div>
+                        <label className="block text-sm opacity-90 mb-1.5">Message</label>
+                        <textarea
+                          name="message"
+                          rows={6}
+                          maxLength={1000}
+                          required
+                          value={message}
+                          onChange={(e) => setMessage(e.target.value)}
+                          className={field + " resize-y"}
+                          placeholder="What would you like to explore together?"
+                        />
+                        <div className="mt-1 flex items-center justify-between">
+                          <p className="text-[12px] opacity-70">Helpful to include: goals, org/context, timeline.</p>
+                          <span className="text-[12px] opacity-70">{message.length}/1000</span>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-3">
+                        <button
+                          type="submit"
+                          disabled={loading}
+                          className={[
+                            "inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3",
+                            "font-semibold uppercase tracking-wide text-sm shadow-md transition",
+                            "hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50",
+                            loading ? "opacity-80 cursor-wait" : "",
+                          ].join(" ")}
+                        >
+                          {loading ? "Sending…" : "Send"}
+                        </button>
+                        <span className="text-xs opacity-80">I read every message personally.</span>
+                      </div>
+
+                      {/* Disclaimer */}
+                      <p className="text-xs opacity-75 leading-relaxed">
+                        <strong>Disclaimer:</strong> This website and all communications through this form are for informational,
+                        educational, and wellness purposes only. They do not constitute medical advice, diagnosis, or treatment. If
+                        you have medical or mental health concerns, please consult a qualified professional.
                       </p>
+                    </form>
+                  )}
+                </section>
 
-                      <div className="flex flex-wrap gap-2 pb-8 mt-2">
-                        {topics.map((t, i) => (
-                          <div key={t.value} className="relative">
-                            <input
-                              id={`m-topic-${i}`}
-                              type="radio"
-                              name="topic"
-                              value={t.value}
-                              defaultChecked={i === 0}
-                              className="peer sr-only"
-                            />
-                            <label
-                              htmlFor={`m-topic-${i}`}
-                              className={[
-                                "inline-flex items-center gap-2 cursor-pointer select-none",
-                                "rounded-full border border-white/20 px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition",
-                                "bg-[var(--color-teal-800)] hover:bg-[var(--color-teal-800)]",
-                                "peer-checked:bg-[var(--color-gold)] peer-checked:text-black peer-checked:border-[var(--color-gold)]",
-                                "focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-gold)]/50",
-                                "peer-checked:shadow-md peer-checked:-translate-y-[1px]",
-                              ].join(" ")}
-                            >
-                              <span className="h-1.5 w-1.5 rounded-full bg-white/35 peer-checked:bg-black/70 transition" />
-                              {t.label}
-                            </label>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                {/* spacer */}
+                <div className="pb-10" />
 
-                    <div>
-                      <label className="block text-sm opacity-90 mb-1.5">Message</label>
-                      <textarea
-                        name="message"
-                        rows={6}
-                        maxLength={1000}
-                        required
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-                        className={field + " resize-y"}
-                        placeholder="What would you like to explore together?"
-                      />
-                      <div className="mt-1 flex items-center justify-between">
-                        <p className="text-[12px] opacity-70">Helpful to include: goals, org/context, timeline.</p>
-                        <span className="text-[12px] opacity-70">{message.length}/1000</span>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-3">
-                      <button
-                        type="submit"
-                        disabled={loading}
-                        className={[
-                          "inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3",
-                          "font-semibold uppercase tracking-wide text-sm shadow-md transition",
-                          "hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50",
-                          loading ? "opacity-80 cursor-wait" : "",
-                        ].join(" ")}
-                      >
-                        {loading ? "Sending…" : "Send"}
-                      </button>
-                      <span className="text-xs opacity-80">I read every message personally.</span>
-                    </div>
-
-                    {/* Disclaimer */}
-                    <p className="text-xs opacity-75 leading-relaxed">
-                      <strong>Disclaimer:</strong> This website and all communications through this form are for informational,
-                      educational, and wellness purposes only. They do not constitute medical advice, diagnosis, or treatment. If
-                      you have medical or mental health concerns, please consult a qualified professional.
-                    </p>
-                  </form>
-                )}
-              </section>
-
-              {/* Bottom spacer */}
-              <div className="pb-10" />
-
-
-
-              {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
-              <div className="block lg:hidden">
-                <div className="mx-auto max-w-[1400px] px-0 mb-14 mt-4">
+                {/* Divider (matches form width) */}
+                <div className="mx-auto w-full px-0">
                   <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
                 </div>
 
+                {/* Mobile footer block (same width as form/divider) */}
                 <div className="mobile-footer-cap">
-                  <div className="mx-auto max-w-[1400px] px-0">
-                    {/* Newsletter card (midnight blue) */}
+                  <div className="mx-auto w-full px-0">
+                    {/* Newsletter card */}
                     <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
                       <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
                         Science, Soul, and a Bit of Magic — Every Month
@@ -327,7 +324,7 @@ export default function ContactPage() {
               </div>
               {/* end mobile zoom content */}
             </div>
-              </div>
+          </div>
 
           {/* ============== DESKTOP (unchanged layout) ============== */}
           <div className="hidden lg:block mx-auto max-w-[1200px] px-6 py-20">
@@ -335,16 +332,15 @@ export default function ContactPage() {
             <header className="max-w-3xl mx-auto text-center mb-10">
               <div className="flex items-center justify-center gap-3 md:block">
                 <h1 className="font-serif text-5xl leading-[1.06] opacity-90">Contact</h1>
-  <HeroImageIphoneAware
-  src="/headshot.jpg"
-  alt="Dr. Juan Pablo Salerno"
-  width={800}
-  height={800}
-  className="w-14 h-14 rounded-full object-cover border border-white/15 md:hidden"
-  sizes="56px"
-  priority
-/>
-
+                <HeroImageIphoneAware
+                  src="/headshot.jpg"
+                  alt="Dr. Juan Pablo Salerno"
+                  width={800}
+                  height={800}
+                  className="w-14 h-14 rounded-full object-cover border border-white/15 md:hidden"
+                  sizes="56px"
+                  priority
+                />
               </div>
               <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 rounded" />
               <p className="text-base opacity-90 mt-6">
@@ -481,17 +477,16 @@ export default function ContactPage() {
                 <div className="sticky top-24 rounded-2xl bg-white/5 ring-1 ring-white/10 shadow-2xl md:backdrop-blur-sm p-5 hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
                   <div className="flex items-center gap-3 mb-4 relative z-10">
                     <div className="h-14 w-14 overflow-hidden rounded-full ring-1 ring-white/25 shadow-md">
-<HeroImageIphoneAware
-  src="/headshot.jpg"
-  alt="Dr. Juan Pablo Salerno headshot"
-  width={800}
-  height={800}
-  className="h-full w-full object-cover"
-  sizes="72px"
-  quality={95}
-  loading="lazy"
-/>
-
+                      <HeroImageIphoneAware
+                        src="/headshot.jpg"
+                        alt="Dr. Juan Pablo Salerno headshot"
+                        width={800}
+                        height={800}
+                        className="h-full w-full object-cover"
+                        sizes="72px"
+                        quality={95}
+                        loading="lazy"
+                      />
                     </div>
                     <div className="min-w-0">
                       <p className="text-sm opacity-85 truncate">Thanks for reaching out!</p>
@@ -538,9 +533,14 @@ export default function ContactPage() {
                 </div>
               </aside>
             </div>
+
+            {/* Bookend divider (desktop) */}
+            <div className="hidden lg:block mx-auto max-w-[1200px] px-6 mt-6">
+              <hr className="border-t border-[var(--color-cream)]/22" />
+            </div>
           </div>
 
-          {/* Global crisp text & iOS guard + mobile-only fieldset tweaks */}
+          {/* Global crisp text & iOS guard */}
           <style jsx global>{`
             @supports (-webkit-touch-callout: none) {
               html,
@@ -564,11 +564,6 @@ export default function ContactPage() {
               }
             }
           `}</style>
-
-          {/* Bookend divider (desktop) */}
-          <div className="hidden lg:block mx-auto max-w-[1200px] px-6 mt-6">
-            <hr className="border-t border-[var(--color-cream)]/22" />
-          </div>
         </main>
       </div>
 
