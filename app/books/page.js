@@ -48,7 +48,7 @@ export default function BooksPage() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
                 {/* Left column */}
                 <div>
-                  <p className="text-lg opacity-90 mb-8 leading-loose [@media(orientation:landscape)_and_(max-width:767px)]:max-w-2xl [@media(orientation:landscape)_and_(max-width:767px)]:mx-auto">
+                  <p className="narrow-landscape text-lg opacity-90 mb-8 leading-loose">
                     Here you’ll find Dr. Salerno’s published works, where science and personal growth come together.
                     His research explores pathways to mental health, resilience, and wellbeing, with a focus on uplifting
                     communities too often overlooked. Each piece reflects his belief that science should empower communities,
@@ -112,7 +112,7 @@ export default function BooksPage() {
               <div className="space-y-10">
 
 {/* CARD 1 */}
-<article className="w-full bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-0 md:backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10 [@media(orientation:landscape)_and_(max-width:767px)]:max-w-2xl [@media(orientation:landscape)_and_(max-width:767px)]:mx-auto">
+<article className="narrow-landscape w-full bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-0 md:backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10">
   <div className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/60 rounded-l-xl" />
   <div className="flex flex-col lg:flex-row gap-7 sm:gap-8 lg:gap-12">
     <div className="lg:w-1/3">
@@ -197,7 +197,7 @@ export default function BooksPage() {
 </article>
 
  {/* CARD 2 */}
-<article className="w-full bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-0 md:backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10 [@media(orientation:landscape)_and_(max-width:767px)]:max-w-2xl [@media(orientation:landscape)_and_(max-width:767px)]:mx-auto">
+<article className="narrow-landscape w-full bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-0 md:backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10">
   <div className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/60 rounded-l-xl" />
   <div className="flex flex-col lg:flex-row gap-7 sm:gap-8 lg:gap-12">
     <div className="lg:w-1/3">
@@ -280,7 +280,7 @@ export default function BooksPage() {
 
 
  {/* CARD 3 */}
-<article className="w-full bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-0 md:backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10 [@media(orientation:landscape)_and_(max-width:767px)]:max-w-2xl [@media(orientation:landscape)_and_(max-width:767px)]:mx-auto">
+<article className="narrow-landscape w-full bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-0 md:backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10">
   <div className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/60 rounded-l-xl" />
   <div className="flex flex-col lg:flex-row gap-7 sm:gap-8 lg:gap-12">
     <div className="lg:w-1/3">
@@ -455,6 +455,15 @@ export default function BooksPage() {
             #more-c2:not(:checked) ~ ul > li:nth-child(n + 2),
             #more-c3:not(:checked) ~ ul > li:nth-child(n + 2) {
               display: none !important;
+            }
+          }
+
+          /* iPhone-ish landscape: narrow height + landscape */
+          @media (orientation: landscape) and (max-height: 430px) {
+            .narrow-landscape {
+              max-width: 42rem; /* ~ max-w-2xl */
+              margin-left: auto;
+              margin-right: auto;
             }
           }
         `}</style>
