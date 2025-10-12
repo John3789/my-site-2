@@ -7,7 +7,7 @@ import { useIosZoomVars } from "../../components/useIosZoom";
 
 export default function SpeakingPage() {
   const wrapRef = useRef(null);
-  useIosZoomVars(wrapRef, { portraitZoom: 2.0, landscapeZoom: 1.00 });
+  useIosZoomVars(wrapRef, { portraitZoom: 1.0, landscapeZoom: 1.00 });
 
 
 
