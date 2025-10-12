@@ -459,9 +459,7 @@ export default function BooksPage() {
           }
 
           /* iPhone-ish landscape: narrow height + landscape */
-          @media (orientation: landscape) and (max-height: 430px) {
-            .narrow-landscape {
-              max-width: 50rem; /* ~ max-w-2xl */
+[@media(orientation:landscape)_and_(max-width:999px)_and_(max-height:430px)]:max-w-[70ch]
               margin-left: auto;
               margin-right: auto;
             }
