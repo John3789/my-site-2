@@ -57,12 +57,12 @@ export default function BooksPage() {
 
                   {/* Featured Book */}
                   <section className="mb-12">
-                    <h2 className="font-serif text-4xl font-semibold opacity-90 mb-2">
+                    <h2 className="narrow-landscape font-serif text-4xl font-semibold opacity-90 mb-2">
                       Featured Book → <span className="text-[var(--color-gold)]">Coming Soon</span>
                     </h2>
                     <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 rounded mb-5" />
 
-                    <p className="text-lg opacity-90 max-w-3xl mb-6 leading-loose">
+                    <p className="narrow-landscape text-lg opacity-90 max-w-3xl mb-6 leading-loose">
                       A powerful blend of science and personal growth wisdom, this forthcoming book by Dr. Salerno
                       offers an accessible, inspiring, and transformative framework for overcoming mental health
                       struggles and living with greater purpose, balance, and fulfillment.
@@ -461,7 +461,7 @@ export default function BooksPage() {
           /* iPhone-ish landscape: narrow height + landscape */
           @media (orientation: landscape) and (max-height: 430px) {
             .narrow-landscape {
-              max-width: 42rem; /* ~ max-w-2xl */
+              max-width: 50rem; /* ~ max-w-2xl */
               margin-left: auto;
               margin-right: auto;
             }
