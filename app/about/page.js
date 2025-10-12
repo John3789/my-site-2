@@ -10,15 +10,7 @@ import { useIosZoomVars } from "../../components/useIosZoom";
 
 export default function AboutPage() {
   const wrapRef = useRef(null);
-
-  useIosZoomVars(wrapRef, {
-    portraitTarget: 400,
-    landscapeTarget: 900,
-    portraitMin: 3,
-    portraitMax: 3,
-    landscapeMin: 1.3,
-    landscapeMax: 1.3, // tighter to prevent over-zooming on iPhone landscape
-  });
+  useIosZoomVars(wrapRef, { portraitZoom: 3.0, landscapeZoom: 1.3 });
 
   return (
     <TopOnMount>

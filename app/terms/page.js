@@ -6,14 +6,9 @@ import { useIosZoomVars } from "../../components/useIosZoom";
 
 
 export default function TermsPage() {
-  const wrapRef = useRef(null); 
+  const wrapRef = useRef(null);
+  useIosZoomVars(wrapRef, { portraitZoom: 3.0, landscapeZoom: 1.3 });
 
-  useIosZoomVars(wrapRef, {
-    portraitTarget: 390,
-    landscapeTarget: 560,
-    min: 1,
-    max: 3,
-  });
 
   return (
     <>
