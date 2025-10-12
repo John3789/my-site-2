@@ -31,9 +31,20 @@ export default function RootLayout({ children }) {
   />
 
   {/* 🔒 Block zoom transforms until your hook enables them */}
-  <Script id="zoom-kill-init" strategy="beforeInteractive">
-    {`document.documentElement.classList.add('zoom-not-ready');`}
-  </Script>
+{/* Inline the kill-switch CSS so it applies on the very first paint */}
+<Script id="zoom-kill-style" strategy="beforeInteractive">
+{`(function () {
+  var css = 'html.zoom-not-ready [class*="\\\\[transform:scale(var(--z))\\\\]"],\\n' +
+            'html.zoom-not-ready [class*="\\\\[transform:scale(var(--zoomL))\\\\]"]{transform:none !important;}\\n' +
+            'html.zoom-not-ready [class*="\\\\[width:calc(100%/var(--z))\\\\]"],\\n' +
+            'html.zoom-not-ready [class*="\\\\[width:calc(100%/var(--zoomL))\\\\]"]{width:100% !important;}\\n' +
+            'html.zoom-not-ready body{opacity:0;}';
+  var style = document.createElement('style');
+  style.setAttribute('data-zoom-kill','true');
+  style.appendChild(document.createTextNode(css));
+  document.head.appendChild(style);
+})();`}
+</Script>
 
   {/* iOS bfcache: re-assert viewport on pageshow without a client component */}
   <script
