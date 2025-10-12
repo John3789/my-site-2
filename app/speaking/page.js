@@ -141,7 +141,7 @@ export default function SpeakingPage() {
         {/* ===== HERO IMAGE with overlay text ===== */}
         <section className="relative w-full overflow-x-hidden">
           {/* black backdrop so there’s never a green flash */}
-          <div className="relative h-[70vh] bg-black max-w-[100vw] mx-auto overflow-x-hidden">
+          <div className="relative h-[70svh] bg-black max-w-[100vw] mx-auto overflow-x-hidden">
 {/* Background image (optimized, iPhone-aware) */}
 <HeroImageIphoneAware
   src="/bwspeaking1.jpg"
