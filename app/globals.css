@@ -307,3 +307,13 @@ html.zoom-on .zoom-exempt {
     width: calc(100% * var(--zoomL)) !important;
   }
 }
+
+/* Keep overlays/menus readable regardless of Safari page zoom */
+.vv-counter {
+  transform-origin: top left;
+  transform: scale(calc(1 / var(--vv, 1)));
+  width: calc(100% * var(--vv, 1));
+}
+
+/* (Optional) ensure a sane base text size inside counter-scaled UIs */
+.vv-counter { font-size: 16px; }

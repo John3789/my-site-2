@@ -52,21 +52,23 @@ export default function Header() {
   type="button"
   aria-label="Open menu"
   onClick={() => setOpen(true)}
-  className="lg:hidden mr-auto -mr-1 -ml-1 p-3 translate-y-14 zoom-exempt"
+  className="lg:hidden mr-auto -mr-1 -ml-1 p-3 translate-y-14"
 >
   {/* 3-line icon (cream) */}
-  <svg
- className="w-[40px] h-[40px] landscape:w-[40px] landscape:h-[40px]"
-    viewBox="0 0 24 24"
-    fill="none"
-  >
-    <path
-      d="M3 6h18M3 12h18M3 18h18"
-      stroke="var(--color-cream)"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-    />
-  </svg>
+<svg
+  className="w-[40px] h-[40px] shrink-0"
+  viewBox="0 0 24 24"
+  fill="none"
+  aria-hidden="true"
+>
+  <path
+    d="M3 6h18M3 12h18M3 18h18"
+    stroke="var(--color-cream)"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    vectorEffect="non-scaling-stroke"   // keeps stroke width constant if any transforms happen
+  />
+</svg>
 </button>
         </div>
       </header> 
@@ -97,22 +99,19 @@ export default function Header() {
   <>
     {/* Backdrop */}
     <div
-      className="fixed inset-0 z-[10000] bg-black/40 zoom-exempt"
-      onClick={() => setOpen(false)}
-    />
+   className="fixed inset-0 z-[10000] bg-black/40 vv-counter"
+   onClick={() => setOpen(false)}
+ />
 
     {/* FULL-SCREEN PANEL */}
- <aside
-      className="
-     fixed inset-0 z-[10001] zoom-exempt
-     !bg-[var(--color-teal-850)] text-[var(--color-cream)]
-     flex flex-col min-h-[100svh] overflow-y-auto overscroll-contain
-     [transform-origin:top_left]
-     [transform:scale(calc(1/var(--z)))] [width:calc(100%*var(--z))]
-     landscape:[transform:scale(calc(1/var(--zoomL)))]
-     landscape:[width:calc(100%*var(--zoomL))]
-   "
- >
+<aside
+  className="
+    fixed inset-0 z-[10001] vv-counter
+    !bg-[var(--color-teal-850)] text-[var(--color-cream)]
+    flex flex-col min-h-[100svh] overflow-y-auto overscroll-contain
+    [transform-origin:top_left]
+  "
+>
       <div className="flex items-center justify-between px-6 h-16 pr-25">
   {/* Bigger Menu label with landscape adjustment */}
  <span className="font-serif text-[clamp(22px,7vw,32px)] landscape:text-[2.6vw]">

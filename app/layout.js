@@ -24,6 +24,27 @@ export default function RootLayout({ children }) {
   return (
  <html lang="en" className={`${inter.variable} ${cormorant.variable} zoom-not-ready`}>
       <head>
+
+        <Script id="vv-scale-var" strategy="beforeInteractive">
+{`
+  (function () {
+    var root = document.documentElement;
+    function setVV() {
+      var vv = (window.visualViewport && window.visualViewport.scale) || 1;
+      root.style.setProperty('--vv', String(vv));
+    }
+    setVV();
+    var vv = window.visualViewport;
+    if (vv) {
+      vv.addEventListener('resize', setVV);
+      vv.addEventListener('scroll', setVV);
+    }
+    window.addEventListener('pageshow', setVV);
+    window.addEventListener('orientationchange', setVV);
+  })();
+`}
+</Script>
+
         {/* Single authoritative viewport (no permanent max/min scale) */}
         <meta
           name="viewport"
