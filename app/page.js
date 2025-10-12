@@ -25,7 +25,7 @@ export default function Home() {
   formAction="/api/subscribe"
 />
       {/* spacer to clear the fixed header (keep) */}
-      <div aria-hidden className="hidden md:block h-8 bg-[var(--color-teal-800)]" />
+      <div aria-hidden className="hidden md:block md:h-4 h-8 bg-[var(--color-teal-800)]" />
 
       {/* DESKTOP/TABLET nameplate — unchanged */}
       <section id="home" className="hidden md:block bg-[var(--color-teal-800)] text-[var(--color-cream)]">
@@ -76,8 +76,7 @@ export default function Home() {
         text-[var(--color-cream)] text-center leading-[1.00]
         drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]
         /* Make it span the full width */
-        text-[clamp(36px, 22vw, 72px)]   /* tweak 8.5–10vw if you want more/less */
-            landscape:text-[6vw]   /* shrink text in landscape */
+        text-[clamp(72px, 44vw, 144px)]   /* tweak 8.5–10vw if you want more/less */
       "
 >
   DR. JUAN PABLO SALERNO
