@@ -69,6 +69,7 @@ export default function ContactPage() {
           />
 
           {/* ============== MOBILE (zoom lives INSIDE here) ============== */}
+            <div className="lg:hidden mx-auto max-w-[1400px] px-3 pt-16 pb-0">
             <div
               ref={wrapRef}
               style={{ "--z": 3.0, "--zoomL": 1.3 }}
@@ -326,6 +327,7 @@ export default function ContactPage() {
               </div>
               {/* end mobile zoom content */}
             </div>
+              </div>
 
           {/* ============== DESKTOP (unchanged layout) ============== */}
           <div className="hidden lg:block mx-auto max-w-[1200px] px-6 py-20">
