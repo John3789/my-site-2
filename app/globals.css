@@ -262,3 +262,14 @@ input, select, textarea { font-size: 16px; }
 @media (min-width: 900px) { :root { --z: 1; --zoomL: 1; } }
 
 /* (Do NOT include opacity: 0 in any kill-switch CSS in globals) */
+
+/* Neutralize zoom for specific elements when landscape zoom is ON */
+[data-zoom="on"] .zoom-exempt {
+  transform-origin: top left;
+}
+@media (orientation: landscape) {
+  [data-zoom="on"] .zoom-exempt {
+    transform: scale(calc(1 / var(--zoomL))) !important;
+    width: calc(100% * var(--zoomL)) !important;
+  }
+}
