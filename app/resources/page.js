@@ -20,7 +20,7 @@ const THEMES = [
 
 export default function ResourcesPage() {
   const wrapRef = useRef(null);
-  useIosZoomVars(wrapRef, { portraitZoom: 3.0, landscapeZoom: 1.10 });
+  useIosZoomVars(wrapRef, { portraitZoom: 3.0, landscapeZoom: 1.05 });
 
 
 
