@@ -31,7 +31,7 @@ export default function Home() {
       <section id="home" className="hidden md:block bg-[var(--color-teal-800)] text-[var(--color-cream)]">
         <div className="mx-auto max-w-[1400px] px-6 pt-0 pb-4">
           <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
-            <span className="hidden md:block text-7xl hover:opacity-90 transition [@media(orientation:landscape)_and_(max-width:900px)]:block [@media(orientation:landscape)_and_(max-width:900px)]:text-[22px]">
+            <span className="hidden md:block text-7xl hover:opacity-90 transition [@media(orientation:landscape)_and_(max-width:900px)]:block [@media(orientation:landscape)_and_(max-width:900px)]:text-[30px]">
               DR. JUAN PABLO SALERNO
               <sup className="text-2xl align-super opacity-70">™</sup>  
             </span>
