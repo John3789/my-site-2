@@ -76,7 +76,7 @@ export default function ContactPage() {
               className={`zoomwrap lg:contents origin-top [transform:scale(var(--z))] [width:calc(100%/var(--z))] mx-auto lg:[transform:none] lg:[width:100%] landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))] overflow-visible`}>
 
               {/* Page header */}
-              <header className="max-w-3xl mx-auto text-center mb-10">
+              <header className="max-w-3xl mx-auto text-center mb-10 px-3">
                 <div className="md:hidden flex items-center justify-center gap-3">
 <HeroImageIphoneAware
   src="/headshot.jpg"
@@ -88,7 +88,7 @@ export default function ContactPage() {
   priority
   fetchPriority="high"
 />
-                  <h1 className="font-serif lg:text-6xl leading-[1.06] opacity-90">Contact</h1>
+                  <h1 className="font-serif text-6xl leading-[1.06] opacity-90">Contact</h1>
                   <span className="w-14 h-14" aria-hidden />
                 </div>
 
