@@ -8,9 +8,10 @@ type Opts = { portraitZoom: number; landscapeZoom: number };
  * - Zooms **only in landscape** on phones (<= 1000px effective width).
  * - Never zooms in portrait (prevents "arrive very close").
  * - Enables zoom only after the visual viewport is **stable** for a short window.
- * - Works with:
- *    - html.zoom-not-ready (global kill-switch) — removed after decision
- *    - data-[zoom=on]:[...] gated wrapper transforms
+ * Works with:
+ *   - html.zoom-not-ready (global kill-switch) — removed after decision
+ *   - data-[zoom=on]:[...] gated wrapper transforms
+ *   - html.zoom-on + CSS vars on <html> so global .zoom-exempt can counter-scale
  */
 export function useIosZoomVars(
   ref: React.RefObject<HTMLElement>,
@@ -20,8 +21,8 @@ export function useIosZoomVars(
     const el = ref.current;
     if (!el) return;
 
-    const PHONE_MAX = 1000; // phones only (we'll also exclude tablets)
-    const STABLE_MS = 200;  // how long the viewport must remain stable
+    const PHONE_MAX = 1000; // phones only (tablets excluded)
+    const STABLE_MS = 200;  // viewport must remain stable for this long
     const TOL = 1;          // px tolerance for width/height stability
     const SCALE_TOL = 0.01; // tolerance for vv.scale stability
 
@@ -35,11 +36,15 @@ export function useIosZoomVars(
       (!/iPhone|Android.+Mobile/.test(ua) &&
         Math.min(window.screen.width, window.screen.height) >= 600);
 
+    // Write CSS vars (wrapper + <html> for global zoom-exempt)
     const setVars = (pz: number, lz: number) => {
       el.style.setProperty("--z", String(pz));
       el.style.setProperty("--zoomL", String(lz));
+      document.documentElement.style.setProperty("--z", String(pz));
+      document.documentElement.style.setProperty("--zoomL", String(lz));
     };
 
+    // Remove the kill-switch after we’ve applied a decision
     const flipReady = () =>
       requestAnimationFrame(() =>
         document.documentElement.classList.remove("zoom-not-ready")
@@ -47,10 +52,13 @@ export function useIosZoomVars(
 
     const enableZoom = () => {
       el.setAttribute("data-zoom", "on");
+      document.documentElement.classList.add("zoom-on");   // for global .zoom-exempt
       flipReady();
     };
+
     const disableZoom = () => {
       el.removeAttribute("data-zoom");
+      document.documentElement.classList.remove("zoom-on");
       flipReady();
     };
 
@@ -80,10 +88,10 @@ export function useIosZoomVars(
 
     // Decide whether we *want* zoom (logic only; doesn't apply yet)
     const wantZoom = () => {
-      if (isTabletLike) return false;                   // never zoom tablets
-      if (!mqlLandscape.matches) return false;          // never zoom in portrait
+      if (isTabletLike) return false;            // never zoom tablets
+      if (!mqlLandscape.matches) return false;   // never zoom in portrait
       const w = effectiveWidth();
-      return w <= PHONE_MAX;                            // phones only
+      return w <= PHONE_MAX;                     // phones only
     };
 
     // Wait until viewport is stable (width/height/scale steady) before applying
@@ -136,10 +144,10 @@ export function useIosZoomVars(
     };
 
     // Debounce noisy events
-    let debounce: number | undefined;
+    let debounceHandle: number | undefined;
     const debounced = () => {
-      if (debounce) clearTimeout(debounce);
-      debounce = window.setTimeout(settleAndApply, 120);
+      if (debounceHandle) clearTimeout(debounceHandle);
+      debounceHandle = window.setTimeout(settleAndApply, 120);
     };
 
     // Initial run + listeners
@@ -156,8 +164,12 @@ export function useIosZoomVars(
       vv?.removeEventListener("scroll", debounced);
       window.removeEventListener("orientationchange", debounced);
       window.removeEventListener("pageshow", debounced);
+
       if (stableTimer) clearTimeout(stableTimer);
-      if (debounce) clearTimeout(debounce);
+      if (debounceHandle) clearTimeout(debounceHandle);
+
+      // safety: clear global flag in case we unmount mid-state
+      document.documentElement.classList.remove("zoom-on");
     };
   }, [ref, portraitZoom, landscapeZoom]);
 }

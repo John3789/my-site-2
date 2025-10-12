@@ -22,18 +22,13 @@ const cormorant = Cormorant_Garamond({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
+ <html lang="en" className={`${inter.variable} ${cormorant.variable} zoom-not-ready`}>
       <head>
         {/* Single authoritative viewport (no permanent max/min scale) */}
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
-
-        {/* 🔒 Add kill-switch class BEFORE first paint */}
-        <Script id="zoom-kill-init" strategy="beforeInteractive">
-          {`document.documentElement.classList.add('zoom-not-ready');`}
-        </Script>
 
         {/* 🔒 Inline kill-switch CSS BEFORE first paint (no opacity hiding) */}
         <Script id="zoom-kill-style" strategy="beforeInteractive">
