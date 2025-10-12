@@ -111,6 +111,7 @@ export default function ConsultingPage() {
   return (
     <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
       {/* ============== MOBILE (uses the exact working zoom wrapper) ============== */}
+      <div className="lg:hidden">                {/* HIDE mobile on desktop */}
         <div
           ref={wrapRef}
           style={{ "--z": 3.0, "--zoomL": 1.30 }}
@@ -565,6 +566,7 @@ export default function ConsultingPage() {
                   </p>
                 </div>
               </div>
+            </div>
             </div>
 
 
