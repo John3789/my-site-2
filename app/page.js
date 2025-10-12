@@ -74,7 +74,7 @@ export default function Home() {
 
     style={{
       // lift above the Safari URL bar / home indicator
-      marginBottom: 'calc(env(safe-area-inset-bottom) + 20px)',
+      marginBottom: 'calc(env(safe-area-inset-bottom) + 25px)',
     }}
   >
 <h1
@@ -82,15 +82,20 @@ export default function Home() {
     font-serif font-semibold uppercase tracking-[0.05em]
     text-[var(--color-cream)] text-center leading-[1.05]
     drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]
+        !text-[clamp(28px,11.3vw,44px)]
   "
-  style={{
-    fontSize: 'clamp(28px,15vw,43px)', // ← adjust here and it WILL take effect
-    lineHeight: 1,
-    WebkitTextSizeAdjust: '100%',
-  }}
->
-  DR. JUAN PABLO SALERNO
-  <span className="relative text-[0.40em] opacity-70 ml-1 -top-14">™</span>
+  >
+
+  <span className="relative inline-block">
+    {/* ™ pinned; does not shift the text */}
+    <span
+      aria-hidden
+      className="absolute right-1 -top-3 text-[0.40em] opacity-70 pointer-events-none"
+    >
+      ™
+    </span>
+    DR. JUAN PABLO SALERNO
+  </span>
 </h1>
   </div>
 
