@@ -74,7 +74,7 @@ export default function Home() {
 
     style={{
       // lift above the Safari URL bar / home indicator
-      marginBottom: 'calc(env(safe-area-inset-bottom) + 25px)',
+      marginBottom: 'calc(env(safe-area-inset-bottom) + 15px)',
     }}
   >
 <h1
@@ -90,7 +90,7 @@ export default function Home() {
     {/* ™ pinned; does not shift the text */}
     <span
       aria-hidden
-      className="absolute right-1 -top-3 text-[0.40em] opacity-70 pointer-events-none"
+      className="absolute -right-1 -top-3 text-[0.40em] opacity-70 pointer-events-none"
     >
       ™
     </span>
