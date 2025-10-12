@@ -120,7 +120,6 @@ export default function Home() {
       {/* ===== PAGE BODY WRAPPER ===== */}
       <div
       ref={wrapRef}
-        style={{ '--z': 3.00, '--zoomL': 1.30 }}
         className="
           lg:contents
           origin-top
