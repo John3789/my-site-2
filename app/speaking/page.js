@@ -130,7 +130,7 @@ export default function SpeakingPage() {
     <>
       <main
         data-page="speaking"
-        className="relative isolate min-h-screen w-full bg-[var(--color-teal-850)]"
+        className="relative isolate min-h-screen w-full overflow-x-hidden bg-[var(--color-teal-850)]"
       >
         {/* background guard to prevent mobile overlay artifact */}
         <div
@@ -139,9 +139,9 @@ export default function SpeakingPage() {
         />
 
         {/* ===== HERO IMAGE with overlay text ===== */}
-        <section className="relative w-full">
+        <section className="relative w-full overflow-x-hidden">
           {/* black backdrop so there’s never a green flash */}
-          <div className="relative h-[70vh] bg-black">
+          <div className="relative h-[70vh] bg-black max-w-[100vw] mx-auto overflow-x-hidden">
 {/* Background image (optimized, iPhone-aware) */}
 <HeroImageIphoneAware
   src="/bwspeaking1.jpg"
@@ -162,7 +162,7 @@ export default function SpeakingPage() {
             {/* Overlay headline + subheadline */}
             <div className="hero-overlay absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
               <div className="relative px-6 s-hero narrow-landscape mx-auto">
-        <h1 className="hero-title font-serif opacity-95 md:drop-shadow-lg md:text-6xl text-[clamp(32px,8.5vw,44px)] landscape:text-[6.2vw]">
+        <h1 className="hero-title font-serif opacity-95 md:drop-shadow-lg md:text-6xl text-[clamp(30px,8vw,42px)] landscape:text-[6vw]">
                   Speaking
                 </h1>
                 <div className="hero-hr h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 mb-3 rounded" />

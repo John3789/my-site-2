@@ -102,16 +102,19 @@ export default function Header() {
     />
 
     {/* FULL-SCREEN PANEL */}
-    <aside
+ <aside
       className="
-        fixed inset-0 z-[10001] zoom-exempt
-        !bg-[var(--color-teal-850)] text-[var(--color-cream)]
-        flex flex-col
-        min-h-[100svh]   /* fills viewport; stable on iOS */
-        overflow-y-auto   /* scroll if long */
-        overscroll-contain
-      "
-    >
+     fixed inset-0 z-[10001] zoom-exempt
+     !bg-[var(--color-teal-850)] text-[var(--color-cream)]
+     flex flex-col
+     min-h-[100svh]
+     overflow-y-auto overscroll-contain
+     [transform-origin:top_left]
+     [transform:scale(calc(1/var(--z)))] [width:calc(100%*var(--z))]
+     landscape:[transform:scale(calc(1/var(--zoomL)))]
+     landscape:[width:calc(100%*var(--zoomL))]
+   "
+ >
       <div className="flex items-center justify-between px-6 h-16 pr-25">
   {/* Bigger Menu label with landscape adjustment */}
  <span className="font-serif text-[clamp(22px,7vw,32px)] landscape:text-[2.6vw]">
