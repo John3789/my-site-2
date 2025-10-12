@@ -29,6 +29,12 @@ export default function RootLayout({ children }) {
     name="viewport"
     content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover"
   />
+
+  {/* 🔒 Block zoom transforms until your hook enables them */}
+  <Script id="zoom-kill-init" strategy="beforeInteractive">
+    {`document.documentElement.classList.add('zoom-not-ready');`}
+  </Script>
+
   {/* iOS bfcache: re-assert viewport on pageshow without a client component */}
   <script
     dangerouslySetInnerHTML={{

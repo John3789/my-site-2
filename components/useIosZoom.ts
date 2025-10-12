@@ -1,8 +1,15 @@
-// useIosZoom.ts
+// components/useIosZoom.ts
 import { useEffect } from "react";
 
 type Opts = { portraitZoom: number; landscapeZoom: number };
 
+/**
+ * Zoom hook:
+ * - Decides phone vs not using a stable width heuristic
+ * - Applies --z / --zoomL only after the viewport settles
+ * - Enables wrapper zoom via data-zoom="on"
+ * - Flips off the global kill-switch html.zoom-not-ready
+ */
 export function useIosZoomVars(
   ref: React.RefObject<HTMLElement>,
   { portraitZoom, landscapeZoom }: Opts
@@ -11,33 +18,55 @@ export function useIosZoomVars(
     const el = ref.current;
     if (!el) return;
 
+    const PHONE_MAX = 999; // zoom only when effective width < 900
+
+    // Write CSS vars that your wrappers already use
     const setVars = (pz: number, lz: number) => {
-      el.style.setProperty("--z", String(pz));      // portrait zoom var
-      el.style.setProperty("--zoomL", String(lz));  // landscape zoom var
+      el.style.setProperty("--z", String(pz));
+      el.style.setProperty("--zoomL", String(lz));
     };
 
-    // A more stable width heuristic: take the smallest reported width
-    // (screen.width is very stable on iPhone; vv/inner/client can bounce)
+    // 🔑 Flip the global kill-switch after we’ve applied a decision
+    const flipReady = () =>
+      requestAnimationFrame(() =>
+        document.documentElement.classList.remove("zoom-not-ready")
+      );
+
+    // Gate your wrapper transforms via data-zoom (Option A)
+    const enableZoom = () => {
+      el.setAttribute("data-zoom", "on");
+      flipReady();
+    };
+    const disableZoom = () => {
+      el.removeAttribute("data-zoom");
+      flipReady();
+    };
+
+    // Use a stable width heuristic (min of several reports)
     const effectiveWidth = () => {
-      const wScreen = (typeof window.screen?.width === "number" ? window.screen.width : Number.POSITIVE_INFINITY);
-      const wVV = (window.visualViewport?.width ?? Number.POSITIVE_INFINITY);
+      const wScreen =
+        typeof window.screen?.width === "number"
+          ? window.screen.width
+          : Number.POSITIVE_INFINITY;
+      const wVV = window.visualViewport?.width ?? Number.POSITIVE_INFINITY;
       const wInner = window.innerWidth;
       const wClient = document.documentElement.clientWidth;
       return Math.min(wScreen, wVV, wInner, wClient);
     };
 
-    const PHONE_MAX = 999; // your rule: zoom only below 900px
-
+    // Apply zoom or not for the current (settled) width
     const applyForCurrentWidth = () => {
       const w = effectiveWidth();
       if (w < PHONE_MAX) {
         setVars(portraitZoom, landscapeZoom);
+        enableZoom();   // <- sets data-zoom="on" and removes zoom-not-ready next frame
       } else {
-        setVars(1, 1); // never zoom on >= 900px
+        setVars(1, 1);
+        disableZoom();  // <- removes zoom-not-ready next frame even when not zooming
       }
     };
 
-    // Wait until viewport settles, then apply; also do a late second pass
+    // Wait until viewport settles; also do a late second pass
     let raf1 = 0, raf2 = 0, settleTimer: number | undefined, lateTimer: number | undefined;
     const settleAndApply = () => {
       cancelAnimationFrame(raf1);
@@ -47,7 +76,7 @@ export function useIosZoomVars(
 
       raf1 = requestAnimationFrame(() => {
         raf2 = requestAnimationFrame(() => {
-          // small nudge helps iOS collapse the toolbar in landscape
+          // small nudge helps iOS collapse toolbar in landscape
           window.scrollTo(window.scrollX, Math.max(0, window.scrollY) + 0.1);
           settleTimer = window.setTimeout(() => {
             applyForCurrentWidth();

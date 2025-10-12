@@ -239,3 +239,14 @@ input, select, textarea {
     justify-self: center;
   }
 }
+
+/* --- Block all zoom transforms until JS flips the switch --- */
+html.zoom-not-ready [class*="\[transform:scale(var(--z))\]"],
+html.zoom-not-ready [class*="\[transform:scale(var(--zoomL))\]"] {
+  transform: none !important;
+}
+
+html.zoom-not-ready [class*="\[width:calc(100%/var(--z))\]"],
+html.zoom-not-ready [class*="\[width:calc(100%/var(--zoomL))\]"] {
+  width: 100% !important;
+}
