@@ -12,25 +12,22 @@ export function useIosZoomVars(
     if (!el) return;
 
     const setVars = (pz: number, lz: number) => {
-      el.style.setProperty("--z", String(pz));
-      el.style.setProperty("--zoomL", String(lz));
+      el.style.setProperty("--z", String(pz));      // portrait zoom var
+      el.style.setProperty("--zoomL", String(lz));  // landscape zoom var
     };
 
-    // Only zoom on small screens (< 900px)
-    if (window.innerWidth >= 999) {
-      setVars(1, 1);
-      return;
-    }
+    // Decide based on the *current, stable* viewport width
+    const applyForCurrentWidth = () => {
+      const w = (window.visualViewport?.width ?? window.innerWidth);
+      if (w < 999) {
+        setVars(portraitZoom, landscapeZoom);
+      } else {
+        setVars(1, 1); // never zoom on ≥900px
+      }
+    };
 
-    // ---- iPhone Safari and other small screens: wait for viewport to settle ----
-    const vv = window.visualViewport;
-    let raf1 = 0,
-      raf2 = 0,
-      settleTimer: number | undefined;
-    let debounceTimer: number | undefined;
-
-    const apply = () => setVars(portraitZoom, landscapeZoom);
-
+    // Wait a moment for iOS URL bar / visual viewport to settle
+    let raf1 = 0, raf2 = 0, settleTimer: number | undefined;
     const settleAndApply = () => {
       cancelAnimationFrame(raf1);
       cancelAnimationFrame(raf2);
@@ -38,21 +35,25 @@ export function useIosZoomVars(
 
       raf1 = requestAnimationFrame(() => {
         raf2 = requestAnimationFrame(() => {
+          // tiny nudge encourages toolbar collapse in iOS landscape
           window.scrollTo(window.scrollX, Math.max(0, window.scrollY) + 0.1);
-          settleTimer = window.setTimeout(apply, 80);
+          settleTimer = window.setTimeout(applyForCurrentWidth, 80);
         });
       });
     };
 
+    // Debounce noisy vv changes so we compute only after it stops bouncing
+    let debounceTimer: number | undefined;
     const debounced = () => {
       if (debounceTimer) clearTimeout(debounceTimer);
       debounceTimer = window.setTimeout(settleAndApply, 140);
     };
 
-    // initial run
+    // Initial run (also covers bfcache restores)
     settleAndApply();
 
-    // respond to visual viewport & orientation changes
+    // Re-apply on visual viewport changes & orientation/page restores
+    const vv = window.visualViewport;
     vv?.addEventListener("resize", debounced);
     vv?.addEventListener("scroll", debounced);
     window.addEventListener("orientationchange", debounced);
