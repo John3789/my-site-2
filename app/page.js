@@ -25,7 +25,7 @@ export default function Home() {
   formAction="/api/subscribe"
 />
       {/* spacer to clear the fixed header (keep) */}
-      <div aria-hidden className="hidden md:block h-8 bg-[var(--color-teal-800)]" />
+      <div aria-hidden className="hidden lg:block h-8 bg-[var(--color-teal-800)]" />
 
       {/* DESKTOP/TABLET nameplate — unchanged */}
       <section id="home" className="hidden md:block bg-[var(--color-teal-800)] text-[var(--color-cream)]">
@@ -70,14 +70,17 @@ export default function Home() {
       marginBottom: 'calc(env(safe-area-inset-bottom) + 56px)',
     }}
   >
-    <h1
-      className="
-        font-serif font-semibold uppercase tracking-[0.02em]
-        text-[var(--color-cream)] text-center leading-[1.00]
-        drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]
-        /* Make it span the full width */
-        !text-[clamp(56px, 26vw, 110px)]   /* tweak 8.5–10vw if you want more/less */
-      "
+<h1
+  className="
+    font-serif font-semibold uppercase tracking-[0.02em]
+    text-[var(--color-cream)] text-center leading-[1.00]
+    drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]
+  "
+  style={{
+    fontSize: 'clamp(56px,26vw,110px)', // ← adjust here and it WILL take effect
+    lineHeight: 1,
+    WebkitTextSizeAdjust: '100%',
+  }}
 >
   DR. JUAN PABLO SALERNO
   <span className="relative text-[0.40em] opacity-70 ml-1 -top-14">™</span>
