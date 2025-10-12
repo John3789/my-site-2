@@ -167,12 +167,12 @@ export default function SpeakingPage() {
                 </h1>
                 <div className="hero-hr h-[2px] w-10 bg-[var(--color-gold)]/85 mx-auto mt-3 mb-2 rounded" />
                 {/* Mobile-only shorter subheadline */}
-                <p className="hero-sub md:hidden opacity-90 max-w-3xl mx-auto md:drop-shadow-md md:text-xl">
+                <p className="hero-sub md:hidden opacity-90 max-w-3xl mx-auto !text-[clamp(14px,3.8vw,18px)] leading-snug">
                   Talks that spark resilience, growth, and lasting change.
                 </p>
 
                 {/* Desktop/tablet original subheadline (unchanged) */}
-                <p className="hero-sub hidden md:block opacity-90 max-w-3xl mx-auto !text-[clamp(14px,3.8vw,18px)]leading-snug">
+                <p className="hero-sub hidden md:block opacity-90 max-w-3xl mx-auto !text-[clamp(14px,3.8vw,18px)] md:drop-shadow-md md:text-xl">
                   Science-backed, story-driven talks that spark resilience, growth, and
                   lasting change.
                 </p>
