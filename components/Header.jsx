@@ -56,7 +56,7 @@ export default function Header() {
 >
   {/* 3-line icon (cream) */}
   <svg
-    className="w-[75px] h-[75px] landscape:w-[48px] landscape:h-[48px]"
+ className="w-[56px] h-[56px] landscape:w-[48px] landscape:h-[48px]"
     viewBox="0 0 24 24"
     fill="none"
   >

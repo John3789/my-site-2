@@ -52,9 +52,7 @@ export default function Home() {
       quality={95}
       sizes="100vw" 
       className="
-        object-cover origin-center will-change-transform
-        [transform:scaleX(1.00)_scaleY(1.00)]
-        md:[transform:none]
+        object-cover origin-center
         object-[center_0%] md:object-[center_0%]
       "
     />
@@ -195,13 +193,15 @@ export default function Home() {
                 </div>
 
                 {/* Right: image */}
-                <div className="lg:col-span-6 w-full max-w-[680px] lg:max-w-[780px] mx-auto lg:mx-0">
-                  <div className="relative w-full aspect-[3/2] shadow-2xl overflow-hidden">
+<div className="lg:col-span-6 w-full max-w-[680px] lg:max-w-[780px] mx-auto lg:mx-0 [@media(orientation:landscape)_and_(max-width:900px)]:max-w-[560px]">                  
+<div className="relative w-full aspect-[3/2] shadow-2xl overflow-hidden">
 <HeroImageIphoneAware
                       src="/plant1.jpg"
                       alt="Consulting collaboration"
                       fill
                       sizes="(min-width: 1024px) 50vw, 100vw"
+                      loading="lazy"
+                      draggable={false}
                       className="object-cover"
                       style={{ objectPosition: 'center 50%' }}
                     />
@@ -241,13 +241,15 @@ export default function Home() {
 
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start lg:items-center justify-items-stretch">
                 {/* Left: image */}
-                <div className="lg:col-span-6 w-full max-w-[680px] lg:max-w-[780px] mx-auto lg:mx-0">
+<div className="lg:col-span-6 w-full max-w-[680px] lg:max-w-[780px] mx-auto lg:mx-0 [@media(orientation:landscape)_and_(max-width:900px)]:max-w-[560px]">                  
                   <div className="relative w-full aspect-[3/2] shadow-2xl overflow-hidden">
 <HeroImageIphoneAware
                       src="/beach1.jpg"
                       alt="Meditation practice, calm beach"
                       fill
                       sizes="(min-width: 1024px) 50vw, 100vw"
+                      loading="lazy"
+                      draggable={false}
                       className="object-cover"
                       style={{ objectPosition: 'center 40%' }}
                     />
@@ -298,13 +300,15 @@ export default function Home() {
                 </div>
 
                 {/* Right: image */}
-                <div className="lg:col-span-6 w-full max-w-[680px] lg:max-w-[780px] mx-auto lg:mx-0">
+<div className="lg:col-span-6 w-full max-w-[680px] lg:max-w-[780px] mx-auto lg:mx-0 [@media(orientation:landscape)_and_(max-width:900px)]:max-w-[560px]">                  
                   <div className="relative w-full aspect-[3/2] shadow-2xl overflow-hidden">
 <HeroImageIphoneAware
                       src="/tree90.jpg"
                       alt="Resources illustration, growth tree"
                       fill
                       sizes="(min-width: 1024px) 50vw, 100vw"
+                      loading="lazy"
+                      draggable="false"
                       className="object-cover"
                       style={{ objectPosition: 'center 30%' }}
                       priority

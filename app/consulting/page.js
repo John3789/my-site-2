@@ -726,7 +726,7 @@ export default function ConsultingPage() {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 narrow-landscape">
             {[
               ["Co-Design", "Develop tailored, evidence-based strategies that fit your organization’s unique needs and context."],
               ["Implementation", "Support program rollout with facilitator toolkits, trainings, and change-management resources."],
