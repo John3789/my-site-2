@@ -141,7 +141,7 @@ export default function SpeakingPage() {
         {/* ===== HERO IMAGE with overlay text ===== */}
         <section className="relative w-full overflow-x-hidden">
           {/* black backdrop so there’s never a green flash */}
-          <div className="relative h-[70vh] bg-black max-w-[100vw] mx-auto overflow-hidden">
+          <div className="relative h-[70dvh] bg-black max-w-[100vw] mx-auto overflow-hidden">
 {/* Background image (optimized, iPhone-aware) */}
 <HeroImageIphoneAware
   src="/bwspeaking1.jpg"
@@ -161,8 +161,8 @@ export default function SpeakingPage() {
 
             {/* Overlay headline + subheadline */}
             <div className="hero-overlay absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
-              <div className="relative px-6 s-hero narrow-landscape mx-auto">
-        <h1 className="hero-title font-serif opacity-95 md:drop-shadow-lg md:text-6xl text-[clamp(30px,8vw,42px)] landscape:text-[6vw]">
+              <div className="relative px-6 s-hero">
+        <h1 className="hero-title font-serif opacity-95 md:drop-shadow-lg md:text-6xl !text-[clamp(28px,7.2vw,40px)] landscape:text-[6vw]">
                   Speaking
                 </h1>
                 <div className="hero-hr h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 mb-3 rounded" />
