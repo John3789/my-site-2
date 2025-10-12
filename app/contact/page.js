@@ -71,10 +71,10 @@ export default function ContactPage() {
             <div
               ref={wrapRef}
               className={`zoomwrap lg:contents origin-top
-                [transform:scale(var(--z))] [width:calc(100%/var(--z))]
+                data-[zoom=on]:[transform:scale(var(--z))] data-[zoom=on]:[width:calc(100%/var(--z))]
                 mx-auto
                 lg:[transform:none] lg:[width:100%]
-                landscape:[transform:scale(var(--zoomL))] landscape:[width:calc(100%/var(--zoomL))]
+                landscape:data-[zoom=on]:[transform:scale(var(--zoomL))] landscape:data-[zoom=on]:[width:calc(100%/var(--zoomL))]
                 overflow-visible`}
             >
               {/* Header */}
