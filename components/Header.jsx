@@ -138,7 +138,7 @@ vectorEffect="non-scaling-stroke"  /* keeps stroke width constant if any transfo
       {/* Bigger, responsive options; shrink in landscape so nothing gets cut off */}
       <nav
         className="px-6 py-6 space-y-6 uppercase tracking-wide
-                   text-[8vw] landscape:text-[3.5vw]"
+                   text-[7vw] landscape:text-[4vw]"
       >
         <MobileLink href="/" onClick={() => setOpen(false)} active={pathname === "/"}>Home</MobileLink>
         <MobileLink href="/about" onClick={() => setOpen(false)} active={pathname.startsWith("/about")}>About</MobileLink>
