@@ -139,10 +139,10 @@ export default function SpeakingPage() {
         />
 
 {/* ===== HERO IMAGE with overlay text ===== */}
-<section className="relative w-full overflow-x-hidden">
+<section className="relative w-full">
   <div
     className={`
-      relative max-w-[100vw] mx-auto overflow-hidden bg-black
+      relative max-w-[100vw] mx-auto bg-black
       h-[70vh]
       [@media(orientation:portrait)]:h-auto
       [@media(orientation:portrait)]:aspect-[16/9]
