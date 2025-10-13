@@ -223,7 +223,7 @@ input, select, textarea {
 @media (orientation: landscape) and (max-width: 900px) and (max-height: 430px) {
   .narrow-landscape {
     /* Pick your preferred reading width */
-    max-width: 80ch;        /* change to 70ch (tighter) or 90ch (wider) if desired */
+    max-width: 70ch;        /* change to 70ch (tighter) or 90ch (wider) if desired */
     margin-left: auto;
     margin-right: auto;
     justify-self: center;   /* grid-friendly centering */
