@@ -205,7 +205,7 @@ export default function SpeakingPage() {
           `}
         >
           {/* ===== Intro Blurb ===== */}
-          <section className="relative w-full pt-16 pb-9 md:py-16 narrow-landscape-70" id="intro">
+          <section className="relative w-full pt-16 pb-9 md:py-16" id="intro">
             {/* subtle hairline divider from hero */}
             <div className="absolute inset-x-0 top-0 h-px bg-[var(--color-cream)]/15" />
             <div className="mx-auto max-w-[1000px] px-6 text-left space-y-8">
@@ -214,7 +214,7 @@ export default function SpeakingPage() {
               </h2>
 
 <div
-  className="space-y-6 opacity-85 text-lg md:text-xl leading-loose mx-auto max-w-none landscape:max-w-[700px] lg:landscape:max-w-none"
+  className="space-y-6 opacity-85 text-lg md:text-xl leading-loose mx-auto max-w-none landscape:max-w-[700px] lg:landscape:max-w-none narrow-landscape-70"
 >
                 <p>
                   Dr. Juan Pablo Salerno is a respected mental health scientist,
@@ -288,7 +288,7 @@ export default function SpeakingPage() {
           </section>
 
           {/* ===== MAIN CONTENT ===== */}
-          <div className="mx-auto max-w-[1400px] md:py-6 space-y-16 md:space-y-24 narrow-landscape-70" id="topics">
+          <div className="mx-auto max-w-[1400px] md:py-6 space-y-16 md:space-y-24" id="topics">
             <hr className="border-t border-[var(--color-cream)]/22 md:mb-8 mx-auto w-[93%] landscape:mt-2 landscape:mb-4" />
 
             {/* Popular Topics (Programs) */}
@@ -296,7 +296,7 @@ export default function SpeakingPage() {
                id="programs" className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mx-15 gap-y-12 portrait:mx-0 portrait:px-6 landscape:max-w-[700px] landscape:mx-auto landscape:px-3 lg:landscape:max-w-[1400px] lg:landscape:mx-15 lg:landscape:px-0"
               
             >
-              <div className="md:col-span-5 md:py-6">
+              <div className="md:col-span-5 md:py-6 narrow-landscape-70">
                 {/* Overline (slightly dimmer) */}
                 <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">
                   Programs
@@ -337,7 +337,7 @@ export default function SpeakingPage() {
                   </div>
 
                   {/* Strengthening Mental Health and Wellbeing */}
-                  <div>
+                  <div className="narrow-landscape-70">
                     <h3 className="font-serif text-2xl mb-2">
                       <span className="text-[var(--color-gold)]">
                         Strengthening Mental Health &amp; Wellbeing
@@ -368,7 +368,7 @@ export default function SpeakingPage() {
                   </div>
 
                   {/* Performance & Potential */}
-                  <div>
+                  <div className="narrow-landscape-70">
                     <h3 className="font-serif text-2xl mb-2">
                       <span className="text-[var(--color-gold)]">
                         Boosting Performance &amp; Potential
@@ -402,7 +402,7 @@ export default function SpeakingPage() {
 
  {/* Quotes (left column) — desktop only */}
 <div
-  className="md:col-span-7 ml-auto hidden md:flex flex-col gap-6 max-w-[640px] quote-col"
+  className="md:col-span-7 ml-auto hidden md:flex flex-col gap-6 max-w-[640px] quote-col narrow-landscape-70"
   data-section="testimonials-desktop"   // ← add this
 >
   <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
@@ -474,11 +474,11 @@ export default function SpeakingPage() {
             <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 mx-auto w-[93%]" />
             <section
               id="formats"
-              className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 md:gap-x-0 mx-15 items-center portrait:mx-0 portrait:px-6 landscape:max-w-[700px] landscape:mx-auto landscape:px-3 lg:landscape:max-w-[1400px] lg:landscape:mx-15 lg:landscape:px-0"
+              className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 md:gap-x-0 mx-15 items-center portrait:mx-0 portrait:px-6 landscape:max-w-[700px] landscape:mx-auto landscape:px-3 lg:landscape:max-w-[1400px] lg:landscape:mx-15 lg:landscape:px-0 narrow-landscape-70"
             >
  {/* Quotes (RIGHT column) — desktop only */}
 <div
-  className="md:col-span-7 hidden md:flex flex-col gap-6 max-w-[640px] md:pr-6 quote-col"
+  className="md:col-span-7 hidden md:flex flex-col gap-6 max-w-[640px] md:pr-6 quote-col narrow-landscape-70"
   data-section="testimonials-desktop-right"
 >
   <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
@@ -525,7 +525,7 @@ export default function SpeakingPage() {
 </div>
 
               {/* Formats list */}
-              <div className="md:col-span-5 order-1 md:order-2 md:py-6 space-y-8 md:pl-6">
+              <div className="md:col-span-5 order-1 md:order-2 md:py-6 space-y-8 md:pl-6 narrow-landscape-70">
                 {/* Overline added */}
                 <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">
                   Formats
@@ -623,7 +623,7 @@ export default function SpeakingPage() {
             <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 mx-auto w-[93%]" />
             <section
               id="results"
-              className="grid grid-cols-1 lg:grid-cols-12 gap-12 mx-15 items-start gap-y-12 portrait:mx-0 portrait:px-6 landscape:max-w-[700px] landscape:mx-auto landscape:px-3 lg:landscape:max-w-[1400px] lg:landscape:mx-15 lg:landscape:px-0"  
+              className="grid grid-cols-1 lg:grid-cols-12 gap-12 mx-15 items-start gap-y-12 portrait:mx-0 portrait:px-6 landscape:max-w-[700px] landscape:mx-auto landscape:px-3 lg:landscape:max-w-[1400px] lg:landscape:mx-15 lg:landscape:px-0 narrow-landscape-70"  
             >
               <div className="md:col-span-5 md:py-6">
                 {/* Overline added */}
@@ -668,7 +668,7 @@ export default function SpeakingPage() {
 
 {/* Quotes (right column, Results) — desktop only */}
 <div
-  className="md:col-span-7 ml-auto hidden md:flex flex-col gap-6 max-w-[640px] quote-col"
+  className="md:col-span-7 ml-auto hidden md:flex flex-col gap-6 max-w-[640px] quote-col narrow-landscape-70"
   data-section="results-desktop-right"
 >
   <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
