@@ -289,11 +289,11 @@ export default function SpeakingPage() {
 
           {/* ===== MAIN CONTENT ===== */}
           <div className="mx-auto max-w-[1400px] md:py-6 space-y-16 md:space-y-24" id="topics">
-            <hr className="border-t border-[var(--color-cream)]/22 md:mb-8 mx-auto w-[93%] landscape:mt-2 landscape:mb-4 [@media(orientation:landscape)_and_(max-width:890px)]:mt-15" />
+            <hr className="border-t border-[var(--color-cream)]/22 md:mb-8 mx-auto w-[93%] landscape:mt-2 landscape:mb-4 [@media(orientation:landscape)_and_(max-width:880px)]:mt-15" />
 
             {/* Popular Topics (Programs) */}
             <section
-               id="programs" className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mx-15 gap-y-12 portrait:mx-0 portrait:px-6 landscape:max-w-[700px] landscape:mx-auto landscape:px-3 lg:landscape:max-w-[1400px] lg:landscape:mx-15 lg:landscape:px-0 [@media(orientation:landscape)_and_(max-width:890px)]:mt-15"
+               id="programs" className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mx-15 gap-y-12 portrait:mx-0 portrait:px-6 landscape:max-w-[700px] landscape:mx-auto landscape:px-3 lg:landscape:max-w-[1400px] lg:landscape:mx-15 lg:landscape:px-0 [@media(orientation:landscape)_and_(max-width:880px)]:mt-15"
               
             >
               <div className="md:col-span-5 md:py-6 narrow-landscape-70">
