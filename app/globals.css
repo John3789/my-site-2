@@ -262,58 +262,34 @@ input, select, textarea { font-size: 16px; }
 @media (min-width: 900px) { :root { --z: 1; --zoomL: 1; } }
 
 /* (Do NOT include opacity: 0 in any kill-switch CSS in globals) */
-
-/* Neutralize zoom for specific elements when landscape zoom is ON */
+/* === 3) Counter-scale only when wrapper zoom is ON (phones under 900px) === */
+/* Keep just one set of selectors to avoid double-application. */
 [data-zoom="on"] .zoom-exempt {
   transform-origin: top left;
+  transform: scale(calc(1 / var(--z))) !important;          /* portrait */
+  width: calc(100% * var(--z)) !important;
 }
 @media (orientation: landscape) {
   [data-zoom="on"] .zoom-exempt {
-    transform: scale(calc(1 / var(--zoomL))) !important;
+    transform: scale(calc(1 / var(--zoomL))) !important;     /* landscape */
     width: calc(100% * var(--zoomL)) !important;
   }
 }
 
-/* Keep tiny UI 1:1 even when the wrapper is scaled */
-[data-zoom="on"] .zoom-exempt { transform-origin: top left; }
+/* If you also toggle html.zoom-on globally, keep this OR the block above — not both.
+html.zoom-on .zoom-exempt { ... } */
 
-/* Portrait counter-scale (uses --z) */
-[data-zoom="on"] .zoom-exempt {
-  transform: scale(calc(1 / var(--z))) !important;
-  width: calc(100% * var(--z)) !important;
-}
-
-/* Landscape counter-scale (uses --zoomL) */
-@media (orientation: landscape) {
-  [data-zoom="on"] .zoom-exempt {
-    transform: scale(calc(1 / var(--zoomL))) !important;
-    width: calc(100% * var(--zoomL)) !important;
-  }
-}
-
-/* Counter-scale exempt UI globally when zoom is on */
-html.zoom-on .zoom-exempt { transform-origin: top left; }
-
-/* portrait (uses --z) */
-html.zoom-on .zoom-exempt {
-  transform: scale(calc(1 / var(--z))) !important;
-  width: calc(100% * var(--z)) !important;
-}
-
-/* landscape (uses --zoomL) */
-@media (orientation: landscape) {
-  html.zoom-on .zoom-exempt {
-    transform: scale(calc(1 / var(--zoomL))) !important;
-    width: calc(100% * var(--zoomL)) !important;
-  }
-}
-
-/* Keep overlays/menus readable regardless of Safari page zoom */
+/* === 4) VisualViewport (Safari page zoom) counter-scale for overlays/menus === */
+/* Strengthen with !important so Tailwind utilities / zoom-exempt cannot override it. */
 .vv-counter {
-  transform-origin: top left;
-  transform: scale(calc(1 / var(--vv, 1)));
-  width: calc(100% * var(--vv, 1));
+  transform-origin: top left !important;
+  transform: scale(calc(1 / var(--vv, 1))) !important;
+  width: calc(100% * var(--vv, 1)) !important;
+  font-size: 16px; /* readable base inside menu */
 }
 
-/* (Optional) ensure a sane base text size inside counter-scaled UIs */
-.vv-counter { font-size: 16px; }
+/* Safety: inside a vv-counter, do NOT let zoom-exempt counter-scale again */
+.vv-counter .zoom-exempt {
+  transform: none !important;
+  width: auto !important;
+}
