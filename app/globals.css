@@ -43,10 +43,6 @@ body {
   --color-teal-850: #11443a;
 }
 
-
-
-html { -webkit-text-size-adjust: 100%; }
-
 /* Map font variables to utility classes */
 .font-sans { font-family: var(--font-sans), ui-sans-serif, system-ui; }
 .font-serif { font-family: var(--font-serif), ui-serif, Georgia, serif; }
@@ -182,16 +178,6 @@ html {
   text-rendering: optimizeLegibility;
 }
 
-/* Inputs: avoid iOS focus zoom by keeping at least 16px */
-input, select, textarea {
-  font-size: 16px;
-}
-
-/* Optional utility: use stable viewport height when available */
-@supports (height: 100svh) {
-  .use-stable-vh { height: 100svh; }
-}
-
 /* =========================================
    1) Zoom CSS variables (defaults + guards)
    Your wrappers already read:
@@ -203,11 +189,6 @@ input, select, textarea {
 :root {
   --z: 1;
   --zoomL: 1;
-}
-
-/* Guard: never zoom on viewports >= 900px (desktop, iPads, etc.) */
-@media (min-width: 900px) {
-  :root { --z: 1; --zoomL: 1; }
 }
 
 /* ⚠️ Removed the SSR fallback that set --z/--zoomL for phones.
@@ -301,14 +282,13 @@ html.zoom-on .zoom-exempt { ... } */
   max-height: 100svh;                /* helpful for fullscreen panels */
 }
 
+/* Do NOT lock the root globally */
+html, body { overflow: visible; }
 
 /* Optional: when a fullscreen menu is open, make sure body stays locked */
 html.menu-open, body.menu-open {
   overflow: hidden !important;
 }
-
-/* Do NOT lock the root globally */
-html, body { overflow: visible; }
 
 /* iOS-only + small screens: stop rubber-band at the root */
 @supports (-webkit-touch-callout: none) {
@@ -345,4 +325,8 @@ html, body { overflow: visible; }
   width: 100svw;                       /* true viewport width (safe with iOS URL bar) */
   margin-left: calc(50% - 50svw);      /* center the 100svw block inside any container */
   margin-right: calc(50% - 50svw);
+}
+
+@media (orientation: landscape) and (max-height: 430px) {
+  .use-stable-vh { height: 100lvh; } /* logical vh fallback */
 }
