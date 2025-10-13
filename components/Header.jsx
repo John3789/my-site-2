@@ -54,7 +54,7 @@ export default function Header() {
   onClick={() => setOpen(true)}
   className="
   lg:hidden 
-  mr-auto -mr-1 ml-2 p-3 translate-y-7
+  mr-auto -mr-1 -ml-5 p-3 translate-y-7
   landscape: -mr-1 ml-5 p-3           /* less left margin in landscape */
   landscape:translate-y-14  /* pull it up a bit in landscape */
   "
