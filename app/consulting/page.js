@@ -84,7 +84,7 @@ export default function ConsultingPage() {
   const nextOf = (id) => SECTIONS[(idxOf(id) + 1) % SECTIONS.length].id;
 
   const MobileSectionFooter = ({ baseId }) => (
-    <div className="[@media(min-width:950px)]:hidden mt-7 pb-2 w-full">
+    <div className="[@media(min-width:950px)]:hidden mt-10 -mb-3 w-full">
       <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
         <button
           onClick={() => jump(toMobile(prevOf(baseId)))}
@@ -465,7 +465,7 @@ export default function ConsultingPage() {
           </section>
 
           {/* Bottom spacer */}
-          <div className="pb-10" />
+          <div className="pb-7" />
 
           {/* FINAL divider above footer — match two-column width, no bleed */}
           <div className="mx-auto max-w-[1400px] px-6">
