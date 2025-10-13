@@ -84,7 +84,7 @@ export default function ConsultingPage() {
   const nextOf = (id) => SECTIONS[(idxOf(id) + 1) % SECTIONS.length].id;
 
   const MobileSectionFooter = ({ baseId }) => (
-    <div className="md:hidden mt-7 pb-2 w-full">
+    <div className="[@media(min-width:950px)]:hidden mt-7 pb-2 w-full">
       <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
         <button
           onClick={() => jump(toMobile(prevOf(baseId)))}
