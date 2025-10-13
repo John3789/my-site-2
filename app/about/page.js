@@ -184,7 +184,7 @@ export default function AboutPage() {
               {/* Projects in the Now */}
               <section id="projects">
                 <hr className="border-t border-[var(--color-cream)]/22 mb-8 w-full" />
-                <h2 className="font-serif text-[clamp(16px,1.4vw,19px)] leading-[1.08] text-center opacity-90">
+                <h2 className="font-serif text-[clamp(28px,3.8vw,40px)] leading-[1.08] text-center opacity-90">
                   Projects in the Now
                 </h2>
                 <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto mt-3 mb-8 rounded" />
