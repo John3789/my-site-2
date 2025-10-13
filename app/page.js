@@ -82,10 +82,11 @@ export default function Home() {
   >
 <h1
   className="
-    font-serif font-semibold uppercase tracking-[0.05em]
+    font-serif font-semibold uppercase tracking-[0.02em]
     text-[var(--color-cream)] text-center leading-[1.05]
     drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]
         !text-[clamp(28px,11.3vw,44px)]
+            [@media(orientation:landscape)_and_(max-width:900px)]:hidden
   "
   >
 
