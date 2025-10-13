@@ -67,7 +67,7 @@ export default function ContactPage() {
           />
 
           {/* ============== MOBILE (zoom lives INSIDE here) ============== */}
-          <div className="lg:hidden mx-auto max-w-[1400px] px-3 pt-16 pb-0">
+          <div className="lg:hidden mx-auto max-w-[1400px] px-3 pt-16 pb-0 narrow-landscape-80">
             <div
               ref={wrapRef}
               className={`zoomwrap lg:contents origin-top
@@ -99,8 +99,8 @@ export default function ContactPage() {
               </header>
 
               {/* SINGLE form card (mobile) — same width as divider + footer below */}
-              <div className="mx-auto w-full max-w-[700px] px-3">
-                <section className="relative overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition narrow-landscape-80">
+              <div className="mx-auto w-full max-w-[700px] px-3 narrow-landscape-80">
+                <section className="relative overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
 
                   {sent ? (
@@ -146,7 +146,7 @@ export default function ContactPage() {
 
                       {/* Topic chips (radios) — MOBILE */}
                       <div role="group" aria-labelledby="topic-label" className="m-0 p-0">
-                        <p id="topic-label" className="block text-sm opacity-90 mb-2">
+                        <p id="topic-label" className="block text-sm opacity-90 mb-2 narrow-landscape-80">
                           Topic
                         </p>
                         <div className="flex flex-wrap gap-2 pb-8 mt-2">
