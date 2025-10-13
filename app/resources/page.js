@@ -123,7 +123,7 @@ export default function ResourcesPage() {
 
   return (
     <>
-      <main className="relative isolate min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
+      <main className="relative isolate min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] narrow-landscape-80">
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]" />
 
       {/* ⬇️ Everything that should scroll lives inside .page-scroll */}
