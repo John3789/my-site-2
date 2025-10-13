@@ -30,7 +30,7 @@ export default function Home() {
   className="
     hidden md:block h-8 bg-[var(--color-teal-800)]
     [@media(orientation:landscape)_and_(max-width:900px)]:block
-    [@media(orientation:landscape)_and_(max-width:900px)]:h-4
+    [@media(orientation:landscape)_and_(max-width:900px)]:h-1
   "
 />
 
@@ -47,7 +47,7 @@ export default function Home() {
       </section>
 
 {/* HERO — mobile full-screen; desktop unchanged */}
-<section className="relative h-[100dvh] xl:h-[88.8svh] overflow-hidden">
+<section className="relative h-[100dvh] xl:h-[88.8svh] overflow-visible">
   {/* Image layer fills the section */}
   <div className="absolute inset-0">
 <HeroImageIphoneAware
