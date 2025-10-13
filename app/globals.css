@@ -339,3 +339,10 @@ html, body { overflow: visible; }
 
 /* Backdrop should swallow gestures so the page beneath won’t move */
 .backdrop-no-scroll { touch-action: none; }
+
+/* Full-bleed section that ignores parent padding, stays centered */
+.full-bleed {
+  width: 100svw;                       /* true viewport width (safe with iOS URL bar) */
+  margin-left: calc(50% - 50svw);      /* center the 100svw block inside any container */
+  margin-right: calc(50% - 50svw);
+}
