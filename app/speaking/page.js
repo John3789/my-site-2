@@ -208,7 +208,7 @@ export default function SpeakingPage() {
           <section className="relative w-full pt-16 pb-9 md:py-16" id="intro">
             {/* subtle hairline divider from hero */}
             <div className="absolute inset-x-0 top-0 h-px bg-[var(--color-cream)]/15" />
-<div className="mx-auto max-w-[1000px] px-6 text-left space-y-8 [@media(orientation:landscape)_and_(max-width:900px)]:!space-y-12 narrow-landscape-70">
+<div className="mx-auto max-w-[1000px] px-6 text-left space-y-8 narrow-landscape-70">
               <h2 className="font-serif text-2xl md:text-4xl opacity-90 text-center font-semibold tracking-wide">
                 &ldquo;Engaging. Inspiring. Transformational.&rdquo;
               </h2>
@@ -289,7 +289,7 @@ export default function SpeakingPage() {
 
           {/* ===== MAIN CONTENT ===== */}
           <div className="mx-auto max-w-[1400px] md:py-6 space-y-16 md:space-y-24" id="topics">
-            <hr className="border-t border-[var(--color-cream)]/22 md:mb-8 mx-auto w-[93%] landscape:mt-2 landscape:mb-4" />
+            <hr className="border-t border-[var(--color-cream)]/22 md:mb-8 mx-auto w-[93%] landscape:mt-2 landscape:mb-4 [@media(orientation:landscape)_and_(max-width:900px)]:mt-12" />
 
             {/* Popular Topics (Programs) */}
             <section
