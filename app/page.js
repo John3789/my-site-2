@@ -16,7 +16,7 @@ export default function Home() {
 
 
   return (
-        <main id="main" className="!bg-[var(--color-teal-850)] text-[var(--color-cream)] text-[17px] full-bleed">
+        <main id="main" className="!bg-[var(--color-teal-850)] text-[var(--color-cream)] text-[17px]">
           
           <NewsletterMeditationPopup
   isMeditationPage={false}

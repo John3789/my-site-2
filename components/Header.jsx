@@ -33,7 +33,7 @@ export default function Header() {
     <>
       {/* Header bar */}
       <header className={headerClass}>
-        <div className="relative mx-auto max-w-7xl px-6 h-10 flex items-center">
+        <div className="mx-auto max-w-7xl px-6 h-10 flex items-center">
           {/* Desktop / tablet nav (unchanged) */}
           <nav className="hidden lg:flex w-full items-center justify-center gap-6 text-[13px] tracking-wide uppercase">
             {!isHome && (
@@ -52,13 +52,7 @@ export default function Header() {
   type="button"
   aria-label="Open menu"
   onClick={() => setOpen(true)}
-  className="
-  lg:hidden 
-  absolute left-3 top-0 z-[1] p-0          /* portrait: hard-left, ignore px-6 */
-  landscape:static landscape:left-auto     /* landscape: back to normal flow */
-  landscape:top-0 left-0 landscape:p-10
-  translate-y-12 landscape:translate-y-4
-  "
+  className="lg:hidden mr-auto -mr-1 -ml-5 p-3 translate-y-7"
 >
   {/* 3-line icon (cream) */}
 <svg
@@ -120,7 +114,7 @@ vectorEffect="non-scaling-stroke"  /* keeps stroke width constant if any transfo
 >
       <div className="flex items-center justify-between px-6 h-16 pr-25">
   {/* Bigger Menu label with landscape adjustment */}
- <span className="font-serif text-[clamp(22px,7vw,32px)] landscape:text-[3.5vw] pl-12">
+ <span className="font-serif text-[clamp(22px,7vw,32px)] landscape:text-[3.5vw]">
 
     Menu
   </span>
@@ -130,7 +124,7 @@ vectorEffect="non-scaling-stroke"  /* keeps stroke width constant if any transfo
     type="button"
     aria-label="Close menu"
     onClick={() => setOpen(false)}
-    className="p-3 -mr-10 ml-8 landscape:ml-0 landscape:relative landscape:top-5"
+    className="p-3 -mr-10 ml-8 landscape:ml-0 landscape:relative landscape:top-3"
   >
     <svg 
       className="w-8 h-8 landscape:w-8 landscape:h-8" viewBox="0 0 24 24" fill="none" aria-hidden="true"
@@ -144,7 +138,7 @@ vectorEffect="non-scaling-stroke"  /* keeps stroke width constant if any transfo
       {/* Bigger, responsive options; shrink in landscape so nothing gets cut off */}
       <nav
         className="px-6 py-6 space-y-6 uppercase tracking-wide
-                   text-[7vw] landscape:text-[4vw] landscape:pl-20"
+                   text-[7vw] landscape:text-[4vw]"
       >
         <MobileLink href="/" onClick={() => setOpen(false)} active={pathname === "/"}>Home</MobileLink>
         <MobileLink href="/about" onClick={() => setOpen(false)} active={pathname.startsWith("/about")}>About</MobileLink>
