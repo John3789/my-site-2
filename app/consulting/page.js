@@ -109,7 +109,7 @@ export default function ConsultingPage() {
   );
 
   return (
-    <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] narrow-landscape-70">
+    <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
       {/* ============== MOBILE (uses the exact working zoom wrapper) ============== */}
       <div className="lg:hidden">                {/* HIDE mobile on desktop */}
         <div
@@ -131,15 +131,15 @@ export default function ConsultingPage() {
               Organizational Wellness Consulting 
             </h1>
             <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 rounded" />
-            <p className="text-lg opacity-85 max-w-[780px] mx-auto mt-12 leading-relaxed">
+            <p className="text-lg opacity-85 max-w-[780px] mx-auto mt-12 leading-relaxed narrow-landscape-70">
               Evidence-based consulting that helps organizations design, implement, evaluate, and scale
               strategies to strengthen mental health, wellbeing, resilience, and growth.
             </p>
           </section>
 
           {/* ---- MOBILE quick nav (numbered) ---- */}
-          <div id="quicknav" className="lg:hidden mt-6 pointer-events-auto">
-            <div className="grid grid-cols-2 landscape:grid-cols-3 gap-2">
+          <div id="quicknav" className="lg:hidden mt-0 pointer-events-auto">
+            <div className="grid grid-cols-2 landscape:grid-cols-3 gap-2 narrow-landscape-70">
               {SECTIONS.map((s, idx) => (
                 <button
                   key={s.id}
@@ -163,11 +163,11 @@ export default function ConsultingPage() {
             </div>
 
             {/* divider same width as container */}
-            <div className="mt-2 h-px w-full bg-[var(--color-cream)]/15" />
+            <div className="mt-2 h-px w-full bg-[var(--color-cream)]/15 mt-12" />
           </div>
 
           {/* ===== MOBILE SECTIONS (no backdrop-blur in this subtree) ===== */}
-          <section id={toMobile("approach")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14">
+          <section id={toMobile("approach")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14 narrow-landscape-70">
             <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Philosophy</p>
             <h2 className="font-serif text-3xl opacity-95">My Approach</h2>
             <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-6 rounded" />
@@ -187,7 +187,7 @@ export default function ConsultingPage() {
 
           <div className="mx-auto max-w-[1100px] px-6"><div className="h-px w-full bg-[var(--color-cream)]/15" /></div>
 
-          <section id={toMobile("pillars")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14">
+          <section id={toMobile("pillars")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14 narrow-landscape-70">
             <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Services</p>
             <h2 className="font-serif text-3xl opacity-95">Service Pillars</h2>
             <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" />
@@ -232,7 +232,7 @@ export default function ConsultingPage() {
 
           <div className="mx-auto max-w-[1100px] px-6"><div className="h-px w-full bg-[var(--color-cream)]/15" /></div>
 
-<section id={toMobile("process")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14">
+<section id={toMobile("process")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14 narrow-landscape-70">
   <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Process</p>
   <h2 className="font-serif text-3xl opacity-95">How We Work Together</h2>
   <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" />
@@ -250,63 +250,48 @@ export default function ConsultingPage() {
     </p>
   </article>
 
-  {/* Arrows from Discovery -> next cards */}
-  {/* Portrait: single centered arrow */}
-  <div className="md:hidden portrait:flex landscape:hidden justify-center -mt-2 mb-6" aria-hidden="true">
-    <svg
-      viewBox="0 0 24 24"
-      className="h-7 w-7 text-[var(--color-gold)]"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M12 4v12" />
-      <path d="M7 12l5 5 5-5" />
-    </svg>
-  </div>
+  {/* Landscape-only center chip */}
+<div className="flex items-center justify-center -mt-1 mb-9">
+  <span className="inline-flex items-center rounded-full border border-[var(--color-gold)]/60 bg-[var(--color-gold)]/10 px-3 py-1 text-[11px] uppercase tracking-[0.18em]">
+    WE'LL MEET YOU WHERE YOU ARE
+  </span>
+</div>
 
-  {/* Landscape: four gold arrows aligned over each card */}
-  <div
-    className="md:hidden hidden landscape:grid grid-cols-4 gap-6 place-items-center -mt-2 mb-6 text-[var(--color-gold)]"
-    aria-hidden="true"
-  >
-    {[0, 1, 2, 3].map((i) => (
-      <svg
-        key={i}
-        viewBox="0 0 24 24"
-        className="h-7 w-7"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M12 4v12" />
-        <path d="M7 12l5 5 5-5" />
-      </svg>
-    ))}
-  </div>
-
-  {/* Cards: 1-col portrait, 4-col landscape */}
-  <div className="grid grid-cols-1 landscape:grid-cols-4 gap-6">
+{/* PORTRAIT: original card style, single column */}
+<div className="landscape:hidden">
+  <div className="grid grid-cols-1 gap-6">
     {[
       ["Co-Design", "Develop tailored, evidence-based strategies that fit your organization’s unique needs and context."],
       ["Implementation", "Support program rollout with facilitator toolkits, trainings, and change-management resources."],
       ["Evaluation", "Measure program outcomes, refine designs, and assess true organizational-level impact."],
       ["Scaling", "Expand programming more widely to increase reach and impact across your organization."],
     ].map(([title, text]) => (
-      <article
-        key={title}
-        className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl hover:bg-white/[0.06] transition"
-      >
+      <article key={title} className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl hover:bg-white/[0.06] transition">
         <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-        <h3 className="font-serif text-xl mb-2">{title}</h3>
-        <p className="opacity-90 leading-relaxed">{text}</p>
+        <h3 className="font-serif text-2xl mb-2 break-words">{title}</h3>
+        <p className="opacity-90 leading-relaxed break-words">{text}</p>
       </article>
     ))}
   </div>
+</div>
+
+{/* LANDSCAPE: same card style/sizing as portrait, two columns (no arrows) */}
+<div className="hidden landscape:block">
+  <div className="grid grid-cols-2 gap-6">
+    {[
+      ["Co-Design", "Develop tailored, evidence-based strategies that fit your organization’s unique needs and context."],
+      ["Implementation", "Support program rollout with facilitator toolkits, trainings, and change-management resources."],
+      ["Evaluation", "Measure program outcomes, refine designs, and assess true organizational-level impact."],
+      ["Scaling", "Expand programming more widely to increase reach and impact across your organization."],
+    ].map(([title, text]) => (
+      <article key={title} className="relative rounded-xl bg-white/5 ring-1 ring-white/10 p-6 shadow-xl hover:bg-white/[0.06] transition">
+        <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
+        <h3 className="font-serif text-2xl mb-2 break-words">{title}</h3>
+        <p className="opacity-90 leading-relaxed break-words">{text}</p>
+      </article>
+    ))}
+  </div>
+</div>
 
   <MobileSectionFooter baseId="process" />
 </section>
@@ -314,7 +299,7 @@ export default function ConsultingPage() {
 
           <div className="mx-auto max-w-[1100px] px-6"><div className="h-px w-full bg-[var(--color-cream)]/15" /></div>
 
-          <section id={toMobile("results")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14">
+          <section id={toMobile("results")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14 narrow-landscape-70">
             <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Results</p>
             <h2 className="font-serif text-3xl opacity-95">What Partners Will Achieve</h2>
             <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" />
@@ -329,7 +314,7 @@ export default function ConsultingPage() {
 
           <div className="mx-auto max-w-[1100px] px-6"><div className="h-px w-full bg-[var(--color-cream)]/15" /></div>
 
-          <section id={toMobile("who-i-work-with")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14">
+          <section id={toMobile("who-i-work-with")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14 narrow-landscape-70">
             <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Who I Work With</p>
             <h2 className="font-serif text-3xl opacity-95">Organization Partnerships</h2>
             <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" />
@@ -353,7 +338,7 @@ export default function ConsultingPage() {
 
           <div className="mx-auto max-w-[1100px] px-6"><div className="h-px w-full bg-[var(--color-cream)]/15" /></div>
 
-          <section id={toMobile("packages")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14">
+          <section id={toMobile("packages")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14 narrow-landscape-70">
             <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Ways to Partner</p>
             <h2 className="font-serif text-3xl opacity-95">Choose the Partnership That Fits</h2>
             <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" />
@@ -377,7 +362,7 @@ export default function ConsultingPage() {
 
           <div className="mx-auto max-w-[1100px] px-6"><div className="h-px w-full bg-[var(--color-cream)]/15" /></div>
 
-          <section id={toMobile("contact")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14">
+          <section id={toMobile("contact")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14 narrow-landscape-70">
             <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 text-center mb-2">Contact</p>
             <h2 className="font-serif text-3xl opacity-95 text-center">Ready to Talk?</h2>
             <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mx-auto mt-3 mb-4 rounded" />
@@ -407,7 +392,7 @@ export default function ConsultingPage() {
           <div className="mx-auto max-w-[1100px] px-6"><div className="h-px w-full bg-[var(--color-cream)]/15" /></div>
 
           {/* Testimonials (2 + Show All / Show Less) */}
-          <section id={toMobile("testimonials")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14">
+          <section id={toMobile("testimonials")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14 narrow-landscape-70">
             <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 text-center mb-2">Testimonials</p>
             <h2 className="font-serif text-3xl opacity-95 text-center">What Clients and Partners Say</h2>
             <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mx-auto mt-3 mb-8 rounded" />
@@ -418,13 +403,13 @@ export default function ConsultingPage() {
                   q: "I found Dr. Salerno to be very well-versed in the subject matter. He definitely helped us grow and I genuinely appreciated his excellence.",
                   a: "New York University",
                   lq: "-left-4 -top-1",
-                  rq: "right-[2.5rem] landscape:right-90 landscape:bottom-4 bottom-[0.5rem]",
+                  rq: "right-[2.5rem] landscape:right-66 landscape:bottom-4 bottom-[0.5rem]",
                 },
                 {
                   q: "Dr. Salerno is an expert in mental health equity research, highly skilled and incorporates attention to community priorities.",
                   a: "University of California, Los Angeles",
                   lq: "-left-4 -top-1",
-                  rq: "right-[12.25rem] landscape:right-91 landscape:bottom-4 bottom-[0.5rem]",
+                  rq: "right-[12.25rem] landscape:right-77 landscape:bottom-4 bottom-[0.5rem]",
                 },
               ].map((t, idx) => (
                 <figure key={idx} className="relative w-full rounded-xl bg-white/5 p-6 ring-1 ring-white/10 shadow-2xl">
@@ -444,13 +429,13 @@ export default function ConsultingPage() {
                     q: "Dr. Salerno has a strong command of various research methods and an undeniable passion for his work in the public health sphere.",
                     a: "Columbia University",
                     lq: "-left-4 -top-1",
-                    rq: "right-[5.75rem] landscape:right-90 landscape:bottom-4 bottom-[0.5rem]",
+                    rq: "right-[5.75rem] landscape:right-79 landscape:bottom-4 bottom-[0.5rem]",
                   },
                   {
                     q: "Dr. Salerno is incredibly intelligent and insightful with a deep, nuanced understanding of and appreciation for research.",
                     a: "Columbia University",
                     lq: "-left-4 -top-1",
-                    rq: "right-[0.5rem] landscape:right-126 landscape:bottom-4 bottom-[0.5rem]",
+                    rq: "right-[0.5rem] landscape:right-107.5 landscape:bottom-4 bottom-[0.5rem]",
                   },
                 ].map((t, idx) => (
                   <figure key={`more-${idx}`} className="relative w-full rounded-xl bg-white/5 p-6 ring-1 ring-white/10 shadow-2xl">
@@ -499,7 +484,7 @@ export default function ConsultingPage() {
             </div>
 
             <div className="mobile-footer-cap">
-              <div className="mx-auto max-w-[1400px] px-3">
+              <div className="mx-auto max-w-[1400px] px-3 narrow-landscape-70">
                 {/* Newsletter card (midnight blue) */}
                 <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
                   <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
