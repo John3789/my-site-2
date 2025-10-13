@@ -33,7 +33,7 @@ export default function Header() {
     <>
       {/* Header bar */}
       <header className={headerClass}>
-        <div className="mx-auto max-w-7xl px-6 h-10 flex items-center">
+        <div className="relative mx-auto max-w-7xl px-6 h-10 flex items-center">
           {/* Desktop / tablet nav (unchanged) */}
           <nav className="hidden lg:flex w-full items-center justify-center gap-6 text-[13px] tracking-wide uppercase">
             {!isHome && (
@@ -54,9 +54,10 @@ export default function Header() {
   onClick={() => setOpen(true)}
   className="
   lg:hidden 
-  mr-auto -mr-1 -ml-0 p-0 translate-y-7
-  landscape: -mr-1 ml-5 p-3           /* less left margin in landscape */
-  landscape:translate-y-4  /* pull it up a bit in landscape */
+  absolute left-auto top-auto z-[1] p-0          /* portrait: hard-left, ignore px-6 */
+  landscape:static landscape:left-auto     /* landscape: back to normal flow */
+  landscape:top-auto left-auto landscape:p-10
+  translate-y-12 landscape:translate-y-4
   "
 >
   {/* 3-line icon (cream) */}
