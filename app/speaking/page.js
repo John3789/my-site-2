@@ -140,16 +140,14 @@ export default function SpeakingPage() {
 
 {/* ===== HERO IMAGE with overlay text ===== */}
 <section className="relative w-full overflow-x-hidden">
-  {/* black backdrop so there’s never a green flash */}
   <div
-    className="
+    className={`
       relative max-w-[100vw] mx-auto overflow-hidden bg-black
-      h-[70vh]                            /* default / landscape */
+      h-[70vh]
       [@media(orientation:portrait)]:h-auto
-      [@media(orientation:portrait)]:aspect-[16/9]  /* <- match your image ratio */
-    "
+      [@media(orientation:portrait)]:aspect-[16/9]
+    `}
   >
-    {/* Background image (show full image in portrait, fill in landscape) */}
     <HeroImageIphoneAware
       src="/bwspeaking1.jpg"
       alt=""
@@ -158,10 +156,10 @@ export default function SpeakingPage() {
       quality={95}
       sizes="100vw"
       fetchPriority="high"
-      className="
+      className={`
         object-cover object-[50%_35%]
         [@media(orientation:portrait)]:object-contain
-      "
+      `}
     />
 
 

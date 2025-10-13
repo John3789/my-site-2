@@ -22,7 +22,11 @@ const cormorant = Cormorant_Garamond({
 
 export default function RootLayout({ children }) {
   return (
- <html lang="en" className={`${inter.variable} ${cormorant.variable} zoom-not-ready`}>
+ <html
+      lang="en"
+      className={`${inter.variable} ${cormorant.variable} zoom-not-ready`}
+      style={{ ['--vv']: '1' }}   // ✅ SSR default so hydration matches
+    >
       <head>
 
         <Script id="vv-scale-var" strategy="beforeInteractive">
