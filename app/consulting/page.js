@@ -109,7 +109,7 @@ export default function ConsultingPage() {
   );
 
   return (
-    <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] narrow-landscape-80">
+    <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] narrow-landscape-70">
       {/* ============== MOBILE (uses the exact working zoom wrapper) ============== */}
       <div className="lg:hidden">                {/* HIDE mobile on desktop */}
         <div
