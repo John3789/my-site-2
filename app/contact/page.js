@@ -79,13 +79,13 @@ export default function ContactPage() {
             >
               {/* Header */}
               <header className="max-w-3xl mx-auto text-center mb-10">
-                <div className="md:hidden flex items-center justify-center gap-3">
-                  <h1 className="font-serif text-5xl leading-[1.06] opacity-90">Contact</h1>
+                <div className="md:hidden">
+                  <h1 className="font-serif text-5xl leading-[1.06] opacity-90 text-center">Contact</h1>
                   <span className="w-14 h-14" aria-hidden />
                 </div>
 
                 <h1 className="hidden md:block font-serif text-5xl leading-[1.06] opacity-90">Contact</h1>
-                <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-1 md:mt-4 rounded" />
+                <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 md:mt-4 rounded" />
                 <p className="text-base opacity-90 mt-6">
                   I’m glad you’re here. Share a few details below or email{" "}
                   <a
