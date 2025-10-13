@@ -175,7 +175,8 @@ export default function SpeakingPage() {
 <div className="hero-hr !h-[2px] !w-16 bg-[var(--color-gold)]/85 mx-auto !mt-3 !mb-2 rounded landscape:!h-3px landscape:!w-16 landscape:!mt-3 landscape:!mb-3 md:!w-16 [@media(orientation:portrait)_and_(max-width:900px)]:!h-3px [@media(orientation:portrait)_and_(max-width:900px)]:!w-16 [@media(orientation:portrait)_and_(max-width:900px)]:!mt-3 [@media(orientation:portrait)_and_(max-width:900px)]:!mb-3" />
           {/* Mobile-only shorter subheadline */}
                 <p className="hero-sub md:hidden opacity-90 max-w-3xl mx-auto !text-[clamp(16px,4.5vw,20px)] leading-snug">
-                  Talks that spark resilience, growth, and lasting change.
+                  Science-backed, story-driven talks that spark resilience, growth, and
+                  lasting change.
                 </p>
 
                 {/* Desktop/tablet original subheadline (unchanged) */}
