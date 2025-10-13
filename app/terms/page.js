@@ -11,7 +11,7 @@ export default function TermsPage() {
 
 
   return (
-    <>
+  <div className="page-scroll">
       {/* ===== PAGE BODY WRAPPER (zoom on mobile, normal on desktop) ===== */}
       <div
       ref={wrapRef}
@@ -135,6 +135,6 @@ export default function TermsPage() {
 
         </main>
       </div>
-    </>
+</div>
   );
 }

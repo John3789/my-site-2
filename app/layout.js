@@ -29,6 +29,31 @@ export default function RootLayout({ children }) {
     >
       <head>
 
+        <Script id="ios-edge-lock" strategy="afterInteractive">
+{`
+  (function () {
+    // Prevent rubber-band at the very top/bottom of scrollable containers
+    function edgeLock(el) {
+      if (!el) return;
+      el.addEventListener('touchstart', function () {
+        const top = el.scrollTop;
+        const max = el.scrollHeight - el.clientHeight;
+        if (top <= 0) el.scrollTop = 1;       // nudge from top
+        else if (top >= max) el.scrollTop = max - 1; // nudge from bottom
+      }, { passive: true });
+    }
+
+    // Auto-attach to common classes
+    function attachAll() {
+      document.querySelectorAll('.page-scroll, .scroll-area').forEach(edgeLock);
+    }
+    attachAll();
+    document.addEventListener('DOMContentLoaded', attachAll, { once: true });
+  })();
+`}
+</Script>
+
+
         <Script id="vv-scale-var" strategy="beforeInteractive">
 {`
   (function () {

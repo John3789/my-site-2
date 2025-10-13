@@ -293,3 +293,31 @@ html.zoom-on .zoom-exempt { ... } */
   transform: none !important;
   width: auto !important;
 }
+
+/* Lock the viewport; we'll create our own scrollers inside */
+html, body {
+  height: 100%;
+  overflow: hidden;               /* prevents rubber-band at the root */
+  -webkit-overflow-scrolling: auto;
+}
+
+/* Your main page scroller (wrap your page content in this) */
+.page-scroll {
+  position: fixed;                /* pins to the viewport */
+  inset: 0;
+  overflow: auto;                 /* this actually scrolls */
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;   /* no chaining/bounce inside */
+}
+
+/* Any other scrollable areas (e.g., modal body, menus) */
+.scroll-area {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+/* Optional: when a fullscreen menu is open, make sure body stays locked */
+html.menu-open, body.menu-open {
+  overflow: hidden !important;
+}
