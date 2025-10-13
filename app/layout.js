@@ -28,31 +28,38 @@ export default function RootLayout({ children }) {
       style={{ ['--vv']: '1' }}   // ✅ SSR default so hydration matches
     >
       <head>
-<Script id="vv-reset-lite" strategy="beforeInteractive">
+
+<Script id="ios-landscape-nudge-lite" strategy="beforeInteractive">
 {`
   (function () {
-    // iPhone/iPod only (skip iPad)
-    if (!/iP(hone|od)/.test(navigator.userAgent)) return;
+    var isiOS = /iP(hone|od)/.test(navigator.userAgent);
+    if (!isiOS) return;
 
     var vp = document.querySelector('meta[name="viewport"]');
     if (!vp) { vp = document.createElement('meta'); vp.name = 'viewport'; document.head.appendChild(vp); }
-    var base = 'width=device-width, initial-scale=1, viewport-fit=cover';
 
-    function resetIfWeird() {
-      var vv = (window.visualViewport && window.visualViewport.scale) || 1;
-      // Only intervene if Safari isn't near 1.0
-      if (vv > 1.02 || vv < 0.98) {
-        vp.setAttribute('content', base + ', maximum-scale=1');
+    // ⬇️ Match your <meta> exactly
+    var base = 'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=8, user-scalable=yes, viewport-fit=cover';
+
+    function snapIfWeird() {
+      var vv = window.visualViewport;
+      var isLandscape = (vv && vv.width > vv.height) || Math.abs(window.orientation) === 90;
+      var scale = vv ? vv.scale : 1;
+      if (!isLandscape) return;
+      if (Math.abs(scale - 1) < 0.03) return;
+
+      // Briefly force max=1 to snap to 1.0, then restore the full base
+      vp.setAttribute('content', base + ', maximum-scale=1');
+      requestAnimationFrame(function () {
         requestAnimationFrame(function () {
-          requestAnimationFrame(function () {
-            vp.setAttribute('content', base); // restore zoomability
-          });
+          vp.setAttribute('content', base);
         });
-      }
+      });
     }
 
-    window.addEventListener('pageshow', resetIfWeird);
-    window.addEventListener('orientationchange', resetIfWeird);
+    if (document.readyState !== 'loading') snapIfWeird();
+    window.addEventListener('pageshow', snapIfWeird);
+    window.addEventListener('orientationchange', function(){ setTimeout(snapIfWeird, 50); });
   })();
 `}
 </Script>
@@ -109,30 +116,6 @@ export default function RootLayout({ children }) {
   content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=8, user-scalable=yes, viewport-fit=cover"
 />
 
-<Script id="viewport-reassert" strategy="beforeInteractive">
-{`
-  (function () {
-    function setViewport() {
-      var m = document.querySelector('meta[name="viewport"]');
-      if (!m) {
-        m = document.createElement('meta');
-        m.name = 'viewport';
-        document.head.appendChild(m);
-      }
-      m.setAttribute(
-        'content',
-        'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=8, user-scalable=yes, viewport-fit=cover'
-      );
-    }
-    // First paint + any bfcache restore
-    setViewport();
-    window.addEventListener('pageshow', function () {
-      setViewport();
-    });
-  })();
-`}
-</Script>
-
         {/* 🔒 Inline kill-switch CSS BEFORE first paint (no opacity hiding) */}
         <Script id="zoom-kill-style" strategy="beforeInteractive">
           {`(function () {
@@ -148,41 +131,32 @@ export default function RootLayout({ children }) {
 })();`}
         </Script>
 
-        {/* iOS bfcache: re-assert viewport on pageshow (no max/min scale) */}
-<Script id="vp-pageshow-assert" strategy="beforeInteractive">
-{`
-  window.addEventListener('pageshow', function () {
-    var m = document.querySelector('meta[name="viewport"]');
-    if (m) m.setAttribute('content','width=device-width, initial-scale=1, viewport-fit=cover');
-  });
-`}
-</Script>
-
       </head>
 
       {/* single body (no nesting). NOTE: desktop-only min width to avoid mobile auto-zoom */}
       <body className="lg:min-w-[1200px] bg-[#F4F1EA] text-[#0C1415] antialiased [text-rendering:optimizeLegibility] [-webkit-font-smoothing:antialiased]">
         <Header />
 
-        {/* ❌ Removed the viewport "nudge" script to reduce flicker */}
-
-        {/* Optional helper: keep if you want; does not affect zoom */}
-        <Script id="ios-blur-active-input" strategy="afterInteractive">
-          {`
+<Script id="ios-blur-active-input" strategy="afterInteractive">
+{`
   (function () {
+    if (!/iP(hone|od)/.test(navigator.userAgent)) return;
+
     function blurIfNeeded() {
       var el = document.activeElement;
       if (!el) return;
       // allow opt-out with data-allow-autofocus="true"
-      var allow = el.matches && el.matches('[data-allow-autofocus="true"]');
-      if (allow) return;
-      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.isContentEditable) el.blur();
+      if (el.matches && el.matches('[data-allow-autofocus="true"]')) return;
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.isContentEditable) {
+        el.blur();
+      }
     }
-    document.addEventListener('DOMContentLoaded', () => setTimeout(blurIfNeeded, 0), { once: true });
-    window.addEventListener('pageshow', () => setTimeout(blurIfNeeded, 0));
+
+    document.addEventListener('DOMContentLoaded', function(){ setTimeout(blurIfNeeded, 0); }, { once: true });
+    window.addEventListener('pageshow', function(){ setTimeout(blurIfNeeded, 0); });
   })();
-          `}
-        </Script>
+`}
+</Script>
 
         {children}
 
