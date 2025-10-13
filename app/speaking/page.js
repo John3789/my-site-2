@@ -132,16 +132,13 @@ export default function SpeakingPage() {
         data-page="speaking"
         className="relative isolate min-h-screen w-full overflow-x-hidden bg-[var(--color-teal-850)]"
       >
+         {/* ⬇️ Make ALL page content scroll inside this wrapper */}
+      <div className="page-scroll"></div>
         {/* background guard to prevent mobile overlay artifact */}
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]"
         />
-
- {/* ⬇️ Make ALL page content scroll inside this wrapper */}
-      <div className="page-scroll"></div>
-        {/* spacer to clear fixed header (tweak if your header height differs) */}
-        <div aria-hidden className="h-10 md:h-16" />
 
 {/* ===== HERO IMAGE with overlay text ===== */}
 <section className="relative w-full overflow-x-hidden">
@@ -994,10 +991,8 @@ export default function SpeakingPage() {
 
         {/* removed the contained divider on mobile */}
       </div>
-        {/* ⬅️ closes the zoom wrapper (inside page-scroll) */}
 
         </div>
-      {/* ⬅️ closes .page-scroll */}
 
       </main>
 
