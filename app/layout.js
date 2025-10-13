@@ -28,6 +28,35 @@ export default function RootLayout({ children }) {
       style={{ ['--vv']: '1' }}   // ✅ SSR default so hydration matches
     >
       <head>
+<Script id="vv-reset-lite" strategy="beforeInteractive">
+{`
+  (function () {
+    // iPhone/iPod only (skip iPad)
+    if (!/iP(hone|od)/.test(navigator.userAgent)) return;
+
+    var vp = document.querySelector('meta[name="viewport"]');
+    if (!vp) { vp = document.createElement('meta'); vp.name = 'viewport'; document.head.appendChild(vp); }
+    var base = 'width=device-width, initial-scale=1, viewport-fit=cover';
+
+    function resetIfWeird() {
+      var vv = (window.visualViewport && window.visualViewport.scale) || 1;
+      // Only intervene if Safari isn't near 1.0
+      if (vv > 1.02 || vv < 0.98) {
+        vp.setAttribute('content', base + ', maximum-scale=1');
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            vp.setAttribute('content', base); // restore zoomability
+          });
+        });
+      }
+    }
+
+    window.addEventListener('pageshow', resetIfWeird);
+    window.addEventListener('orientationchange', resetIfWeird);
+  })();
+`}
+</Script>
+
 
         <Script id="ios-edge-lock" strategy="afterInteractive">
 {`
