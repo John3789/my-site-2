@@ -445,7 +445,7 @@ export default function SpeakingPage() {
             </section>
 
             {/* Programs footer buttons (mobile only) — tighter */}
-            <div className="lg:hidden -mt-6 landscape:-mt-8 mb-15 w-full [@media(orientation:landscape)_and_(max-width:820px)]:mt-12">
+            <div className="lg:hidden -mt-6 landscape:-mt-20 mb-15 w-full [@media(orientation:landscape)_and_(max-width:820px)]:mt-10">
               <div className="w-full flex justify-center">
                 <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
                   <button
@@ -594,7 +594,7 @@ export default function SpeakingPage() {
             </section>
 
             {/* Formats footer buttons (mobile only) — slimmer + same spacing as Service Pillars */}
-            <div className="lg:hidden -mt-6 landscape:-mt-8 mb-15 w-full [@media(orientation:landscape)_and_(max-width:820px)]:mt-12">
+            <div className="lg:hidden -mt-6 landscape:-mt-20 mb-15 w-full [@media(orientation:landscape)_and_(max-width:820px)]:mt-10">
               <div className="w-full flex justify-center">
                 <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
                   <button
@@ -705,7 +705,7 @@ export default function SpeakingPage() {
             </section>
 
             {/* Results footer buttons (mobile only) — slimmer + same spacing as Service Pillars */}
-            <div className="lg:hidden -mt-6 landscape:-mt-8 mb-15 w-full [@media(orientation:landscape)_and_(max-width:820px)]:mt-12">
+            <div className="lg:hidden -mt-6 landscape:-mt-20 mb-15 w-full [@media(orientation:landscape)_and_(max-width:820px)]:mt-10">
               <div className="w-full flex justify-center">
                 <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
                   <button
@@ -846,7 +846,7 @@ export default function SpeakingPage() {
 
 
 {/* Toggle button */}
-<div className="mt-4 flex justify-center w-full landscape:-mb-6 [@media(orientation:landscape)_and_(max-width:820px)]:mt-10">
+<div className="mt-10 flex justify-center w-full landscape:-mb-12 [@media(orientation:landscape)_and_(max-width:820px)]:mt-10">
   <button
     onClick={() => setShowAllTestimonials((s) => !s)}
     aria-expanded={showAllTestimonials}
@@ -901,7 +901,7 @@ export default function SpeakingPage() {
 
 
             {/* Bottom spacer */}
-            <div className="pb-10" />
+            <div className="pb-10 [@media(orientation:landscape)_and_(max-width:820px)]:pb-13" />
             
           {/* FINAL divider above footer — match two-column width, no bleed */}
 <div className="mx-auto max-w-[1400px] px-6">
