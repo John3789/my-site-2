@@ -82,22 +82,29 @@ export default function Home() {
     font-serif font-semibold uppercase tracking-[0.02em]
     text-[var(--color-cream)] text-center leading-[1.05]
     drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]
-        !text-[clamp(28px,11.3vw,44px)]
-            [@media(orientation:landscape)_and_(max-width:900px)]:hidden
+    !text-[clamp(28px,11.3vw,44px)]
+    [@media(orientation:landscape)_and_(max-width:900px)]:hidden
   "
-  >
-
-  <span className="relative inline-block">
-    {/* ™ pinned; does not shift the text */}
+>
+  <span className="relative inline-block pr-[0.55em]">
+    {/* ™ pinned; scales with heading; no layout shift */}
     <span
-      aria-hidden
-      className="absolute -right-0 -top-3 text-[0.40em] opacity-70 pointer-events-none"
+      aria-hidden="true"
+      className="
+        absolute right-[0.02em] top-[-0.62em]
+        text-[0.55em] leading-none opacity-70
+        pointer-events-none select-none
+        sm:top-[-0.64em]
+        md:top-[-0.66em] md:text-[0.52em]
+        lg:top-[-0.68em] lg:text-[0.50em]
+      "
     >
       ™
     </span>
     DR. JUAN PABLO SALERNO
   </span>
 </h1>
+
   </div>
 
   {/* Desktop/tablet buttons only (mobile CTAs are hidden) */}
