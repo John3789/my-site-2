@@ -130,7 +130,7 @@ export default function SpeakingPage() {
     <>
       <main
         data-page="speaking"
-        className="relative isolate min-h-screen w-full overflow-x-hidden bg-[var(--color-teal-850)] narrow-landscape-70"
+        className="relative isolate min-h-screen w-full overflow-x-hidden bg-[var(--color-teal-850)] narrow-landscape-80"
       >
         {/* background guard to prevent mobile overlay artifact */}
         <div
