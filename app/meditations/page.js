@@ -35,7 +35,7 @@ export default function MeditationsPage() {
             overflow-visible
           "
         >
-          <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] narrow-landscape-70">
+          <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
             {/* ===== HERO ===== */}
             <section className="mx-auto max-w-[1400px] px-6 pt-16 md:pt-20 pb-6 text-center">
               <h1 className="font-serif text-6xl leading-[1.06] opacity-95">
@@ -60,7 +60,7 @@ export default function MeditationsPage() {
             </div>
 
             {/* ===== FEATURED (5-Minute Reset) — now 2 columns ===== */}
-            <section className="mx-auto max-w-[1400px] px-6 py-14 md:py-16 narrow-landscape-70">
+            <section className="mx-auto max-w-[1400px] px-6 py-14 md:py-16 narrow-landscape-80">
               <div className="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
                 {/* LEFT COLUMN — existing content */}
                 <div>
@@ -152,7 +152,7 @@ export default function MeditationsPage() {
             </div>
 
             {/* ===== CUSTOM SESSIONS ===== */}
-            <section className="mx-auto max-w-[1400px] px-6 py-14 md:py-16 narrow-landscape-70"> 
+            <section className="mx-auto max-w-[1400px] px-6 py-14 md:py-16 narrow-landscape-80"> 
               <p className=" flex justify-center text-[12px] uppercase tracking-[0.18em] opacity-60 mb-2">Custom</p>
               <h2 className="flex justify-center font-serif text-4xl md:text-5xl opacity-95">Custom-Made Sessions</h2>
               <div className="mx-auto h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-6 rounded" />
@@ -194,7 +194,7 @@ export default function MeditationsPage() {
 
   <div className="mobile-footer-cap">
 
-  <div className="mx-auto max-w-[1400px] px-3">
+  <div className="mx-auto max-w-[1400px] px-3 narrow-landscape-70">
     {/* Newsletter card (midnight blue) */}
     <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
       <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
