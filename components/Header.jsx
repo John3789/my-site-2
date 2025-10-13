@@ -114,7 +114,7 @@ vectorEffect="non-scaling-stroke"  /* keeps stroke width constant if any transfo
 >
       <div className="flex items-center justify-between px-6 h-16 pr-25">
   {/* Bigger Menu label with landscape adjustment */}
- <span className="font-serif text-[clamp(22px,7vw,32px)] landscape:text-[3.1vw]">
+ <span className="font-serif text-[clamp(22px,7vw,32px)] landscape:text-[3.4vw]">
 
     Menu
   </span>
