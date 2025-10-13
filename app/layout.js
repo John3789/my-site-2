@@ -67,16 +67,15 @@ export default function RootLayout({ children }) {
         </Script>
 
         {/* iOS bfcache: re-assert viewport on pageshow (no max/min scale) */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.addEventListener('pageshow', function () {
-                var m = document.querySelector('meta[name="viewport"]');
-                if (m) m.setAttribute('content','width=device-width, initial-scale=1, viewport-fit=cover');
-              });
-            `,
-          }}
-        />
+<Script id="vp-pageshow-assert" strategy="beforeInteractive">
+{`
+  window.addEventListener('pageshow', function () {
+    var m = document.querySelector('meta[name="viewport"]');
+    if (m) m.setAttribute('content','width=device-width, initial-scale=1, viewport-fit=cover');
+  });
+`}
+</Script>
+
       </head>
 
       {/* single body (no nesting). NOTE: desktop-only min width to avoid mobile auto-zoom */}
