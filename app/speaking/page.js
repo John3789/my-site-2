@@ -289,7 +289,7 @@ export default function SpeakingPage() {
 
           {/* ===== MAIN CONTENT ===== */}
           <div className="mx-auto max-w-[1400px] md:py-6 space-y-16 md:space-y-24" id="topics">
-            <hr className="border-t border-[var(--color-cream)]/22 md:mb-8 mx-auto w-[93%] landscape:mt-8 landscape:mb-4 [@media(orientation:landscape)_and_(max-width:820px)]:mt-15" />
+            <hr className="border-t border-[var(--color-cream)]/22 md:mb-8 mx-auto w-[93%] landscape:mt-15 landscape:mb-4 [@media(orientation:landscape)_and_(max-width:820px)]:mt-15" />
 
             {/* Popular Topics (Programs) */}
             <section
@@ -445,7 +445,7 @@ export default function SpeakingPage() {
             </section>
 
             {/* Programs footer buttons (mobile only) — tighter */}
-            <div className="lg:hidden -mt-6 landscape:-mt-19 mb-15 w-full [@media(orientation:landscape)_and_(max-width:820px)]:mt-8">
+            <div className="lg:hidden -mt-6 landscape:-mt-19 mb-15 w-full [@media(orientation:landscape)_and_(max-width:820px)]:mt-5">
               <div className="w-full flex justify-center">
                 <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
                   <button
@@ -594,7 +594,7 @@ export default function SpeakingPage() {
             </section>
 
             {/* Formats footer buttons (mobile only) — slimmer + same spacing as Service Pillars */}
-            <div className="lg:hidden -mt-6 landscape:-mt-19 mb-15 w-full [@media(orientation:landscape)_and_(max-width:820px)]:mt-8">
+            <div className="lg:hidden -mt-6 landscape:-mt-19 mb-15 w-full [@media(orientation:landscape)_and_(max-width:820px)]:mt-5">
               <div className="w-full flex justify-center">
                 <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
                   <button
@@ -705,7 +705,7 @@ export default function SpeakingPage() {
             </section>
 
             {/* Results footer buttons (mobile only) — slimmer + same spacing as Service Pillars */}
-            <div className="lg:hidden -mt-6 landscape:-mt-19 mb-15 w-full [@media(orientation:landscape)_and_(max-width:820px)]:mt-8">
+            <div className="lg:hidden -mt-6 landscape:-mt-19 mb-15 w-full [@media(orientation:landscape)_and_(max-width:820px)]:mt-5">
               <div className="w-full flex justify-center">
                 <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
                   <button
@@ -736,7 +736,7 @@ export default function SpeakingPage() {
 <section id="testimonials" className="lg:hidden">
   {/* Centered container for everything in this section */}
   <div className="mx-auto w-full max-w-[640px] px-6">
-    <p className="text-center text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2 landscape:mt-8">Testimonials</p>
+    <p className="text-center text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2 landscape:mt-16">Testimonials</p>
     <h2 className="text-center font-serif text-4xl mb-2">What People Say</h2>
     <div className="items-center h-[2px] w-12 bg-[var(--color-gold)]/75 mb-8 rounded mx-auto" />
 {/* Cards */}
@@ -862,7 +862,7 @@ export default function SpeakingPage() {
             
 
             {/* Testimonials footer buttons (mobile only) — slimmer + centered + tight spacing */}
-            <div className="lg:hidden -mt-7 mb-17  w-full [@media(orientation:landscape)_and_(max-width:820px)]:mt-0">
+            <div className="lg:hidden -mt-5 mb-17  w-full [@media(orientation:landscape)_and_(max-width:820px)]:mt-12">
               <div className="w-full flex justify-center">
                 <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
                   <button
