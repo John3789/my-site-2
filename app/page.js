@@ -38,7 +38,7 @@ export default function Home() {
       {/* --- paste ALL your existing page content here (hero, sections, footer cap, etc.) --- */}
 
       {/* DESKTOP/TABLET nameplate — unchanged */}
-      <section id="home" className="hidden md:block bg-[var(--color-teal-800)] text-[var(--color-cream)][@media(orientation:landscape)_and_(max-width:900px)]:block">
+      <section id="home" className="hidden md:block bg-[var(--color-teal-800)] text-[var(--color-cream)] [@media(orientation:landscape)_and_(max-width:900px)]:block">
         <div className="mx-auto max-w-[1400px] px-6 pt-0 pb-4">
           <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
             <span className="hidden md:block text-7xl hover:opacity-90 transition [@media(orientation:landscape)_and_(max-width:900px)]:block [@media(orientation:landscape)_and_(max-width:900px)]:text-[45px]">
