@@ -325,3 +325,22 @@ html.menu-open, body.menu-open {
 
 /* Make the page-scroll container use momentum scrolling on iOS */
 .page-scroll { -webkit-overflow-scrolling: touch; }
+
+/* Stop root overscroll in LANDSCAPE; keep scrolling inside your page container */
+@media (orientation: landscape) {
+  html, body {
+    overscroll-behavior: none;       /* block scroll chaining/bounce */
+    height: 100%;                    /* ensure fixed child can size */
+    overflow: hidden;                /* no root scroll */
+  }
+
+  /* Your main scroller (the wrapper you added) */
+  .page-scroll {
+    position: fixed;                 /* pin to viewport */
+    inset: 0;
+    overflow: auto;                  /* this is the only thing that scrolls */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;    /* prevent bounce from escaping */
+    height: 100dvh;                  /* use dynamic viewport height */
+  }
+}
