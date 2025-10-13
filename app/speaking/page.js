@@ -138,22 +138,31 @@ export default function SpeakingPage() {
           className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]"
         />
 
-        {/* ===== HERO IMAGE with overlay text ===== */}
-        <section className="relative w-full overflow-x-hidden">
-          {/* black backdrop so there’s never a green flash */}
-          <div className="relative h-[70vh] bg-black max-w-[100vw] mx-auto overflow-hidden">
-{/* Background image (optimized, iPhone-aware) */}
-<HeroImageIphoneAware
-  src="/bwspeaking1.jpg"
-  alt=""
-  fill
-  priority
-  quality={95}
-  sizes="100vw"
-  className="object-cover object-[50%_35%]"
-  fetchPriority="high"
-
-/>
+{/* ===== HERO IMAGE with overlay text ===== */}
+<section className="relative w-full overflow-x-hidden">
+  {/* black backdrop so there’s never a green flash */}
+  <div
+    className="
+      relative max-w-[100vw] mx-auto overflow-hidden bg-black
+      h-[70vh]                            /* default / landscape */
+      [@media(orientation:portrait)]:h-auto
+      [@media(orientation:portrait)]:aspect-[16/9]  /* <- match your image ratio */
+    "
+  >
+    {/* Background image (show full image in portrait, fill in landscape) */}
+    <HeroImageIphoneAware
+      src="/bwspeaking1.jpg"
+      alt=""
+      fill
+      priority
+      quality={95}
+      sizes="100vw"
+      fetchPriority="high"
+      className="
+        object-cover object-[50%_35%]
+        [@media(orientation:portrait)]:object-contain
+      "
+    />
 
 
             {/* Solid overlay (no gradient) */}
