@@ -66,7 +66,7 @@ export default function Header() {
     stroke="var(--color-cream)"
     strokeWidth="2.5"
     strokeLinecap="round"
-    vectorEffect="non-scaling-stroke"   // keeps stroke width constant if any transforms happen
+vectorEffect="non-scaling-stroke"  /* keeps stroke width constant if any transforms happen */
   />
 </svg>
 </button>
@@ -99,14 +99,14 @@ export default function Header() {
   <>
     {/* Backdrop */}
     <div
-   className="fixed inset-0 z-[10000] bg-black/40 vv-counter"
+   className="fixed inset-0 z-[10000] bg-black/40 zoom-exempt vv-counter"
    onClick={() => setOpen(false)}
  />
 
     {/* FULL-SCREEN PANEL */}
 <aside
   className="
-    fixed inset-0 z-[10001] vv-counter
+    fixed inset-0 z-[10001] zoom-exempt vv-counter
     !bg-[var(--color-teal-850)] text-[var(--color-cream)]
     flex flex-col min-h-[100svh] overflow-y-auto overscroll-contain
     [transform-origin:top_left]
@@ -138,7 +138,7 @@ export default function Header() {
       {/* Bigger, responsive options; shrink in landscape so nothing gets cut off */}
       <nav
         className="px-6 py-6 space-y-6 uppercase tracking-wide
-                   text-[14vw] landscape:text-[4vw]"
+                   text-[11vw] landscape:text-[3.5vw]"
       >
         <MobileLink href="/" onClick={() => setOpen(false)} active={pathname === "/"}>Home</MobileLink>
         <MobileLink href="/about" onClick={() => setOpen(false)} active={pathname.startsWith("/about")}>About</MobileLink>
