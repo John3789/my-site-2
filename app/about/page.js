@@ -188,7 +188,7 @@ export default function AboutPage() {
                   Projects in the Now
                 </h2>
                 <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto mt-3 mb-8 rounded" />
-                <p className="mx-auto space-y-6 text-[clamp(17px,1.6vw,22px)] opacity-90 leading-loose narrow-landscape-70">
+                <p className="mx-auto space-y-6 text-[clamp(16px,1.4vw,19px)] opacity-90 leading-loose narrow-landscape-70">
                  Today, Dr. Salerno continues advancing research that bridges scientific discovery with 
                  real-world impact on mental health. As a university educator, he mentors the next generation 
                  of scholars and practitioners with a focus on purpose, wellbeing, and community. Alongside his 
