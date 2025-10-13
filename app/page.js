@@ -134,7 +134,6 @@ export default function Home() {
       <div
       ref={wrapRef}
         className="
-          page-scroll
           lg:contents
           origin-top
           data-[zoom=on]:[transform:scale(var(--z))]
