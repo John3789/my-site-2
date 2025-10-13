@@ -289,7 +289,7 @@ export default function SpeakingPage() {
 
           {/* ===== MAIN CONTENT ===== */}
           <div className="mx-auto max-w-[1400px] md:py-6 space-y-16 md:space-y-24" id="topics">
-            <hr  className="border-t border-[var(--color-cream)]/22 md:mb-8 mx-auto w-[93%] landscape:mt-2 landscape:mb-4 [@media(orientation:landscape)_and_(max-width:900px)]:!mt-12" />
+            <hr className="border-t border-[var(--color-cream)]/22 md:mb-8 mx-auto w-[93%] landscape:mt-2 landscape:mb-4" />
 
             {/* Popular Topics (Programs) */}
             <section
