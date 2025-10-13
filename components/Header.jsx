@@ -114,7 +114,7 @@ vectorEffect="non-scaling-stroke"  /* keeps stroke width constant if any transfo
 >
       <div className="flex items-center justify-between px-6 h-16 pr-25">
   {/* Bigger Menu label with landscape adjustment */}
- <span className="font-serif text-[clamp(22px,7vw,32px)] landscape:text-[3.4vw]">
+ <span className="font-serif text-[clamp(22px,7vw,32px)] landscape:text-[3.5vw]">
 
     Menu
   </span>
@@ -124,7 +124,7 @@ vectorEffect="non-scaling-stroke"  /* keeps stroke width constant if any transfo
     type="button"
     aria-label="Close menu"
     onClick={() => setOpen(false)}
-    className="p-3 -mr-10 ml-8 landscape:ml-0 landscape:relative landscape:top-1"
+    className="p-3 -mr-10 ml-8 landscape:ml-0 landscape:relative landscape:top-3"
   >
     <svg 
       className="w-8 h-8 landscape:w-8 landscape:h-8" viewBox="0 0 24 24" fill="none" aria-hidden="true"
