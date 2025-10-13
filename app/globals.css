@@ -321,3 +321,6 @@ html, body {
 html.menu-open, body.menu-open {
   overflow: hidden !important;
 }
+
+/* Make the page-scroll container use momentum scrolling on iOS */
+.page-scroll { -webkit-overflow-scrolling: touch; }

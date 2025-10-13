@@ -11,7 +11,7 @@ export default function TermsPage() {
 
 
   return (
-  <div className="page-scroll">
+<div className="page-scroll h-[100svh] overflow-y-auto overscroll-contain lg:h-auto lg:overflow-visible lg:overscroll-auto">
       {/* ===== PAGE BODY WRAPPER (zoom on mobile, normal on desktop) ===== */}
       <div
       ref={wrapRef}
