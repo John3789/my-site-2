@@ -47,7 +47,7 @@ export default function AboutPage() {
 
 {/* Mobile quick-nav (iPhone portrait & landscape only) */}
 <nav id="quicknav" className="block lg:hidden mt-6 mb-8 pointer-events-auto">
-<div className="grid grid-cols-2 gap-2 mx-auto narrow-landscape">
+<div className="grid grid-cols-2 gap-2 mx-auto narrow-landscape-70">
         <a href="#about" className="w-full inline-flex items-center gap-1 rounded-full px-3.5 py-1.5 text-[12px] font-semibold tracking-wide truncate transition active:scale-95 active:brightness-110 border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)]">
       <span className="inline-block w-[3ch] text-left tabular-nums leading-none">1.</span><span className="truncate">About</span>
     </a>
@@ -67,7 +67,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start mb-12">
               {/* Left: first two paragraphs */}
               <div>
-                <p className="mx-auto space-y-6 text-[clamp(17px,1.6vw,22px)] mb-4 opacity-90 leading-loose narrow-landscape">
+                <p className="mx-auto space-y-6 text-[clamp(17px,1.6vw,22px)] mb-4 opacity-90 leading-loose narrow-landscape-70">
                   Dr. Juan Pablo Salerno, also known in academic spaces as{" "}
                   <strong>Dr. John P. Salerno</strong>, is an award-winning mental health scientist, personal growth expert, author
                   and professor—credited with more than 30 peer-reviewed publications and 
@@ -79,7 +79,7 @@ export default function AboutPage() {
                   and purpose.
                 </p>
 
-                <p className="mx-auto space-y-6 text-[clamp(17px,1.6vw,22px)] opacity-90 leading-loose narrow-landscape">
+                <p className="mx-auto space-y-6 text-[clamp(17px,1.6vw,22px)] opacity-90 leading-loose narrow-landscape-70">
                   His research has been published in leading journals such as Psychiatry Research,
                   Psychological Trauma, Epidemiology &amp; Psychiatric Sciences, Drug &amp; Alcohol
                   Dependence, Psychology of Sexual Orientation &amp; Gender Diversity, and Preventing
@@ -109,7 +109,7 @@ export default function AboutPage() {
             {/* Row 2+: everything else centered below */}
 <div className="mx-auto max-w-none md:max-w-[1000px] px-2 md:px-6 space-y-12">
               {/* Paragraph 3 */}
-              <p className="mx-auto space-y-6 text-[clamp(17px,1.6vw,22px)] opacity-90 leading-loose narrow-landscape">
+              <p className="mx-auto space-y-6 text-[clamp(17px,1.6vw,22px)] opacity-90 leading-loose narrow-landscape-70">
                 Dr. Salerno’s expertise is rooted in science and shaped by personal transformation.
                 After reaching his lowest point in mental health, he devoted years to therapy
                 and recovery. But remission wasn’t the destination - it was the beginning. Seeking 
@@ -150,7 +150,7 @@ export default function AboutPage() {
                   Mission
                 </h2>
                 <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto mt-3 mb-8 rounded" />
-                <p className="mx-auto space-y-6 text-[clamp(17px,1.6vw,22px)] opacity-90 leading-loose narrow-landscape">
+                <p className="mx-auto space-y-6 text-[clamp(17px,1.6vw,22px)] opacity-90 leading-loose narrow-landscape-70">
                   To blend science and personal growth wisdom to help individuals and communities rise
                   above mental health challenges, unlock hidden potential, and live with greater purpose
                   and abundance.
@@ -188,7 +188,7 @@ export default function AboutPage() {
                   Projects in the Now
                 </h2>
                 <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto mt-3 mb-8 rounded" />
-                <p className="mx-auto space-y-6 text-[clamp(17px,1.6vw,22px)] opacity-90 leading-loose narrow-landscape">
+                <p className="mx-auto space-y-6 text-[clamp(17px,1.6vw,22px)] opacity-90 leading-loose narrow-landscape-70">
                  Today, Dr. Salerno continues advancing research that bridges scientific discovery with 
                  real-world impact on mental health. As a university educator, he mentors the next generation 
                  of scholars and practitioners with a focus on purpose, wellbeing, and community. Alongside his 
@@ -231,7 +231,7 @@ export default function AboutPage() {
                   Credentials
                 </h2>
                 <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto mt-3 mb-8 rounded" />
-                <p className="mx-auto space-y-6 text-[clamp(17px,1.6vw,22px)] opacity-90 leading-loose narrow-landscape">
+                <p className="mx-auto space-y-6 text-[clamp(17px,1.6vw,22px)] opacity-90 leading-loose narrow-landscape-70">
                   Dr. Salerno holds a Ph.D. in Behavioral &amp; Community Health and a Graduate
                   Certificate in Measurement, Statistics, &amp; Evaluation from the University of
                   Maryland. He also earned an M.P.H. in Prevention Science &amp; Community Health and a
