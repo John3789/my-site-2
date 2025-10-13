@@ -32,7 +32,7 @@ export default function AboutPage() {
           overflow-visible
         "
       >
-<main data-page="about" className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
+<main data-page="about" className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] narrow-landscape-70">
           <div className="mx-auto max-w-[1400px] px-6 py-20">
             {/* Page title with kicker + gold bar */}
             <div className="text-center mb-12">

@@ -32,7 +32,7 @@ export default function BooksPage() {
             overflow-visible
           `}
         >
-          <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
+          <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] narrow-landscape-70">
 
             {/* Page title */}
             <div className="mx-auto max-w-[1400px] px-6 pt-20 mb-12 text-center">
