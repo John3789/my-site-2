@@ -54,9 +54,9 @@ export default function Header() {
   onClick={() => setOpen(true)}
   className="
   lg:hidden 
-  absolute left-auto top-auto z-[1] p-0          /* portrait: hard-left, ignore px-6 */
+  absolute left-3 top-0 z-[1] p-0          /* portrait: hard-left, ignore px-6 */
   landscape:static landscape:left-auto     /* landscape: back to normal flow */
-  landscape:top-auto left-auto landscape:p-10
+  landscape:top-0 left-0 landscape:p-10
   translate-y-12 landscape:translate-y-4
   "
 >
@@ -144,7 +144,7 @@ vectorEffect="non-scaling-stroke"  /* keeps stroke width constant if any transfo
       {/* Bigger, responsive options; shrink in landscape so nothing gets cut off */}
       <nav
         className="px-6 py-6 space-y-6 uppercase tracking-wide
-                   text-[7vw] landscape:text-[4vw]"
+                   text-[7vw] landscape:text-[4vw] landscape:pl-10"
       >
         <MobileLink href="/" onClick={() => setOpen(false)} active={pathname === "/"}>Home</MobileLink>
         <MobileLink href="/about" onClick={() => setOpen(false)} active={pathname.startsWith("/about")}>About</MobileLink>
