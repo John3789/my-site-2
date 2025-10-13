@@ -126,6 +126,8 @@ export default function ResourcesPage() {
       <main className="relative isolate min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]" />
 
+      {/* ⬇️ Everything that should scroll lives inside .page-scroll */}
+      <div className="page-scroll">
 
         {/* ===== SINGLE MOBILE ZOOM WRAPPER (title + intro + mobile nav + sections + mobile footer) ===== */}
         <div
@@ -320,6 +322,7 @@ export default function ResourcesPage() {
   </div>
 </div>
 </div>
+    </div>
 
         </div> {/* closes: ZOOM WRAPPER */}
       </main>
