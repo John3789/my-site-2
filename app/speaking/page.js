@@ -205,7 +205,7 @@ export default function SpeakingPage() {
           `}
         >
           {/* ===== Intro Blurb ===== */}
-          <section className="relative w-full pt-16 pb-9 md:py-16 narrow-landscape-700" id="intro">
+          <section className="relative w-full pt-16 pb-9 md:py-16 narrow-landscape-70" id="intro">
             {/* subtle hairline divider from hero */}
             <div className="absolute inset-x-0 top-0 h-px bg-[var(--color-cream)]/15" />
             <div className="mx-auto max-w-[1000px] px-6 text-left space-y-8">
