@@ -76,9 +76,33 @@ export default function RootLayout({ children }) {
 
         {/* Single authoritative viewport (no permanent max/min scale) */}
         <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, viewport-fit=cover"
-        />
+  name="viewport"
+  content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=8, user-scalable=yes, viewport-fit=cover"
+/>
+
+<Script id="viewport-reassert" strategy="beforeInteractive">
+{`
+  (function () {
+    function setViewport() {
+      var m = document.querySelector('meta[name="viewport"]');
+      if (!m) {
+        m = document.createElement('meta');
+        m.name = 'viewport';
+        document.head.appendChild(m);
+      }
+      m.setAttribute(
+        'content',
+        'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=8, user-scalable=yes, viewport-fit=cover'
+      );
+    }
+    // First paint + any bfcache restore
+    setViewport();
+    window.addEventListener('pageshow', function () {
+      setViewport();
+    });
+  })();
+`}
+</Script>
 
         {/* 🔒 Inline kill-switch CSS BEFORE first paint (no opacity hiding) */}
         <Script id="zoom-kill-style" strategy="beforeInteractive">
