@@ -30,7 +30,7 @@ export default function Home() {
   className="
     hidden md:block h-8 bg-[var(--color-teal-800)]
     [@media(orientation:landscape)_and_(max-width:900px)]:block
-    [@media(orientation:landscape)_and_(max-width:900px)]:h-1
+    [@media(orientation:landscape)_and_(max-width:900px)]:h-4
   "
 />
 
