@@ -126,12 +126,12 @@ export default function ConsultingPage() {
           `}
         >
           {/* HERO (inside zoom) */}
-          <section className="mx-auto max-w-[1100px] px-6 pt-16 pb-10 text-center" id="hero-m">
+          <section className="mx-auto max-w-[1100px] px-6 pt-16 pb-10 text-center narrow-landscape-80" id="hero-m">
             <h1 className="font-serif text-5xl leading-[1.06] opacity-95">
               Organizational Wellness Consulting 
             </h1>
-            <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 rounded" />
-            <p className="text-lg opacity-85 max-w-[780px] mx-auto mt-12 leading-relaxed narrow-landscape-70">
+            <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 rounded narrow-landscape-80" />
+            <p className="text-lg opacity-85 max-w-[780px] mx-auto mt-12 leading-relaxed">
               Evidence-based consulting that helps organizations design, implement, evaluate, and scale
               strategies to strengthen mental health, wellbeing, resilience, and growth.
             </p>
