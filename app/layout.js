@@ -29,6 +29,18 @@ export default function RootLayout({ children }) {
     >
       <head>
 
+        <Script id="vv-late-nudge" strategy="afterInteractive">
+{`
+  window.addEventListener('pageshow', function () {
+    setTimeout(function () {
+      var ev = new Event('resize');
+      (window.visualViewport || window).dispatchEvent(ev);
+    }, 250);
+  });
+`}
+</Script>
+
+
         <Script id="ios-edge-lock" strategy="afterInteractive">
 {`
   (function () {
