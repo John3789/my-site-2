@@ -52,7 +52,7 @@ export default function Header() {
   type="button"
   aria-label="Open menu"
   onClick={() => setOpen(true)}
-  className="lg:hidden mr-auto -mr-1 -ml-10 p-3 translate-y-14"
+  className="lg:hidden mr-auto -mr-1 -ml-10 p-3 translate-y-0"
 >
   {/* 3-line icon (cream) */}
 <svg
