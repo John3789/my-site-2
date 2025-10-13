@@ -208,13 +208,13 @@ export default function SpeakingPage() {
           <section className="relative w-full pt-16 pb-9 md:py-16" id="intro">
             {/* subtle hairline divider from hero */}
             <div className="absolute inset-x-0 top-0 h-px bg-[var(--color-cream)]/15" />
-            <div className="mx-auto max-w-[1000px] px-6 text-left space-y-8">
+            <div className="mx-auto max-w-[1000px] px-6 text-left space-y-8 narrow-landscape-70">
               <h2 className="font-serif text-2xl md:text-4xl opacity-90 text-center font-semibold tracking-wide">
                 &ldquo;Engaging. Inspiring. Transformational.&rdquo;
               </h2>
 
 <div
-  className="space-y-6 opacity-85 text-lg md:text-xl leading-loose mx-auto max-w-none landscape:max-w-[700px] lg:landscape:max-w-none narrow-landscape-70"
+  className="space-y-6 opacity-85 text-lg md:text-xl leading-loose mx-auto max-w-none landscape:max-w-[700px] lg:landscape:max-w-none"
 >
                 <p>
                   Dr. Juan Pablo Salerno is a respected mental health scientist,
