@@ -345,9 +345,10 @@ export default function Home() {
           </div>
 
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
+    <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
 <div className="block lg:hidden narrow-landscape-70">
   <div className="mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
-    <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
+
   </div>
 
   <div className="mobile-footer-cap">
