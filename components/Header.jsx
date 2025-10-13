@@ -124,10 +124,10 @@ vectorEffect="non-scaling-stroke"  /* keeps stroke width constant if any transfo
     type="button"
     aria-label="Close menu"
     onClick={() => setOpen(false)}
-    className="p-3 -mr-10 ml-8 landscape:ml-0"
+    className="p-3 -mr-10 ml-8 landscape:ml-0 landscape:relative landscape:top-1"
   >
     <svg 
-      className="w-8 h-8 landscape:w-6 landscape:h-6" viewBox="0 0 24 24" fill="none" aria-hidden="true"
+      className="w-8 h-8 landscape:w-8 landscape:h-8" viewBox="0 0 24 24" fill="none" aria-hidden="true"
     >
 <path d="M6 6l12 12M18 6l-12 12" stroke="var(--color-cream)" strokeWidth="2.5" strokeLinecap="round" />
 
