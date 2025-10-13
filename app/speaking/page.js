@@ -174,7 +174,7 @@ export default function SpeakingPage() {
         <h1   className="hero-title font-serif opacity-95 md:drop-shadow-lg md:!text-6xl [@media(orientation:portrait)_and_(max-width:900px)]:!text-[clamp(56px,14vw,78px)] [@media(orientation:landscape)_and_(max-width:900px)]:!text-[6.5vw]">
                   Speaking
                 </h1>
-<div className="hero-hr h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-3 mb-2 rounded landscape:w-6 md:w-16 [@media(orientation:portrait)_and_(max-width:900px)]:!h-px [@media(orientation:portrait)_and_(max-width:900px)]:!w-10 [@media(orientation:portrait)_and_(max-width:900px)]:!mt-2 [@media(orientation:portrait)_and_(max-width:900px)]:!mb-2" />
+<div className="hero-hr !h-[2px] !w-16 bg-[var(--color-gold)]/85 mx-auto !mt-3 !mb-2 rounded landscape:!h-px landscape:!w-8 landscape:!mt-2 landscape:!mb-2 md:!w-16 [@media(orientation:portrait)_and_(max-width:900px)]:!h-px [@media(orientation:portrait)_and_(max-width:900px)]:!w-10 [@media(orientation:portrait)_and_(max-width:900px)]:!mt-2 [@media(orientation:portrait)_and_(max-width:900px)]:!mb-2" />
           {/* Mobile-only shorter subheadline */}
                 <p className="hero-sub md:hidden opacity-90 max-w-3xl mx-auto !text-[clamp(16px,4.5vw,20px)] leading-snug">
                   Talks that spark resilience, growth, and lasting change.
