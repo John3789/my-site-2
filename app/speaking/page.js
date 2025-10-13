@@ -288,7 +288,7 @@ export default function SpeakingPage() {
           </section>
 
           {/* ===== MAIN CONTENT ===== */}
-          <div className="mx-auto max-w-[1400px] md:py-6 space-y-16 md:space-y-24" id="topics">
+          <div className="mx-auto max-w-[1400px] md:py-6 space-y-16 md:space-y-24 narrow-landscape-70" id="topics">
             <hr className="border-t border-[var(--color-cream)]/22 md:mb-8 mx-auto w-[93%] landscape:mt-2 landscape:mb-4" />
 
             {/* Popular Topics (Programs) */}
@@ -919,7 +919,7 @@ export default function SpeakingPage() {
 
   <div className="mobile-footer-cap">
 
-  <div className="mx-auto max-w-[1400px] px-3">
+  <div className="mx-auto max-w-[1400px] px-3 narrow-landscape-70">
     {/* Newsletter card (midnight blue) */}
     <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
       <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
