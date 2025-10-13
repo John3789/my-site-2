@@ -114,7 +114,7 @@ vectorEffect="non-scaling-stroke"  /* keeps stroke width constant if any transfo
 >
       <div className="flex items-center justify-between px-6 h-16 pr-25">
   {/* Bigger Menu label with landscape adjustment */}
- <span className="font-serif text-[clamp(22px,7vw,32px)] landscape:text-[2.6vw]">
+ <span className="font-serif text-[clamp(22px,7vw,32px)] landscape:text-[3.1vw]">
 
     Menu
   </span>
@@ -138,7 +138,7 @@ vectorEffect="non-scaling-stroke"  /* keeps stroke width constant if any transfo
       {/* Bigger, responsive options; shrink in landscape so nothing gets cut off */}
       <nav
         className="px-6 py-6 space-y-6 uppercase tracking-wide
-                   text-[7vw] landscape:text-[5vw]"
+                   text-[7vw] landscape:text-[4vw]"
       >
         <MobileLink href="/" onClick={() => setOpen(false)} active={pathname === "/"}>Home</MobileLink>
         <MobileLink href="/about" onClick={() => setOpen(false)} active={pathname.startsWith("/about")}>About</MobileLink>
