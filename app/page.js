@@ -33,6 +33,9 @@ export default function Home() {
     [@media(orientation:landscape)_and_(max-width:900px)]:h-4
   "
 />
+   {/* ⬇️ Everything below here should scroll */}
+    <div className="page-scroll">
+      {/* --- paste ALL your existing page content here (hero, sections, footer cap, etc.) --- */}
 
       {/* DESKTOP/TABLET nameplate — unchanged */}
       <section id="home" className="hidden md:block bg-[var(--color-teal-800)] text-[var(--color-cream)]">
@@ -426,6 +429,7 @@ export default function Home() {
   </section>
       </div>
       
+        </div>
 
         </main>
         

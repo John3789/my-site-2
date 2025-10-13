@@ -138,6 +138,9 @@ export default function SpeakingPage() {
           className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]"
         />
 
+ {/* ⬇️ Make ALL page content scroll inside this wrapper */}
+      <div className="page-scroll"></div>
+
 {/* ===== HERO IMAGE with overlay text ===== */}
 <section className="relative w-full overflow-x-hidden">
   <div
