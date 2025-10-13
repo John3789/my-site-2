@@ -158,7 +158,7 @@ export default function RootLayout({ children }) {
         {children}
 
         {/* DESKTOP / LARGE-TABLET FOOTER — ORIGINAL LAYOUT RESTORED */}
-        <footer className="hidden lg:block py-10 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
+        <footer className="hidden lg:block py-10 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)] narrow-landscape-70">
           <div
             className="
               mx-auto w-full max-w-[1680px]
