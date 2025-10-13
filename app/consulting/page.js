@@ -253,7 +253,7 @@ export default function ConsultingPage() {
   {/* Landscape-only center chip */}
 <div className="flex items-center justify-center -mt-1 mb-9">
   <span className="inline-flex items-center rounded-full border border-[var(--color-gold)]/60 bg-[var(--color-gold)]/10 px-3 py-1 text-[11px] uppercase tracking-[0.18em]">
-    WE'LL MEET YOU WHERE YOU ARE
+    WE’LL MEET YOU WHERE YOU ARE
   </span>
 </div>
 

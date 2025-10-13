@@ -55,7 +55,7 @@ export default function ContactPage() {
   return (
     <>
       <div className="mx-auto">
-        <main className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] min-h-screen md:min-h-0 narrow-landscape-80">
+        <main className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] min-h-screen md:min-h-0">
           {/* soft gradient wash */}
           <div
             aria-hidden
@@ -87,7 +87,7 @@ export default function ContactPage() {
 
                 <h1 className="hidden md:block font-serif text-5xl leading-[1.06] opacity-90">Contact</h1>
                 <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 md:mt-4 rounded" />
-                <p className="text-base opacity-90 mt-6 narrow-landscape-70">
+                <p className="text-base opacity-90 mt-6 narrow-landscape-80">
                   I’m glad you’re here. Share a few details below or email{" "}
                   <a
                     href="mailto:contact@drjuanpablosalerno.com"
@@ -100,7 +100,7 @@ export default function ContactPage() {
 
               {/* SINGLE form card (mobile) — same width as divider + footer below */}
               <div className="mx-auto w-full max-w-[700px] px-3">
-                <section className="relative overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition narrow-landscape-70">
+                <section className="relative overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 shadow-2xl hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition narrow-landscape-80">
                   <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
 
                   {sent ? (
