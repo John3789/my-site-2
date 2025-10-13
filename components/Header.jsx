@@ -99,7 +99,7 @@ vectorEffect="non-scaling-stroke"  /* keeps stroke width constant if any transfo
   <>
     {/* Backdrop */}
     <div
-   className="fixed inset-0 z-[10000] bg-black/40 zoom-exempt vv-counter"
+   className="fixed inset-0 z-[10000] bg-black/40 zoom-exempt vv-counter backdrop-no-scroll"
    onClick={() => setOpen(false)}
  />
 
@@ -109,7 +109,7 @@ vectorEffect="non-scaling-stroke"  /* keeps stroke width constant if any transfo
     fixed inset-0 z-[10001] zoom-exempt vv-counter
     !bg-[var(--color-teal-850)] text-[var(--color-cream)]
     flex flex-col min-h-[100svh] overflow-y-auto overscroll-contain
-    [transform-origin:top_left]
+    [transform-origin:top_left] 
   "
 >
       <div className="flex items-center justify-between px-6 h-16 pr-25">

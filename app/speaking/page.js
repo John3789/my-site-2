@@ -132,8 +132,6 @@ export default function SpeakingPage() {
         data-page="speaking"
         className="relative isolate min-h-screen w-full overflow-x-hidden bg-[var(--color-teal-850)]"
       >
-         {/* ⬇️ Make ALL page content scroll inside this wrapper */}
-      <div className="page-scroll">
         {/* background guard to prevent mobile overlay artifact */}
         <div
           aria-hidden
@@ -993,7 +991,6 @@ export default function SpeakingPage() {
       </div>
 
         </div>
-</div>
       </main>
 
       {/* Global safeguards and crisp text styles */}
