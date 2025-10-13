@@ -251,7 +251,7 @@ export default function ResourcesPage() {
 
   <div className="mobile-footer-cap">
 
-  <div className="mx-auto max-w-[1400px] px-3">
+  <div className="mx-auto max-w-[1400px] px-3 narrow-landscape-70">
     {/* Newsletter card (midnight blue) */}
     <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
       <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
