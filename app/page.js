@@ -141,7 +141,8 @@ export default function Home() {
           mx-auto
           lg:[transform:none]
           lg:[width:100%]
-          landscape:data-[zoom=on]:[transform:scale(var(--zoomL))] landscape:data-[zoom=on]:[width:calc(100%/var(--zoomL))]
+          landscape:data-[zoom=on]:[transform:scale(calc(var(--zoomL)/var(--vv,1)))]
+          landscape:data-[zoom=on]:[width:calc(100%/(var(--zoomL)/var(--vv,1)))]
           overflow-visible 
         "
       >
