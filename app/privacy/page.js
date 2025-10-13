@@ -11,6 +11,8 @@ export default function PrivacyPage() {
 
   return (
     <>
+        {/* Page-level scroller */}
+    <div className="page-scroll">
       {/* ===== PAGE BODY WRAPPER (zoom on mobile, normal on desktop) ===== */}
       <div
         ref={wrapRef}
@@ -138,6 +140,8 @@ export default function PrivacyPage() {
 `}</style>
 
         </main>
+              </div>
+
       </div>
     </>
   );
