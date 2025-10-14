@@ -1485,7 +1485,7 @@ useEffect(() => {
     vertical-align: baseline;
   }
   /* Safety spacing above figcaption */
-  [data-page="speaking"] blockquote.t-quote { padding-bottom: calc(var(--q-size, 2.25rem) * 0.50); }
+  [data-page="speaking"] blockquote.t-quote { padding-bottom: calc(var(--q-size, 2.25rem) * 0.50) !important; }
 }  
 
 
@@ -1516,7 +1516,7 @@ useEffect(() => {
 
   /* Slightly reduced padding below to keep spacing tight */
   [data-page="speaking"] blockquote.t-quote {
-    padding-bottom: calc(var(--q-size, 2.25rem) * 0.50);
+    padding-bottom: calc(var(--q-size, 2.25rem) * 0.50) !important;
   }
 }
 
@@ -1553,7 +1553,7 @@ useEffect(() => {
   [data-page="speaking"] :is([data-section="testimonials-desktop"],
                              [data-section="testimonials-desktop-right"],
                              [data-section="results-desktop-right"])
-  blockquote { padding-bottom: calc(var(--q-size, 2.25rem) * 0.15); }
+  blockquote { padding-bottom: calc(var(--q-size, 2.25rem) * 0.10); }
 }
 
 
