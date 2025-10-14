@@ -179,7 +179,7 @@ function MobileLink({ href, children, onClick, active }) {
   header .header-tabs { display: none; }
 
   /* Portrait ≥1000px → show tabs, hide hamburger */
-  @media (orientation: portrait) and (min-width: 1000px) {
+  @media (orientation: portrait) and (min-width: 1100px) {
     header .header-hamburger { display: none !important; }
     header .header-tabs { display: flex !important; }
   }
@@ -190,13 +190,4 @@ function MobileLink({ href, children, onClick, active }) {
     header .header-tabs { display: flex !important; }
   }
 
-  /* Hard guards for iPad Pro sizes (helps if Safari reports odd widths) */
-  @media screen and (orientation: portrait) and (min-width: 1024px) {
-    header .header-hamburger { display: none !important; }
-    header .header-tabs { display: flex !important; }
-  }
-  @media screen and (orientation: landscape) and (min-width: 1366px) {
-    header .header-hamburger { display: none !important; }
-    header .header-tabs { display: flex !important; }
-  }
 `}</style>
