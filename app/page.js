@@ -10,13 +10,14 @@ import { useIosZoomVars } from "../components/useIosZoom";
 
 
 export default function Home() {
+
   const wrapRef = useRef(null);
   useIosZoomVars(wrapRef, { portraitZoom: 3.0, landscapeZoom: 1.00 });
 
 
 
   return (
-        <main id="main" className="!bg-[var(--color-teal-850)] text-[var(--color-cream)] text-[17px] overflow-visible">
+        <main id="main" data-page="home" className="!bg-[var(--color-teal-850)] text-[var(--color-cream)] text-[17px] overflow-visible">
           
           <NewsletterMeditationPopup
   isMeditationPage={false}
@@ -47,7 +48,7 @@ export default function Home() {
       </section>
 
 {/* HERO — mobile full-screen; desktop unchanged */}
-<section className="relative h-[100dvh] xl:h-[88.8svh] overflow-visible">
+<section id="hero" className="hero s-hero relative h-[100dvh] xl:h-[88.8svh] overflow-visible">
   {/* Image layer fills the section */}
   <div className="absolute inset-0">
 <HeroImageIphoneAware

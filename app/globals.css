@@ -416,30 +416,27 @@ html.menu-open, body.menu-open {
   }
 }
 
-/* HOME — iPad portrait: scale down non-hero images */
+/* HOME — iPad PORTRAIT: shrink non-hero images only */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-  /* blanket cap for images on the Home page */
-  [data-page="home"] img {
-    max-height: 40vh !important;  /* tweak: 36–46vh as you like */
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+  /* regular <img> inside common containers */
+  [data-page="home"] :where(figure, .card, .tile, .image-frame) img {
+    max-height: 40vh !important; /* tweak 36–46vh */
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
   }
 
-  /* explicitly DO NOT touch the hero images */
-  [data-page="home"] #hero img,
-  [data-page="home"] .s-hero img,
-  [data-page="home"] .hero img {
+  /* cap Next/Image “fill” wrappers so the image can’t grow too tall */
+  [data-page="home"] :where(figure, .card, .tile, .image-frame) span[style*="position: relative"] {
+    max-height: 42vh;
+    display: block;
+    overflow: hidden;
+  }
+
+  /* DO NOT touch the hero */
+  [data-page="home"] :is(#hero, .hero, .s-hero) img {
     max-height: none !important;
     height: auto !important;
-  }
-
-  /* if some pictures use Next/Image "fill" inside figures/cards, also cap the container */
-  [data-page="home"] figure,
-  [data-page="home"] .card,
-  [data-page="home"] .tile,
-  [data-page="home"] .image-frame {
-    max-height: 42vh;   /* keep container from letting fills get huge */
-    overflow: hidden;   /* hide overflow when object-fit covers */
+    object-fit: inherit !important;
   }
 }
