@@ -35,8 +35,8 @@ export default function Header() {
       <header className={headerClass}>
         <div className="mx-auto max-w-7xl px-6 h-10 flex items-center">
           {/* Desktop / tablet nav (unchanged) */}
- <nav className="hidden [@media(orientation:portrait)_and_(min-width:1000px)]:flex [@media(orientation:landscape)_and_(min-width:1100px)]:flex w-full items-center justify-center gap-6 text-[13px] tracking-wide uppercase">
-           {!isHome && (
+ <nav className="header-tabs w-full items-center justify-center gap-6 text-[13px] tracking-wide uppercase">
+            {!isHome && (
             <Link href="/" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname === "/" ? "nav-active" : ""}`}>Home</Link>)}
             <Link href="/about" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/about") ? "nav-active" : ""}`}>About</Link>
             <Link href="/books" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/books") ? "nav-active" : ""}`}>Books & Publications</Link>
@@ -52,12 +52,7 @@ export default function Header() {
   type="button"
   aria-label="Open menu"
   onClick={() => setOpen(true)}
-  className="
-    inline-flex mr-auto -mr-1 -ml-5 p-3 translate-y-4
-    [@media(orientation:portrait)_and_(min-width:1000px)]:hidden
-    [@media(orientation:landscape)_and_(min-width:1100px)]:hidden
-  "
->
+className="header-hamburger mr-auto -mr-1 -ml-5 p-3 translate-y-4">
 
   {/* 3-line icon (cream) */}
 <svg
