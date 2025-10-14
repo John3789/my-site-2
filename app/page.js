@@ -96,7 +96,7 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
   </div>
 
   {/* Desktop/tablet buttons only (mobile CTAs are hidden) */}
-  <div className="hidden lg:block desktop-when-p800 absolute inset-x-0 bottom-6 z-30">
+  <div className="desktop-when-p800 absolute inset-x-0 bottom-6 z-30">
     <div className="mx-auto max-w-[1400px] px-6 relative">
       <Link
         href="speaking"
@@ -334,7 +334,7 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
             <hr className="hidden lg:block max-w-[1400px] border-t border-[var(--color-cream)]/22" />
           </div>
 
-          <div className="block lg:hidden mobile-when-p800 mx-auto max-w-[1100px] px-3">
+          <div className="mobile-when-p800 mx-auto max-w-[1100px] px-3">
             {/* (mobile newsletter + socials unchanged) */}
             {/* ... */}
           </div>

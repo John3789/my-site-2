@@ -434,36 +434,32 @@ html.menu-open, body.menu-open {
   .header-tabs { display: flex !important; }
 }
 
-/* === Nameplate visibility rules === */
-/* Base: show BOTTOM name, hide TOP teal bar */
-.nameplate-top { display: none; }
+/* === Nameplate + desktop/mobile visibility (final) === */
+
+/* Base (mobile-first): top teal OFF, bottom name ON; spacer hidden */
+.nameplate-top    { display: none; }
 .nameplate-bottom { display: block; }
-
-/* Portrait ≥700px → show TOP teal, hide BOTTOM */
-@media (orientation: portrait) and (min-width: 700px) {
-  .nameplate-top { display: block !important; }
-  .nameplate-bottom { display: none !important; }
-}
-
-/* Landscape ≥800px → show TOP teal, hide BOTTOM */
-@media (orientation: landscape) and (min-width: 800px) {
-  .nameplate-top { display: block !important; }
-  .nameplate-bottom { display: none !important; }
-}
-
-/* Optional: spacer only when TOP teal is visible */
 .nameplate-spacer { display: none; }
-@media (orientation: portrait) and (min-width: 700px),
-       (orientation: landscape) and (min-width: 800px) {
+
+/* Portrait ≥ 700px → show TOP teal, hide BOTTOM, show spacer */
+@media (orientation: portrait) and (min-width: 700px) {
+  .nameplate-top    { display: block !important; }
+  .nameplate-bottom { display: none  !important; }
   .nameplate-spacer { display: block !important; }
 }
 
-/* Portrait <800 = mobile shows, desktop hides (default) */
-.mobile-when-p800 { display: block; }
-.desktop-when-p800 { display: none; }
+/* Landscape ≥ 800px → show TOP teal, hide BOTTOM, show spacer */
+@media (orientation: landscape) and (min-width: 800px) {
+  .nameplate-top    { display: block !important; }
+  .nameplate-bottom { display: none  !important; }
+  .nameplate-spacer { display: block !important; }
+}
 
-/* Portrait ≥800 = desktop shows, mobile hides */
+/* Desktop vs mobile content blocks (portrait threshold at 800px) */
+.desktop-when-p800 { display: none; }   /* off by default */
+.mobile-when-p800  { display: block; }  /* on by default */
+
 @media (orientation: portrait) and (min-width: 800px) {
-  .mobile-when-p800 { display: none !important; }
   .desktop-when-p800 { display: block !important; }
+  .mobile-when-p800  { display: none  !important; }
 }
