@@ -1155,7 +1155,7 @@ export default function SpeakingPage() {
     line-height: 1;            /* ← was 0 */
     margin-left: 0.15em;
     position: relative;
-    top: 0.05em;              /* ← was +0.06em */
+    top: 0.30em;              /* ← was +0.06em */
     vertical-align: baseline;
   }
 }
@@ -1225,7 +1225,7 @@ export default function SpeakingPage() {
     line-height: 1;          /* keep in inline flow */
     margin-left: 0.15em;
     position: relative;
-    top: 0.10em;             /* tiny baseline nudge */
+    top: 0.50em;             /* tiny baseline nudge */
     vertical-align: baseline;
   }
 
@@ -1283,12 +1283,12 @@ export default function SpeakingPage() {
     line-height: 0;           /* matches your iPhone portrait recipe */
     margin-left: 0.15em;
     position: relative;
-    top: -0.30em;             /* your iPad portrait baseline tweak */
+    top: -0.20em;             /* your iPad portrait baseline tweak */
     vertical-align: baseline;
   }
   /* Spacer above figcaption */
   [data-page="speaking"] #testimonials blockquote.t-quote {
-    padding-bottom: calc(var(--q-size, 2.25rem) * 0.50) !important;
+    padding-bottom: calc(var(--q-size, 2.25rem) * 0.800) !important;
   }
 }
 
@@ -1308,11 +1308,11 @@ export default function SpeakingPage() {
     line-height: 0.9;         /* slightly lower than phone */
     margin-left: 0.15em;
     position: relative;
-    top: 0.30em;              /* mini-specific baseline nudge */
+    top: 0.60em;              /* mini-specific baseline nudge */
     vertical-align: baseline;
   }
   [data-page="speaking"] #testimonials blockquote.t-quote {
-    padding-bottom: calc(var(--q-size, 2.25rem) * 0.50) !important;
+    padding-bottom: calc(var(--q-size, 2.25rem) * 0.80) !important;
   }
 }
 
