@@ -1322,6 +1322,55 @@ export default function SpeakingPage() {
   blockquote { padding-bottom: calc(var(--q-size, 2.25rem) * 0.10); }
 }
 
+/* === Quotes: single, robust recipe for all devices === */
+
+/* One knob for mark size */
+[data-page="speaking"] blockquote.t-quote { --q-size: 2.25rem; }
+
+/* 1) Hide any separate closing span (prevents collisions) */
+[data-page="speaking"] blockquote.t-quote :is([data-q="close"], [data-quote="close"]) {
+  display: none !important;
+}
+
+/* 2) Ensure the first paragraph is inline so ::after hugs the last line */
+[data-page="speaking"] blockquote.t-quote p:first-of-type {
+  display: inline;
+  white-space: normal;
+}
+
+/* 3) Inject the closing mark inline and align to the baseline */
+[data-page="speaking"] blockquote.t-quote p:first-of-type::after {
+  content: "”";
+  opacity: 0.20;
+  font-size: var(--q-size);
+  /* Baseline alignment that’s stable across iOS/Android/desktop: */
+  line-height: 0;             /* don’t reserve vertical space */
+  vertical-align: baseline;
+  position: relative;
+  transform: translateY(-0.08em);  /* tiny lift (works across browsers) */
+  margin-left: 0.15em;
+}
+
+/* 4) Opening mark uses the same size for parity */
+[data-page="speaking"] blockquote.t-quote :is([data-q="open"], [data-quote="open"]) {
+  font-size: var(--q-size);
+  line-height: 1;
+  opacity: 0.20;
+}
+
+/* 5) Safe bottom spacing so the inline closer never hits the caption */
+[data-page="speaking"] blockquote.t-quote {
+  /* Adjust factor once and it applies everywhere */
+  --q-pad: 0.45; /* try 0.40–0.50 based on taste */
+  padding-bottom: calc(var(--q-size) * var(--q-pad)) !important;
+}
+
+/* Optional: if desktop column quotes (those 'right: X' spans) exist elsewhere,
+   this prevents accidental absolute positioning from showing up. */
+[data-page="speaking"] blockquote.t-quote :is([data-q="close"], [data-quote="close"]) {
+  right: auto !important; bottom: auto !important; left: auto !important; top: auto !important;
+}
+
 
       `}</style>
     </>
