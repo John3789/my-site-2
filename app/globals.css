@@ -399,3 +399,16 @@ html.menu-open, body.menu-open {
     padding-bottom: calc(var(--q-size) + 0.6em);
   }
 }
+
+/* iPad portrait (iPad Pro width = 1024) — shrink top-right nameplate */
+@media (min-width: 768px) and (max-width: 1045px) and (orientation: portrait) {
+  /* this anchor is rendered right after <header> in your component */
+  header + a.font-serif.uppercase[href="/"] > span {
+    font-size: 1.125rem !important; /* was lg:text-xl (≈1.25rem) */
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  header + a.font-serif.uppercase[href="/"] > sup {
+    font-size: 0.9rem !important;
+  }
+}
