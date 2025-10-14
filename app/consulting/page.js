@@ -910,7 +910,7 @@ export default function ConsultingPage() {
   [data-page="consulting"] #testimonials-m blockquote p:first-of-type::after {
     content: "”";
     opacity: 0.20;
-    font-size: 2.25rem;
+    font-size: 3.25rem;
     line-height: 1;
     margin-left: 0.15em;
     position: relative;
