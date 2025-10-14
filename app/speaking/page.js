@@ -1553,7 +1553,7 @@ useEffect(() => {
   [data-page="speaking"] :is([data-section="testimonials-desktop"],
                              [data-section="testimonials-desktop-right"],
                              [data-section="results-desktop-right"])
-  blockquote { padding-bottom: calc(var(--q-size, 2.25rem) * 0.50); }
+  blockquote { padding-bottom: calc(var(--q-size, 2.25rem) * 0.15); }
 }
 
 
