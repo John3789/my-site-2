@@ -1471,143 +1471,93 @@ useEffect(() => {
     padding-bottom: 2.4rem !important;
   }
 }
+/* One knob for size everywhere on Speaking */
+[data-page="speaking"] blockquote.t-quote { --q-size: 2.25rem; }
 
-/* ================= SPEAKING — QUOTE FIXES (robust, final) ================= */
+/* Helper selectors that match either attribute style */
+[data-page="speaking"] blockquote.t-quote :is([data-q="open"],  [data-quote="open"])  { font-size: var(--q-size); line-height: 1; }
+[data-page="speaking"] blockquote.t-quote :is([data-q="close"], [data-quote="close"]) { /* used only when not hidden by MQs */ }
 
-/* iPad 10 PORTRAIT (≈820px) — use inline closer in the mobile testimonials stack */
+/* ===== iPad 10 PORTRAIT (≈820×1180) — CSS inline closer ===== */
 @media (orientation: portrait) and (min-width: 800px) and (max-width: 900px) {
-  [data-page="speaking"] #testimonials blockquote span[data-q="close"] {
-    display: none !important; /* disable absolute closer */
-  }
-  [data-page="speaking"] #testimonials blockquote.t-quote {
-    --q-size: 2.25rem;
-    padding-bottom: 2.4rem !important; /* room above figcaption */
-  }
-  [data-page="speaking"] #testimonials blockquote.t-quote [data-q="open"] {
-    font-size: var(--q-size) !important;
-    line-height: 1;
-  }
-  [data-page="speaking"] #testimonials blockquote p:first-of-type {
-    display: inline !important;
-    white-space: normal !important;
-  }
-  [data-page="speaking"] #testimonials blockquote p:first-of-type::after {
-    content: "”";
-    opacity: 0.20;
-    font-size: var(--q-size) !important;
-    line-height: 1;
-    margin-left: 0.15em;
-    position: relative;
-    top: 0.05em;
-    vertical-align: baseline;
-  }
-}
-
-/* iPad Pro LANDSCAPE (1024–1366px) — desktop quote columns */
-@media (orientation: landscape) and (min-width: 1024px) and (max-width: 1366px) {
-  /* Hide absolute closers so they can't drift */
-  [data-section="testimonials-desktop"]        span[data-quote="close"],
-  [data-section="testimonials-desktop-right"]  span[data-quote="close"],
-  [data-section="results-desktop-right"]       span[data-quote="close"] {
+  /* Hide the separate closer, whether it's data-q or data-quote */
+  [data-page="speaking"] blockquote.t-quote :is([data-q="close"], [data-quote="close"]) {
     display: none !important;
   }
-
-  /* Normalize open mark and ensure room above caption */
-  [data-section="testimonials-desktop"]        blockquote,
-  [data-section="testimonials-desktop-right"]  blockquote,
-  [data-section="results-desktop-right"]       blockquote {
-    --q-size: 2.25rem;
-    padding-bottom: 2.2rem !important;
+  /* Inline the paragraph so ::after hugs the last line */
+  [data-page="speaking"] blockquote.t-quote p:first-of-type {
+    display: inline;
+    white-space: normal;
   }
-  [data-section="testimonials-desktop"]        [data-quote="open"],
-  [data-section="testimonials-desktop-right"]  [data-quote="open"],
-  [data-section="results-desktop-right"]       [data-quote="open"] {
-    font-size: var(--q-size) !important;
-    line-height: 1;
-  }
-
-  /* Inject closing mark inline at the real end of the text line */
-  [data-section="testimonials-desktop"]        blockquote p:first-of-type,
-  [data-section="testimonials-desktop-right"]  blockquote p:first-of-type,
-  [data-section="results-desktop-right"]       blockquote p:first-of-type {
-    display: inline !important;
-    white-space: normal !important;
-  }
-  [data-section="testimonials-desktop"]        blockquote p:first-of-type::after,
-  [data-section="testimonials-desktop-right"]  blockquote p:first-of-type::after,
-  [data-section="results-desktop-right"]       blockquote p:first-of-type::after {
+  /* Inject the closing quote inline */
+  [data-page="speaking"] blockquote.t-quote p:first-of-type::after {
     content: "”";
     opacity: 0.20;
-    font-size: var(--q-size) !important;
-    line-height: 1;
+    font-size: var(--q-size);
+    line-height: 0;
     margin-left: 0.15em;
     position: relative;
-    top: 0.05em;
+    top: 0.06em;
     vertical-align: baseline;
   }
+  /* Safety spacing above figcaption */
+  [data-page="speaking"] blockquote.t-quote { padding-bottom: calc(var(--q-size) * 0.6); }
 }
 
-/* (Optional) DEBUG visual to confirm these blocks are firing — remove after testing */
+/* One knob for size everywhere on Speaking */
+[data-page="speaking"] blockquote.t-quote { --q-size: 2.25rem; }
+
+/* Helper selectors that match either attribute style */
+[data-page="speaking"] blockquote.t-quote :is([data-q="open"],  [data-quote="open"])  { font-size: var(--q-size); line-height: 1; }
+[data-page="speaking"] blockquote.t-quote :is([data-q="close"], [data-quote="close"]) { /* used only when not hidden by MQs */ }
+
+/* ===== iPad 10 PORTRAIT (≈820×1180) — CSS inline closer ===== */
 @media (orientation: portrait) and (min-width: 800px) and (max-width: 900px) {
-  [data-page="speaking"] #testimonials blockquote.t-quote { outline: 2px solid magenta !important; }
+  /* Hide the separate closer, whether it's data-q or data-quote */
+  [data-page="speaking"] blockquote.t-quote :is([data-q="close"], [data-quote="close"]) {
+    display: none !important;
+  }
+  /* Inline the paragraph so ::after hugs the last line */
+  [data-page="speaking"] blockquote.t-quote p:first-of-type {
+    display: inline;
+    white-space: normal;
+  }
+  /* Inject the closing quote inline */
+  [data-page="speaking"] blockquote.t-quote p:first-of-type::after {
+    content: "”";
+    opacity: 0.20;
+    font-size: var(--q-size);
+    line-height: 0;
+    margin-left: 0.15em;
+    position: relative;
+    top: 0.06em;
+    vertical-align: baseline;
+  }
+  /* Safety spacing above figcaption */
+  [data-page="speaking"] blockquote.t-quote { padding-bottom: calc(var(--q-size) * 0.6); }
 }
+
+/* ===== iPad Pro 5 LANDSCAPE (1024–1366) — desktop columns too ===== */
 @media (orientation: landscape) and (min-width: 1024px) and (max-width: 1366px) {
-  [data-section="testimonials-desktop"] figure,
-  [data-section="testimonials-desktop-right"] figure,
-  [data-section="results-desktop-right"] figure { outline: 2px dashed lime !important; }
+  [data-page="speaking"] blockquote.t-quote :is([data-q="close"], [data-quote="close"]) {
+    display: none !important;
+  }
+  [data-page="speaking"] blockquote.t-quote p:first-of-type {
+    display: inline;
+    white-space: normal;
+  }
+  [data-page="speaking"] blockquote.t-quote p:first-of-type::after {
+    content: "”";
+    opacity: 0.20;
+    font-size: var(--q-size);
+    line-height: 0;
+    margin-left: 0.15em;
+    position: relative;
+    top: 0.06em;
+    vertical-align: baseline;
+  }
+  [data-page="speaking"] blockquote.t-quote { padding-bottom: calc(var(--q-size) * 0.6); }
 }
-
-/* ===== SPEAKING — Universal quote alignment (device-agnostic, final) ===== */
-[data-page="speaking"] {
-  --speaking-q-size: 2.25rem;
-}
-
-/* 1) Disable ALL absolutely-positioned closers on Speaking (mobile + desktop stacks) */
-[data-page="speaking"] #testimonials blockquote span[data-q="close"],
-[data-page="speaking"] [data-section="testimonials-desktop"] span[data-quote="close"],
-[data-page="speaking"] [data-section="testimonials-desktop-right"] span[data-quote="close"],
-[data-page="speaking"] [data-section="results-desktop-right"] span[data-quote="close"] {
-  display: none !important;
-}
-
-/* 2) Normalize the opening quote size so it matches the inline closer */
-[data-page="speaking"] #testimonials blockquote.t-quote [data-q="open"],
-[data-page="speaking"] [data-section="testimonials-desktop"] [data-quote="open"],
-[data-page="speaking"] [data-section="testimonials-desktop-right"] [data-quote="open"],
-[data-page="speaking"] [data-section="results-desktop-right"] [data-quote="open"] {
-  font-size: var(--speaking-q-size) !important;
-  line-height: 1;
-}
-
-/* 3) Inject the closing quote inline at the true end of the paragraph (works regardless of wrap) */
-[data-page="speaking"] #testimonials blockquote p:first-of-type,
-[data-page="speaking"] [data-section="testimonials-desktop"] blockquote p:first-of-type,
-[data-page="speaking"] [data-section="testimonials-desktop-right"] blockquote p:first-of-type,
-[data-page="speaking"] [data-section="results-desktop-right"] blockquote p:first-of-type {
-  display: inline !important;
-  white-space: normal !important;
-}
-
-[data-page="speaking"] #testimonials blockquote p:first-of-type::after,
-[data-page="speaking"] [data-section="testimonials-desktop"] blockquote p:first-of-type::after,
-[data-page="speaking"] [data-section="testimonials-desktop-right"] blockquote p:first-of-type::after,
-[data-page="speaking"] [data-section="results-desktop-right"] blockquote p:first-of-type::after {
-  content: "”";
-  opacity: 0.20;
-  font-size: var(--speaking-q-size) !important;
-  line-height: 1;
-  margin-left: 0.15em;
-  position: relative;
-  top: 0.05em;              /* tiny baseline nudge */
-  vertical-align: baseline;
-}
-
-/* 4) Give every card a little bottom room so the inline closer never kisses the figcaption */
-[data-page="speaking"] #testimonials blockquote.t-quote,
-[data-page="speaking"] [data-section="testimonials-desktop"] blockquote,
-[data-page="speaking"] [data-section="testimonials-desktop-right"] blockquote,
-[data-page="speaking"] [data]()
-
 
       `}</style>
     </>
