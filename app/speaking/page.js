@@ -1288,7 +1288,7 @@ export default function SpeakingPage() {
   }
   /* Spacer above figcaption */
   [data-page="speaking"] #testimonials blockquote.t-quote {
-    padding-bottom: calc(var(--q-size, 2.25rem) * 1.5) !important;
+    padding-bottom: calc(var(--q-size, 2.25rem) * 1.4) !important;
   }
 }
 
@@ -1308,11 +1308,11 @@ export default function SpeakingPage() {
     line-height: 0.9;         /* slightly lower than phone */
     margin-left: 0.15em;
     position: relative;
-    top: -0.20em;              /* mini-specific baseline nudge */
+    top: -0.25em;              /* mini-specific baseline nudge */
     vertical-align: baseline;
   }
   [data-page="speaking"] #testimonials blockquote.t-quote {
-    padding-bottom: calc(var(--q-size, 2.25rem) * 1.5) !important;
+    padding-bottom: calc(var(--q-size, 2.25rem) * 1.4) !important;
   }
 }
 
