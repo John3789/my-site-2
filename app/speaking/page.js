@@ -1147,7 +1147,7 @@ export default function SpeakingPage() {
     display: inline;
     white-space: normal;
   }
-    
+
 [data-page="speaking"] #testimonials blockquote p:first-of-type::after {
     content: "”";
     opacity: 0.20;
@@ -1326,7 +1326,7 @@ export default function SpeakingPage() {
   [data-page="speaking"] :is([data-section="testimonials-desktop"],
                              [data-section="testimonials-desktop-right"],
                              [data-section="results-desktop-right"])
-  blockquote { padding-bottom: calc(var(--q-size, 2.25rem) * 0.10); }
+  blockquote { padding-bottom: calc(var(--q-size, 2.25rem) * 0.30); }
 }
 
 
