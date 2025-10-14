@@ -1155,7 +1155,7 @@ export default function SpeakingPage() {
     line-height: 1;            /* ← was 0 */
     margin-left: 0.15em;
     position: relative;
-    top: -0.06em;              /* ← was +0.06em */
+    top: 0.05em;              /* ← was +0.06em */
     vertical-align: baseline;
   }
 }
@@ -1266,56 +1266,56 @@ export default function SpeakingPage() {
 
 /* ===== iPad PORTRAIT (≈820×1180) — mobile testimonials only ===== */
 @media (orientation: portrait) and (min-width: 800px) and (max-width: 900px) {
-  [data-page="speaking"] #testimonials blockquote.t-quote 
-  :is([data-q="close"], [data-quote="close"]) { display: none !important; }
-
+  /* Hide separate closer spans (both data-q and data-quote) */
+  [data-page="speaking"] #testimonials blockquote.t-quote :is([data-q="close"], [data-quote="close"]) {
+    display: none !important;
+  }
+  /* Inline the first paragraph so ::after sits on the last line */
   [data-page="speaking"] #testimonials blockquote.t-quote p:first-of-type {
-    display: inline; 
+    display: inline;
     white-space: normal;
   }
-
+  /* Inject the closing quote inline */
   [data-page="speaking"] #testimonials blockquote.t-quote p:first-of-type::after {
     content: "”";
     opacity: 0.20;
     font-size: var(--q-size, 2.25rem);
-    line-height: 0;
+    line-height: 0;           /* matches your iPhone portrait recipe */
     margin-left: 0.15em;
     position: relative;
-    top: -0.30em;
+    top: -0.30em;             /* your iPad portrait baseline tweak */
     vertical-align: baseline;
   }
-
-  /* force portrait tablet padding; beats any landscape rule */
+  /* Spacer above figcaption */
   [data-page="speaking"] #testimonials blockquote.t-quote {
     padding-bottom: calc(var(--q-size, 2.25rem) * 0.50) !important;
   }
 }
 
-/* ===== iPad Mini PORTRAIT (≈744×1133) — mobile testimonials only ===== */
+/* ===== iPad MINI PORTRAIT (≈744×1133) — mobile testimonials only ===== */
 @media (orientation: portrait) and (min-width: 700px) and (max-width: 799px) {
-  [data-page="speaking"] #testimonials blockquote.t-quote 
-  :is([data-q="close"], [data-quote="close"]) { display: none !important; }
-
-  [data-page="speaking"] #testimonials blockquote.t-quote p:first-of-type { 
-    display: inline; 
-    white-space: normal; 
+  [data-page="speaking"] #testimonials blockquote.t-quote :is([data-q="close"], [data-quote="close"]) {
+    display: none !important;
   }
-
+  [data-page="speaking"] #testimonials blockquote.t-quote p:first-of-type {
+    display: inline;
+    white-space: normal;
+  }
   [data-page="speaking"] #testimonials blockquote.t-quote p:first-of-type::after {
     content: "”";
     opacity: 0.20;
     font-size: var(--q-size, 2.25rem);
-    line-height: 0.9;
+    line-height: 0.9;         /* slightly lower than phone */
     margin-left: 0.15em;
     position: relative;
-    top: 0.30em;
+    top: 0.30em;              /* mini-specific baseline nudge */
     vertical-align: baseline;
   }
-
   [data-page="speaking"] #testimonials blockquote.t-quote {
     padding-bottom: calc(var(--q-size, 2.25rem) * 0.50) !important;
   }
 }
+
 
       `}</style>
     </>
