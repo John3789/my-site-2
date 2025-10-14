@@ -401,7 +401,7 @@ html.menu-open, body.menu-open {
 }
 
 /* iPad portrait (iPad Pro width = 1024) — shrink top-right nameplate */
-@media (min-width: 768px) and (max-width: 1045px) and (orientation: portrait) {
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   /* this anchor is rendered right after <header> in your component */
   header + a.font-serif.uppercase[href="/"] > span {
     font-size: 1.125rem !important; /* was lg:text-xl (≈1.25rem) */
