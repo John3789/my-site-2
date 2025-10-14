@@ -434,6 +434,12 @@ html.menu-open, body.menu-open {
   .header-tabs { display: flex !important; }
 }
 
+/* Safety net (iPad Pro portrait is 1024px) */
+@media (orientation: portrait) and (width: 1024px) {
+  .header-hamburger { display: none !important; }
+  .header-tabs { display: flex !important; }
+}
+
 /* === Nameplate visibility rules === */
 /* Base: show BOTTOM name, hide TOP teal bar */
 .nameplate-top { display: none; }
@@ -457,3 +463,4 @@ html.menu-open, body.menu-open {
        (orientation: landscape) and (min-width: 800px) {
   .nameplate-spacer { display: block !important; }
 }
+
