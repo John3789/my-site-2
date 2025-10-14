@@ -980,7 +980,7 @@ useEffect(() => {
   {/* 1 */}
   <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
     <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-    <blockquote className="t-quote font-serif text-2xl leading-snug opacity-90 relative [@media(orientation:portrait)]:pb-[2.75rem]">
+    <blockquote className="t-quote font-serif text-2xl leading-snug opacity-90 relative">
       {/* OPEN */}
       <span
         aria-hidden
@@ -1007,7 +1007,7 @@ useEffect(() => {
   {/* 2 */}
   <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
     <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-    <blockquote className="t-quote font-serif text-2xl leading-snug opacity-90 relative [@media(orientation:portrait)]:pb-[2.75rem]">
+    <blockquote className="t-quote font-serif text-2xl leading-snug opacity-90 relative">
       <span aria-hidden data-q="open" className="absolute left-[-0.75rem] top-[-0.25rem] text-[2.25rem] opacity-20 leading-none select-none">“</span>
       <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
       <span aria-hidden data-q="close" className="absolute right-[12rem] bottom-[3.75rem] text-[2.25rem] opacity-20 leading-none select-none">”</span>
@@ -1022,7 +1022,7 @@ useEffect(() => {
     {/* 3 */}
     <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
       <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-      <blockquote className="t-quote font-serif text-2xl leading-snug opacity-90 relative [@media(orientation:portrait)]:pb-[2.75rem]">
+      <blockquote className="t-quote font-serif text-2xl leading-snug opacity-90 relative">
         <span aria-hidden data-q="open" className="absolute left-[-0.75rem] top-[-0.25rem] text-[2.25rem] opacity-20 leading-none select-none">“</span>
         <p>Dr. Salerno has a way of blending data with human stories that makes science resonate.</p>
         <span aria-hidden data-q="close" className="absolute right-[13.50rem] bottom-[3.75rem] text-[2.25rem] opacity-20 leading-none select-none">”</span>
@@ -1035,7 +1035,7 @@ useEffect(() => {
     {/* 4 */}
     <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
       <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-      <blockquote className="t-quote font-serif text-2xl leading-snug opacity-90 relative [@media(orientation:portrait)]:pb-[2.75rem]">
+      <blockquote className="t-quote font-serif text-2xl leading-snug opacity-90 relative">
         <span aria-hidden data-q="open" className="absolute left-[-0.75rem] top-[-0.25rem] text-[2.25rem] opacity-20 leading-none select-none">“</span>
         <p>...gifted speaker whose engaging style &amp; clear communication bring complex ideas to life.</p>
         <span aria-hidden data-q="close" className="absolute right-[2.75rem] bottom-[3.75rem] text-[2.25rem] opacity-20 leading-none select-none">”</span>
@@ -1048,7 +1048,7 @@ useEffect(() => {
     {/* 5 */}
     <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
       <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-      <blockquote className="t-quote font-serif text-2xl leading-snug opacity-90 relative [@media(orientation:portrait)]:pb-[2.75rem]">
+      <blockquote className="t-quote font-serif text-2xl leading-snug opacity-90 relative">
         <span aria-hidden data-q="open" className="absolute left-[-0.75rem] top-[-0.25rem] text-[2.25rem] opacity-20 leading-none select-none">“</span>
         <p>...can communicate with diverse audiences, speaks with heart and dimensionality.</p>
         <span aria-hidden data-q="close" className="absolute right-[9.75rem] bottom-[3.75rem] text-[2.25rem] opacity-20 leading-none select-none">”</span>
@@ -1061,7 +1061,7 @@ useEffect(() => {
     {/* 6 */}
     <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
       <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-      <blockquote className="t-quote font-serif text-2xl leading-snug opacity-90 relative [@media(orientation:portrait)]:pb-[2.75rem]">
+      <blockquote className="t-quote font-serif text-2xl leading-snug opacity-90 relative]">
         <span aria-hidden data-q="open" className="absolute left-[-0.75rem] top-[-0.25rem] text-[2.25rem] opacity-20 leading-none select-none">“</span>
         <p>...a highly engaging, knowledgeable, and skilled speaker...strongly recommended.</p>
         <span aria-hidden data-q="close" className="absolute right-[-0.75rem] bottom-[3.75rem] text-[2.25rem] opacity-20 leading-none select-none">”</span>
