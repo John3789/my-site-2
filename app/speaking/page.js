@@ -108,6 +108,242 @@ export default function SpeakingPage() {
     };
   }, [SECTIONS]);
 
+  // --- Auto-place closing quotes (runs on mobile & desktop so you can verify) ---
+useEffect(() => {
+  if (typeof window === "undefined") return;
+
+  const getLastTextRect = (p) => {
+    try {
+      const range = document.createRange();
+      let node = p;
+      while (node && node.lastChild) node = node.lastChild;
+      const findFirstText = (n) => {
+        if (n.nodeType === Node.TEXT_NODE && n.textContent.trim().length) return n;
+        for (const c of n.childNodes) {
+          const found = findFirstText(c);
+          if (found) return found;
+        }
+        return null;
+      };
+      if (!node || node.nodeType !== Node.TEXT_NODE) node = findFirstText(p);
+      if (!node) return null;
+
+      const offset = node.textContent.length;
+      range.setStart(node, offset);
+      range.setEnd(node, offset);
+      const rects = range.getClientRects();
+      return rects.length ? rects[rects.length - 1] : null;
+    } catch {
+      return null;
+    }
+  };
+
+  const placeOne = (bq) => {
+    if (!bq) return;
+    bq.style.setProperty("position", "relative", "important");
+
+    const p = bq.querySelector("p");
+    if (!p) return;
+
+    let close =
+      bq.querySelector('span[data-q="close"]') ||
+      (bq.querySelectorAll('span[aria-hidden]')?.[bq.querySelectorAll('span[aria-hidden]').length - 1]) ||
+      (bq.querySelectorAll('span')?.[bq.querySelectorAll('span').length - 1]);
+
+    if (!close) return;
+
+    const endRect = getLastTextRect(p);
+    const bqRect  = bq.getBoundingClientRect();
+
+    close.style.setProperty("position", "absolute", "important");
+
+    if (!endRect) {
+      close.style.setProperty("right", "0.5rem", "important");
+      close.style.setProperty("bottom", "0.5rem", "important");
+      close.style.setProperty("left", "auto", "important");
+      close.style.setProperty("top", "auto", "important");
+      close.style.setProperty("transform", "", "important");
+      return;
+    }
+
+    const x = endRect.right - bqRect.left;
+    const y = endRect.bottom - bqRect.top;
+
+    const dx = Number(close.getAttribute("data-dx") || 0);
+    const dy = Number(close.getAttribute("data-dy") || 0);
+
+    close.style.setProperty("left", `${Math.max(8, x + 2 + dx)}px`, "important");
+    close.style.setProperty("top", `${Math.max(8, y - 4 + dy)}px`, "important");
+    close.style.setProperty("right", "auto", "important");
+    close.style.setProperty("bottom", "auto", "important");
+    close.style.setProperty("transform", "translate(-0.35em, -0.6em)", "important");
+  };
+
+  const placeAll = () => {
+    document.querySelectorAll("#testimonials blockquote").forEach(placeOne);
+  };
+
+  const schedule = () => requestAnimationFrame(() => {
+    placeAll();
+    setTimeout(placeAll, 0);
+  });
+
+  schedule();
+  if (document.fonts?.ready) document.fonts.ready.then(schedule);
+  window.addEventListener("resize", schedule);
+  window.addEventListener("orientationchange", schedule);
+
+  const ro = "ResizeObserver" in window ? new ResizeObserver(schedule) : null;
+  const observed = [];
+  if (ro) {
+    document.querySelectorAll("#testimonials blockquote p").forEach((p) => {
+      ro.observe(p);
+      observed.push(p);
+    });
+  }
+
+  const mo = "MutationObserver" in window ? new MutationObserver(schedule) : null;
+  const root = document.getElementById("testimonials");
+  if (mo && root) mo.observe(root, { childList: true, subtree: true });
+
+  return () => {
+    window.removeEventListener("resize", schedule);
+    window.removeEventListener("orientationchange", schedule);
+    if (ro) {
+      observed.forEach((p) => ro.unobserve(p));
+      ro.disconnect();
+    }
+    if (mo) mo.disconnect();
+  };
+}, [showAllTestimonials]);
+
+
+// --- Auto-place closing quotes (runs on mobile & desktop so you can verify) ---
+useEffect(() => {
+  if (typeof window === "undefined") return;
+
+  const getLastTextRect = (p) => {
+    try {
+      const range = document.createRange();
+
+      // Walk to deepest last node in <p>
+      let node = p;
+      while (node && node.lastChild) node = node.lastChild;
+
+      // If not a text node, fall back to first real text node
+      const findFirstText = (n) => {
+        if (n.nodeType === Node.TEXT_NODE && n.textContent.trim().length) return n;
+        for (const c of n.childNodes) {
+          const found = findFirstText(c);
+          if (found) return found;
+        }
+        return null;
+      };
+      if (!node || node.nodeType !== Node.TEXT_NODE) node = findFirstText(p);
+      if (!node) return null;
+
+      const offset = node.textContent.length;
+      range.setStart(node, offset);
+      range.setEnd(node, offset);
+      const rects = range.getClientRects();
+      return rects.length ? rects[rects.length - 1] : null;
+    } catch {
+      return null;
+    }
+  };
+
+  const placeOne = (bq) => {
+    if (!bq) return;
+
+    // Make sure the blockquote is the positioning context
+    bq.style.setProperty("position", "relative", "important");
+
+    const p = bq.querySelector("p");
+    if (!p) return;
+
+    // Prefer data-q="close"; fallback to last aria-hidden span; final fallback: last <span>
+    const ariaSpans = bq.querySelectorAll('span[aria-hidden]');
+    const allSpans  = bq.querySelectorAll('span');
+    let close =
+      bq.querySelector('span[data-q="close"]') ||
+      (ariaSpans.length ? ariaSpans[ariaSpans.length - 1] : null) ||
+      (allSpans.length ? allSpans[allSpans.length - 1] : null);
+
+    if (!close) return;
+
+    const endRect = getLastTextRect(p);
+    const bqRect  = bq.getBoundingClientRect();
+
+    // Hard override any Tailwind right/bottom utilities
+    close.style.setProperty("position", "absolute", "important");
+
+    if (!endRect) {
+      // Fallback if we can’t compute a caret box
+      close.style.setProperty("right", "0.5rem", "important");
+      close.style.setProperty("bottom", "0.5rem", "important");
+      close.style.setProperty("left", "auto", "important");
+      close.style.setProperty("top", "auto", "important");
+      close.style.setProperty("transform", "", "important");
+      return;
+    }
+
+    const x = endRect.right - bqRect.left;  // px from bq left
+    const y = endRect.bottom - bqRect.top;  // px from bq top
+
+    // Optional per-quote nudge (px). Add data-dx/dy on the closing span if needed.
+    const dx = Number(close.getAttribute("data-dx") || 0);
+    const dy = Number(close.getAttribute("data-dy") || 0);
+
+    close.style.setProperty("left", `${Math.max(8, x + 2 + dx)}px`, "important");
+    close.style.setProperty("top", `${Math.max(8, y - 4 + dy)}px`, "important");
+    close.style.setProperty("right", "auto", "important");
+    close.style.setProperty("bottom", "auto", "important");
+    close.style.setProperty("transform", "translate(-0.35em, -0.6em)", "important");
+  };
+
+  const placeAll = () => {
+    // Target the *mobile* testimonials blockquotes you showed me
+    document.querySelectorAll("#testimonials blockquote").forEach(placeOne);
+  };
+
+  const schedule = () =>
+    requestAnimationFrame(() => {
+      placeAll();
+      // a second tick helps iOS after async font/layout
+      setTimeout(placeAll, 0);
+    });
+
+  schedule();
+  if (document.fonts?.ready) document.fonts.ready.then(schedule);
+  window.addEventListener("resize", schedule);
+  window.addEventListener("orientationchange", schedule);
+
+  const ro = "ResizeObserver" in window ? new ResizeObserver(schedule) : null;
+  const observed = [];
+  if (ro) {
+    document.querySelectorAll("#testimonials blockquote p").forEach((p) => {
+      ro.observe(p);
+      observed.push(p);
+    });
+  }
+
+  const mo = "MutationObserver" in window ? new MutationObserver(schedule) : null;
+  const root = document.getElementById("testimonials");
+  if (mo && root) mo.observe(root, { childList: true, subtree: true });
+
+  return () => {
+    window.removeEventListener("resize", schedule);
+    window.removeEventListener("orientationchange", schedule);
+    if (ro) {
+      observed.forEach((p) => ro.unobserve(p));
+      ro.disconnect();
+    }
+    if (mo) mo.disconnect();
+  };
+}, [showAllTestimonials]);
+
+
+
   // ---- Mobile jump helper (center support for "All Speaking") ----
   const jump = (id, opts = {}) => {
     const el =
@@ -744,7 +980,7 @@ export default function SpeakingPage() {
   {/* 1 */}
   <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
     <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-    <blockquote className="font-serif text-2xl leading-snug opacity-90 relative [@media(orientation:portrait)]:pb-[2.75rem]">
+    <blockquote className="t-quote font-serif text-2xl leading-snug opacity-90 relative [@media(orientation:portrait)]:pb-[2.75rem]">
       {/* OPEN */}
       <span
         aria-hidden
@@ -757,8 +993,8 @@ export default function SpeakingPage() {
       {/* CLOSE */}
       <span
         aria-hidden
-        data-q="close"
-        className="absolute select-none pointer-events-none opacity-20 leading-none right-[15.25rem] bottom-[3.75rem] text-[2.25rem]"
+        data-q="close" data-dx="6" data-dy="2"
+        className="absolute select-none pointer-events-none opacity-20 leading-none text-[2.25rem]"
       >
         ”
       </span>
@@ -771,7 +1007,7 @@ export default function SpeakingPage() {
   {/* 2 */}
   <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
     <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-    <blockquote className="font-serif text-2xl leading-snug opacity-90 relative [@media(orientation:portrait)]:pb-[2.75rem]">
+    <blockquote className="t-quote font-serif text-2xl leading-snug opacity-90 relative [@media(orientation:portrait)]:pb-[2.75rem]">
       <span aria-hidden data-q="open" className="absolute left-[-0.75rem] top-[-0.25rem] text-[2.25rem] opacity-20 leading-none select-none">“</span>
       <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
       <span aria-hidden data-q="close" className="absolute right-[12rem] bottom-[3.75rem] text-[2.25rem] opacity-20 leading-none select-none">”</span>
@@ -786,7 +1022,7 @@ export default function SpeakingPage() {
     {/* 3 */}
     <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
       <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-      <blockquote className="font-serif text-2xl leading-snug opacity-90 relative [@media(orientation:portrait)]:pb-[2.75rem]">
+      <blockquote className="t-quote font-serif text-2xl leading-snug opacity-90 relative [@media(orientation:portrait)]:pb-[2.75rem]">
         <span aria-hidden data-q="open" className="absolute left-[-0.75rem] top-[-0.25rem] text-[2.25rem] opacity-20 leading-none select-none">“</span>
         <p>Dr. Salerno has a way of blending data with human stories that makes science resonate.</p>
         <span aria-hidden data-q="close" className="absolute right-[13.50rem] bottom-[3.75rem] text-[2.25rem] opacity-20 leading-none select-none">”</span>
@@ -799,7 +1035,7 @@ export default function SpeakingPage() {
     {/* 4 */}
     <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
       <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-      <blockquote className="font-serif text-2xl leading-snug opacity-90 relative [@media(orientation:portrait)]:pb-[2.75rem]">
+      <blockquote className="t-quote font-serif text-2xl leading-snug opacity-90 relative [@media(orientation:portrait)]:pb-[2.75rem]">
         <span aria-hidden data-q="open" className="absolute left-[-0.75rem] top-[-0.25rem] text-[2.25rem] opacity-20 leading-none select-none">“</span>
         <p>...gifted speaker whose engaging style &amp; clear communication bring complex ideas to life.</p>
         <span aria-hidden data-q="close" className="absolute right-[2.75rem] bottom-[3.75rem] text-[2.25rem] opacity-20 leading-none select-none">”</span>
@@ -812,7 +1048,7 @@ export default function SpeakingPage() {
     {/* 5 */}
     <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
       <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-      <blockquote className="font-serif text-2xl leading-snug opacity-90 relative [@media(orientation:portrait)]:pb-[2.75rem]">
+      <blockquote className="t-quote font-serif text-2xl leading-snug opacity-90 relative [@media(orientation:portrait)]:pb-[2.75rem]">
         <span aria-hidden data-q="open" className="absolute left-[-0.75rem] top-[-0.25rem] text-[2.25rem] opacity-20 leading-none select-none">“</span>
         <p>...can communicate with diverse audiences, speaks with heart and dimensionality.</p>
         <span aria-hidden data-q="close" className="absolute right-[9.75rem] bottom-[3.75rem] text-[2.25rem] opacity-20 leading-none select-none">”</span>
@@ -825,7 +1061,7 @@ export default function SpeakingPage() {
     {/* 6 */}
     <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
       <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-      <blockquote className="font-serif text-2xl leading-snug opacity-90 relative [@media(orientation:portrait)]:pb-[2.75rem]">
+      <blockquote className="t-quote font-serif text-2xl leading-snug opacity-90 relative [@media(orientation:portrait)]:pb-[2.75rem]">
         <span aria-hidden data-q="open" className="absolute left-[-0.75rem] top-[-0.25rem] text-[2.25rem] opacity-20 leading-none select-none">“</span>
         <p>...a highly engaging, knowledgeable, and skilled speaker...strongly recommended.</p>
         <span aria-hidden data-q="close" className="absolute right-[-0.75rem] bottom-[3.75rem] text-[2.25rem] opacity-20 leading-none select-none">”</span>
@@ -1140,6 +1376,78 @@ export default function SpeakingPage() {
   [data-section="results-desktop-right"] figure:nth-of-type(2) span[data-quote="close"] {
     right: 3.75rem !important;      /* was right-44 (11rem) — bring in a bit on iPad */
     bottom: 1.75rem !important;
+  }
+}
+
+/* SPEAKING — mobile PORTRAIT: auto-place closing quote on the quote line */
+@media (max-width: 767px) and (orientation: portrait) {
+  [data-page="speaking"] #testimonials blockquote span[data-q="close"] {
+    display: none !important;
+  }
+  [data-page="speaking"] #testimonials blockquote p:first-of-type {
+    display: inline;
+    white-space: normal;
+  }
+  [data-page="speaking"] #testimonials blockquote p:first-of-type::after {
+    content: "”";
+    opacity: 0.20;
+    font-size: 2.25rem;   /* your size */
+    line-height: 0;
+    margin-left: 0.15em;
+    position: relative;
+    top: 0.06em;
+    vertical-align: baseline;
+  }
+}
+
+/* SPEAKING — small-device LANDSCAPE: auto-place closing quote like portrait */
+@media (orientation: landscape) and (max-width: 1015px) {
+  [data-page="speaking"] #testimonials blockquote span[data-q="close"] {
+    display: none !important;
+  }
+  [data-page="speaking"] #testimonials blockquote p:first-of-type {
+    display: inline;
+    white-space: normal;
+  }
+  [data-page="speaking"] #testimonials blockquote p:first-of-type::after {
+    content: "”";
+    opacity: 0.20;
+    font-size: 2.25rem;     /* keep your size */
+    line-height: 1;         /* <-- was 0: fix floating/misalignment */
+    margin-left: 0.15em;
+    position: relative;
+    top: 0.05em;            /* tiny nudge; adjust to taste (±0.05em) */
+    vertical-align: baseline;
+  }
+
+  /* === SPEAKING — small-landscape (iPhone-ish) fix, FINAL OVERRIDES === */
+@media (orientation: landscape) and (max-width: 915px) and (max-height: 450px) {
+  /* 1) Hide the absolutely-positioned close spans so they can't collide */
+  [data-page="speaking"] #testimonials blockquote span[data-q="close"] {
+    display: none !important;
+  }
+
+  /* 2) Ensure the text paragraph is inline so ::after sits on the last line */
+  [data-page="speaking"] #testimonials blockquote p:first-of-type {
+    display: inline !important;
+    white-space: normal !important;
+  }
+
+  /* 3) Inject the closing quote inline, aligned to baseline */
+  [data-page="speaking"] #testimonials blockquote p:first-of-type::after {
+    content: "”";
+    opacity: 0.20;
+    font-size: 2.25rem;      /* your size */
+    line-height: 1;          /* keep in inline flow */
+    margin-left: 0.15em;
+    position: relative;
+    top: 0.05em;             /* tiny baseline nudge */
+    vertical-align: baseline;
+  }
+
+  /* 4) Give blockquote a bit of bottom room so the quote doesn't hit the caption */
+  [data-page="speaking"] #testimonials blockquote.t-quote {
+    padding-bottom: 2.4rem !important;
   }
 }
 

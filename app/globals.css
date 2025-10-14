@@ -330,3 +330,72 @@ html.menu-open, body.menu-open {
 @media (orientation: landscape) and (max-height: 430px) {
   .use-stable-vh { height: 100lvh; } /* logical vh fallback */
 }
+
+/* mobile portrait only: sensible defaults for quote marks */
+@media (max-width: 767px) and (orientation: portrait) {
+  .q-mobile {
+    /* same visual size you had before */
+    --q-size: 2.25rem;   /* controls quote mark size */
+    --q-x: 0.55em;       /* how far the CLOSE quote sits from the right edge */
+    --q-y: 0.95em;       /* vertical breathing room so quotes don't hit the caption */
+    padding-bottom: calc(var(--q-size) + 0.8em); /* keeps close quote above figcaption */
+  }
+}
+
+/* Mobile portrait: larger quote text + auto-placed quote marks */
+@media (max-width: 767px) and (orientation: portrait) {
+  /* Apply this class to each mobile blockquote in Testimonials */
+  .t-quote {
+    /* Bigger, responsive quote text */
+    font-size: clamp(20px, 4.9vw, 26px);
+    line-height: 1.3;
+    position: relative;
+
+    /* Quote mark sizes & insets (all in em so they scale with font-size) */
+    --q-size: 1.65em;    /* size of “ and ” */
+    --q-inset-x: 0.45em; /* distance from right edge for the closing quote */
+    --q-inset-y: 0.85em; /* distance from bottom edge for the closing quote */
+    --q-open-left: -0.75rem;
+    --q-open-top: -0.25rem;
+
+    /* Keep room for the closing quote above the figcaption */
+    padding-bottom: calc(var(--q-size) + 0.7em);
+  }
+
+  /* Opening quote (top-left) */
+  .t-quote [data-q="open"] {
+    position: absolute;
+    left: var(--q-open-left);
+    top: var(--q-open-top);
+    font-size: var(--q-size);
+    line-height: 1;
+    opacity: 0.2;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* Closing quote (bottom-right) */
+  .t-quote [data-q="close"] {
+    position: absolute;
+    right: var(--q-inset-x);
+    bottom: var(--q-inset-y);
+    font-size: var(--q-size);
+    line-height: 1;
+    opacity: 0.2;
+    pointer-events: none;
+    user-select: none;
+  }
+}
+
+/* Optional: mobile landscape can be a touch smaller if you like */
+@media (max-width: 767px) and (orientation: landscape) {
+  .t-quote {
+    font-size: clamp(18px, 3.8vw, 22px);
+    --q-size: 1.5em;
+    --q-inset-x: 0.45em;
+    --q-inset-y: 0.75em;
+    --q-open-left: -0.65rem;
+    --q-open-top: -0.2rem;
+    padding-bottom: calc(var(--q-size) + 0.6em);
+  }
+}

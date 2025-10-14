@@ -109,7 +109,7 @@ export default function ConsultingPage() {
   );
 
   return (
-    <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
+ <main data-page="consulting" className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
       {/* ============== MOBILE (uses the exact working zoom wrapper) ============== */}
       <div className="lg:hidden">                {/* HIDE mobile on desktop */}
         <div
@@ -392,7 +392,7 @@ export default function ConsultingPage() {
           <div className="mx-auto max-w-[1100px] px-6"><div className="h-px w-full bg-[var(--color-cream)]/15" /></div>
 
           {/* Testimonials (2 + Show All / Show Less) */}
-          <section id={toMobile("testimonials")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14 narrow-landscape-70">
+          <section id="testimonials" className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14 narrow-landscape-70">
             <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 text-center mb-2">Testimonials</p>
             <h2 className="font-serif text-3xl opacity-95 text-center">What Clients and Partners Say</h2>
             <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mx-auto mt-3 mb-8 rounded" />
@@ -414,10 +414,10 @@ export default function ConsultingPage() {
               ].map((t, idx) => (
                 <figure key={idx} className="relative w-full rounded-xl bg-white/5 p-6 ring-1 ring-white/10 shadow-2xl">
                   <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-                  <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-                    <span aria-hidden="true" className={`absolute text-4xl opacity-20 select-none ${t.lq}`}>“</span>
+                  <blockquote className="t-quote font-serif text-2xl leading-snug opacity-90 relative">
+                    <span aria-hidden="true" data-q="open" className={`absolute text-4xl opacity-20 select-none ${t.lq}`}>“</span>
                     <p>{t.q}</p>
-                    <span aria-hidden="true" className={`absolute text-4xl opacity-20 select-none ${t.rq}`}>”</span>
+                    <span aria-hidden="true" data-q="close" className={`absolute text-4xl opacity-20 select-none ${t.rq}`}>”</span>
                   </blockquote>
                   <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">— {t.a}</figcaption>
                 </figure>
@@ -440,10 +440,10 @@ export default function ConsultingPage() {
                 ].map((t, idx) => (
                   <figure key={`more-${idx}`} className="relative w-full rounded-xl bg-white/5 p-6 ring-1 ring-white/10 shadow-2xl">
                     <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-                    <blockquote className="font-serif text-2xl leading-snug opacity-90 relative">
-                      <span aria-hidden="true" className={`absolute text-4xl opacity-20 select-none ${t.lq}`}>“</span>
+                    <blockquote className="t-quote font-serif text-2xl leading-snug opacity-90 relative">
+                      <span aria-hidden="true" data-q="open" className={`absolute text-4xl opacity-20 select-none ${t.lq}`}>“</span>
                       <p>{t.q}</p>
-                      <span aria-hidden="true" className={`absolute text-4xl opacity-20 select-none ${t.rq}`}>”</span>
+                      <span aria-hidden="true" data-q="close" className={`absolute text-4xl opacity-20 select-none ${t.rq}`}>”</span>
                     </blockquote>
                     <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">— {t.a}</figcaption>
                   </figure>
@@ -817,7 +817,7 @@ export default function ConsultingPage() {
 
         <div className="mx-auto max-w-[1100px] px-6"><div className="h-px w-full bg-[var(--color-cream)]/15" /></div>
 
-        <section id="testimonials" className="scroll-mt-32 mx-auto max-w-[1100px] px-6 py-16">
+        <section id={toMobile("testimonials")} className="scroll-mt-32 mx-auto max-w-[1100px] px-6 py-16">
           <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 text-center mb-2">Testimonials</p>
           <h2 className="font-serif text-3xl md:text-4xl opacity-95 text-center">What Clients and Partners Say</h2>
           <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mx-auto mt-3 mb-8 rounded" />
@@ -894,6 +894,63 @@ export default function ConsultingPage() {
             font-weight: 700;
           }
         }
+
+ /* === CONSULTING — mobile PORTRAIT: inline close-quote === */
+@media (max-width: 767px) and (orientation: portrait) {
+  [data-page="consulting"] #testimonials blockquote span[data-q="close"],
+  [data-page="consulting"] #testimonials-m blockquote span[data-q="close"] {
+    display: none !important;
+  }
+  [data-page="consulting"] #testimonials blockquote p:first-of-type,
+  [data-page="consulting"] #testimonials-m blockquote p:first-of-type {
+    display: inline !important;
+    white-space: normal !important;
+  }
+  [data-page="consulting"] #testimonials blockquote p:first-of-type::after,
+  [data-page="consulting"] #testimonials-m blockquote p:first-of-type::after {
+    content: "”";
+    opacity: 0.20;
+    font-size: 2.25rem;
+    line-height: 1;
+    margin-left: 0.15em;
+    position: relative;
+    top: 0.05em;
+    vertical-align: baseline;
+  }
+  [data-page="consulting"] #testimonials blockquote.t-quote,
+  [data-page="consulting"] #testimonials-m blockquote.t-quote {
+    padding-bottom: 0rem !important;
+  }
+}
+
+/* === CONSULTING — small LANDSCAPE (iPhone-ish): same behavior === */
+@media (orientation: landscape) and (max-width: 915px) and (max-height: 450px) {
+  [data-page="consulting"] #testimonials blockquote span[data-q="close"],
+  [data-page="consulting"] #testimonials-m blockquote span[data-q="close"] {
+    display: none !important;
+  }
+  [data-page="consulting"] #testimonials blockquote p:first-of-type,
+  [data-page="consulting"] #testimonials-m blockquote p:first-of-type {
+    display: inline !important;
+    white-space: normal !important;
+  }
+  [data-page="consulting"] #testimonials blockquote p:first-of-type::after,
+  [data-page="consulting"] #testimonials-m blockquote p:first-of-type::after {
+    content: "”";
+    opacity: 0.20;
+    font-size: 2.25rem;
+    line-height: 1;
+    margin-left: 0.15em;
+    position: relative;
+    top: 0.05em;
+    vertical-align: baseline;
+  }
+  [data-page="consulting"] #testimonials blockquote.t-quote,
+  [data-page="consulting"] #testimonials-m blockquote.t-quote {
+    padding-bottom: 0rem !important;
+  }
+}
+
       `}</style>
 
       {/* Home: section/bookend divider (aligns to 1100px container) */}
