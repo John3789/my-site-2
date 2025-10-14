@@ -416,27 +416,3 @@ html.menu-open, body.menu-open {
   }
 }
 
-/* HOME — iPad PORTRAIT: shrink non-hero images only */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-  /* regular <img> inside common containers */
-  [data-page="home"] :where(figure, .card, .tile, .image-frame) img {
-    max-height: 40vh !important; /* tweak 36–46vh */
-    width: 100% !important;
-    height: auto !important;
-    object-fit: cover !important;
-  }
-
-  /* cap Next/Image “fill” wrappers so the image can’t grow too tall */
-  [data-page="home"] :where(figure, .card, .tile, .image-frame) span[style*="position: relative"] {
-    max-height: 42vh;
-    display: block;
-    overflow: hidden;
-  }
-
-  /* DO NOT touch the hero */
-  [data-page="home"] :is(#hero, .hero, .s-hero) img {
-    max-height: none !important;
-    height: auto !important;
-    object-fit: inherit !important;
-  }
-}
