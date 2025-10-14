@@ -172,3 +172,31 @@ function MobileLink({ href, children, onClick, active }) {
     </Link>
   );
 }
+
+<style jsx global>{`
+  /* Base: hamburger on, tabs off */
+  header .header-hamburger { display: inline-flex; }
+  header .header-tabs { display: none; }
+
+  /* Portrait ≥1000px → show tabs, hide hamburger */
+  @media (orientation: portrait) and (min-width: 1000px) {
+    header .header-hamburger { display: none !important; }
+    header .header-tabs { display: flex !important; }
+  }
+
+  /* Landscape ≥1100px → show tabs, hide hamburger */
+  @media (orientation: landscape) and (min-width: 1100px) {
+    header .header-hamburger { display: none !important; }
+    header .header-tabs { display: flex !important; }
+  }
+
+  /* Hard guards for iPad Pro sizes (helps if Safari reports odd widths) */
+  @media screen and (orientation: portrait) and (min-width: 1024px) {
+    header .header-hamburger { display: none !important; }
+    header .header-tabs { display: flex !important; }
+  }
+  @media screen and (orientation: landscape) and (min-width: 1366px) {
+    header .header-hamburger { display: none !important; }
+    header .header-tabs { display: flex !important; }
+  }
+`}</style>
