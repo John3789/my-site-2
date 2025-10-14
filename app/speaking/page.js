@@ -1481,7 +1481,7 @@ useEffect(() => {
     line-height: 0;
     margin-left: 0.15em;
     position: relative;
-    top: -0.2em;
+    top: -0.30em;
     vertical-align: baseline;
   }
   /* Safety spacing above figcaption */
