@@ -1147,7 +1147,7 @@ export default function SpeakingPage() {
     display: inline;
     white-space: normal;
   }
-
+    
 [data-page="speaking"] #testimonials blockquote p:first-of-type::after {
     content: "”";
     opacity: 0.20;
@@ -1235,83 +1235,19 @@ export default function SpeakingPage() {
   }
 }
 
-/* ===== iPad PORTRAIT (≈820×1180) — CSS inline closer ===== */
-@media (orientation: portrait) and (min-width: 800px) and (max-width: 900px) {
-  /* Hide the separate closer, whether it's data-q or data-quote */
-  [data-page="speaking"] blockquote.t-quote :is([data-q="close"], [data-quote="close"]) {
-    display: none !important;
-  }
-  /* Inline the paragraph so ::after hugs the last line */
-  [data-page="speaking"] blockquote.t-quote p:first-of-type {
-    display: inline;
-    white-space: normal;
-  }
-  /* Inject the closing quote inline */
-  [data-page="speaking"] blockquote.t-quote p:first-of-type::after {
-    content: "”";
-    opacity: 0.20;
-    font-size: var(--q-size);
-    line-height: 0;
-    margin-left: 0.15em;
-    position: relative;
-    top: -0.30em;
-    vertical-align: baseline;
-  }
-  /* Safety spacing above figcaption */
-  [data-page="speaking"] blockquote.t-quote { padding-bottom: calc(var(--q-size, 2.25rem) * 0.50) !important; }
-}  
-
-
-/* ===== iPad Mini PORTRAIT (≈744×1133) — inline closer alignment ===== */
-@media (orientation: portrait) and (min-width: 700px) and (max-width: 799px) {
-  /* Hide the absolutely positioned closer */
-  [data-page="speaking"] blockquote.t-quote :is([data-q="close"], [data-quote="close"]) {
-    display: none !important;
-  }
-
-  /* Inline paragraph so ::after attaches to last line */
-  [data-page="speaking"] blockquote.t-quote p:first-of-type {
-    display: inline;
-    white-space: normal;
-  }
-
-  /* Adjust inline quote baseline slightly lower than phone rule */
-  [data-page="speaking"] blockquote.t-quote p:first-of-type::after {
-    content: "”";
-    opacity: 0.20;
-    font-size: var(--q-size);
-    line-height: 0.9;      /* instead of 0 — drops it a hair */
-    margin-left: 0.15em;
-    position: relative;
-    top: 0.30em;           /* nudged down for balance */
-    vertical-align: baseline;
-  }
-
-  /* Slightly reduced padding below to keep spacing tight */
-  [data-page="speaking"] blockquote.t-quote {
-    padding-bottom: calc(var(--q-size, 2.25rem) * 0.50) !important;
-  }
-}
-
-/* ===== iPad LANDSCAPE (1024–1366) — desktop columns ===== */
+/* ===== iPad LANDSCAPE (1024–1366) — desktop columns ONLY ===== */
 @media (orientation: landscape) and (min-width: 1024px) and (max-width: 1366px) {
-  /* Hide the separate closer spans */
-  [data-page="speaking"] :is([data-section="testimonials-desktop"],
-                             [data-section="testimonials-desktop-right"],
-                             [data-section="results-desktop-right"])
-  blockquote span[data-quote="close"] { display: none !important; }
+  /* desktop columns live inside .quote-col, so scope here */
+  [data-page="speaking"] .quote-col blockquote span[data-quote="close"] { 
+    display: none !important; 
+  }
 
-  /* Inline the first paragraph */
-  [data-page="speaking"] :is([data-section="testimonials-desktop"],
-                             [data-section="testimonials-desktop-right"],
-                             [data-section="results-desktop-right"])
-  blockquote p:first-of-type { display: inline; white-space: normal; }
+  [data-page="speaking"] .quote-col blockquote p:first-of-type { 
+    display: inline; 
+    white-space: normal; 
+  }
 
-  /* Inject the closing mark inline (same recipe as last night) */
-  [data-page="speaking"] :is([data-section="testimonials-desktop"],
-                             [data-section="testimonials-desktop-right"],
-                             [data-section="results-desktop-right"])
-  blockquote p:first-of-type::after {
+  [data-page="speaking"] .quote-col blockquote p:first-of-type::after {
     content: "”";
     opacity: 0.20;
     font-size: var(--q-size, 2.25rem);
@@ -1322,14 +1258,64 @@ export default function SpeakingPage() {
     vertical-align: baseline;
   }
 
-  /* Spacer above figcaption so the inline mark can’t collide */
-  [data-page="speaking"] :is([data-section="testimonials-desktop"],
-                             [data-section="testimonials-desktop-right"],
-                             [data-section="results-desktop-right"])
-  blockquote { padding-bottom: calc(var(--q-size, 2.25rem) * 0.30); }
+  /* desktop columns padding only (won’t touch mobile testimonials) */
+  [data-page="speaking"] .quote-col blockquote { 
+    padding-bottom: calc(var(--q-size, 2.25rem) * 0.10); 
+  }
 }
 
+/* ===== iPad PORTRAIT (≈820×1180) — mobile testimonials only ===== */
+@media (orientation: portrait) and (min-width: 800px) and (max-width: 900px) {
+  [data-page="speaking"] #testimonials blockquote.t-quote 
+  :is([data-q="close"], [data-quote="close"]) { display: none !important; }
 
+  [data-page="speaking"] #testimonials blockquote.t-quote p:first-of-type {
+    display: inline; 
+    white-space: normal;
+  }
+
+  [data-page="speaking"] #testimonials blockquote.t-quote p:first-of-type::after {
+    content: "”";
+    opacity: 0.20;
+    font-size: var(--q-size, 2.25rem);
+    line-height: 0;
+    margin-left: 0.15em;
+    position: relative;
+    top: -0.30em;
+    vertical-align: baseline;
+  }
+
+  /* force portrait tablet padding; beats any landscape rule */
+  [data-page="speaking"] #testimonials blockquote.t-quote {
+    padding-bottom: calc(var(--q-size, 2.25rem) * 0.50) !important;
+  }
+}
+
+/* ===== iPad Mini PORTRAIT (≈744×1133) — mobile testimonials only ===== */
+@media (orientation: portrait) and (min-width: 700px) and (max-width: 799px) {
+  [data-page="speaking"] #testimonials blockquote.t-quote 
+  :is([data-q="close"], [data-quote="close"]) { display: none !important; }
+
+  [data-page="speaking"] #testimonials blockquote.t-quote p:first-of-type { 
+    display: inline; 
+    white-space: normal; 
+  }
+
+  [data-page="speaking"] #testimonials blockquote.t-quote p:first-of-type::after {
+    content: "”";
+    opacity: 0.20;
+    font-size: var(--q-size, 2.25rem);
+    line-height: 0.9;
+    margin-left: 0.15em;
+    position: relative;
+    top: 0.30em;
+    vertical-align: baseline;
+  }
+
+  [data-page="speaking"] #testimonials blockquote.t-quote {
+    padding-bottom: calc(var(--q-size, 2.25rem) * 0.50) !important;
+  }
+}
 
       `}</style>
     </>
