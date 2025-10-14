@@ -35,7 +35,7 @@ export default function Header() {
       <header className={headerClass}>
         <div className="mx-auto max-w-7xl px-6 h-10 flex items-center">
           {/* Desktop / tablet nav (unchanged) */}
-          <nav className="hidden lg:flex w-full items-center justify-center gap-6 text-[13px] tracking-wide uppercase">
+ <nav className="header-tabs w-full items-center justify-center gap-6 text-[13px] tracking-wide uppercase">
             {!isHome && (
             <Link href="/" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname === "/" ? "nav-active" : ""}`}>Home</Link>)}
             <Link href="/about" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/about") ? "nav-active" : ""}`}>About</Link>
@@ -52,8 +52,8 @@ export default function Header() {
   type="button"
   aria-label="Open menu"
   onClick={() => setOpen(true)}
-  className="lg:hidden mr-auto -mr-1 -ml-5 p-3 translate-y-4"
->
+className="header-hamburger mr-auto -mr-1 -ml-5 p-3 translate-y-4">
+
   {/* 3-line icon (cream) */}
 <svg
   className="w-[40px] h-[40px] shrink-0"

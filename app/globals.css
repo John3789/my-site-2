@@ -416,3 +416,20 @@ html.menu-open, body.menu-open {
   }
 }
 
+/* --- Header visibility rules --- */
+
+/* Base: show hamburger, hide tabs */
+.header-hamburger { display: inline-flex; }
+.header-tabs { display: none; }
+
+/* Portrait DESKTOP/TABLET: ≥1000px → show tabs, hide hamburger */
+@media (orientation: portrait) and (min-width: 1000px) {
+  .header-hamburger { display: none !important; }
+  .header-tabs { display: flex !important; }
+}
+
+/* Landscape DESKTOP/TABLET: ≥1100px → show tabs, hide hamburger */
+@media (orientation: landscape) and (min-width: 1100px) {
+  .header-hamburger { display: none !important; }
+  .header-tabs { display: flex !important; }
+}
