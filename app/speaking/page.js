@@ -1470,6 +1470,50 @@ useEffect(() => {
   }
 }
 
+/* SPEAKING — iPad Pro LANDSCAPE (desktop quote columns): unify quote alignment */
+@media (orientation: landscape) and (min-width: 1024px) and (max-width: 1366px) {
+  /* 1) Turn off absolute closers so they don't fight the inline mark */
+  [data-section="testimonials-desktop"]        span[data-quote="close"],
+  [data-section="testimonials-desktop-right"]  span[data-quote="close"],
+  [data-section="results-desktop-right"]       span[data-quote="close"] {
+    display: none !important;
+  }
+
+  /* 2) Normalize sizes + ensure room above the caption */
+  [data-section="testimonials-desktop"]        blockquote,
+  [data-section="testimonials-desktop-right"]  blockquote,
+  [data-section="results-desktop-right"]       blockquote {
+    --q-size: 2.25rem;
+    padding-bottom: 2.2rem !important;
+  }
+  [data-section="testimonials-desktop"]        [data-quote="open"],
+  [data-section="testimonials-desktop-right"]  [data-quote="open"],
+  [data-section="results-desktop-right"]       [data-quote="open"] {
+    font-size: var(--q-size) !important;
+    line-height: 1;
+  }
+
+  /* 3) Inject the closing quote inline at the true line end */
+  [data-section="testimonials-desktop"]        blockquote p:first-of-type,
+  [data-section="testimonials-desktop-right"]  blockquote p:first-of-type,
+  [data-section="results-desktop-right"]       blockquote p:first-of-type {
+    display: inline !important;
+    white-space: normal !important;
+  }
+  [data-section="testimonials-desktop"]        blockquote p:first-of-type::after,
+  [data-section="testimonials-desktop-right"]  blockquote p:first-of-type::after,
+  [data-section="results-desktop-right"]       blockquote p:first-of-type::after {
+    content: "”";
+    opacity: 0.20;
+    font-size: var(--q-size) !important;
+    line-height: 1;
+    margin-left: 0.15em;
+    position: relative;
+    top: 0.05em;
+    vertical-align: baseline;
+  }
+}
+
 
       `}</style>
     </>
