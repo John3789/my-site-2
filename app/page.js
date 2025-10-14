@@ -96,7 +96,7 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
   </div>
 
   {/* Desktop/tablet buttons only (mobile CTAs are hidden) */}
-  <div className="hidden lg:block absolute inset-x-0 bottom-6 z-30">
+  <div className="hidden lg:block desktop-when-p800 absolute inset-x-0 bottom-6 z-30">
     <div className="mx-auto max-w-[1400px] px-6 relative">
       <Link
         href="speaking"
@@ -331,16 +331,16 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
 
           {/* FINAL divider above footer — match two-column width, no bleed */}
           <div className="mx-auto max-w-[1400px] px-6 mt-17">
-            <hr className="hidden lg:block max-w-[1400px] border-t border-[var(--color-cream)]/22" />
+            <hr className="hidden lg:block desktop-when-p800 max-w-[1400px] border-t border-[var(--color-cream)]/22" />
           </div>
 
-          <div className="block lg:hidden mx-auto max-w-[1100px] px-3">
+          <div className="block lg:hidden mobile-when-p800 mx-auto max-w-[1100px] px-3">
             {/* (mobile newsletter + socials unchanged) */}
             {/* ... */}
           </div>
 
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
-<div className="block lg:hidden">
+<div className="block lg:hidden mobile-when-p800">
   <div className="mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
           <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
 

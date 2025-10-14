@@ -457,3 +457,13 @@ html.menu-open, body.menu-open {
        (orientation: landscape) and (min-width: 800px) {
   .nameplate-spacer { display: block !important; }
 }
+
+/* Portrait <800 = mobile shows, desktop hides (default) */
+.mobile-when-p800 { display: block; }
+.desktop-when-p800 { display: none; }
+
+/* Portrait ≥800 = desktop shows, mobile hides */
+@media (orientation: portrait) and (min-width: 800px) {
+  .mobile-when-p800 { display: none !important; }
+  .desktop-when-p800 { display: block !important; }
+}
