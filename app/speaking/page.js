@@ -1514,6 +1514,35 @@ useEffect(() => {
   }
 }
 
+/* SPEAKING — iPad 10 PORTRAIT (820px): inline close-quote like mobile */
+@media (orientation: portrait) and (min-width: 800px) and (max-width: 900px) {
+  [data-page="speaking"] #testimonials blockquote span[data-q="close"] {
+    display: none !important; /* hide absolute one */
+  }
+  [data-page="speaking"] #testimonials blockquote.t-quote {
+    --q-size: 2.25rem;
+    padding-bottom: 2.4rem !important; /* room above figcaption */
+  }
+  [data-page="speaking"] #testimonials blockquote.t-quote [data-q="open"] {
+    font-size: var(--q-size) !important;
+    line-height: 1;
+  }
+  [data-page="speaking"] #testimonials blockquote p:first-of-type {
+    display: inline !important;
+    white-space: normal !important;
+  }
+  [data-page="speaking"] #testimonials blockquote p:first-of-type::after {
+    content: "”";
+    opacity: 0.20;
+    font-size: var(--q-size) !important;
+    line-height: 1;
+    margin-left: 0.15em;
+    position: relative;
+    top: 0.05em;
+    vertical-align: baseline;
+  }
+}
+
 
       `}</style>
     </>
