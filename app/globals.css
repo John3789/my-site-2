@@ -455,30 +455,3 @@ html.menu-open, body.menu-open {
   .nameplate-spacer { display: block !important; }
 }
 
-/* Desktop vs mobile content blocks (portrait threshold at 800px) */
-.desktop-when-p800 { display: none; }   /* off by default */
-.mobile-when-p800  { display: block; }  /* on by default */
-
-@media (orientation: portrait) and (min-width: 800px) {
-  .desktop-when-p800 { display: block !important; }
-  .mobile-when-p800  { display: none  !important; }
-}
-
-/* Force desktop-ish layout at portrait ≥800px */
-@media (orientation: portrait) and (min-width: 800px) {
-  /* make 12-col grids */
-  .p800-grid-12 {
-    display: grid !important;
-    grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
-    gap: 2.5rem !important; /* match your md/lg gap */
-    align-items: center;
-  }
-
-  /* handy column spans */
-  .p800-col-6 { grid-column: span 6 / span 6 !important; }
-  .p800-text-left { text-align: left !important; }
-
-  /* show/hide blocks at this breakpoint if needed */
-  .p800-show { display: block !important; }
-  .p800-hide { display: none !important; }
-}

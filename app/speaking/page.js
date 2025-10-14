@@ -1304,9 +1304,9 @@ useEffect(() => {
   }
 }
 
-/* Hide quotes below 1023px landscape or below 767px portrait */
+/* Hide quotes below 1023px landscape or below 850px portrait */
 @media (max-width: 1023px) and (orientation: landscape),
-       (max-width: 767px) and (orientation: portrait) {
+       (max-width: 850px) and (orientation: portrait) {
   .quote-col {
     display: none !important;
   }
