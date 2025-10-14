@@ -1557,6 +1557,57 @@ useEffect(() => {
   [data-section="results-desktop-right"] figure { outline: 2px dashed lime !important; }
 }
 
+/* ===== SPEAKING — Universal quote alignment (device-agnostic, final) ===== */
+[data-page="speaking"] {
+  --speaking-q-size: 2.25rem;
+}
+
+/* 1) Disable ALL absolutely-positioned closers on Speaking (mobile + desktop stacks) */
+[data-page="speaking"] #testimonials blockquote span[data-q="close"],
+[data-page="speaking"] [data-section="testimonials-desktop"] span[data-quote="close"],
+[data-page="speaking"] [data-section="testimonials-desktop-right"] span[data-quote="close"],
+[data-page="speaking"] [data-section="results-desktop-right"] span[data-quote="close"] {
+  display: none !important;
+}
+
+/* 2) Normalize the opening quote size so it matches the inline closer */
+[data-page="speaking"] #testimonials blockquote.t-quote [data-q="open"],
+[data-page="speaking"] [data-section="testimonials-desktop"] [data-quote="open"],
+[data-page="speaking"] [data-section="testimonials-desktop-right"] [data-quote="open"],
+[data-page="speaking"] [data-section="results-desktop-right"] [data-quote="open"] {
+  font-size: var(--speaking-q-size) !important;
+  line-height: 1;
+}
+
+/* 3) Inject the closing quote inline at the true end of the paragraph (works regardless of wrap) */
+[data-page="speaking"] #testimonials blockquote p:first-of-type,
+[data-page="speaking"] [data-section="testimonials-desktop"] blockquote p:first-of-type,
+[data-page="speaking"] [data-section="testimonials-desktop-right"] blockquote p:first-of-type,
+[data-page="speaking"] [data-section="results-desktop-right"] blockquote p:first-of-type {
+  display: inline !important;
+  white-space: normal !important;
+}
+
+[data-page="speaking"] #testimonials blockquote p:first-of-type::after,
+[data-page="speaking"] [data-section="testimonials-desktop"] blockquote p:first-of-type::after,
+[data-page="speaking"] [data-section="testimonials-desktop-right"] blockquote p:first-of-type::after,
+[data-page="speaking"] [data-section="results-desktop-right"] blockquote p:first-of-type::after {
+  content: "”";
+  opacity: 0.20;
+  font-size: var(--speaking-q-size) !important;
+  line-height: 1;
+  margin-left: 0.15em;
+  position: relative;
+  top: 0.05em;              /* tiny baseline nudge */
+  vertical-align: baseline;
+}
+
+/* 4) Give every card a little bottom room so the inline closer never kisses the figcaption */
+[data-page="speaking"] #testimonials blockquote.t-quote,
+[data-page="speaking"] [data-section="testimonials-desktop"] blockquote,
+[data-page="speaking"] [data-section="testimonials-desktop-right"] blockquote,
+[data-page="speaking"] [data]()
+
 
       `}</style>
     </>
