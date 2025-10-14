@@ -1155,7 +1155,7 @@ export default function SpeakingPage() {
     line-height: 1;            /* ← was 0 */
     margin-left: 0.15em;
     position: relative;
-    top: 0.30em;              /* ← was +0.06em */
+    top: 0em;              /* ← was +0.06em */
     vertical-align: baseline;
   }
 }
@@ -1225,7 +1225,7 @@ export default function SpeakingPage() {
     line-height: 1;          /* keep in inline flow */
     margin-left: 0.15em;
     position: relative;
-    top: 0.50em;             /* tiny baseline nudge */
+    top: 0em;             /* tiny baseline nudge */
     vertical-align: baseline;
   }
 
@@ -1288,7 +1288,7 @@ export default function SpeakingPage() {
   }
   /* Spacer above figcaption */
   [data-page="speaking"] #testimonials blockquote.t-quote {
-    padding-bottom: calc(var(--q-size, 2.25rem) * 0.800) !important;
+    padding-bottom: calc(var(--q-size, 2.25rem) * 1.5) !important;
   }
 }
 
@@ -1308,11 +1308,11 @@ export default function SpeakingPage() {
     line-height: 0.9;         /* slightly lower than phone */
     margin-left: 0.15em;
     position: relative;
-    top: 0.60em;              /* mini-specific baseline nudge */
+    top: -0.20em;              /* mini-specific baseline nudge */
     vertical-align: baseline;
   }
   [data-page="speaking"] #testimonials blockquote.t-quote {
-    padding-bottom: calc(var(--q-size, 2.25rem) * 0.80) !important;
+    padding-bottom: calc(var(--q-size, 2.25rem) * 1.5) !important;
   }
 }
 
