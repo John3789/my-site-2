@@ -423,7 +423,7 @@ html.menu-open, body.menu-open {
 .header-tabs { display: none; }
 
 /* Portrait DESKTOP/TABLET: ≥1000px → show tabs, hide hamburger */
-@media (orientation: portrait) and (min-width: 974px) {
+@media (orientation: portrait) and (min-width: 900px) {
   .header-hamburger { display: none !important; }
   .header-tabs { display: flex !important; }
 }
