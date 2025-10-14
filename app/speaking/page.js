@@ -1462,8 +1462,8 @@ useEffect(() => {
   }
 }
 
-/* ===== iPad 10 PORTRAIT (≈820×1180) — CSS inline closer ===== */
-@media (orientation: portrait) and (min-width: 700px) and (max-width: 900px) {
+/* ===== iPad PORTRAIT (≈820×1180) — CSS inline closer ===== */
+@media (orientation: portrait) and (min-width: 650px) and (max-width: 900px) {
   /* Hide the separate closer, whether it's data-q or data-quote */
   [data-page="speaking"] blockquote.t-quote :is([data-q="close"], [data-quote="close"]) {
     display: none !important;
@@ -1488,7 +1488,7 @@ useEffect(() => {
   [data-page="speaking"] blockquote.t-quote { padding-bottom: calc(var(--q-size) * 0.6); }
 }
 
-/* ===== iPad Pro 5 LANDSCAPE (1024–1366) — desktop columns ===== */
+/* ===== iPad LANDSCAPE (1024–1366) — desktop columns ===== */
 @media (orientation: landscape) and (min-width: 1024px) and (max-width: 1366px) {
   /* Hide the separate closer spans */
   [data-page="speaking"] :is([data-section="testimonials-desktop"],
@@ -1521,7 +1521,7 @@ useEffect(() => {
   [data-page="speaking"] :is([data-section="testimonials-desktop"],
                              [data-section="testimonials-desktop-right"],
                              [data-section="results-desktop-right"])
-  blockquote { padding-bottom: calc(var(--q-size, 2.25rem) * 0.6); }
+  blockquote { padding-bottom: calc(var(--q-size, 2.25rem) * 0.45); }
 }
 
 
