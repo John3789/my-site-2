@@ -7,6 +7,14 @@ import Header from '../components/Header'
 import NewsletterSignup from '../components/NewsletterSignup'
 import Script from 'next/script'
 
+// app/layout.tsx (or layout.js)
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+  userScalable: true,
+};
+
 // Sans font for body text
 const inter = Inter({
   subsets: ['latin'],
@@ -110,11 +118,7 @@ export default function RootLayout({ children }) {
 `}
 </Script>
 
-        {/* Single authoritative viewport (no permanent max/min scale) */}
-        <meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=8, user-scalable=yes, viewport-fit=cover"
-/>
+
 
         {/* 🔒 Inline kill-switch CSS BEFORE first paint (no opacity hiding) */}
         <Script id="zoom-kill-style" strategy="beforeInteractive">
