@@ -178,7 +178,7 @@ function MobileLink({ href, children, onClick, active }) {
   header .header-hamburger { display: inline-flex; }
   header .header-tabs { display: none; }
 
-  /* Portrait ≥1000px → show tabs, hide hamburger */
+  /* Portrait ≥900px → show tabs, hide hamburger */
   @media (orientation: portrait) and (min-width: 900px) {
     header .header-hamburger { display: none !important; }
     header .header-tabs { display: flex !important; }
