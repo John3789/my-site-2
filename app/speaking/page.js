@@ -1138,21 +1138,24 @@ export default function SpeakingPage() {
 
 /* SPEAKING — mobile PORTRAIT: auto-place closing quote on the quote line */
 @media (max-width: 767px) and (orientation: portrait) {
-  [data-page="speaking"] #testimonials blockquote span[data-q="close"] {
+  /* hide separate closer, regardless of attribute name */
+  [data-page="speaking"] #testimonials blockquote
+  :is([data-q="close"], [data-quote="close"]) {
     display: none !important;
   }
   [data-page="speaking"] #testimonials blockquote p:first-of-type {
     display: inline;
     white-space: normal;
   }
-  [data-page="speaking"] #testimonials blockquote p:first-of-type::after {
+    
+[data-page="speaking"] #testimonials blockquote p:first-of-type::after {
     content: "”";
     opacity: 0.20;
-    font-size: 2.25rem;   /* your size */
-    line-height: 0;
+    font-size: 2.25rem;
+    line-height: 1;            /* ← was 0 */
     margin-left: 0.15em;
     position: relative;
-    top: 0.06em;
+    top: -0.06em;              /* ← was +0.06em */
     vertical-align: baseline;
   }
 }
@@ -1178,24 +1181,28 @@ export default function SpeakingPage() {
 
 /* SPEAKING — small-device LANDSCAPE: auto-place closing quote like portrait */
 @media (orientation: landscape) and (max-width: 1015px) {
-  [data-page="speaking"] #testimonials blockquote span[data-q="close"] {
+  [data-page="speaking"] #testimonials blockquote
+  :is([data-q="close"], [data-quote="close"]) {
     display: none !important;
+  }
   }
   [data-page="speaking"] #testimonials blockquote p:first-of-type {
     display: inline;
     white-space: normal;
   }
+
   [data-page="speaking"] #testimonials blockquote p:first-of-type::after {
     content: "”";
     opacity: 0.20;
     font-size: 2.25rem;
-    line-height: 1;
+    line-height: 1;            /* keep in inline flow */
     margin-left: 0.15em;
     position: relative;
-    top: 0.05em;
+    top: -0.06em;              /* ← was +0.05em */
     vertical-align: baseline;
   }
-}  /* ← ← ← ADD THIS CLOSER */
+}
+
 
   /* === SPEAKING — small-landscape (iPhone-ish) fix, FINAL OVERRIDES === */
 @media (orientation: landscape) and (max-width: 915px) and (max-height: 450px) {
@@ -1322,54 +1329,6 @@ export default function SpeakingPage() {
   blockquote { padding-bottom: calc(var(--q-size, 2.25rem) * 0.10); }
 }
 
-/* === Quotes: single, robust recipe for all devices === */
-
-/* One knob for mark size */
-[data-page="speaking"] blockquote.t-quote { --q-size: 2.25rem; }
-
-/* 1) Hide any separate closing span (prevents collisions) */
-[data-page="speaking"] blockquote.t-quote :is([data-q="close"], [data-quote="close"]) {
-  display: none !important;
-}
-
-/* 2) Ensure the first paragraph is inline so ::after hugs the last line */
-[data-page="speaking"] blockquote.t-quote p:first-of-type {
-  display: inline;
-  white-space: normal;
-}
-
-/* 3) Inject the closing mark inline and align to the baseline */
-[data-page="speaking"] blockquote.t-quote p:first-of-type::after {
-  content: "”";
-  opacity: 0.20;
-  font-size: var(--q-size);
-  /* Baseline alignment that’s stable across iOS/Android/desktop: */
-  line-height: 0;             /* don’t reserve vertical space */
-  vertical-align: baseline;
-  position: relative;
-  transform: translateY(-0.08em);  /* tiny lift (works across browsers) */
-  margin-left: 0.15em;
-}
-
-/* 4) Opening mark uses the same size for parity */
-[data-page="speaking"] blockquote.t-quote :is([data-q="open"], [data-quote="open"]) {
-  font-size: var(--q-size);
-  line-height: 1;
-  opacity: 0.20;
-}
-
-/* 5) Safe bottom spacing so the inline closer never hits the caption */
-[data-page="speaking"] blockquote.t-quote {
-  /* Adjust factor once and it applies everywhere */
-  --q-pad: 0.45; /* try 0.40–0.50 based on taste */
-  padding-bottom: calc(var(--q-size) * var(--q-pad)) !important;
-}
-
-/* Optional: if desktop column quotes (those 'right: X' spans) exist elsewhere,
-   this prevents accidental absolute positioning from showing up. */
-[data-page="speaking"] blockquote.t-quote :is([data-q="close"], [data-quote="close"]) {
-  right: auto !important; bottom: auto !important; left: auto !important; top: auto !important;
-}
 
 
       `}</style>
