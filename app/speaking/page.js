@@ -1136,42 +1136,35 @@ export default function SpeakingPage() {
   }
 }
 
-/* SPEAKING — mobile PORTRAIT: auto-place closing quote on the quote line */
+/* iPhone PORTRAIT */
 @media (max-width: 767px) and (orientation: portrait) {
-  /* hide separate closer, regardless of attribute name */
+  /* hide separate closer, any attribute name */
   [data-page="speaking"] #testimonials blockquote
   :is([data-q="close"], [data-quote="close"]) {
     display: none !important;
   }
+
   [data-page="speaking"] #testimonials blockquote p:first-of-type {
     display: inline;
     white-space: normal;
   }
-    
-[data-page="speaking"] #testimonials blockquote p:first-of-type::after {
+
+  [data-page="speaking"] #testimonials blockquote p:first-of-type::after {
     content: "”";
     opacity: 0.20;
-    font-size: 2.25rem;
-    line-height: 1;            /* ← was 0 */
+    font-size: var(--q-size, 2.25rem);
+    line-height: 1;     /* keep inline flow */
     margin-left: 0.15em;
     position: relative;
-    top: 0em;              /* ← was +0.06em */
+    top: 0em;           /* adjust to taste: 0em to 0.05em */
     vertical-align: baseline;
   }
 }
 
-@media (max-width: 767px) and (orientation: portrait) {
-  /* Use one size for both opening and closing quotes */
-  [data-page="speaking"] #testimonials blockquote.t-quote {
-    --q-size: 2.25rem;
-  }
+
   [data-page="speaking"] #testimonials blockquote.t-quote [data-q="open"] {
     font-size: var(--q-size) !important;
     line-height: 1;
-  }
-  [data-page="speaking"] #testimonials blockquote.t-quote p:first-of-type::after {
-    font-size: var(--q-size) !important;
-    line-height: 0;
   }
 }
 
@@ -1185,7 +1178,7 @@ export default function SpeakingPage() {
   :is([data-q="close"], [data-quote="close"]) {
     display: none !important;
   }
-  }
+  
   [data-page="speaking"] #testimonials blockquote p:first-of-type {
     display: inline;
     white-space: normal;
