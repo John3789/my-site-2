@@ -86,22 +86,19 @@ export default function Home() {
     [@media(orientation:landscape)_and_(max-width:900px)]:hidden
   "
 >
-  <span className="relative inline-block pr-[0.55em]">
-    {/* ™ pinned; scales with heading; no layout shift */}
-    <span
-      aria-hidden="true"
-      className="
-        absolute right-[0.02em] top-[-0.62em]
-        text-[0.55em] leading-none opacity-70
-        pointer-events-none select-none
-        sm:top-[-0.64em]
-        md:top-[-0.66em] md:text-[0.52em]
-        lg:top-[-0.68em] lg:text-[0.50em]
-      "
-    >
-      ™
+  <span className="relative inline-block">
+    DR. JUAN PABLO SALERN
+    <span className="relative inline-block align-baseline">
+      O
+      {/* ™ pinned to the O in SALERNO; scales with font size */}
+      <span
+        aria-hidden="true"
+        className="absolute pointer-events-none select-none opacity-70 leading-none
+                   top-[-0.10em] left-[1.60em] text-[0.40em]"
+      >
+        ™
+      </span>
     </span>
-    DR. JUAN PABLO SALERNO
   </span>
 </h1>
 
