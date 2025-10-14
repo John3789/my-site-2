@@ -416,26 +416,6 @@ html.menu-open, body.menu-open {
   }
 }
 
-/* --- Header visibility rules --- */
-
-/* Base: show hamburger, hide tabs */
-.header-hamburger { display: inline-flex; }
-.header-tabs { display: none; }
-
-/* Portrait DESKTOP/TABLET: ≥900px → show tabs, hide hamburger */
-@media (orientation: portrait) and (min-width: 900px) {
-  .header-hamburger { display: none !important; }
-  .header-tabs { display: flex !important; }
-}
-
-/* Landscape DESKTOP/TABLET: ≥1100px → show tabs, hide hamburger */
-@media (orientation: landscape) and (min-width: 1100px) {
-  .header-hamburger { display: none !important; }
-  .header-tabs { display: flex !important; }
-}
-
-
-
 /* === Nameplate visibility rules === */
 /* Base: show BOTTOM name, hide TOP teal bar */
 .nameplate-top { display: none; }
@@ -460,3 +440,16 @@ html.menu-open, body.menu-open {
   .nameplate-spacer { display: block !important; }
 }
 
+/* --- Header fallbacks when orientation is flaky on iPad --- */
+
+/* Portrait-like (tall): width >= 1000px AND aspect ratio <= 1 -> show tabs */
+@media (min-width: 1100px) and (max-aspect-ratio: 1/1) {
+  .header-hamburger { display: none !important; }
+  .header-tabs { display: flex !important; }
+}
+
+/* Landscape-like (wide): width >= 1100px AND aspect ratio >= 1 -> show tabs */
+@media (min-width: 1100px) and (min-aspect-ratio: 1/1) {
+  .header-hamburger { display: none !important; }
+  .header-tabs { display: flex !important; }
+}
