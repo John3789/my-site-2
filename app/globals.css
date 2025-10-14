@@ -433,3 +433,27 @@ html.menu-open, body.menu-open {
   .header-hamburger { display: none !important; }
   .header-tabs { display: flex !important; }
 }
+
+/* === Nameplate visibility rules === */
+/* Base: show BOTTOM name, hide TOP teal bar */
+.nameplate-top { display: none; }
+.nameplate-bottom { display: block; }
+
+/* Portrait ≥700px → show TOP teal, hide BOTTOM */
+@media (orientation: portrait) and (min-width: 700px) {
+  .nameplate-top { display: block !important; }
+  .nameplate-bottom { display: none !important; }
+}
+
+/* Landscape ≥800px → show TOP teal, hide BOTTOM */
+@media (orientation: landscape) and (min-width: 800px) {
+  .nameplate-top { display: block !important; }
+  .nameplate-bottom { display: none !important; }
+}
+
+/* Optional: spacer only when TOP teal is visible */
+.nameplate-spacer { display: none; }
+@media (orientation: portrait) and (min-width: 700px),
+       (orientation: landscape) and (min-width: 800px) {
+  .nameplate-spacer { display: block !important; }
+}

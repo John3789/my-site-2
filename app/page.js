@@ -25,17 +25,11 @@ export default function Home() {
   formAction="/api/subscribe"
 />
 {/* spacer to clear the fixed header (keep) */}
-<div
-  aria-hidden
-  className="
-    hidden md:block h-8 bg-[var(--color-teal-800)]
-    [@media(orientation:landscape)_and_(max-width:900px)]:block
-    [@media(orientation:landscape)_and_(max-width:900px)]:h-3
-  "
-/>
+<div aria-hidden className="nameplate-spacer h-8 bg-[var(--color-teal-800)]" />
+
 
       {/* DESKTOP/TABLET nameplate — unchanged */}
-      <section id="home" className="hidden md:block bg-[var(--color-teal-800)] text-[var(--color-cream)] [@media(orientation:landscape)_and_(max-width:900px)]:block">
+ <section id="home" className="nameplate-top bg-[var(--color-teal-800)] text-[var(--color-cream)]">
         <div className="mx-auto max-w-[1400px] px-6 pt-0 pb-4 [@media(orientation:landscape)_and_(max-width:900px)]:pb-3">
           <h1 className="text-center font-serif font-semibold uppercase tracking-[0.05em] leading-[1.05]">
             <span className="hidden md:block text-7xl hover:opacity-90 transition [@media(orientation:landscape)_and_(max-width:900px)]:block [@media(orientation:landscape)_and_(max-width:900px)]:text-[45px]">
@@ -68,15 +62,12 @@ export default function Home() {
   </div>
 
   {/* MOBILE name across the bottom (buttons hidden on mobile) */}
-  <div
-    className="md:hidden absolute inset-x-0 bottom-0 z-30 px-4 pointer-events-none
-        landscape:translate-y-5"
+ <div
+   className="nameplate-bottom absolute inset-x-0 bottom-0 z-30 px-4 pointer-events-none landscape:translate-y-5"
 
-    style={{
-      // lift above the Safari URL bar / home indicator
-      marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)',
-    }}
-  >
+style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
+ >
+  
 <h1
   className="
     font-serif font-semibold uppercase tracking-[0.02em]
