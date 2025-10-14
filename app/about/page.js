@@ -297,7 +297,7 @@ export default function AboutPage() {
 <div className="block lg:hidden">
 
   <div className="mx-auto max-w-[1400px] px-3">
-  <hr className="mx-auto w-[93%] border-t border-[var(--color-cream)]/22 mb-0"/> 
+  <hr className="mx-auto w-[93%] border-t border-[var(--color-cream)]/22 -mt-10 mb-0"/> 
   <div className="mobile-footer-cap px-3 narrow-landscape-70">
 
     {/* Newsletter card (midnight blue) */}
