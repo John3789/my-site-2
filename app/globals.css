@@ -423,7 +423,7 @@ html.menu-open, body.menu-open {
 .header-tabs { display: none; }
 
 /* Portrait DESKTOP/TABLET: ≥1000px → show tabs, hide hamburger */
-@media (orientation: portrait) and (min-width: 1100px) {
+@media (orientation: portrait) and (min-width: 974px) {
   .header-hamburger { display: none !important; }
   .header-tabs { display: flex !important; }
 }
@@ -467,7 +467,7 @@ html.menu-open, body.menu-open {
 /* --- Header fallbacks when orientation is flaky on iPad --- */
 
 /* Portrait-like (tall): width >= 1000px AND aspect ratio <= 1 -> show tabs */
-@media (min-width: 1100px) and (max-aspect-ratio: 1/1) {
+@media (min-width: 974px) and (max-aspect-ratio: 1/1) {
   .header-hamburger { display: none !important; }
   .header-tabs { display: flex !important; }
 }
