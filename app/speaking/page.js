@@ -1225,7 +1225,7 @@ export default function SpeakingPage() {
     line-height: 1;          /* keep in inline flow */
     margin-left: 0.15em;
     position: relative;
-    top: 0.05em;             /* tiny baseline nudge */
+    top: 0.10em;             /* tiny baseline nudge */
     vertical-align: baseline;
   }
 
