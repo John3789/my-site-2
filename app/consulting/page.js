@@ -919,6 +919,38 @@ export default function ConsultingPage() {
   }
 
   @media (max-width: 767px) and (orientation: portrait) {
+  /* Use one size for both opening and closing quotes */
+  [data-page="consulting"] #testimonials blockquote.t-quote {
+    --q-size: 2.25rem;
+  }
+  [data-page="consulting"] #testimonials blockquote.t-quote [data-q="open"] {
+    font-size: var(--q-size) !important;
+    line-height: 1;
+  }
+  [data-page="consulting"] #testimonials blockquote.t-quote p:first-of-type::after {
+    font-size: var(--q-size) !important;
+    line-height: 0;
+  }
+}
+
+  @media (max-width: 767px) and (orientation: portrait) {
+  /* one knob to match both quote marks */
+  [data-page="consulting"] #testimonials blockquote.t-quote {
+    --q-size: 2.25rem;  /* change this to make both bigger/smaller */
+  }
+
+  /* opening quote size = closing quote size */
+  [data-page="consulting"] #testimonials blockquote.t-quote [data-q="open"] {
+    font-size: var(--q-size) !important;
+    line-height: 1;
+  }
+
+  /* closing quote (your ::after) uses the same var */
+  [data-page="consulting"] #testimonials blockquote.t-quote p:first-of-type::after {
+    font-size: var(--q-size) !important;
+  }
+}
+  @media (max-width: 767px) and (orientation: portrait) {
   .t-quote { font-size: clamp(24px, 6vw, 28px); }
 }
   [data-page="consulting"] #testimonials blockquote.t-quote,
