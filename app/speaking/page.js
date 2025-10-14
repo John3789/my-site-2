@@ -1513,7 +1513,7 @@ useEffect(() => {
     line-height: 0;
     margin-left: 0.15em;
     position: relative;
-    top: -0.25em;
+    top: -0.30em;
     vertical-align: baseline;
   }
 
