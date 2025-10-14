@@ -1156,7 +1156,7 @@ export default function SpeakingPage() {
     line-height: 1;     /* keep inline flow */
     margin-left: 0.15em;
     position: relative;
-    top: 0em;           /* adjust to taste: 0em to 0.05em */
+    top: 0.25em;           /* adjust to taste: 0em to 0.05em */
     vertical-align: baseline;
   }
 }
@@ -1191,7 +1191,7 @@ export default function SpeakingPage() {
     line-height: 1;            /* keep in inline flow */
     margin-left: 0.15em;
     position: relative;
-    top: -0.06em;              /* ← was +0.05em */
+    top: 0.25em;              /* ← was +0.05em */
     vertical-align: baseline;
   }
 }
@@ -1218,7 +1218,7 @@ export default function SpeakingPage() {
     line-height: 1;          /* keep in inline flow */
     margin-left: 0.15em;
     position: relative;
-    top: 0em;             /* tiny baseline nudge */
+    top: 0.25em;             /* tiny baseline nudge */
     vertical-align: baseline;
   }
 
