@@ -1463,7 +1463,7 @@ useEffect(() => {
 }
 
 /* ===== iPad 10 PORTRAIT (≈820×1180) — CSS inline closer ===== */
-@media (orientation: portrait) and (min-width: 800px) and (max-width: 900px) {
+@media (orientation: portrait) and (min-width: 700px) and (max-width: 900px) {
   /* Hide the separate closer, whether it's data-q or data-quote */
   [data-page="speaking"] blockquote.t-quote :is([data-q="close"], [data-quote="close"]) {
     display: none !important;
