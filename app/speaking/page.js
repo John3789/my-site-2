@@ -1424,10 +1424,12 @@ useEffect(() => {
   [data-page="speaking"] #testimonials blockquote span[data-q="close"] {
     display: none !important;
   }
+
   [data-page="speaking"] #testimonials blockquote p:first-of-type {
     display: inline;
     white-space: normal;
   }
+
   [data-page="speaking"] #testimonials blockquote p:first-of-type::after {
     content: "”";
     opacity: 0.20;
@@ -1472,37 +1474,24 @@ useEffect(() => {
 
 /* ================= SPEAKING — QUOTE FIXES (robust, final) ================= */
 
-/* 0) Safety: remove any broken desktop OPEN-quote tweaks that had empty values */
-[data-section="testimonials-desktop"] [data-quote="open"],
-[data-section="testimonials-desktop-right"] [data-quote="open"],
-[data-section="results-desktop-right"] [data-quote="open"] {
-  /* no-op reset; prevents earlier empty left:/top: from interfering */
-}
-
-/* 1) iPad 10 PORTRAIT (≈820px). We use the inline closer inside the MOBILE
-      testimonials stack (#testimonials). */
+/* iPad 10 PORTRAIT (≈820px) — use inline closer in the mobile testimonials stack */
 @media (orientation: portrait) and (min-width: 800px) and (max-width: 900px) {
-  /* Hide the absolutely-positioned closer so it can’t fight our inline one */
   [data-page="speaking"] #testimonials blockquote span[data-q="close"] {
-    display: none !important;
+    display: none !important; /* disable absolute closer */
   }
-
-  /* Normalize opening mark & give bottom room above figcaption */
   [data-page="speaking"] #testimonials blockquote.t-quote {
     --q-size: 2.25rem;
-    padding-bottom: 2.4rem !important;
+    padding-bottom: 2.4rem !important; /* room above figcaption */
   }
   [data-page="speaking"] #testimonials blockquote.t-quote [data-q="open"] {
     font-size: var(--q-size) !important;
     line-height: 1;
   }
-
-  /* Inject closing mark inline on the true last line */
-  [data-page="speaking"] #testimonials blockquote p:last-of-type {
+  [data-page="speaking"] #testimonials blockquote p:first-of-type {
     display: inline !important;
     white-space: normal !important;
   }
-  [data-page="speaking"] #testimonials blockquote p:last-of-type::after {
+  [data-page="speaking"] #testimonials blockquote p:first-of-type::after {
     content: "”";
     opacity: 0.20;
     font-size: var(--q-size) !important;
@@ -1514,18 +1503,16 @@ useEffect(() => {
   }
 }
 
-/* 2) iPad Pro LANDSCAPE (1024–1366). Desktop quote columns are visible here.
-      We apply the same inline-closer trick to BOTH testimonial stacks and
-      the Results right column. */
+/* iPad Pro LANDSCAPE (1024–1366px) — desktop quote columns */
 @media (orientation: landscape) and (min-width: 1024px) and (max-width: 1366px) {
-  /* Turn off absolute closers (so only the inline mark renders) */
+  /* Hide absolute closers so they can't drift */
   [data-section="testimonials-desktop"]        span[data-quote="close"],
   [data-section="testimonials-desktop-right"]  span[data-quote="close"],
   [data-section="results-desktop-right"]       span[data-quote="close"] {
     display: none !important;
   }
 
-  /* Normalize opening mark to match the inline closer, add bottom room */
+  /* Normalize open mark and ensure room above caption */
   [data-section="testimonials-desktop"]        blockquote,
   [data-section="testimonials-desktop-right"]  blockquote,
   [data-section="results-desktop-right"]       blockquote {
@@ -1539,16 +1526,16 @@ useEffect(() => {
     line-height: 1;
   }
 
-  /* Place the closing mark inline at the text’s true end */
-  [data-section="testimonials-desktop"]        blockquote p:last-of-type,
-  [data-section="testimonials-desktop-right"]  blockquote p:last-of-type,
-  [data-section="results-desktop-right"]       blockquote p:last-of-type {
+  /* Inject closing mark inline at the real end of the text line */
+  [data-section="testimonials-desktop"]        blockquote p:first-of-type,
+  [data-section="testimonials-desktop-right"]  blockquote p:first-of-type,
+  [data-section="results-desktop-right"]       blockquote p:first-of-type {
     display: inline !important;
     white-space: normal !important;
   }
-  [data-section="testimonials-desktop"]        blockquote p:last-of-type::after,
-  [data-section="testimonials-desktop-right"]  blockquote p:last-of-type::after,
-  [data-section="results-desktop-right"]       blockquote p:last-of-type::after {
+  [data-section="testimonials-desktop"]        blockquote p:first-of-type::after,
+  [data-section="testimonials-desktop-right"]  blockquote p:first-of-type::after,
+  [data-section="results-desktop-right"]       blockquote p:first-of-type::after {
     content: "”";
     opacity: 0.20;
     font-size: var(--q-size) !important;
@@ -1560,8 +1547,15 @@ useEffect(() => {
   }
 }
 
-/* 3) Guard: make sure the desktop quote columns are actually visible at these widths.
-      Your earlier rule hides them below 1023 landscape and 850 portrait, which is fine. */
+/* (Optional) DEBUG visual to confirm these blocks are firing — remove after testing */
+@media (orientation: portrait) and (min-width: 800px) and (max-width: 900px) {
+  [data-page="speaking"] #testimonials blockquote.t-quote { outline: 2px solid magenta !important; }
+}
+@media (orientation: landscape) and (min-width: 1024px) and (max-width: 1366px) {
+  [data-section="testimonials-desktop"] figure,
+  [data-section="testimonials-desktop-right"] figure,
+  [data-section="results-desktop-right"] figure { outline: 2px dashed lime !important; }
+}
 
 
       `}</style>
