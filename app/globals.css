@@ -416,51 +416,61 @@ html.menu-open, body.menu-open {
   }
 }
 
-/* --- Header visibility rules --- */
+@layer utilities {
+  /* =========================
+     HEADER: hamburger vs tabs
+     ========================= */
 
-/* Base: show hamburger, hide tabs */
-.header-hamburger { display: inline-flex; }
-.header-tabs { display: none; }
+  /* Base: show hamburger, hide tabs */
+  header .header-hamburger { display: inline-flex; }
+  header .header-tabs { display: none; }
 
-/* Portrait DESKTOP/TABLET: ≥1000px → show tabs, hide hamburger */
-@media (orientation: portrait) and (min-width: 1000px) {
-  .header-hamburger { display: none !important; }
-  .header-tabs { display: flex !important; }
+  /* Portrait ≥ 1000px → tabs on, hamburger off */
+  @media (orientation: portrait) and (min-width: 1000px) {
+    header .header-hamburger { display: none !important; }
+    header .header-tabs { display: flex !important; }
+  }
+
+  /* Landscape ≥ 1100px → tabs on, hamburger off */
+  @media (orientation: landscape) and (min-width: 1100px) {
+    header .header-hamburger { display: none !important; }
+    header .header-tabs { display: flex !important; }
+  }
+
+  /* iPad Pro “belt-and-suspenders” guards */
+  @media screen and (orientation: portrait) and (width: 1024px) {
+    header .header-hamburger { display: none !important; }
+    header .header-tabs { display: flex !important; }
+  }
+  @media screen and (orientation: landscape) and (width: 1366px) {
+    header .header-hamburger { display: none !important; }
+    header .header-tabs { display: flex !important; }
+  }
+
+  /* =========================
+     NAMEPLATE: top vs bottom
+     ========================= */
+
+  /* Base: show bottom name, hide top teal */
+  .nameplate-top { display: none; }
+  .nameplate-bottom { display: block; }
+
+  /* Portrait ≥ 700px → show top teal, hide bottom name */
+  @media (orientation: portrait) and (min-width: 700px) {
+    .nameplate-top { display: block !important; }
+    .nameplate-bottom { display: none !important; }
+  }
+
+  /* Landscape ≥ 800px → show top teal, hide bottom name */
+  @media (orientation: landscape) and (min-width: 800px) {
+    .nameplate-top { display: block !important; }
+    .nameplate-bottom { display: none !important; }
+  }
+
+  /* Optional spacer only when top teal is visible */
+  .nameplate-spacer { display: none; }
+  @media (orientation: portrait) and (min-width: 700px),
+         (orientation: landscape) and (min-width: 800px) {
+    .nameplate-spacer { display: block !important; }
+  }
 }
-
-/* Landscape DESKTOP/TABLET: ≥1100px → show tabs, hide hamburger */
-@media (orientation: landscape) and (min-width: 1100px) {
-  .header-hamburger { display: none !important; }
-  .header-tabs { display: flex !important; }
-}
-
-/* Safety net (iPad Pro portrait is 1024px) */
-@media (orientation: portrait) and (width: 1024px) {
-  .header-hamburger { display: none !important; }
-  .header-tabs { display: flex !important; }
-}
-
-/* === Nameplate visibility rules === */
-/* Base: show BOTTOM name, hide TOP teal bar */
-.nameplate-top { display: none; }
-.nameplate-bottom { display: block; }
-
-/* Portrait ≥700px → show TOP teal, hide BOTTOM */
-@media (orientation: portrait) and (min-width: 700px) {
-  .nameplate-top { display: block !important; }
-  .nameplate-bottom { display: none !important; }
-}
-
-/* Landscape ≥800px → show TOP teal, hide BOTTOM */
-@media (orientation: landscape) and (min-width: 800px) {
-  .nameplate-top { display: block !important; }
-  .nameplate-bottom { display: none !important; }
-}
-
-/* Optional: spacer only when TOP teal is visible */
-.nameplate-spacer { display: none; }
-@media (orientation: portrait) and (min-width: 700px),
-       (orientation: landscape) and (min-width: 800px) {
-  .nameplate-spacer { display: block !important; }
-}
-
