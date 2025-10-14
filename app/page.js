@@ -331,7 +331,7 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
 
           {/* FINAL divider above footer — match two-column width, no bleed */}
           <div className="mx-auto max-w-[1400px] px-6 mt-17">
-            <hr className="hidden lg:block desktop-when-p800 max-w-[1400px] border-t border-[var(--color-cream)]/22" />
+            <hr className="hidden lg:block max-w-[1400px] border-t border-[var(--color-cream)]/22" />
           </div>
 
           <div className="block lg:hidden mobile-when-p800 mx-auto max-w-[1100px] px-3">
@@ -340,7 +340,7 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
           </div>
 
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
-<div className="block lg:hidden mobile-when-p800">
+<div className="block lg:hidden">
   <div className="mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
           <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
 
