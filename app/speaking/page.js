@@ -1463,7 +1463,7 @@ useEffect(() => {
 }
 
 /* ===== iPad PORTRAIT (≈820×1180) — CSS inline closer ===== */
-@media (orientation: portrait) and (min-width: 650px) and (max-width: 900px) {
+@media (orientation: portrait) and (min-width: 800px) and (max-width: 900px) {
   /* Hide the separate closer, whether it's data-q or data-quote */
   [data-page="speaking"] blockquote.t-quote :is([data-q="close"], [data-quote="close"]) {
     display: none !important;
@@ -1486,6 +1486,37 @@ useEffect(() => {
   }
   /* Safety spacing above figcaption */
   [data-page="speaking"] blockquote.t-quote { padding-bottom: calc(var(--q-size) * 0.6); }
+}
+
+/* ===== iPad Mini PORTRAIT (≈744×1133) — inline closer alignment ===== */
+@media (orientation: portrait) and (min-width: 700px) and (max-width: 799px) {
+  /* Hide the absolutely positioned closer */
+  [data-page="speaking"] blockquote.t-quote :is([data-q="close"], [data-quote="close"]) {
+    display: none !important;
+  }
+
+  /* Inline paragraph so ::after attaches to last line */
+  [data-page="speaking"] blockquote.t-quote p:first-of-type {
+    display: inline;
+    white-space: normal;
+  }
+
+  /* Adjust inline quote baseline slightly lower than phone rule */
+  [data-page="speaking"] blockquote.t-quote p:first-of-type::after {
+    content: "”";
+    opacity: 0.20;
+    font-size: var(--q-size);
+    line-height: 0.9;      /* instead of 0 — drops it a hair */
+    margin-left: 0.15em;
+    position: relative;
+    top: 0.30em;           /* nudged down for balance */
+    vertical-align: baseline;
+  }
+
+  /* Slightly reduced padding below to keep spacing tight */
+  [data-page="speaking"] blockquote.t-quote {
+    padding-bottom: calc(var(--q-size, 2.25rem) * 0.35);
+  }
 }
 
 /* ===== iPad LANDSCAPE (1024–1366) — desktop columns ===== */
@@ -1521,7 +1552,7 @@ useEffect(() => {
   [data-page="speaking"] :is([data-section="testimonials-desktop"],
                              [data-section="testimonials-desktop-right"],
                              [data-section="results-desktop-right"])
-  blockquote { padding-bottom: calc(var(--q-size, 2.25rem) * 0.45); }
+  blockquote { padding-bottom: calc(var(--q-size, 2.25rem) * 0.35); }
 }
 
 
