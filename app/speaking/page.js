@@ -1223,7 +1223,7 @@ export default function SpeakingPage() {
 }
 
 /* ==== iPhone PORTRAIT — final, conflict-proof ==== */
-@media (max-width: 767px) and (orientation: portrait) {
+@media (max-width: 699px) and (orientation: portrait) {
   /* single source of truth for size + bottom room for the inline closer */
   [data-page="speaking"] #testimonials blockquote.t-quote {
     --q-size: 2.25rem;
@@ -1263,7 +1263,7 @@ export default function SpeakingPage() {
 }
 
 /* ==== iPhone LANDSCAPE — final, conflict-proof ==== */
-@media (orientation: landscape) and (max-width: 915px) {
+@media (orientation: landscape) and (max-width: 975px) {
   [data-page="speaking"] #testimonials blockquote.t-quote {
     --q-size: 2.25rem;
     padding-bottom: calc(var(--q-size) * 1.05) !important;
