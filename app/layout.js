@@ -7,6 +7,15 @@ import Header from '../components/Header'
 import NewsletterSignup from '../components/NewsletterSignup'
 import Script from 'next/script'
 
+// app/layout.tsx (or layout.js)
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  minimumScale: 1,
+  maximumScale: 8,
+  userScalable: true,
+  viewportFit: 'cover',
+};
 
 // Sans font for body text
 const inter = Inter({

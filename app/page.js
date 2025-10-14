@@ -7,7 +7,6 @@ import NewsletterSignup from "../components/NewsletterSignup";
 import HeroImageIphoneAware from "../components/HeroImageIphoneAware";
 import { useRef } from "react";
 import { useIosZoomVars } from "../components/useIosZoom";
-import Head from 'next/head';
 
 
 export default function Home() {
@@ -17,14 +16,6 @@ export default function Home() {
 
 
   return (
-    <>
-
-    <Head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=yes"
-        />
-      </Head>
         <main id="main" className="!bg-[var(--color-teal-850)] text-[var(--color-cream)] text-[17px] overflow-visible">
           
           <NewsletterMeditationPopup
@@ -435,7 +426,6 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
       </div>
 
         </main>
-           </>
- 
+        
   )
 }
