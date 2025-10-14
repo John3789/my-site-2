@@ -400,15 +400,18 @@ html.menu-open, body.menu-open {
   }
 }
 
-/* Tablets (768–1024px) — PORTRAIT ONLY: gently shrink the nameplate */
-@media (min-width: 768px) and (max-width: 1045px) and (orientation: portrait) {
+/* iPad/tablet portrait (768–1024px): keep name on one line */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   section#home h1 > span {
-    /* just a bit smaller than text-7xl (~4.5rem) */
-    font-size: clamp(3.75rem, 6vw, 4.25rem) !important;
-    line-height: 1.06;
-    letter-spacing: -0.01em;
+    display: inline-block;
+    white-space: nowrap;            /* force single line */
+    max-width: 100%;
+    /* Gentle responsive sizing: grows on larger iPads, shrinks on smaller */
+    font-size: clamp(3.2rem, 6.2vw, 4.25rem) !important;
+    line-height: 1.05;
+    letter-spacing: 0 !important;   /* reclaim width (overrides tracking-[0.05em]) */
   }
   section#home h1 > span > sup {
-    font-size: clamp(1rem, 1.5vw, 1.25rem) !important;
+    font-size: clamp(0.9rem, 1.4vw, 1.2rem) !important;
   }
 }
