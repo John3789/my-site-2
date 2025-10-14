@@ -16,7 +16,7 @@ export default function Home() {
 
 
   return (
-        <main id="main" className="!bg-[var(--color-teal-850)] text-[var(--color-cream)] text-[17px] overflow-visible p800-desktop">
+        <main id="main" className="!bg-[var(--color-teal-850)] text-[var(--color-cream)] text-[17px] overflow-visible">
           
           <NewsletterMeditationPopup
   isMeditationPage={false}
@@ -96,7 +96,7 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
   </div>
 
   {/* Desktop/tablet buttons only (mobile CTAs are hidden) */}
-  <div className="desktop-when-p800 absolute inset-x-0 bottom-6 z-30">
+  <div className="hidden lg:block absolute inset-x-0 bottom-6 z-30">
     <div className="mx-auto max-w-[1400px] px-6 relative">
       <Link
         href="speaking"
@@ -167,10 +167,10 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
               <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Consulting</h5>
               <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
 
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start lg:items-center justify-items-stretch p800-grid-12">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start lg:items-center justify-items-stretch">
                 {/* Left: text */}
                 <div className="lg:col-span-6 w-full max-w-[680px] mx-auto lg:mx-0">
-                  <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90 text-center lg:text-left p800-text-left">
+                  <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90 text-center lg:text-left">
                     Organizational Wellness Consulting
                   </h2>
                   <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto lg:mx-0 my-5 rounded" />
@@ -204,7 +204,7 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
                 </div>
 
                 {/* Right: image */}
-<div className="lg:col-span-6 w-full max-w-[680px] lg:max-w-[780px] mx-auto lg:mx-0 p800-col-6 [@media(orientation:landscape)_and_(max-width:900px)]:max-w-[560px]">                  
+<div className="lg:col-span-6 w-full max-w-[680px] lg:max-w-[780px] mx-auto lg:mx-0 [@media(orientation:landscape)_and_(max-width:900px)]:max-w-[560px]">                  
 <div className="relative w-full aspect-[3/2] shadow-2xl overflow-hidden">
 <HeroImageIphoneAware
                       src="/plant1.jpg"
@@ -250,9 +250,9 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
               <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Meditations</h5>
               <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
 
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start lg:items-center justify-items-stretch p800-grid-12">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start lg:items-center justify-items-stretch">
                 {/* Left: image */}
-<div className="lg:col-span-6 w-full max-w-[680px] lg:max-w-[780px] mx-auto lg:mx-0 p800-col-6 [@media(orientation:landscape)_and_(max-width:900px)]:max-w-[560px]">                  
+<div className="lg:col-span-6 w-full max-w-[680px] lg:max-w-[780px] mx-auto lg:mx-0 [@media(orientation:landscape)_and_(max-width:900px)]:max-w-[560px]">                  
                   <div className="relative w-full aspect-[3/2] shadow-2xl overflow-hidden">
 <HeroImageIphoneAware
                       src="/beach1.jpg"
@@ -270,7 +270,7 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
 
                 {/* Right: text */}
                 <div className="lg:col-span-6 w-full max-w-[680px] mx-auto lg:mx-0">
-                  <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90 text-center lg:text-left p800-text-left">
+                  <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90 text-center lg:text-left">
                     Short Meditations with Dr. Salerno
                   </h2>
                   <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto lg:mx-0 my-5 rounded" />
@@ -294,10 +294,10 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
               <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Resources</h5>
               <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
 
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start lg:items-center justify-items-stretch p800-grid-12">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start lg:items-center justify-items-stretch">
                 {/* Left: text */}
                 <div className="lg:col-span-6 w-full max-w-[680px] mx-auto lg:mx-0">
-                  <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90 text-center lg:text-left p800-text-left">
+                  <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90 text-center lg:text-left">
                     Resources for Self-Elevation
                   </h2>
                   <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto lg:mx-0 my-5 rounded" />
@@ -311,7 +311,7 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
                 </div>
 
                 {/* Right: image */}
-<div className="lg:col-span-6 w-full max-w-[680px] lg:max-w-[780px] mx-auto lg:mx-0 p800-col-6 [@media(orientation:landscape)_and_(max-width:900px)]:max-w-[560px]">                  
+<div className="lg:col-span-6 w-full max-w-[680px] lg:max-w-[780px] mx-auto lg:mx-0 [@media(orientation:landscape)_and_(max-width:900px)]:max-w-[560px]">                  
                   <div className="relative w-full aspect-[3/2] shadow-2xl overflow-hidden">
 <HeroImageIphoneAware
                       src="/tree90.jpg"
@@ -334,7 +334,7 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
             <hr className="hidden lg:block max-w-[1400px] border-t border-[var(--color-cream)]/22" />
           </div>
 
-          <div className="mobile-when-p800 mx-auto max-w-[1100px] px-3">
+          <div className="block lg:hidden mx-auto max-w-[1100px] px-3">
             {/* (mobile newsletter + socials unchanged) */}
             {/* ... */}
           </div>
