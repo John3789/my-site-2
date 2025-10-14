@@ -910,13 +910,17 @@ export default function ConsultingPage() {
   [data-page="consulting"] #testimonials-m blockquote p:first-of-type::after {
     content: "”";
     opacity: 0.20;
-    font-size: 3.25rem;
+    font-size: 2.25rem;
     line-height: 1;
     margin-left: 0.15em;
     position: relative;
     top: 0.05em;
     vertical-align: baseline;
   }
+
+  @media (max-width: 767px) and (orientation: portrait) {
+  .t-quote { font-size: clamp(24px, 6vw, 28px); }
+}
   [data-page="consulting"] #testimonials blockquote.t-quote,
   [data-page="consulting"] #testimonials-m blockquote.t-quote {
     padding-bottom: 0rem !important;

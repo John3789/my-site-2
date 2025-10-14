@@ -1400,6 +1400,10 @@ useEffect(() => {
   }
 }
 
+@media (max-width: 767px) and (orientation: portrait) {
+  .t-quote { font-size: clamp(24px, 6vw, 28px); }
+}
+
 /* SPEAKING — small-device LANDSCAPE: auto-place closing quote like portrait */
 @media (orientation: landscape) and (max-width: 1015px) {
   [data-page="speaking"] #testimonials blockquote span[data-q="close"] {
