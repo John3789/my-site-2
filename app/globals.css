@@ -415,3 +415,12 @@ html.menu-open, body.menu-open {
     font-size: clamp(0.9rem, 1.4vw, 1.2rem) !important;
   }
 }
+
+/* HOME — iPad portrait only: shrink overly tall hero/image containers */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  /* If your hero uses h-[70vh], knock it down */
+  [data-page="home"] .h-\[70vh\] { height: 52vh !important; }
+
+  /* If any portrait blocks force aspect-[16/9], cap the visual height */
+  [data-page="home"] .aspect-\[16\/9\] { max-height: 52vh !important; }
+}
