@@ -1485,8 +1485,9 @@ useEffect(() => {
     vertical-align: baseline;
   }
   /* Safety spacing above figcaption */
-  [data-page="speaking"] blockquote.t-quote { padding-bottom: calc(var(--q-size) * 0.6); }
-}
+  [data-page="speaking"] blockquote.t-quote { padding-bottom: calc(var(--q-size, 2.25rem) * 0.25); }
+}  
+
 
 /* ===== iPad Mini PORTRAIT (≈744×1133) — inline closer alignment ===== */
 @media (orientation: portrait) and (min-width: 700px) and (max-width: 799px) {
@@ -1552,7 +1553,7 @@ useEffect(() => {
   [data-page="speaking"] :is([data-section="testimonials-desktop"],
                              [data-section="testimonials-desktop-right"],
                              [data-section="results-desktop-right"])
-  blockquote { padding-bottom: calc(var(--q-size, 2.25rem) * 0.35); }
+  blockquote { padding-bottom: calc(var(--q-size, 2.25rem) * 0.25); }
 }
 
 
