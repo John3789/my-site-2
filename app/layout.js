@@ -11,8 +11,10 @@ import Script from 'next/script'
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
-  viewportFit: 'cover',
+  minimumScale: 1,
+  maximumScale: 8,
   userScalable: true,
+  viewportFit: 'cover',
 };
 
 // Sans font for body text
