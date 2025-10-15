@@ -43,7 +43,7 @@ export default function BooksPage() {
             </div>
 
             {/* Intro + image */}
-            <div className="mx-auto max-w-[1400px] px-6 pb-20 narrow-landscape-70">
+            <div className="mx-auto max-w-[1000px] px-6 pb-20">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
                 {/* Left column */}
 <div className="mx-auto">
@@ -446,19 +446,37 @@ export default function BooksPage() {
           </main>
         </div>
 
-        {/* Mobile-only truncation CSS (no font/spacing changes) */}
-        <style>{`
-          @media (max-width: 900px) {
-            /* Hide items 3+ until the checkbox for that card is checked */
-            #more-c1:not(:checked) ~ ul > li:nth-child(n + 2),
-            #more-c2:not(:checked) ~ ul > li:nth-child(n + 2),
-            #more-c3:not(:checked) ~ ul > li:nth-child(n + 2) {
-              display: none !important;
-            }
-          }
+<style jsx global>{`
+  /* === Show All / Show Less visibility rules === */
 
+  /* Default: hide everywhere */
+  [data-page="books"] [data-books-cta] {
+    display: none !important;
+  }
 
-        `}</style>
+  /* iPhone portrait + landscape */
+  @media (max-width: 700px) and (orientation: portrait),
+         (max-width: 950px) and (orientation: landscape) {
+    [data-page="books"] [data-books-cta] {
+      display: flex !important;
+    }
+  }
+
+  /* iPad mini portrait (≈744px wide) */
+  @media (orientation: portrait) and (min-width: 700px) and (max-width: 799px) {
+    [data-page="books"] [data-books-cta] {
+      display: flex !important;
+    }
+  }
+
+  /* iPad portrait (≈820–920px wide) */
+  @media (orientation: portrait) and (min-width: 800px) and (max-width: 920px) {
+    [data-page="books"] [data-books-cta] {
+      display: flex !important;
+    }
+  }
+`}</style>
+
       </>
 <NewsletterMeditationPopup delayMs={10000} />
     </TopOnMount>
