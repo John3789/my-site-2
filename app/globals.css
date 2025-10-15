@@ -451,32 +451,76 @@ html.menu-open, body.menu-open {
   }
 }
 
-/* =======================
-   IPHONE LANDSCAPE — SHIFT MENU PANEL & LABEL RIGHT
-   ======================= */
-
+/* =========================================================
+   iPHONE LANDSCAPE — SHIFT POPUP HAMBURGER MENU CONTENT RIGHT
+   (affects the open popup only; portrait & tablets unchanged)
+   ========================================================= */
 @media (orientation: landscape) and (min-width: 800px) and (max-width: 950px) {
-  /* Shift the entire popup panel right */
-  .menu-panel,
-  [data-role="menu-panel"],
-  .mobile-menu,
-  .hamburger-menu {
-    transform: translateX(24px) !important;
+
+  /* 1) Scope to typical menu popups (any of these will match) */
+  :is(
+    /* Radix/Headless UI/Dialog patterns */
+    [role="dialog"][aria-modal="true"][aria-label*="menu" i],
+    [data-state="open"][data-menu],
+    [data-menu="open"],
+    /* common custom IDs/classes */
+    #mobile-menu,
+    .mobile-menu,
+    .menu-panel
+  ) {
+    /* Nudge entire panel content right just a bit so everything shifts uniformly */
+    padding-left: 14px !important;
   }
 
-  /* Shift the “Menu” label text right */
-  .menu-label,
-  [data-role="menu-label"],
-  header .menu-word,
-  header .menu-text {
-    margin-left: 24px !important;
+  /* 2) “Menu” label/title inside the popup */
+  :is(
+    [role="dialog"][aria-modal="true"][aria-label*="menu" i],
+    [data-state="open"][data-menu],
+    [data-menu="open"],
+    #mobile-menu,
+    .mobile-menu,
+    .menu-panel
+  )
+  :is(.menu-label, .menu-title, .menu-heading, [data-role="menu-label"]) {
+    margin-left: 12px !important;
   }
 
-  /* Shift individual nav links/tabs (optional) */
-  .menu-nav,
-  .menu-tabs,
-  .menu-links,
-  nav[aria-label*="menu" i] ul {
-    padding-left: 32px !important;
+  /* 3) Tabs/links list inside the popup */
+  :is(
+    [role="dialog"][aria-modal="true"][aria-label*="menu" i],
+    [data-state="open"][data-menu],
+    [data-menu="open"],
+    #mobile-menu,
+    .mobile-menu,
+    .menu-panel
+  )
+  :is(nav, .menu-nav, .menu-links, .menu-tabs, nav[aria-label*="menu" i]) {
+    padding-left: 16px !important; /* shift the whole block of links/tabs */
+  }
+
+  /* 4) Individual list containers, just in case links are UL/OL */
+  :is(
+    [role="dialog"][aria-modal="true"][aria-label*="menu" i],
+    [data-state="open"][data-menu],
+    [data-menu="open"],
+    #mobile-menu,
+    .mobile-menu,
+    .menu-panel
+  )
+  :is(ul, ol) {
+    padding-left: 16px !important;
+  }
+
+  /* 5) If your links are flex/stacked and ignore padding, add a tiny translate */
+  :is(
+    [role="dialog"][aria-modal="true"][aria-label*="menu" i],
+    [data-state="open"][data-menu],
+    [data-menu="open"],
+    #mobile-menu,
+    .mobile-menu,
+    .menu-panel
+  )
+  :is(a, button, .menu-item) {
+    transform: translateX(6px) !important;
   }
 }
