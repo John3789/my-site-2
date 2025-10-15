@@ -1136,10 +1136,10 @@ export default function SpeakingPage() {
   }
 }
 
-### 1) iPhone PORTRAIT (clean + conflict-free)
+1) iPhone PORTRAIT (clean + conflict-free)
 
 /* iPhone PORTRAIT */
-@media (max-width: 767px) and (orientation: portrait) {
+@media (min-width: 350px) and (max-width: 550px) and (orientation: portrait) {
 /* hide separate closer, either attribute name */
 [data-page="speaking"] #testimonials blockquote
 :is([data-q="close"], [data-quote="close"]) {
@@ -1167,37 +1167,8 @@ export default function SpeakingPage() {
 
 }
 
-@media (max-width: 767px) and (orientation: portrait) {
-  .t-quote { font-size: clamp(24px, 6vw, 28px); }
-}
-
-/* SPEAKING — small-device LANDSCAPE: auto-place closing quote like portrait */
-@media (orientation: landscape) and (max-width: 1015px) {
-  [data-page="speaking"] #testimonials blockquote
-  :is([data-q="close"], [data-quote="close"]) {
-    display: none !important;
-  }
-  
-  [data-page="speaking"] #testimonials blockquote p:first-of-type {
-    display: inline;
-    white-space: normal;
-  }
-
-  [data-page="speaking"] #testimonials blockquote p:first-of-type::after {
-    content: "”";
-    opacity: 0.20;
-    font-size: 2.25rem;
-    line-height: 1;            /* keep in inline flow */
-    margin-left: 0.15em;
-    position: relative;
-    top: 01.0em;              /* ← was +0.05em */
-    vertical-align: baseline;
-  }
-}
-
-
  /* iPhone / small-device LANDSCAPE */
-@media (orientation: landscape) and (max-width: 1015px) {
+@media (orientation: landscape) and (min-width: 600px) and (max-width: 999px) {
   [data-page="speaking"] #testimonials blockquote
   :is([data-q="close"], [data-quote="close"]) {
     display: none !important;
