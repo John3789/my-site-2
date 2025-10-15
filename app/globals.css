@@ -292,7 +292,7 @@ html.menu-open, body.menu-open {
 
 /* iOS-only + small screens: stop rubber-band at the root */
 @supports (-webkit-touch-callout: none) {
-  @media (max-width: 900px) {
+  @media (max-width: 1400px) {
     html, body {
       overscroll-behavior-y: none; /* blocks pull-to-refresh on root */
     }
@@ -307,7 +307,7 @@ html.menu-open, body.menu-open {
 
 /* Phones only (iOS + <=900px): make the inner container the scroller */
 @supports (-webkit-touch-callout: none) {
-  @media (max-width: 900px) {
+  @media (max-width: 1400px) {
     .page-scroll {
       height: 100svh;
       overflow-y: auto;
