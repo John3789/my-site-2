@@ -78,7 +78,7 @@ export default function ConsultingPage() {
   }, [SECTIONS]);
 
   // Helpers for mobile (-m IDs)
-  const toMobile = (id) => `${id}-m`;
+const toMobile = (id) => (id === "testimonials" ? "testimonials" : `${id}-m`);
   const idxOf = (id) => SECTIONS.findIndex((s) => s.id === id);
   const prevOf = (id) => SECTIONS[(idxOf(id) - 1 + SECTIONS.length) % SECTIONS.length].id;
   const nextOf = (id) => SECTIONS[(idxOf(id) + 1) % SECTIONS.length].id;
