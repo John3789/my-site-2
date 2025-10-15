@@ -269,6 +269,31 @@ export default function MeditationsPage() {
       </div>
 
 
+            <style jsx global>{`
+
+                /* 3️⃣ Footer — match home page clamp */
+                body:has(main[data-page="about"])
+                  :is(
+                    footer,
+                    .site-footer,
+                    .mobile-footer-cap,
+                    .home-footer-cap,
+                    div[class*="footer"]
+                  ) {
+                  max-width: 75vw;
+                  margin-left: auto;
+                  margin-right: auto;
+                }
+
+                body:has(main[data-page="about"]) footer hr,
+                [data-page="about"] hr {
+                  width: 100%;
+                  margin-left: auto;
+                  margin-right: auto;
+                
+                }
+              }
+            `}</style>
           </main>
 
 
