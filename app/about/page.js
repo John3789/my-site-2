@@ -12,6 +12,27 @@ export default function AboutPage() {
   const wrapRef = useRef(null);
   useIosZoomVars(wrapRef, { portraitZoom: 3.0, landscapeZoom: 1.00 });
 
+  // === About page mobile footer jump helpers (iPhone only) ===
+const ABOUT_SECTIONS = ["about", "mission", "projects", "credentials"]; // <- make sure these exist
+
+const idxOf = (id) => ABOUT_SECTIONS.indexOf(id);
+const prevOf = (id) => ABOUT_SECTIONS[(idxOf(id) - 1 + ABOUT_SECTIONS.length) % ABOUT_SECTIONS.length];
+const nextOf = (id) => ABOUT_SECTIONS[(idxOf(id) + 1) % ABOUT_SECTIONS.length];
+
+// Smooth scroll that compensates for sticky header
+function jumpAbout(targetId) {
+  const el =
+    document.getElementById(targetId) ||
+    document.querySelector(`[data-anchor="${targetId}"]`);
+  if (!el) return;
+
+  // iPhone-friendly offset (header height)
+  const HEADER_OFFSET = 84; // adjust if your header is taller/shorter on mobile
+
+  const y = el.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
+  window.scrollTo({ top: y, behavior: "smooth" });
+}
+
   return (
     <TopOnMount>
     <>
@@ -432,7 +453,7 @@ export default function AboutPage() {
 }
 
 /* iPhone portrait + landscape only */
-@media (max-width: 7px) and (orientation: portrait),
+@media (max-width: 700px) and (orientation: portrait),
        (max-width: 950px) and (orientation: landscape) {
   [data-page="about"] [data-about-nav] {
     display: block !important;
