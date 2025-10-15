@@ -1160,7 +1160,7 @@ export default function SpeakingPage() {
  line-height: 1 !important;       /* override old line-height:0 rules */
  margin-left: 0.15em;
  position: relative;
- top: 0.05em !important;           /* adjust 0em–0.1em to taste */
+ top: 1.0em !important;           /* adjust 0em–0.1em to taste */
  vertical-align: baseline;
 }
 
