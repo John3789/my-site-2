@@ -60,7 +60,7 @@ export default function MeditationsPage() {
             </div>
 
             {/* ===== FEATURED (5-Minute Reset) — now 2 columns ===== */}
-            <section className="mx-auto max-w-[1800px] px-6 py-14 md:py-16">
+            <section className="mx-auto max-w-[1600px] px-6 py-14 md:py-16">
               <div className="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
                 {/* LEFT COLUMN — existing content */}
                 <div>
@@ -147,7 +147,7 @@ export default function MeditationsPage() {
             </div>
 
             {/* ===== CUSTOM SESSIONS ===== */}
-            <section className="mx-auto max-w-[1000px] px-6 py-14 md:py-16"> 
+            <section className="mx-auto max-w-[1000px] px-6 py-14 md:py-16 narrow-landscape-80"> 
               <p className=" flex justify-center text-[12px] uppercase tracking-[0.18em] opacity-60 mb-2">Custom</p>
               <h2 className="flex justify-center font-serif text-4xl md:text-5xl opacity-95">Custom-Made Sessions</h2>
               <div className="mx-auto h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-6 rounded" />
