@@ -35,34 +35,32 @@ export default function AboutPage() {
   }
 
   function AboutSectionFooter({ baseId }) {
-    return (
-      <div data-about-nav className="lg:hidden -mt-4 pb-0 w-full">
-        <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
-          <button
-            type="button"
-            onClick={() => jumpAbout(prevOf(baseId))}
-            className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-          >
-            ← Prev
-          </button>
-          <button
-            type="button"
-            onClick={() => jumpAbout("about")}
-            className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-          >
-            All About
-          </button>
-          <button
-            type="button"
-            onClick={() => jumpAbout(nextOf(baseId))}
-            className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-          >
-            Next →
-          </button>
-        </div>
+  return (
+    <div data-about-nav className="lg:hidden mt-6 pb-0 w-full">
+      <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
+        <button
+          onClick={() => jumpAbout(prevOf(baseId))}
+          className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+        >
+          ← Prev
+        </button>
+        <button
+          onClick={() => jumpAbout('quicknav')}  {/* was 'about' */}
+          className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+        >
+          All About
+        </button>
+        <button
+          onClick={() => jumpAbout(nextOf(baseId))}
+          className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+        >
+          Next →
+        </button>
       </div>
-    );
-  }
+    </div>
+  );
+}
+
 
   return (
     <TopOnMount>
