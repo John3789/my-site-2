@@ -413,7 +413,7 @@ html.menu-open, body.menu-open {
 
 :root {
   /* Adjust offsets if needed */
-  --hamburger-nudge-x-phone-land: 12px;  /* → right */
+  --hamburger-nudge-x-phone-land: 18px;  /* → right */
   --hamburger-nudge-y-phone-land: 10px;  /* ↓ down  */
   --hamburger-nudge-x-ipad-mini: 10px;  /* → right */
   --hamburger-nudge-y-ipad-mini: 10px;  /* ↓ down  */
