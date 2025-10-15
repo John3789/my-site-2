@@ -451,71 +451,103 @@ html.menu-open, body.menu-open {
   }
 }
 
-/* iPhone LANDSCAPE (Pro, Pro Max, etc.) — shift popup "Menu" label + items to the right */
+/* iPhone (iOS) LANDSCAPE — shift ONLY the popup title + items to the right
+   Works on iPhone Pro + Pro Max. Doesn’t touch the hamburger button. */
 @media (orientation: landscape) and (max-height: 430px) {
-  /* Gate to iOS Safari so Android tablets/desktop don’t get hit */
   @supports (-webkit-touch-callout: none) {
-    /* === 1) Grab the OPEN POPUP CONTENT no matter the library === */
-    /* Radix portals/dialog/sheet content */
-    [data-radix-portal] [data-state="open"],
-    [role="dialog"][data-state="open"],
-    [aria-modal="true"],
-    /* Your possible menu containers */
-    .mobile-menu,
-    .menu-panel,
-    .menu-popup,
-    .sheet-content,
-    .drawer-content {
-      /* nothing here – just the base selector group */
+    /* ===== Root candidates for the OPEN menu popup (Radix/Dialog/Sheet/Drawer/Custom) ===== */
+    :where(
+      [aria-modal="true"],
+      [role="dialog"],
+      [data-state="open"],
+      .menu-panel,
+      .mobile-menu,
+      .menu-popup,
+      .drawer-content,
+      .sheet-content
+    ) {
+      --menuShift: 20px; /* <-- tweak this value to move more/less */
     }
 
-    /* === 2) Nudge the heading/“Menu” label === */
-    [data-radix-portal] [data-state="open"] :is(h1,h2,h3,[data-title],[class*="title"],[class*="heading"]),
-    [role="dialog"][data-state="open"] :is(h1,h2,h3,[data-title],[class*="title"],[class*="heading"]),
-    [aria-modal="true"]            :is(h1,h2,h3,[data-title],[class*="title"],[class*="heading"]),
-    .mobile-menu                   :is(h1,h2,h3,[data-title],[class*="title"],[class*="heading"]),
-    .menu-panel                    :is(h1,h2,h3,[data-title],[class*="title"],[class*="heading"]),
-    .menu-popup                    :is(h1,h2,h3,[data-title],[class*="title"],[class*="heading"]),
-    .sheet-content                 :is(h1,h2,h3,[data-title],[class*="title"],[class*="heading"]),
-    .drawer-content                :is(h1,h2,h3,[data-title],[class*="title"],[class*="heading"]) {
-      margin-left: 16px !important;
-      transform: translateX(8px) !important; /* small extra nudge */
+    /* If your popup is a fixed full-screen overlay but lacks the classes above, catch it too */
+    :where(div,section,nav)[style*="position: fixed"]:is(:where([style*="width: 100vw"], [style*="100vh"], [style*="inset: 0"])) {
+      --menuShift: var(--menuShift, 20px);
     }
 
-    /* === 3) Indent the nav/list block === */
-    [data-radix-portal] [data-state="open"] :is(nav,ul,[data-menu-list],[class*="menu-list"],[class*="nav-list"]),
-    [role="dialog"][data-state="open"]      :is(nav,ul,[data-menu-list],[class*="menu-list"],[class*="nav-list"]),
-    [aria-modal="true"]                     :is(nav,ul,[data-menu-list],[class*="menu-list"],[class*="nav-list"]),
-    .mobile-menu                            :is(nav,ul,[data-menu-list],[class*="menu-list"],[class*="nav-list"]),
-    .menu-panel                             :is(nav,ul,[data-menu-list],[class*="menu-list"],[class*="nav-list"]),
-    .menu-popup                             :is(nav,ul,[data-menu-list],[class*="menu-list"],[class*="nav-list"]),
-    .sheet-content                          :is(nav,ul,[data-menu-list],[class*="menu-list"],[class*="nav-list"]),
-    .drawer-content                         :is(nav,ul,[data-menu-list],[class*="menu-list"],[class*="nav-list"]) {
-      padding-left: 24px !important;
+    /* ===== SHIFT the “Menu” title/heading (whatever its tag/class) ===== */
+    :where(
+      [aria-modal="true"],
+      [role="dialog"],
+      [data-state="open"],
+      .menu-panel,
+      .mobile-menu,
+      .menu-popup,
+      .drawer-content,
+      .sheet-content
+    ) :is(
+      h1, h2, h3,
+      [data-title],
+      [class*="title"], [class*="heading"], [class*="menu-title"]
+    ) {
+      /* push right a touch */
+      margin-left: calc(var(--menuShift) - 4px) !important;
+      transform: translateX(6px) !important;
     }
 
-    /* === 4) Safety: if your list has zero padding, nudge each item/link === */
-    [data-radix-portal] [data-state="open"] :is(nav a, nav li, ul > li, [role="menuitem"]),
-    [role="dialog"][data-state="open"]      :is(nav a, nav li, ul > li, [role="menuitem"]),
-    [aria-modal="true"]                     :is(nav a, nav li, ul > li, [role="menuitem"]),
-    .mobile-menu                            :is(nav a, nav li, ul > li, [role="menuitem"]),
-    .menu-panel                             :is(nav a, nav li, ul > li, [role="menuitem"]),
-    .menu-popup                             :is(nav a, nav li, ul > li, [role="menuitem"]),
-    .sheet-content                          :is(nav a, nav li, ul > li, [role="menuitem"]),
-    .drawer-content                         :is(nav a, nav li, ul > li, [role="menuitem"]) {
+    /* ===== SHIFT the menu list container (nav/ul/div) ===== */
+    :where(
+      [aria-modal="true"],
+      [role="dialog"],
+      [data-state="open"],
+      .menu-panel,
+      .mobile-menu,
+      .menu-popup,
+      .drawer-content,
+      .sheet-content
+    ) :is(
+      nav,
+      ul,
+      [role="menu"],
+      [data-menu-list],
+      [class*="menu-list"],
+      [class*="nav-list"],
+      [class*="menu-items"],
+      [class*="menu-body"]
+    ) {
+      padding-left: calc(var(--menuShift) + 4px) !important;
+    }
+
+    /* ===== Safety: if your items are not inside nav/ul, nudge links/buttons directly ===== */
+    :where(
+      [aria-modal="true"],
+      [role="dialog"],
+      [data-state="open"],
+      .menu-panel,
+      .mobile-menu,
+      .menu-popup,
+      .drawer-content,
+      .sheet-content
+    ) :is(
+      a[href],
+      button[role="menuitem"],
+      [role="menuitem"],
+      li
+    ) {
       margin-left: 8px !important;
     }
 
-    /* === 5) If you have a footer/sub-row inside the popup, indent it too === */
-    [data-radix-portal] [data-state="open"] :is(footer,[class*="menu-sub"],[data-menu-sub]),
-    [role="dialog"][data-state="open"]      :is(footer,[class*="menu-sub"],[data-menu-sub]),
-    [aria-modal="true"]                     :is(footer,[class*="menu-sub"],[data-menu-sub]),
-    .mobile-menu                            :is(footer,[class*="menu-sub"],[data-menu-sub]),
-    .menu-panel                             :is(footer,[class*="menu-sub"],[data-menu-sub]),
-    .menu-popup                             :is(footer,[class*="menu-sub"],[data-menu-sub]),
-    .sheet-content                          :is(footer,[class*="menu-sub"],[data-menu-sub]),
-    .drawer-content                         :is(footer,[class*="menu-sub"],[data-menu-sub]) {
-      padding-left: 24px !important;
+    /* ===== Optional: shift any small footer/secondary row inside popup ===== */
+    :where(
+      [aria-modal="true"],
+      [role="dialog"],
+      [data-state="open"],
+      .menu-panel,
+      .mobile-menu,
+      .menu-popup,
+      .drawer-content,
+      .sheet-content
+    ) :is(footer, [class*="menu-sub"], [data-menu-sub]) {
+      padding-left: calc(var(--menuShift) + 4px) !important;
     }
   }
 }
