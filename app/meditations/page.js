@@ -268,6 +268,15 @@ export default function MeditationsPage() {
   [data-page="meditations"] [data-med-grid] {
     grid-template-columns: 1fr !important; /* defeats md:grid-cols-2 only here */
   }
+
+  /* Meditations — narrower footer on iPad portrait only */
+@media (orientation: portrait) and (min-width: 700px) and (max-width: 900px) {
+  [data-page="meditations"] .mobile-footer-cap > .mx-auto {
+    max-width: 800px !important; /* pulls footer in */
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
 }
       `}</style>
 
