@@ -32,7 +32,7 @@ export default function Header() {
   return (
     <>
       {/* Header bar */}
-      <header className={`${headerClass} ${!isHome ? "not-home" : ""}`}>
+<header className={`${headerClass} ${!isHome ? "not-home" : "is-home"}`}>
         <div className="mx-auto max-w-7xl px-6 h-10 flex items-center">
           {/* Desktop / tablet nav (unchanged) */}
  <nav className="header-tabs flex w-full items-center justify-center gap-6 text-[13px] tracking-wide uppercase">
@@ -74,37 +74,39 @@ vectorEffect="non-scaling-stroke"  /* keeps stroke width constant if any transfo
 </button>
         </div>
 
-  <style jsx global>{`
-    /* Base (all pages): normal behavior */
-    header .header-tabs {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      white-space: normal;
-      overflow: visible;
-    }
+ <style jsx global>{`
+  /* Debug helper: uncomment to verify you're hitting the rule on iPad portrait only */
+  /* @media (orientation: portrait) and (min-width: 768px) and (max-width: 1023.98px) {
+    header.not-home { outline: 2px solid dodgerblue !important; }
+  } */
 
-    /* ✅ Only non-home pages AND only standard iPad portrait (≈820px wide) */
-    @media screen and (orientation: portrait) and (min-width: 800px) and (max-width: 925px) {
-      header.not-home .header-tabs {
-        gap: 0.8rem;               /* modest tighten */
-        flex-wrap: nowrap;         /* keep on one line */
-        white-space: nowrap;       /* prevent wrapping */
-        overflow-x: auto;          /* allow scroll if still tight */
-        -webkit-overflow-scrolling: touch;
-        justify-content: flex-start;
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
-      }
-      header.not-home .header-tabs a {
-        font-size: 13px;
-        letter-spacing: 0.02em;
-      }
-      /* Hide the iOS scrollbar */
-      header.not-home .header-tabs::-webkit-scrollbar { display: none; }
-      header.not-home .header-tabs { scrollbar-width: none; }
+  /* Standard iPad portrait (NOT home page, NOT iPad Pro, NOT desktop) */
+  @media (orientation: portrait) and (min-width: 800px) and (max-width: 925px) {
+    header.not-home .header-tabs {
+      display: flex !important;          /* ensure flex */
+      gap: 0.9rem !important;            /* tighten spacing */
+      flex-wrap: nowrap !important;      /* keep on one line */
+      white-space: nowrap !important;    /* prevent wrapping */
+      overflow-x: auto !important;       /* allow horizontal scroll if needed */
+      -webkit-overflow-scrolling: touch; /* smooth iOS scroll */
+      justify-content: flex-start !important;
+      padding-left: 0.75rem !important;
+      padding-right: 0.75rem !important;
+      max-width: 92vw !important;        /* keep it from looking full-bleed */
+      margin-left: auto !important;
+      margin-right: auto !important;
     }
-  `}</style>
+    /* Tweak text a touch narrower so “Books & Publications” fits nicer */
+    header.not-home .header-tabs a {
+      font-size: 12.5px !important;
+      letter-spacing: 0.02em !important;
+    }
+    /* Hide the scrollbar */
+    header.not-home .header-tabs::-webkit-scrollbar { display: none !important; }
+    header.not-home .header-tabs { scrollbar-width: none !important; }
+  }
+`}</style>
+
 </header>
 
 
