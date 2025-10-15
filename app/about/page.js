@@ -66,7 +66,7 @@ export default function AboutPage() {
             {/* Row 1: first two paragraphs + photo side-by-side */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start mb-12">
               {/* Left: first two paragraphs */}
-              <div>
+              <div data-intro>
                 <p className="mx-auto space-y-6 text-[clamp(16px,1.4vw,19px)] mb-4 opacity-90 leading-loose narrow-landscape-70">
                   Dr. Juan Pablo Salerno, also known in academic spaces as{" "}
                   <strong>Dr. John P. Salerno</strong>, is an award-winning mental health scientist, personal growth expert, author
@@ -396,30 +396,20 @@ export default function AboutPage() {
     margin-right: auto;
   }
 
-  /* 2️⃣ NEW — Intro paragraphs & image */
-[data-page="about"] section:first-of-type .grid > *:first-child {
+ /* ABOUT — tighten intro paragraphs & image only */
+[data-page="about"] [data-intro] p {
   max-width: 68ch !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }
 
-[data-page="about"] section:first-of-type > p:nth-of-type(1),
-[data-page="about"] section:first-of-type > p:nth-of-type(2) {
-  max-width: 68ch !important;
+/* Optional: if your picture follows right after those paragraphs */
+[data-page="about"] [data-intro] + :is(figure, img, .image, .photo) {
+  max-width: 540px !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }
 
-[data-page="about"] section:first-of-type > :is(div,article,section):has(> p) {
-  max-width: 68ch !important;
-  margin-inline: auto !important;
-}
-
-[data-page="about"] section:first-of-type :is(figure, .image, .photo, img):not(.logo) {
-  max-width: 540px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
   /* 3️⃣ Footer — match home page clamp */
   body:has(main[data-page="about"])
