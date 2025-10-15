@@ -451,42 +451,29 @@ html.menu-open, body.menu-open {
   }
 }
 
-/* iPHONE LANDSCAPE — push hamburger + popup menu content to the right */
-@media (orientation: landscape) and (min-width: 750px) and (max-width: 950px) {
-  :root {
-    --menu-shift-x: 40px;   /* how far right to push things */
-    --menu-tabs-indent: 42px; /* extra indent for menu items */
+/* iPhone LANDSCAPE (Pro + Pro Max) — shift popup menu contents slightly right */
+@media (orientation: landscape) and (min-width: 740px) and (max-width: 975px) {
+
+  /* 1️⃣ Shift the top "MENU" label inside the open popup */
+  .mobile-menu h2,
+  .mobile-menu .menu-heading,
+  [role="dialog"][data-state="open"] h2,
+  [role="dialog"][data-state="open"] .menu-label {
+    transform: translateX(18px) !important;
   }
 
-  /* Nudge the word “Menu” to the right (if present) */
-  header .hamburger .label,
-  header .nav-toggle .label,
-  header [data-hamburger] .label,
-  header .hamburger span[class*="label"],
-  header .nav-toggle span[class*="label"] {
-    margin-left: 28px !important;
-    transform: translateX(26px) !important;
-  }
-
-  /* Shift the slide-over / popup menu panel to the right (only when open) */
-  .mobile-menu[open],
-  .mobile-menu[data-state="open"],
-  .mobile-menu[aria-hidden="false"],
-  .menu-panel[open],
-  .menu-panel[data-state="open"],
-  [role="dialog"][data-state="open"],
-  [role="dialog"]:not([hidden]) {
-    transform: translateX(var(--menu-shift-x)) !important;
-    will-change: transform;
-  }
-
-  /* Indent the tab list / links inside the panel a bit more */
+  /* 2️⃣ Indent the list of menu links/items */
   .mobile-menu nav ul,
-  .mobile-menu .menu-list,
+  .mobile-menu nav li,
   .menu-panel nav ul,
-  .menu-panel .menu-list,
-  [role="dialog"] nav ul,
-  [role="dialog"] .menu-list {
-    padding-left: var(--menu-tabs-indent) !important;
+  [role="dialog"][data-state="open"] nav ul {
+    padding-left: 22px !important;
+  }
+
+  /* 3️⃣ If your popup has other interior text (like a subtitle or footer link) */
+  .mobile-menu [class*="menu-sub"],
+  .mobile-menu footer,
+  [role="dialog"][data-state="open"] footer {
+    padding-left: 22px !important;
   }
 }
