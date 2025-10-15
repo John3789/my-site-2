@@ -374,34 +374,71 @@ export default function AboutPage() {
 
 
 <style jsx global>{`
-/* ============= iPad & iPad mini PORTRAIT adjustments ============= */
+/* ABOUT — iPad & iPad mini PORTRAIT only (700–920px)
+   Tightens section pills, intro text, and footer width. */
 @media (orientation: portrait) and (min-width: 700px) and (max-width: 920px) {
 
-  /* 1️⃣ Pill buttons under "About" (already working) */
-  [data-page="about"] .your-pills-wrapper-class {
-    max-width: 75vw !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+  /* 1️⃣ Local section nav pills (About / Mission / Projects / Credentials) */
+  [data-page="about"] nav [class*="rounded-full"],
+  [data-page="about"] nav button,
+  [data-page="about"] nav a {
+    max-width: 78vw;               /* narrower group width */
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-flex;
+    justify-content: center;
   }
 
-  /* 2️⃣ NEW — Intro paragraphs & image (add this block) */
-  [data-page="about"] section:first-of-type .grid > *:first-child,
-  [data-page="about"] section:first-of-type > p:nth-of-type(-n + 2),
-  [data-page="about"] section:first-of-type > :is(div,article,section):has(> p),
-  [data-page="about"] section:first-of-type :is(figure, .image, .photo, img):not(.logo) {
-    max-width: 68ch !important;
-    margin-inline: auto !important;
+  /* If your pill group sits in a wrapper, narrow that too */
+  [data-page="about"] nav {
+    max-width: 78vw;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  /* 3️⃣ Footer (already working) */
-  [data-page="about"] footer {
-    max-width: 75vw !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
+  /* 2️⃣ NEW — Intro paragraphs & image */
+[data-page="about"] section:first-of-type .grid > *:first-child {
+  max-width: 68ch !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
-`}</style>
 
+[data-page="about"] section:first-of-type > p:nth-of-type(1),
+[data-page="about"] section:first-of-type > p:nth-of-type(2) {
+  max-width: 68ch !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+[data-page="about"] section:first-of-type > :is(div,article,section):has(> p) {
+  max-width: 68ch !important;
+  margin-inline: auto !important;
+}
+
+[data-page="about"] section:first-of-type :is(figure, .image, .photo, img):not(.logo) {
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+  /* 3️⃣ Footer — match home page clamp */
+  body:has(main[data-page="about"])
+    :is(footer, .site-footer, .mobile-footer-cap, .home-footer-cap, div[class*="footer"]) {
+    max-width: 75vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  body:has(main[data-page="about"]) footer hr,
+  [data-page="about"] hr {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+
+`}</style>
 
 
 
