@@ -407,42 +407,39 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
       </div>
 
 <style jsx global>{`
-  /* ============================================================
-     HOME — tablet PORTRAIT footer clamp
-     Matches iPhone 16 Pro landscape width on iPad / iPad mini portrait
-     ============================================================ */
-
+  /* ========== HOME — tablet PORTRAIT footer clamp (robust selectors) ========== */
   @media (orientation: portrait) and (min-width: 700px) and (max-width: 900px) {
-    /* Clamp the main footer wrapper (adjust names if needed) */
-    [data-page="home"] :is(.mobile-footer-cap, .footer-wrap, .home-footer, footer) {
-      max-width: 78vw !important;   /* same vibe as your iPhone landscape */
-      margin-left: auto !important;
-      margin-right: auto !important;
-    }
-
-    /* Inner sections / cards */
-    [data-page="home"] :is(.mobile-footer-cap, .footer-wrap, .home-footer, footer) > * {
+    /* Target common footer wrappers on your site */
+    :is(footer, .mobile-footer-cap, .home-footer, .footer-wrap, .site-footer) {
       max-width: 78vw !important;
       margin-left: auto !important;
       margin-right: auto !important;
     }
 
-    /* Align any dividers */
-    [data-page="home"] :is(.mobile-footer-cap, .footer-wrap, .home-footer, footer) hr {
+    /* Make immediate children match the clamp (cards, grids, rows) */
+    :is(footer, .mobile-footer-cap, .home-footer, .footer-wrap, .site-footer) > * {
+      max-width: 78vw !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    /* Dividers inside footer */
+    :is(footer, .mobile-footer-cap, .home-footer, .footer-wrap, .site-footer) hr {
       width: 100% !important;
       margin-left: auto !important;
       margin-right: auto !important;
     }
   }
 
-  /* Optional tighter rule just for iPad mini portrait (narrower) */
+  /* Optional: slightly tighter on smaller tablets (iPad mini-ish) */
   @media (orientation: portrait) and (min-width: 700px) and (max-width: 820px) {
-    [data-page="home"] :is(.mobile-footer-cap, .footer-wrap, .home-footer, footer),
-    [data-page="home"] :is(.mobile-footer-cap, .footer-wrap, .home-footer, footer) > * {
+    :is(footer, .mobile-footer-cap, .home-footer, .footer-wrap, .site-footer),
+    :is(footer, .mobile-footer-cap, .home-footer, .footer-wrap, .site-footer) > * {
       max-width: 75vw !important;
     }
   }
 `}</style>
+
 
         </main>
         
