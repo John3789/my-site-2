@@ -74,12 +74,7 @@ export default function MeditationsPage() {
                   </p>
 
                   <article
-                    className="
-                      mt-6 relative rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7 shadow-2xl
-                      hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] transition
-                      backdrop-blur-none md:backdrop-blur-sm
-                    "
-                  >
+                    className="mt-6 relative rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7 shadow-2xl hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] transition backdrop-blur-none md:backdrop-blur-sm">
                     {/* Gold spine (dimmed) */}
                     <span
                       aria-hidden
