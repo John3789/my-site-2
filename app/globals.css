@@ -414,11 +414,11 @@ html.menu-open, body.menu-open {
 :root {
   /* Adjust offsets if needed */
   --hamburger-nudge-x-phone-land: 12px;  /* → right */
-  --hamburger-nudge-y-phone-land: 13px;  /* ↓ down  */
+  --hamburger-nudge-y-phone-land: 10px;  /* ↓ down  */
   --hamburger-nudge-x-phone-land-max: 12px;  /* → right */
   --hamburger-nudge-y-phone-land-max: 16px;  /* ↓ down  */
   --hamburger-nudge-x-ipad-mini: 0px;  /* → right */
-  --hamburger-nudge-y-ipad-mini: 10px;  /* ↓ down  */
+  --hamburger-nudge-y-ipad-mini: 7px;  /* ↓ down  */
 }
 
 /* iPhone (and similar small phones) — LANDSCAPE ONLY */
