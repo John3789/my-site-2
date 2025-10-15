@@ -77,8 +77,7 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
       {/* ™ pinned to the O in SALERNO; scales with font size */}
       <span
         aria-hidden="true"
-        className="absolute pointer-events-none select-none opacity-70 leading-none
-                   top-[-0.10em] left-[1.60em] text-[0.40em]"
+        className="absolute pointer-events-none select-none opacity-70 leading-none top-[-0.10em] left-[1.60em] text-[0.40em]"
       >
         ™
       </span>
@@ -121,18 +120,7 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
       {/* ===== PAGE BODY WRAPPER ===== */}
       <div
       ref={wrapRef}
-        className="
-          lg:contents
-          origin-top
-          data-[zoom=on]:[transform:scale(var(--z))]
-          data-[zoom=on]:[width:calc(100%/var(--z))]
-          mx-auto
-          lg:[transform:none]
-          lg:[width:100%]
-          landscape:data-[zoom=on]:[transform:scale(calc(var(--zoomL)/var(--vv,1)))]
-          landscape:data-[zoom=on]:[width:calc(100%/(var(--zoomL)/var(--vv,1)))]
-          overflow-visible 
-        "
+        className="lg:contents origin-top data-[zoom=on]:[transform:scale(var(--z))] data-[zoom=on]:[width:calc(100%/var(--z))] mx-auto lg:[transform:none] lg:[width:100%] landscape:data-[zoom=on]:[transform:scale(calc(var(--zoomL)/var(--vv,1)))] landscape:data-[zoom=on]:[width:calc(100%/(var(--zoomL)/var(--vv,1)))] overflow-visible"
       >
 
 
