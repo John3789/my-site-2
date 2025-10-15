@@ -461,7 +461,7 @@ html.menu-open, body.menu-open {
   [data-role="menu-panel"],
   .mobile-menu,
   .hamburger-menu {
-    transform: translateX(12px) !important;
+    transform: translateX(24px) !important;
   }
 
   /* Shift the “Menu” label text right */
@@ -469,7 +469,7 @@ html.menu-open, body.menu-open {
   [data-role="menu-label"],
   header .menu-word,
   header .menu-text {
-    margin-left: 12px !important;
+    margin-left: 24px !important;
   }
 
   /* Shift individual nav links/tabs (optional) */
@@ -477,6 +477,6 @@ html.menu-open, body.menu-open {
   .menu-tabs,
   .menu-links,
   nav[aria-label*="menu" i] ul {
-    padding-left: 16px !important;
+    padding-left: 32px !important;
   }
 }
