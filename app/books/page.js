@@ -268,7 +268,7 @@ export default function BooksPage() {
      <label
   data-books-cta
   data-role="more"
-  htmlFor="more-c1"
+  htmlFor="more-c2"
   className="md:hidden mt-4 inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-[12px] font-semibold tracking-wide hover:bg-white/10 active:translate-y-[1px] cursor-pointer peer-checked:hidden"
 >
   Show all
@@ -276,7 +276,7 @@ export default function BooksPage() {
 <label
   data-books-cta
   data-role="less"
-  htmlFor="more-c1"
+  htmlFor="more-c2"
   className="md:hidden mt-4 hidden peer-checked:inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-[12px] font-semibold tracking-wide hover:bg-white/10 active:translate-y-[1px] cursor-pointer"
 >
   Show less
@@ -337,7 +337,7 @@ export default function BooksPage() {
       <label
   data-books-cta
   data-role="more"
-  htmlFor="more-c1"
+  htmlFor="more-c3"
   className="md:hidden mt-4 inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-[12px] font-semibold tracking-wide hover:bg-white/10 active:translate-y-[1px] cursor-pointer peer-checked:hidden"
 >
   Show all
@@ -345,7 +345,7 @@ export default function BooksPage() {
 <label
   data-books-cta
   data-role="less"
-  htmlFor="more-c1"
+  htmlFor="more-c3"
   className="md:hidden mt-4 hidden peer-checked:inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-[12px] font-semibold tracking-wide hover:bg-white/10 active:translate-y-[1px] cursor-pointer"
 >
   Show less
