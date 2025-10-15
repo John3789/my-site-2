@@ -398,7 +398,7 @@ export default function AboutPage() {
 
  /* ABOUT — tighten intro paragraphs & image only */
 [data-page="about"] [data-intro] p {
-  max-width: 68ch !important;
+  max-width: 80ch !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }
