@@ -987,6 +987,54 @@ export default function ConsultingPage() {
   }
 }
 
+/* =======================
+   CONSULTING — width clamps to reuse the "iPhone 16 Pro landscape" feel
+   Place at the END of your <style jsx global> block
+   ======================= */
+
+/* Helper utilities (used in your markup already) */
+@media (orientation: landscape) and (max-height: 460px) {
+  .narrow-landscape-70 {
+    max-width: 70vw !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .narrow-landscape-80 {
+    max-width: 80vw !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/* A) Small-phone LANDSCAPE (covers iPhone 13/14/15/16 incl. Pro/Max) */
+@media (orientation: landscape) and (max-height: 460px) {
+  [data-page="consulting"] .max-w-\[1100px] { max-width: 72vw !important; }
+  [data-page="consulting"] .max-w-\[1400px] { max-width: 82vw !important; }
+  [data-page="consulting"] .max-w-3xl      { max-width: 38rem !important; } /* nicer measure */
+}
+
+/* B) iPad & iPad mini PORTRAIT (NOT iPad Pro)
+   - mini: 744×1133
+   - iPad 10/9: ~820×1180 / 768×1024
+   Excludes iPad Pro 11" portrait (834×1194) via max-height:1180 */
+@media (orientation: portrait)
+  and (min-width: 700px) and (max-width: 900px)
+  and (max-height: 1180px) {
+  [data-page="consulting"] .max-w-\[1100px] { max-width: 72vw !important; }
+  [data-page="consulting"] .max-w-\[1400px] { max-width: 82vw !important; }
+  [data-page="consulting"] .max-w-3xl      { max-width: 38rem !important; }
+}
+
+/* C) iPad mini LANDSCAPE only (≈1133×744)
+   Guard width to avoid touching iPad (1024×768) and iPad Pro 11" (1194×834) */
+@media (orientation: landscape)
+  and (min-width: 1100px) and (max-width: 1160px)
+  and (min-height: 700px) and (max-height: 800px) {
+  [data-page="consulting"] .max-w-\[1100px] { max-width: 72vw !important; }
+  [data-page="consulting"] .max-w-\[1400px] { max-width: 82vw !important; }
+  [data-page="consulting"] .max-w-3xl      { max-width: 38rem !important; }
+}
+
       `}</style>
 
       {/* Home: section/bookend divider (aligns to 1100px container) */}
