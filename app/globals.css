@@ -471,7 +471,7 @@ html.menu-open, body.menu-open {
 
     /* If your popup is a fixed full-screen overlay but lacks the classes above, catch it too */
     :where(div,section,nav)[style*="position: fixed"]:is(:where([style*="width: 100vw"], [style*="100vh"], [style*="inset: 0"])) {
-      --menuShift: var(--menuShift, 20px);
+      --menuShift: var(--menuShift, 28px);
     }
 
     /* ===== SHIFT the “Menu” title/heading (whatever its tag/class) ===== */
@@ -549,5 +549,11 @@ html.menu-open, body.menu-open {
     ) :is(footer, [class*="menu-sub"], [data-menu-sub]) {
       padding-left: calc(var(--menuShift) + 4px) !important;
     }
+  }
+}
+
+@media (orientation: landscape) and (max-height: 430px) {
+  @supports (-webkit-touch-callout: none) {
+    [data-menu-root] { --menuShift: 20px; }
   }
 }
