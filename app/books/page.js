@@ -504,6 +504,24 @@ export default function BooksPage() {
       margin-left: auto;
       margin-right: auto;
     }
+  
+      /* === BOOKS — tighten intro text + image width on iPad portrait + iPhone landscape === */
+  @media ((orientation: portrait) and (min-width: 700px) and (max-width: 920px)),
+         ((orientation: landscape) and (max-width: 950px)) {
+
+    /* Left column: first two intro paragraphs */
+    [data-page="books"] .grid > div:first-child p {
+      max-width: 80ch !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    /* Right column: the photo immediately following */
+    [data-page="books"] .grid > div:last-child :is(figure, img, .image, .photo) {
+      max-width: 540px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
   }
 `}</style>
 

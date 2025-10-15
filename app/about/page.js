@@ -384,7 +384,8 @@ export default function AboutPage() {
             <style jsx global>{`
               /* ABOUT — iPad & iPad mini PORTRAIT only (700–920px)
                  Tightens section pills, intro text, and footer width. */
-              @media (orientation: portrait) and (min-width: 700px) and (max-width: 920px) {
+              @media (orientation: portrait) and (min-width: 700px) and (max-width: 920px)),
+              ((orientation: landscape) and (max-width: 950px)) { {
                 /* 1️⃣ Local section nav pills (About / Mission / Projects / Credentials) */
                 [data-page="about"] nav [class*="rounded-full"],
                 [data-page="about"] nav button,
