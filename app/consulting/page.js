@@ -1116,6 +1116,27 @@ onClick={() => jump(toMobile(s.id))}
     margin-right: auto;
   }
 }
+  
+/* SPEAKING — iPad & iPad mini PORTRAIT only (700–920px)
+   Tighten footer width to match About/Books look. */
+@media (orientation: portrait) and (min-width: 700px) and (max-width: 920px) {
+  body:has(main[data-page="speaking"])
+    :is(footer, .site-footer, .mobile-footer-cap, .home-footer-cap, div[class*="footer"]) {
+    max-width: 75vw !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* divider + hr lines inside footer */
+  body:has(main[data-page="speaking"]) footer hr,
+  [data-page="speaking"] hr {
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+
 
 
       `}</style>
