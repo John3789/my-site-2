@@ -850,7 +850,7 @@ export default function ConsultingPage() {
             ].map((t, idx) => (
               <figure key={idx} className="relative w-full rounded-xl bg-white/5 p-6 ring-1 ring-white/10 shadow-2xl backdrop-blur-sm hover:bg-white/[0.06] transition">
                 <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-                <blockquote className="font-serif text-2xl leading-relaxed opacity-90 relative">
+                <blockquote className="font-serif text-xl leading-relaxed opacity-90 relative">
                   <span aria-hidden="true" className={`absolute text-4xl opacity-20 select-none ${t.lq || "-left-4 -top-1"}`}>“</span>
                   <p>{t.q}</p>
                   <span aria-hidden="true" className={`absolute text-4xl opacity-20 select-none ${t.rq || "right-[2rem] bottom-[0.5rem]"}`}>”</span>
