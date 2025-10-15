@@ -1034,6 +1034,41 @@ export default function ConsultingPage() {
   }
 }
 
+/* === CONSULTING — iPhone Pro Max (13/14/15/16) landscape: use inline closer === */
+@media (orientation: landscape)
+  and (min-width: 916px) and (max-width: 999px)
+  and (max-height: 500px) {
+
+  /* 1) Hide absolutely-positioned closer spans */
+  [data-page="consulting"] #testimonials blockquote
+  :is([data-q="close"], [data-quote="close"]) {
+    display: none !important;
+  }
+
+  /* 2) Inline the first paragraph so ::after hugs the last line */
+  [data-page="consulting"] #testimonials blockquote p:first-of-type {
+    display: inline !important;
+    white-space: normal !important;
+  }
+
+  /* 3) Inject the closing quote inline, baseline-aligned */
+  [data-page="consulting"] #testimonials blockquote p:first-of-type::after {
+    content: "”";
+    opacity: 0.20;
+    font-size: 2.25rem;
+    line-height: 1;
+    margin-left: 0.15em;
+    position: relative;
+    top: 0.05em;      /* nudge to taste: 0 → 0.10em */
+    vertical-align: baseline;
+  }
+
+  /* 4) Give the blockquote a little room above figcaption */
+  [data-page="consulting"] #testimonials blockquote.t-quote {
+    padding-bottom: 2.2rem !important;
+  }
+}
+
       `}</style>
 
       {/* Home: section/bookend divider (aligns to 1100px container) */}
