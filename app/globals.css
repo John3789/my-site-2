@@ -451,29 +451,44 @@ html.menu-open, body.menu-open {
   }
 }
 
-/* iPhone LANDSCAPE (Pro + Pro Max) — shift popup menu contents slightly right */
-@media (orientation: landscape) and (min-width: 740px) and (max-width: 975px) {
-
-  /* 1️⃣ Shift the top "MENU" label inside the open popup */
-  .mobile-menu h2,
-  .mobile-menu .menu-heading,
+/* iPhone LANDSCAPE — shift popup menu contents (works on Pro + Pro Max + older Pros) */
+@media (orientation: landscape) and (max-height: 430px), /* iPhones in landscape are ≤430px tall */
+       (orientation: landscape) and (min-width: 800px) and (max-width: 950px) {
+  /* 1) Shift the popup's heading/label ("Menu") */
+  [aria-modal="true"] h1,
+  [aria-modal="true"] h2,
+  [role="dialog"][data-state="open"] h1,
   [role="dialog"][data-state="open"] h2,
-  [role="dialog"][data-state="open"] .menu-label {
+  .mobile-menu .menu-heading,
+  .menu-panel .menu-heading {
     transform: translateX(18px) !important;
   }
 
-  /* 2️⃣ Indent the list of menu links/items */
-  .mobile-menu nav ul,
-  .mobile-menu nav li,
-  .menu-panel nav ul,
-  [role="dialog"][data-state="open"] nav ul {
-    padding-left: 22px !important;
+  /* 2) Indent the list of menu items/links */
+  [aria-modal="true"] nav,
+  [role="dialog"][data-state="open"] nav,
+  .mobile-menu nav,
+  .menu-panel nav {
+    padding-left: 24px !important;
   }
 
-  /* 3️⃣ If your popup has other interior text (like a subtitle or footer link) */
-  .mobile-menu [class*="menu-sub"],
+  /* 3) Extra safety: nudge individual items if the list has zero padding */
+  [aria-modal="true"] nav a,
+  [role="dialog"][data-state="open"] nav a,
+  .mobile-menu nav a,
+  .menu-panel nav a,
+  [aria-modal="true"] nav li,
+  [role="dialog"][data-state="open"] nav li,
+  .mobile-menu nav li,
+  .menu-panel nav li {
+    margin-left: 8px !important;
+  }
+
+  /* 4) If you show a subtitle/close row/footer inside the popup, nudge those too */
+  [aria-modal="true"] [class*="menu-sub"],
+  [role="dialog"][data-state="open"] [class*="menu-sub"],
   .mobile-menu footer,
-  [role="dialog"][data-state="open"] footer {
-    padding-left: 22px !important;
+  .menu-panel footer {
+    padding-left: 24px !important;
   }
 }
