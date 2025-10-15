@@ -450,3 +450,33 @@ html.menu-open, body.menu-open {
     ) !important;
   }
 }
+
+/* =======================
+   IPHONE LANDSCAPE — SHIFT MENU PANEL & LABEL RIGHT
+   ======================= */
+
+@media (orientation: landscape) and (min-width: 800px) and (max-width: 950px) {
+  /* Shift the entire popup panel right */
+  .menu-panel,
+  [data-role="menu-panel"],
+  .mobile-menu,
+  .hamburger-menu {
+    transform: translateX(12px) !important;
+  }
+
+  /* Shift the “Menu” label text right */
+  .menu-label,
+  [data-role="menu-label"],
+  header .menu-word,
+  header .menu-text {
+    margin-left: 12px !important;
+  }
+
+  /* Shift individual nav links/tabs (optional) */
+  .menu-nav,
+  .menu-tabs,
+  .menu-links,
+  nav[aria-label*="menu" i] ul {
+    padding-left: 16px !important;
+  }
+}
