@@ -1171,7 +1171,7 @@ export default function SpeakingPage() {
 }
 }
 
-@media (max-width: 767px) and (orientation: portrait) {
+@media (max-width: 600px) and (orientation: portrait) {
   .t-quote { font-size: clamp(24px, 6vw, 28px); }
 }
 
