@@ -1304,7 +1304,7 @@ export default function SpeakingPage() {
     line-height: 0.9;         /* slightly lower than phone */
     margin-left: 0.15em;
     position: relative;
-    top: -0.50em;              /* mini-specific baseline nudge */
+    top: -0.40em;              /* mini-specific baseline nudge */
     vertical-align: baseline;
   }
   [data-page="speaking"] #testimonials blockquote.t-quote {
