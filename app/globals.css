@@ -454,8 +454,8 @@ html.menu-open, body.menu-open {
 /* iPHONE LANDSCAPE — push hamburger + popup menu content to the right */
 @media (orientation: landscape) and (min-width: 750px) and (max-width: 950px) {
   :root {
-    --menu-shift-x: 28px;   /* how far right to push things */
-    --menu-tabs-indent: 32px; /* extra indent for menu items */
+    --menu-shift-x: 40px;   /* how far right to push things */
+    --menu-tabs-indent: 42px; /* extra indent for menu items */
   }
 
   /* Nudge the word “Menu” to the right (if present) */
@@ -464,8 +464,8 @@ html.menu-open, body.menu-open {
   header [data-hamburger] .label,
   header .hamburger span[class*="label"],
   header .nav-toggle span[class*="label"] {
-    margin-left: 18px !important;
-    transform: translateX(16px) !important;
+    margin-left: 28px !important;
+    transform: translateX(26px) !important;
   }
 
   /* Shift the slide-over / popup menu panel to the right (only when open) */
