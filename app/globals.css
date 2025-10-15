@@ -414,7 +414,7 @@ html.menu-open, body.menu-open {
 :root {
   /* Adjust offsets if needed */
   --hamburger-nudge-x-phone-land: 12px;  /* → right */
-  --hamburger-nudge-y-phone-land: 18px;  /* ↓ down  */
+  --hamburger-nudge-y-phone-land: 21px;  /* ↓ down  */
   --hamburger-nudge-x-phone-land-max: 12px;  /* → right */
   --hamburger-nudge-y-phone-land-max: 26px;  /* ↓ down  */
   --hamburger-nudge-x-ipad-mini: 0px;  /* → right */
@@ -431,7 +431,7 @@ html.menu-open, body.menu-open {
   }
 }
 
-/* iPhone (and similar small phones) — LANDSCAPE ONLY */
+/* iPhone max (and similar phones) — LANDSCAPE ONLY */
 @media (orientation: landscape) and (min-width: 900px) and (max-width: 950px) {
   header :is(.hamburger, .nav-toggle, .menu-button, [data-role="hamburger"], button[aria-label*="menu" i]) {
     transform: translate(
