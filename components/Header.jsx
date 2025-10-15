@@ -32,7 +32,7 @@ export default function Header() {
   return (
     <>
       {/* Header bar */}
-      <header className={headerClass}>
+      <header className={`${headerClass} ${!isHome ? "not-home" : ""}`}>
         <div className="mx-auto max-w-7xl px-6 h-10 flex items-center">
           {/* Desktop / tablet nav (unchanged) */}
  <nav className="header-tabs w-full items-center justify-center gap-6 text-[13px] tracking-wide uppercase">
@@ -74,57 +74,48 @@ vectorEffect="non-scaling-stroke"  /* keeps stroke width constant if any transfo
 </button>
         </div>
 
-        <style jsx global>{`
-  /* ========= TOP TEXT LINKS: single-row + horizontal scroll on small/tablet ========= */
-
-  /* Give your link row a wrapper class: .top-links-row (see markup note below) */
-  .top-links-row {
-    display: flex;
-    gap: 0.75rem;                /* space between words */
-    align-items: center;
-    white-space: nowrap;         /* keep all words on one line */
-    overflow-x: auto;            /* enable horizontal scroll if needed */
-    -webkit-overflow-scrolling: touch;
-  }
-
-  /* Hide scrollbars, still scrolls by swipe/trackpad */
-  .top-links-row::-webkit-scrollbar { display: none; }
-  .top-links-row { scrollbar-width: none; -ms-overflow-style: none; }
-
-  /* Subtle fade on edges so it looks intentional */
-  .top-links-row {
-    mask-image: linear-gradient(to right, transparent 0, #000 16px, #000 calc(100% - 16px), transparent 100%);
-  }
-
-  /* Desktop & large tablet: no scroll, normal spacing */
-  @media (min-width: 1024px) {
-    .top-links-row {
-      overflow: visible;
-      white-space: normal;       /* can wrap naturally if your design does */
-      mask-image: none;
+<style jsx global>{`
+  /* iPad PORTRAIT only (exclude iPad Pro + everything else) */
+  @media (orientation: portrait) and (min-width: 800px) and (max-width: 925px) {
+    header.not-home .header-tabs {
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+      justify-content: flex-start;     /* left align so it can scroll */
+      flex-wrap: nowrap;               /* prevent wrapping into 2 rows */
+      white-space: nowrap;             /* keep each link on one line */
+      overflow-x: auto;                /* horizontal scroll if needed */
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding-left: 0.75rem;           /* small edge padding */
+      padding-right: 0.75rem;
+      mask-image: linear-gradient(to right,
+                     transparent 0,
+                     #000 16px,
+                     #000 calc(100% - 16px),
+                     transparent 100%);
     }
-  }
+    header.not-home .header-tabs::-webkit-scrollbar { display: none; }
 
-  /* iPad portrait range (mini + non-Pro): tighten so it usually fits */
-  @media (orientation: portrait) and (min-width: 700px) and (max-width: 900px) {
-    .top-links-row {
-      gap: 0.5rem;
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-      margin-left: -0.5rem;      /* lets the fade breathe at edges */
-      margin-right: -0.5rem;
-    }
-    .top-links-row a {
-      font-size: 14px !important;   /* gently smaller on iPad portrait */
+    /* Slightly smaller label size so “Books & Publications” fits better */
+    header.not-home .header-tabs a {
+      font-size: 13.5px;
       letter-spacing: 0.01em;
     }
   }
 
-  /* Narrow phones (optional: keeps line tight in landscape too) */
-  @media (max-width: 915px) and (orientation: landscape) {
-    .top-links-row { gap: 0.6rem; }
+  /* Everywhere else (phones, mini, landscape, Pro, desktop): revert to normal */
+  @media (max-width: 799px), (min-width: 926px), (orientation: landscape) {
+    header.not-home .header-tabs {
+      overflow: visible !important;
+      white-space: normal !important;
+      flex-wrap: wrap !important;
+      mask-image: none !important;
+    }
   }
 `}</style>
+
 
       </header> 
 
