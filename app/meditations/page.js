@@ -45,7 +45,7 @@ export default function MeditationsPage() {
             </section>
 
             {/* ===== INTRO (moved out of card, like Consulting) ===== */}
-            <section className="mx-auto max-w-[1000px] px-6 text-center mb-12">
+            <section className="mx-auto max-w-[1000px] px-6 text-center mb-12 narrow-landscape-80">
               <p className="text-lg md:text-xl opacity-90 leading-relaxed">
                 Practices designed to help reset your body, calm your mind, and uplift your spirit — guiding you through the day with clarity and ease.
               </p>
@@ -60,7 +60,7 @@ export default function MeditationsPage() {
             </div>
 
             {/* ===== FEATURED (5-Minute Reset) — now 2 columns ===== */}
-            <section className="mx-auto max-w-[1600px] px-6 py-14 md:py-16">
+            <section className="mx-auto max-w-[1200px] px-6 py-14 md:py-16">
               <div className="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
                 {/* LEFT COLUMN — existing content */}
                 <div>
