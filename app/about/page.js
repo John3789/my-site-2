@@ -374,9 +374,9 @@ export default function AboutPage() {
 
 
 <style jsx global>{`
-/* ABOUT — iPad & iPad mini PORTRAIT only (800–920px)
+/* ABOUT — iPad & iPad mini PORTRAIT only (700–920px)
    Tightens section pills, intro text, and footer width. */
-@media (orientation: portrait) and (min-width: 800px) and (max-width: 920px) {
+@media (orientation: portrait) and (min-width: 700px) and (max-width: 920px) {
 
   /* 1️⃣ Local section nav pills (About / Mission / Projects / Credentials) */
   [data-page="about"] nav [class*="rounded-full"],
@@ -398,7 +398,7 @@ export default function AboutPage() {
 
   /* 2️⃣ Intro text paragraphs above the photo */
   [data-page="about"] section:first-of-type p {
-    max-width: 75vw;               /* adjust between 70–80vw */
+    max-width: 65vw;               /* adjust between 70–80vw */
     margin-left: auto;
     margin-right: auto;
   }
@@ -406,7 +406,7 @@ export default function AboutPage() {
   /* 3️⃣ Footer — match home page clamp */
   body:has(main[data-page="about"])
     :is(footer, .site-footer, .mobile-footer-cap, .home-footer-cap, div[class*="footer"]) {
-    max-width: 86vw;
+    max-width: 75vw;
     margin-left: auto;
     margin-right: auto;
   }
