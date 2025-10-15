@@ -60,7 +60,7 @@ export default function MeditationsPage() {
             </div>
 
             {/* ===== FEATURED (5-Minute Reset) — now 2 columns ===== */}
-            <section className="mx-auto max-w-[1000px] px-6 py-14 md:py-16">
+            <section className="mx-auto max-w-[700px] px-6 py-14 md:py-16">
               <div className="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
                 {/* LEFT COLUMN — existing content */}
                 <div>
