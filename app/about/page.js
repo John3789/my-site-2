@@ -396,13 +396,6 @@ export default function AboutPage() {
     margin-right: auto;
   }
 
-  /* 2️⃣ Intro text paragraphs above the photo */
-  [data-page="about"] section:first-of-type p {
-    max-width: 65vw;               /* adjust between 70–80vw */
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   /* 3️⃣ Footer — match home page clamp */
   body:has(main[data-page="about"])
     :is(footer, .site-footer, .mobile-footer-cap, .home-footer-cap, div[class*="footer"]) {
@@ -417,7 +410,33 @@ export default function AboutPage() {
     margin-left: auto;
     margin-right: auto;
   }
+
+  /* 2️⃣ Intro text paragraphs right after the local pills (About/Mission/Projects/Credentials) */
+@media (orientation: portrait) and (min-width: 700px) and (max-width: 920px) {
+  /* Case A: paragraphs are direct siblings of the nav */
+  [data-page="about"] nav + p,
+  [data-page="about"] nav + p + p {
+    max-width: 75vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Case B: paragraphs live in the next wrapper (div/section) after the nav */
+  [data-page="about"] nav + * > p:nth-of-type(-n + 2) {
+    max-width: 75vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Case C: a section is the immediate sibling of nav */
+  [data-page="about"] nav + section > p:nth-of-type(-n + 2) {
+    max-width: 75vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
+
+
 `}</style>
 
 
