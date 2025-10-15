@@ -137,7 +137,7 @@ export default function ResourcesPage() {
             <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-0">Resources</h1>
             <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 mx-auto mt-4 mb-6 rounded" />
 
-            <section className="mx-auto max-w-[900px] px-6 text-center mb-6 narrow-landscape-70">
+            <section className="mx-auto max-w-[900px] px-6 text-center mb-6 narrow-landscape-80">
               <p className="text-lg md:text-xl opacity-90 leading-relaxed">
                 A growing library of concise media collections—shaped by science and lived experience—to sharpen your mind and uplift your life. Each theme is designed to meet you where you are and guide you toward greater confidence, balance, and intentional living.
               </p>
@@ -145,7 +145,7 @@ export default function ResourcesPage() {
             </section>
 
             {/* Mobile nav chips */}
-            <div className="lg:hidden mt-4 grid grid-cols-3 gap-2 narrow-landscape-70">
+            <div className="lg:hidden mt-4 grid grid-cols-3 gap-2 narrow-landscape-80">
               {THEMES.map((t) => {
                 const active = currentId === t.slug;
                 return (
@@ -174,7 +174,7 @@ export default function ResourcesPage() {
 
 
           {/* ===== Sections (now inside the same zoom on mobile) ===== */}
-          <section className="mx-auto max-w-[1200px] px-6 pt-0 md:pt-2 pb-20 narrow-landscape-70">
+          <section className="mx-auto max-w-[1200px] px-6 pt-0 md:pt-2 pb-20 narrow-landscape-80">
             <div className="space-y-8 md:space-y-14">
               {THEMES.map((theme, idx) => (
                 <section key={theme.slug} id={theme.slug} className="scroll-mt-28">

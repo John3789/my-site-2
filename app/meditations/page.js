@@ -269,7 +269,7 @@ export default function MeditationsPage() {
     grid-template-columns: 1fr !important; /* defeats md:grid-cols-2 only here */
   }
 
-/* Meditations — narrower footer on iPad portrait only (≈820×1180) */
+/* Meditations — narrower footer on iPad portrait only (≈820×1180) and ipad mini (744x1024) */
 @media (orientation: portrait) and (min-width: 700px) and (max-width: 920px) {
   /* Clamp any footer-y containers on this page */
   body:has(main[data-page="meditations"])
