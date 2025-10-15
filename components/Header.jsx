@@ -72,16 +72,17 @@ vectorEffect="non-scaling-stroke"  /* keeps stroke width constant if any transfo
 </button>
         </div>
 
-        <style jsx global>{`
+<style jsx global>{`
   /* Default: show full label, hide short */
   .books-link .short-label { display: none; }
 
-  /* iPad portrait + landscape (768–1023 px): swap labels */
-  @media (min-width: 768px) and (max-width: 1023.98px) {
-    .books-link .full-label { display: none !important; }
-    .books-link .short-label { display: inline !important; }
+  /* Apply only on non-home pages in portrait between 800–920 px */
+  @media (orientation: portrait) and (min-width: 800px) and (max-width: 920px) {
+    body:not([data-page="home"]) .books-link .full-label { display: none !important; }
+    body:not([data-page="home"]) .books-link .short-label { display: inline !important; }
   }
 `}</style>
+
 
       </header> 
 
