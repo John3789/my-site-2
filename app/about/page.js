@@ -411,31 +411,39 @@ export default function AboutPage() {
     margin-right: auto;
   }
 
-  /* 2️⃣ Intro text paragraphs right after the local pills (About/Mission/Projects/Credentials) */
+/* iPad / iPad mini — PORTRAIT only */
 @media (orientation: portrait) and (min-width: 700px) and (max-width: 920px) {
-  /* Case A: paragraphs are direct siblings of the nav */
-  [data-page="about"] nav + p,
-  [data-page="about"] nav + p + p {
-    max-width: 75vw;
-    margin-left: auto;
-    margin-right: auto;
+
+  /* 1) If your intro uses a grid (text + photo), clamp the TEXT column */
+  /* Targets: first section on About; first grid child (usually the copy column) */
+  [data-page="about"] section:first-of-type .grid > *:first-child {
+    max-width: 68ch !important;       /* dial this up/down: 64–72ch is a nice range */
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
-  /* Case B: paragraphs live in the next wrapper (div/section) after the nav */
-  [data-page="about"] nav + * > p:nth-of-type(-n + 2) {
-    max-width: 75vw;
-    margin-left: auto;
-    margin-right: auto;
+  /* 2) If your intro is NOT in a grid (paragraphs are direct children), clamp the first two <p> */
+  [data-page="about"] section:first-of-type > p:nth-of-type(1),
+  [data-page="about"] section:first-of-type > p:nth-of-type(2) {
+    max-width: 68ch !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
-  /* Case C: a section is the immediate sibling of nav */
-  [data-page="about"] nav + section > p:nth-of-type(-n + 2) {
-    max-width: 75vw;
+  /* 3) If your paragraphs are wrapped (e.g., a <div> around them), clamp that wrapper too */
+  [data-page="about"] section:first-of-type > :is(div,article,section):has(> p) {
+    max-width: 68ch !important;
+    margin-inline: auto !important;
+  }
+
+  /* 4) Optional: slightly tame the PHOTO so text + image feel balanced */
+  /* (Safe no-op if selectors don’t match your DOM) */
+  [data-page="about"] section:first-of-type :is(figure, .image, .photo, img):not(.logo) {
+    max-width: 540px;                  /* nudge as needed */
     margin-left: auto;
     margin-right: auto;
   }
 }
-
 
 `}</style>
 
