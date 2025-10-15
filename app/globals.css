@@ -356,7 +356,7 @@ html.menu-open, body.menu-open {
     --q-inset-x: 0.45em; /* distance from right edge for the closing quote */
     --q-inset-y: 0.85em; /* distance from bottom edge for the closing quote */
     --q-open-left: -0.75rem;
-    --q-open-top: -0.25rem;
+    --q-open-top: -0.45rem;
 
     /* Keep room for the closing quote above the figcaption */
     padding-bottom: calc(var(--q-size) + 0.7em);
