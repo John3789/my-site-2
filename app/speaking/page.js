@@ -1136,40 +1136,37 @@ export default function SpeakingPage() {
   }
 }
 
-### 1) iPhone PORTRAIT (clean + conflict-free)
-
 /* iPhone PORTRAIT */
 @media (max-width: 767px) and (orientation: portrait) {
-/* hide separate closer, either attribute name */
-[data-page="speaking"] #testimonials blockquote
-:is([data-q="close"], [data-quote="close"]) {
- display: none !important;
+  /* hide separate closer, any attribute name */
+  [data-page="speaking"] #testimonials blockquote
+  :is([data-q="close"], [data-quote="close"]) {
+    display: none !important;
+  }
+
+  [data-page="speaking"] #testimonials blockquote p:first-of-type {
+    display: inline;
+    white-space: normal;
+  }
+
+  [data-page="speaking"] #testimonials blockquote p:first-of-type::after {
+    content: "”";
+    opacity: 0.20;
+    font-size: var(--q-size, 2.25rem);
+    line-height: 1;     /* keep inline flow */
+    margin-left: 0.15em;
+    position: relative;
+    top: 0.25em;           /* adjust to taste: 0em to 0.05em */
+    vertical-align: baseline;
+  }
 }
 
-/* keep text inline so ::after sits on last line */
-[data-page="speaking"] #testimonials blockquote p:first-of-type {
- display: inline !important;
- white-space: normal !important;
-}
 
-/* injected closing quote */
-[data-page="speaking"] #testimonials blockquote p:first-of-type::after {
- content: "”";
- opacity: 0.20;
- font-size: var(--q-size, 2.25rem) !important;
- line-height: 1 !important;       /* override old line-height:0 rules */
- margin-left: 0.15em;
- position: relative;
- top: 1.0em !important;           /* adjust 0em–0.1em to taste */
- vertical-align: baseline;
-}
+  [data-page="speaking"] #testimonials blockquote.t-quote [data-q="open"] {
+    font-size: var(--q-size) !important;
+    line-height: 1;
+  }
 
-/* opening mark size parity (optional) */
-[data-page="speaking"] #testimonials blockquote.t-quote :is([data-q="open"], [data-quote="open"]) {
- font-size: var(--q-size, 2.25rem) !important;
- line-height: 1;
-}
-}
 
 @media (max-width: 767px) and (orientation: portrait) {
   .t-quote { font-size: clamp(24px, 6vw, 28px); }
@@ -1194,36 +1191,36 @@ export default function SpeakingPage() {
     line-height: 1;            /* keep in inline flow */
     margin-left: 0.15em;
     position: relative;
-    top: 01.0em;              /* ← was +0.05em */
+    top: 0.25em;              /* ← was +0.05em */
     vertical-align: baseline;
   }
 }
 
 
- /* iPhone / small-device LANDSCAPE */
-@media (orientation: landscape) and (max-width: 1015px) {
-  [data-page="speaking"] #testimonials blockquote
-  :is([data-q="close"], [data-quote="close"]) {
+  /* === SPEAKING — small-landscape (iPhone-ish) fix, FINAL OVERRIDES === */
+@media (orientation: landscape) and (max-width: 915px) and (max-height: 450px) {
+  /* 1) Hide the absolutely-positioned close spans so they can't collide */
+  [data-page="speaking"] #testimonials blockquote span[data-q="close"] {
     display: none !important;
   }
 
+  /* 2) Ensure the text paragraph is inline so ::after sits on the last line */
   [data-page="speaking"] #testimonials blockquote p:first-of-type {
     display: inline !important;
     white-space: normal !important;
   }
 
+  /* 3) Inject the closing quote inline, aligned to baseline */
   [data-page="speaking"] #testimonials blockquote p:first-of-type::after {
     content: "”";
     opacity: 0.20;
-    font-size: var(--q-size, 2.25rem) !important;
-    line-height: 1 !important;
+    font-size: 2.25rem;      /* your size */
+    line-height: 1;          /* keep in inline flow */
     margin-left: 0.15em;
     position: relative;
-    top: 1.0em !important;     /* tweak −0.05em..+0.10em if needed */
+    top: 0.25em;             /* tiny baseline nudge */
     vertical-align: baseline;
   }
-}
-
 
   /* 4) Give blockquote a bit of bottom room so the quote doesn't hit the caption */
   [data-page="speaking"] #testimonials blockquote.t-quote {
