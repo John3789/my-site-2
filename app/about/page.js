@@ -374,35 +374,43 @@ export default function AboutPage() {
 
 
 <style jsx global>{`
-/* ABOUT — gentle width refinements for iPad & iPad mini PORTRAIT only
-   (700–920px wide portrait; leaves iPad Pro, landscape & desktop untouched) */
-@media (orientation: portrait) and (min-width: 700px) and (max-width: 920px) {
+/* ABOUT — iPad & iPad mini PORTRAIT only (800–920px)
+   Tightens section pills, intro text, and footer width. */
+@media (orientation: portrait) and (min-width: 800px) and (max-width: 920px) {
 
-  /* 1️⃣ Header nav — make the tab group a bit narrower */
-  body:has(main[data-page="about"]) .header-tabs {
-    max-width: 82vw;           /* smaller = tighter */
+  /* 1️⃣ Local section nav pills (About / Mission / Projects / Credentials) */
+  [data-page="about"] nav [class*="rounded-full"],
+  [data-page="about"] nav button,
+  [data-page="about"] nav a {
+    max-width: 78vw;               /* narrower group width */
     margin-left: auto;
     margin-right: auto;
+    display: inline-flex;
     justify-content: center;
-    gap: 0.8rem;
   }
 
-  /* 2️⃣ Intro paragraphs above the photo — reduce reading width */
-  [data-page="about"] section:first-of-type p {
-    max-width: 75vw;           /* tweak between 70–80vw for balance */
+  /* If your pill group sits in a wrapper, narrow that too */
+  [data-page="about"] nav {
+    max-width: 78vw;
     margin-left: auto;
     margin-right: auto;
   }
 
-  /* 3️⃣ Footer — match the home-page clamp */
+  /* 2️⃣ Intro text paragraphs above the photo */
+  [data-page="about"] section:first-of-type p {
+    max-width: 75vw;               /* adjust between 70–80vw */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* 3️⃣ Footer — match home page clamp */
   body:has(main[data-page="about"])
     :is(footer, .site-footer, .mobile-footer-cap, .home-footer-cap, div[class*="footer"]) {
-    max-width: 86vw;           /* same as Home look */
+    max-width: 86vw;
     margin-left: auto;
     margin-right: auto;
   }
 
-  /* Keep hr lines aligned with the footer width */
   body:has(main[data-page="about"]) footer hr,
   [data-page="about"] hr {
     width: 100%;
@@ -411,6 +419,7 @@ export default function AboutPage() {
   }
 }
 `}</style>
+
 
 
         </main>
