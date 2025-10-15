@@ -439,8 +439,15 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
     }
   }
 
-    /* iPhone LANDSCAPE — make spacer shorter */
-  @media (orientation: landscape) and (max-width: 950px) {
+    /* iPhone max LANDSCAPE — make spacer shorter */
+  @media (orientation: landscape) and (min-width: 900px) and (max-width: 950px) {
+    .nameplate-spacer {
+      height: 1.25rem !important; /* equals Tailwind h-4 */
+    }
+  }
+
+      /* iPhone LANDSCAPE — make spacer shorter */
+  @media (orientation: landscape) and (min-width: 800px) and (max-width: 899px) {
     .nameplate-spacer {
       height: 1rem !important; /* equals Tailwind h-4 */
     }
