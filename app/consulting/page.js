@@ -1065,9 +1065,37 @@ export default function ConsultingPage() {
 
   /* 4) Give the blockquote a little room above figcaption */
   [data-page="consulting"] #testimonials blockquote.t-quote {
-    padding-bottom: 2.2rem !important;
+    padding-bottom: 0rem !important;
   }
 }
+
+/* === CONSULTING — Standard iPad portrait (≈820w) & similar 800–900px widths === */
+@media (orientation: portrait) and (min-width: 800px) and (max-width: 900px) {
+  [data-page="consulting"] :is(#testimonials, #testimonials-m) blockquote
+  :is([data-q="close"], [data-quote="close"]) { display: none !important; }
+
+  [data-page="consulting"] :is(#testimonials, #testimonials-m) blockquote p:first-of-type {
+    display: inline !important;
+    white-space: normal !important;
+  }
+
+  [data-page="consulting"] :is(#testimonials, #testimonials-m) blockquote p:first-of-type::after {
+    content: "”";
+    opacity: 0.20;
+    font-size: var(--q-size, 2.25rem);
+    line-height: 1;
+    margin-left: 0.15em;
+    position: relative;
+    top: 0.05em;          /* adjust to taste */
+    vertical-align: baseline;
+  }
+
+  [data-page="consulting"] :is(#testimonials, #testimonials-m) blockquote.t-quote {
+    padding-bottom: 0rem !important;
+  }
+}
+
+/* iPad Pro (1024px portrait / 1366px landscape) intentionally has NO override */
 
       `}</style>
 
