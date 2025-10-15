@@ -452,21 +452,11 @@ html.menu-open, body.menu-open {
 }
 
 /* iPHONE LANDSCAPE — push hamburger + popup menu content to the right */
-@media (orientation: landscape) and (min-width: 800px) and (max-width: 950px) {
+@media (orientation: landscape) and (min-width: 780px) and (max-width: 950px) {
   :root {
-    --menu-shift-x: 18px;   /* how far right to push things */
-    --menu-shift-y: 8px;    /* how far down to nudge the button */
+    --menu-shift-x: 0px;   /* how far right to push things */
+    --menu-shift-y: 0px;    /* how far down to nudge the button */
     --menu-tabs-indent: 22px; /* extra indent for menu items */
-  }
-
-  /* Move the hamburger button itself (cover common patterns) */
-  header .hamburger,
-  header .nav-toggle,
-  header [data-hamburger],
-  header button[aria-label="Open menu"],
-  header button[aria-label="Menu"] {
-    position: relative;
-    transform: translate(var(--menu-shift-x), var(--menu-shift-y)) !important;
   }
 
   /* Nudge the word “Menu” to the right (if present) */
