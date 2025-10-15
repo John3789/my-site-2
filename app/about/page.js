@@ -168,28 +168,7 @@ function AboutSectionFooter({ baseId }) {
               </p>
 
 {/* ===== Section Footer Buttons (mobile-only) ===== */}
-<div data-about-nav className="lg:hidden -mt-4 pb-0 w-full">
-  <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
-    <a
-      href="#mission"
-      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-    >
-      ← Prev
-    </a>
-    <a
-      href="#about"
-      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-    >
-      All About
-    </a>
-    <a
-      href="#projects"
-      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-    >
-      Next →
-    </a>
-  </div>
-</div>
+<AboutSectionFooter baseId="about" />
 
               {/* Mission */}
               <section id="mission">
@@ -206,28 +185,7 @@ function AboutSectionFooter({ baseId }) {
               </section>
 
 {/* ===== Section Footer Buttons (mobile-only) ===== */}
-<div data-about-nav className="lg:hidden -mt-4 pb-0 w-full">
-  <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
-    <a
-      href="#mission"
-      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-    >
-      ← Prev
-    </a>
-    <a
-      href="#about"
-      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-    >
-      All About
-    </a>
-    <a
-      href="#projects"
-      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-    >
-      Next →
-    </a>
-  </div>
-</div>
+<AboutSectionFooter baseId="mission" />
 
               {/* Projects in the Now */}
               <section id="projects">
@@ -249,28 +207,7 @@ function AboutSectionFooter({ baseId }) {
               </section>
 
 {/* ===== Section Footer Buttons (mobile-only) ===== */}
-<div data-about-nav className="lg:hidden -mt-4 pb-0 w-full">
-  <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
-    <a
-      href="#mission"
-      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-    >
-      ← Prev
-    </a>
-    <a
-      href="#about"
-      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-    >
-      All About
-    </a>
-    <a
-      href="#credentials"
-      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-    >
-      Next →
-    </a>
-  </div>
-</div>
+<AboutSectionFooter baseId="projects" />
 
               {/* Credentials */}
               <section id="credentials">
@@ -305,28 +242,7 @@ function AboutSectionFooter({ baseId }) {
 <div className="mx-auto max-w-[1000px] px-2 md:px-6">
 
 {/* ===== Section Footer Buttons (mobile-only, final) ===== */}
-<div data-about-nav className="lg:hidden -mt-8 mb-20 pb-0 w-full">
-  <div className="mx-auto w-full max-w-[500px] px-6 grid grid-cols-[1fr_1.35fr_1fr] gap-4">
-    <a
-      href="#credentials"
-      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-    >
-      ← Prev
-    </a>
-    <a
-      href="#about"
-      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-    >
-      All About
-    </a>
-    <a
-      href="#about"
-      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-    >
-      Next →
-    </a>
-  </div>
-  </div>
+<AboutSectionFooter baseId="credentials" />
 </div>
 
 
