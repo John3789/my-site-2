@@ -451,7 +451,7 @@ export default function SpeakingPage() {
               <div className="w-full flex justify-center">
                 <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
                   <button
-                  
+
                     onClick={() => jump("testimonials")}
                     className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition active:translate-y-[1px]"
                   >
@@ -828,7 +828,7 @@ export default function SpeakingPage() {
     {/* 6 */}
     <figure className="relative w-full rounded-xl bg-white/5 p-8 hover:bg-white/[0.06] transition">
       <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-      <blockquote className="t-quote font-serif text-2xl leading-snug opacity-90 relative]">
+      <blockquote className="t-quote font-serif text-2xl leading-snug opacity-90 relative">
         <span aria-hidden data-q="open" className="absolute left-[-0.75rem] top-[-0.25rem] text-[2.25rem] opacity-20 leading-none select-none">“</span>
         <p>...a highly engaging, knowledgeable, and skilled speaker...strongly recommended.</p>
         <span aria-hidden data-q="close" className="absolute right-[-0.75rem] bottom-[3.75rem] text-[2.25rem] opacity-20 leading-none select-none">”</span>
