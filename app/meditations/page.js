@@ -35,7 +35,7 @@ export default function MeditationsPage() {
             overflow-visible
           "
         >
-          <main className="min-h-screen max-w-[1400px] bg-[var(--color-teal-850)] text-[var(--color-cream)]">
+          <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
             {/* ===== HERO ===== */}
             <section className="mx-auto max-w-[1400px] px-6 pt-16 md:pt-20 pb-6 text-center">
               <h1 className="font-serif text-6xl leading-[1.06] opacity-95">
@@ -45,7 +45,7 @@ export default function MeditationsPage() {
             </section>
 
             {/* ===== INTRO (moved out of card, like Consulting) ===== */}
-            <section className="mx-auto max-w-[1000px] px-6 text-center mb-12 narrow-landscape-80">
+            <section className="mx-auto max-w-[900px] px-6 text-center mb-12 narrow-landscape-70">
               <p className="text-lg md:text-xl opacity-90 leading-relaxed">
                 Practices designed to help reset your body, calm your mind, and uplift your spirit — guiding you through the day with clarity and ease.
               </p>
@@ -60,7 +60,7 @@ export default function MeditationsPage() {
             </div>
 
             {/* ===== FEATURED (5-Minute Reset) — now 2 columns ===== */}
-            <section className="mx-auto max-w-[1400px] px-6 py-14 md:py-16">
+            <section className="mx-auto max-w-[1400px] px-6 py-14 md:py-16 narrow-landscape-70">
               <div className="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
                 {/* LEFT COLUMN — existing content */}
                 <div>
@@ -74,7 +74,12 @@ export default function MeditationsPage() {
                   </p>
 
                   <article
-                    className="mt-6 relative rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7 shadow-2xl hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] transition backdrop-blur-none md:backdrop-blur-sm">
+                    className="
+                      mt-6 relative rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7 shadow-2xl
+                      hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] transition
+                      backdrop-blur-none md:backdrop-blur-sm
+                    "
+                  >
                     {/* Gold spine (dimmed) */}
                     <span
                       aria-hidden
@@ -147,7 +152,7 @@ export default function MeditationsPage() {
             </div>
 
             {/* ===== CUSTOM SESSIONS ===== */}
-            <section className="mx-auto max-w-[1000px] px-6 py-14 md:py-16 narrow-landscape-80"> 
+            <section className="mx-auto max-w-[1400px] px-6 py-14 md:py-16 narrow-landscape-70"> 
               <p className=" flex justify-center text-[12px] uppercase tracking-[0.18em] opacity-60 mb-2">Custom</p>
               <h2 className="flex justify-center font-serif text-4xl md:text-5xl opacity-95">Custom-Made Sessions</h2>
               <div className="mx-auto h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-6 rounded" />
@@ -159,7 +164,10 @@ export default function MeditationsPage() {
               </p>
               <a
                 href="/contact"
-                className="mx-auto mt-8 block w-fit rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50">
+                className="mx-auto mt-8 block w-fit rounded-md bg-[var(--color-gold)] text-black px-6 py-3
+                           font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px]
+                           transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
+              >
                 Inquire about custom sessions
               </a>
             </section>
@@ -261,31 +269,6 @@ export default function MeditationsPage() {
       </div>
 
 
-            <style jsx global>{`
-
-                /* 3️⃣ Footer — match home page clamp */
-                body:has(main[data-page="meditations"])
-                  :is(
-                    footer,
-                    .site-footer,
-                    .mobile-footer-cap,
-                    .home-footer-cap,
-                    div[class*="footer"]
-                  ) {
-                  max-width: 75vw;
-                  margin-left: auto;
-                  margin-right: auto;
-                }
-
-                body:has(main[data-page="about"]) footer hr,
-                [data-page="about"] hr {
-                  width: 100%;
-                  margin-left: auto;
-                  margin-right: auto;
-                
-                }
-              }
-            `}</style>
           </main>
 
 
