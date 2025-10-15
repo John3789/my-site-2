@@ -451,76 +451,53 @@ html.menu-open, body.menu-open {
   }
 }
 
-/* =========================================================
-   iPHONE LANDSCAPE — SHIFT POPUP HAMBURGER MENU CONTENT RIGHT
-   (affects the open popup only; portrait & tablets unchanged)
-   ========================================================= */
+/* iPHONE LANDSCAPE — push hamburger + popup menu content to the right */
 @media (orientation: landscape) and (min-width: 800px) and (max-width: 950px) {
-
-  /* 1) Scope to typical menu popups (any of these will match) */
-  :is(
-    /* Radix/Headless UI/Dialog patterns */
-    [role="dialog"][aria-modal="true"][aria-label*="menu" i],
-    [data-state="open"][data-menu],
-    [data-menu="open"],
-    /* common custom IDs/classes */
-    #mobile-menu,
-    .mobile-menu,
-    .menu-panel
-  ) {
-    /* Nudge entire panel content right just a bit so everything shifts uniformly */
-    padding-left: 14px !important;
+  :root {
+    --menu-shift-x: 18px;   /* how far right to push things */
+    --menu-shift-y: 8px;    /* how far down to nudge the button */
+    --menu-tabs-indent: 22px; /* extra indent for menu items */
   }
 
-  /* 2) “Menu” label/title inside the popup */
-  :is(
-    [role="dialog"][aria-modal="true"][aria-label*="menu" i],
-    [data-state="open"][data-menu],
-    [data-menu="open"],
-    #mobile-menu,
-    .mobile-menu,
-    .menu-panel
-  )
-  :is(.menu-label, .menu-title, .menu-heading, [data-role="menu-label"]) {
-    margin-left: 12px !important;
+  /* Move the hamburger button itself (cover common patterns) */
+  header .hamburger,
+  header .nav-toggle,
+  header [data-hamburger],
+  header button[aria-label="Open menu"],
+  header button[aria-label="Menu"] {
+    position: relative;
+    transform: translate(var(--menu-shift-x), var(--menu-shift-y)) !important;
   }
 
-  /* 3) Tabs/links list inside the popup */
-  :is(
-    [role="dialog"][aria-modal="true"][aria-label*="menu" i],
-    [data-state="open"][data-menu],
-    [data-menu="open"],
-    #mobile-menu,
-    .mobile-menu,
-    .menu-panel
-  )
-  :is(nav, .menu-nav, .menu-links, .menu-tabs, nav[aria-label*="menu" i]) {
-    padding-left: 16px !important; /* shift the whole block of links/tabs */
-  }
-
-  /* 4) Individual list containers, just in case links are UL/OL */
-  :is(
-    [role="dialog"][aria-modal="true"][aria-label*="menu" i],
-    [data-state="open"][data-menu],
-    [data-menu="open"],
-    #mobile-menu,
-    .mobile-menu,
-    .menu-panel
-  )
-  :is(ul, ol) {
-    padding-left: 16px !important;
-  }
-
-  /* 5) If your links are flex/stacked and ignore padding, add a tiny translate */
-  :is(
-    [role="dialog"][aria-modal="true"][aria-label*="menu" i],
-    [data-state="open"][data-menu],
-    [data-menu="open"],
-    #mobile-menu,
-    .mobile-menu,
-    .menu-panel
-  )
-  :is(a, button, .menu-item) {
+  /* Nudge the word “Menu” to the right (if present) */
+  header .hamburger .label,
+  header .nav-toggle .label,
+  header [data-hamburger] .label,
+  header .hamburger span[class*="label"],
+  header .nav-toggle span[class*="label"] {
+    margin-left: 8px !important;
     transform: translateX(6px) !important;
+  }
+
+  /* Shift the slide-over / popup menu panel to the right (only when open) */
+  .mobile-menu[open],
+  .mobile-menu[data-state="open"],
+  .mobile-menu[aria-hidden="false"],
+  .menu-panel[open],
+  .menu-panel[data-state="open"],
+  [role="dialog"][data-state="open"],
+  [role="dialog"]:not([hidden]) {
+    transform: translateX(var(--menu-shift-x)) !important;
+    will-change: transform;
+  }
+
+  /* Indent the tab list / links inside the panel a bit more */
+  .mobile-menu nav ul,
+  .mobile-menu .menu-list,
+  .menu-panel nav ul,
+  .menu-panel .menu-list,
+  [role="dialog"] nav ul,
+  [role="dialog"] .menu-list {
+    padding-left: var(--menu-tabs-indent) !important;
   }
 }
