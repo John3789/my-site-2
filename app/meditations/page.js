@@ -35,7 +35,7 @@ export default function MeditationsPage() {
             overflow-visible
           "
         >
-          <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
+          <main data-page="meditations" className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
             {/* ===== HERO ===== */}
             <section className="mx-auto max-w-[1400px] px-6 pt-16 md:pt-20 pb-6 text-center">
               <h1 className="font-serif text-6xl leading-[1.06] opacity-95">
@@ -61,7 +61,7 @@ export default function MeditationsPage() {
 
             {/* ===== FEATURED (5-Minute Reset) — now 2 columns ===== */}
             <section className="mx-auto max-w-[1400px] px-6 py-14 md:py-16 narrow-landscape-70">
-              <div className="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
+              <div data-med-grid className="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
                 {/* LEFT COLUMN — existing content */}
                 <div>
                   <p className="text-[12px] uppercase tracking-[0.18em] opacity-60 mb-2">Featured</p>
@@ -267,7 +267,17 @@ export default function MeditationsPage() {
 
         {/* removed the contained divider on mobile */}
       </div>
+  {/* Global safeguards and crisp text styles */}
+      <style jsx global>{`
 
+      /* Meditations — force 1 column on iPhone landscape + iPad portrait only */
+@media (max-width: 950px) and (orientation: landscape),
+       (orientation: portrait) and (min-width: 700px) and (max-width: 920px) {
+  [data-page="meditations"] [data-med-grid] {
+    grid-template-columns: 1fr !important; /* defeats md:grid-cols-2 only here */
+  }
+}
+      `}</style>
 
           </main>
 
