@@ -74,11 +74,7 @@ export default function MeditationsPage() {
                   </p>
 
                   <article
-                    className="
-                      mt-6 relative rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7 shadow-2xl
-                      hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] transition
-                      backdrop-blur-none md:backdrop-blur-sm
-                    "
+                    className="mt-6 relative rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7 shadow-2xl hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] transition backdrop-blur-none md:backdrop-blur-sm"
                   >
                     {/* Gold spine (dimmed) */}
                     <span
@@ -112,8 +108,7 @@ export default function MeditationsPage() {
                       <button
                         type="button"
                         aria-label="Play 5-Minute Reset"
-                        className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-gold)] text-black shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
-                      >
+                        className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-gold)] text-black shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50">
                         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden>
                           <path fill="currentColor" d="M8 5.14v14l11-7z" />
                         </svg>
@@ -164,10 +159,7 @@ export default function MeditationsPage() {
               </p>
               <a
                 href="/contact"
-                className="mx-auto mt-8 block w-fit rounded-md bg-[var(--color-gold)] text-black px-6 py-3
-                           font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px]
-                           transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
-              >
+                className="mx-auto mt-8 block w-fit rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50">
                 Inquire about custom sessions
               </a>
             </section>
