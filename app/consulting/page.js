@@ -138,8 +138,8 @@ export default function ConsultingPage() {
           </section>
 
           {/* ---- MOBILE quick nav (numbered) ---- */}
-          <div id="quicknav" className="lg:hidden mt-0 pointer-events-auto narrow-landscape-80">
-            <div className="grid grid-cols-2 landscape:grid-cols-3 gap-2">
+          <div id="quicknav" className="lg:hidden mt-0 pointer-events-auto narrow-landscape-70">
+            <div className="grid grid-cols-2 landscape:grid-cols-3 gap-2 narrow-landscape-70">
               {SECTIONS.map((s, idx) => (
                 <button
                   key={s.id}
