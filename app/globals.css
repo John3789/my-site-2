@@ -452,7 +452,7 @@ html.menu-open, body.menu-open {
 }
 
 /* iPHONE LANDSCAPE — push hamburger + popup menu content to the right */
-@media (orientation: landscape) and (min-width: 770px) and (max-width: 950px) {
+@media (orientation: landscape) and (min-width: 750px) and (max-width: 950px) {
   :root {
     --menu-shift-x: 28px;   /* how far right to push things */
     --menu-tabs-indent: 32px; /* extra indent for menu items */
