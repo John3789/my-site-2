@@ -43,11 +43,11 @@ export default function BooksPage() {
             </div>
 
             {/* Intro + image */}
-            <div className="mx-auto max-w-[1400px] px-6 pb-20">
+            <div className="mx-auto max-w-[1400px] px-6 pb-20 narrow-landscape-70">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
                 {/* Left column */}
 <div className="mx-auto">
-                  <p className="text-[clamp(16px,1.4vw,19px)] opacity-90 mb-8 leading-loose narrow-landscape-70">
+                  <p className="text-[clamp(16px,1.4vw,19px)] opacity-90 mb-8 leading-loose">
                     Here you’ll find Dr. Salerno’s published works, where science and personal growth come together.
                     His research explores pathways to mental health, resilience, and wellbeing, with a focus on uplifting
                     communities too often overlooked. Each piece reflects his belief that science should empower communities,
@@ -61,7 +61,7 @@ export default function BooksPage() {
                     </h2>
                     <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 rounded mb-5" />
 
-                    <p className="text-[clamp(16px,1.4vw,19px)] opacity-90 max-w-3xl mb-6 leading-loose narrow-landscape-70">
+                    <p className="text-[clamp(16px,1.4vw,19px)] opacity-90 max-w-3xl mb-6 leading-loose">
                       A powerful blend of science and personal growth wisdom, this forthcoming book by Dr. Salerno
                       offers an accessible, inspiring, and transformative framework for overcoming mental health
                       struggles and living with greater purpose, balance, and fulfillment.
