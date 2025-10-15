@@ -373,6 +373,44 @@ export default function AboutPage() {
       </div>
 
 
+<style jsx global>{`
+/* ABOUT — gentle width refinements for iPad & iPad mini PORTRAIT only
+   (700–920px wide portrait; leaves iPad Pro, landscape & desktop untouched) */
+@media (orientation: portrait) and (min-width: 700px) and (max-width: 920px) {
+
+  /* 1️⃣ Header nav — make the tab group a bit narrower */
+  body:has(main[data-page="about"]) .header-tabs {
+    max-width: 82vw;           /* smaller = tighter */
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  /* 2️⃣ Intro paragraphs above the photo — reduce reading width */
+  [data-page="about"] section:first-of-type p {
+    max-width: 75vw;           /* tweak between 70–80vw for balance */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* 3️⃣ Footer — match the home-page clamp */
+  body:has(main[data-page="about"])
+    :is(footer, .site-footer, .mobile-footer-cap, .home-footer-cap, div[class*="footer"]) {
+    max-width: 86vw;           /* same as Home look */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Keep hr lines aligned with the footer width */
+  body:has(main[data-page="about"]) footer hr,
+  [data-page="about"] hr {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+`}</style>
 
 
         </main>
