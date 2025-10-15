@@ -488,6 +488,23 @@ export default function BooksPage() {
     [data-page="books"] .peer:checked ~ label[data-books-cta][data-role="more"] { display: none !important; }
     [data-page="books"] .peer:checked ~ label[data-books-cta][data-role="less"] { display: inline-flex !important; }
   }
+  /* === BOOKS — Footer clamp for iPad portrait + iPhone === */
+  @media (orientation: portrait) and (min-width: 700px) and (max-width: 920px),
+         (max-width: 950px) and (orientation: landscape) {
+    body:has(main[data-page="books"])
+      :is(footer, .site-footer, .mobile-footer-cap, .home-footer-cap, div[class*="footer"]) {
+      max-width: 75vw;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    body:has(main[data-page="books"]) footer hr,
+    [data-page="books"] hr {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 `}</style>
 
 
