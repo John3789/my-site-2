@@ -416,9 +416,9 @@ html.menu-open, body.menu-open {
   --hamburger-nudge-x-phone-land: 12px;  /* → right */
   --hamburger-nudge-y-phone-land: 23px;  /* ↓ down  */
   --hamburger-nudge-x-phone-land-max: 12px;  /* → right */
-  --hamburger-nudge-y-phone-land-max: 26px;  /* ↓ down  */
+  --hamburger-nudge-y-phone-land-max: 20px;  /* ↓ down  */
   --hamburger-nudge-x-ipad-mini: 0px;  /* → right */
-  --hamburger-nudge-y-ipad-mini: 20px;  /* ↓ down  */
+  --hamburger-nudge-y-ipad-mini: 10px;  /* ↓ down  */
 }
 
 /* iPhone (and similar small phones) — LANDSCAPE ONLY */

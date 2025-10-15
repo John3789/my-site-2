@@ -449,7 +449,7 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
       /* iPhone LANDSCAPE — make spacer shorter */
   @media (orientation: landscape) and (min-width: 800px) and (max-width: 899px) {
     .nameplate-spacer {
-      height: 1.10rem !important; /* equals Tailwind h-4 */
+      height: 1.05rem !important; /* equals Tailwind h-4 */
     }
   }
 
