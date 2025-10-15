@@ -451,109 +451,38 @@ html.menu-open, body.menu-open {
   }
 }
 
-/* iPhone (iOS) LANDSCAPE — shift ONLY the popup title + items to the right
-   Works on iPhone Pro + Pro Max. Doesn’t touch the hamburger button. */
+/* iPhone LANDSCAPE (Pro/Pro Max heights) — shift title + items inside OPEN popup */
 @media (orientation: landscape) and (max-height: 430px) {
-  @supports (-webkit-touch-callout: none) {
-    /* ===== Root candidates for the OPEN menu popup (Radix/Dialog/Sheet/Drawer/Custom) ===== */
-    :where(
+  @supports (-webkit-touch-callout: none) and (selector(:has(*))) {
+
+    /* When ANY dialog/sheet/drawer is open… */
+    body:has(
       [aria-modal="true"],
-      [role="dialog"],
-      [data-state="open"],
-      .menu-panel,
-      .mobile-menu,
-      .menu-popup,
-      .drawer-content,
-      .sheet-content
+      [role="dialog"][data-state="open"],
+      .mobile-menu[data-state="open"],
+      .drawer-content[data-state="open"],
+      .sheet-content[data-state="open"],
+      .menu-popup[data-state="open"]
     ) {
-      --menuShift: 20px; /* <-- tweak this value to move more/less */
+      --menuShift: 24px; /* tweak this value if you want more/less */
     }
 
-    /* If your popup is a fixed full-screen overlay but lacks the classes above, catch it too */
-    :where(div,section,nav)[style*="position: fixed"]:is(:where([style*="width: 100vw"], [style*="100vh"], [style*="inset: 0"])) {
-      --menuShift: var(--menuShift, 28px);
+    /* Shift the “Menu” label/title (whatever tag/class it is) */
+    body:has([aria-modal="true"], [role="dialog"][data-state="open"], .mobile-menu[data-state="open"], .drawer-content[data-state="open"], .sheet-content[data-state="open"], .menu-popup[data-state="open"])
+      :is(h1, h2, h3, [data-title], [class*="menu-title"], [class*="heading"], [class*="title"]) {
+      margin-left: var(--menuShift) !important;
     }
 
-    /* ===== SHIFT the “Menu” title/heading (whatever its tag/class) ===== */
-    :where(
-      [aria-modal="true"],
-      [role="dialog"],
-      [data-state="open"],
-      .menu-panel,
-      .mobile-menu,
-      .menu-popup,
-      .drawer-content,
-      .sheet-content
-    ) :is(
-      h1, h2, h3,
-      [data-title],
-      [class*="title"], [class*="heading"], [class*="menu-title"]
-    ) {
-      /* push right a touch */
-      margin-left: calc(var(--menuShift) - 4px) !important;
-      transform: translateX(6px) !important;
-    }
-
-    /* ===== SHIFT the menu list container (nav/ul/div) ===== */
-    :where(
-      [aria-modal="true"],
-      [role="dialog"],
-      [data-state="open"],
-      .menu-panel,
-      .mobile-menu,
-      .menu-popup,
-      .drawer-content,
-      .sheet-content
-    ) :is(
-      nav,
-      ul,
-      [role="menu"],
-      [data-menu-list],
-      [class*="menu-list"],
-      [class*="nav-list"],
-      [class*="menu-items"],
-      [class*="menu-body"]
-    ) {
+    /* Shift the menu list container */
+    body:has([aria-modal="true"], [role="dialog"][data-state="open"], .mobile-menu[data-state="open"], .drawer-content[data-state="open"], .sheet-content[data-state="open"], .menu-popup[data-state="open"])
+      :is(nav, ul, [role="menu"], [class*="menu-list"], [class*="menu-items"], [data-menu-list]) {
       padding-left: calc(var(--menuShift) + 4px) !important;
     }
 
-    /* ===== Safety: if your items are not inside nav/ul, nudge links/buttons directly ===== */
-    :where(
-      [aria-modal="true"],
-      [role="dialog"],
-      [data-state="open"],
-      .menu-panel,
-      .mobile-menu,
-      .menu-popup,
-      .drawer-content,
-      .sheet-content
-    ) :is(
-      a[href],
-      button[role="menuitem"],
-      [role="menuitem"],
-      li
-    ) {
+    /* Safety: nudge individual items if they aren’t inside a UL/NAV */
+    body:has([aria-modal="true"], [role="dialog"][data-state="open"], .mobile-menu[data-state="open"], .drawer-content[data-state="open"], .sheet-content[data-state="open"], .menu-popup[data-state="open"])
+      :is(a[href], button[role="menuitem"], [role="menuitem"], li) {
       margin-left: 8px !important;
     }
-
-    /* ===== Optional: shift any small footer/secondary row inside popup ===== */
-    :where(
-      [aria-modal="true"],
-      [role="dialog"],
-      [data-state="open"],
-      .menu-panel,
-      .mobile-menu,
-      .menu-popup,
-      .drawer-content,
-      .sheet-content
-    ) :is(footer, [class*="menu-sub"], [data-menu-sub]) {
-      padding-left: calc(var(--menuShift) + 4px) !important;
-    }
-  }
-}
-
-@media (orientation: landscape) and (max-height: 430px) {
-  @supports (-webkit-touch-callout: none) {
-    [data-menu-root] { --menuShift: 20px; }
   }
 }
