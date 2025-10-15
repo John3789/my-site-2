@@ -84,7 +84,7 @@ export default function AboutPage() {
         >
           <main
             data-page="about"
-            className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]"
+            className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] narrow-landscape-80"
           >
             <div className="mx-auto max-w-[1400px] px-6 py-20">
               {/* Page title with kicker + gold bar */}
