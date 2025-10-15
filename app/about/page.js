@@ -374,78 +374,34 @@ export default function AboutPage() {
 
 
 <style jsx global>{`
-/* ABOUT — iPad & iPad mini PORTRAIT only (700–920px)
-   Tightens section pills, intro text, and footer width. */
+/* ============= iPad & iPad mini PORTRAIT adjustments ============= */
 @media (orientation: portrait) and (min-width: 700px) and (max-width: 920px) {
 
-  /* 1️⃣ Local section nav pills (About / Mission / Projects / Credentials) */
-  [data-page="about"] nav [class*="rounded-full"],
-  [data-page="about"] nav button,
-  [data-page="about"] nav a {
-    max-width: 78vw;               /* narrower group width */
-    margin-left: auto;
-    margin-right: auto;
-    display: inline-flex;
-    justify-content: center;
-  }
-
-  /* If your pill group sits in a wrapper, narrow that too */
-  [data-page="about"] nav {
-    max-width: 78vw;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* 3️⃣ Footer — match home page clamp */
-  body:has(main[data-page="about"])
-    :is(footer, .site-footer, .mobile-footer-cap, .home-footer-cap, div[class*="footer"]) {
-    max-width: 75vw;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  body:has(main[data-page="about"]) footer hr,
-  [data-page="about"] hr {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-/* iPad / iPad mini — PORTRAIT only */
-@media (orientation: portrait) and (min-width: 700px) and (max-width: 920px) {
-
-  /* 1) If your intro uses a grid (text + photo), clamp the TEXT column */
-  /* Targets: first section on About; first grid child (usually the copy column) */
-  [data-page="about"] section:first-of-type .grid > *:first-child {
-    max-width: 68ch !important;       /* dial this up/down: 64–72ch is a nice range */
+  /* 1️⃣ Pill buttons under "About" (already working) */
+  [data-page="about"] .your-pills-wrapper-class {
+    max-width: 75vw !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
 
-  /* 2) If your intro is NOT in a grid (paragraphs are direct children), clamp the first two <p> */
-  [data-page="about"] section:first-of-type > p:nth-of-type(1),
-  [data-page="about"] section:first-of-type > p:nth-of-type(2) {
-    max-width: 68ch !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  /* 3) If your paragraphs are wrapped (e.g., a <div> around them), clamp that wrapper too */
-  [data-page="about"] section:first-of-type > :is(div,article,section):has(> p) {
+  /* 2️⃣ NEW — Intro paragraphs & image (add this block) */
+  [data-page="about"] section:first-of-type .grid > *:first-child,
+  [data-page="about"] section:first-of-type > p:nth-of-type(-n + 2),
+  [data-page="about"] section:first-of-type > :is(div,article,section):has(> p),
+  [data-page="about"] section:first-of-type :is(figure, .image, .photo, img):not(.logo) {
     max-width: 68ch !important;
     margin-inline: auto !important;
   }
 
-  /* 4) Optional: slightly tame the PHOTO so text + image feel balanced */
-  /* (Safe no-op if selectors don’t match your DOM) */
-  [data-page="about"] section:first-of-type :is(figure, .image, .photo, img):not(.logo) {
-    max-width: 540px;                  /* nudge as needed */
-    margin-left: auto;
-    margin-right: auto;
+  /* 3️⃣ Footer (already working) */
+  [data-page="about"] footer {
+    max-width: 75vw !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
-
 `}</style>
+
 
 
 
