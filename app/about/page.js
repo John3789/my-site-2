@@ -276,7 +276,7 @@ export default function AboutPage() {
 
   {/* Bookend divider that matches the same clamp */}
   <div className="hidden lg:block">
-    <div className="mx-auto max-w-[1000px] px-0">
+    <div className="mx-auto w-[93%] px-0">
       <hr className="border-t border-[var(--color-cream)]/22" />
     </div>
   </div>
