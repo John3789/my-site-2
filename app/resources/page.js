@@ -383,14 +383,32 @@ export default function ResourcesPage() {
 </div>
 
         </div> {/* closes: ZOOM WRAPPER */}
+
+
       </main>
 
       {/* Page-level styles + modal */}
+      
       <style jsx global>{`
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .zoomwrap, .zoomwrap * { -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision; }
         @supports (-webkit-touch-callout: none) { html, body { background: var(--color-teal-850) !important; } }
+
+        /* iPad Mini PORTRAIT (≈744px wide) — narrower mobile footer */
+@media (orientation: portrait) and (min-width: 700px) and (max-width: 799px) {
+  .mobile-footer-cap > .mx-auto {
+    max-width: 620px !important; /* was max-w-[1400px] via class */
+  }
+}
+
+/* iPad PORTRAIT (≈768–834px wide) — slightly wider than mini */
+@media (orientation: portrait) and (min-width: 800px) and (max-width: 900px) {
+  .mobile-footer-cap > .mx-auto {
+    max-width: 700px !important;
+  }
+}
+
       `}</style>
 
       <CollectionModal
