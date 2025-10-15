@@ -33,6 +33,33 @@ function jumpAbout(targetId) {
   window.scrollTo({ top: y, behavior: "smooth" });
 }
 
+function AboutSectionFooter({ baseId }) {
+  return (
+    <div data-about-nav className="lg:hidden -mt-4 pb-0 w-full">
+      <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
+        <button
+          onClick={() => jumpAbout(prevOf(baseId))}
+          className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+        >
+          ← Prev
+        </button>
+        <button
+          onClick={() => jumpAbout('about')}
+          className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+        >
+          All About
+        </button>
+        <button
+          onClick={() => jumpAbout(nextOf(baseId))}
+          className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+        >
+          Next →
+        </button>
+      </div>
+    </div>
+  );
+}
+
   return (
     <TopOnMount>
     <>
@@ -64,7 +91,7 @@ function jumpAbout(targetId) {
             </div>
 
 {/* Invisible anchor for "About" target */}
-<div id="about" className="sr-only" />
+<div className="sr-only" />
 
 {/* Mobile quick-nav (iPhone portrait & landscape only) */}
 <nav id="quicknav" className="block lg:hidden mt-6 mb-8 pointer-events-auto">
@@ -85,7 +112,7 @@ function jumpAbout(targetId) {
 </nav>
 
             {/* Row 1: first two paragraphs + photo side-by-side */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start mb-12">
+            <div id="about"  className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start mb-12">
               {/* Left: first two paragraphs */}
               <div data-intro>
                 <p className="mx-auto space-y-6 text-[clamp(16px,1.4vw,19px)] mb-4 opacity-90 leading-loose narrow-landscape-70">
