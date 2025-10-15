@@ -269,14 +269,24 @@ export default function MeditationsPage() {
     grid-template-columns: 1fr !important; /* defeats md:grid-cols-2 only here */
   }
 
-  /* Meditations — narrower footer on iPad portrait only */
-@media (orientation: portrait) and (min-width: 700px) and (max-width: 900px) {
-  [data-page="meditations"] .mobile-footer-cap > .mx-auto {
-    max-width: 800px !important; /* pulls footer in */
-    margin-left: auto !important;
-    margin-right: auto !important;
+/* Meditations — narrower footer on iPad portrait only (≈820×1180) */
+@media (orientation: portrait) and (min-width: 700px) and (max-width: 920px) {
+  /* Clamp any footer-y containers on this page */
+  body:has(main[data-page="meditations"])
+    :is(footer, .site-footer, .mobile-footer-cap, .home-footer-cap, div[class*="footer"]) {
+    max-width: 75vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Make the divider match the clamped width */
+  body:has(main[data-page="meditations"]) hr {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
+
 
       `}</style>
 
