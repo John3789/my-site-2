@@ -1097,6 +1097,27 @@ onClick={() => jump(toMobile(s.id))}
 
 /* iPad Pro (1024px portrait / 1366px landscape) intentionally has NO override */
 
+/* =============================
+   CONSULTING — unify mobile quick-nav width
+   Applies to ALL screens that use the mobile layout (<lg)
+   ============================= */
+@media (max-width: 999px) {
+  /* clamp the inner button grid */
+  [data-page="consulting"] #quicknav > .grid {
+    max-width: 78vw;       /* same vibe as your 16 Pro landscape */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* optional: keep the thin divider under quick-nav aligned */
+  [data-page="consulting"] #quicknav + div {
+    max-width: 78vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
       `}</style>
 
       {/* Home: section/bookend divider (aligns to 1100px container) */}
