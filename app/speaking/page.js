@@ -1139,7 +1139,7 @@ export default function SpeakingPage() {
 ### 1) iPhone PORTRAIT (clean + conflict-free)
 
 /* iPhone PORTRAIT */
-@media (max-width: 600px) and (orientation: portrait) {
+@media (min-width: 350px) and (max-width: 550px) and (orientation: portrait) {
 /* hide separate closer, either attribute name */
 [data-page="speaking"] #testimonials blockquote
 :is([data-q="close"], [data-quote="close"]) {
