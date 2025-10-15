@@ -8,6 +8,43 @@ import { useIosZoomVars } from "../../components/useIosZoom";
 /* =========================
    THEMES DATA
    ========================= */
+
+   // ---- Resources mobile jump + wraparound order ----
+const RES_SECTIONS = ["motivation", "mindfulness", "manifestation", "fengshui"]; // first -> last
+
+const idxRes = (id) => RES_SECTIONS.indexOf(id);
+const prevRes = (id) =>
+  RES_SECTIONS[(idxRes(id) - 1 + RES_SECTIONS.length) % RES_SECTIONS.length];
+const nextRes = (id) =>
+  RES_SECTIONS[(idxRes(id) + 1) % RES_SECTIONS.length];
+
+// Smooth scroll with iPhone landscape-friendly offset
+function jumpRes(targetId, opts = {}) {
+  const el =
+    document.getElementById(targetId) ||
+    document.querySelector(`[data-anchor="${targetId}"]`);
+  if (!el) return;
+
+  const isIphoneLandscape = window.matchMedia(
+    "(max-width: 950px) and (orientation: landscape)"
+  ).matches;
+
+  const HEADER_OFFSET = isIphoneLandscape ? 92 : 0; // tweak if your sticky header is taller/shorter
+
+  if (opts.center) {
+    const y =
+      el.getBoundingClientRect().top +
+      window.scrollY -
+      HEADER_OFFSET -
+      window.innerHeight / 2 +
+      el.offsetHeight / 2;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  } else {
+    const y = el.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+}
+
 const THEMES = [
   { slug: "motivation-mindset", title: "Motivation & Mindset", blurb: "Shift perspective and recharge your drive with affirmations and reframes.", collections: [{ slug: "confidence-boost", title: "Confidence Boost", subtitle: "Reframes and tiny actions to move through self-doubt.", tags: ["Motivation", "Confidence"], items: [] }, { slug: "positive-reframes", title: "Positive Reframes", subtitle: "Gentle perspective shifts that stick.", tags: ["Mindset", "Resilience"], items: [] }] },
   { slug: "mental-health-stress", title: "Mental Health & Stress Relief", blurb: "Practical steps for everyday wellbeing and downshifting your nervous system.", collections: [{ slug: "everyday-wellbeing", title: "Everyday Wellbeing", subtitle: "Small habits that compound over time.", tags: ["Wellbeing", "Habits"], items: [] }, { slug: "calm-in-chaos", title: "Calm in Chaos", subtitle: "Grounding tools for busy environments.", tags: ["Stress relief", "Grounding"], items: [] }] },
@@ -145,7 +182,7 @@ export default function ResourcesPage() {
             </section>
 
             {/* Mobile nav chips */}
-            <div className="lg:hidden mt-4 grid grid-cols-3 gap-2 narrow-landscape-80">
+            <div id="quicknav" className="lg:hidden mt-4 grid grid-cols-3 gap-2 narrow-landscape-80">
               {THEMES.map((t) => {
                 const active = currentId === t.slug;
                 return (
@@ -222,9 +259,33 @@ export default function ResourcesPage() {
 
                   {/* Mobile section footer nav */}
                   <div className="lg:hidden mt-6 flex items-center justify-center gap-2">
-                    <button onClick={() => handleJump(THEMES[Math.max(0, idx - 1)].slug)} className="rounded-full border border-white/15 bg-[var(--color-teal-800)] px-4 py-2.5 text-[14px] font-semibold text-[var(--color-cream)] active:scale-95 active:brightness-125">← Prev</button>
-                    <button onClick={() => { const top = document.querySelector("h1"); if (top) top.scrollIntoView({ behavior: "smooth", block: "start" }); }} className="rounded-full border border-white/15 bg-[var(--color-teal-800)] px-4 py-2.5 text-[14px] font-semibold text-[var(--color-cream)] active:scale-95 active:brightness-125">All Themes</button>
-                    <button onClick={() => handleJump(THEMES[Math.min(THEMES.length - 1, idx + 1)].slug)} className="rounded-full border border-white/15 bg-[var(--color-teal-800)] px-4 py-2.5 text-[14px] font-semibold text-[var(--color-cream)] active:scale-95 active:brightness-125">Next →</button>
+                    {/* Prev — wraps to last section */}
+                    <button
+                      onClick={() =>
+                        handleJump(THEMES[(idx - 1 + THEMES.length) % THEMES.length].slug)
+                      }
+                      className="rounded-full border border-white/15 bg-[var(--color-teal-800)] px-4 py-2.5 text-[14px] font-semibold text-[var(--color-cream)] active:scale-95 active:brightness-125"
+                    >
+                      ← Prev
+                    </button>
+
+                    {/* All Themes — centers chips with iPhone-landscape offset */}
+                    <button
+                      onClick={() => jumpRes("quicknav", { center: true })}
+                      className="rounded-full border border-white/15 bg-[var(--color-teal-800)] px-4 py-2.5 text-[14px] font-semibold text-[var(--color-cream)] active:scale-95 active:brightness-125"
+                    >
+                      All Themes
+                    </button>
+
+                    {/* Next — wraps to first section */}
+                    <button
+                      onClick={() =>
+                        handleJump(THEMES[(idx + 1) % THEMES.length].slug)
+                      }
+                      className="rounded-full border border-white/15 bg-[var(--color-teal-800)] px-4 py-2.5 text-[14px] font-semibold text-[var(--color-cream)] active:scale-95 active:brightness-125"
+                    >
+                      Next →
+                    </button>
                   </div>
 
                   {idx < THEMES.length - 1 && (
@@ -290,7 +351,7 @@ export default function ResourcesPage() {
         </a>
         {/* Instagram */}
         <a href="https://www.instagram.com/YOURHANDLE" aria-label="Instagram" className="opacity-90 hover:opacity-100">
-          <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/></svg>
+          <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 0 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/></svg>
         </a>
         {/* YouTube */}
         <a href="https://www.youtube.com/@YOURHANDLE" aria-label="YouTube" className="opacity-90 hover:opacity-100">
