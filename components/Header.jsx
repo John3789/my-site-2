@@ -39,7 +39,7 @@ export default function Header() {
             {!isHome && (
             <Link href="/" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname === "/" ? "nav-active" : ""}`}>Home</Link>)}
             <Link href="/about" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/about") ? "nav-active" : ""}`}>About</Link>
-            <Link href="/books" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/books") ? "nav-active" : ""}`}>Books & Publications</Link>
+            <Link href="/books" className={`books-link hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/books") ? "nav-active" : ""}`}> <span className="full-label">Books &amp; Publications</span> <span className="short-label">Publications</span> </Link>
             <Link href="/meditations" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/meditations") ? "nav-active" : ""}`}>Meditations</Link>
             <Link href="/resources" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/resources") ? "nav-active" : ""}`}>Resources</Link>
             <Link href="/speaking" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/speaking") ? "nav-active" : ""}`}>Speaking</Link>
@@ -71,6 +71,18 @@ vectorEffect="non-scaling-stroke"  /* keeps stroke width constant if any transfo
 </svg>
 </button>
         </div>
+
+        <style jsx global>{`
+  /* Default: show full label, hide short */
+  .books-link .short-label { display: none; }
+
+  /* iPad portrait + landscape (768–1023 px): swap labels */
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .books-link .full-label { display: none !important; }
+    .books-link .short-label { display: inline !important; }
+  }
+`}</style>
+
       </header> 
 
 {/* Desktop top-right home link (non-home pages only) */}
