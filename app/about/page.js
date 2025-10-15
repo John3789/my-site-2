@@ -432,7 +432,7 @@ export default function AboutPage() {
 }
 
 /* iPhone portrait + landscape only */
-@media (max-width: 767px) and (orientation: portrait),
+@media (max-width: 700px) and (orientation: portrait),
        (max-width: 950px) and (orientation: landscape) {
   [data-page="about"] [data-about-nav] {
     display: block !important;
