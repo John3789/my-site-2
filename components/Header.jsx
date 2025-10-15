@@ -35,7 +35,7 @@ export default function Header() {
       <header className={`${headerClass} ${!isHome ? "not-home" : ""}`}>
         <div className="mx-auto max-w-7xl px-6 h-10 flex items-center">
           {/* Desktop / tablet nav (unchanged) */}
- <nav className="header-tabs w-full items-center justify-center gap-6 text-[13px] tracking-wide uppercase">
+ <nav className="header-tabs flex w-full items-center justify-center gap-6 text-[13px] tracking-wide uppercase">
     <div className="top-links-row">
             {!isHome && (
             <Link href="/" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname === "/" ? "nav-active" : ""}`}>Home</Link>)}
@@ -74,50 +74,39 @@ vectorEffect="non-scaling-stroke"  /* keeps stroke width constant if any transfo
 </button>
         </div>
 
-<style jsx global>{`
-  /* iPad PORTRAIT only (exclude iPad Pro + everything else) */
-  @media (orientation: portrait) and (min-width: 800px) and (max-width: 925px) {
-    header.not-home .header-tabs {
+  <style jsx global>{`
+    /* Base (all pages): normal behavior */
+    header .header-tabs {
       display: flex;
-      gap: 0.6rem;
-      align-items: center;
-      justify-content: flex-start;     /* left align so it can scroll */
-      flex-wrap: nowrap;               /* prevent wrapping into 2 rows */
-      white-space: nowrap;             /* keep each link on one line */
-      overflow-x: auto;                /* horizontal scroll if needed */
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      padding-left: 0.75rem;           /* small edge padding */
-      padding-right: 0.75rem;
-      mask-image: linear-gradient(to right,
-                     transparent 0,
-                     #000 16px,
-                     #000 calc(100% - 16px),
-                     transparent 100%);
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      white-space: normal;
+      overflow: visible;
     }
-    header.not-home .header-tabs::-webkit-scrollbar { display: none; }
 
-    /* Slightly smaller label size so “Books & Publications” fits better */
-    header.not-home .header-tabs a {
-      font-size: 13.5px;
-      letter-spacing: 0.01em;
+    /* ✅ Only non-home pages AND only standard iPad portrait (≈820px wide) */
+    @media screen and (orientation: portrait) and (min-width: 800px) and (max-width: 925px) {
+      header.not-home .header-tabs {
+        gap: 0.8rem;               /* modest tighten */
+        flex-wrap: nowrap;         /* keep on one line */
+        white-space: nowrap;       /* prevent wrapping */
+        overflow-x: auto;          /* allow scroll if still tight */
+        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+      }
+      header.not-home .header-tabs a {
+        font-size: 13px;
+        letter-spacing: 0.02em;
+      }
+      /* Hide the iOS scrollbar */
+      header.not-home .header-tabs::-webkit-scrollbar { display: none; }
+      header.not-home .header-tabs { scrollbar-width: none; }
     }
-  }
+  `}</style>
+</header>
 
-  /* Everywhere else (phones, mini, landscape, Pro, desktop): revert to normal */
-  @media (max-width: 799px), (min-width: 926px), (orientation: landscape) {
-    header.not-home .header-tabs {
-      overflow: visible !important;
-      white-space: normal !important;
-      flex-wrap: wrap !important;
-      mask-image: none !important;
-    }
-  }
-`}</style>
-
-
-      </header> 
 
 {/* Desktop top-right home link (non-home pages only) */}
 {!isHome && (
