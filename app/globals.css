@@ -331,17 +331,21 @@ html.menu-open, body.menu-open {
   .use-stable-vh { height: 100lvh; } /* logical vh fallback */
 }
 
+/* Mobile portrait: larger quote text + auto-placed quote marks */
+@media (max-width: 767px) and (orientation: portrait) {
+  /* Apply this class to each mobile blockquote in Testimonials */
+  .t-quote {
+    /* Bigger, responsive quote text */
+    font-size: clamp(18px, 3.8vw, 22px);
+
+
+  }
+}
 
 /* Optional: mobile landscape can be a touch smaller if you like */
 @media (max-width: 767px) and (orientation: landscape) {
   .t-quote {
     font-size: clamp(18px, 3.8vw, 22px);
-    --q-size: 1.5em;
-    --q-inset-x: 0.45em;
-    --q-inset-y: 0.75em;
-    --q-open-left: -0.65rem;
-    --q-open-top: -0.2rem;
-    padding-bottom: calc(var(--q-size) + 0.6em);
   }
 }
 
