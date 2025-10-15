@@ -32,7 +32,7 @@ export default function Header() {
   return (
     <>
       {/* Header bar */}
-      <header className={headerClass}>
+      <header data-home={isHome ? "1" : "0"} className={headerClass}>
         <div className="mx-auto max-w-7xl px-6 h-10 flex items-center">
           {/* Desktop / tablet nav (unchanged) */}
  <nav className="header-tabs w-full items-center justify-center gap-6 text-[13px] tracking-wide uppercase">
@@ -73,13 +73,13 @@ vectorEffect="non-scaling-stroke"  /* keeps stroke width constant if any transfo
         </div>
 
 <style jsx global>{`
-  /* Default: show full label, hide short */
+  /* Default: show full text, hide short */
   .books-link .short-label { display: none; }
 
-  /* Apply only on non-home pages in portrait between 800–920 px */
+  /* iPad portrait (800–920px) ONLY, and NOT on Home */
   @media (orientation: portrait) and (min-width: 800px) and (max-width: 920px) {
-    body:not([data-page="home"]) .books-link .full-label { display: none !important; }
-    body:not([data-page="home"]) .books-link .short-label { display: inline !important; }
+    header[data-home="0"] .books-link .full-label { display: none !important; }
+    header[data-home="0"] .books-link .short-label { display: inline !important; }
   }
 `}</style>
 
