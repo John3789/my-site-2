@@ -1219,7 +1219,7 @@ export default function SpeakingPage() {
     line-height: 1 !important;
     margin-left: 0.15em;
     position: relative;
-    top: 0.05em !important;     /* tweak −0.05em..+0.10em if needed */
+    top: 0.25em !important;     /* tweak −0.05em..+0.10em if needed */
     vertical-align: baseline;
   }
 }
@@ -1304,7 +1304,7 @@ export default function SpeakingPage() {
     line-height: 0.9;         /* slightly lower than phone */
     margin-left: 0.15em;
     position: relative;
-    top: -0.25em;              /* mini-specific baseline nudge */
+    top: -0.35em;              /* mini-specific baseline nudge */
     vertical-align: baseline;
   }
   [data-page="speaking"] #testimonials blockquote.t-quote {
