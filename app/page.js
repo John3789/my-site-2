@@ -438,6 +438,20 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
       max-width: 75vw !important;
     }
   }
+
+    /* iPhone LANDSCAPE — make spacer shorter */
+  @media (orientation: landscape) and (max-width: 950px) {
+    .nameplate-spacer {
+      height: 1rem !important; /* equals Tailwind h-4 */
+    }
+  }
+
+  /* iPad mini PORTRAIT (≈744px width) — make spacer shorter */
+  @media (orientation: portrait) and (min-width: 700px) and (max-width: 800px) {
+    .nameplate-spacer {
+      height: 1rem !important; /* equals Tailwind h-4 */
+    }
+  }
 `}</style>
 
 
