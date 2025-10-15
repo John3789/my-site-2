@@ -45,7 +45,7 @@ export default function MeditationsPage() {
             </section>
 
             {/* ===== INTRO (moved out of card, like Consulting) ===== */}
-            <section className="mx-auto max-w-[900px] px-6 text-center mb-12 narrow-landscape-70">
+            <section className="mx-auto max-w-[900px] px-6 text-center mb-12 narrow-landscape-80">
               <p className="text-lg md:text-xl opacity-90 leading-relaxed">
                 Practices designed to help reset your body, calm your mind, and uplift your spirit — guiding you through the day with clarity and ease.
               </p>
@@ -60,7 +60,7 @@ export default function MeditationsPage() {
             </div>
 
             {/* ===== FEATURED (5-Minute Reset) — now 2 columns ===== */}
-            <section className="mx-auto max-w-[1400px] px-6 py-14 md:py-16 narrow-landscape-70">
+            <section className="mx-auto max-w-[1400px] px-6 py-14 md:py-16 narrow-landscape-80">
               <div data-med-grid className="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
                 {/* LEFT COLUMN — existing content */}
                 <div>
@@ -147,7 +147,7 @@ export default function MeditationsPage() {
             </div>
 
             {/* ===== CUSTOM SESSIONS ===== */}
-            <section className="mx-auto max-w-[1400px] px-6 py-14 md:py-16 narrow-landscape-70"> 
+            <section className="mx-auto max-w-[1400px] px-6 py-14 md:py-16 narrow-landscape-80"> 
               <p className=" flex justify-center text-[12px] uppercase tracking-[0.18em] opacity-60 mb-2">Custom</p>
               <h2 className="flex justify-center font-serif text-4xl md:text-5xl opacity-95">Custom-Made Sessions</h2>
               <div className="mx-auto h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-6 rounded" />
@@ -186,7 +186,7 @@ export default function MeditationsPage() {
 
   <div className="mobile-footer-cap">
 
-  <div className="mx-auto max-w-[1400px] px-3 narrow-landscape-70">
+  <div className="mx-auto max-w-[1400px] px-3 narrow-landscape-80">
     {/* Newsletter card (midnight blue) */}
     <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
       <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
