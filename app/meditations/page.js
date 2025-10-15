@@ -277,7 +277,7 @@ export default function MeditationsPage() {
     margin-right: auto !important;
   }
 }
-}
+
       `}</style>
 
           </main>
