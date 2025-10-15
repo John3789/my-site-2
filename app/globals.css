@@ -414,17 +414,29 @@ html.menu-open, body.menu-open {
 :root {
   /* Adjust offsets if needed */
   --hamburger-nudge-x-phone-land: 12px;  /* → right */
-  --hamburger-nudge-y-phone-land: 15px;  /* ↓ down  */
-  --hamburger-nudge-x-ipad-mini: 9px;  /* → right */
-  --hamburger-nudge-y-ipad-mini: 12px;  /* ↓ down  */
+  --hamburger-nudge-y-phone-land: 18px;  /* ↓ down  */
+  --hamburger-nudge-x-phone-land-max: 12px;  /* → right */
+  --hamburger-nudge-y-phone-land-max: 20px;  /* ↓ down  */
+  --hamburger-nudge-x-ipad-mini: 7px;  /* → right */
+  --hamburger-nudge-y-ipad-mini: 15px;  /* ↓ down  */
+}
+
+/* iPhone (and similar small phones) — LANDSCAPE ONLY */
+@media (orientation: landscape) and (max-width: 900px) {
+  header :is(.hamburger, .nav-toggle, .menu-button, [data-role="hamburger"], button[aria-label*="menu" i]) {
+    transform: translate(
+      var(--hamburger-nudge-x-phone-land),
+      var(--hamburger-nudge-y-phone-land)
+    ) !important;
+  }
 }
 
 /* iPhone (and similar small phones) — LANDSCAPE ONLY */
 @media (orientation: landscape) and (max-width: 950px) {
   header :is(.hamburger, .nav-toggle, .menu-button, [data-role="hamburger"], button[aria-label*="menu" i]) {
     transform: translate(
-      var(--hamburger-nudge-x-phone-land),
-      var(--hamburger-nudge-y-phone-land)
+      var(--hamburger-nudge-x-phone-land-max),
+      var(--hamburger-nudge-y-phone-land-max)
     ) !important;
   }
 }
