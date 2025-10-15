@@ -1139,7 +1139,7 @@ export default function SpeakingPage() {
 ### 1) iPhone PORTRAIT (clean + conflict-free)
 
 /* iPhone PORTRAIT */
-@media (min-width: 350px) and (max-width: 550px) and (orientation: portrait) {
+@media (max-width: 600px) and (orientation: portrait) {
 /* hide separate closer, either attribute name */
 [data-page="speaking"] #testimonials blockquote
 :is([data-q="close"], [data-quote="close"]) {
@@ -1279,7 +1279,7 @@ export default function SpeakingPage() {
     line-height: 0;           /* matches your iPhone portrait recipe */
     margin-left: 0.15em;
     position: relative;
-    top: -0.20em;             /* your iPad portrait baseline tweak */
+    top: -0.30em;             /* your iPad portrait baseline tweak */
     vertical-align: baseline;
   }
   /* Spacer above figcaption */
