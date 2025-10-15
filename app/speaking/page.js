@@ -884,14 +884,14 @@ export default function SpeakingPage() {
             </div>
 
             {/* CTA (unchanged) */}
-            <div className="flex justify-center translate-y-[-28px] lg:translate-y-0">
-              <a
-                href="/contact"
-                className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black -mb-2 px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs lg:w-auto lg:max-w-none lg:translate-y-[-45px]"
-              >
-                Book Dr. Salerno to Speak
-              </a>
-            </div>
+ <div className="flex justify-center translate-y-[-28px] lg:translate-y-0">
+  <a
+    href="/contact"
+    className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black -mb-2 px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] lg:hover:translate-y-[-47px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs lg:w-auto lg:max-w-none lg:translate-y-[-45px]"
+  >
+    Book Dr. Salerno to Speak
+  </a>
+</div>
           </div>
 
 
