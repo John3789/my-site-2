@@ -66,7 +66,7 @@ export default function AboutPage() {
             {/* Row 1: first two paragraphs + photo side-by-side */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start mb-12">
               {/* Left: first two paragraphs */}
-              <div>
+              <div data-intro>
                 <p className="mx-auto space-y-6 text-[clamp(16px,1.4vw,19px)] mb-4 opacity-90 leading-loose narrow-landscape-70">
                   Dr. Juan Pablo Salerno, also known in academic spaces as{" "}
                   <strong>Dr. John P. Salerno</strong>, is an award-winning mental health scientist, personal growth expert, author
@@ -120,7 +120,7 @@ export default function AboutPage() {
               </p>
 
 {/* ===== Section Footer Buttons (mobile-only) ===== */}
-<div className="lg:hidden -mt-4 pb-0 w-full">
+<div data-about-nav className="lg:hidden -mt-4 pb-0 w-full">
   <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
     <a
       href="#mission"
@@ -158,7 +158,7 @@ export default function AboutPage() {
               </section>
 
 {/* ===== Section Footer Buttons (mobile-only) ===== */}
-<div className="lg:hidden -mt-4 pb-0 w-full">
+<div data-about-nav className="lg:hidden -mt-4 pb-0 w-full">
   <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
     <a
       href="#mission"
@@ -201,7 +201,7 @@ export default function AboutPage() {
               </section>
 
 {/* ===== Section Footer Buttons (mobile-only) ===== */}
-<div className="lg:hidden -mt-4 pb-0 w-full">
+<div data-about-nav className="lg:hidden -mt-4 pb-0 w-full">
   <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
     <a
       href="#mission"
@@ -257,7 +257,7 @@ export default function AboutPage() {
 <div className="mx-auto max-w-[1000px] px-2 md:px-6">
 
 {/* ===== Section Footer Buttons (mobile-only, final) ===== */}
-<div className="lg:hidden -mt-8 mb-20 pb-0 w-full">
+<div data-about-nav className="lg:hidden -mt-8 mb-20 pb-0 w-full">
   <div className="mx-auto w-full max-w-[500px] px-6 grid grid-cols-[1fr_1.35fr_1fr] gap-4">
     <a
       href="#credentials"
@@ -396,30 +396,20 @@ export default function AboutPage() {
     margin-right: auto;
   }
 
-  /* 2️⃣ NEW — Intro paragraphs & image */
-[data-page="about"] section:first-of-type .grid > *:first-child {
-  max-width: 68ch !important;
+ /* ABOUT — tighten intro paragraphs & image only */
+[data-page="about"] [data-intro] p {
+  max-width: 80ch !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }
 
-[data-page="about"] section:first-of-type > p:nth-of-type(1),
-[data-page="about"] section:first-of-type > p:nth-of-type(2) {
-  max-width: 68ch !important;
+/* Optional: if your picture follows right after those paragraphs */
+[data-page="about"] [data-intro] + :is(figure, img, .image, .photo) {
+  max-width: 540px !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }
 
-[data-page="about"] section:first-of-type > :is(div,article,section):has(> p) {
-  max-width: 68ch !important;
-  margin-inline: auto !important;
-}
-
-[data-page="about"] section:first-of-type :is(figure, .image, .photo, img):not(.logo) {
-  max-width: 540px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
   /* 3️⃣ Footer — match home page clamp */
   body:has(main[data-page="about"])
@@ -435,8 +425,19 @@ export default function AboutPage() {
     margin-left: auto;
     margin-right: auto;
   }
+
+  /* ABOUT — show mobile section footer buttons only on iPhone sizes */
+[data-page="about"] [data-about-nav] {
+  display: none !important;
 }
 
+/* iPhone portrait + landscape only */
+@media (max-width: 7px) and (orientation: portrait),
+       (max-width: 950px) and (orientation: landscape) {
+  [data-page="about"] [data-about-nav] {
+    display: block !important;
+  }
+}
 `}</style>
 
 
