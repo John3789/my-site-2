@@ -159,10 +159,7 @@ export default function MeditationsPage() {
               </p>
               <a
                 href="/contact"
-                className="mx-auto mt-8 block w-fit rounded-md bg-[var(--color-gold)] text-black px-6 py-3
-                           font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px]
-                           transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
-              >
+                className="mx-auto mt-8 block w-fit rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50">
                 Inquire about custom sessions
               </a>
             </section>
