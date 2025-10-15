@@ -120,7 +120,7 @@ export default function AboutPage() {
               </p>
 
 {/* ===== Section Footer Buttons (mobile-only) ===== */}
-<div className="lg:hidden -mt-4 pb-0 w-full">
+<div data-about-nav className="lg:hidden -mt-4 pb-0 w-full">
   <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
     <a
       href="#mission"
@@ -158,7 +158,7 @@ export default function AboutPage() {
               </section>
 
 {/* ===== Section Footer Buttons (mobile-only) ===== */}
-<div className="lg:hidden -mt-4 pb-0 w-full">
+<div data-about-nav className="lg:hidden -mt-4 pb-0 w-full">
   <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
     <a
       href="#mission"
@@ -201,7 +201,7 @@ export default function AboutPage() {
               </section>
 
 {/* ===== Section Footer Buttons (mobile-only) ===== */}
-<div className="lg:hidden -mt-4 pb-0 w-full">
+<div data-about-nav className="lg:hidden -mt-4 pb-0 w-full">
   <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
     <a
       href="#mission"
@@ -257,7 +257,7 @@ export default function AboutPage() {
 <div className="mx-auto max-w-[1000px] px-2 md:px-6">
 
 {/* ===== Section Footer Buttons (mobile-only, final) ===== */}
-<div className="lg:hidden -mt-8 mb-20 pb-0 w-full">
+<div data-about-nav className="lg:hidden -mt-8 mb-20 pb-0 w-full">
   <div className="mx-auto w-full max-w-[500px] px-6 grid grid-cols-[1fr_1.35fr_1fr] gap-4">
     <a
       href="#credentials"
@@ -424,6 +424,17 @@ export default function AboutPage() {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  /* ABOUT — show mobile section footer buttons only on iPhone sizes */
+[data-page="about"] [data-about-nav] {
+  display: none !important;
+}
+
+/* iPhone portrait & landscape (≤767px wide) */
+@media (max-width: 767px) {
+  [data-page="about"] [data-about-nav] {
+    display: block !important;
   }
 }
 
