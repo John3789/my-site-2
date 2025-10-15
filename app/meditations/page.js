@@ -37,7 +37,7 @@ export default function MeditationsPage() {
         >
           <main data-page="meditations" className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
             {/* ===== HERO ===== */}
-            <section className="mx-auto max-w-[1400px] px-6 pt-16 md:pt-20 pb-6 text-center">
+            <section className="mx-auto max-w-[1400px] px-6 pt-20 md:pt-20 pb-6 text-center">
               <h1 className="font-serif text-6xl leading-[1.06] opacity-95">
                 Meditations
               </h1>
