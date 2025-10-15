@@ -12,6 +12,54 @@ export default function AboutPage() {
   const wrapRef = useRef(null);
   useIosZoomVars(wrapRef, { portraitZoom: 3.0, landscapeZoom: 1.00 });
 
+  // === About page mobile footer jump helpers (iPhone only) ===
+const ABOUT_SECTIONS = ["about", "mission", "projects", "credentials"]; // <- make sure these exist
+
+const idxOf = (id) => ABOUT_SECTIONS.indexOf(id);
+const prevOf = (id) => ABOUT_SECTIONS[(idxOf(id) - 1 + ABOUT_SECTIONS.length) % ABOUT_SECTIONS.length];
+const nextOf = (id) => ABOUT_SECTIONS[(idxOf(id) + 1) % ABOUT_SECTIONS.length];
+
+// Smooth scroll that compensates for sticky header
+function jumpAbout(targetId) {
+  const el =
+    document.getElementById(targetId) ||
+    document.querySelector(`[data-anchor="${targetId}"]`);
+  if (!el) return;
+
+  // iPhone-friendly offset (header height)
+  const HEADER_OFFSET = 84; // adjust if your header is taller/shorter on mobile
+
+  const y = el.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
+  window.scrollTo({ top: y, behavior: "smooth" });
+}
+
+function AboutSectionFooter({ baseId }) {
+  return (
+    <div data-about-nav className="lg:hidden -mt-4 pb-0 w-full">
+      <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
+        <button
+          onClick={() => jumpAbout(prevOf(baseId))}
+          className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+        >
+          ← Prev
+        </button>
+        <button
+          onClick={() => jumpAbout('about')}
+          className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+        >
+          All About
+        </button>
+        <button
+          onClick={() => jumpAbout(nextOf(baseId))}
+          className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
+        >
+          Next →
+        </button>
+      </div>
+    </div>
+  );
+}
+
   return (
     <TopOnMount>
     <>
@@ -43,7 +91,7 @@ export default function AboutPage() {
             </div>
 
 {/* Invisible anchor for "About" target */}
-<div id="about" className="sr-only" />
+<div className="sr-only" />
 
 {/* Mobile quick-nav (iPhone portrait & landscape only) */}
 <nav id="quicknav" className="block lg:hidden mt-6 mb-8 pointer-events-auto">
@@ -64,7 +112,7 @@ export default function AboutPage() {
 </nav>
 
             {/* Row 1: first two paragraphs + photo side-by-side */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start mb-12">
+            <div id="about"  className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start mb-12">
               {/* Left: first two paragraphs */}
               <div data-intro>
                 <p className="mx-auto space-y-6 text-[clamp(16px,1.4vw,19px)] mb-4 opacity-90 leading-loose narrow-landscape-70">
@@ -120,28 +168,7 @@ export default function AboutPage() {
               </p>
 
 {/* ===== Section Footer Buttons (mobile-only) ===== */}
-<div data-about-nav className="lg:hidden -mt-4 pb-0 w-full">
-  <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
-    <a
-      href="#mission"
-      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-    >
-      ← Prev
-    </a>
-    <a
-      href="#about"
-      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-    >
-      All About
-    </a>
-    <a
-      href="#projects"
-      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-    >
-      Next →
-    </a>
-  </div>
-</div>
+<AboutSectionFooter baseId="about" />
 
               {/* Mission */}
               <section id="mission">
@@ -158,28 +185,7 @@ export default function AboutPage() {
               </section>
 
 {/* ===== Section Footer Buttons (mobile-only) ===== */}
-<div data-about-nav className="lg:hidden -mt-4 pb-0 w-full">
-  <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
-    <a
-      href="#mission"
-      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-    >
-      ← Prev
-    </a>
-    <a
-      href="#about"
-      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-    >
-      All About
-    </a>
-    <a
-      href="#projects"
-      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-    >
-      Next →
-    </a>
-  </div>
-</div>
+<AboutSectionFooter baseId="mission" />
 
               {/* Projects in the Now */}
               <section id="projects">
@@ -201,28 +207,7 @@ export default function AboutPage() {
               </section>
 
 {/* ===== Section Footer Buttons (mobile-only) ===== */}
-<div data-about-nav className="lg:hidden -mt-4 pb-0 w-full">
-  <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
-    <a
-      href="#mission"
-      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-    >
-      ← Prev
-    </a>
-    <a
-      href="#about"
-      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-    >
-      All About
-    </a>
-    <a
-      href="#credentials"
-      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-    >
-      Next →
-    </a>
-  </div>
-</div>
+<AboutSectionFooter baseId="projects" />
 
               {/* Credentials */}
               <section id="credentials">
@@ -257,28 +242,7 @@ export default function AboutPage() {
 <div className="mx-auto max-w-[1000px] px-2 md:px-6">
 
 {/* ===== Section Footer Buttons (mobile-only, final) ===== */}
-<div data-about-nav className="lg:hidden -mt-8 mb-20 pb-0 w-full">
-  <div className="mx-auto w-full max-w-[500px] px-6 grid grid-cols-[1fr_1.35fr_1fr] gap-4">
-    <a
-      href="#credentials"
-      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-    >
-      ← Prev
-    </a>
-    <a
-      href="#about"
-      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-    >
-      All About
-    </a>
-    <a
-      href="#about"
-      className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-5 py-3 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
-    >
-      Next →
-    </a>
-  </div>
-  </div>
+<AboutSectionFooter baseId="credentials" />
 </div>
 
 
