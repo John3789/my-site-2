@@ -404,3 +404,37 @@ html.menu-open, body.menu-open {
   .nameplate-spacer { display: block !important; }
 }
 
+/* =======================
+   HAMBURGER POSITION TWEAKS
+   - iPad mini PORTRAIT: move right & down
+   - iPhone LANDSCAPE: move right & down
+   - iPhone PORTRAIT: unchanged
+   ======================= */
+
+:root {
+  /* Adjust offsets if needed */
+  --hamburger-nudge-x-phone-land: 8px;  /* → right */
+  --hamburger-nudge-y-phone-land: 6px;  /* ↓ down  */
+  --hamburger-nudge-x-ipad-mini: 10px;  /* → right */
+  --hamburger-nudge-y-ipad-mini: 10px;  /* ↓ down  */
+}
+
+/* iPhone (and similar small phones) — LANDSCAPE ONLY */
+@media (orientation: landscape) and (max-width: 950px) {
+  header :is(.hamburger, .nav-toggle, .menu-button, [data-role="hamburger"], button[aria-label*="menu" i]) {
+    transform: translate(
+      var(--hamburger-nudge-x-phone-land),
+      var(--hamburger-nudge-y-phone-land)
+    ) !important;
+  }
+}
+
+/* iPad mini — PORTRAIT ONLY (≈744px wide) */
+@media (orientation: portrait) and (min-width: 700px) and (max-width: 800px) {
+  header :is(.hamburger, .nav-toggle, .menu-button, [data-role="hamburger"], button[aria-label*="menu" i]) {
+    transform: translate(
+      var(--hamburger-nudge-x-ipad-mini),
+      var(--hamburger-nudge-y-ipad-mini)
+    ) !important;
+  }
+}
