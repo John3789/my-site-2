@@ -144,7 +144,7 @@ const toMobile = (id) => (id === "testimonials" ? "testimonials" : `${id}-m`);
                 <button
                   key={s.id}
                   type="button"
-                  onClick={() => jump(`${s.id}-m`)}
+onClick={() => jump(toMobile(s.id))}
                   aria-current={activeId === s.id ? "true" : "false"}
                   className={[
                     "w-full inline-flex items-center gap-1 rounded-full px-3.5 py-1.5",
