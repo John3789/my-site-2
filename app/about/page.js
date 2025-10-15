@@ -396,12 +396,30 @@ export default function AboutPage() {
     margin-right: auto;
   }
 
-  /* 2️⃣ Intro text paragraphs above the photo */
-  [data-page="about"] section:first-of-type p {
-    max-width: 65vw;               /* adjust between 70–80vw */
-    margin-left: auto;
-    margin-right: auto;
-  }
+  /* 2️⃣ NEW — Intro paragraphs & image */
+[data-page="about"] section:first-of-type .grid > *:first-child {
+  max-width: 68ch !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+[data-page="about"] section:first-of-type > p:nth-of-type(1),
+[data-page="about"] section:first-of-type > p:nth-of-type(2) {
+  max-width: 68ch !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+[data-page="about"] section:first-of-type > :is(div,article,section):has(> p) {
+  max-width: 68ch !important;
+  margin-inline: auto !important;
+}
+
+[data-page="about"] section:first-of-type :is(figure, .image, .photo, img):not(.logo) {
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
   /* 3️⃣ Footer — match home page clamp */
   body:has(main[data-page="about"])
@@ -418,6 +436,7 @@ export default function AboutPage() {
     margin-right: auto;
   }
 }
+
 `}</style>
 
 
