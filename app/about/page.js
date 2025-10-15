@@ -36,7 +36,7 @@ export default function AboutPage() {
 
   function AboutSectionFooter({ baseId }) {
   return (
-    <div data-about-nav className="lg:hidden mt-2 pb-0 w-full">
+    <div data-about-nav className="lg:hidden mt-10 w-full">
       <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
         <button
           onClick={() => jumpAbout(prevOf(baseId))}
@@ -286,7 +286,7 @@ export default function AboutPage() {
             {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
             <div className="block lg:hidden">
               <div className="mx-auto max-w-[1400px] px-3">
-                <hr className="mx-auto w-[93%] border-t border-[var(--color-cream)]/22 -mt-10 mb-0" />
+                <hr className="mx-auto w-[93%] border-t border-[var(--color-cream)]/22 -mt-20 mb-0" />
                 <div className="mobile-footer-cap px-3 narrow-landscape-70">
                   {/* Newsletter card (midnight blue) */}
                   <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
