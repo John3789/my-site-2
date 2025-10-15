@@ -170,7 +170,7 @@ export default function ResourcesPage() {
           className={`lg:contents origin-top data-[zoom=on]:[transform:scale(var(--z))] data-[zoom=on]:[width:calc(100%/var(--z))] mx-auto lg:[transform:none] lg:[width:100%] landscape:data-[zoom=on]:[transform:scale(calc(var(--zoomL)/var(--vv,1)))] landscape:data-[zoom=on]:[width:calc(100%/(var(--zoomL)/var(--vv,1)))] overflow-visible`}
         >
           {/* Title + Intro */}
-          <div className="mx-auto max-w-[1200px] px-6 pt-10 pb-6">
+          <div className="mx-auto max-w-[1200px] px-6 pt-20 pb-6">
             <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-0">Resources</h1>
             <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 mx-auto mt-4 mb-6 rounded" />
 
@@ -390,18 +390,18 @@ export default function ResourcesPage() {
       {/* Page-level styles + modal */}
 
       <style jsx global>{`
-      
+
         /* iPad Mini PORTRAIT (≈744px wide) — narrower mobile footer */
 @media (orientation: portrait) and (min-width: 700px) and (max-width: 799px) {
   .mobile-footer-cap > .mx-auto {
-    max-width: 620px !important; /* was max-w-[1400px] via class */
+    max-width: 520px !important; /* was max-w-[1400px] via class */
   }
 }
 
 /* iPad PORTRAIT (≈768–834px wide) — slightly wider than mini */
 @media (orientation: portrait) and (min-width: 800px) and (max-width: 900px) {
   .mobile-footer-cap > .mx-auto {
-    max-width: 700px !important;
+    max-width: 600px !important;
   }
 }
 
