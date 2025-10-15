@@ -32,7 +32,7 @@ export default function BooksPage() {
             overflow-visible
           `}
         >
-          <main className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)">
+          <main data-page="books" className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)">
 
             {/* Page title */}
             <div className="mx-auto max-w-[1400px] px-6 pt-20 mb-12 text-center">
@@ -179,18 +179,22 @@ export default function BooksPage() {
       </ul>
 
       {/* Toggle buttons (siblings of the checkbox) */}
-      <label
-        htmlFor="more-c1"
-        className="md:hidden mt-4 inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-[12px] font-semibold tracking-wide hover:bg-white/10 active:translate-y-[1px] cursor-pointer peer-checked:hidden"
-      >
-        Show all
-      </label>
-      <label
-        htmlFor="more-c1"
-        className="md:hidden mt-4 hidden peer-checked:inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-[12px] font-semibold tracking-wide hover:bg-white/10 active:translate-y-[1px] cursor-pointer"
-      >
-        Show less
-      </label>
+    <label
+  data-books-cta
+  data-role="more"
+  htmlFor="more-c1"
+  className="md:hidden mt-4 inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-[12px] font-semibold tracking-wide hover:bg-white/10 active:translate-y-[1px] cursor-pointer peer-checked:hidden"
+>
+  Show all
+</label>
+<label
+  data-books-cta
+  data-role="less"
+  htmlFor="more-c1"
+  className="md:hidden mt-4 hidden peer-checked:inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-[12px] font-semibold tracking-wide hover:bg-white/10 active:translate-y-[1px] cursor-pointer"
+>
+  Show less
+</label>
     </div>
   </div>
 </article>
@@ -261,18 +265,22 @@ export default function BooksPage() {
         </li>
       </ul>
 
-      <label
-        htmlFor="more-c2"
-        className="md:hidden mt-4 inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-[12px] font-semibold tracking-wide hover:bg-white/10 active:translate-y-[1px] cursor-pointer peer-checked:hidden"
-      >
-        Show all
-      </label>
-      <label
-        htmlFor="more-c2"
-        className="md:hidden mt-4 hidden peer-checked:inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-[12px] font-semibold tracking-wide hover:bg-white/10 active:translate-y-[1px] cursor-pointer"
-      >
-        Show less
-      </label>
+     <label
+  data-books-cta
+  data-role="more"
+  htmlFor="more-c1"
+  className="md:hidden mt-4 inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-[12px] font-semibold tracking-wide hover:bg-white/10 active:translate-y-[1px] cursor-pointer peer-checked:hidden"
+>
+  Show all
+</label>
+<label
+  data-books-cta
+  data-role="less"
+  htmlFor="more-c1"
+  className="md:hidden mt-4 hidden peer-checked:inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-[12px] font-semibold tracking-wide hover:bg-white/10 active:translate-y-[1px] cursor-pointer"
+>
+  Show less
+</label>
     </div>
   </div>
 </article>
@@ -327,17 +335,21 @@ export default function BooksPage() {
       </ul>
 
       <label
-        htmlFor="more-c3"
-        className="md:hidden mt-4 inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-[12px] font-semibold tracking-wide hover:bg-white/10 active:translate-y-[1px] cursor-pointer peer-checked:hidden"
-      >
-        Show all
-      </label>
-      <label
-        htmlFor="more-c3"
-        className="md:hidden mt-4 hidden peer-checked:inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-[12px] font-semibold tracking-wide hover:bg-white/10 active:translate-y-[1px] cursor-pointer"
-      >
-        Show less
-      </label>
+  data-books-cta
+  data-role="more"
+  htmlFor="more-c1"
+  className="md:hidden mt-4 inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-[12px] font-semibold tracking-wide hover:bg-white/10 active:translate-y-[1px] cursor-pointer peer-checked:hidden"
+>
+  Show all
+</label>
+<label
+  data-books-cta
+  data-role="less"
+  htmlFor="more-c1"
+  className="md:hidden mt-4 hidden peer-checked:inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-[12px] font-semibold tracking-wide hover:bg-white/10 active:translate-y-[1px] cursor-pointer"
+>
+  Show less
+</label>
     </div>
   </div>
 </article>
@@ -447,35 +459,37 @@ export default function BooksPage() {
         </div>
 
 <style jsx global>{`
-  /* === Show All / Show Less visibility rules === */
+  /* ===== Books — Show All/Less scope + collapse behavior ===== */
 
-  /* Default: hide everywhere */
-  [data-page="books"] [data-books-cta] {
-    display: none !important;
-  }
+  /* Default: hide CTAs and never collapse on large screens */
+  [data-page="books"] [data-books-cta] { display: none !important; }
+  [data-page="books"] .peer ~ ul > li { display: flex; } /* desktop/tablet landscape = always expanded */
 
-  /* iPhone portrait + landscape */
+  /* Target devices:
+     - iPhone portrait (<=700px)
+     - iPhone landscape (<=950px)
+     - iPad mini portrait (700–799px)
+     - iPad portrait (800–920px)
+  */
   @media (max-width: 700px) and (orientation: portrait),
-         (max-width: 950px) and (orientation: landscape) {
-    [data-page="books"] [data-books-cta] {
-      display: flex !important;
-    }
-  }
+         (max-width: 950px) and (orientation: landscape),
+         (orientation: portrait) and (min-width: 700px) and (max-width: 920px) {
 
-  /* iPad mini portrait (≈744px wide) */
-  @media (orientation: portrait) and (min-width: 700px) and (max-width: 799px) {
-    [data-page="books"] [data-books-cta] {
-      display: flex !important;
-    }
-  }
+    /* Show the two toggle labels */
+    [data-page="books"] [data-books-cta] { display: inline-flex !important; }
 
-  /* iPad portrait (≈820–920px wide) */
-  @media (orientation: portrait) and (min-width: 800px) and (max-width: 920px) {
-    [data-page="books"] [data-books-cta] {
-      display: flex !important;
-    }
+    /* COLLAPSE to a single item until "Show all" is checked */
+    [data-page="books"] .peer:not(:checked) ~ ul > li:nth-child(n + 2) { display: none !important; }
+    [data-page="books"] .peer:checked ~ ul > li { display: flex !important; }
+
+    /* Toggle which label is visible */
+    [data-page="books"] .peer:not(:checked) ~ label[data-books-cta][data-role="more"] { display: inline-flex !important; }
+    [data-page="books"] .peer:not(:checked) ~ label[data-books-cta][data-role="less"] { display: none !important; }
+    [data-page="books"] .peer:checked ~ label[data-books-cta][data-role="more"] { display: none !important; }
+    [data-page="books"] .peer:checked ~ label[data-books-cta][data-role="less"] { display: inline-flex !important; }
   }
 `}</style>
+
 
       </>
 <NewsletterMeditationPopup delayMs={10000} />
