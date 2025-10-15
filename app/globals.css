@@ -422,7 +422,7 @@ html.menu-open, body.menu-open {
 }
 
 /* iPhone (and similar small phones) — LANDSCAPE ONLY */
-@media (orientation: landscape) and (max-width: 900px) {
+@media (orientation: landscape) and (min-width: 800px) and (max-width: 899px) {
   header :is(.hamburger, .nav-toggle, .menu-button, [data-role="hamburger"], button[aria-label*="menu" i]) {
     transform: translate(
       var(--hamburger-nudge-x-phone-land),
@@ -432,7 +432,7 @@ html.menu-open, body.menu-open {
 }
 
 /* iPhone (and similar small phones) — LANDSCAPE ONLY */
-@media (orientation: landscape) and (max-width: 950px) {
+@media (orientation: landscape) and (min-width: 900px) and (max-width: 950px) {
   header :is(.hamburger, .nav-toggle, .menu-button, [data-role="hamburger"], button[aria-label*="menu" i]) {
     transform: translate(
       var(--hamburger-nudge-x-phone-land-max),
