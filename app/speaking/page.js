@@ -415,7 +415,7 @@ export default function SpeakingPage() {
       <span aria-hidden data-quote="close" className="absolute right-4 bottom-5 text-4xl opacity-20 select-none">”</span>
     </blockquote>
     <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-      — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting &amp; Expo
+      — <span className="text-[var(--color-gold)]">Cho-Hee</span>, American Public Health Association Annual Meeting &amp; Expo
     </figcaption>
   </figure>
 
@@ -427,7 +427,7 @@ export default function SpeakingPage() {
       <span aria-hidden data-quote="close" className="absolute right-24 bottom-5 text-4xl opacity-20 select-none">”</span>
     </blockquote>
     <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-      — <span className="text-[var(--color-gold)]">Audience member</span>, Society for Prevention Research Annual Meeting
+      — <span className="text-[var(--color-gold)]">Alyssa</span>, Society for Prevention Research Annual Meeting
     </figcaption>
   </figure>
 
@@ -439,7 +439,7 @@ export default function SpeakingPage() {
       <span aria-hidden data-quote="close" className="absolute right-14 bottom-5 text-4xl opacity-20 select-none">”</span>
     </blockquote>
     <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-      — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
+      — <span className="text-[var(--color-gold)]">Angel</span>, National Hispanic Science Network Annual International Conference
     </figcaption>
   </figure>
 </div>
@@ -495,7 +495,7 @@ export default function SpeakingPage() {
       <span aria-hidden data-quote="close" className="absolute right-6 bottom-5 text-4xl opacity-20 select-none">”</span>
     </blockquote>
     <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-      — <span className="text-[var(--color-gold)]">Audience member</span>, Columbia University
+      — <span className="text-[var(--color-gold)]">Charles</span>, Columbia University
     </figcaption>
   </figure>
 
@@ -507,7 +507,7 @@ export default function SpeakingPage() {
       <span aria-hidden data-quote="close" className="absolute right-23 bottom-5 text-4xl opacity-20 select-none">”</span>
     </blockquote>
     <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-      — <span className="text-[var(--color-gold)]">Audience member</span>, Society of Behavioral Medicine Annual Meeting
+      — <span className="text-[var(--color-gold)]">Ji-Young</span>, Society of Behavioral Medicine Annual Meeting
     </figcaption>
   </figure>
 
@@ -522,7 +522,7 @@ export default function SpeakingPage() {
       <span aria-hidden data-quote="close" className="absolute right-0 bottom-5 text-4xl opacity-20 select-none">”</span>
     </blockquote>
     <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-      — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
+      — <span className="text-[var(--color-gold)]">Emily</span>, National Hispanic Science Network Annual International Conference
     </figcaption>
   </figure>
 </div>
@@ -685,7 +685,7 @@ export default function SpeakingPage() {
       <span aria-hidden data-quote="close" className="absolute right-13 bottom-5 text-4xl opacity-20 select-none">”</span>
     </blockquote>
     <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-      — <span className="text-[var(--color-gold)]">Audience member</span>, University of Central Florida
+      — <span className="text-[var(--color-gold)]">Omar</span>, University of Central Florida
     </figcaption>
   </figure>
 
@@ -700,7 +700,7 @@ export default function SpeakingPage() {
       <span aria-hidden data-quote="close" className="absolute right-44 bottom-5 text-4xl opacity-20 select-none">”</span>
     </blockquote>
     <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-      — <span className="text-[var(--color-gold)]">Audience member</span>, University of California, Los Angeles
+      — <span className="text-[var(--color-gold)]">Kristen</span>, University of California, Los Angeles
     </figcaption>
   </figure>
 </div>
@@ -767,7 +767,7 @@ export default function SpeakingPage() {
       </span>
     </blockquote>
     <figcaption className="-mt-8 text-[12px] uppercase tracking-[0.18em] opacity-80">
-      — <span className="text-[var(--color-gold)]">Audience member</span>, American Public Health Association Annual Meeting &amp; Expo
+      — <span className="text-[var(--color-gold)]">Cho-Hee</span>, American Public Health Association Annual Meeting &amp; Expo
     </figcaption>
   </figure>
 
@@ -780,7 +780,7 @@ export default function SpeakingPage() {
       <span aria-hidden data-q="close" className="absolute right-[12rem] bottom-[3.75rem] text-[2.25rem] opacity-20 leading-none select-none">”</span>
     </blockquote>
     <figcaption className="-mt-8 text-[12px] uppercase tracking-[0.18em] opacity-80">
-      — <span className="text-[var(--color-gold)]">Audience member</span>, Society for Prevention Research Annual Meeting
+      — <span className="text-[var(--color-gold)]">Alyssa</span>, Society for Prevention Research Annual Meeting
     </figcaption>
   </figure>
 
@@ -795,7 +795,7 @@ export default function SpeakingPage() {
         <span aria-hidden data-q="close" className="absolute right-[13.50rem] bottom-[3.75rem] text-[2.25rem] opacity-20 leading-none select-none">”</span>
       </blockquote>
       <figcaption className="-mt-8 text-[12px] uppercase tracking-[0.18em] opacity-80">
-        — <span className="text-[var(--color-gold)]">Audience member</span>, National Hispanic Science Network Annual International Conference
+        — <span className="text-[var(--color-gold)]">Angel</span>, National Hispanic Science Network Annual International Conference
       </figcaption>
     </figure>
 
@@ -808,7 +808,7 @@ export default function SpeakingPage() {
         <span aria-hidden data-q="close" className="absolute right-[2.75rem] bottom-[3.75rem] text-[2.25rem] opacity-20 leading-none select-none">”</span>
       </blockquote>
       <figcaption className="-mt-8 text-[12px] uppercase tracking-[0.18em] opacity-80">
-        — <span className="text-[var(--color-gold)]">Audience member</span>, Columbia University
+        — <span className="text-[var(--color-gold)]">Charles</span>, Columbia University
       </figcaption>
     </figure>
 
@@ -821,7 +821,7 @@ export default function SpeakingPage() {
         <span aria-hidden data-q="close" className="absolute right-[9.75rem] bottom-[3.75rem] text-[2.25rem] opacity-20 leading-none select-none">”</span>
       </blockquote>
       <figcaption className="-mt-8 text-[12px] uppercase tracking-[0.18em] opacity-80">
-        — <span className="text-[var(--color-gold)]">Audience member</span>, Society of Behavioral Medicine Annual Meeting
+        — <span className="text-[var(--color-gold)]">Ji-Young</span>, Society of Behavioral Medicine Annual Meeting
       </figcaption>
     </figure>
 
@@ -834,7 +834,7 @@ export default function SpeakingPage() {
         <span aria-hidden data-q="close" className="absolute right-[-0.75rem] bottom-[3.75rem] text-[2.25rem] opacity-20 leading-none select-none">”</span>
       </blockquote>
       <figcaption className="-mt-8 text-[12px] uppercase tracking-[0.18em] opacity-80">
-        — <span className="text-[var(--color-gold)]">Audience member</span>, University of California, Los Angeles
+        — <span className="text-[var(--color-gold)]">Kristen</span>, University of California, Los Angeles
       </figcaption>
     </figure>
   </div>
