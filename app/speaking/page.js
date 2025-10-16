@@ -1332,14 +1332,11 @@ export default function SpeakingPage() {
 
   /* iPad PORTRAIT only */
 @media (orientation: portrait) and (min-width: 800px) and (max-width: 950px) {
-  /* 1) Tighten space under the 4 quick-nav pills (under the intro) */
-  [data-page="speaking"] #quicknav {
-    margin-bottom: 0.25rem !important;
-  }
+
   /* The HR right after the intro: reduce top/bottom margin so it doesn't create a big gap */
   [data-page="speaking"] #topics > hr {
     margin-top: 0.25rem !important;
-    margin-bottom: 0.75rem !important;
+    margin-bottom: 0.25rem !important;
   }
 
   /* 2) Tighten the space ABOVE the section button rows (Prev / All / Next) for each section */
@@ -1347,7 +1344,7 @@ export default function SpeakingPage() {
   [data-page="speaking"] #formats + div,
   [data-page="speaking"] #results + div,
   [data-page="speaking"] #testimonials + div {
-    margin-top: 0.25rem !important;   /* pull the button row closer to the section above */
+    margin-top: 0rem !important;   /* pull the button row closer to the section above */
   }
 }
 
