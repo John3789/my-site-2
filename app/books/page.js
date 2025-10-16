@@ -101,7 +101,7 @@ export default function BooksPage() {
             </div>
 
             {/* Selected Publications */}
-            <div className="mx-auto max-w-[1400px] px-6 pb-20">
+            <div className="mx-auto max-w-[80%] lg:max-w-[1400px] px-6 pb-20">
               <hr className="border-t border-[var(--color-cream)]/22 mb-8" />
               <h2 className="font-serif text-[clamp(28px,3.8vw,40px)] leading-[1.08] text-center opacity-90">
                 Selected Publications
@@ -120,7 +120,7 @@ export default function BooksPage() {
       <h3 className="font-serif text-3xl mb-3">
         Advancing Mental Health Equity Among Latinx Youth &amp; Other Communities of Color
       </h3>
-      <p className="text-[clamp(17px,1.6vw,22px)] opacity-90 leading-relaxed">
+      <p className="text-lg opacity-90 leading-relaxed">
         Research focused on mental health among Latinx youth communities and other people of color—centered on
         risk and resilience factors for mental wellbeing.
       </p>
@@ -287,7 +287,7 @@ export default function BooksPage() {
 
 
  {/* CARD 3 */}
-<article className="w-full mx-auto bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-0 md:backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10 narrow-landscape-70">
+<article className="-mb-16 w-full mx-auto bg-white/5 rounded-xl shadow-2xl p-8 backdrop-blur-0 md:backdrop-blur-sm hover:bg-white/[0.06] transition lg:p-10 relative ring-1 ring-white/10 narrow-landscape-70">
   <div className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/60 rounded-l-xl" />
   <div className="flex flex-col lg:flex-row gap-7 sm:gap-8 lg:gap-12">
     <div className="lg:w-1/3">
@@ -374,7 +374,7 @@ export default function BooksPage() {
             
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="block lg:hidden">
-  <div className="mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
+  <div className="mx-auto max-w-[80%] px-6 mb-14 -mt-5">
     <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
   </div>
 

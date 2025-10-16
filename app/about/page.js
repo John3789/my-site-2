@@ -260,7 +260,7 @@ export default function AboutPage() {
 <div className="mx-auto max-w-none md:max-w-[1000px] px-2 md:px-6 space-y-10">
 
   {/* CTA */}
-  <div className="mt-8 mb-10 flex justify-center">
+  <div className="mt-8 mb-12 flex justify-center">
     <Link
       href="/contact"
       className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3

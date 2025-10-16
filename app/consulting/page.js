@@ -469,7 +469,7 @@ onClick={() => jump(toMobile(s.id))}
 
           {/* FINAL divider above footer — match two-column width, no bleed */}
           <div className="mx-auto max-w-[1400px] px-6">
-            <hr className="hidden lg:block max-w-[1400px] border-t border-[var(--color-cream)]/22" />
+            <hr className="hidden lg:block max-w-[1400px] border-t border-[var(--color-cream)]/2" />
           </div>
 
           <div className="block lg:hidden mx-auto max-w-[1100px] px-3">
@@ -817,7 +817,7 @@ onClick={() => jump(toMobile(s.id))}
 
         <div className="mx-auto max-w-[1100px] px-6"><div className="h-px w-full bg-[var(--color-cream)]/15" /></div>
 
-        <section id={toMobile("testimonials")} className="scroll-mt-32 mx-auto max-w-[1100px] px-6 py-16">
+        <section id={toMobile("testimonials")} className="scroll-mt-32 mx-auto max-w-[1100px] px-6 py-16 mb-3">
           <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 text-center mb-2">Testimonials</p>
           <h2 className="font-serif text-3xl md:text-4xl opacity-95 text-center">What Clients and Partners Say</h2>
           <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mx-auto mt-3 mb-8 rounded" />
