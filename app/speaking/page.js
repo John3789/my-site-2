@@ -1338,7 +1338,7 @@ export default function SpeakingPage() {
     padding-bottom: 0.5rem !important;   /* reduces gap below the pills */
   }
   [data-page="speaking"] #quicknav {
-    margin-bottom: -0.25rem !important;  /* gently tightens space under pills */
+    margin-bottom: 0.15rem !important;  /* gently tightens space under pills */
   }
 
   /* 2️⃣ ABOVE THE PREV / ALL SPEAKING / NEXT BUTTONS — pull them closer to content */
@@ -1346,8 +1346,8 @@ export default function SpeakingPage() {
   [data-page="speaking"] #formats + .lg\:hidden,
   [data-page="speaking"] #results + .lg\:hidden,
   [data-page="speaking"] #testimonials + .lg\:hidden {
-    margin-top: -0.75rem !important;   /* adjust: -0.5rem for subtle, -1rem for tighter */
-    padding-top: 0 !important;
+    margin-top: -5rem !important;   /* adjust: -0.5rem for subtle, -1rem for tighter */
+    padding-top: -5 !important;
   }
 
   /* Optional: tighten internal grid spacing inside 3-button row */
