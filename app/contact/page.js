@@ -219,7 +219,7 @@ export default function ContactPage() {
                 <div className="pb-10" />
 
 <div className="mx-auto w-full px-0 [@media(orientation:portrait)_and_(min-width:700px)_and_(max-width:950px)]:w-[85vw]">
-  <hr className=":border-t border-[var(--color-cream)]/22 mb-0" />
+  <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
 </div>
 
 
@@ -481,7 +481,7 @@ export default function ContactPage() {
             </div>
 
 {/* Bookend divider (desktop) */}
-<div className="hidden lg:block mx-auto max-w-[1200px] px-6 mt-15">
+<div className="hidden lg:block mx-auto max-w-[1200px] px-6 mt-10">
   <hr className="border-t border-[var(--color-cream)]/22" />
 </div>
 
