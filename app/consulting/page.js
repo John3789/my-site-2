@@ -85,7 +85,7 @@ const toMobile = (id) => (id === "testimonials" ? "testimonials" : `${id}-m`);
 
   const MobileSectionFooter = ({ baseId }) => (
     <div className="[@media(min-width:950px)]:hidden mt-10 -mb-3 w-full">
-      <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
+      <div className="mx-auto w-full max-w-[500px] sm:max-w-[300px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
         <button
           onClick={() => jump(toMobile(prevOf(baseId)))}
           className="inline-flex items-center justify-center w-full whitespace-nowrap rounded-full border border-white/20 bg-teal-800 text-[var(--color-cream)] px-4 py-2.5 text-[14px] font-semibold tracking-wide transition hover:bg-teal-700 active:translate-y-[1px]"
