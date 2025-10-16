@@ -553,11 +553,10 @@ export default function ContactPage() {
                 padding: 0;
               }
 
-/* ── iPad & iPad mini PORTRAIT (744–950px): narrow the mobile footer ── */
-@media (orientation: portrait) and (min-width: 744px) and (max-width: 950px) {
-  .mobile-footer-cap {
-    max-width: 75vw !important;   /* overrides max-w-[900px] */
-    width: 100% !important;
+@media screen and (orientation: portrait) and (min-width: 700px) and (max-width: 950px) {
+  .mobile-footer-cap,
+  .mobile-footer-cap > .mx-auto {   /* immediate wrapper in your markup */
+    max-width: 72vw !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
