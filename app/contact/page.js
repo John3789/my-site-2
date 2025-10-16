@@ -55,16 +55,9 @@ export default function ContactPage() {
   return (
     <>
       <div className="mx-auto">
-        <main data-page="contact" className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] min-h-screen md:min-h-0 narrow-landscape-70">
-          {/* soft gradient wash */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-0 -z-10"
-            style={{
-              background:
-                "radial-gradient(1400px 600px at 10% -10%, rgba(255,221,149,0.07), transparent 60%), radial-gradient(900px 500px at 110% 10%, rgba(255,221,149,0.06), transparent 60%)",
-            }}
-          />
+        <main data-page="contact" className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] min-h-screen md:min-h-0 narrow-landscape-70 mt-16">
+
+          
 
           {/* ============== MOBILE (zoom lives INSIDE here) ============== */}
           <div className="lg:hidden mx-auto max-w-[1400px] px-3 pt-16 pb-0 narrow-landscape-80">
@@ -318,11 +311,11 @@ export default function ContactPage() {
           </div>
 
           {/* ============== DESKTOP (unchanged layout) ============== */}
-          <div className="hidden lg:block mx-auto max-w-[1200px] px-6 py-20">
+          <div className="hidden lg:block mx-auto max-w-[1200px] px-6 py-2">
             {/* Page header */}
             <header className="max-w-3xl mx-auto text-center mb-10">
               <div className="flex items-center justify-center gap-3 md:block">
-                <h1 className="font-serif text-5xl leading-[1.06] opacity-90">Contact</h1>
+                <h1 className="font-serif text-6xl leading-[1.06] opacity-90">Contact</h1>
                 <HeroImageIphoneAware
                   src="/headshot.jpg"
                   alt="Dr. Juan Pablo Salerno"
@@ -526,7 +519,7 @@ export default function ContactPage() {
             </div>
 
             {/* Bookend divider (desktop) */}
-            <div className="hidden lg:block mx-auto max-w-[1200px] px-6 mt-6">
+            <div className="hidden lg:block mx-auto max-w-[1200px] px-6 mt-15">
               <hr className="border-t border-[var(--color-cream)]/22" />
             </div>
           </div>
@@ -555,21 +548,22 @@ export default function ContactPage() {
               }
 }
 
-/* CONTACT — iPad / iPad mini LANDSCAPE: remove forced tall main + trim local spacers */
+/* CONTACT — iPad / iPad mini LANDSCAPE: collapse space above the blue card */
 @media (orientation: landscape) and (min-width: 1000px) {
-  /* 1) Let the page size to its content (overrides min-h-screen) */
-  [data-page="contact"] {
-    min-height: auto !important;
+  /* 1) Kill the margin stack around the divider wrapper (had mb-14 and -mt-5) */
+  [data-page="contact"] .block.lg\:hidden .mx-auto.max-w-\[1000px\].px-6 {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
   }
 
-  /* 2) Tighten the spacer right before the footer block */
-  .lg\:hidden .pb-10 {
-    padding-bottom: 0.25rem !important; /* was pb-10 */
+  /* 2) Shrink the earlier spacer just before the divider (was pb-10) */
+  [data-page="contact"] .lg\:hidden .pb-10 {
+    padding-bottom: 0.25rem !important;
   }
 
-  /* 3) Nudge the blue card up a bit */
-  .mobile-footer-cap .rounded-xl {
-    margin-top: 0.5rem !important;      /* was mt-10 */
+  /* 3) Nudge the blue newsletter card up (was mt-10) */
+  [data-page="contact"] .mobile-footer-cap .rounded-xl:first-of-type {
+    margin-top: 0.5rem !important;
   }
 }
 
