@@ -84,7 +84,7 @@ export default function Header() {
   }
 
   /* === iPhone LANDSCAPE — align Menu label & footer with menu items === */
-  @media (orientation: landscape) and (max-height: 430px) {
+  @media (orientation: landscape) and (max-height: 450px) {
     @supports (-webkit-touch-callout: none) {
       :root { --menu-nudge: 0px; } /* legacy nudge (can leave 0) */
 
@@ -104,6 +104,7 @@ export default function Header() {
   }
 
   /* ===== Independent controls (title/list/footer) — override everything above ===== */
+   @media (orientation: landscape) and (max-height: 450px) {
   aside[data-mobile-menu="open"] {
     --menu-title-x: 50px; /* “Menu” word */
     --menu-list-x:  25px; /* list of tabs */
