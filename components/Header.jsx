@@ -74,59 +74,53 @@ export default function Header() {
         </div>
 
         <style jsx global>{`
-          /* Default: show full text, hide short */
-          .books-link .short-label { display: none; }
+  /* Default: show full text, hide short */
+  .books-link .short-label { display: none; }
 
-          /* iPad portrait (800–950px) ONLY, and NOT on Home */
-          @media (orientation: portrait) and (min-width: 800px) and (max-width: 950px) {
-            header[data-home="0"] .books-link .full-label { display: none !important; }
-            header[data-home="0"] .books-link .short-label { display: inline !important; }
-          }
+  /* iPad portrait (800–950px) ONLY, and NOT on Home */
+  @media (orientation: portrait) and (min-width: 800px) and (max-width: 950px) {
+    header[data-home="0"] .books-link .full-label { display: none !important; }
+    header[data-home="0"] .books-link .short-label { display: inline !important; }
+  }
 
-          /* === iPhone LANDSCAPE — align Menu label & footer with menu items === */
-          @media (orientation: landscape) and (max-height: 430px) {
-            @supports (-webkit-touch-callout: none) {
-              :root { --menu-nudge: 0px; } /* tweak to taste */
+  /* === iPhone LANDSCAPE — align Menu label & footer with menu items === */
+  @media (orientation: landscape) and (max-height: 430px) {
+    @supports (-webkit-touch-callout: none) {
+      :root { --menu-nudge: 0px; } /* legacy nudge (can leave 0) */
 
-              /* Shift the "Menu" label */
-              header[data-menu-open="true"] ~ aside .mobile-menu-title {
-                display: inline-block;                 /* allow transform/padding to apply cleanly */
-                transform: translateX(var(--menu-nudge));
-              }
+      /* Legacy shifts (kept, but will be overridden below) */
+      header[data-menu-open="true"] ~ aside .mobile-menu-title {
+        display: inline-block;
+        transform: translateX(var(--menu-nudge));
+      }
+      header[data-menu-open="true"] ~ aside .mobile-menu-list {
+        padding-left: calc(1.5rem + var(--menu-nudge) + env(safe-area-inset-left, 0px));
+      }
+      header[data-menu-open="true"] ~ aside .mobile-menu-footer {
+        padding-left: calc(1.5rem + var(--menu-nudge) + env(safe-area-inset-left, 0px));
+        text-align: left;
+      }
+    }
+  }
 
-              /* Ensure the item list has the same left start */
-              header[data-menu-open="true"] ~ aside .mobile-menu-list {
-                padding-left: calc(1.5rem + var(--menu-nudge) + env(safe-area-inset-left, 0px)); /* 1.5rem = px-6 */
-              }
+  /* ===== Independent controls (title/list/footer) — override everything above ===== */
+  aside[data-mobile-menu="open"] {
+    --menu-title-x: 50px; /* “Menu” word */
+    --menu-list-x:  25px; /* list of tabs */
+    --menu-foot-x:  25px; /* footer line */
+  }
+  aside[data-mobile-menu="open"] .mobile-menu-title {
+    transform: translateX(var(--menu-title-x)) !important;  /* beat earlier transform */
+  }
+  aside[data-mobile-menu="open"] .mobile-menu-list {
+    padding-left: calc(1.5rem + var(--menu-list-x)) !important; /* beat earlier padding */
+  }
+  aside[data-mobile-menu="open"] .mobile-menu-footer {
+    padding-left: calc(1.5rem + var(--menu-foot-x)) !important; /* beat earlier padding */
+    text-align: left;
+  }
+`}</style>
 
-              /* Shift the footer to the same left edge as items */
-              header[data-menu-open="true"] ~ aside .mobile-menu-footer {
-                padding-left: calc(1.5rem + var(--menu-nudge) + env(safe-area-inset-left, 0px));
-                text-align: left;
-              }
-            }
-          }
-
-          /* ===== Independent controls (title/list/footer) — default zero shift ===== */
-          aside[data-mobile-menu="open"] {
-            --menu-title-x: 50px; /* “Menu” word */
-            --menu-list-x:  25px; /* list of tabs */
-            --menu-foot-x:  25px; /* footer line */
-          }
-          aside[data-mobile-menu="open"] .mobile-menu-title {
-            transform: translateX(var(--menu-title-x));
-          }
-          aside[data-mobile-menu="open"] .mobile-menu-list {
-            padding-left: calc(1.5rem + var(--menu-list-x));
-          }
-          aside[data-mobile-menu="open"] .mobile-menu-footer {
-            padding-left: calc(1.5rem + var(--menu-foot-x));
-            text-align: left;
-          }
-            }
-          }
-            
-        `}</style>
       </header> 
 
       {/* Desktop top-right home link (non-home pages only) */}
