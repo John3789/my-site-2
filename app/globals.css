@@ -451,38 +451,3 @@ html.menu-open, body.menu-open {
   }
 }
 
-/* iPhone LANDSCAPE (Pro/Pro Max heights) — shift title + items inside OPEN popup */
-@media (orientation: landscape) and (max-height: 430px) {
-  @supports (-webkit-touch-callout: none) and (selector(:has(*))) {
-
-    /* When ANY dialog/sheet/drawer is open… */
-    body:has(
-      [aria-modal="true"],
-      [role="dialog"][data-state="open"],
-      .mobile-menu[data-state="open"],
-      .drawer-content[data-state="open"],
-      .sheet-content[data-state="open"],
-      .menu-popup[data-state="open"]
-    ) {
-      --menuShift: 24px; /* tweak this value if you want more/less */
-    }
-
-    /* Shift the “Menu” label/title (whatever tag/class it is) */
-    body:has([aria-modal="true"], [role="dialog"][data-state="open"], .mobile-menu[data-state="open"], .drawer-content[data-state="open"], .sheet-content[data-state="open"], .menu-popup[data-state="open"])
-      :is(h1, h2, h3, [data-title], [class*="menu-title"], [class*="heading"], [class*="title"]) {
-      margin-left: var(--menuShift) !important;
-    }
-
-    /* Shift the menu list container */
-    body:has([aria-modal="true"], [role="dialog"][data-state="open"], .mobile-menu[data-state="open"], .drawer-content[data-state="open"], .sheet-content[data-state="open"], .menu-popup[data-state="open"])
-      :is(nav, ul, [role="menu"], [class*="menu-list"], [class*="menu-items"], [data-menu-list]) {
-      padding-left: calc(var(--menuShift) + 4px) !important;
-    }
-
-    /* Safety: nudge individual items if they aren’t inside a UL/NAV */
-    body:has([aria-modal="true"], [role="dialog"][data-state="open"], .mobile-menu[data-state="open"], .drawer-content[data-state="open"], .sheet-content[data-state="open"], .menu-popup[data-state="open"])
-      :is(a[href], button[role="menuitem"], [role="menuitem"], li) {
-      margin-left: 8px !important;
-    }
-  }
-}
