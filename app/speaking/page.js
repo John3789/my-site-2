@@ -1348,11 +1348,12 @@ export default function SpeakingPage() {
   [data-page="speaking"] #testimonials + .lg\:hidden {
     margin-top: -5rem !important;   /* adjust: -0.5rem for subtle, -1rem for tighter */
     padding-top: -5 !important;
+
   }
 
-  /* Optional: tighten internal grid spacing inside 3-button row */
-  [data-page="speaking"] .max-w-\[540px\].grid {
-    gap: 0.5rem !important;
+  @media (orientation: portrait) and (min-width: 800px) and (max-width: 950px) {
+  [data-page="speaking"] #testimonials button {
+    margin-bottom: 1.5rem !important; /* increase spacing below the Show all/Show less button */
   }
 }
 
