@@ -557,14 +557,14 @@ export default function ContactPage() {
 @media screen and (orientation: portrait) and (min-width: 700px) and (max-width: 950px) {
   /* Leave the element’s own max-width alone; add side gutters to its inner wrapper */
   [data-page="contact"] .mobile-footer-cap > .mx-auto {
-    padding-left: calc((100vw - 62vw) / 2) !important;  /* adjust 72vw to taste */
-    padding-right: calc((100vw - 62vw) / 2) !important;
+    padding-left: calc((100vw - 50vw) / 2) !important;  /* adjust 72vw to taste */
+    padding-right: calc((100vw - 50vw) / 2) !important;
   }
 
   /* If something else still wins, bump specificity once */
   [data-page="contact"] .mobile-footer-cap[class] > .mx-auto {
-    padding-left: calc((100vw - 62vw) / 2) !important;
-    padding-right: calc((100vw - 62vw) / 2) !important;
+    padding-left: calc((100vw - 50vw) / 2) !important;
+    padding-right: calc((100vw - 50vw) / 2) !important;
   }
 }
 
