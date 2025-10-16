@@ -3,6 +3,7 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
+import { createPortal } from "react-dom"; // ← ADDED
 
 type Props = {
   isMeditationPage?: boolean;
@@ -31,8 +32,12 @@ export default function NewsletterMeditationPopup({
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
   const shownRef = useRef<boolean>(false);
-    const TESTING_MODE = true; // ← set to false to restore normal behavior
 
+  const TESTING_MODE = true; // ← ensures it opens on every load while testing
+
+  // Mount guard for portals (avoid SSR hydration mismatch)
+  const [mounted, setMounted] = useState(false); // ← ADDED
+  useEffect(() => setMounted(true), []);         // ← ADDED
 
   const suppressed = useCallback((): boolean => {
     try {
@@ -69,24 +74,32 @@ export default function NewsletterMeditationPopup({
 
   const showOnce = useCallback(() => {
     if (shownRef.current || typeof window === "undefined") return;
-    if (suppressed() || sessionShown()) return;
+    // Respect guards only when not testing
+    if (!TESTING_MODE && (suppressed() || sessionShown())) return;
     shownRef.current = true;
-    markSessionShown();
+    if (!TESTING_MODE) markSessionShown();
     setOpen(true);
-  }, [suppressed, sessionShown, markSessionShown]);
+  }, [TESTING_MODE, suppressed, sessionShown, markSessionShown]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (isMeditationPage) return;
-    if (suppressed() || sessionShown()) return;
 
-    const id = window.setTimeout(() => showOnce(), delayMs);
+    const id = window.setTimeout(() => {
+      if (TESTING_MODE) {
+        shownRef.current = true;
+        setOpen(true);
+        return;
+      }
+      if (!suppressed() && !sessionShown()) showOnce();
+    }, Math.min(delayMs, 800)); // quicker while testing
+
     return () => window.clearTimeout(id);
-  }, [delayMs, isMeditationPage, suppressed, sessionShown, showOnce]);
+  }, [TESTING_MODE, delayMs, isMeditationPage, suppressed, sessionShown, showOnce]);
 
   useEffect(() => {
     if (typeof document === "undefined" || !audioElementId) return;
-    if (suppressed() || sessionShown()) return;
+    if (!TESTING_MODE && (suppressed() || sessionShown())) return;
     const el = document.getElementById(audioElementId) as HTMLAudioElement | null;
     if (!el) return;
 
@@ -115,12 +128,12 @@ export default function NewsletterMeditationPopup({
       el.removeEventListener("timeupdate", onTimeUpdate);
       el.removeEventListener("ended", onEnded);
     };
-  }, [audioElementId, secondsFromEnd, suppressed, sessionShown, showOnce]);
+  }, [audioElementId, secondsFromEnd, suppressed, sessionShown, showOnce, TESTING_MODE]);
 
   const dismiss = useCallback(() => {
     setOpen(false);
-    markSuppressed();
-  }, [markSuppressed]);
+    if (!TESTING_MODE) markSuppressed();
+  }, [markSuppressed, TESTING_MODE]);
 
   function onEsc(e: React.KeyboardEvent<HTMLDivElement>) {
     if (e.key === "Escape") dismiss();
@@ -144,26 +157,27 @@ export default function NewsletterMeditationPopup({
     try {
       const res = await fetch(formAction, { method: "POST", body: formData });
       if (!res.ok) throw new Error("Subscribe failed");
-      markSuppressed();
+      if (!TESTING_MODE) markSuppressed();
       setSuccess(true);
     } catch {
-      markSuppressed();
+      if (!TESTING_MODE) markSuppressed();
       setSuccess(true);
     } finally {
       setLoading(false);
     }
   }
 
-  if (!open) return null;
+  if (!open || !mounted) return null; // ← ensure portal target exists
 
-  return (
+  // ===== Portal the popup to <body> to avoid iOS transform/fixed issues =====
+  return createPortal(
     <div
       role="dialog"
       aria-modal="true"
       aria-label="Newsletter popup"
       tabIndex={-1}
       onKeyDown={onEsc}
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-4" // ← raised z-index
     >
       {/* Backdrop */}
       <button
@@ -209,11 +223,11 @@ export default function NewsletterMeditationPopup({
                 Please accept this guided meditation as a personal gift
               </h3>
               <p className="text-[14px] md:text-[17px] opacity-90">
- Enjoy my 5-minute reset meditation to help you recenter whenever you need it.{" "}
-  I’d be honored if you joined my monthly newsletter,{" "}
-  <span className="italic">Science, Soul, and a Bit of Magic</span>, for practical wisdom (with
-  a little cheek) to nourish your body, mind, and spirit.
-</p>
+                Enjoy my 5-minute reset meditation to help you recenter whenever you need it.{" "}
+                I’d be honored if you joined my monthly newsletter,{" "}
+                <span className="italic">Science, Soul, and a Bit of Magic</span>, for practical wisdom (with
+                a little cheek) to nourish your body, mind, and spirit.
+              </p>
 
               <form onSubmit={handleSubmit} className="mt-4 space-y-3">
                 <input
@@ -244,7 +258,6 @@ export default function NewsletterMeditationPopup({
                 </button>
               </form>
 
-
               <button
                 onClick={dismiss}
                 className="mt-1 text-[12px] underline opacity-75 hover:opacity-100"
@@ -263,16 +276,17 @@ export default function NewsletterMeditationPopup({
               Your first <span className="italic">Science, Soul, and a Bit of Magic</span> newsletter will arrive soon.
             </p>
 
-<button
-  type="button"
-  onClick={dismiss}
-  className="inline-flex items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 mt-3"
->
-  Back to the website
-</button>
+            <button
+              type="button"
+              onClick={dismiss}
+              className="inline-flex items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 mt-3"
+            >
+              Back to the website
+            </button>
           </div>
         )}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

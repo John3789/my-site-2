@@ -14,6 +14,33 @@ export default function ContactPage() {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+  const [nlSubmitting, setNlSubmitting] = useState(false);
+const [nlSubscribed, setNlSubscribed] = useState(false);
+
+async function handleNewsletterSubmit(e) {
+  e.preventDefault();
+  if (nlSubmitting || nlSubscribed) return;
+
+  setNlSubmitting(true);
+  const form = new FormData(e.currentTarget);
+  const email = (form.get("email") || "").toString().trim();
+
+  if (!email || !email.includes("@")) {
+    alert("Please enter a valid email.");
+    setNlSubmitting(false);
+    return;
+  }
+
+  try {
+    await fetch("/api/subscribe", { method: "POST", body: form });
+    setNlSubscribed(true);
+  } catch {
+    setNlSubscribed(true); // show success locally so you can test
+  } finally {
+    setNlSubmitting(false);
+  }
+}
+
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -467,12 +494,19 @@ export default function ContactPage() {
 
         {/* Copy + form only */}
         <div className="p-5">
-          <p className="text-[14px] md:text-[15px] opacity-90"> As a thank-you for visiting, enjoy my free 5-minute reset meditation — and join <span className="italic">Science, Soul, and a Bit of Magic</span>, my monthly newsletter with practical inspiration to help you stay centered and uplifted.
+          <p className="text-[14px] md:text-[15px] opacity-90"> As a thank-you for visiting, enjoy my free 5-minute reset meditation — and join <span className="italic">Science, Soul, and a Bit of Magic</span>, my monthly newsletter with practical inspiration + a little humor to help you stay centered and uplifted.
 </p>
-          <div className="mt-4 space-y-3">
-            <input type="email" placeholder="you@example.com" className="w-full rounded-md border border-white/15 bg-white/5 px-4 py-3 outline-none placeholder-white/60 focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50 text-[15px]" />
-            <button type="button" className="inline-flex w-full items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-4 py-3 font-semibold shadow-md hover:shadow-lg hover:-translate-y-[1px] transition">Subscribe</button>
-          </div>
+   {nlSubscribed ? (
+  <div className="mt-4">
+    <div className="inline-flex w-full items-center justify-center rounded-md border border-[var(--color-gold)]/90 text-[var(--color-gold)]/90 px-4 py-3 font-semibold cursor-default select-none">Thank you!</div>
+  </div>
+) : (
+  <form onSubmit={handleNewsletterSubmit} className="mt-4 space-y-3">
+    <input type="email" name="email" required placeholder="you@example.com" className="w-full rounded-md border border-white/15 bg-white/5 px-4 py-3 outline-none placeholder-white/60 focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50 text-[15px] autofill:shadow-[inset_0_0_0px_1000px_rgba(13,29,45,1)] autofill:!text-[var(--color-cream)] autofill:!caret-[var(--color-cream)] autofill:!placeholder-white/60" />
+    <button type="submit" disabled={nlSubmitting} className="inline-flex w-full items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-4 py-3 font-semibold shadow-md hover:shadow-lg hover:-translate-y-[1px] transition">{nlSubmitting ? "Sending…" : "Subscribe"}</button>
+  </form>
+)}
+
         </div>
       </div>
     </div>
@@ -582,6 +616,16 @@ export default function ContactPage() {
 body:has(main[data-page="contact"]) :is(footer, .site-footer, [role="contentinfo"]) {
   display: none !important;
 }
+  /* Prevent autofill white background on email field */
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover {
+  -webkit-box-shadow: 0 0 0px 1000px #0d1d2d inset !important;
+  -webkit-text-fill-color: var(--color-cream) !important;
+  caret-color: var(--color-cream) !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
 }
 
 
