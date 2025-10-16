@@ -489,8 +489,8 @@ export default function ContactPage() {
 <div className="hidden lg:flex items-start justify-between mx-auto max-w-[1200px] px-6 mt-4 text-[13px] leading-relaxed opacity-85">
   {/* LEFT side — socials + bio */}
   <div className="flex flex-col items-start text-left">
-    <p className="uppercase tracking-[0.18em] opacity-70 text-[12px]">Follow Dr. Salerno:</p>
-    <div className="mt-3 flex items-center gap-8">
+    <div className="flex items-center gap-4">
+      <p className="uppercase tracking-[0.18em] opacity-70 text-[12px] m-0">Follow Dr. Salerno:</p>
       <a href="https://www.tiktok.com/@YOURHANDLE" aria-label="TikTok" className="opacity-90 hover:opacity-100">
         <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
           <path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z" />
@@ -512,6 +512,7 @@ export default function ContactPage() {
       with more than 30 peer-reviewed publications and over 2,000 citations.
     </p>
   </div>
+
 
   {/* RIGHT side — legal info */}
   <div className="text-left translate-y-[-4px]">
