@@ -217,7 +217,7 @@ export default function NewsletterMeditationPopup({
   alt="Dr. Juan Pablo Salerno"
   className="
     h-full w-full object-cover
-    object-[40%]
+    object-[45%]
     md:object-center
     md:rounded-l-xl
   "
