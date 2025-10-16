@@ -109,9 +109,9 @@ export default function Header() {
 
           /* ===== Independent controls (title/list/footer) — default zero shift ===== */
           aside[data-mobile-menu="open"] {
-            --menu-title-x: 0px; /* “Menu” word */
-            --menu-list-x:  0px; /* list of tabs */
-            --menu-foot-x:  0px; /* footer line */
+            --menu-title-x: 24px; /* “Menu” word */
+            --menu-list-x:  12px; /* list of tabs */
+            --menu-foot-x:  13px; /* footer line */
           }
           aside[data-mobile-menu="open"] .mobile-menu-title {
             transform: translateX(var(--menu-title-x));
