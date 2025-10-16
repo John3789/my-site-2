@@ -467,7 +467,8 @@ export default function ContactPage() {
 
         {/* Copy + form only */}
         <div className="p-5">
-          <p className="text-[14px] md:text-[17px] opacity-90">I’d be honored if you joined my monthly newsletter, <span className="italic">Science, Soul, and a Bit of Magic</span>, for practical wisdom (with a little cheek) to nourish your body, mind, and spirit.</p>
+          <p className="text-[14px] md:text-[15px] opacity-90"> As a thank-you for visiting, enjoy my free 5-minute reset meditation — and join <span className="italic">Science, Soul, and a Bit of Magic</span>, my monthly newsletter with practical inspiration to help you stay centered and uplifted.
+</p>
           <div className="mt-4 space-y-3">
             <input type="email" placeholder="you@example.com" className="w-full rounded-md border border-white/15 bg-white/5 px-4 py-3 outline-none placeholder-white/60 focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50 text-[15px]" />
             <button type="button" className="inline-flex w-full items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-4 py-3 font-semibold shadow-md hover:shadow-lg hover:-translate-y-[1px] transition">Subscribe</button>
