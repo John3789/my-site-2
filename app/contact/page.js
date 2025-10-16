@@ -226,13 +226,14 @@ export default function ContactPage() {
                 {/* spacer */}
                 <div className="pb-10" />
 
-                {/* Divider (matches form width) */}
-                <div className="mx-auto w-full px-0">
-                  <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
-                </div>
+<div className="mx-auto w-full px-0 [@media(orientation:portrait)_and_(min-width:800px)_and_(max-width:950px)]:w-[85vw]">
+  <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
+</div>
+
 
                 {/* Mobile footer block (same width as form/divider) */}
-                <div className="max-w-[900px] mobile-footer-cap narrow-landscape-70">
+          <div className="max-w-[900px] mobile-footer-cap narrow-landscape-70 [@media(orientation:portrait)_and_(min-width:800px)_and_(max-width:950px)]:w-[70vw] mx-auto">
+
                   <div className="mx-auto w-full px-0">
                     {/* Newsletter card */}
                     <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
@@ -552,20 +553,6 @@ export default function ContactPage() {
                 margin: 0;
                 padding: 0;
               }
-
-/* iPad & iPad Pro portrait (and 744 mini) — visually narrow the footer block */
-@media screen and (orientation: portrait) and (min-width: 700px) and (max-width: 950px) {
-  /* Leave the element’s own max-width alone; add side gutters to its inner wrapper */
-  [data-page="contact"] .mobile-footer-cap > .mx-auto {
-    padding-left: calc((100vw - 50vw) / 2) !important;  /* adjust 72vw to taste */
-    padding-right: calc((100vw - 50vw) / 2) !important;
-  }
-
-  /* If something else still wins, bump specificity once */
-  [data-page="contact"] .mobile-footer-cap[class] > .mx-auto {
-    padding-left: calc((100vw - 50vw) / 2) !important;
-    padding-right: calc((100vw - 50vw) / 2) !important;
-  }
 }
 
 
