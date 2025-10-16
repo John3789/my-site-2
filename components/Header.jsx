@@ -87,21 +87,23 @@ export default function Header() {
             header[data-home="0"] .books-link .short-label { display: inline !important; }
           }
 
-          /* === iPhone LANDSCAPE (Pro + Pro Max) — shift Menu label & items when menu is OPEN === */
-          @media (orientation: landscape) and (max-height: 430px) {
-            @supports (-webkit-touch-callout: none) {
-              header[data-menu-open="true"] .mobile-menu-title {
-                transform: translateX(24px);
-              }
-              header[data-menu-open="true"] .mobile-menu-list {
-                padding-left: calc(24px + env(safe-area-inset-left, 0px));
-              }
-              header[data-menu-open="true"] .mobile-menu-list a,
-              header[data-menu-open="true"] .mobile-menu-list [role="menuitem"] {
-                margin-left: 6px;
-              }
-            }
-          }
+/* === iPhone LANDSCAPE (Pro + Pro Max) — shift Menu label & items when menu is OPEN === */
+@media (orientation: landscape) and (max-height: 430px) {
+  @supports (-webkit-touch-callout: none) {
+    /* header is open → target sibling aside (the menu panel) */
+    header[data-menu-open="true"] ~ aside .mobile-menu-title {
+      transform: translateX(24px);
+    }
+    header[data-menu-open="true"] ~ aside .mobile-menu-list {
+      padding-left: calc(24px + env(safe-area-inset-left, 0px));
+    }
+    header[data-menu-open="true"] ~ aside .mobile-menu-list a,
+    header[data-menu-open="true"] ~ aside .mobile-menu-list [role="menuitem"] {
+      margin-left: 6px;
+    }
+  }
+}
+
         `}</style>
       </header> 
 
@@ -135,7 +137,7 @@ export default function Header() {
           {/* FULL-SCREEN PANEL */}
           <aside
             className="
-              fixed inset-0 z=[10001] zoom-exempt vv-counter
+              fixed inset-0 z-[10001] zoom-exempt vv-counter
               !bg-[var(--color-teal-850)] text-[var(--color-cream)]
               flex flex-col min-h-[100svh] overflow-y-auto overscroll-contain
               [transform-origin:top_left] 
