@@ -86,7 +86,7 @@ export default function Header() {
 /* === iPhone LANDSCAPE — align Menu label & footer with menu items === */
 @media (orientation: landscape) and (max-height: 430px) {
   @supports (-webkit-touch-callout: none) {
-    :root { --menu-nudge: 50px; } /* tweak to taste */
+    :root { --menu-nudge: 80px; } /* tweak to taste */
 
     /* Shift the "Menu" label */
     header[data-menu-open="true"] ~ aside .mobile-menu-title {
