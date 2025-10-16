@@ -83,31 +83,57 @@ export default function Header() {
             header[data-home="0"] .books-link .short-label { display: inline !important; }
           }
 
-/* === iPhone LANDSCAPE — align Menu label & footer with menu items === */
-@media (orientation: landscape) and (max-height: 430px) {
-  @supports (-webkit-touch-callout: none) {
-    :root { --menu-nudge: 0px; } /* tweak to taste */
+          /* === iPhone LANDSCAPE — align Menu label & footer with menu items === */
+          @media (orientation: landscape) and (max-height: 430px) {
+            @supports (-webkit-touch-callout: none) {
+              :root { --menu-nudge: 0px; } /* tweak to taste */
 
-    /* Shift the "Menu" label */
-    header[data-menu-open="true"] ~ aside .mobile-menu-title {
-      display: inline-block;                 /* allow transform/padding to apply cleanly */
-      transform: translateX(var(--menu-nudge));
-    }
+              /* Shift the "Menu" label */
+              header[data-menu-open="true"] ~ aside .mobile-menu-title {
+                display: inline-block;                 /* allow transform/padding to apply cleanly */
+                transform: translateX(var(--menu-nudge));
+              }
 
-    /* Ensure the item list has the same left start */
-    header[data-menu-open="true"] ~ aside .mobile-menu-list {
-      padding-left: calc(1.5rem + var(--menu-nudge) + env(safe-area-inset-left, 0px)); /* 1.5rem = px-6 */
-    }
+              /* Ensure the item list has the same left start */
+              header[data-menu-open="true"] ~ aside .mobile-menu-list {
+                padding-left: calc(1.5rem + var(--menu-nudge) + env(safe-area-inset-left, 0px)); /* 1.5rem = px-6 */
+              }
 
-    /* Shift the footer to the same left edge as items */
-    header[data-menu-open="true"] ~ aside .mobile-menu-footer {
-      padding-left: calc(1.5rem + var(--menu-nudge) + env(safe-area-inset-left, 0px));
-      text-align: left;
-    }
-  }
-}
+              /* Shift the footer to the same left edge as items */
+              header[data-menu-open="true"] ~ aside .mobile-menu-footer {
+                padding-left: calc(1.5rem + var(--menu-nudge) + env(safe-area-inset-left, 0px));
+                text-align: left;
+              }
+            }
+          }
 
+          /* ===== Independent controls (title/list/footer) — default zero shift ===== */
+          aside[data-mobile-menu="open"] {
+            --menu-title-x: 0px; /* “Menu” word */
+            --menu-list-x:  0px; /* list of tabs */
+            --menu-foot-x:  0px; /* footer line */
+          }
+          aside[data-mobile-menu="open"] .mobile-menu-title {
+            transform: translateX(var(--menu-title-x));
+          }
+          aside[data-mobile-menu="open"] .mobile-menu-list {
+            padding-left: calc(1.5rem + var(--menu-list-x));
+          }
+          aside[data-mobile-menu="open"] .mobile-menu-footer {
+            padding-left: calc(1.5rem + var(--menu-foot-x));
+            text-align: left;
+          }
 
+          /* Example: iPhone landscape (including Pro/Pro Max) — nudge TITLE only */
+          @media (orientation: landscape) and (max-height: 430px) {
+            @supports (-webkit-touch-callout: none) {
+              aside[data-mobile-menu="open"] {
+                --menu-title-x: 24px; /* move just the label */
+                --menu-list-x:  0px;
+                --menu-foot-x:  0px;
+              }
+            }
+          }
         `}</style>
       </header> 
 
@@ -140,6 +166,7 @@ export default function Header() {
 
           {/* FULL-SCREEN PANEL */}
           <aside
+            data-mobile-menu="open"  /* ← added: scoped hook for independent offsets */
             className="
               fixed inset-0 z-[10001] zoom-exempt vv-counter
               !bg-[var(--color-teal-850)] text-[var(--color-cream)]
@@ -148,12 +175,12 @@ export default function Header() {
             "
           >
             <div className="flex items-center justify-between px-6 h-16 pr-25">
-  {/* Bigger Menu label with landscape adjustment */}
-  <span
-    className="mobile-menu-title font-serif text-[clamp(22px,7vw,32px)] landscape:text-[3.5vw]"
-  >
-    Menu
-  </span>
+              {/* Bigger Menu label with landscape adjustment */}
+              <span
+                className="mobile-menu-title font-serif text-[clamp(22px,7vw,32px)] landscape:text-[3.5vw]"
+              >
+                Menu
+              </span>
 
               {/* Close button */}
               <button
@@ -172,9 +199,9 @@ export default function Header() {
 
             {/* Nav — add hook class */}
             <nav
-   className="mobile-menu-list px-6 py-6 space-y-6 uppercase tracking-wide
-              text-[7vw] landscape:text-[4vw]"
- >
+              className="mobile-menu-list px-6 py-6 space-y-6 uppercase tracking-wide
+                         text-[7vw] landscape:text-[4vw]"
+            >
               <MobileLink href="/" onClick={() => setOpen(false)} active={pathname === "/"}>Home</MobileLink>
               <MobileLink href="/about" onClick={() => setOpen(false)} active={pathname.startsWith("/about")}>About</MobileLink>
               <MobileLink href="/books" onClick={() => setOpen(false)} active={pathname.startsWith("/books")}>Books & Publications</MobileLink>
@@ -186,8 +213,8 @@ export default function Header() {
             </nav>
 
             <div className="mobile-menu-footer mt-auto px-6 pb-[calc(env(safe-area-inset-bottom)+16px)] text-xs opacity-80">
-    © {new Date().getFullYear()} Dr. Juan Pablo Salerno™
-  </div>
+              © {new Date().getFullYear()} Dr. Juan Pablo Salerno™
+            </div>
           </aside>
         </>
       )}
