@@ -479,12 +479,12 @@ onClick={() => jump(toMobile(s.id))}
 
           {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
           <div className="block lg:hidden">
-            <div className="mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
+            <div className="mx-auto max-w-[1000px] px-6 mb-14 -mt-5">
               <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
             </div>
 
-            <div className="mobile-footer-cap">
-              <div className="mx-auto max-w-[1400px] px-3 narrow-landscape-70">
+            <div className="mobile-footer-cap narrow-landscape-70">
+              <div className="mx-auto max-w-[1400px] px-3">
                 {/* Newsletter card (midnight blue) */}
                 <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
                   <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
@@ -1116,10 +1116,10 @@ onClick={() => jump(toMobile(s.id))}
     margin-right: auto;
   }
 }
-  
+
 /* SPEAKING — iPad & iPad mini PORTRAIT only (700–920px)
    Tighten footer width to match About/Books look. */
-@media (orientation: portrait) and (min-width: 700px) and (max-width: 920px) {
+@media (orientation: portrait) and (min-width: 700px) and (max-width: 950px) {
   body:has(main[data-page="speaking"])
     :is(footer, .site-footer, .mobile-footer-cap, .home-footer-cap, div[class*="footer"]) {
     max-width: 75vw !important;
