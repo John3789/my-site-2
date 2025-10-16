@@ -101,7 +101,7 @@ export default function BooksPage() {
             </div>
 
             {/* Selected Publications */}
-            <div className="mx-auto w-[85%] lg:w-full px-6 pb-20">
+            <div className="mx-auto max-w-[1400px] px-6 pb-20">
               <hr className="border-t border-[var(--color-cream)]/22 mb-8" />
               <h2 className="font-serif text-[clamp(28px,3.8vw,40px)] leading-[1.08] text-center opacity-90">
                 Selected Publications
@@ -374,7 +374,7 @@ export default function BooksPage() {
             
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="block lg:hidden">
-  <div className="mx-auto w-[85%] px-6 mb-14 -mt-5">
+  <div className="mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
     <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
   </div>
 
