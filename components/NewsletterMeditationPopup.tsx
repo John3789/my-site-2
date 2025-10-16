@@ -31,6 +31,8 @@ export default function NewsletterMeditationPopup({
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
   const shownRef = useRef<boolean>(false);
+    const TESTING_MODE = true; // ← set to false to restore normal behavior
+
 
   const suppressed = useCallback((): boolean => {
     try {
