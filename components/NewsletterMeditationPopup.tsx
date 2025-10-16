@@ -177,7 +177,7 @@ export default function NewsletterMeditationPopup({
       aria-label="Newsletter popup"
       tabIndex={-1}
       onKeyDown={onEsc}
-      className="fixed inset-0 z-[9999] flex items-center justify-center p-4" // ← raised z-index
+      className="fixed inset-0 z-[9999] p-3 sm:p-4"
     >
       {/* Backdrop */}
       <button
@@ -186,105 +186,118 @@ export default function NewsletterMeditationPopup({
         className="absolute inset-0 cursor-default bg-black/55"
       />
 
-      {/* Card — visually identical to newsletter footer */}
-      <div
-        className="
-          relative w-full max-w-[640px]
-          rounded-xl
-          bg-[#0d1d2d] text-[var(--color-cream)]
-          ring-1 ring-white/10
-          shadow-[0_6px_25px_rgba(0,0,0,0.45)]
-          hover:bg-[#102438] transition
-          overflow-hidden p-[2px]
-        "
-      >
-        <button
-          onClick={dismiss}
-          aria-label="Close"
-          className="absolute right-3 top-3 inline-flex h-8 w-8 items-center justify-center border border-white/15 text-sm opacity-80 hover:opacity-100 bg-transparent"
+      {/* Centering wrapper (works with iOS browser chrome) */}
+      <div className="grid min-h-[100svh] w-full place-items-center">
+        {/* Card */}
+        <div
+          className="
+            relative w-[min(92vw,640px)]
+            max-h-[85svh] overflow-y-auto
+            rounded-xl
+            bg-[#0d1d2d] text-[var(--color-cream)]
+            ring-1 ring-white/10
+            shadow-[0_6px_25px_rgba(0,0,0,0.45)]
+            hover:bg-[#102438] transition
+            p-[2px]
+          "
         >
-          ✕
-        </button>
+          <button
+            onClick={dismiss}
+            aria-label="Close"
+            className="absolute right-2.5 top-2.5 sm:right-3 sm:top-3 inline-flex h-8 w-8 items-center justify-center border border-white/15 text-sm opacity-80 hover:opacity-100 bg-transparent z-10"
+          >
+            ✕
+          </button>
 
-        {!success ? (
-          <div className="grid grid-cols-[170px_1fr] sm:grid-cols-[220px_1fr]">
-            {/* Photo */}
-            <div className="h-full w-full bg-black/20">
-              <img
-                src={photoSrc}
-                alt="Dr. Juan Pablo Salerno"
-                className="h-full w-full object-cover object-center rounded-l-xl"
-              />
-            </div>
-
-            {/* Text + form */}
-            <div className="p-5">
-              <h3 className="font-serif text-[27px] md:text-[30px] leading-tight mb-2 opacity-90">
-                Please accept this guided meditation as a personal gift
-              </h3>
-              <p className="text-[14px] md:text-[17px] opacity-90">
-                Enjoy my 5-minute reset meditation to help you recenter whenever you need it.{" "}
-                I’d be honored if you joined my monthly newsletter,{" "}
-                <span className="italic">Science, Soul, and a Bit of Magic</span>, for practical wisdom (with
-                a little cheek) to nourish your body, mind, and spirit.
-              </p>
-
-              <form onSubmit={handleSubmit} className="mt-4 space-y-3">
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  placeholder="you@example.com"
+          {!success ? (
+            <div className="grid grid-cols-1 sm:grid-cols-[200px_1fr]">
+              {/* Photo — smaller on phones, bias crop to keep face/torso */}
+              <div className="h-36 sm:h-full w-full bg-black/20">
+                <img
+                  src={photoSrc}
+                  alt="Dr. Juan Pablo Salerno"
                   className="
-                    w-full rounded-md border border-white/15 bg-white/5
-                    px-4 py-3 outline-none placeholder-white/60
-                    focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50
-                    text-[15px]
+                    h-full w-full object-cover
+                    object-[20%_center]  /* tweak 15–25% if needed */
+                    sm:object-center
+                    sm:rounded-l-xl
                   "
                 />
+              </div>
 
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="
-                    inline-flex w-full items-center justify-center
-                    rounded-md bg-[var(--color-gold)] text-black
-                    px-4 py-3 font-semibold
-                    shadow-md hover:shadow-lg hover:-translate-y-[1px]
-                    transition disabled:opacity-80
-                  "
-                >
-                  {loading ? "Sending…" : "Subscribe"}
-                </button>
-              </form>
+              {/* Text + form */}
+              <div className="p-4 sm:p-5">
+                {/* iPhone: short copy */}
+                <h3 className="sm:hidden font-serif text-[22px] leading-snug mb-2 opacity-90">
+                  Please accept this guided meditation as a personal gift
+                </h3>
+                <p className="sm:hidden text-[14px] opacity-90">
+                  …and I’d be honored if you joined my monthly newsletter,
+                  <span className="italic"> Science, Soul, and a Bit of Magic</span>.
+                </p>
+
+                {/* ≥ sm: full copy (unchanged) */}
+                <h3 className="hidden sm:block font-serif text-[26px] md:text-[30px] leading-snug mb-2 opacity-90">
+                  Please accept this guided meditation as a personal gift
+                </h3>
+                <p className="hidden sm:block text-[15px] md:text-[17px] opacity-90">
+                  Enjoy my 5-minute reset meditation to help you recenter whenever you need it.{" "}
+                  I’d be honored if you joined my monthly newsletter,{" "}
+                  <span className="italic">Science, Soul, and a Bit of Magic</span>, for practical wisdom (with
+                  a little cheek) to nourish your body, mind, and spirit.
+                </p>
+
+                <form onSubmit={handleSubmit} className="mt-4 space-y-3">
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="you@example.com"
+                    className="
+                      w-full rounded-md border border-white/15 bg-white/5
+                      px-4 py-3 outline-none placeholder-white/60
+                      focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50
+                      text-[15px]
+                    "
+                  />
+
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="
+                      inline-flex w-full items-center justify-center
+                      rounded-md bg-[var(--color-gold)] text-black
+                      px-4 py-3 font-semibold
+                      shadow-md hover:shadow-lg hover:-translate-y-[1px]
+                      transition disabled:opacity-80
+                    "
+                  >
+                    {loading ? "Sending…" : "Subscribe"}
+                  </button>
+                </form>
+              </div>
+            </div>
+          ) : (
+            <div className="p-5 text-center">
+              <h3 className="font-serif text-[22px] sm:text-[26px] md:text-[30px] leading-snug tracking-[0.02em] opacity-90">
+                Thank you — I’m so glad you’re here
+              </h3>
+              <p className="mt-2 text-[14px] sm:text-[15px] md:text-[18px] opacity-90">
+                Your 5-minute guided meditation download is waiting in your inbox.
+                <br />
+                Your first <span className="italic">Science, Soul, and a Bit of Magic</span> newsletter will arrive soon.
+              </p>
 
               <button
+                type="button"
                 onClick={dismiss}
-                className="mt-1 text-[12px] underline opacity-75 hover:opacity-100"
+                className="inline-flex items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 mt-3"
               >
+                Back to the website
               </button>
             </div>
-          </div>
-        ) : (
-          <div className="p-5 text-center">
-            <h3 className="font-serif text-[27px] md:text-[30px] leading-tight tracking-[0.02em] opacity-90">
-              Thank you — I’m so glad you’re here
-            </h3>
-            <p className="mt-2 text-[15px] md:text-[18px] opacity-90">
-              Your 5-minute guided meditation download is waiting in your inbox.
-              <br />
-              Your first <span className="italic">Science, Soul, and a Bit of Magic</span> newsletter will arrive soon.
-            </p>
-
-            <button
-              type="button"
-              onClick={dismiss}
-              className="inline-flex items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 mt-3"
-            >
-              Back to the website
-            </button>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>,
     document.body
