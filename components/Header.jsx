@@ -123,17 +123,9 @@ export default function Header() {
             padding-left: calc(1.5rem + var(--menu-foot-x));
             text-align: left;
           }
-
-          /* Example: iPhone landscape (including Pro/Pro Max) — nudge TITLE only */
-          @media (orientation: landscape) and (max-height: 430px) {
-            @supports (-webkit-touch-callout: none) {
-              aside[data-mobile-menu="open"] {
-                --menu-title-x: 24px; /* move just the label */
-                --menu-list-x:  0px;
-                --menu-foot-x:  0px;
-              }
             }
           }
+            
         `}</style>
       </header> 
 
