@@ -147,7 +147,7 @@ const toMobile = (id) => (id === "testimonials" ? "testimonials" : `${id}-m`);
 onClick={() => jump(toMobile(s.id))}
                   aria-current={activeId === s.id ? "true" : "false"}
                   className={[
-                    "w-full sm:w-[90%] inline-flex items-center gap-1 rounded-full px-3.5 py-1.5",
+                    "w-full inline-flex items-center gap-1 rounded-full px-3.5 py-1.5",
                     "text-[12px] font-semibold tracking-wide truncate transition",
                     "active:scale-95 active:brightness-125",
                     "border border-white/15 bg-[var(--color-teal-800)] text-[var(--color-cream)]",
