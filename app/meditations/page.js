@@ -37,7 +37,7 @@ export default function MeditationsPage() {
         >
           <main data-page="meditations" className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
             {/* ===== HERO ===== */}
-            <section className="mx-auto max-w-[1400px] px-6 pt-20 md:pt-20 pb-6 text-center">
+            <section className="mx-auto max-w-[1200px] px-6 pt-20 md:pt-20 pb-6 text-center">
               <h1 className="font-serif text-6xl leading-[1.06] opacity-95">
                 Meditations
               </h1>
@@ -45,7 +45,7 @@ export default function MeditationsPage() {
             </section>
 
             {/* ===== INTRO (moved out of card, like Consulting) ===== */}
-            <section className="mx-auto max-w-[900px] px-6 text-center mb-12 narrow-landscape-80">
+            <section className="mx-auto max-w-[1200px] px-6 text-center mb-12 narrow-landscape-80">
               <p className="text-lg md:text-xl opacity-90 leading-relaxed">
                 Practices designed to help reset your body, calm your mind, and uplift your spirit — guiding you through the day with clarity and ease.
               </p>
@@ -55,12 +55,12 @@ export default function MeditationsPage() {
             </section>
 
             {/* Divider — match two-column container width */}
-            <div className="mx-auto w-full max-w-[1400px] px-6">
+            <div className="mx-auto w-full max-w-[1200px] px-6">
               <hr className="border-t border-[var(--color-cream)]/15" />
             </div>
 
             {/* ===== FEATURED (5-Minute Reset) — now 2 columns ===== */}
-            <section className="mx-auto max-w-[1400px] px-6 py-14 md:py-16 narrow-landscape-80">
+            <section className="mx-auto max-w-[1200px] px-6 py-14 md:py-16 narrow-landscape-80">
               <div data-med-grid className="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
                 {/* LEFT COLUMN — existing content */}
                 <div>
@@ -142,12 +142,12 @@ export default function MeditationsPage() {
             </section>
 
             {/* Divider — match two-column container width */}
-            <div className="mx-auto w-full max-w-[1400px] px-6">
+            <div className="mx-auto w-full max-w-[1200px] px-6">
               <hr className="border-t border-[var(--color-cream)]/15" />
             </div>
 
             {/* ===== CUSTOM SESSIONS ===== */}
-            <section className="mx-auto max-w-[1400px] px-6 py-14 md:py-16 narrow-landscape-80"> 
+            <section className="mx-auto max-w-[1200px] px-6 py-14 md:py-16 narrow-landscape-80"> 
               <p className=" flex justify-center text-[12px] uppercase tracking-[0.18em] opacity-60 mb-2">Custom</p>
               <h2 className="flex justify-center font-serif text-4xl md:text-5xl opacity-95">Custom-Made Sessions</h2>
               <div className="mx-auto h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-6 rounded" />
@@ -169,24 +169,24 @@ export default function MeditationsPage() {
             <div className="pb-10" />
             
           {/* FINAL divider above footer — match two-column width, no bleed */}
-<div className="mx-auto max-w-[1400px] px-6">
-  <hr className="hidden lg:block max-w-[1400px] border-t border-[var(--color-cream)]/22" />
+<div className="mx-auto max-w-[1200px] px-6">
+  <hr className="hidden lg:block max-w-[1200px] border-t border-[var(--color-cream)]/22" />
 </div>
 
-            <div className="md:hidden mx-auto max-w-[1100px] px-3">
+            <div className="md:hidden mx-auto max-w-[1200px] px-3">
               {/* (mobile newsletter + socials unchanged) */}
               {/* ... */}
             </div>
 
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="block lg:hidden">
-  <div className="mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
+  <div className="mx-auto max-w-[1000px] px-6 mb-14 -mt-5">
     <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
   </div>
 
   <div className="mobile-footer-cap">
 
-  <div className="mx-auto max-w-[1400px] px-3 narrow-landscape-70">
+  <div className="mx-auto max-w-[1000px] px-3 narrow-landscape-70">
     {/* Newsletter card (midnight blue) */}
     <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
       <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
