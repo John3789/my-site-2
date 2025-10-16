@@ -1313,6 +1313,23 @@ export default function SpeakingPage() {
   }
 }
 
+/* Speaking — narrower footer on iPad portrait only (≈820×1180) and ipad mini (744x1024) */
+@media (orientation: portrait) and (min-width: 700px) and (max-width: 920px) {
+  /* Clamp any footer-y containers on this page */
+  body:has(main[data-page="speaking"])
+    :is(footer, .site-footer, .mobile-footer-cap, .home-footer-cap, div[class*="footer"]) {
+    max-width: 75vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Make the divider match the clamped width */
+  body:has(main[data-page="meditations"]) hr {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
       `}</style>
     </>
