@@ -107,8 +107,8 @@ export default function Header() {
    @media (orientation: landscape) and (max-height: 450px) {
   aside[data-mobile-menu="open"] {
     --menu-title-x: 50px; /* “Menu” word */
-    --menu-list-x:  25px; /* list of tabs */
-    --menu-foot-x:  25px; /* footer line */
+    --menu-list-x:  50px; /* list of tabs */
+    --menu-foot-x:  50px; /* footer line */
   }
   aside[data-mobile-menu="open"] .mobile-menu-title {
     transform: translateX(var(--menu-title-x)) !important;  /* beat earlier transform */
