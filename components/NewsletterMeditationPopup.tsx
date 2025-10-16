@@ -3,7 +3,7 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
-import { createPortal } from "react-dom"; // ← ADDED
+import { createPortal } from "react-dom";
 
 type Props = {
   isMeditationPage?: boolean;
@@ -33,11 +33,10 @@ export default function NewsletterMeditationPopup({
   const [loading, setLoading] = useState(false);
   const shownRef = useRef<boolean>(false);
 
-  const TESTING_MODE = true; // ← ensures it opens on every load while testing
+  const TESTING_MODE = true;
 
-  // Mount guard for portals (avoid SSR hydration mismatch)
-  const [mounted, setMounted] = useState(false); // ← ADDED
-  useEffect(() => setMounted(true), []);         // ← ADDED
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   const suppressed = useCallback((): boolean => {
     try {
@@ -74,7 +73,6 @@ export default function NewsletterMeditationPopup({
 
   const showOnce = useCallback(() => {
     if (shownRef.current || typeof window === "undefined") return;
-    // Respect guards only when not testing
     if (!TESTING_MODE && (suppressed() || sessionShown())) return;
     shownRef.current = true;
     if (!TESTING_MODE) markSessionShown();
@@ -92,7 +90,7 @@ export default function NewsletterMeditationPopup({
         return;
       }
       if (!suppressed() && !sessionShown()) showOnce();
-    }, Math.min(delayMs, 800)); // quicker while testing
+    }, Math.min(delayMs, 800));
 
     return () => window.clearTimeout(id);
   }, [TESTING_MODE, delayMs, isMeditationPage, suppressed, sessionShown, showOnce]);
@@ -144,7 +142,7 @@ export default function NewsletterMeditationPopup({
     if (loading) return;
     setLoading(true);
 
-    const form = e.currentTarget;
+    const form = e.currentTarget as HTMLFormElement;
     const formData = new FormData(form);
     const email = (formData.get("email") || "").toString().trim();
 
@@ -167,9 +165,8 @@ export default function NewsletterMeditationPopup({
     }
   }
 
-  if (!open || !mounted) return null; // ← ensure portal target exists
+  if (!open || !mounted) return null;
 
-  // ===== Portal the popup to <body> to avoid iOS transform/fixed issues =====
   return createPortal(
     <div
       role="dialog"
@@ -186,7 +183,7 @@ export default function NewsletterMeditationPopup({
         className="absolute inset-0 cursor-default bg-black/55"
       />
 
-      {/* Centering wrapper (works with iOS browser chrome) */}
+      {/* Centering wrapper with safe viewport height */}
       <div className="grid min-h-[100svh] w-full place-items-center">
         {/* Card */}
         <div
@@ -210,17 +207,18 @@ export default function NewsletterMeditationPopup({
           </button>
 
           {!success ? (
-            <div className="grid grid-cols-1 sm:grid-cols-[200px_1fr]">
-              {/* Photo — smaller on phones, bias crop to keep face/torso */}
-              <div className="h-36 sm:h-full w-full bg-black/20">
+            // === Jay-style: two columns even on phones ===
+            <div className="grid grid-cols-[42%_58%] md:grid-cols-[220px_1fr]">
+              {/* Photo — smaller on phones; bias crop so face/torso show */}
+              <div className="h-full w-full bg-black/20">
                 <img
                   src={photoSrc}
                   alt="Dr. Juan Pablo Salerno"
                   className="
                     h-full w-full object-cover
-                    object-[20%_center]  /* tweak 15–25% if needed */
-                    sm:object-center
-                    sm:rounded-l-xl
+                    object-[25%_center]   /* tweak 15–30% to fine-tune framing */
+                    md:object-center
+                    md:rounded-l-xl
                   "
                 />
               </div>
@@ -228,19 +226,19 @@ export default function NewsletterMeditationPopup({
               {/* Text + form */}
               <div className="p-4 sm:p-5">
                 {/* iPhone: short copy */}
-                <h3 className="sm:hidden font-serif text-[22px] leading-snug mb-2 opacity-90">
+                <h3 className="font-serif text-[22px] leading-snug mb-2 opacity-90 md:hidden">
                   Please accept this guided meditation as a personal gift
                 </h3>
-                <p className="sm:hidden text-[14px] opacity-90">
+                <p className="text-[14px] opacity-90 md:hidden">
                   …and I’d be honored if you joined my monthly newsletter,
                   <span className="italic"> Science, Soul, and a Bit of Magic</span>.
                 </p>
 
-                {/* ≥ sm: full copy (unchanged) */}
-                <h3 className="hidden sm:block font-serif text-[26px] md:text-[30px] leading-snug mb-2 opacity-90">
+                {/* ≥ md: full copy (your original) */}
+                <h3 className="hidden md:block font-serif text-[26px] md:text-[30px] leading-snug mb-2 opacity-90">
                   Please accept this guided meditation as a personal gift
                 </h3>
-                <p className="hidden sm:block text-[15px] md:text-[17px] opacity-90">
+                <p className="hidden md:block text-[15px] md:text-[17px] opacity-90">
                   Enjoy my 5-minute reset meditation to help you recenter whenever you need it.{" "}
                   I’d be honored if you joined my monthly newsletter,{" "}
                   <span className="italic">Science, Soul, and a Bit of Magic</span>, for practical wisdom (with
@@ -260,7 +258,6 @@ export default function NewsletterMeditationPopup({
                       text-[15px]
                     "
                   />
-
                   <button
                     type="submit"
                     disabled={loading}
@@ -279,15 +276,14 @@ export default function NewsletterMeditationPopup({
             </div>
           ) : (
             <div className="p-5 text-center">
-              <h3 className="font-serif text-[22px] sm:text-[26px] md:text-[30px] leading-snug tracking-[0.02em] opacity-90">
+              <h3 className="font-serif text-[22px] md:text-[30px] leading-snug tracking-[0.02em] opacity-90">
                 Thank you — I’m so glad you’re here
               </h3>
-              <p className="mt-2 text-[14px] sm:text-[15px] md:text-[18px] opacity-90">
+              <p className="mt-2 text-[14px] md:text-[18px] opacity-90">
                 Your 5-minute guided meditation download is waiting in your inbox.
                 <br />
                 Your first <span className="italic">Science, Soul, and a Bit of Magic</span> newsletter will arrive soon.
               </p>
-
               <button
                 type="button"
                 onClick={dismiss}
