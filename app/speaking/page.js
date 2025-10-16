@@ -1335,12 +1335,12 @@ export default function SpeakingPage() {
 
   /* 1) Reduce space below the Programs / Formats / Results / Testimonials pills */
   #quicknav {
-    margin-bottom: 0.5rem !important; /* tighten space below pill grid */
+    margin-bottom: 0rem !important; /* tighten space below pill grid */
   }
 
   /* 2) Reduce space above the Prev / All Speaking / Next button rows */
   .mobile-section-footer {
-    margin-top: 0.5rem !important; /* default was ~2rem; this pulls it closer */
+    margin-top: 0rem !important; /* default was ~2rem; this pulls it closer */
   }
 }
 
