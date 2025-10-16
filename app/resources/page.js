@@ -200,7 +200,7 @@ export default function ResourcesPage() {
 
             {/* Divider under mobile nav */}
             <div className="lg:hidden mt-3 -mb-5 px-0"> 
-                <div className="h-px w-[90%] lg:w-full bg-[var(--color-cream)]/15 mx-auto" />
+                <div className="h-px w-[85%] lg:w-full bg-[var(--color-cream)]/15 mx-auto" />
             </div>
           </div>
 
