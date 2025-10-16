@@ -1330,26 +1330,31 @@ export default function SpeakingPage() {
     margin-right: auto;
   }
 
-  /* === iPad PORTRAIT (≈820–950px) — tighten spacing under pills & above button rows === */
+  /* === iPad PORTRAIT ONLY (≈ 800–950px) — tighten spacing under pills & above button rows === */
 @media (orientation: portrait) and (min-width: 800px) and (max-width: 950px) {
-  /* 1️⃣  Reduce space below the Programs / Formats / Results / Testimonials pills */
-  #quicknav {
-    margin-bottom: 0rem !important; /* tighten spacing — lower value = less gap */
+
+  /* 1️⃣ BELOW THE 4 NAV PILLS — trim section bottom padding and pull pills slightly down */
+  [data-page="speaking"] #intro {
+    padding-bottom: 0.5rem !important;   /* reduces gap below the pills */
+  }
+  [data-page="speaking"] #quicknav {
+    margin-bottom: -0.25rem !important;  /* gently tightens space under pills */
   }
 
-  /* 2️⃣  Reduce space above the Prev / All Speaking / Next button groups */
-  .lg\:hidden > div > .max-w-\[540px\] {
-    margin-top: 0rem !important;  /* adjust down if still too tall */
+  /* 2️⃣ ABOVE THE PREV / ALL SPEAKING / NEXT BUTTONS — pull them closer to content */
+  [data-page="speaking"] #programs + .lg\:hidden,
+  [data-page="speaking"] #formats + .lg\:hidden,
+  [data-page="speaking"] #results + .lg\:hidden,
+  [data-page="speaking"] #testimonials + .lg\:hidden {
+    margin-top: -0.75rem !important;   /* adjust: -0.5rem for subtle, -1rem for tighter */
+    padding-top: 0 !important;
   }
 
-  /* Fallback if class targeting changes */
-  .mobile-section-footer,
-  .lg\:hidden.mt-8,
-  .lg\:hidden.-mt-6 {
-    margin-top: 0 !important;
+  /* Optional: tighten internal grid spacing inside 3-button row */
+  [data-page="speaking"] .max-w-\[540px\].grid {
+    gap: 0.5rem !important;
   }
 }
-
 
 
       `}</style>
