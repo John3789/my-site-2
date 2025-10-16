@@ -210,17 +210,19 @@ export default function NewsletterMeditationPopup({
             // === Jay-style: two columns even on phones ===
             <div className="grid grid-cols-[42%_58%] md:grid-cols-[220px_1fr]">
               {/* Photo — smaller on phones; bias crop so face/torso show */}
-              <div className="h-full w-full bg-black/20">
-                <img
-                  src={photoSrc}
-                  alt="Dr. Juan Pablo Salerno"
-                  className="
-                    h-full w-full object-cover
-                    object-[25%_center]   /* tweak 15–30% to fine-tune framing */
-                    md:object-center
-                    md:rounded-l-xl
-                  "
-                />
+<div className="h-full w-full bg-black/20 flex items-center justify-center overflow-hidden">
+
+<img
+  src={photoSrc}
+  alt="Dr. Juan Pablo Salerno"
+  className="
+    h-full w-full object-cover
+    object-center
+    md:object-center
+    md:rounded-l-xl
+  "
+/>
+
               </div>
 
               {/* Text + form */}
