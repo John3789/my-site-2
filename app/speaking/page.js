@@ -1330,17 +1330,23 @@ export default function SpeakingPage() {
     margin-right: auto;
   }
 
-/* === iPad PORTRAIT only === */
+  /* === iPad PORTRAIT (≈820–950px) — tighten spacing under pills & above button rows === */
 @media (orientation: portrait) and (min-width: 800px) and (max-width: 950px) {
-
-  /* 1) Reduce space below the Programs / Formats / Results / Testimonials pills */
+  /* 1️⃣  Reduce space below the Programs / Formats / Results / Testimonials pills */
   #quicknav {
-    margin-bottom: 0rem !important; /* tighten space below pill grid */
+    margin-bottom: 0.5rem !important; /* tighten spacing — lower value = less gap */
   }
 
-  /* 2) Reduce space above the Prev / All Speaking / Next button rows */
-  .mobile-section-footer {
-    margin-top: 0rem !important; /* default was ~2rem; this pulls it closer */
+  /* 2️⃣  Reduce space above the Prev / All Speaking / Next button groups */
+  .lg\:hidden > div > .max-w-\[540px\] {
+    margin-top: 0.25rem !important;  /* adjust down if still too tall */
+  }
+
+  /* Fallback if class targeting changes */
+  .mobile-section-footer,
+  .lg\:hidden.mt-8,
+  .lg\:hidden.-mt-6 {
+    margin-top: 0 !important;
   }
 }
 
