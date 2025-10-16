@@ -328,7 +328,7 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
 
   </div>
 
-  <div className="mobile-footer-cap">
+  <div className="mobile-footer-cap narrow-landscape-70">
 
   <div className="mx-auto max-w-[1400px] px-3">
     {/* Newsletter card (midnight blue) */}
