@@ -172,13 +172,15 @@ export default function NewsletterMeditationPopup({
   // ===== Portal the popup to <body> to avoid iOS transform/fixed issues =====
   return createPortal(
     <div
-      role="dialog"
-      aria-modal="true"
-      aria-label="Newsletter popup"
-      tabIndex={-1}
-      onKeyDown={onEsc}
-      className="fixed inset-0 z-[9999] flex items-center justify-center p-4" // ← raised z-index
-    >
+  role="dialog"
+  aria-modal="true"
+  aria-label="Newsletter popup"
+  tabIndex={-1}
+  onKeyDown={onEsc}
+  className="fixed inset-0 z-[9999] flex items-start justify-center p-3 sm:p-4"
+  style={{ paddingTop: 'max(env(safe-area-inset-top), 12px)' }}  // ← avoid notch
+>
+
       {/* Backdrop */}
       <button
         aria-label="Close popup"
@@ -187,17 +189,19 @@ export default function NewsletterMeditationPopup({
       />
 
       {/* Card — visually identical to newsletter footer */}
-      <div
-        className="
-          relative w-full max-w-[640px]
-          rounded-xl
-          bg-[#0d1d2d] text-[var(--color-cream)]
-          ring-1 ring-white/10
-          shadow-[0_6px_25px_rgba(0,0,0,0.45)]
-          hover:bg-[#102438] transition
-          overflow-hidden p-[2px]
-        "
-      >
+<div
+  className="
+    relative w-[min(92vw,640px)]  // ← tighter on phones, same cap on larger
+    max-h-[85vh] overflow-y-auto  // ← scroll inside if needed
+    rounded-xl
+    bg-[#0d1d2d] text-[var(--color-cream)]
+    ring-1 ring-white/10
+    shadow-[0_6px_25px_rgba(0,0,0,0.45)]
+    hover:bg-[#102438] transition
+    p-[2px]
+  "
+>
+
         <button
           onClick={dismiss}
           aria-label="Close"
@@ -207,52 +211,53 @@ export default function NewsletterMeditationPopup({
         </button>
 
         {!success ? (
-          <div className="grid grid-cols-[170px_1fr] sm:grid-cols-[220px_1fr]">
+ <div className="grid grid-cols-1 sm:grid-cols-[220px_1fr]">
+
             {/* Photo */}
-            <div className="h-full w-full bg-black/20">
-              <img
-                src={photoSrc}
-                alt="Dr. Juan Pablo Salerno"
-                className="h-full w-full object-cover object-center rounded-l-xl"
-              />
-            </div>
+  <div className="h-40 sm:h-full w-full bg-black/20">
+  <img
+    src={photoSrc}
+    alt="Dr. Juan Pablo Salerno"
+    className="h-full w-full object-cover object-center sm:rounded-l-xl"
+  />
+</div>
+
 
             {/* Text + form */}
-            <div className="p-5">
-              <h3 className="font-serif text-[27px] md:text-[30px] leading-tight mb-2 opacity-90">
-                Please accept this guided meditation as a personal gift
-              </h3>
-              <p className="text-[14px] md:text-[17px] opacity-90">
-                Enjoy my 5-minute reset meditation to help you recenter whenever you need it.{" "}
-                I’d be honored if you joined my monthly newsletter,{" "}
-                <span className="italic">Science, Soul, and a Bit of Magic</span>, for practical wisdom (with
-                a little cheek) to nourish your body, mind, and spirit.
-              </p>
+<div className="p-4 sm:p-5">
+  <h3 className="font-serif text-[22px] sm:text-[26px] md:text-[30px] leading-snug mb-2 opacity-90">
+    Please accept this guided meditation as a personal gift
+  </h3>
+  <p className="text-[14px] sm:text-[15px] md:text-[17px] opacity-90">
+    Enjoy my 5-minute reset meditation to help you recenter whenever you need it.{" "}
+    I’d be honored if you joined my monthly newsletter,{" "}
+    <span className="italic">Science, Soul, and a Bit of Magic</span>, for practical wisdom (with
+    a little cheek) to nourish your body, mind, and spirit.
+  </p>
 
-              <form onSubmit={handleSubmit} className="mt-4 space-y-3">
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  placeholder="you@example.com"
-                  className="
-                    w-full rounded-md border border-white/15 bg-white/5
-                    px-4 py-3 outline-none placeholder-white/60
-                    focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50
-                    text-[15px]
-                  "
-                />
-
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="
-                    inline-flex w-full items-center justify-center
-                    rounded-md bg-[var(--color-gold)] text-black
-                    px-4 py-3 font-semibold
-                    shadow-md hover:shadow-lg hover:-translate-y-[1px]
-                    transition disabled:opacity-80
-                  "
+  <form onSubmit={handleSubmit} className="mt-4 space-y-3">
+    <input
+      type="email"
+      name="email"
+      required
+      placeholder="you@example.com"
+      className="
+        w-full rounded-md border border-white/15 bg-white/5
+        px-4 py-3 outline-none placeholder-white/60
+        focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50
+        text-[15px]
+      "
+    />
+    <button
+      type="submit"
+      disabled={loading}
+      className="
+        inline-flex w-full items-center justify-center
+        rounded-md bg-[var(--color-gold)] text-black
+        px-4 py-3 font-semibold
+        shadow-md hover:shadow-lg hover:-translate-y-[1px]
+        transition disabled:opacity-80
+      "
                 >
                   {loading ? "Sending…" : "Subscribe"}
                 </button>
