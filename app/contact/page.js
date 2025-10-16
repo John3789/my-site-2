@@ -553,15 +553,16 @@ export default function ContactPage() {
                 padding: 0;
               }
 
-/* iPad + iPad Mini PORTRAIT (700–950px) — narrow the mobile footer block */
-@media (orientation: portrait) and (min-width: 700px) and (max-width: 950px) {
+/* ── iPad & iPad mini PORTRAIT (744–950px): narrow the mobile footer ── */
+@media (orientation: portrait) and (min-width: 744px) and (max-width: 950px) {
   .mobile-footer-cap {
-    max-width: 75vw !important;   /* narrower than the current max-w-[900px] */
+    max-width: 75vw !important;   /* overrides max-w-[900px] */
     width: 100% !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
 }
+
           `}</style>
         </main>
       </div>
