@@ -1334,12 +1334,12 @@ export default function SpeakingPage() {
 @media (orientation: portrait) and (min-width: 800px) and (max-width: 950px) {
   /* 1️⃣  Reduce space below the Programs / Formats / Results / Testimonials pills */
   #quicknav {
-    margin-bottom: 0.5rem !important; /* tighten spacing — lower value = less gap */
+    margin-bottom: 0rem !important; /* tighten spacing — lower value = less gap */
   }
 
   /* 2️⃣  Reduce space above the Prev / All Speaking / Next button groups */
   .lg\:hidden > div > .max-w-\[540px\] {
-    margin-top: 0.25rem !important;  /* adjust down if still too tall */
+    margin-top: 0rem !important;  /* adjust down if still too tall */
   }
 
   /* Fallback if class targeting changes */
