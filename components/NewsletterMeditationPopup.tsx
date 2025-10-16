@@ -218,7 +218,7 @@ export default function NewsletterMeditationPopup({
   className="
     h-full w-full object-cover
     object-center
-    md:object-[center_60%]
+    md:object-[center_75%]
     md:rounded-l-xl
   "
 />
