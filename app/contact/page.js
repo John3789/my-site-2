@@ -3,7 +3,6 @@
 
 import { useState, useRef } from "react";
 import Link from "next/link";
-import NewsletterMeditationPopup from "../../components/NewsletterMeditationPopup";
 import HeroImageIphoneAware from "../../components/HeroImageIphoneAware";
 import { useIosZoomVars } from "../../components/useIosZoom";
 
@@ -339,7 +338,7 @@ export default function ContactPage() {
             </header>
 
             {/* Body: form + slim info card */}
-<div className="md:mx-auto md:max-w-[800px]">
+<div className="md:grid md:grid-cols-[1fr_460px] md:gap-6">
               {/* LEFT: form */}
               <section className="relative overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7 shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
                 <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
@@ -456,13 +455,83 @@ export default function ContactPage() {
                 )}
               </section>
 
+<aside className="hidden md:block">
+  <div className="sticky top-24 space-y-5">
+    {/* Popup-style card (wider, sharper image, no socials) */}
+    <div className="relative w-full rounded-xl overflow-hidden p-[2px] bg-[#0d1d2d] text-[var(--color-cream)] ring-1 ring-white/10 shadow-[0_6px_25px_rgba(0,0,0,0.45)] hover:bg-[#102438] transition">
+      <div className="grid grid-cols-[150px_1fr] sm:grid-cols-[190px_1fr]">
+        {/* Photo (sharper via Next image wrapper) */}
+        <div className="h-full w-full bg-black/20">
+          <HeroImageIphoneAware src="/bwhero20a.jpg" alt="Dr. Juan Pablo Salerno" width={900} height={1200} className="h-full w-full object-cover object-center rounded-l-xl" sizes="(min-width: 1024px) 190px, 150px" quality={95} loading="lazy" />
+        </div>
+
+        {/* Copy + form only */}
+        <div className="p-5">
+          <p className="text-[14px] md:text-[17px] opacity-90">I’d be honored if you joined my monthly newsletter, <span className="italic">Science, Soul, and a Bit of Magic</span>, for practical wisdom (with a little cheek) to nourish your body, mind, and spirit.</p>
+          <div className="mt-4 space-y-3">
+            <input type="email" placeholder="you@example.com" className="w-full rounded-md border border-white/15 bg-white/5 px-4 py-3 outline-none placeholder-white/60 focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50 text-[15px]" />
+            <button type="button" className="inline-flex w-full items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-4 py-3 font-semibold shadow-md hover:shadow-lg hover:-translate-y-[1px] transition">Subscribe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>
 
             </div>
 
-            {/* Bookend divider (desktop) */}
-            <div className="hidden lg:block mx-auto max-w-[1200px] px-6 mt-15">
-              <hr className="border-t border-[var(--color-cream)]/22" />
-            </div>
+{/* Bookend divider (desktop) */}
+<div className="hidden lg:block mx-auto max-w-[1200px] px-6 mt-15">
+  <hr className="border-t border-[var(--color-cream)]/22" />
+</div>
+
+{/* Footer row: left = socials/bio, right = legal */}
+<div className="hidden lg:flex items-start justify-between mx-auto max-w-[1200px] px-6 mt-4 text-[13px] leading-relaxed opacity-85">
+  {/* LEFT side — socials + bio */}
+  <div className="flex flex-col items-start text-left">
+    <p className="uppercase tracking-[0.18em] opacity-70 text-[12px]">Follow Dr. Salerno:</p>
+    <div className="mt-3 flex items-center gap-8">
+      <a href="https://www.tiktok.com/@YOURHANDLE" aria-label="TikTok" className="opacity-90 hover:opacity-100">
+        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+          <path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z" />
+        </svg>
+      </a>
+      <a href="https://www.instagram.com/YOURHANDLE" aria-label="Instagram" className="opacity-90 hover:opacity-100">
+        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+          <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z" />
+        </svg>
+      </a>
+      <a href="https://www.youtube.com/@YOURHANDLE" aria-label="YouTube" className="opacity-90 hover:opacity-100">
+        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+          <path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" />
+        </svg>
+      </a>
+    </div>
+    <p className="mt-4 max-w-[520px] text-[13px] leading-relaxed">
+      Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, author and professor—credited
+      with more than 30 peer-reviewed publications and over 2,000 citations.
+    </p>
+  </div>
+
+  {/* RIGHT side — legal info */}
+  <div className="text-left translate-y-[-4px]">
+    <p>© Dr. Juan Pablo Salerno™</p>
+    <p className="mt-1">
+      <span>All rights reserved</span>
+      <span className="mx-2 opacity-50">·</span>
+      <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
+      <span className="mx-2 opacity-50">·</span>
+      <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
+    </p>
+  </div>
+</div>
+
+
+
+
+
+
+
           </div>
 
           {/* Global crisp text & iOS guard */}
@@ -506,6 +575,11 @@ export default function ContactPage() {
   [data-page="contact"] .mobile-footer-cap .rounded-xl:first-of-type {
     margin-top: 0.5rem !important;
   }
+
+  /* CONTACT — hide the global site footer only on this page */
+body:has(main[data-page="contact"]) :is(footer, .site-footer, [role="contentinfo"]) {
+  display: none !important;
+}
 }
 
 
@@ -513,8 +587,7 @@ export default function ContactPage() {
         </main>
       </div>
 
-      {/* Popup mounted after the zoom wrapper */}
-      <NewsletterMeditationPopup delayMs={5000} />
+
     </>
   );
 }
