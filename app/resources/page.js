@@ -200,7 +200,7 @@ export default function ResourcesPage() {
 
             {/* Divider under mobile nav */}
             <div className="lg:hidden mt-3 -mb-5 px-0"> 
-                <div className="h-px w-[90%] lg:w-full bg-[var(--color-cream)]/15" />
+                <div className="h-px w-[80%] lg:w-full bg-[var(--color-cream)]/15 mx-auto" />
             </div>
           </div>
 
@@ -307,7 +307,7 @@ export default function ResourcesPage() {
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="block lg:hidden">
   <div className="mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
-    <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
+    <hr className="w-[80%] mx-auto border-t border-[var(--color-cream)]/22 mb-0" />
   </div>
 
   <div className="mobile-footer-cap">
