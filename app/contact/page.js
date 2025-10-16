@@ -232,8 +232,8 @@ export default function ContactPage() {
                 </div>
 
                 {/* Mobile footer block (same width as form/divider) */}
-                <div className="mobile-footer-cap">
-                  <div className="mx-auto w-full px-0 narrow-landscape-70">
+                <div className="mobile-footer-cap narrow-landscape-70">
+                  <div className="mx-auto w-full px-0">
                     {/* Newsletter card */}
                     <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
                       <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
