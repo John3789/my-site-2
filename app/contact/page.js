@@ -226,13 +226,13 @@ export default function ContactPage() {
                 {/* spacer */}
                 <div className="pb-10" />
 
-<div className="mx-auto w-full px-0 [@media(orientation:portrait)_and_(min-width:800px)_and_(max-width:950px)]:w-[85vw]">
+<div className="mx-auto w-full px-0 [@media(orientation:portrait)_and_(min-width:700px)_and_(max-width:950px)]:w-[85vw]">
   <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
 </div>
 
 
                 {/* Mobile footer block (same width as form/divider) */}
-          <div className="max-w-[900px] mobile-footer-cap narrow-landscape-70 [@media(orientation:portrait)_and_(min-width:800px)_and_(max-width:950px)]:w-[70vw] mx-auto">
+          <div className="max-w-[900px] mobile-footer-cap narrow-landscape-70 [@media(orientation:portrait)_and_(min-width:700px)_and_(max-width:950px)]:w-[70vw] mx-auto">
 
                   <div className="mx-auto w-full px-0">
                     {/* Newsletter card */}

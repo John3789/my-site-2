@@ -285,7 +285,7 @@ export default function AboutPage() {
 
             {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
             <div className="block lg:hidden">
-              <div className="mx-auto max-w-[1400px] px-6">
+              <div className="mx-auto max-w-[750px] px-3">
                 <hr className="mx-auto w-full border-t border-[var(--color-cream)]/22 -mt-20 mb-0" />
                 <div className="mobile-footer-cap px-6 narrow-landscape-70">
                   {/* Newsletter card (midnight blue) */}
