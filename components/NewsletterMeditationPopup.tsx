@@ -190,6 +190,7 @@ export default function NewsletterMeditationPopup({
           className="
             relative w-[min(92vw,640px)]
             max-h-[85svh] overflow-y-auto
+            [@media(orientation:landscape)_and_(max-width:950px)]:max-w-[96vw]
             rounded-xl
             bg-[#0d1d2d] text-[var(--color-cream)]
             ring-1 ring-white/10
@@ -208,7 +209,7 @@ export default function NewsletterMeditationPopup({
 
           {!success ? (
             // === Jay-style: two columns even on phones ===
-            <div className="grid grid-cols-[42%_58%] md:grid-cols-[220px_1fr]">
+            <div className="grid grid-cols-[42%_58%] md:grid-cols-[220px_1fr] [@media(orientation:landscape)_and_(max-width:950px)]:grid-cols-[200px_1fr]">
               {/* Photo — smaller on phones; bias crop so face/torso show */}
 <div className="h-full w-full bg-black/20 flex items-center justify-center overflow-hidden">
 
@@ -218,6 +219,7 @@ export default function NewsletterMeditationPopup({
   className="
     h-full w-full object-cover
     object-[45%]
+    [@media(orientation:landscape)_and_(max-width:950px)]:object-[55%]  /* iPhone landscape: crop higher */
     md:object-center
     md:rounded-l-xl
   "
@@ -228,10 +230,10 @@ export default function NewsletterMeditationPopup({
               {/* Text + form */}
               <div className="p-4 sm:p-5">
                 {/* iPhone: short copy */}
-                <h3 className="font-serif text-[22px] leading-snug mb-2 opacity-90 md:hidden">
+                <h3 className="font-serif text-[22px] leading-snug mb-2 opacity-90 md:hidden [@media(orientation:landscape)_and_(max-width:950px)]:text-[22px]">
                   Please accept this guided meditation as a personal gift
                 </h3>
-                <p className="text-[14px] opacity-90 md:hidden">
+                <p className="text-[14px] opacity-90 md:hidden [@media(orientation:landscape)_and_(max-width:950px)]:text-[13px]">
                   …and I’d be honored if you joined my monthly newsletter,
                   <span className="italic"> Science, Soul, and a Bit of Magic</span>.
                 </p>
@@ -258,6 +260,8 @@ export default function NewsletterMeditationPopup({
                       px-4 py-3 outline-none placeholder-white/60
                       focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50
                       text-[15px]
+                      [@media(orientation:landscape)_and_(max-width:950px)]:py-2.5
+
                     "
                   />
                   <button
@@ -269,6 +273,8 @@ export default function NewsletterMeditationPopup({
                       px-4 py-3 font-semibold
                       shadow-md hover:shadow-lg hover:-translate-y-[1px]
                       transition disabled:opacity-80
+                      [@media(orientation:landscape)_and_(max-width:950px)]:py-2.5
+
                     "
                   >
                     {loading ? "Sending…" : "Subscribe"}
