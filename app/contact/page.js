@@ -59,7 +59,7 @@ export default function ContactPage() {
           
 
           {/* ============== MOBILE (zoom lives INSIDE here) ============== */}
-          <div className="lg:hidden mx-auto max-w-[1400px] px-3 pt-16 pb-0 narrow-landscape-80">
+          <div className="lg:hidden mx-auto max-w-[1400px] px-3 pt-0 pb-0 narrow-landscape-80">
             <div
               ref={wrapRef}
               className={`zoomwrap lg:contents origin-top
@@ -219,7 +219,7 @@ export default function ContactPage() {
                 <div className="pb-10" />
 
 <div className="mx-auto w-full px-0 [@media(orientation:portrait)_and_(min-width:700px)_and_(max-width:950px)]:w-[85vw]">
-  <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
+  <hr className=":border-t border-[var(--color-cream)]/22 mb-0" />
 </div>
 
 
