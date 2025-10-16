@@ -55,7 +55,7 @@ export default function ContactPage() {
   return (
     <>
       <div className="mx-auto">
-        <main className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] min-h-screen md:min-h-0 narrow-landscape-70">
+        <main data-page="contact" className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] min-h-screen md:min-h-0 narrow-landscape-70">
           {/* soft gradient wash */}
           <div
             aria-hidden
@@ -553,14 +553,21 @@ export default function ContactPage() {
                 padding: 0;
               }
 
+/* iPad & iPad Pro portrait (and 744 mini) — visually narrow the footer block */
 @media screen and (orientation: portrait) and (min-width: 700px) and (max-width: 950px) {
-  .mobile-footer-cap,
-  .mobile-footer-cap > .mx-auto {   /* immediate wrapper in your markup */
-    max-width: 72vw !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+  /* Leave the element’s own max-width alone; add side gutters to its inner wrapper */
+  [data-page="contact"] .mobile-footer-cap > .mx-auto {
+    padding-left: calc((100vw - 72vw) / 2) !important;  /* adjust 72vw to taste */
+    padding-right: calc((100vw - 72vw) / 2) !important;
+  }
+
+  /* If something else still wins, bump specificity once */
+  [data-page="contact"] .mobile-footer-cap[class] > .mx-auto {
+    padding-left: calc((100vw - 72vw) / 2) !important;
+    padding-right: calc((100vw - 72vw) / 2) !important;
   }
 }
+
 
           `}</style>
         </main>
