@@ -311,8 +311,8 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
             </div>
 
           {/* FINAL divider above footer — match two-column width, no bleed */}
-          <div className="mx-auto max-w-[1100px] px-6 mt-17">
-            <hr className="hidden lg:block max-w-[1100px] border-t border-[var(--color-cream)]/22" />
+          <div className="mx-auto max-w-[1400px] px-6 mt-17">
+            <hr className="hidden lg:block max-w-[1400px] border-t border-[var(--color-cream)]/22" />
           </div>
 
           <div className="block lg:hidden mx-auto max-w-[1100px] px-3">
