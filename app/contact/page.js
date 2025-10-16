@@ -553,23 +553,15 @@ export default function ContactPage() {
                 padding: 0;
               }
 
-/* === iPad + iPad Mini PORTRAIT (700–950px) — reduce footer width === */
+/* iPad + iPad Mini PORTRAIT (700–950px) — narrow the mobile footer block */
 @media (orientation: portrait) and (min-width: 700px) and (max-width: 950px) {
-  body:has(main[data-page="speaking"])
-    :is(footer, .site-footer, .mobile-footer-cap, .home-footer-cap, div[class*="footer"]) {
-    max-width: 75vw !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  body:has(main[data-page="speaking"]) footer hr,
-  [data-page="speaking"] hr {
+  .mobile-footer-cap {
+    max-width: 75vw !important;   /* narrower than the current max-w-[900px] */
     width: 100% !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
 }
-
           `}</style>
         </main>
       </div>
