@@ -555,6 +555,24 @@ export default function ContactPage() {
               }
 }
 
+/* CONTACT — iPad / iPad mini LANDSCAPE: remove forced tall main + trim local spacers */
+@media (orientation: landscape) and (min-width: 1000px) {
+  /* 1) Let the page size to its content (overrides min-h-screen) */
+  [data-page="contact"] {
+    min-height: auto !important;
+  }
+
+  /* 2) Tighten the spacer right before the footer block */
+  .lg\:hidden .pb-10 {
+    padding-bottom: 0.25rem !important; /* was pb-10 */
+  }
+
+  /* 3) Nudge the blue card up a bit */
+  .mobile-footer-cap .rounded-xl {
+    margin-top: 0.5rem !important;      /* was mt-10 */
+  }
+}
+
 
           `}</style>
         </main>
