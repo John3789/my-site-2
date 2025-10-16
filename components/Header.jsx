@@ -83,28 +83,28 @@ export default function Header() {
             header[data-home="0"] .books-link .short-label { display: inline !important; }
           }
 
-/* === iPhone LANDSCAPE — align Menu label & footer with menu items === */
-@media (orientation: landscape) and (max-height: 430px) {
-  @supports (-webkit-touch-callout: none) {
-    :root { --menu-nudge: 24px; } /* tweak to taste */
+/* === iPhone LANDSCAPE (Pro + Pro Max) — shift Menu label & items when menu is OPEN === */
+@media (orientation: landscape) and (max-height: 430px) and (max-width: 900px) {
+  :root { --menu-nudge: 24px; }
 
-    /* Shift the "Menu" label */
-    header[data-menu-open="true"] ~ aside .mobile-menu-title {
-      display: inline-block;                 /* allow transform/padding to apply cleanly */
-      transform: translateX(var(--menu-nudge));
-    }
-
-    /* Ensure the item list has the same left start */
-    header[data-menu-open="true"] ~ aside .mobile-menu-list {
-      padding-left: calc(1.5rem + var(--menu-nudge) + env(safe-area-inset-left, 0px)); /* 1.5rem = px-6 */
-    }
-
-    /* Shift the footer to the same left edge as items */
-    header[data-menu-open="true"] ~ aside .mobile-menu-footer {
-      padding-left: calc(1.5rem + var(--menu-nudge) + env(safe-area-inset-left, 0px));
-      text-align: left;
-    }
+  /* Move the MENU label (needs .mobile-menu-title on the span) */
+  aside[aria-hidden="false"] .mobile-menu-title {
+    transform: translateX(var(--menu-nudge));
   }
+
+  /* Move the links block */
+  aside[aria-hidden="false"] nav {
+    padding-left: calc(24px + var(--menu-nudge)) !important;
+    padding-right: 24px !important;
+  }
+
+  /* Move the footer line too (you already saw this working) */
+  aside[aria-hidden="false"] .mobile-menu-footer {
+    padding-left: calc(24px + var(--menu-nudge)) !important;
+    padding-right: 24px !important;
+  }
+}
+
 }
 
 
@@ -148,8 +148,10 @@ export default function Header() {
             "
           >
             <div className="flex items-center justify-between px-6 h-16 pr-25">
-              {/* Menu label — add hook class */}
-             <span className="mobile-menu-title font-serif text-[clamp(22px,7vw,32px)] landscape:text-[3.5vw]">
+  {/* Bigger Menu label with landscape adjustment */}
+  <span
+    className="mobile-menu-title font-serif text-[clamp(22px,7vw,32px)] landscape:text-[3.5vw]"
+  >
     Menu
   </span>
 
