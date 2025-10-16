@@ -138,7 +138,7 @@ const toMobile = (id) => (id === "testimonials" ? "testimonials" : `${id}-m`);
           </section>
 
           {/* ---- MOBILE quick nav (numbered) ---- */}
-          <div id="quicknav" className="lg:hidden mt-0 pointer-events-auto narrow-landscape-70">
+          <div id="quicknav" className="lg:hidden mt-0 pointer-events-auto">
             <div className="grid grid-cols-2 landscape:grid-cols-3 gap-2 narrow-landscape-70">
               {SECTIONS.map((s, idx) => (
                 <button
@@ -163,7 +163,7 @@ onClick={() => jump(toMobile(s.id))}
             </div>
 
             {/* divider same width as container */}
-            <div className="mt-2 h-px w-full bg-[var(--color-cream)]/15 mt-12" />
+            <div className="mx-auto mt-2 h-px w-[90%] lg:w-full bg-[var(--color-cream)]/15 mt-12" />
           </div>
 
           {/* ===== MOBILE SECTIONS (no backdrop-blur in this subtree) ===== */}
