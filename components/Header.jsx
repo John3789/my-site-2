@@ -86,13 +86,13 @@ export default function Header() {
 /* === iPhone LANDSCAPE — align Menu label & footer with menu items === */
 @media (orientation: landscape) and (max-height: 430px) and (max-width: 950px) {
   @supports (-webkit-touch-callout: none) {
-    :root { --menu-nudge: 24px; } /* tweak to taste */
+    :root { --menu-nudge: 80px; } /* tweak to taste */
 
   /* Move the MENU label (needs .mobile-menu-title on the span) */
   aside[aria-hidden="false"] .mobile-menu-title {
     transform: translateX(var(--menu-nudge));
   }
-    
+
     /* Ensure the item list has the same left start */
     header[data-menu-open="true"] ~ aside .mobile-menu-list {
       padding-left: calc(1.5rem + var(--menu-nudge) + env(safe-area-inset-left, 0px)); /* 1.5rem = px-6 */
