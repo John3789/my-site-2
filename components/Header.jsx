@@ -32,11 +32,7 @@ export default function Header() {
   return (
     <>
       {/* Header bar */}
-      <header
-        data-home={isHome ? "1" : "0"}
-        data-menu-open={open ? "true" : "false"}   // ← added
-        className={headerClass}
-      >
+      <header data-home={isHome ? "1" : "0"} data-menu-open={open ? "true" : "false"} className={headerClass}>
         <div className="mx-auto max-w-7xl px-6 h-10 flex items-center">
           {/* Desktop / tablet nav (unchanged) */}
           <nav className="header-tabs w-full items-center justify-center gap-6 text-[13px] tracking-wide uppercase">
@@ -81,28 +77,36 @@ export default function Header() {
           /* Default: show full text, hide short */
           .books-link .short-label { display: none; }
 
-          /* iPad portrait (800–920px) ONLY, and NOT on Home */
-          @media (orientation: portrait) and (min-width: 800px) and (max-width: 920px) {
+          /* iPad portrait (800–950px) ONLY, and NOT on Home */
+          @media (orientation: portrait) and (min-width: 800px) and (max-width: 950px) {
             header[data-home="0"] .books-link .full-label { display: none !important; }
             header[data-home="0"] .books-link .short-label { display: inline !important; }
           }
 
-/* === iPhone LANDSCAPE (Pro + Pro Max) — shift Menu label & items when menu is OPEN === */
+/* === iPhone LANDSCAPE — align Menu label & footer with menu items === */
 @media (orientation: landscape) and (max-height: 430px) {
   @supports (-webkit-touch-callout: none) {
-    /* header is open → target sibling aside (the menu panel) */
+    :root { --menu-nudge: 24px; } /* tweak to taste */
+
+    /* Shift the "Menu" label */
     header[data-menu-open="true"] ~ aside .mobile-menu-title {
-      transform: translateX(24px);
+      display: inline-block;                 /* allow transform/padding to apply cleanly */
+      transform: translateX(var(--menu-nudge));
     }
+
+    /* Ensure the item list has the same left start */
     header[data-menu-open="true"] ~ aside .mobile-menu-list {
-      padding-left: calc(24px + env(safe-area-inset-left, 0px));
+      padding-left: calc(1.5rem + var(--menu-nudge) + env(safe-area-inset-left, 0px)); /* 1.5rem = px-6 */
     }
-    header[data-menu-open="true"] ~ aside .mobile-menu-list a,
-    header[data-menu-open="true"] ~ aside .mobile-menu-list [role="menuitem"] {
-      margin-left: 6px;
+
+    /* Shift the footer to the same left edge as items */
+    header[data-menu-open="true"] ~ aside .mobile-menu-footer {
+      padding-left: calc(1.5rem + var(--menu-nudge) + env(safe-area-inset-left, 0px));
+      text-align: left;
     }
   }
 }
+
 
         `}</style>
       </header> 
@@ -145,9 +149,9 @@ export default function Header() {
           >
             <div className="flex items-center justify-between px-6 h-16 pr-25">
               {/* Menu label — add hook class */}
-              <span className="mobile-menu-title font-serif text-[clamp(22px,7vw,32px)] landscape:text-[3.5vw]">
-                Menu
-              </span>
+             <span className="mobile-menu-title font-serif text-[clamp(22px,7vw,32px)] landscape:text-[3.5vw]">
+    Menu
+  </span>
 
               {/* Close button */}
               <button
@@ -166,9 +170,9 @@ export default function Header() {
 
             {/* Nav — add hook class */}
             <nav
-              className="mobile-menu-list px-6 py-6 space-y-6 uppercase tracking-wide
-                         text-[7vw] landscape:text-[4vw]"
-            >
+   className="mobile-menu-list px-6 py-6 space-y-6 uppercase tracking-wide
+              text-[7vw] landscape:text-[4vw]"
+ >
               <MobileLink href="/" onClick={() => setOpen(false)} active={pathname === "/"}>Home</MobileLink>
               <MobileLink href="/about" onClick={() => setOpen(false)} active={pathname.startsWith("/about")}>About</MobileLink>
               <MobileLink href="/books" onClick={() => setOpen(false)} active={pathname.startsWith("/books")}>Books & Publications</MobileLink>
@@ -179,9 +183,9 @@ export default function Header() {
               <MobileLink href="/contact" onClick={() => setOpen(false)} active={pathname.startsWith("/contact")}>Contact</MobileLink>
             </nav>
 
-            <div className="mt-auto px-6 pb-[calc(env(safe-area-inset-bottom)+16px)] text-xs opacity-80">
-              © {new Date().getFullYear()} Dr. Juan Pablo Salerno™
-            </div>
+            <div className="mobile-menu-footer mt-auto px-6 pb-[calc(env(safe-area-inset-bottom)+16px)] text-xs opacity-80">
+    © {new Date().getFullYear()} Dr. Juan Pablo Salerno™
+  </div>
           </aside>
         </>
       )}
