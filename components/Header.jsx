@@ -106,9 +106,9 @@ export default function Header() {
   /* ===== Independent controls (title/list/footer) — override everything above ===== */
    @media (orientation: landscape) and (max-height: 450px) {
   aside[data-mobile-menu="open"] {
-    --menu-title-x: 50px; /* “Menu” word */
-    --menu-list-x:  50px; /* list of tabs */
-    --menu-foot-x:  50px; /* footer line */
+    --menu-title-x: 75px; /* “Menu” word */
+    --menu-list-x:  75px; /* list of tabs */
+    --menu-foot-x:  75px; /* footer line */
   }
   aside[data-mobile-menu="open"] .mobile-menu-title {
     transform: translateX(var(--menu-title-x)) !important;  /* beat earlier transform */
