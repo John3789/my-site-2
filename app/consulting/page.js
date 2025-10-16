@@ -1134,10 +1134,37 @@ onClick={() => jump(toMobile(s.id))}
     margin-left: auto !important;
     margin-right: auto !important;
   }
+
+  /* CONSULTING — iPad & iPad mini PORTRAIT: unify container + divider widths */
+@media (orientation: portrait) and (min-width: 700px) and (max-width: 950px) {
+  /* one knob: pick how wide you want everything */
+  [data-page="consulting"] { --c-wide: 80vw; } /* try 78–82vw; 80vw = “wider side” */
+
+  /* clamp ALL main content wrappers to the same width */
+  [data-page="consulting"]
+    :is(section, nav, div)[class*="max-w-[1100px]"],
+  [data-page="consulting"]
+    :is(section, nav, div)[class*="max-w-[1400px]"] {
+    max-width: var(--c-wide) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* make all thin rules/HRs match that width, consistently */
+  [data-page="consulting"] :is(hr, .h-px) {
+    max-width: var(--c-wide) !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* quicknav’s underlined divider — keep it in sync too */
+  [data-page="consulting"] #quicknav + div {
+    max-width: var(--c-wide) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 }
-
-
-
 
       `}</style>
 
