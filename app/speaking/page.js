@@ -1355,8 +1355,17 @@ export default function SpeakingPage() {
   [data-page="speaking"] #testimonials button {
     margin-bottom: 1.5rem !important; /* increase spacing below the Show all/Show less button */
   }
-}
 
+@media (orientation: portrait) and (min-width: 768px) and (max-width: 1023px) {
+  [data-page="speaking"] #programs .md\:col-span-5,
+  [data-page="speaking"] #results .md\:col-span-5 {
+    padding-left: 1.5rem !important; /* matches Formats indent */
+  }
+  [data-page="speaking"] #programs .md\:col-span-7,
+  [data-page="speaking"] #results .md\:col-span-7 {
+    padding-right: 1.5rem !important; /* matches Formats right-side spacing */
+  }
+}
 
       `}</style>
     </>
