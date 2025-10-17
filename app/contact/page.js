@@ -350,15 +350,7 @@ async function handleNewsletterSubmit(e) {
             <header className="max-w-3xl mx-auto text-center mb-10">
               <div className="flex items-center justify-center gap-3 md:block">
                 <h1 className="font-serif text-6xl leading-[1.06] opacity-90">Contact</h1>
-                <HeroImageIphoneAware
-                  src="/headshot.jpg"
-                  alt="Dr. Juan Pablo Salerno"
-                  width={800}
-                  height={800}
-                  className="w-14 h-14 rounded-full object-cover border border-white/15 md:hidden"
-                  sizes="56px"
-                  priority
-                />
+              
               </div>
               <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 rounded" />
               <p className="text-base opacity-90 mt-6">
@@ -493,12 +485,22 @@ async function handleNewsletterSubmit(e) {
 <aside className="hidden md:block">
   <div className="top-60 space-y-5">
     {/* Popup-style card (wider, sharper image, no socials) */}
-    <div className="relative w-full rounded-xl overflow-hidden p-[2px] bg-[#0d1d2d] text-[var(--color-cream)] ring-1 ring-white/10 shadow-[0_6px_25px_rgba(0,0,0,0.45)] hover:bg-[#102438] transition">
+ <div className="relative w-full rounded-xl p-[2px] bg-[#0d1d2d] text-[var(--color-cream)] ring-1 ring-white/10 shadow-[0_6px_25px_rgba(0,0,0,0.45)] hover:bg-[#102438] transition isolation-isolate">
       <div className="grid grid-cols-[150px_1fr] sm:grid-cols-[190px_1fr]">
         {/* Photo (sharper via Next image wrapper) */}
-        <div className="h-full w-full bg-black/20">
-          <HeroImageIphoneAware src="/bwhero20a.jpg" alt="Dr. Juan Pablo Salerno" width={900} height={1200} className="h-full w-full object-cover object-center rounded-l-xl" sizes="(min-width: 1024px) 190px, 150px" quality={95} loading="lazy" />
-        </div>
+ <div className="h-full w-full bg-black/20 transform-gpu [backface-visibility:hidden] [transform:translateZ(0)] [contain:layout_paint]">
+  <HeroImageIphoneAware
+    src="/bwhero20a.jpg"
+    alt="Dr. Juan Pablo Salerno"
+    width={900}
+    height={1200}
+    className="h-full w-full object-cover object-center rounded-l-xl will-change-transform [backface-visibility:hidden] [transform:translateZ(0)]"
+    sizes="(min-width: 1024px) 190px, 150px"
+    quality={95}
+    priority                 // ← no lazy paint at top of page
+  />
+</div>
+
 
         {/* Copy + form only */}
         <div className="p-5">
@@ -634,6 +636,14 @@ input:-webkit-autofill:hover {
   transition: background-color 9999s ease-in-out 0s;
 }
   
+/* iOS Safari flicker fix */
+img, video {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
 }
 
 
