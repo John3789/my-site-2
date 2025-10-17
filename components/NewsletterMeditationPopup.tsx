@@ -189,7 +189,7 @@ export default function NewsletterMeditationPopup({
         <div
           className="
             relative w-[min(92vw,640px)]
-            max-h-[85svh] overflow-y-auto
+            max-h-max-h-[92svh] overflow-y-auto
             [@media(orientation:landscape)_and_(max-width:950px)]:max-w-[96vw]
             rounded-xl
             bg-[#0d1d2d] text-[var(--color-cream)]
@@ -209,7 +209,7 @@ export default function NewsletterMeditationPopup({
 
           {!success ? (
             // 2-column layout across devices
-            <div className="grid grid-cols-[42%_58%] md:grid-cols-[220px_1fr] [@media(orientation:landscape)_and_(max-width:950px)]:grid-cols-[200px_1fr]">
+<div className="grid items-stretch grid-cols-[42%_58%] md:grid-cols-[220px_1fr] [@media(orientation:landscape)_and_(max-width:950px)]:grid-cols-[200px_1fr]">
               {/* Photo — centered crop; slight shift on iPhone landscape */}
               <div className="h-full w-full bg-black/20 flex items-center justify-center overflow-hidden">
                 <img
