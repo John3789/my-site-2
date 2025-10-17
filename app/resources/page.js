@@ -182,7 +182,7 @@ export default function ResourcesPage() {
             </section>
 
             {/* Mobile nav chips */}
-            <div id="quicknav" className="lg:hidden mt-4 grid grid-cols-3 gap-2 narrow-landscape-80">
+            <div id="quicknav" className="lg:hidden mb-8 mt-4 grid grid-cols-3 gap-2 narrow-landscape-80">
               {THEMES.map((t) => {
                 const active = currentId === t.slug;
                 return (
