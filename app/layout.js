@@ -6,6 +6,7 @@ import { Analytics } from '@vercel/analytics/react'
 import Header from '../components/Header'
 import NewsletterSignup from '../components/NewsletterSignup'
 import Script from 'next/script'
+import LayoutFooterGate from '../components/LayoutFooterGate'
 
 // app/layout.tsx (or layout.js)
 export const viewport = {
@@ -167,6 +168,7 @@ export default function RootLayout({ children }) {
         {children}
 
         {/* DESKTOP / LARGE-TABLET FOOTER — ORIGINAL LAYOUT RESTORED */}
+<LayoutFooterGate>
         <footer className="hidden lg:block py-10 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
           <div
             className="
@@ -235,7 +237,7 @@ export default function RootLayout({ children }) {
             </div>
           </div>
         </footer>
-
+ </LayoutFooterGate>
         <Analytics />
       </body>
     </html>

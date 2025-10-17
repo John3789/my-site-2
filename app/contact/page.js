@@ -5,6 +5,8 @@ import { useState, useRef } from "react";
 import Link from "next/link";
 import HeroImageIphoneAware from "../../components/HeroImageIphoneAware";
 import { useIosZoomVars } from "../../components/useIosZoom";
+import { useEffect } from "react";
+
 
 export default function ContactPage() {
   // iOS zoom controller (portrait 3.0, landscape 1.3)
@@ -16,6 +18,12 @@ export default function ContactPage() {
   const [message, setMessage] = useState("");
   const [nlSubmitting, setNlSubmitting] = useState(false);
 const [nlSubscribed, setNlSubscribed] = useState(false);
+
+useEffect(() => {
+  document.body.classList.add("hide-footer-on-contact");
+  return () => document.body.classList.remove("hide-footer-on-contact");
+}, []);
+
 
 async function handleNewsletterSubmit(e) {
   e.preventDefault();
@@ -626,13 +634,8 @@ input:-webkit-autofill:hover {
   transition: background-color 9999s ease-in-out 0s;
 }
   
-/* CONTACT — iPad Pro PORTRAIT: hide global footer, use alt footer */
-@media (orientation: portrait) and (min-width: 1000px) {
-  /* Hide the site-wide footer only on the contact page */
-  body:has(main[data-page="contact"]) :is(footer, .site-footer, [role="contentinfo"]) {
-    display: none !important;
-  }
 }
+
 
 
 
