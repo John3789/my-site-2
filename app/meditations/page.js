@@ -46,7 +46,7 @@ export default function MeditationsPage() {
 
             {/* ===== INTRO (moved out of card, like Consulting) ===== */}
             <section className="mx-auto max-w-[1200px] px-6 text-center mb-12">
-              <p className="text-lg md:text-xl opacity-90 leading-relaxed narrow-landscape-80 narrow-landscape-90">
+              <p className="text-lg md:text-xl opacity-90 leading-relaxed narrow-landscape-80 narrow-landscape-80-ipad">
                 Practices designed to help reset your body, calm your mind, and uplift your spirit — guiding you through the day with clarity and ease.
               </p>
               <p className="mt-5 text-sm opacity-70">
