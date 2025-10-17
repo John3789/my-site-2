@@ -990,8 +990,6 @@ export default function SpeakingPage() {
       </div>
 
         </div>
-
-        
       </main>
 
       {/* Global safeguards and crisp text styles */}
@@ -1378,59 +1376,6 @@ export default function SpeakingPage() {
   }
       }
       `}</style>
-
-<style jsx global>{`
-  /* === iPad LANDSCAPE adjustments (quote cards) === */
-  @media (orientation:landscape) and (min-width:1000px) and (max-width:1200px) {
-    /* Overall quote card sizing */
-    [data-page="speaking"] figure {
-      padding: 1.75rem !important;
-      max-width: 95% !important;
-      margin-inline: auto !important;
-    }
-
-    /* Text scaling inside blockquotes */
-    [data-page="speaking"] figure blockquote {
-      font-size: 1.55rem !important;
-      line-height: 1.45 !important;
-    }
-
-    [data-page="speaking"] figure blockquote p {
-      font-size: 1.30rem !important;
-      opacity: 0.92 !important;
-    }
-
-    /* Quote mark alignment fix */
-    [data-page="speaking"] figure span[data-quote="open"] {
-      top: -0.4rem !important;
-      left: -0.75rem !important;
-      font-size: 2.25rem !important;
-      opacity: 0.22 !important;
-    }
-
-    [data-page="speaking"] figure span[data-quote="close"] {
-      right: 1.5rem !important;
-      bottom: 1.6rem !important;
-      font-size: 2.25rem !important;
-      opacity: 0.22 !important;
-    }
-  }
-
-  /* === iPad LANDSCAPE caption sizing fix === */
-  @media (orientation:landscape) and (min-width:1000px) and (max-width:1200px) {
-    [data-page="speaking"] figure figcaption {
-      font-size: 0.70rem !important;
-      opacity: 0.78 !important;
-      letter-spacing: 0.14em !important;
-      margin-top: 0.8rem !important;
-      text-transform: uppercase !important;
-      text-align: left !important;
-    }
-  }
-`}</style>
-
-
-
     </>
   );
 }
