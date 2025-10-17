@@ -189,7 +189,7 @@ const id = window.setTimeout(() => {
         <div
           className="
             relative w-[min(92vw,640px)]
-            max-h-max-h-[92svh] overflow-y-auto
+            max-h-[92svh] overflow-y-auto
             [@media(orientation:landscape)_and_(max-width:950px)]:max-w-[96vw]
             rounded-xl
             bg-[#0d1d2d] text-[var(--color-cream)]
