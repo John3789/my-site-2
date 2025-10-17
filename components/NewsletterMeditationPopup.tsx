@@ -280,7 +280,6 @@ const id = window.setTimeout(() => {
   </h3>
   <p className="hidden [@media(max-width:950px)]:block text-[14px] opacity-90">
     …and an inviation to join my monthly newsletter, <span className="italic">Science, Soul, and a Bit of Magic</span>.
-    <span className="italic"> Science, Soul, and a Bit of Magic</span>.
   </p>
 
   {/** DESKTOP / LARGE TABLETS (> 950px): FULL COPY */}
