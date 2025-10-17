@@ -36,7 +36,7 @@ export default function AboutPage() {
 
   function AboutSectionFooter({ baseId }) {
   return (
-    <div data-about-nav className="lg:hidden mt-10 mb-30 w-full">
+    <div data-about-nav className="lg:hidden mt-10 mb-14 w-full">
       <div className="mx-auto w-full max-w-[500px] grid grid-cols-[1fr_1.35fr_1fr] gap-4">
         <button
           onClick={() => jumpAbout(prevOf(baseId))}
