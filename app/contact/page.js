@@ -625,8 +625,15 @@ input:-webkit-autofill:hover {
   caret-color: var(--color-cream) !important;
   transition: background-color 9999s ease-in-out 0s;
 }
-
+  
+/* CONTACT — iPad Pro PORTRAIT: hide global footer, use alt footer */
+@media (orientation: portrait) and (min-width: 1000px) {
+  /* Hide the site-wide footer only on the contact page */
+  body:has(main[data-page="contact"]) :is(footer, .site-footer, [role="contentinfo"]) {
+    display: none !important;
+  }
 }
+
 
 
           `}</style>
