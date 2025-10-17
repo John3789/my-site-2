@@ -898,7 +898,7 @@ export default function SpeakingPage() {
 
 
             {/* Bottom spacer */}
-            <div className="pb-10 [@media(orientation:landscape)_and_(max-width:820px)]:pb-13" />
+            <div className="pb-10 [@media(orientation:portrait)_and_(max-width:760px)]:pb-20 [@media(orientation:landscape)_and_(max-width:820px)]:pb-13" />
             
           {/* FINAL divider above footer — match two-column width, no bleed */}
 <div className="mx-auto max-w-[1400px] px-6">
