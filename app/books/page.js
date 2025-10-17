@@ -374,13 +374,13 @@ export default function BooksPage() {
             
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="block lg:hidden">
-  <div className="mx-auto max-w-[80%] px-6 mb-14 -mt-5">
-    <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
+    <div className="mx-auto max-w-[800px] px-0">
+
+  <div className="mx-auto max-w-[90%] px-6 mb-14 -mt-5 border-t border-[var(--color-cream)]/22 mb-0">
   </div>
 
-  <div className="mobile-footer-cap">
+  <div className="mobile-footer-cap narrow-landscape-70">
 
-  <div className="mx-auto max-w-[1400px] px-3 narrow-landscape-70">
     {/* Newsletter card (midnight blue) */}
     <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
       <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
