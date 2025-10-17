@@ -4,6 +4,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
 import { createPortal } from "react-dom";
+import Image from "next/image"; 
 
 type Props = {
   isMeditationPage?: boolean;
@@ -212,17 +213,21 @@ const id = window.setTimeout(() => {
 <div className="grid items-stretch grid-cols-[42%_58%] md:grid-cols-[220px_1fr] [@media(orientation:landscape)_and_(max-width:950px)]:grid-cols-[200px_1fr]">
               {/* Photo — centered crop; slight shift on iPhone landscape */}
               <div className="h-full w-full bg-black/20 flex items-center justify-center overflow-hidden">
-                <img
-                  src={photoSrc}
-                  alt="Dr. Juan Pablo Salerno"
-                  className="
-                    h-full w-full object-cover
-                    object-[45%]
-                    [@media(orientation:landscape)_and_(max-width:950px)]:object-[55%]
-                    md:object-center
-                    md:rounded-l-xl
-                  "
-                />
+                <Image
+  src={photoSrc}
+  alt="Dr. Juan Pablo Salerno"
+  fill
+  quality={95}
+  sizes="(max-width: 950px) 100vw, 640px"
+  className="
+    object-cover
+    object-[45%]
+    [@media(orientation:landscape)_and_(max-width:950px)]:object-[55%]
+    md:object-center
+    md:rounded-l-xl
+  "
+  priority={false}
+/>
               </div>
 
               {/* Text + form */}
