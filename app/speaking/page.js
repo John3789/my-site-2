@@ -1356,7 +1356,7 @@ export default function SpeakingPage() {
     margin-bottom: 1.5rem !important; /* increase spacing below the Show all/Show less button */
   }
 
-@media (orientation: portrait) and (min-width: 768px) and (max-width: 1023px) {
+@media (orientation: portrait) and (min-width: 700px) and (max-width: 920px) {
   [data-page="speaking"] #programs .md\:col-span-5,
   [data-page="speaking"] #results .md\:col-span-5 {
     padding-left: 1.5rem !important; /* matches Formats indent */
@@ -1365,7 +1365,19 @@ export default function SpeakingPage() {
   [data-page="speaking"] #results .md\:col-span-7 {
     padding-right: 1.5rem !important; /* matches Formats right-side spacing */
   }
-}
+
+  @media (orientation: landscape) and (min-width: 1000px) and (max-width: 1200px) {
+  [data-page="speaking"] .quote-card {
+    padding: 1.25rem !important;   /* slightly tighter */
+    font-size: 0.95rem !important; /* tighten typography */
+  }
+  [data-page="speaking"] .quote-card h3 {
+    font-size: 1.1rem !important;
+  }
+
+@media (orientation:landscape) and (min-width:1000px) and (max-width:1200px){[data-page="speaking"] figure{padding:1.5rem!important;}[data-page="speaking"] figure blockquote{font-size:1.4rem!important;line-height:1.35!important;}[data-page="speaking"] figure blockquote p{font-size:1.1rem!important;opacity:0.9!important;}[data-page="speaking"] figure figcaption{font-size:0.8rem!important;opacity:0.8!important;}}
+
+
 
       `}</style>
     </>
