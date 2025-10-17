@@ -288,8 +288,8 @@ const id = window.setTimeout(() => {
     Please accept this guided meditation as a personal gift
   </h3>
   <p className="block [@media(max-width:950px)]:hidden text-[15px] md:text-[17px] opacity-90">
-    Enjoy my 5-minute reset meditation to help you recenter whenever you need it.{" "}
-    I’d be honored if you joined my monthly newsletter,{" "}
+    A 5-minute reset to help you recenter,{" "}
+    and I’d be honored if you joined my monthly newsletter,{" "}
     <span className="italic">Science, Soul, and a Bit of Magic</span>, for practical wisdom (with
     a little cheek) to nourish your body, mind, and spirit.
   </p>
