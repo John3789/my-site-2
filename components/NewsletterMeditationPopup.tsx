@@ -226,48 +226,58 @@ export default function NewsletterMeditationPopup({
               </div>
 
               {/* Text + form */}
-              <div className="p-4 sm:p-5">
-                {/* SAME COPY on portrait + landscape + desktop */}
-                <h3 className="font-serif text-[22px] md:text-[30px] leading-snug mb-2 opacity-90">
-                  Please accept this guided meditation as a personal gift
-                </h3>
-                <p className="text-[14px] md:text-[17px] opacity-90">
-                  Enjoy my 5-minute reset meditation to help you recenter whenever you need it.{" "}
-                  I’d be honored if you joined my monthly newsletter,{" "}
-                  <span className="italic">Science, Soul, and a Bit of Magic</span>, for practical wisdom (with
-                  a little cheek) to nourish your body, mind, and spirit.
-                </p>
+<div className="p-4 sm:p-5">
+  {/** PHONE (portrait + landscape up to 950px): SHORT COPY */}
+  <h3 className="hidden [@media(max-width:950px)]:block font-serif text-[22px] leading-snug mb-2 opacity-90">
+    Please accept this guided meditation as a personal gift
+  </h3>
+  <p className="hidden [@media(max-width:950px)]:block text-[14px] opacity-90">
+    …and I’d be honored if you joined my monthly newsletter,
+    <span className="italic"> Science, Soul, and a Bit of Magic</span>.
+  </p>
 
-                <form onSubmit={handleSubmit} className="mt-4 space-y-3">
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    placeholder="you@example.com"
-                    className="
-                      w-full rounded-md border border-white/15 bg-white/5
-                      px-4 py-3 outline-none placeholder-white/60
-                      focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50
-                      text-[15px]
-                      [@media(orientation:landscape)_and_(max-width:950px)]:py-2.5
-                    "
-                  />
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className="
-                      inline-flex w-full items-center justify-center
-                      rounded-md bg-[var(--color-gold)] text-black
-                      px-4 py-3 font-semibold
-                      shadow-md hover:shadow-lg hover:-translate-y-[1px]
-                      transition disabled:opacity-80
-                      [@media(orientation:landscape)_and_(max-width:950px)]:py-2.5
-                    "
-                  >
-                    {loading ? "Sending…" : "Subscribe"}
-                  </button>
-                </form>
-              </div>
+  {/** DESKTOP / LARGE TABLETS (> 950px): FULL COPY */}
+  <h3 className="block [@media(max-width:950px)]:hidden font-serif text-[26px] md:text-[30px] leading-snug mb-2 opacity-90">
+    Please accept this guided meditation as a personal gift
+  </h3>
+  <p className="block [@media(max-width:950px)]:hidden text-[15px] md:text-[17px] opacity-90">
+    Enjoy my 5-minute reset meditation to help you recenter whenever you need it.{" "}
+    I’d be honored if you joined my monthly newsletter,{" "}
+    <span className="italic">Science, Soul, and a Bit of Magic</span>, for practical wisdom (with
+    a little cheek) to nourish your body, mind, and spirit.
+  </p>
+
+  <form onSubmit={handleSubmit} className="mt-4 space-y-3">
+    <input
+      type="email"
+      name="email"
+      required
+      placeholder="you@example.com"
+      className="
+        w-full rounded-md border border-white/15 bg-white/5
+        px-4 py-3 outline-none placeholder-white/60
+        focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50
+        text-[15px]
+        [@media(orientation:landscape)_and_(max-width:950px)]:py-2.5
+      "
+    />
+    <button
+      type="submit"
+      disabled={loading}
+      className="
+        inline-flex w-full items-center justify-center
+        rounded-md bg-[var(--color-gold)] text-black
+        px-4 py-3 font-semibold
+        shadow-md hover:shadow-lg hover:-translate-y-[1px]
+        transition disabled:opacity-80
+        [@media(orientation:landscape)_and_(max-width:950px)]:py-2.5
+      "
+    >
+      {loading ? "Sending…" : "Subscribe"}
+    </button>
+  </form>
+</div>
+
             </div>
           ) : (
             <div className="p-5 text-center">
