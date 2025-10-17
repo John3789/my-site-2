@@ -33,7 +33,7 @@ export default function NewsletterMeditationPopup({
   const [loading, setLoading] = useState(false);
   const shownRef = useRef<boolean>(false);
 
-  const TESTING_MODE = true;
+  const TESTING_MODE = false;
 
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
