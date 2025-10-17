@@ -208,41 +208,30 @@ export default function NewsletterMeditationPopup({
           </button>
 
           {!success ? (
-            // === Jay-style: two columns even on phones ===
+            // 2-column layout across devices
             <div className="grid grid-cols-[42%_58%] md:grid-cols-[220px_1fr] [@media(orientation:landscape)_and_(max-width:950px)]:grid-cols-[200px_1fr]">
-              {/* Photo — smaller on phones; bias crop so face/torso show */}
-<div className="h-full w-full bg-black/20 flex items-center justify-center overflow-hidden">
-
-<img
-  src={photoSrc}
-  alt="Dr. Juan Pablo Salerno"
-  className="
-    h-full w-full object-cover
-    object-[45%]
-    [@media(orientation:landscape)_and_(max-width:950px)]:object-[55%]  /* iPhone landscape: crop higher */
-    md:object-center
-    md:rounded-l-xl
-  "
-/>
-
+              {/* Photo — centered crop; slight shift on iPhone landscape */}
+              <div className="h-full w-full bg-black/20 flex items-center justify-center overflow-hidden">
+                <img
+                  src={photoSrc}
+                  alt="Dr. Juan Pablo Salerno"
+                  className="
+                    h-full w-full object-cover
+                    object-[45%]
+                    [@media(orientation:landscape)_and_(max-width:950px)]:object-[55%]
+                    md:object-center
+                    md:rounded-l-xl
+                  "
+                />
               </div>
 
               {/* Text + form */}
               <div className="p-4 sm:p-5">
-                {/* iPhone: short copy */}
-                <h3 className="font-serif text-[22px] leading-snug mb-2 opacity-90 md:hidden [@media(orientation:landscape)_and_(max-width:950px)]:text-[22px]">
+                {/* SAME COPY on portrait + landscape + desktop */}
+                <h3 className="font-serif text-[22px] md:text-[30px] leading-snug mb-2 opacity-90">
                   Please accept this guided meditation as a personal gift
                 </h3>
-                <p className="text-[14px] opacity-90 md:hidden [@media(orientation:landscape)_and_(max-width:950px)]:text-[13px]">
-                  …and I’d be honored if you joined my monthly newsletter,
-                  <span className="italic"> Science, Soul, and a Bit of Magic</span>.
-                </p>
-
-                {/* ≥ md: full copy (your original) */}
-                <h3 className="hidden md:block font-serif text-[26px] md:text-[30px] leading-snug mb-2 opacity-90">
-                  Please accept this guided meditation as a personal gift
-                </h3>
-                <p className="hidden md:block text-[15px] md:text-[17px] opacity-90">
+                <p className="text-[14px] md:text-[17px] opacity-90">
                   Enjoy my 5-minute reset meditation to help you recenter whenever you need it.{" "}
                   I’d be honored if you joined my monthly newsletter,{" "}
                   <span className="italic">Science, Soul, and a Bit of Magic</span>, for practical wisdom (with
@@ -261,7 +250,6 @@ export default function NewsletterMeditationPopup({
                       focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50
                       text-[15px]
                       [@media(orientation:landscape)_and_(max-width:950px)]:py-2.5
-
                     "
                   />
                   <button
@@ -274,7 +262,6 @@ export default function NewsletterMeditationPopup({
                       shadow-md hover:shadow-lg hover:-translate-y-[1px]
                       transition disabled:opacity-80
                       [@media(orientation:landscape)_and_(max-width:950px)]:py-2.5
-
                     "
                   >
                     {loading ? "Sending…" : "Subscribe"}
