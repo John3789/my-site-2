@@ -1419,7 +1419,7 @@ export default function SpeakingPage() {
   /* === iPad LANDSCAPE caption sizing fix === */
   @media (orientation:landscape) and (min-width:1000px) and (max-width:1200px) {
     [data-page="speaking"] figure figcaption {
-      font-size: 0.75rem !important;
+      font-size: 0.70rem !important;
       opacity: 0.78 !important;
       letter-spacing: 0.14em !important;
       margin-top: 0.8rem !important;
