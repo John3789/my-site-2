@@ -126,7 +126,7 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
 
           {/* Mission */}
           <section className="w-full">
-            <div className="mx-auto max-w-[1400px] px-6 pt-42 pb-8">
+            <div className="mx-auto max-w-[1400px] px-6 pt-40 pb-10">
               <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Mission</h5>
               <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
               <div className="max-w-4xl mx-auto text-center landscape:max-w-2xl lg:landscape:max-w-4xl">
@@ -144,7 +144,7 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
           {/* Consulting */}
           <section id="consulting" className="w-full">
             <div className="mx-auto max-w-[1400px] px-6 pt-40 pb-10">
-              <hr className="border-t border-[var(--color-cream)]/22 mb-6" />
+              <hr className="border-t border-[var(--color-cream)]/22 mb-6 pb-3" />
               <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Consulting</h5>
               <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
 
@@ -206,9 +206,9 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
 
           {/* Speaking */}
           <section className="w-full">
-            <div className="mx-auto max-w-[1400px] px-6 pt-40 pb-12">
+            <div className="mx-auto max-w-[1400px] px-6 pt-40 pb-14">
               <hr className="border-t border-[var(--color-cream)]/22 mb-6" />
-              <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Speaking</h5>
+              <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70 pt-3">Speaking</h5>
               <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
 
               <div className="max-w-4xl mx-auto text-center landscape:max-w-2xl lg:landscape:max-w-4xl">
@@ -226,9 +226,9 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
 
           {/* Meditations */}
           <section id="meditations" className="w-full">
-            <div className="mx-auto max-w-[1400px] px-6 pt-40 pb-12">
+            <div className="mx-auto max-w-[1400px] px-6 pt-40 pb-14">
               <hr className="border-t border-[var(--color-cream)]/22 mb-6" />
-              <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Meditations</h5>
+              <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70 pt-3">Meditations</h5>
               <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
 
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start lg:items-center justify-items-stretch">

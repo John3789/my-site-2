@@ -491,7 +491,7 @@ async function handleNewsletterSubmit(e) {
               </section>
 
 <aside className="hidden md:block">
-  <div className="sticky top-60 space-y-5">
+  <div className="top-60 space-y-5">
     {/* Popup-style card (wider, sharper image, no socials) */}
     <div className="relative w-full rounded-xl overflow-hidden p-[2px] bg-[#0d1d2d] text-[var(--color-cream)] ring-1 ring-white/10 shadow-[0_6px_25px_rgba(0,0,0,0.45)] hover:bg-[#102438] transition">
       <div className="grid grid-cols-[150px_1fr] sm:grid-cols-[190px_1fr]">
