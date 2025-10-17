@@ -216,7 +216,7 @@ export default function SpeakingPage() {
               </h2>
 
 <div
-  className="space-y-6 opacity-85 text-lg md:text-xl leading-loose mx-auto max-w-none landscape:max-w-[700px] lg:landscape:max-w-none narrow-landscape-80-ipad"
+  className="space-y-6 opacity-85 text-lg md:text-xl leading-loose mx-auto max-w-none landscape:max-w-[750px] lg:landscape:max-w-[850px] narrow-landscape-80-ipad"
 >
                 <p>
                   Dr. Juan Pablo Salerno is a respected mental health scientist,
