@@ -279,7 +279,7 @@ const id = window.setTimeout(() => {
     Please accept this guided meditation as a personal gift
   </h3>
   <p className="hidden [@media(max-width:950px)]:block text-[14px] opacity-90">
-    …and I’d be honored if you joined my monthly newsletter,
+    …and an inviation to join my monthly newsletter, <span className="italic">Science, Soul, and a Bit of Magic</span>.
     <span className="italic"> Science, Soul, and a Bit of Magic</span>.
   </p>
 
@@ -288,10 +288,9 @@ const id = window.setTimeout(() => {
     Please accept this guided meditation as a personal gift
   </h3>
   <p className="block [@media(max-width:950px)]:hidden text-[15px] md:text-[17px] opacity-90">
-    A 5-minute reset meditation you can use anytime, and {" "}I’d be honored if you joined my monthly newsletter,{" "}
-    <span className="italic">Science, Soul, and a Bit of Magic</span>, for practical wisdom (with
-    a little cheek) to nourish your body, mind, and spirit.
-  </p>
+  A 5-minute reset to help you reconnect — and an invitation to keep that feeling
+  alive each month through my monthly newsletter, <span className="italic">Science, Soul, and a Bit of Magic</span>.
+</p>
 
   <form onSubmit={handleSubmit} className="mt-4 space-y-3">
     <input
