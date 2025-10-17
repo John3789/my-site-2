@@ -39,6 +39,48 @@ export default function NewsletterMeditationPopup({
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
+  // ↓↓↓ DEBUG OVERRIDES — remove after testing ↓↓↓
+useEffect(() => {
+  if (typeof window === "undefined") return;
+  const url = new URL(window.location.href);
+  const action = url.searchParams.get("popup");
+
+  // 1) ?popup=reset → clear both guards
+  if (action === "reset") {
+    try {
+      localStorage.removeItem(lsKey);
+      sessionStorage.removeItem(ssKey);
+      console.log("[Popup] Reset complete.");
+    } catch {}
+  }
+
+  // 2) ?popup=force → show immediately (ignores suppression)
+  if (action === "force") {
+    shownRef.current = false;
+    setOpen(true);
+    console.log("[Popup] Forced open via URL.");
+  }
+
+  // 3) Optional: inspect current guard state in the console
+  if (action === "debug") {
+    try {
+      const untilRaw = localStorage.getItem(lsKey);
+      const until = untilRaw ? Number(untilRaw) : null;
+      console.table({
+        TESTING_MODE,
+        suppressed: suppressed(),
+        sessionShown: sessionShown(),
+        now: Date.now(),
+        suppress_until: until,
+        suppress_in_ms: until ? until - Date.now() : null,
+      });
+    } catch {}
+  }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [mounted]); // only when mounted is set
+// ↑↑↑ remove this block when you’re done ↑↑↑
+
+
   const suppressed = useCallback((): boolean => {
     try {
       const raw = localStorage.getItem(lsKey);
