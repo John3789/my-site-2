@@ -101,7 +101,7 @@ export default function BooksPage() {
             </div>
 
             {/* Selected Publications */}
-            <div className="mx-auto max-w-[100%] md:max-w-[80%] lg:max-w-[1000px] xl:max-w-[1200px] px-6 pb-20">
+            <div className="mx-auto max-w-[100%] md:max-w-[80%] lg:max-w-[1000px] xl:max-w-[1100px] px-6 pb-20">
               <hr className="border-t border-[var(--color-cream)]/22 mb-8" />
               <h2 className="font-serif text-[clamp(28px,3.8vw,40px)] leading-[1.08] text-center opacity-90">
                 Selected Publications
