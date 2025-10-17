@@ -83,14 +83,14 @@ export default function NewsletterMeditationPopup({
     if (typeof window === "undefined") return;
     if (isMeditationPage) return;
 
-    const id = window.setTimeout(() => {
-      if (TESTING_MODE) {
-        shownRef.current = true;
-        setOpen(true);
-        return;
-      }
-      if (!suppressed() && !sessionShown()) showOnce();
-    }, Math.min(delayMs, 800));
+const id = window.setTimeout(() => {
+  if (TESTING_MODE) {
+    shownRef.current = true;
+    setOpen(true);
+    return;
+  }
+  if (!suppressed() && !sessionShown()) showOnce();
+}, delayMs);
 
     return () => window.clearTimeout(id);
   }, [TESTING_MODE, delayMs, isMeditationPage, suppressed, sessionShown, showOnce]);
