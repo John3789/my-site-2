@@ -74,7 +74,7 @@ export default function BooksPage() {
                         href="/contact"
                         className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3
                                    font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5
-                                   transition ring-1 ring-black/10"
+                                   transition ring-1 ring-black/10 -mb-10 lg:mb-0"
                       >
                         Contact for Media &amp; Speaking
                       </Link>
