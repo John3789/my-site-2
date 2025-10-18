@@ -287,8 +287,7 @@ const id = window.setTimeout(() => {
     Please accept this guided meditation as a personal gift
   </h3>
   <p className="block [@media(max-width:950px)]:hidden text-[15px] md:text-[17px] opacity-90">
-  A 5-minute reset to help you reconnect — and my invitation to keep that feeling
-  alive each month through <span className="italic">Science, Soul, and a Bit of Magic</span>, my monthly newsletter.
+  A 5-minute reset to return to your center. If it resonates, I'd love to stay conntected through <span className="italic">Science, Soul, and a Bit of Magic</span>, my monthly newsletter.
 </p>
 
   <form onSubmit={handleSubmit} className="mt-4 space-y-3">
