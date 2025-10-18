@@ -851,7 +851,7 @@ export default function SpeakingPage() {
             
 
             {/* Testimonials footer buttons (mobile only) — slimmer + centered + tight spacing */}
-            <div className="lg:hidden -mt-5 mb-17  w-full [@media(orientation:landscape)_and_(max-width:820px)]:mt-21 [@media(orientation:portrait)_and_(min-width:700px)_and_(max-width:799px)]:mt-20">
+            <div className="lg:hidden -mt-5 mb-17 w-full [@media(orientation:landscape)_and_(max-width:820px)]:mt-21 [@media(orientation:portrait)_and_(min-width:700px)_and_(max-width:799px)]:mt-20">
               <div className="w-full flex justify-center">
                 <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
                   <button
@@ -880,7 +880,7 @@ export default function SpeakingPage() {
  <div className="flex justify-center translate-y-[-28px] lg:translate-y-0">
   <a
     href="/contact"
-    className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black -mb-9 px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] lg:hover:translate-y-[-47px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs lg:w-auto lg:max-w-none lg:translate-y-[-45px] [@media(orientation:portrait)_and_(min-width:700px)_and_(max-width:799px)]:-mb-2"
+    className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black -mb-9 px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] lg:hover:translate-y-[-47px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs lg:w-auto lg:max-w-none lg:translate-y-[-45px] [@media(orientation:portrait)_and_(min-width:700px)_and_(max-width:900px)]:-mb-2"
   >
     Book Dr. Salerno to Speak
   </a>
