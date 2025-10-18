@@ -475,13 +475,8 @@ export default function SpeakingPage() {
 
             {/* Dr. Salerno Offers (Formats) */}
             <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 mx-auto w-[93%]" />
-<section id="formats" className="grid grid-cols-1 gap-y-12 md:gap-x-0 mx-15 items-center portrait:mx-0 portrait:px-6 landscape:max-w-[700px] landscape:mx-auto landscape:px-3 lg:landscape:max-w-[1400px] lg:landscape:mx-15 lg:landscape:px-0 narrow-landscape-70 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:grid-cols-[auto_minmax(0,0.96fr)] [@media(orientation:portrait)_and_(min-width:700px)_and_(max-width:920px)]:grid-cols-[auto_minmax(0,0.96fr)] [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:gap-8">
-
- {/* Quotes (RIGHT column) — desktop only */}
-<div
-className="hidden md:flex lg:col-span-1 flex-col gap-6 max-w-[640px] md:pr-6 quote-col narrow-landscape-70 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:gap-6 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:max-w-[560px]"
-  data-section="testimonials-desktop-right"
->
+<section id="formats" className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 md:gap-x-0 mx-15 items-center portrait:mx-0 portrait:px-6 landscape:max-w-[700px] landscape:mx-auto landscape:px-3 lg:landscape:max-w-[1400px] lg:landscape:mx-15 lg:landscape:px-0 narrow-landscape-70 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:grid-cols-[auto_minmax(0,0.96fr)] [@media(orientation:portrait)_and_(min-width:700px)_and_(max-width:920px)]:grid-cols-[auto_minmax(0,0.96fr)] [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:gap-8">
+<div className="hidden md:flex lg:col-span-1 xl:col-span-7 [@media(orientation:portrait)_and_(min-width:1000px)_and_(max-width:1200px)]:col-span-7 [@media(orientation:portrait)_and_(min-width:1000px)_and_(max-width:1200px)]:pr-6 flex-col gap-6 max-w-[640px] md:pr-6 quote-col narrow-landscape-70 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:gap-6 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:max-w-[560px]">  
   <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:p-5 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:mt-4 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:min-h-[215px]">
     <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
     <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:pl-2.5 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:!text-[27px] [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:leading-[1.25] [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:mt-2">
@@ -526,9 +521,8 @@ className="hidden md:flex lg:col-span-1 flex-col gap-6 max-w-[640px] md:pr-6 quo
 </div>
 
               {/* Formats list */}
-              <div className="order-1 md:order-2 lg:col-span-1 md:py-6 space-y-8 md:pl-6 narrow-landscape-70">
-                {/* Overline added */}
-                <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">
+<div className="order-1 md:order-2 lg:col-span-1 xl:col-span-5 [@media(orientation:portrait)_and_(min-width:1000px)_and_(max-width:1200px)]:col-span-5 [@media(orientation:portrait)_and_(min-width:1000px)_and_(max-width:1200px)]:pl-6 md:py-6 space-y-8 md:pl-6 narrow-landscape-70">
+  <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">
                   Formats
                 </p>
                 <h2 className="font-serif text-4xl mb-2">Dr. Salerno Offers</h2>
