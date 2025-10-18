@@ -409,12 +409,12 @@ export default function SpeakingPage() {
 >
   <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:p-5 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:mt-6">
     <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:pl-1.5 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:!text-[27px] [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:leading-[1.25]">
-      <span aria-hidden data-quote="open"  className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:pl-2.5 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:!text-[27px] [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:leading-[1.25]">
+      <span aria-hidden data-quote="open"  className="absolute -left-3 -top-1 text-4xl opacity-20 select-none [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:-left-0">“</span>
       <p>...an exceptional speaker: he is engaging, well-spoken, and clearly passionate about his work.</p>
       <span aria-hidden data-quote="close" className="absolute right-4 bottom-5 text-4xl opacity-20 select-none [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:left-0">”</span>
     </blockquote>
-    <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+    <figcaption className="pl-3 mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
       — <span className="text-[var(--color-gold)]">Cho-Hee</span>, American Public Health Association Annual Meeting &amp; Expo
     </figcaption>
   </figure>
@@ -486,7 +486,7 @@ export default function SpeakingPage() {
 >
   <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:p-5 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:mt-6">
     <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:pl-1.5 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:!text-[27px] [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:leading-[1.25]">
+    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:pl-2.5 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:!text-[27px] [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:leading-[1.25]">
       <span aria-hidden data-quote="open"  className="absolute -left-3 -top-1 text-4xl opacity-20 select-none [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:left-0">“</span>
       <p>
         ...gifted speaker whose engaging style &amp; clear communication bring
@@ -494,7 +494,7 @@ export default function SpeakingPage() {
       </p>
       <span aria-hidden data-quote="close" className="absolute right-6 bottom-5 text-4xl opacity-20 select-none">”</span>
     </blockquote>
-    <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+    <figcaption className="pl-3 mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
       — <span className="text-[var(--color-gold)]">Charles</span>, Columbia University
     </figcaption>
   </figure>
@@ -676,7 +676,7 @@ export default function SpeakingPage() {
 >
   <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:p-5 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:mt-6">
     <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:pl-1.5 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:!text-[27px] [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:leading-[1.25]">
+    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:pl-2.5 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:!text-[27px] [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:leading-[1.25]">
       <span aria-hidden data-quote="open"  className="absolute -left-3 -top-1 text-4xl opacity-20 select-none [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:left-0">“</span>
       <p>
         ...engaging, energetic, strong communication skills, proven ability to
@@ -684,8 +684,8 @@ export default function SpeakingPage() {
       </p>
       <span aria-hidden data-quote="close" className="absolute right-13 bottom-5 text-4xl opacity-20 select-none">”</span>
     </blockquote>
-    <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
-      — <span className="text-[var(--color-gold)]">Omar</span>, University of Central Florida
+    <figcaption className="pl-3 mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
+    — <span className="text-[var(--color-gold)]">Omar</span>, University of Central Florida
     </figcaption>
   </figure>
 
