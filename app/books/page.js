@@ -376,10 +376,10 @@ export default function BooksPage() {
 <div className="block lg:hidden">
     <div className="mx-auto max-w-[800px] px-0">
 
-  <div className="mx-auto max-w-[90%] px-6 mb-14 -mt-5 border-t border-[var(--color-cream)]/22 mb-0">
+  <div className="mx-auto max-w-[90%] mb-14 -mt-5 border-t border-[var(--color-cream)]/22 mb-0">
   </div>
 
-  <div className="mobile-footer-cap narrow-landscape-70">
+  <div className="mobile-footer-cap px-6 narrow-landscape-70">
 
     {/* Newsletter card (midnight blue) */}
     <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
