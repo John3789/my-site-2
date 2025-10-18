@@ -404,7 +404,7 @@ export default function SpeakingPage() {
 
  {/* Quotes (left column) — desktop only */}
 <div
-  className="md:col-span-7 ml-auto hidden md:flex flex-col gap-6 max-w-[640px] quote-col narrow-landscape-70 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:gap-4 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:max-w-[560px]"
+  className="md:col-span-7 ml-auto hidden md:flex flex-col gap-6 max-w-[640px] quote-col narrow-landscape-70 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:gap-6 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:max-w-[560px]"
   data-section="testimonials-desktop"   // ← add this
 >
   <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:p-5 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:mt-6">
@@ -481,7 +481,7 @@ export default function SpeakingPage() {
             >
  {/* Quotes (RIGHT column) — desktop only */}
 <div
-  className="md:col-span-7 hidden md:flex flex-col gap-6 max-w-[640px] md:pr-6 quote-col narrow-landscape-70 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:gap-4 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:max-w-[560px]"
+  className="md:col-span-7 hidden md:flex flex-col gap-6 max-w-[640px] md:pr-6 quote-col narrow-landscape-70 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:gap-6 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:max-w-[560px]"
   data-section="testimonials-desktop-right"
 >
   <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:p-5 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:mt-6">
@@ -671,7 +671,7 @@ export default function SpeakingPage() {
 
 {/* Quotes (right column, Results) — desktop only */}
 <div
-  className="md:col-span-7 ml-auto hidden md:flex flex-col gap-6 max-w-[640px] quote-col narrow-landscape-70 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:gap-4 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:max-w-[560px]"
+  className="md:col-span-7 ml-auto hidden md:flex flex-col gap-6 max-w-[640px] quote-col narrow-landscape-70 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:gap-6 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:max-w-[560px]"
   data-section="results-desktop-right"
 >
   <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:p-5 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:mt-6">
