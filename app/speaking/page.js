@@ -295,7 +295,7 @@ export default function SpeakingPage() {
 
             {/* Popular Topics (Programs) */}
             <section
-               id="programs" className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mx-15 gap-y-12 portrait:mx-0 portrait:px-6 landscape:mt-7 landscape:max-w-[700px] landscape:mx-auto landscape:px-3 lg:landscape:max-w-[1400px] lg:landscape:mx-15 lg:landscape:px-0 [@media(orientation:landscape)_and_(max-width:820px)]:mt-16"
+               id="programs" className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mx-15 gap-y-12 portrait:mx-0 portrait:px-6 landscape:mt-7 landscape:max-w-[700px] landscape:mx-auto landscape:px-3 lg:landscape:max-w-[1400px] lg:landscape:mx-15 lg:landscape:px-0 [@media(orientation:landscape)_and_(max-width:820px)]:mt-16 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:gap-8"
               
             >
               <div className="md:col-span-5 md:py-6 narrow-landscape-70">
@@ -404,15 +404,15 @@ export default function SpeakingPage() {
 
  {/* Quotes (left column) — desktop only */}
 <div
-  className="md:col-span-7 ml-auto hidden md:flex flex-col gap-6 max-w-[640px] quote-col narrow-landscape-70"
+  className="md:col-span-7 ml-auto hidden md:flex flex-col gap-6 max-w-[640px] quote-col narrow-landscape-70 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:gap-4 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:max-w-[560px]"
   data-section="testimonials-desktop"   // ← add this
 >
-  <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+  <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:p-5 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:mt-6">
     <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:pl-1.5 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:!text-[27px] [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:leading-[1.25]">
       <span aria-hidden data-quote="open"  className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
       <p>...an exceptional speaker: he is engaging, well-spoken, and clearly passionate about his work.</p>
-      <span aria-hidden data-quote="close" className="absolute right-4 bottom-5 text-4xl opacity-20 select-none">”</span>
+      <span aria-hidden data-quote="close" className="absolute right-4 bottom-5 text-4xl opacity-20 select-none [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:left-0">”</span>
     </blockquote>
     <figcaption className="mt-4 text-[12px] uppercase tracking-[0.18em] opacity-80">
       — <span className="text-[var(--color-gold)]">Cho-Hee</span>, American Public Health Association Annual Meeting &amp; Expo
@@ -421,7 +421,7 @@ export default function SpeakingPage() {
 
   <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
     <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:!text-[27px] [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:leading-[1.25]">
       <span aria-hidden data-quote="open"  className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
       <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
       <span aria-hidden data-quote="close" className="absolute right-24 bottom-5 text-4xl opacity-20 select-none">”</span>
@@ -433,7 +433,7 @@ export default function SpeakingPage() {
 
   <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
     <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:!text-[27px] [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:leading-[1.25]">
       <span aria-hidden data-quote="open"  className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
       <p>Dr. Salerno has a way of blending data with human stories that makes science resonate.</p>
       <span aria-hidden data-quote="close" className="absolute right-14 bottom-5 text-4xl opacity-20 select-none">”</span>
@@ -477,17 +477,17 @@ export default function SpeakingPage() {
             <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 mx-auto w-[93%]" />
             <section
               id="formats"
-              className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 md:gap-x-0 mx-15 items-center portrait:mx-0 portrait:px-6 landscape:max-w-[700px] landscape:mx-auto landscape:px-3 lg:landscape:max-w-[1400px] lg:landscape:mx-15 lg:landscape:px-0 narrow-landscape-70"
+              className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 md:gap-x-0 mx-15 items-center portrait:mx-0 portrait:px-6 landscape:max-w-[700px] landscape:mx-auto landscape:px-3 lg:landscape:max-w-[1400px] lg:landscape:mx-15 lg:landscape:px-0 narrow-landscape-70 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:gap-8"
             >
  {/* Quotes (RIGHT column) — desktop only */}
 <div
-  className="md:col-span-7 hidden md:flex flex-col gap-6 max-w-[640px] md:pr-6 quote-col narrow-landscape-70"
+  className="md:col-span-7 hidden md:flex flex-col gap-6 max-w-[640px] md:pr-6 quote-col narrow-landscape-70 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:gap-4 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:max-w-[560px]"
   data-section="testimonials-desktop-right"
 >
-  <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+  <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:p-5 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:mt-6">
     <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
-      <span aria-hidden data-quote="open"  className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:pl-1.5 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:!text-[27px] [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:leading-[1.25]">
+      <span aria-hidden data-quote="open"  className="absolute -left-3 -top-1 text-4xl opacity-20 select-none [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:left-0">“</span>
       <p>
         ...gifted speaker whose engaging style &amp; clear communication bring
         complex ideas to life.
@@ -501,7 +501,7 @@ export default function SpeakingPage() {
 
   <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
     <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:!text-[27px] [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:leading-[1.25]">
       <span aria-hidden data-quote="open"  className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
       <p>...can communicate with diverse audiences, speaks with heart and dimensionality.</p>
       <span aria-hidden data-quote="close" className="absolute right-23 bottom-5 text-4xl opacity-20 select-none">”</span>
@@ -513,11 +513,11 @@ export default function SpeakingPage() {
 
   <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
     <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:!text-[26px] [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:leading-[1.25]">
       <span aria-hidden data-quote="open"  className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
       <p>
-        ...brings a charming intensity and passion that inspires others with his
-        presence and message.
+        ...brings a charming intensity &amp; passion that inspires others with his
+        presence &amp; message.
       </p>
       <span aria-hidden data-quote="close" className="absolute right-0 bottom-5 text-4xl opacity-20 select-none">”</span>
     </blockquote>
@@ -626,7 +626,7 @@ export default function SpeakingPage() {
             <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 mx-auto w-[93%]" />
             <section
               id="results"
-              className="grid grid-cols-1 lg:grid-cols-12 gap-12 mx-15 items-start gap-y-12 portrait:mx-0 portrait:px-6 landscape:max-w-[700px] landscape:mx-auto landscape:px-3 lg:landscape:max-w-[1400px] lg:landscape:mx-15 lg:landscape:px-0 narrow-landscape-70"  
+              className="grid grid-cols-1 lg:grid-cols-12 gap-12 mx-15 items-start gap-y-12 portrait:mx-0 portrait:px-6 landscape:max-w-[700px] landscape:mx-auto landscape:px-3 lg:landscape:max-w-[1400px] lg:landscape:mx-15 lg:landscape:px-0 narrow-landscape-70 [@media(orientation:landscape)_and_(min-width:1100px)_and_(max-width:1200px)]:gap-8"  
             >
               <div className="md:col-span-5 md:py-6">
                 {/* Overline added */}
@@ -671,13 +671,13 @@ export default function SpeakingPage() {
 
 {/* Quotes (right column, Results) — desktop only */}
 <div
-  className="md:col-span-7 ml-auto hidden md:flex flex-col gap-6 max-w-[640px] quote-col narrow-landscape-70"
+  className="md:col-span-7 ml-auto hidden md:flex flex-col gap-6 max-w-[640px] quote-col narrow-landscape-70 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:gap-4 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:max-w-[560px]"
   data-section="results-desktop-right"
 >
-  <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
+  <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:p-5 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:mt-6">
     <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
-      <span aria-hidden data-quote="open"  className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
+    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:pl-1.5 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:!text-[27px] [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:leading-[1.25]">
+      <span aria-hidden data-quote="open"  className="absolute -left-3 -top-1 text-4xl opacity-20 select-none [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:left-0">“</span>
       <p>
         ...engaging, energetic, strong communication skills, proven ability to
         disseminate science.
@@ -691,7 +691,7 @@ export default function SpeakingPage() {
 
   <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition">
     <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative">
+    <blockquote className="font-serif text-2xl md:text-3xl leading-snug opacity-90 relative [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:!text-[27px] [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:leading-[1.25]">
       <span aria-hidden data-quote="open"  className="absolute -left-3 -top-1 text-4xl opacity-20 select-none">“</span>
       <p>
         ...a highly engaging, knowledgeable, and skilled speaker...strongly
