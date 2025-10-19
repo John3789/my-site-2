@@ -758,7 +758,7 @@ export default function SpeakingPage() {
         ”
       </span>
     </blockquote>
-    <figcaption className="-mt-8 text-[12px] uppercase tracking-[0.18em] opacity-80 [@media(orientation:landscape)_and_(max-width:999px)]:-mt-5 [@media(orientation:portrait)_and_(min-width:375px)_and_(max-width:499px)]:!text-[11px]">
+    <figcaption className="-mt-8 text-[12px] uppercase tracking-[0.18em] opacity-80 [@media(orientation:landscape)_and_(max-width:999px)]:-mt-5 [@media(orientation:portrait)_and_(min-width:375px)_and_(max-width:499px)]:-mt-5 [@media(orientation:portrait)_and_(min-width:375px)_and_(max-width:499px)]:!text-[11px]">
       — <span className="text-[var(--color-gold)]">Cho-Hee</span>, American Public Health Association Annual Meeting &amp; Expo
     </figcaption>
   </figure>
@@ -771,7 +771,7 @@ export default function SpeakingPage() {
       <p>He communicates with clarity and confidence...leaves a lasting impression.</p>
       <span aria-hidden data-q="close" className="absolute right-[12rem] bottom-[3.75rem] text-[2.25rem] opacity-20 leading-none select-none">”</span>
     </blockquote>
-    <figcaption className="-mt-8 text-[12px] uppercase tracking-[0.18em] opacity-80 [@media(orientation:landscape)_and_(max-width:999px)]:-mt-5 [@media(orientation:portrait)_and_(min-width:375px)_and_(max-width:499px)]:!text-[11px]">
+    <figcaption className="-mt-8 text-[12px] uppercase tracking-[0.18em] opacity-80 [@media(orientation:landscape)_and_(max-width:999px)]:-mt-5 [@media(orientation:portrait)_and_(min-width:375px)_and_(max-width:499px)]:-mt-5 [@media(orientation:portrait)_and_(min-width:375px)_and_(max-width:499px)]:!text-[11px]">
       — <span className="text-[var(--color-gold)]">Alyssa</span>, Society for Prevention Research Annual Meeting
     </figcaption>
   </figure>
@@ -786,7 +786,7 @@ export default function SpeakingPage() {
         <p>Dr. Salerno has a way of blending data with human stories that makes science resonate.</p>
         <span aria-hidden data-q="close" className="absolute right-[13.50rem] bottom-[3.75rem] text-[2.25rem] opacity-20 leading-none select-none">”</span>
       </blockquote>
-      <figcaption className="-mt-8 text-[12px] uppercase tracking-[0.18em] opacity-80 [@media(orientation:landscape)_and_(max-width:999px)]:-mt-5 [@media(orientation:portrait)_and_(min-width:375px)_and_(max-width:499px)]:!text-[11px]">
+      <figcaption className="-mt-8 text-[12px] uppercase tracking-[0.18em] opacity-80 [@media(orientation:landscape)_and_(max-width:999px)]:-mt-5 [@media(orientation:portrait)_and_(min-width:375px)_and_(max-width:499px)]:-mt-5 [@media(orientation:portrait)_and_(min-width:375px)_and_(max-width:499px)]:!text-[11px]">
         — <span className="text-[var(--color-gold)]">Angel</span>, National Hispanic Science Network Annual International Conference
       </figcaption>
     </figure>
@@ -799,7 +799,7 @@ export default function SpeakingPage() {
         <p>...gifted speaker whose engaging style &amp; clear communication bring complex ideas to life.</p>
         <span aria-hidden data-q="close" className="absolute right-[2.75rem] bottom-[3.75rem] text-[2.25rem] opacity-20 leading-none select-none">”</span>
       </blockquote>
-      <figcaption className="-mt-8 text-[12px] uppercase tracking-[0.18em] opacity-80 [@media(orientation:landscape)_and_(max-width:999px)]:-mt-5 [@media(orientation:portrait)_and_(min-width:375px)_and_(max-width:499px)]:!text-[11px]">
+      <figcaption className="-mt-8 text-[12px] uppercase tracking-[0.18em] opacity-80 [@media(orientation:landscape)_and_(max-width:999px)]:-mt-5 [@media(orientation:portrait)_and_(min-width:375px)_and_(max-width:499px)]:-mt-5 [@media(orientation:portrait)_and_(min-width:375px)_and_(max-width:499px)]:!text-[11px]">
         — <span className="text-[var(--color-gold)]">Charles</span>, Columbia University
       </figcaption>
     </figure>
@@ -812,7 +812,7 @@ export default function SpeakingPage() {
         <p>...can communicate with diverse audiences, speaks with heart and dimensionality.</p>
         <span aria-hidden data-q="close" className="absolute right-[9.75rem] bottom-[3.75rem] text-[2.25rem] opacity-20 leading-none select-none">”</span>
       </blockquote>
-      <figcaption className="-mt-8 text-[12px] uppercase tracking-[0.18em] opacity-80 [@media(orientation:landscape)_and_(max-width:999px)]:-mt-5 [@media(orientation:portrait)_and_(min-width:375px)_and_(max-width:499px)]:!text-[11px]">
+      <figcaption className="-mt-8 text-[12px] uppercase tracking-[0.18em] opacity-80 [@media(orientation:landscape)_and_(max-width:999px)]:-mt-5 [@media(orientation:portrait)_and_(min-width:375px)_and_(max-width:499px)]:-mt-5 [@media(orientation:portrait)_and_(min-width:375px)_and_(max-width:499px)]:!text-[11px]">
         — <span className="text-[var(--color-gold)]">Ji-Young</span>, Society of Behavioral Medicine Annual Meeting
       </figcaption>
     </figure>
@@ -825,7 +825,7 @@ export default function SpeakingPage() {
         <p>...a highly engaging, knowledgeable, and skilled speaker...strongly recommended.</p>
         <span aria-hidden data-q="close" className="absolute right-[-0.75rem] bottom-[3.75rem] text-[2.25rem] opacity-20 leading-none select-none">”</span>
       </blockquote>
-      <figcaption className="-mt-8 text-[12px] uppercase tracking-[0.18em] opacity-80 [@media(orientation:landscape)_and_(max-width:999px)]:-mt-5 [@media(orientation:portrait)_and_(min-width:375px)_and_(max-width:499px)]:!text-[11px]">
+      <figcaption className="-mt-8 text-[12px] uppercase tracking-[0.18em] opacity-80 [@media(orientation:landscape)_and_(max-width:999px)]:-mt-5 [@media(orientation:portrait)_and_(min-width:375px)_and_(max-width:499px)]:-mt-5 [@media(orientation:portrait)_and_(min-width:375px)_and_(max-width:499px)]:!text-[11px]">
         — <span className="text-[var(--color-gold)]">Kristen</span>, University of California, Los Angeles
       </figcaption> 
     </figure>
