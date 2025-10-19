@@ -827,7 +827,7 @@ export default function SpeakingPage() {
       </blockquote>
       <figcaption className="-mt-8 text-[12px] uppercase tracking-[0.18em] opacity-80 [@media(orientation:landscape)_and_(max-width:999px)]:-mt-5 [@media(orientation:portrait)_and_(min-width:375px)_and_(max-width:499px)]:!text-[11px]">
         — <span className="text-[var(--color-gold)]">Kristen</span>, University of California, Los Angeles
-      </figcaption>
+      </figcaption> 
     </figure>
   </div>
 </div>
