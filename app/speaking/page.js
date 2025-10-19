@@ -835,7 +835,7 @@ export default function SpeakingPage() {
 
 
 {/* Toggle button */}
-<div className="mt-10 flex justify-center w-full landscape:-mb-12 [@media(orientation:landscape)_and_(max-width:820px)]:mt-10">
+<div className="mt-10 flex justify-center w-full landscape:-mb-12 [@media(orientation:landscape)_and_(max-width:820px)]:mt-10 [@media(orientation:portrait)_and_(min-width:700px)_and_(max-width:799px)]:-mb-5">
   <button
     onClick={() => setShowAllTestimonials((s) => !s)}
     aria-expanded={showAllTestimonials}
