@@ -414,7 +414,7 @@ onClick={() => jump(toMobile(s.id))}
               ].map((t, idx) => (
                 <figure key={idx} className="relative w-full rounded-xl bg-white/5 p-6 ring-1 ring-white/10 shadow-2xl">
                   <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-                  <blockquote className="t-quote font-serif text-2xl leading-snug opacity-90 relative">
+                  <blockquote className="t-quote font-serif text-2xl leading-snug opacity-90 relative [@media(orientation:portrait)_and_(min-width:375px)_and_(max-width:799px)]:text-xl">
                     <span aria-hidden="true" data-q="open" className={`absolute text-4xl opacity-20 select-none ${t.lq}`}>“</span>
                     <p>{t.q}</p>
                     <span aria-hidden="true" data-q="close" className={`absolute text-4xl opacity-20 select-none ${t.rq}`}>”</span>
@@ -440,7 +440,7 @@ onClick={() => jump(toMobile(s.id))}
                 ].map((t, idx) => (
                   <figure key={`more-${idx}`} className="relative w-full rounded-xl bg-white/5 p-6 ring-1 ring-white/10 shadow-2xl">
                     <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
-                    <blockquote className="t-quote font-serif text-2xl leading-snug opacity-90 relative">
+                    <blockquote className="t-quote font-serif text-2xl leading-snug opacity-90 relative [@media(orientation:portrait)_and_(min-width:375px)_and_(max-width:799px)]:text-xl">
                       <span aria-hidden="true" data-q="open" className={`absolute text-4xl opacity-20 select-none ${t.lq}`}>“</span>
                       <p>{t.q}</p>
                       <span aria-hidden="true" data-q="close" className={`absolute text-4xl opacity-20 select-none ${t.rq}`}>”</span>
