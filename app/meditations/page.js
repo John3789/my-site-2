@@ -64,14 +64,14 @@ export default function MeditationsPage() {
               <div data-med-grid className="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
                 {/* LEFT COLUMN — existing content */}
                 <div>
-                  <p className="text-[12px] uppercase tracking-[0.18em] opacity-60 mb-2">Featured</p>
-                  <h2 className="font-serif text-4xl md:text-5xl opacity-95">5-Minute Reset (Free)</h2>
-                  <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-6 rounded" />
-                  <p className="text-lg md:text-xl opacity-90 leading-relaxed max-w-2xl">
-                    A gentle, all-levels 5-minute meditation to ground, align, and re-center. Morning
-                    clarity, afternoon reset, evening calm — a simple practice always within reach.
-                    Bookmark this page for moments when you need to recharge.
-                  </p>
+<p className="text-[12px] uppercase tracking-[0.18em] opacity-60 mb-2 [@media(orientation:portrait)_and_(max-width:920px)]:text-center [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto">Featured</p>
+<h2 className="font-serif text-4xl md:text-5xl opacity-95 [@media(orientation:portrait)_and_(max-width:920px)]:text-center [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto">5-Minute Reset (Free)</h2>
+<div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-6 rounded [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto" />
+<p className="text-lg md:text-xl opacity-90 leading-relaxed max-w-2xl text-left [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto">
+  A gentle, all-levels 5-minute meditation to ground, align, and re-center. Morning
+  clarity, afternoon reset, evening calm — a simple practice always within reach.
+  Bookmark this page for moments when you need to recharge.
+</p>
 
                   <article
                     className="mt-6 relative rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7 shadow-2xl hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] transition backdrop-blur-none md:backdrop-blur-sm"
