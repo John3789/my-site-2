@@ -7,6 +7,8 @@ import HeroImageIphoneAware from "./HeroImageIphoneAware";
 import NewsletterMeditationPopup from "./NewsletterMeditationPopup";
 import { useRef } from "react";
 import { useIosZoomVars } from "./useIosZoom";
+import TopOnMount from "../../components/TopOnMount";
+
 
 export default function AboutClient() {
   const wrapRef = useRef(null);
