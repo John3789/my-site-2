@@ -400,13 +400,13 @@ onClick={() => jump(toMobile(s.id))}
             <div className="flex flex-col gap-6">
               {[
                 {
-                  q: "I found Dr. Salerno to be very well-versed in the subject matter. He definitely helped us grow and I genuinely appreciated his excellence.",
+                  q: "I found Dr. Salerno to be very well-versed in the subject matter. He definitely helped us grow &amp; I genuinely appreciated his excellence.",
                   a: "New York University",
                   lq: "-left-4 -top-1",
                   rq: "right-[2.5rem] landscape:right-66 landscape:bottom-4 bottom-[0.5rem]",
                 },
                 {
-                  q: "Dr. Salerno is an expert in mental health equity research, highly skilled and incorporates attention to community priorities.",
+                  q: "Dr. Salerno is an expert in mental health equity research, highly skilled &amp; incorporates attention to community priorities.",
                   a: "University of California, Los Angeles",
                   lq: "-left-4 -top-1",
                   rq: "right-[12.25rem] landscape:right-77 landscape:bottom-4 bottom-[0.5rem]",
@@ -426,13 +426,13 @@ onClick={() => jump(toMobile(s.id))}
               <div className={showAllTestimonials ? "flex flex-col gap-6" : "hidden"}>
                 {[
                   {
-                    q: "Dr. Salerno has a strong command of various research methods and an undeniable passion for his work in the public health sphere.",
+                    q: "Dr. Salerno has a strong command of various research methods &amp; an undeniable passion for his work in the public health sphere.",
                     a: "Columbia University",
                     lq: "-left-4 -top-1",
                     rq: "right-[5.75rem] landscape:right-79 landscape:bottom-4 bottom-[0.5rem]",
                   },
                   {
-                    q: "Dr. Salerno is incredibly intelligent and insightful with a deep, nuanced understanding of and appreciation for research.",
+                    q: "Dr. Salerno is incredibly intelligent &amp; insightful with a deep, nuanced understanding of &amp; appreciation for research.",
                     a: "Columbia University",
                     lq: "-left-4 -top-1",
                     rq: "right-[0.5rem] landscape:right-107.5 landscape:bottom-4 bottom-[0.5rem]",
