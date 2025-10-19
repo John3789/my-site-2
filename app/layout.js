@@ -8,6 +8,13 @@ import NewsletterSignup from '../components/NewsletterSignup'
 import Script from 'next/script'
 import LayoutFooterGate from '../components/LayoutFooterGate'
 
+export const metadata = {
+  metadataBase: new URL("https://my-site-2-coral.vercel.app"), // your live Vercel URL
+  // optional site-wide defaults:
+  // title: "Dr. Juan Pablo Salerno",
+  // description: "Dr. Juan Pablo Salerno, award-winning mental health scientist...",
+};
+
 // app/layout.tsx (or layout.js)
 export const viewport = {
   width: 'device-width',
