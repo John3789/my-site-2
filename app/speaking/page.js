@@ -447,7 +447,7 @@ export default function SpeakingPage() {
             </section>
 
             {/* Programs footer buttons (mobile only) — tighter */}
-            <div className="lg:hidden -mt-6 landscape:-mt-19 mb-15 w-full [@media(orientation:landscape)_and_(max-width:820px)]:-mt-4">
+            <div className="lg:hidden -mt-6 landscape:-mt-19 mb-15 w-full [@media(orientation:landscape)_and_(max-width:999px)]:-mt-22 [@media(orientation:landscape)_and_(max-width:999px)]:mb-30">
               <div className="w-full flex justify-center">
                 <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
                   <button
@@ -589,7 +589,7 @@ export default function SpeakingPage() {
             </section>
 
             {/* Formats footer buttons (mobile only) — slimmer + same spacing as Service Pillars */}
-            <div className="lg:hidden -mt-6 landscape:-mt-19 mb-15 w-full [@media(orientation:landscape)_and_(max-width:820px)]:-mt-4">
+            <div className="lg:hidden -mt-6 landscape:-mt-19 mb-15 w-full [@media(orientation:landscape)_and_(max-width:999px)]:-mt-22 [@media(orientation:landscape)_and_(max-width:999px)]:mb-30">
               <div className="w-full flex justify-center">
                 <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
                   <button
@@ -700,7 +700,7 @@ export default function SpeakingPage() {
             </section>
 
             {/* Results footer buttons (mobile only) — slimmer + same spacing as Service Pillars */}
-            <div className="lg:hidden -mt-6 landscape:-mt-19 mb-15 w-full [@media(orientation:landscape)_and_(max-width:820px)]:-mt-4">
+            <div className="lg:hidden -mt-6 landscape:-mt-19 mb-15 w-full [@media(orientation:landscape)_and_(max-width:999px)]:-mt-22 [@media(orientation:landscape)_and_(max-width:999px)]:mb-12">
               <div className="w-full flex justify-center">
                 <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
                   <button
@@ -726,7 +726,7 @@ export default function SpeakingPage() {
             </div>
 
             {/* ===== Testimonials (mobile-only; now collapsible) ===== */}
-<hr className="lg:hidden mx-auto w-[93%] border-t border-[var(--color-cream)]/22 mb-14" />
+<hr className="lg:hidden mx-auto w-[93%] border-t border-[var(--color-cream)]/22 mb-14 [@media(orientation:landscape)_and_(max-width:999px)]:-mb-4" />
 
 <section id="testimonials" className="lg:hidden">
   {/* Centered container for everything in this section */}
@@ -835,7 +835,7 @@ export default function SpeakingPage() {
 
 
 {/* Toggle button */}
-<div className="mt-10 flex justify-center w-full landscape:-mb-12 [@media(orientation:landscape)_and_(max-width:820px)]:mt-10 [@media(orientation:portrait)_and_(min-width:700px)_and_(max-width:799px)]:-mb-8">
+<div className="mt-10 flex justify-center w-full landscape:-mb-12 [@media(orientation:landscape)_and_(max-width:999px)]:mt-10 [@media(orientation:landscape)_and_(max-width:999px)]:-mb-15 [@media(orientation:portrait)_and_(min-width:700px)_and_(max-width:799px)]:-mb-8">
   <button
     onClick={() => setShowAllTestimonials((s) => !s)}
     aria-expanded={showAllTestimonials}
@@ -880,7 +880,7 @@ export default function SpeakingPage() {
  <div className="flex justify-center translate-y-[-28px] lg:translate-y-0">
   <a
     href="/contact"
-    className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black -mb-9 px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] lg:hover:translate-y-[-47px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs lg:w-auto lg:max-w-none lg:translate-y-[-45px] [@media(orientation:portrait)_and_(min-width:800px)_and_(max-width:920px)]:-mb-2"
+    className="inline-flex justify-center items-center rounded-md bg-[var(--color-gold)] text-black -mb-9 px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition md:will-change-transform hover:shadow-lg hover:-translate-y-[2px] lg:hover:translate-y-[-47px] focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 w-full max-w-xs lg:w-auto lg:max-w-none lg:translate-y-[-45px] [@media(orientation:portrait)_and_(min-width:800px)_and_(max-width:920px)]:-mb-2 [@media(orientation:landscape)_and_(max-width:999px)]:mt-0 [@media(orientation:landscape)_and_(max-width:999px)]:-mb-7"
   >
     Book Dr. Salerno to Speak
   </a>
