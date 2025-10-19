@@ -450,7 +450,7 @@ onClick={() => jump(toMobile(s.id))}
                 ))}
               </div>
 
-              <div className="mt-2 flex justify-center [@media(orientation:landscape)_and_(max-width:999px)]:-mt-22 [@media(orientation:landscape)_and_(max-width:999px)]:mt-5">
+              <div className="mt-2 flex justify-center [@media(orientation:portrait)_and_(max-width:500px)]:mt-4 [@media(orientation:landscape)_and_(max-width:999px)]:-mt-22 [@media(orientation:landscape)_and_(max-width:999px)]:mt-5">
                 <button
                   onClick={() => setShowAllTestimonials((s) => !s)}
                   aria-expanded={showAllTestimonials}
