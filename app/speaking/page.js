@@ -589,7 +589,7 @@ export default function SpeakingPage() {
             </section>
 
             {/* Formats footer buttons (mobile only) — slimmer + same spacing as Service Pillars */}
-            <div className="lg:hidden -mt-6 landscape:-mt-19 mb-15 w-full [@media(orientation:landscape)_and_(max-width:820px)]:-mt-4 [@media(orientation:portrait)_and_(min-width:700px)_and_(max-width:799px)]:-mt-20">
+            <div className="lg:hidden -mt-6 landscape:-mt-19 mb-15 w-full [@media(orientation:landscape)_and_(max-width:820px)]:-mt-4">
               <div className="w-full flex justify-center">
                 <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
                   <button
@@ -700,7 +700,7 @@ export default function SpeakingPage() {
             </section>
 
             {/* Results footer buttons (mobile only) — slimmer + same spacing as Service Pillars */}
-            <div className="lg:hidden -mt-6 landscape:-mt-19 mb-15 w-full [@media(orientation:landscape)_and_(max-width:820px)]:-mt-4 [@media(orientation:portrait)_and_(min-width:700px)_and_(max-width:799px)]:-mt-20">
+            <div className="lg:hidden -mt-6 landscape:-mt-19 mb-15 w-full [@media(orientation:landscape)_and_(max-width:820px)]:-mt-4">
               <div className="w-full flex justify-center">
                 <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
                   <button
@@ -835,7 +835,7 @@ export default function SpeakingPage() {
 
 
 {/* Toggle button */}
-<div className="mt-10 flex justify-center w-full landscape:-mb-12 [@media(orientation:landscape)_and_(max-width:820px)]:mt-10 [@media(orientation:portrait)_and_(min-width:700px)_and_(max-width:799px)]:-mb-15">
+<div className="mt-10 flex justify-center w-full landscape:-mb-12 [@media(orientation:landscape)_and_(max-width:820px)]:mt-10">
   <button
     onClick={() => setShowAllTestimonials((s) => !s)}
     aria-expanded={showAllTestimonials}
