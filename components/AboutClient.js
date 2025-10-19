@@ -1,11 +1,11 @@
+// components/AboutClient.js — CLIENT FILE
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState, useRef } from "react";
-import TopOnMount from "./TopOnMount";
-import NewsletterMeditationPopup from "./NewsletterMeditationPopup";
+import Image from "next/image";
 import HeroImageIphoneAware from "./HeroImageIphoneAware";
+import NewsletterMeditationPopup from "./NewsletterMeditationPopup";
+import { useRef } from "react";
 import { useIosZoomVars } from "./useIosZoom";
 
 export default function AboutClient() {

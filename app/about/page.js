@@ -1,4 +1,4 @@
-// app/about/page.js  (server wrapper, no "use client")
+// app/about/page.js — SERVER FILE (no "use client")
 import AboutClient from "../../components/AboutClient";
 
 export const metadata = {
@@ -6,7 +6,7 @@ export const metadata = {
   description:
     "Dr. Juan Pablo Salerno, award-winning mental health scientist, personal growth expert, author and professor— inspiring transformation, purpose, and healing.",
   openGraph: {
-    title: "About — Dr. Juan Pablo Salerno",
+    title: "Dr. Juan Pablo Salerno",
     description:
       "Dr. Juan Pablo Salerno, award-winning mental health scientist, personal growth expert, author and professor— inspiring transformation, purpose, and healing.",
     images: ["/hero17.jpg"],
