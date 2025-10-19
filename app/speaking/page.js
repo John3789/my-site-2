@@ -474,7 +474,7 @@ export default function SpeakingPage() {
             </div>
 
             {/* Dr. Salerno Offers (Formats) */}
-            <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 mx-auto w-[93%]" />
+            <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 mx-auto w-[93%] [@media(orientation:landscape)_and_(min-width:700px)_and_(max-width:1400px)]:-mt-19" />
 <section id="formats" className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 md:gap-x-0 mx-15 items-center portrait:mx-0 portrait:px-6 landscape:max-w-[700px] landscape:mx-auto landscape:px-3 lg:landscape:max-w-[1400px] lg:landscape:mx-15 lg:landscape:px-0 narrow-landscape-70 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:grid-cols-[auto_minmax(0,0.96fr)] [@media(orientation:portrait)_and_(min-width:700px)_and_(max-width:920px)]:grid-cols-[auto_minmax(0,0.96fr)] [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:gap-8">
 <div className="hidden md:flex lg:col-span-1 xl:col-span-7 [@media(orientation:portrait)_and_(min-width:1000px)_and_(max-width:1200px)]:col-span-7 [@media(orientation:portrait)_and_(min-width:1000px)_and_(max-width:1200px)]:pr-6 flex-col gap-6 max-w-[640px] md:pr-6 quote-col narrow-landscape-70 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:gap-6 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:max-w-[560px]">  
   <figure className="relative w-full rounded-xl bg-white/5 p-8 mt-10 md:ring-1 md:ring-white/10 md:shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] transition [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:p-5 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:mt-4 [@media(orientation:landscape)_and_(min-width:1000px)_and_(max-width:1200px)]:min-h-[215px]">
@@ -615,7 +615,7 @@ export default function SpeakingPage() {
             </div>
 
             {/* Outcomes (Results) */}
-            <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 mx-auto w-[93%]" />
+            <hr className="border-t border-[var(--color-cream)]/22 mb-16 md:mb-8 mx-auto w-[93%] [@media(orientation:landscape)_and_(min-width:700px)_and_(max-width:1400px)]:-mt-19" />
             <section
               id="results"
               className="grid grid-cols-1 lg:grid-cols-12 gap-12 mx-15 items-start gap-y-12 portrait:mx-0 portrait:px-6 landscape:max-w-[700px] landscape:mx-auto landscape:px-3 lg:landscape:max-w-[1400px] lg:landscape:mx-15 lg:landscape:px-0 narrow-landscape-70 [@media(orientation:landscape)_and_(min-width:1100px)_and_(max-width:1200px)]:gap-8"  
