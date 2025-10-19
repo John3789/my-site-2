@@ -447,7 +447,7 @@ export default function SpeakingPage() {
             </section>
 
             {/* Programs footer buttons (mobile only) — tighter */}
-            <div className="lg:hidden -mt-6 landscape:-mt-19 mb-15 w-full [@media(orientation:landscape)_and_(max-width:820px)]:-mt-4 [@media(orientation:portrait)_and_(min-width:700px)_and_(max-width:799px)]:-mt-20">
+            <div className="lg:hidden -mt-6 landscape:-mt-19 mb-15 w-full [@media(orientation:landscape)_and_(max-width:820px)]:-mt-4">
               <div className="w-full flex justify-center">
                 <div className="max-w-[540px] w-full grid grid-cols-[1fr_1.35fr_1fr] gap-3">
                   <button
