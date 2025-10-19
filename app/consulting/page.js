@@ -302,7 +302,7 @@ onClick={() => jump(toMobile(s.id))}
           <section id={toMobile("results")} className="scroll-mt-28 mx-auto max-w-[1100px] px-6 py-14 narrow-landscape-70">
             <p className="text-[11px] uppercase tracking-[0.18em] opacity-60 mb-2">Results</p>
             <h2 className="font-serif text-3xl opacity-95">What Partners Will Achieve</h2>
-            <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" />
+            <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-8 rounded" /> 
             <ul className="grid grid-cols-1 gap-4 text-lg opacity-90 -mb-3">
               <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>Higher program engagement and follow-through</span></li>
               <li className="flex gap-2"><span className="text-[var(--color-gold)]">✔︎</span><span>Noticeable and meaningful reductions in stress and burnout</span></li>
