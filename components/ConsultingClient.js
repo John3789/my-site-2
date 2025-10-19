@@ -1,9 +1,11 @@
 // components/Consultingclient.js
 "use client";
 
+import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { useRef } from "react";
-import { useIosZoomVars } from "./components/useIosZoom";
+import { useIosZoomVars } from "../components/useIosZoom";
 
 export default function ConsultingClient() {
   const wrapRef = useRef(null);
