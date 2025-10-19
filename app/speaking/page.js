@@ -257,7 +257,7 @@ export default function SpeakingPage() {
               </div>
 
 {/* ---- MOBILE quick nav (numbered, Consulting pattern) ---- */}
-<div id="quicknav" className="lg:hidden mt-0 landscape:mt-0 landscape:-mb-15 [@media(orientation:portrait)_and_(min-width:700px)_and_(max-width:799px)]:-mb-10">
+<div id="quicknav" className="lg:hidden mt-0 landscape:mt-0 landscape:-mb-15">
   {/* cap width + center only in landscape */}
   <div className="w-full landscape:max-w-[520px] mx-auto landscape:-mb-15">
     <div className="grid grid-cols-2 gap-2 landscape:gap-1 landscape:-mb-15">
