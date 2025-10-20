@@ -57,8 +57,8 @@ const jsonLdOrg = {
 "logo": {
   "@type": "ImageObject",
   "url": "https://my-site-2-coral.vercel.app/hero17.jpg",
-  "width": 512,
-  "height": 512
+  "width": 2400,
+  "height": 1200
 },
 "description":
     "Consulting, speaking, and publishing practice led by Dr. Juan Pablo Salerno—bridging science and growth wisdom to strengthen resilience, wellbeing, and purpose.",
