@@ -38,7 +38,7 @@ export default function HomeClient() {
             </span>
           </h1>
         </div>
-      </section> 
+      </section>  
 
 {/* HERO — mobile full-screen; desktop unchanged */}
 <section className="relative h-[100dvh] xl:h-[88.8svh] overflow-visible">
