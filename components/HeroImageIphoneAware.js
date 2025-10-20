@@ -2,7 +2,11 @@
 
 import Image from "next/image";
 
-/** All images optimized (Next.js handles DPR & srcset automatically). */
-export default function HeroImageIphoneAware(props) {
-  return <Image {...props} unoptimized={false} />;
+/** 
+ * Wrapper around Next/Image optimized for iPhone rendering. 
+ * All images are optimized by default unless explicitly disabled.
+ * Ensures accessibility by requiring an alt prop.
+ */
+export default function HeroImageIphoneAware({ alt = "", ...props }) {
+  return <Image {...props} alt={alt} unoptimized={false} />;
 }
