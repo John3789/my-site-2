@@ -69,6 +69,22 @@ const jsonLdOrg = {
     "https://scholar.google.com/citations?user=YOURID",
     "https://www.linkedin.com/in/YOURHANDLE"
   ],
+
+  "contactPoint": [
+  {
+    "@type": "ContactPoint",
+    "contactType": "Media Inquiries",
+    "email": "contact@djuanpablosalerno.com",
+    "url": "https://djuanpablosalerno.com/contact"
+  },
+  {
+    "@type": "ContactPoint",
+    "contactType": "Speaking Requests",
+    "email": "contact@djuanpablosalerno.com",
+    "url": "https://djuanpablosalerno.com/speaking"
+  }
+],
+
   "founder": { "@id": "https://my-site-2-coral.vercel.app/#person" },
   "department": [
     { "@type": "Organization", "name": "Speaking",
