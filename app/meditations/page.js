@@ -1,5 +1,5 @@
 // app/meditations/page.js
-import MeditationClient from "../../components/MeditationsClient";
+import MeditationClient from "../../components/MeditationClient";
 
 export const metadata = {
   title: "Meditations — Dr. Juan Pablo Salerno",
