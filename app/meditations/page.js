@@ -11,11 +11,8 @@ export const metadata = {
     "Practices designed to help reset your body, calm your mind, and uplift your spirit — guiding you through the day with clarity and ease.",
     images: ["/hero17.jpg"],
       },
-  alternates: {
-    canonical: "./meditations",
-  },
+  alternates: { canonical: "/meditations" },
 };
-
 export default function Page() {
   return <MeditationClient />;
 }

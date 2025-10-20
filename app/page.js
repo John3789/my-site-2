@@ -11,9 +11,7 @@ export const metadata = {
       "Dr. Juan Pablo Salerno, award-winning mental health scientist, personal growth expert, author and professor— inspiring transformation, purpose, and healing.",
     images: ["/hero17.jpg"],
       },
-  alternates: {
-    canonical: "./",
-  },
+  alternates: { canonical: "/" },
 };
 
 export default function Page() {
@@ -56,13 +54,13 @@ const jsonLdOrg = {
   "@id": "https://my-site-2-coral.vercel.app/#org",
   "name": "Dr. Juan Pablo Salerno Consulting",
   "url": "https://my-site-2-coral.vercel.app/",
-  "logo": {
-    "@type": "ImageObject",
-    "url": "https://my-site-2-coral.vercel.app/hero17.jpg",
-    "width": 1200,
-    "height": 630
-  },
-  "description":
+"logo": {
+  "@type": "ImageObject",
+  "url": "https://my-site-2-coral.vercel.app/logo-512.png",
+  "width": 512,
+  "height": 512
+},
+"description":
     "Consulting, speaking, and publishing practice led by Dr. Juan Pablo Salerno—bridging science and growth wisdom to strengthen resilience, wellbeing, and purpose.",
   "sameAs": [
     "https://www.instagram.com/YOURHANDLE",

@@ -11,9 +11,7 @@ export const metadata = {
       "Connect for speaking, consulting, media, or collaborations. Share your goals and we’ll explore the best way to work together.",
     images: ["/hero17.jpg"],
       },
-  alternates: {
-    canonical: "./contact",
-  },
+  alternates: { canonical: "/contact" },
 };
 
 export default function Page() {
