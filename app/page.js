@@ -117,11 +117,18 @@ const jsonLdOrg = {
 
   return (
     <>
+      {/* PERSON SCHEMA */}
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} 
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPerson) }}
       />
+
+      {/* ORGANIZATION SCHEMA */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrg) }}
+      />
+
       <HomeClient />
     </>
   );
