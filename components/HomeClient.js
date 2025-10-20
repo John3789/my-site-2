@@ -91,7 +91,7 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
   <div className="hidden lg:block absolute inset-x-0 bottom-6 z-30">
     <div className="mx-auto max-w-[1400px] px-6 relative">
       <Link
-        href="speaking"
+        href="/speaking"
         className="
           inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-7 py-3
           font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md
@@ -102,7 +102,7 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
       </Link>
 
       <Link
-        href="consulting"
+        href="/consulting"
         className="
           inline-flex items-center rounded-md !bg-[var(--color-teal-700)] !text-[var(--color-cream)] px-7 py-3
           font-medium uppercase tracking-wide text-[13px] shadow-sm hover:shadow-md

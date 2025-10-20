@@ -26,7 +26,7 @@ const jsonLdPerson = {
     "Award-winning mental health scientist, author, and personal growth expert blending research and practical tools for transformation, purpose, and wellbeing.",
   "url": "https://my-site-2-coral.vercel.app/",
   "image": "https://my-site-2-coral.vercel.app/hero17.jpg",
-  "alumniOf": "Columbia University",
+"alumniOf": { "@type": "CollegeOrUniversity", "name": "Columbia University" },
   "worksFor": { "@id": "https://my-site-2-coral.vercel.app/#org" },
   "hasOccupation": [
     { "@type": "Occupation", "name": "Author" },
@@ -56,7 +56,7 @@ const jsonLdOrg = {
   "url": "https://my-site-2-coral.vercel.app/",
 "logo": {
   "@type": "ImageObject",
-  "url": "https://my-site-2-coral.vercel.app/logo-512.png",
+  "url": "https://my-site-2-coral.vercel.app/hero17.jpg",
   "width": 512,
   "height": 512
 },
@@ -80,6 +80,15 @@ const jsonLdOrg = {
   ]
 };
 
+const jsonLdSite = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://my-site-2-coral.vercel.app/#website",
+  "url": "https://my-site-2-coral.vercel.app/",
+  "name": "Dr. Juan Pablo Salerno",
+  "publisher": { "@id": "https://my-site-2-coral.vercel.app/#org" },
+  "inLanguage": "en",
+};
 
   return (
     <>
@@ -94,6 +103,8 @@ const jsonLdOrg = {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrg) }}
       />
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSite) }} />
 
       <HomeClient />
     </>
