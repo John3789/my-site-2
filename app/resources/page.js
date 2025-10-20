@@ -10,6 +10,9 @@ export const metadata = {
     description:
     "A growing library of concise media collections—shaped by science and lived experience—to sharpen your mind and uplift your life.",
     images: ["/hero17.jpg"],
+      },
+  alternates: {
+    canonical: "./resources",
   },
 };
 

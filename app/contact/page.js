@@ -10,6 +10,9 @@ export const metadata = {
     description:
       "Connect for speaking, consulting, media, or collaborations. Share your goals and we’ll explore the best way to work together.",
     images: ["/hero17.jpg"],
+      },
+  alternates: {
+    canonical: "./contact",
   },
 };
 

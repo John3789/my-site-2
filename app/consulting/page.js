@@ -9,6 +9,9 @@ export const metadata = {
     description:
           "Evidence-based consulting that helps organizations scale strategies to strengthen mental health, wellbeing, resilience, and growth.",
     images: ["/hero17.jpg"], // resolved by metadataBase in layout
+      },
+  alternates: {
+    canonical: "./consulting",
   },
   // Optional but nice:
   // twitter: {

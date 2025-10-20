@@ -10,6 +10,9 @@ export const metadata = {
     description:
       "Dr. Juan Pablo Salerno, award-winning mental health scientist, personal growth expert, author and professor— inspiring transformation, purpose, and healing.",
     images: ["/hero17.jpg"],
+      },
+  alternates: {
+    canonical: "./",
   },
 };
 

@@ -10,6 +10,9 @@ export const metadata = {
     description:
     "Research led by Dr. Salerno exploring mental health, resilience, and wellbeing, with a focus on uplifting communities.",
     images: ["/hero17.jpg"],
+      },
+  alternates: {
+    canonical: "./books",
   },
 };
 
