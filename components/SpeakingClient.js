@@ -3,8 +3,8 @@
 
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
-import HeroImageIphoneAware from "../../components/HeroImageIphoneAware";
-import { useIosZoomVars } from "../../components/useIosZoom";
+import HeroImageIphoneAware from "../components/HeroImageIphoneAware";
+import { useIosZoomVars } from "../components/useIosZoom";
 
 export default function SpeakingClient() {
 const wrapRef = useRef(null);
