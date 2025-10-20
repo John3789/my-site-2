@@ -14,5 +14,40 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <HomeClient />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dr. Juan Pablo Salerno",
+    "jobTitle": "Mental Health Scientist, Personal Growth Expert, Author, Professor",
+    "description":
+      "Award-winning mental health scientist and personal growth expert blending research and practical tools for transformation, purpose, and wellbeing.",
+    "url": "https://my-site-2-coral.vercel.app/",
+    "image": "https://my-site-2-coral.vercel.app/hero17.jpg",
+    "alumniOf": "Columbia University",
+    "knowsAbout": [
+      "mental health",
+      "resilience",
+      "wellbeing",
+      "personal growth",
+      "meditation",
+      "evidence-based practice"
+    ],
+    "sameAs": [
+      "https://www.instagram.com/YOURHANDLE",
+      "https://www.tiktok.com/@YOURHANDLE",
+      "https://www.youtube.com/@YOURHANDLE",
+      "https://scholar.google.com/citations?user=YOURID"
+    ]
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <HomeClient />
+    </>
+  );
 }
