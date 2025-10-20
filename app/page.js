@@ -17,10 +17,11 @@ export const metadata = {
 };
 
 export default function Page() {
-// === PERSON SCHEMA ===
+// === PERSON SCHEMA (with @id and link to org) ===
 const jsonLdPerson = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": "https://my-site-2-coral.vercel.app/#person",
   "name": "Dr. Juan Pablo Salerno",
   "jobTitle": "Mental Health Scientist, Personal Growth Expert, Author, Professor, Speaker, Consultant",
   "description":
@@ -28,42 +29,16 @@ const jsonLdPerson = {
   "url": "https://my-site-2-coral.vercel.app/",
   "image": "https://my-site-2-coral.vercel.app/hero17.jpg",
   "alumniOf": "Columbia University",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Dr. Juan Pablo Salerno Consulting",
-    "url": "https://my-site-2-coral.vercel.app/"
-  },
+  "worksFor": { "@id": "https://my-site-2-coral.vercel.app/#org" },
   "hasOccupation": [
-    {
-      "@type": "Occupation",
-      "name": "Author",
-      "description": "Writer and speaker on topics of mental health, resilience, and personal growth."
-    },
-    {
-      "@type": "Occupation",
-      "name": "Speaker",
-      "description": "Delivers keynote talks and workshops on resilience, purpose, and wellbeing."
-    },
-    {
-      "@type": "Occupation",
-      "name": "Consultant",
-      "description": "Provides evidence-based consulting services to organizations to strengthen mental health, resilience, and wellbeing."
-    },
-    {
-      "@type": "Occupation",
-      "name": "Professor",
-      "description": "University faculty and researcher focused on population mental health."
-    }
+    { "@type": "Occupation", "name": "Author" },
+    { "@type": "Occupation", "name": "Speaker" },
+    { "@type": "Occupation", "name": "Consultant" },
+    { "@type": "Occupation", "name": "Professor" }
   ],
   "knowsAbout": [
-    "mental health",
-    "resilience",
-    "wellbeing",
-    "personal growth",
-    "mindfulness",
-    "evidence-based practice",
-    "organizational wellness",
-    "leadership development"
+    "mental health","resilience","wellbeing","personal growth",
+    "mindfulness","evidence-based practice","organizational wellness","leadership development"
   ],
   "sameAs": [
     "https://www.instagram.com/YOURHANDLE",
@@ -74,13 +49,19 @@ const jsonLdPerson = {
   ]
 };
 
-// === ORGANIZATION SCHEMA ===
+// === ORGANIZATION SCHEMA (with @id, ImageObject logo, founder link) ===
 const jsonLdOrg = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://my-site-2-coral.vercel.app/#org",
   "name": "Dr. Juan Pablo Salerno Consulting",
   "url": "https://my-site-2-coral.vercel.app/",
-  "logo": "https://my-site-2-coral.vercel.app/hero17.jpg",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://my-site-2-coral.vercel.app/hero17.jpg",
+    "width": 1200,
+    "height": 630
+  },
   "description":
     "Consulting, speaking, and publishing practice led by Dr. Juan Pablo Salerno—bridging science and growth wisdom to strengthen resilience, wellbeing, and purpose.",
   "sameAs": [
@@ -90,27 +71,14 @@ const jsonLdOrg = {
     "https://scholar.google.com/citations?user=YOURID",
     "https://www.linkedin.com/in/YOURHANDLE"
   ],
-  "founder": {
-    "@type": "Person",
-    "name": "Dr. Juan Pablo Salerno",
-    "url": "https://my-site-2-coral.vercel.app/"
-  },
+  "founder": { "@id": "https://my-site-2-coral.vercel.app/#person" },
   "department": [
-    {
-      "@type": "Organization",
-      "name": "Speaking",
-      "description": "Keynotes, workshops, and panels on mental health, resilience, and personal growth."
-    },
-    {
-      "@type": "Organization",
-      "name": "Consulting",
-      "description": "Evidence-based consulting helping organizations scale strategies that strengthen wellbeing and growth."
-    },
-    {
-      "@type": "Organization",
-      "name": "Publications",
-      "description": "Books and written works on mental health, purpose, and transformation."
-    }
+    { "@type": "Organization", "name": "Speaking",
+      "description": "Keynotes, workshops, and panels on mental health, resilience, and personal growth." },
+    { "@type": "Organization", "name": "Consulting",
+      "description": "Evidence-based consulting helping organizations scale strategies that strengthen wellbeing and growth." },
+    { "@type": "Organization", "name": "Publications",
+      "description": "Books and written works on mental health, purpose, and transformation." }
   ]
 };
 
