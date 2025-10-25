@@ -220,9 +220,9 @@ const wrapRef = useRef(null);
   className="space-y-6 opacity-85 text-lg md:text-xl leading-loose mx-auto max-w-none landscape:max-w-[750px] lg:landscape:max-w-[850px] narrow-landscape-80-ipad"
 >
                 <p>
-                  Dr. Juan Pablo Salerno is a respected mental health scientist,
-                  personal growth expert, and engaging speaker whose work bridges
-                  cutting-edge science with practical tools for personal and
+                  Dr. Juan Pablo Salerno is a respected mental health science
+                  expert and thought leader whose engaging talks bridge
+                  cutting-edge research with practical tools for personal and
                   professional transformation. He has delivered talks and workshops
                   for audiences across academic, scientific, governmental, health,
                   and nonprofit sectors, with a focus on mental health, resilience,
