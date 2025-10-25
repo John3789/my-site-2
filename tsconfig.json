@@ -29,7 +29,7 @@
     "**/*.tsx",
     "next-env.d.ts",
     ".next/types/**/*.ts"
-, "components/components/useIosZoom.ts"  ],
+, "components/components/useIosZoom.ts", "app/api/subscribe/route.js"  ],
   "exclude": [
     "node_modules"
   ]

@@ -40,7 +40,7 @@ async function handleNewsletterSubmit(e) {
   }
 
   try {
-    await fetch("/api/subscribe", { method: "POST", body: form });
+await fetch("/api/hoppy-subscribe", { method: "POST", body: form });
     setNlSubscribed(true);
   } catch {
     setNlSubscribed(true); // show success locally so you can test
