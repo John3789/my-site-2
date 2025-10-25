@@ -9,10 +9,10 @@ import Script from 'next/script'
 import LayoutFooterGate from '../components/LayoutFooterGate'
 
 export const metadata = {
-  metadataBase: new URL("https://my-site-2-coral.vercel.app/"), // your live Vercel URL
+  metadataBase: new URL("https://drjuanpablosalerno.com/"), // your live Vercel URL
   // optional site-wide defaults:
   // title: "Dr. Juan Pablo Salerno",
-  // description: "Dr. Juan Pablo Salerno, award-winning mental health scientist...",
+  // description: "Dr. Juan Pablo Salerno, award-winning mental health science expert and thought leader...",
 };
 
 // app/layout.tsx (or layout.js)
@@ -239,7 +239,7 @@ export default function RootLayout({ children }) {
 
               {/* Bio */}
               <p className="text-[13px] leading-relaxed opacity-85 -mt-1 max-w-[750px]">
-                Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, author and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
+                Dr. Juan Pablo Salerno is an award-winning mental health science expert and thought leader, author, and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
               </p>
             </div>
           </div>

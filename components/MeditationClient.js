@@ -235,7 +235,7 @@ const wrapRef = useRef(null);
 
       {/* 3) Bio line */}
       <p className="mt-5 text-left opacity-85">
-        Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, author and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
+        Dr. Juan Pablo Salerno is an award-winning mental health science expert and thought leader, author, and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
       </p>
 
       {/* 4) Name with © + ™ */}

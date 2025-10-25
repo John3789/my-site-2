@@ -315,7 +315,7 @@ async function handleNewsletterSubmit(e) {
                       </div>
 
                       <p className="mt-5 text-left opacity-85">
-                        Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, author and
+                        Dr. Juan Pablo Salerno is an award-winning mental health sciencde expert and thought leader, author, and
                         professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
                       </p>
 
@@ -549,7 +549,7 @@ async function handleNewsletterSubmit(e) {
       </a>
     </div>
     <p className="mt-4 max-w-[520px] text-[13px] leading-relaxed">
-      Dr. Juan Pablo Salerno is an award-winning mental health scientist, personal growth expert, author and professor—credited
+      Dr. Juan Pablo Salerno is an award-winning mental health science expert and thought leader, author, and professor—credited
       with more than 30 peer-reviewed publications and over 2,000 citations.
     </p>
   </div>

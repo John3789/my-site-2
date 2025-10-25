@@ -4,11 +4,11 @@ import HomeClient from "../components/HomeClient";
 export const metadata = {
   title: "Dr. Juan Pablo Salerno",
   description:
-    "Dr. Juan Pablo Salerno, award-winning mental health scientist, personal growth expert, author and professor— inspiring transformation, purpose, and healing.",
+    "Dr. Juan Pablo Salerno, award-winning mental health science expert and thought leader, author, and professor— inspiring transformation, purpose, and healing.",
   openGraph: {
     title: "Dr. Juan Pablo Salerno",
     description:
-      "Dr. Juan Pablo Salerno, award-winning mental health scientist, personal growth expert, author and professor— inspiring transformation, purpose, and healing.",
+    "Dr. Juan Pablo Salerno, award-winning mental health science expert and thought leader, author, and professor— inspiring transformation, purpose, and healing.",
     images: ["/hero17.jpg"],
       },
   alternates: { canonical: "/" },
@@ -19,15 +19,15 @@ export default function Page() {
 const jsonLdPerson = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": "https://my-site-2-coral.vercel.app/#person",
+  "@id": "https://drjuanpablosalerno.com/#person",
   "name": "Dr. Juan Pablo Salerno",
-  "jobTitle": "Mental Health Scientist, Personal Growth Expert, Author, Professor, Speaker, Consultant",
+  "jobTitle": "Mental Health Science Expert, Author, Professor, Speaker",
   "description":
-    "Award-winning mental health scientist, author, and personal growth expert blending research and practical tools for transformation, purpose, and wellbeing.",
-  "url": "https://my-site-2-coral.vercel.app/",
-  "image": "https://my-site-2-coral.vercel.app/hero17.jpg",
+    "Award-winning mental health science expert and thought leader, author, and professor blending research and practical tools for transformation, purpose, and wellbeing.",
+  "url": "https://drjuanpablosalerno.com/",
+  "image": "https://drjuanpablosalerno.com/hero17.jpg",
 "alumniOf": { "@type": "CollegeOrUniversity", "name": "Columbia University" },
-  "worksFor": { "@id": "https://my-site-2-coral.vercel.app/#org" },
+  "worksFor": { "@id": "https://drjuanpablosalerno.com/#org" },
   "hasOccupation": [
     { "@type": "Occupation", "name": "Author" },
     { "@type": "Occupation", "name": "Speaker" },
@@ -39,11 +39,11 @@ const jsonLdPerson = {
     "mindfulness","evidence-based practice","organizational wellness","leadership development"
   ],
   "sameAs": [
-    "https://www.instagram.com/YOURHANDLE",
-    "https://www.tiktok.com/@YOURHANDLE",
-    "https://www.youtube.com/@YOURHANDLE",
-    "https://scholar.google.com/citations?user=YOURID",
-    "https://www.linkedin.com/in/YOURHANDLE"
+    "https://www.instagram.com/drjuanpablosalerno",
+    "https://www.tiktok.com/@drjuanpablosalerno",
+    "https://www.youtube.com/drjpsalerno",
+    "https://scholar.google.com/citations?user=qAVSpGYAAAAJ&hl=en",
+    "https://www.linkedin.com/in/drjuanpablosalerno"
   ]
 };
 
@@ -51,41 +51,41 @@ const jsonLdPerson = {
 const jsonLdOrg = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://my-site-2-coral.vercel.app/#org",
+  "@id": "https://drjuanpablosalerno.com/#org",
   "name": "Dr. Juan Pablo Salerno Consulting",
-  "url": "https://my-site-2-coral.vercel.app/",
+  "url": "https://drjuanpablosalerno.com/",
 "logo": {
   "@type": "ImageObject",
-  "url": "https://my-site-2-coral.vercel.app/hero17.jpg",
+  "url": "https://drjuanpablosalerno.com/hero17.jpg",
   "width": 2400,
   "height": 1200
 },
 "description":
     "Consulting, speaking, and publishing practice led by Dr. Juan Pablo Salerno—bridging science and growth wisdom to strengthen resilience, wellbeing, and purpose.",
   "sameAs": [
-    "https://www.instagram.com/YOURHANDLE",
-    "https://www.tiktok.com/@YOURHANDLE",
-    "https://www.youtube.com/@YOURHANDLE",
-    "https://scholar.google.com/citations?user=YOURID",
-    "https://www.linkedin.com/in/YOURHANDLE"
+    "https://www.instagram.com/drjuanpablosalerno",
+    "https://www.tiktok.com/@drjuanpablosalerno",
+    "https://www.youtube.com/drjpsalerno",
+    "https://scholar.google.com/citations?user=qAVSpGYAAAAJ&hl=en",
+    "https://www.linkedin.com/in/drjuanpablosalerno"
   ],
 
   "contactPoint": [
   {
     "@type": "ContactPoint",
     "contactType": "Media Inquiries",
-    "email": "contact@djuanpablosalerno.com",
-    "url": "https://djuanpablosalerno.com/contact"
+    "email": "contact@drjuanpablosalerno.com",
+    "url": "https://drjuanpablosalerno.com/contact"
   },
   {
     "@type": "ContactPoint",
     "contactType": "Speaking Requests",
-    "email": "contact@djuanpablosalerno.com",
-    "url": "https://djuanpablosalerno.com/speaking"
+    "email": "contact@drjuanpablosalerno.com",
+    "url": "https://drjuanpablosalerno.com/speaking"
   }
 ],
 
-  "founder": { "@id": "https://my-site-2-coral.vercel.app/#person" },
+  "founder": { "@id": "https://drjuanpablosalerno.com/#person" },
   "department": [
     { "@type": "Organization", "name": "Speaking",
       "description": "Keynotes, workshops, and panels on mental health, resilience, and personal growth." },
@@ -99,10 +99,10 @@ const jsonLdOrg = {
 const jsonLdSite = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": "https://my-site-2-coral.vercel.app/#website",
-  "url": "https://my-site-2-coral.vercel.app/",
+  "@id": "https://drjuanpablosalerno.com/#website",
+  "url": "https://drjuanpablosalerno.com/",
   "name": "Dr. Juan Pablo Salerno",
-  "publisher": { "@id": "https://my-site-2-coral.vercel.app/#org" },
+  "publisher": { "@id": "https://drjuanpablosalerno.com/#org" },
   "inLanguage": "en",
 };
 
