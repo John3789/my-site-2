@@ -7,48 +7,45 @@ import HeroImageIphoneAware from "../components/HeroImageIphoneAware";
 import { useIosZoomVars } from "../components/useIosZoom";
 import { useEffect } from "react";
 
-
 export default function ContactClient() {
   // iOS zoom controller (portrait 3.0, landscape 1.3)
   const wrapRef = useRef(null);
-  useIosZoomVars(wrapRef, { portraitZoom: 3.0, landscapeZoom: 1.00 });
+  useIosZoomVars(wrapRef, { portraitZoom: 3.0, landscapeZoom: 1.0 });
 
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [nlSubmitting, setNlSubmitting] = useState(false);
-const [nlSubscribed, setNlSubscribed] = useState(false);
+  const [nlSubscribed, setNlSubscribed] = useState(false);
 
-useEffect(() => {
-  document.body.classList.add("hide-footer-on-contact");
-  return () => document.body.classList.remove("hide-footer-on-contact");
-}, []);
+  useEffect(() => {
+    document.body.classList.add("hide-footer-on-contact");
+    return () => document.body.classList.remove("hide-footer-on-contact");
+  }, []);
 
+  async function handleNewsletterSubmit(e) {
+    e.preventDefault();
+    if (nlSubmitting || nlSubscribed) return;
 
-async function handleNewsletterSubmit(e) {
-  e.preventDefault();
-  if (nlSubmitting || nlSubscribed) return;
+    setNlSubmitting(true);
+    const form = new FormData(e.currentTarget);
+    const email = (form.get("email") || "").toString().trim();
 
-  setNlSubmitting(true);
-  const form = new FormData(e.currentTarget);
-  const email = (form.get("email") || "").toString().trim();
+    if (!email || !email.includes("@")) {
+      alert("Please enter a valid email.");
+      setNlSubmitting(false);
+      return;
+    }
 
-  if (!email || !email.includes("@")) {
-    alert("Please enter a valid email.");
-    setNlSubmitting(false);
-    return;
+    try {
+      await fetch("/api/hoppy-subscribe", { method: "POST", body: form });
+      setNlSubscribed(true);
+    } catch {
+      setNlSubscribed(true); // show success locally so you can test
+    } finally {
+      setNlSubmitting(false);
+    }
   }
-
-  try {
-await fetch("/api/hoppy-subscribe", { method: "POST", body: form });
-    setNlSubscribed(true);
-  } catch {
-    setNlSubscribed(true); // show success locally so you can test
-  } finally {
-    setNlSubmitting(false);
-  }
-}
-
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -89,10 +86,10 @@ await fetch("/api/hoppy-subscribe", { method: "POST", body: form });
   return (
     <>
       <div className="mx-auto">
-        <main data-page="contact" className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] min-h-screen md:min-h-0 narrow-landscape-70 mt-16">
-
-          
-
+        <main
+          data-page="contact"
+          className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] min-h-screen md:min-h-0 narrow-landscape-70 mt-16"
+        >
           {/* ============== MOBILE (zoom lives INSIDE here) ============== */}
           <div className="lg:hidden mx-auto max-w-[1400px] px-3 pt-0 pb-0 narrow-landscape-80">
             <div
@@ -107,8 +104,8 @@ await fetch("/api/hoppy-subscribe", { method: "POST", body: form });
             >
               {/* Header */}
               <header className="max-w-3xl mx-auto text-center mb-10">
-                  <h1 className="font-serif text-6xl leading-[1.06] opacity-90 text-center">Contact</h1>
-                  <span className="w-14 h-14" aria-hidden />
+                <h1 className="font-serif text-6xl leading-[1.06] opacity-90 text-center">Contact</h1>
+                <span className="w-14 h-14" aria-hidden />
                 <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 md:mt-4 rounded" />
                 <p className="text-base opacity-90 mt-6 narrow-landscape-80">
                   I’m glad you’re here. Share a few details below or email{" "}
@@ -249,14 +246,12 @@ await fetch("/api/hoppy-subscribe", { method: "POST", body: form });
                 {/* spacer */}
                 <div className="pb-10" />
 
-<div className="mx-auto w-full px-0 [@media(orientation:portrait)_and_(min-width:700px)_and_(max-width:950px)]:w-[85vw]">
-  <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
-</div>
-
+                <div className="mx-auto w-full px-0 [@media(orientation:portrait)_and_(min-width:700px)_and_(max-width:950px)]:w-[85vw]">
+                  <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
+                </div>
 
                 {/* Mobile footer block (same width as form/divider) */}
-          <div className="max-w-[900px] mobile-footer-cap narrow-landscape-70 [@media(orientation:portrait)_and_(min-width:700px)_and_(max-width:950px)]:w-[70vw] mx-auto">
-
+                <div className="max-w-[900px] mobile-footer-cap narrow-landscape-70 [@media(orientation:portrait)_and_(min-width:700px)_and_(max-width:950px)]:w-[70vw] mx-auto">
                   <div className="mx-auto w-full px-0">
                     {/* Newsletter card */}
                     <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
@@ -266,19 +261,39 @@ await fetch("/api/hoppy-subscribe", { method: "POST", body: form });
                       <p className="text-sm opacity-85 mb-3">
                         Practical wisdom for modern minds — best paired with coffee and curiosity.
                       </p>
-                      <div className="flex gap-2">
-                        <input
-                          type="email"
-                          placeholder="you@example.com"
-                          className="flex-1 rounded-md border border-white/15 bg-white/5 px-3 py-2 placeholder-white/60 outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50"
-                        />
-                        <button
-                          type="button"
-                          className="shrink-0 rounded-md bg-[var(--color-gold)] text-black px-4 py-2 font-semibold"
-                        >
-                          Subscribe
-                        </button>
-                      </div>
+                      {/* 🔧 UPDATED: wired to handler + honeypot + name attr */}
+                      {nlSubscribed ? (
+                        <div className="flex gap-2">
+                          <div className="flex-1 rounded-md border border-[var(--color-gold)]/90 text-[var(--color-gold)]/90 px-3 py-2 font-semibold text-center cursor-default select-none">
+                            Thank you!
+                          </div>
+                        </div>
+                      ) : (
+                        <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
+                          <input
+                            type="text"
+                            name="hp"
+                            tabIndex={-1}
+                            autoComplete="off"
+                            aria-hidden="true"
+                            className="hidden"
+                          />
+                          <input
+                            type="email"
+                            name="email"
+                            required
+                            placeholder="you@example.com"
+                            className="flex-1 rounded-md border border-white/15 bg-white/5 px-3 py-2 placeholder-white/60 outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50"
+                          />
+                          <button
+                            type="submit"
+                            disabled={nlSubmitting}
+                            className="shrink-0 rounded-md bg-[var(--color-gold)] text-black px-4 py-2 font-semibold"
+                          >
+                            {nlSubmitting ? "Sending…" : "Subscribe"}
+                          </button>
+                        </form>
+                      )}
                     </div>
 
                     {/* Jay-style footer block */}
@@ -346,7 +361,6 @@ await fetch("/api/hoppy-subscribe", { method: "POST", body: form });
             <header className="max-w-3xl mx-auto text-center mb-10">
               <div className="flex items-center justify-center gap-3 md:block">
                 <h1 className="font-serif text-6xl leading-[1.06] opacity-90">Contact</h1>
-              
               </div>
               <div className="h-[2px] w-16 bg-[var(--color-gold)]/85 mx-auto mt-4 rounded" />
               <p className="text-base opacity-90 mt-6">
@@ -361,7 +375,7 @@ await fetch("/api/hoppy-subscribe", { method: "POST", body: form });
             </header>
 
             {/* Body: form + slim info card */}
-<div className="md:grid md:grid-cols-[1fr_460px] md:gap-6">
+            <div className="md:grid md:grid-cols-[1fr_460px] md:gap-6">
               {/* LEFT: form */}
               <section className="relative overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7 shadow-2xl md:backdrop-blur-sm hover:bg-white/[0.06] hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:-translate-y-[2px] transition">
                 <span aria-hidden className="absolute left-0 top-1 bottom-1 w-[3px] bg-[var(--color-gold)]/70 rounded-l-2xl" />
@@ -478,102 +492,112 @@ await fetch("/api/hoppy-subscribe", { method: "POST", body: form });
                 )}
               </section>
 
-<aside className="hidden md:block">
-  <div className="top-60 space-y-5">
-    {/* Popup-style card (wider, sharper image, no socials) */}
- <div className="relative w-full rounded-xl p-[2px] bg-[#0d1d2d] text-[var(--color-cream)] ring-1 ring-white/10 shadow-[0_6px_25px_rgba(0,0,0,0.45)] hover:bg-[#102438] transition isolation-isolate">
-      <div className="grid grid-cols-[150px_1fr] sm:grid-cols-[190px_1fr]">
-        {/* Photo (sharper via Next image wrapper) */}
- <div className="h-full w-full bg-black/20 transform-gpu [backface-visibility:hidden] [transform:translateZ(0)] [contain:layout_paint]">
-  <HeroImageIphoneAware
-    src="/bwhero20a.jpg"
-    alt="Dr. Juan Pablo Salerno"
-    width={900}
-    height={1200}
-    className="h-full w-full object-cover object-center rounded-l-xl will-change-transform [backface-visibility:hidden] [transform:translateZ(0)]"
-    sizes="(min-width: 1024px) 190px, 150px"
-    quality={95}
-    priority                 // ← no lazy paint at top of page
-  />
-</div>
+              <aside className="hidden md:block">
+                <div className="top-60 space-y-5">
+                  {/* Popup-style card (wider, sharper image, no socials) */}
+                  <div className="relative w-full rounded-xl p-[2px] bg-[#0d1d2d] text-[var(--color-cream)] ring-1 ring-white/10 shadow-[0_6px_25px_rgba(0,0,0,0.45)] hover:bg-[#102438] transition isolation-isolate">
+                    <div className="grid grid-cols-[150px_1fr] sm:grid-cols-[190px_1fr]">
+                      {/* Photo (sharper via Next image wrapper) */}
+                      <div className="h-full w-full bg-black/20 transform-gpu [backface-visibility:hidden] [transform:translateZ(0)] [contain:layout_paint]">
+                        <HeroImageIphoneAware
+                          src="/bwhero20a.jpg"
+                          alt="Dr. Juan Pablo Salerno"
+                          width={900}
+                          height={1200}
+                          className="h-full w-full object-cover object-center rounded-l-xl will-change-transform [backface-visibility:hidden] [transform:translateZ(0)]"
+                          sizes="(min-width: 1024px) 190px, 150px"
+                          quality={95}
+                          priority
+                        />
+                      </div>
 
-
-        {/* Copy + form only */}
-        <div className="p-5">
-          <p className="text-[14px] md:text-[15px] opacity-90"> As a thank-you for visiting, enjoy my free 5-minute reset meditation — and join <span className="italic">Science, Soul, and a Bit of Magic</span>, my monthly newsletter with practical inspiration + a little humor to help you stay centered and uplifted.
-</p>
-   {nlSubscribed ? (
-  <div className="mt-4">
-    <div className="inline-flex w-full items-center justify-center rounded-md border border-[var(--color-gold)]/90 text-[var(--color-gold)]/90 px-4 py-3 font-semibold cursor-default select-none">Thank you!</div>
-  </div>
-) : (
-  <form onSubmit={handleNewsletterSubmit} className="mt-4 space-y-3">
-    <input type="email" name="email" required placeholder="you@example.com" className="w-full rounded-md border border-white/15 bg-white/5 px-4 py-3 outline-none placeholder-white/60 focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50 text-[15px] autofill:shadow-[inset_0_0_0px_1000px_rgba(13,29,45,1)] autofill:!text-[var(--color-cream)] autofill:!caret-[var(--color-cream)] autofill:!placeholder-white/60" />
-    <button type="submit" disabled={nlSubmitting} className="inline-flex w-full items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-4 py-3 font-semibold shadow-md hover:shadow-lg hover:-translate-y-[1px] transition">{nlSubmitting ? "Sending…" : "Subscribe"}</button>
-  </form>
-)}
-
-        </div>
-      </div>
-    </div>
-  </div>
-</aside>
-
+                      {/* Copy + form only */}
+                      <div className="p-5">
+                        <p className="text-[14px] md:text-[15px] opacity-90">
+                          As a thank-you for visiting, enjoy my free 5-minute reset meditation — and join{" "}
+                          <span className="italic">Science, Soul, and a Bit of Magic</span>, my monthly newsletter with practical
+                          inspiration + a little humor to help you stay centered and uplifted.
+                        </p>
+                        {nlSubscribed ? (
+                          <div className="mt-4">
+                            <div className="inline-flex w-full items-center justify-center rounded-md border border-[var(--color-gold)]/90 text-[var(--color-gold)]/90 px-4 py-3 font-semibold cursor-default select-none">
+                              Thank you!
+                            </div>
+                          </div>
+                        ) : (
+                          <form onSubmit={handleNewsletterSubmit} className="mt-4 space-y-3">
+                            <input
+                              type="email"
+                              name="email"
+                              required
+                              placeholder="you@example.com"
+                              className="w-full rounded-md border border-white/15 bg-white/5 px-4 py-3 outline-none placeholder-white/60 focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50 text-[15px] autofill:shadow-[inset_0_0_0px_1000px_rgba(13,29,45,1)] autofill:!text-[var(--color-cream)] autofill:!caret-[var(--color-cream)] autofill:!placeholder-white/60"
+                            />
+                            <button
+                              type="submit"
+                              disabled={nlSubmitting}
+                              className="inline-flex w-full items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-4 py-3 font-semibold shadow-md hover:shadow-lg hover:-translate-y-[1px] transition"
+                            >
+                              {nlSubmitting ? "Sending…" : "Subscribe"}
+                            </button>
+                          </form>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </aside>
             </div>
 
-{/* Bookend divider (desktop) */}
-<div className="hidden lg:block mx-auto max-w-[1200px] px-6 mt-10">
-  <hr className="border-t border-[var(--color-cream)]/22" />
-</div>
+            {/* Bookend divider (desktop) */}
+            <div className="hidden lg:block mx-auto max-w-[1200px] px-6 mt-10">
+              <hr className="border-t border-[var(--color-cream)]/22" />
+            </div>
 
-{/* Footer row: left = socials/bio, right = legal */}
-<div className="hidden lg:flex items-start justify-between mx-auto max-w-[1200px] px-6 mt-4 text-[13px] leading-relaxed opacity-85">
-  {/* LEFT side — socials + bio */}
-  <div className="flex flex-col items-start text-left">
-    <div className="flex items-center gap-4">
-      <p className="uppercase tracking-[0.18em] opacity-70 text-[12px] m-0">Follow Dr. Salerno:</p>
-      <a href="https://www.tiktok.com/@YOURHANDLE" aria-label="TikTok" className="opacity-90 hover:opacity-100">
-        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-          <path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z" />
-        </svg>
-      </a>
-      <a href="https://www.instagram.com/YOURHANDLE" aria-label="Instagram" className="opacity-90 hover:opacity-100">
-        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-          <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z" />
-        </svg>
-      </a>
-      <a href="https://www.youtube.com/@YOURHANDLE" aria-label="YouTube" className="opacity-90 hover:opacity-100">
-        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-          <path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" />
-        </svg>
-      </a>
-    </div>
-    <p className="mt-4 max-w-[520px] text-[13px] leading-relaxed">
-      Dr. Juan Pablo Salerno is an award-winning mental health science expert and thought leader, author, and professor—credited
-      with more than 30 peer-reviewed publications and over 2,000 citations.
-    </p>
-  </div>
+            {/* Footer row */}
+            <div className="hidden lg:flex items-start justify-between mx-auto max-w-[1200px] px-6 mt-4 text-[13px] leading-relaxed opacity-85">
+              {/* LEFT side — socials + bio */}
+              <div className="flex flex-col items-start text-left">
+                <div className="flex items-center gap-4">
+                  <p className="uppercase tracking-[0.18em] opacity-70 text-[12px] m-0">Follow Dr. Salerno:</p>
+                  <a href="https://www.tiktok.com/@YOURHANDLE" aria-label="TikTok" className="opacity-90 hover:opacity-100">
+                    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                      <path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z" />
+                    </svg>
+                  </a>
+                  <a href="https://www.instagram.com/YOURHANDLE" aria-label="Instagram" className="opacity-90 hover:opacity-100">
+                    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                      <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z" />
+                    </svg>
+                  </a>
+                  <a href="https://www.youtube.com/@YOURHANDLE" aria-label="YouTube" className="opacity-90 hover:opacity-100">
+                    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                      <path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" />
+                    </svg>
+                  </a>
+                </div>
+                <p className="mt-4 max-w-[520px] text-[13px] leading-relaxed">
+                  Dr. Juan Pablo Salerno is an award-winning mental health science expert and thought leader, author, and
+                  professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
+                </p>
+              </div>
 
-
-  {/* RIGHT side — legal info */}
-  <div className="text-left translate-y-[-4px]">
-    <p>© Dr. Juan Pablo Salerno™</p>
-    <p className="mt-1">
-      <span>All rights reserved</span>
-      <span className="mx-2 opacity-50">·</span>
-      <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
-      <span className="mx-2 opacity-50">·</span>
-      <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
-    </p>
-  </div>
-</div>
-
-
-
-
-
-
-
+              {/* RIGHT side — legal info */}
+              <div className="text-left translate-y-[-4px]">
+                <p>© Dr. Juan Pablo Salerno™</p>
+                <p className="mt-1">
+                  <span>All rights reserved</span>
+                  <span className="mx-2 opacity-50">·</span>
+                  <a href="/terms" className="underline underline-offset-4 hover:opacity-80">
+                    Terms
+                  </a>
+                  <span className="mx-2 opacity-50">·</span>
+                  <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">
+                    Privacy
+                  </a>
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Global crisp text & iOS guard */}
@@ -598,58 +622,52 @@ await fetch("/api/hoppy-subscribe", { method: "POST", body: form });
                 margin: 0;
                 padding: 0;
               }
-}
+            }
 
-/* CONTACT — iPad / iPad mini LANDSCAPE: collapse space above the blue card */
-@media (orientation: landscape) and (min-width: 1000px) {
-  /* 1) Kill the margin stack around the divider wrapper (had mb-14 and -mt-5) */
-  [data-page="contact"] .block.lg\:hidden .mx-auto.max-w-\[1000px\].px-6 {
-    margin-bottom: 0 !important;
-    margin-top: 0 !important;
-  }
+            /* CONTACT — iPad / iPad mini LANDSCAPE: collapse space above the blue card */
+            @media (orientation: landscape) and (min-width: 1000px) {
+              /* 1) Kill the margin stack around the divider wrapper (had mb-14 and -mt-5) */
+              [data-page="contact"] .block.lg\\:hidden .mx-auto.max-w-\\[1000px\\].px-6 {
+                margin-bottom: 0 !important;
+                margin-top: 0 !important;
+              }
 
-  /* 2) Shrink the earlier spacer just before the divider (was pb-10) */
-  [data-page="contact"] .lg\:hidden .pb-10 {
-    padding-bottom: 0.25rem !important;
-  }
+              /* 2) Shrink the earlier spacer just before the divider (was pb-10) */
+              [data-page="contact"] .lg\\:hidden .pb-10 {
+                padding-bottom: 0.25rem !important;
+              }
 
-  /* 3) Nudge the blue newsletter card up (was mt-10) */
-  [data-page="contact"] .mobile-footer-cap .rounded-xl:first-of-type {
-    margin-top: 0.5rem !important;
-  }
+              /* 3) Nudge the blue newsletter card up (was mt-10) */
+              [data-page="contact"] .mobile-footer-cap .rounded-xl:first-of-type {
+                margin-top: 0.5rem !important;
+              }
 
-  /* CONTACT — hide the global site footer only on this page */
-body:has(main[data-page="contact"]) :is(footer, .site-footer, [role="contentinfo"]) {
-  display: none !important;
-}
-  /* Prevent autofill white background on email field */
-input:-webkit-autofill,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:hover {
-  -webkit-box-shadow: 0 0 0px 1000px #0d1d2d inset !important;
-  -webkit-text-fill-color: var(--color-cream) !important;
-  caret-color: var(--color-cream) !important;
-  transition: background-color 9999s ease-in-out 0s;
-}
-  
-/* iOS Safari flicker fix */
-img, video {
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
+              /* CONTACT — hide the global site footer only on this page */
+              body:has(main[data-page="contact"]) :is(footer, .site-footer, [role="contentinfo"]) {
+                display: none !important;
+              }
+              /* Prevent autofill white background on email field */
+              input:-webkit-autofill,
+              input:-webkit-autofill:focus,
+              input:-webkit-autofill:hover {
+                -webkit-box-shadow: 0 0 0px 1000px #0d1d2d inset !important;
+                -webkit-text-fill-color: var(--color-cream) !important;
+                caret-color: var(--color-cream) !important;
+                transition: background-color 9999s ease-in-out 0s;
+              }
 
-}
-
-
-
-
+              /* iOS Safari flicker fix */
+              img,
+              video {
+                -webkit-transform: translateZ(0);
+                transform: translateZ(0);
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+              }
+            }
           `}</style>
         </main>
       </div>
-
-
     </>
   );
 }
