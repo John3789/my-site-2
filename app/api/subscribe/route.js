@@ -26,7 +26,7 @@ export async function POST(req) {
     try {
       const body = await req.json();
       email = body?.email;
-    } catch (e) {
+    } catch {
       return new Response(JSON.stringify({ error: "Invalid JSON body" }), { status: 400 });
     }
 
@@ -36,7 +36,6 @@ export async function POST(req) {
 
     const apiKey = process.env.HOPPY_API_KEY;
     if (!apiKey) {
-      // Key missing on server
       return new Response(
         JSON.stringify({
           error: "Missing HOPPY_API_KEY on server",
@@ -46,10 +45,12 @@ export async function POST(req) {
       );
     }
 
-    // Call Hoppy Copy
+    // ✅ Use the app-domain v2 endpoint
+    const url = "https://app.hoppycopy.co/api/v2/subscribers";
+
     let upstream;
     try {
-      upstream = await fetch("https://api.hoppycopy.co/v1/subscribers", {
+      upstream = await fetch(url, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${apiKey}`,
@@ -58,26 +59,19 @@ export async function POST(req) {
         body: JSON.stringify({ email }),
       });
     } catch (netErr) {
-      // Network layer failed
       return new Response(
         JSON.stringify({
           error: "Network error contacting Hoppy Copy",
-          details: String(netErr && netErr.message ? netErr.message : netErr),
+          details: String(netErr?.message ?? netErr),
         }),
         { status: 502 }
       );
     }
 
     const raw = await upstream.text();
-    let data;
-    try {
-      data = JSON.parse(raw);
-    } catch {
-      data = { raw };
-    }
+    let data; try { data = JSON.parse(raw); } catch { data = { raw }; }
 
     if (!upstream.ok) {
-      // We reached Hoppy Copy; they rejected (duplicate, invalid, etc.)
       return new Response(
         JSON.stringify({ step: "upstream", status: upstream.status, body: data }),
         { status: 400 }
@@ -89,7 +83,6 @@ export async function POST(req) {
       headers: { "content-type": "application/json" },
     });
   } catch (err) {
-    // Final safety net with details
     return new Response(
       JSON.stringify({ error: "Server error", details: String(err) }),
       { status: 500 }
