@@ -12,7 +12,7 @@ export default function NewsletterMeditationPopup({
   ssKey = "__popup_shown_this_session__",
   audioElementId,
   secondsFromEnd = 10,
-  formAction = "/api/hoppy-subscribe", // ✅ updated endpoint
+  formAction = "/api/subscribe",
   photoSrc = "/bwhero20a.jpg",
 }) {
   const [open, setOpen] = useState(false);

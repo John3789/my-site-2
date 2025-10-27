@@ -23,13 +23,13 @@ export default function Page() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://my-site-2-coral.vercel.app/"
+        "item": "https://drjuanpablosalerno.com/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Speaking",
-        "item": "https://my-site-2-coral.vercel.app/speaking"
+        "item": "https://drjuanpablosalerno.com/speaking"
       }
     ]
   };

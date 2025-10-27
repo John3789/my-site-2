@@ -38,7 +38,7 @@ export default function ContactClient() {
     }
 
     try {
-      await fetch("/api/hoppy-subscribe", { method: "POST", body: form });
+      await fetch("/api/subscribe", { method: "POST", body: form });
       setNlSubscribed(true);
     } catch {
       setNlSubscribed(true); // show success locally so you can test
@@ -268,16 +268,17 @@ export default function ContactClient() {
                             Thank you!
                           </div>
                         </div>
-                      ) : (
-                        <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
-                          <input
-                            type="text"
-                            name="hp"
-                            tabIndex={-1}
-                            autoComplete="off"
-                            aria-hidden="true"
-                            className="hidden"
-                          />
+                         ) : (
+                          <form onSubmit={handleNewsletterSubmit} className="mt-4 space-y-3">
+                            {/* honeypot (must match API) */}
+                            <input
+                              type="text"
+                              name="hp"
+                              tabIndex={-1}
+                              autoComplete="off"
+                              aria-hidden="true"
+                              className="hidden"
+                            />
                           <input
                             type="email"
                             name="email"

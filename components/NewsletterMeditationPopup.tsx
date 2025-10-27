@@ -40,46 +40,42 @@ export default function NewsletterMeditationPopup({
   useEffect(() => setMounted(true), []);
 
   // ↓↓↓ DEBUG OVERRIDES — remove after testing ↓↓↓
-useEffect(() => {
-  if (typeof window === "undefined") return;
-  const url = new URL(window.location.href);
-  const action = url.searchParams.get("popup");
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const url = new URL(window.location.href);
+    const action = url.searchParams.get("popup");
 
-  // 1) ?popup=reset → clear both guards
-  if (action === "reset") {
-    try {
-      localStorage.removeItem(lsKey);
-      sessionStorage.removeItem(ssKey);
-      console.log("[Popup] Reset complete.");
-    } catch {}
-  }
+    if (action === "reset") {
+      try {
+        localStorage.removeItem(lsKey);
+        sessionStorage.removeItem(ssKey);
+        console.log("[Popup] Reset complete.");
+      } catch {}
+    }
 
-  // 2) ?popup=force → show immediately (ignores suppression)
-  if (action === "force") {
-    shownRef.current = false;
-    setOpen(true);
-    console.log("[Popup] Forced open via URL.");
-  }
+    if (action === "force") {
+      shownRef.current = false;
+      setOpen(true);
+      console.log("[Popup] Forced open via URL.");
+    }
 
-  // 3) Optional: inspect current guard state in the console
-  if (action === "debug") {
-    try {
-      const untilRaw = localStorage.getItem(lsKey);
-      const until = untilRaw ? Number(untilRaw) : null;
-      console.table({
-        TESTING_MODE,
-        suppressed: suppressed(),
-        sessionShown: sessionShown(),
-        now: Date.now(),
-        suppress_until: until,
-        suppress_in_ms: until ? until - Date.now() : null,
-      });
-    } catch {}
-  }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-}, [mounted]); // only when mounted is set
-// ↑↑↑ remove this block when you’re done ↑↑↑
-
+    if (action === "debug") {
+      try {
+        const untilRaw = localStorage.getItem(lsKey);
+        const until = untilRaw ? Number(untilRaw) : null;
+        console.table({
+          TESTING_MODE,
+          suppressed: suppressed(),
+          sessionShown: sessionShown(),
+          now: Date.now(),
+          suppress_until: until,
+          suppress_in_ms: until ? until - Date.now() : null,
+        });
+      } catch {}
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mounted]); // only when mounted is set
+  // ↑↑↑ remove this block when you’re done ↑↑↑
 
   const suppressed = useCallback((): boolean => {
     try {
@@ -126,14 +122,14 @@ useEffect(() => {
     if (typeof window === "undefined") return;
     if (isMeditationPage) return;
 
-const id = window.setTimeout(() => {
-  if (TESTING_MODE) {
-    shownRef.current = true;
-    setOpen(true);
-    return;
-  }
-  if (!suppressed() && !sessionShown()) showOnce();
-}, delayMs);
+    const id = window.setTimeout(() => {
+      if (TESTING_MODE) {
+        shownRef.current = true;
+        setOpen(true);
+        return;
+      }
+      if (!suppressed() && !sessionShown()) showOnce();
+    }, delayMs);
 
     return () => window.clearTimeout(id);
   }, [TESTING_MODE, delayMs, isMeditationPage, suppressed, sessionShown, showOnce]);
@@ -195,11 +191,15 @@ const id = window.setTimeout(() => {
       return;
     }
 
+    // ensure honeypot exists (some browsers may omit hidden inputs)
+    if (!formData.has("hp")) formData.append("hp", "");
+
     try {
       const res = await fetch(formAction, { method: "POST", body: formData });
       if (!res.ok) throw new Error("Subscribe failed");
       if (!TESTING_MODE) markSuppressed();
       setSuccess(true);
+      form.reset(); // clear email after success
     } catch {
       if (!TESTING_MODE) markSuppressed();
       setSuccess(true);
@@ -252,74 +252,77 @@ const id = window.setTimeout(() => {
 
           {!success ? (
             // 2-column layout across devices
-<div className="grid items-stretch grid-cols-[42%_58%] md:grid-cols-[220px_1fr] [@media(orientation:landscape)_and_(max-width:950px)]:grid-cols-[200px_1fr]">
+            <div className="grid items-stretch grid-cols-[42%_58%] md:grid-cols-[220px_1fr] [@media(orientation:landscape)_and_(max-width:950px)]:grid-cols-[200px_1fr]">
               {/* Photo — centered crop; slight shift on iPhone landscape */}
               <div className="h-full w-full bg-black/20 flex items-center justify-center overflow-hidden">
-<Image
-  src={photoSrc}
-  alt="Dr. Juan Pablo Salerno"
-  width={900}
-  height={1200}
-  quality={95}
-  sizes="(max-width: 950px) 42vw, 220px"
-  className="
-    h-full w-full object-cover
-    object-[45%]
-    [@media(orientation:landscape)_and_(max-width:950px)]:object-[55%]
-    md:object-center
-    md:rounded-l-xl
-  "
-/>
+                <Image
+                  src={photoSrc}
+                  alt="Dr. Juan Pablo Salerno"
+                  width={900}
+                  height={1200}
+                  quality={95}
+                  sizes="(max-width: 950px) 42vw, 220px"
+                  className="
+                    h-full w-full object-cover
+                    object-[45%]
+                    [@media(orientation:landscape)_and_(max-width:950px)]:object-[55%]
+                    md:object-center
+                    md:rounded-l-xl
+                  "
+                />
               </div>
 
               {/* Text + form */}
-<div className="p-4 sm:p-5">
-  {/** PHONE (portrait + landscape up to 950px): SHORT COPY */}
-  <h3 className="hidden [@media(max-width:950px)]:block font-serif text-[22px] leading-snug mb-2 opacity-90">
-    Please accept this guided meditation as a personal gift
-  </h3>
-  <p className="hidden [@media(max-width:950px)]:block text-[14px] opacity-90">
-   — and my invitation to join <span className="italic">Science, Soul, and a Bit of Magic</span>, my monthly newsletter.
-  </p>
+              <div className="p-4 sm:p-5">
+                {/** PHONE (portrait + landscape up to 950px): SHORT COPY */}
+                <h3 className="hidden [@media(max-width:950px)]:block font-serif text-[22px] leading-snug mb-2 opacity-90">
+                  Please accept this guided meditation as a personal gift
+                </h3>
+                <p className="hidden [@media(max-width:950px)]:block text-[14px] opacity-90">
+                  — and my invitation to join <span className="italic">Science, Soul, and a Bit of Magic</span>, my monthly newsletter.
+                </p>
 
-  {/** DESKTOP / LARGE TABLETS (> 950px): FULL COPY */}
-  <h3 className="block [@media(max-width:950px)]:hidden font-serif text-[26px] md:text-[30px] leading-snug mb-2 opacity-90">
-    Please accept this guided meditation as a personal gift
-  </h3>
-  <p className="block [@media(max-width:950px)]:hidden text-[15px] md:text-[17px] opacity-90">
-    A 5-minute reset to return to your center. If it resonates, I’d love to stay conntected through <span className="italic">Science, Soul, and a Bit of Magic</span>, my monthly newsletter.</p>
+                {/** DESKTOP / LARGE TABLETS (> 950px): FULL COPY */}
+                <h3 className="block [@media(max-width:950px)]:hidden font-serif text-[26px] md:text-[30px] leading-snug mb-2 opacity-90">
+                  Please accept this guided meditation as a personal gift
+                </h3>
+                <p className="block [@media(max-width:950px)]:hidden text-[15px] md:text-[17px] opacity-90">
+                  A 5-minute reset to return to your center. If it resonates, I’d love to stay connected through <span className="italic">Science, Soul, and a Bit of Magic</span>, my monthly newsletter.
+                </p>
 
-  <form onSubmit={handleSubmit} className="mt-4 space-y-3">
-    <input
-      type="email"
-      name="email"
-      required
-      placeholder="you@example.com"
-      className="
-        w-full rounded-md border border-white/15 bg-white/5
-        px-4 py-3 outline-none placeholder-white/60
-        focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50
-        text-[15px]
-        [@media(orientation:landscape)_and_(max-width:950px)]:py-2.5
-      "
-    />
-    <button
-      type="submit"
-      disabled={loading}
-      className="
-        inline-flex w-full items-center justify-center
-        rounded-md bg-[var(--color-gold)] text-black
-        px-4 py-3 font-semibold
-        shadow-md hover:shadow-lg hover:-translate-y-[1px]
-        transition disabled:opacity-80
-        [@media(orientation:landscape)_and_(max-width:950px)]:py-2.5
-      "
-    >
-      {loading ? "Sending…" : "Subscribe"}
-    </button>
-  </form>
-</div>
+                <form onSubmit={handleSubmit} className="mt-4 space-y-3">
+                  {/* ✅ Honeypot field for bots */}
+                  <input type="text" name="hp" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
 
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="you@example.com"
+                    className="
+                      w-full rounded-md border border-white/15 bg-white/5
+                      px-4 py-3 outline-none placeholder-white/60
+                      focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50
+                      text-[15px]
+                      [@media(orientation:landscape)_and_(max-width:950px)]:py-2.5
+                    "
+                  />
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="
+                      inline-flex w-full items-center justify-center
+                      rounded-md bg-[var(--color-gold)] text-black
+                      px-4 py-3 font-semibold
+                      shadow-md hover:shadow-lg hover:-translate-y-[1px]
+                      transition disabled:opacity-80
+                      [@media(orientation:landscape)_and_(max-width:950px)]:py-2.5
+                    "
+                  >
+                    {loading ? "Sending…" : "Subscribe"}
+                  </button>
+                </form>
+              </div>
             </div>
           ) : (
             <div className="p-5 text-center">

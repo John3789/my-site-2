@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const base = "https://my-site-2-coral.vercel.app";  // replace with your final domain later
+  const base = "https://drjuanpablosalerno.com";  // replace with your final domain later
   return [
     { url: `${base}/`, lastModified: new Date() },
     { url: `${base}/about`, lastModified: new Date() },
