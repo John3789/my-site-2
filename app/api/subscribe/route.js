@@ -1,7 +1,6 @@
 // app/api/subscribe/route.js
 export const runtime = "nodejs";
 
-// ---- GET: lightweight health check (no secrets) ----
 export async function GET() {
   return new Response(
     JSON.stringify({
@@ -14,7 +13,6 @@ export async function GET() {
   );
 }
 
-// ---- POST: subscribe ----
 export async function POST(req) {
   try {
     const ct = (req.headers.get("content-type") || "").toLowerCase();
@@ -45,8 +43,8 @@ export async function POST(req) {
       );
     }
 
-    // ✅ Use the app-domain v2 endpoint
-    const url = "https://app.hoppycopy.co/api/v2/subscribers";
+    // ✅ Back to the official v1 endpoint on api.hoppycopy.co
+    const url = "https://api.hoppycopy.co/v1/subscribers";
 
     let upstream;
     try {
@@ -55,6 +53,7 @@ export async function POST(req) {
         headers: {
           Authorization: `Bearer ${apiKey}`,
           "Content-Type": "application/json",
+          Accept: "application/json",
         },
         body: JSON.stringify({ email }),
       });
