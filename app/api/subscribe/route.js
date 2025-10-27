@@ -49,7 +49,7 @@ export async function POST(req) {
     // Call Hoppy Copy
     let upstream;
     try {
-      upstream = await fetch("https://api.hoppycopy.com/v1/subscribers", {
+      upstream = await fetch("https://api.hoppycopy.co/v1/subscribers", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${apiKey}`,
