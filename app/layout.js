@@ -7,15 +7,12 @@ import Header from '../components/Header'
 import NewsletterSignup from '../components/NewsletterSignup'
 import Script from 'next/script'
 import LayoutFooterGate from '../components/LayoutFooterGate'
+import FooterSubscribeClient from '../components/FooterSubscribeClient' // ← added
 
 export const metadata = {
-  metadataBase: new URL("https://drjuanpablosalerno.com/"), // your live Vercel URL
-  // optional site-wide defaults:
-  // title: "Dr. Juan Pablo Salerno",
-  // description: "Dr. Juan Pablo Salerno, award-winning mental health science expert and thought leader...",
+  metadataBase: new URL("https://drjuanpablosalerno.com/"),
 };
 
-// app/layout.tsx (or layout.js)
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -25,29 +22,26 @@ export const viewport = {
   viewportFit: 'cover',
 };
 
-// Sans font for body text
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-sans',
 })
 
-// Serif font for nameplate/headings
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
-  weight: ['600', '700'], // bold weights
+  weight: ['600', '700'],
   variable: '--font-serif',
 })
 
 export default function RootLayout({ children }) {
   return (
- <html
+    <html
       lang="en"
       className={`${inter.variable} ${cormorant.variable} zoom-not-ready`}
-      style={{ ['--vv']: '1' }}   // ✅ SSR default so hydration matches
+      style={{ ['--vv']: '1' }} // ✅ SSR default so hydration matches
     >
       <head>
-
-<Script id="ios-landscape-nudge-lite" strategy="beforeInteractive">
+        <Script id="ios-landscape-nudge-lite" strategy="beforeInteractive">
 {`
   (function () {
     var isiOS = /iP(hone|od)/.test(navigator.userAgent);
@@ -56,7 +50,6 @@ export default function RootLayout({ children }) {
     var vp = document.querySelector('meta[name="viewport"]');
     if (!vp) { vp = document.createElement('meta'); vp.name = 'viewport'; document.head.appendChild(vp); }
 
-    // ⬇️ Match your <meta> exactly
     var base = 'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=8, user-scalable=yes, viewport-fit=cover';
 
     function snapIfWeird() {
@@ -66,7 +59,6 @@ export default function RootLayout({ children }) {
       if (!isLandscape) return;
       if (Math.abs(scale - 1) < 0.03) return;
 
-      // Briefly force max=1 to snap to 1.0, then restore the full base
       vp.setAttribute('content', base + ', maximum-scale=1');
       requestAnimationFrame(function () {
         requestAnimationFrame(function () {
@@ -80,24 +72,20 @@ export default function RootLayout({ children }) {
     window.addEventListener('orientationchange', function(){ setTimeout(snapIfWeird, 50); });
   })();
 `}
-</Script>
-
+        </Script>
 
         <Script id="ios-edge-lock" strategy="afterInteractive">
 {`
   (function () {
-    // Prevent rubber-band at the very top/bottom of scrollable containers
     function edgeLock(el) {
       if (!el) return;
       el.addEventListener('touchstart', function () {
         const top = el.scrollTop;
         const max = el.scrollHeight - el.clientHeight;
-        if (top <= 0) el.scrollTop = 1;       // nudge from top
-        else if (top >= max) el.scrollTop = max - 1; // nudge from bottom
+        if (top <= 0) el.scrollTop = 1;
+        else if (top >= max) el.scrollTop = max - 1;
       }, { passive: true });
     }
-
-    // Auto-attach to common classes
     function attachAll() {
       document.querySelectorAll('.page-scroll, .scroll-area').forEach(edgeLock);
     }
@@ -105,8 +93,7 @@ export default function RootLayout({ children }) {
     document.addEventListener('DOMContentLoaded', attachAll, { once: true });
   })();
 `}
-</Script>
-
+        </Script>
 
         <Script id="vv-scale-var" strategy="beforeInteractive">
 {`
@@ -126,13 +113,11 @@ export default function RootLayout({ children }) {
     window.addEventListener('orientationchange', setVV);
   })();
 `}
-</Script>
-
-
+        </Script>
 
         {/* 🔒 Inline kill-switch CSS BEFORE first paint (no opacity hiding) */}
         <Script id="zoom-kill-style" strategy="beforeInteractive">
-          {`(function () {
+{`(function () {
   var css =
     'html.zoom-not-ready [class*="\\\\[transform:scale(var(--z))\\\\]"],\\n' +
     'html.zoom-not-ready [class*="\\\\[transform:scale(var(--zoomL))\\\\]"]{transform:none !important;}\\n' +
@@ -144,138 +129,92 @@ export default function RootLayout({ children }) {
   document.head.appendChild(style);
 })();`}
         </Script>
-
       </head>
 
       {/* single body (no nesting). NOTE: desktop-only min width to avoid mobile auto-zoom */}
       <body className="lg:min-w-[1200px] bg-[#F4F1EA] text-[#0C1415] antialiased [text-rendering:optimizeLegibility] [-webkit-font-smoothing:antialiased]">
         <Header />
 
-<Script id="ios-blur-active-input" strategy="afterInteractive">
+        <Script id="ios-blur-active-input" strategy="afterInteractive">
 {`
   (function () {
     if (!/iP(hone|od)/.test(navigator.userAgent)) return;
-
     function blurIfNeeded() {
       var el = document.activeElement;
       if (!el) return;
-      // allow opt-out with data-allow-autofocus="true"
       if (el.matches && el.matches('[data-allow-autofocus="true"]')) return;
       if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.isContentEditable) {
         el.blur();
       }
     }
-
     document.addEventListener('DOMContentLoaded', function(){ setTimeout(blurIfNeeded, 0); }, { once: true });
     window.addEventListener('pageshow', function(){ setTimeout(blurIfNeeded, 0); });
   })();
 `}
-</Script>
+        </Script>
 
         {children}
 
         {/* DESKTOP / LARGE-TABLET FOOTER — ORIGINAL LAYOUT RESTORED */}
-<LayoutFooterGate>
-        <footer className="hidden lg:block py-10 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
-          <div
-            className="
-              mx-auto w-full max-w-[1680px]
-              grid grid-cols-1 lg:grid-cols-[1fr_minmax(0,1.05fr)]
-              gap-y-10 gap-x-24 items-end
-            "
-          >
-            {/* LEFT — Name + Terms + Privacy (unchanged) */}
-            <div className="flex flex-col justify-end pl-0">
-              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 opacity-90 text-[13px] leading-relaxed">
-                <span>© Dr. Juan Pablo Salerno™</span>
-                <span className="opacity-50">·</span>
-                <span>All rights reserved</span>
-                <span className="opacity-50">·</span>
-                <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
-                <span className="opacity-50">·</span>
-                <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
+        <LayoutFooterGate>
+          <footer className="hidden lg:block py-10 px-6 text-sm text-[var(--color-cream)] bg-[var(--color-teal-850)]">
+            <div
+              className="
+                mx-auto w-full max-w-[1680px]
+                grid grid-cols-1 lg:grid-cols-[1fr_minmax(0,1.05fr)]
+                gap-y-10 gap-x-24 items-end
+              "
+            >
+              {/* LEFT — Name + Terms + Privacy (unchanged) */}
+              <div className="flex flex-col justify-end pl-0">
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-1 opacity-90 text-[13px] leading-relaxed">
+                  <span>© Dr. Juan Pablo Salerno™</span>
+                  <span className="opacity-50">·</span>
+                  <span>All rights reserved</span>
+                  <span className="opacity-50">·</span>
+                  <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
+                  <span className="opacity-50">·</span>
+                  <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
+                </div>
               </div>
-            </div>
 
-            {/* RIGHT — Newsletter + Socials + Bio */}
-            <div className="grid gap-5 text-left pr-4 lg:pr-10 justify-self-end max-w-[750px]">
-              {/* Newsletter block (improved version) */}
-              <div
-                className="
-                  rounded-xl bg-[#0f2334]
-                  ring-1 ring-white/10 p-6
-                  shadow-[0_10px_30px_rgba(0,0,0,0.55)]
-                  hover:bg-[#102a3a] transition
-                "
-              >
-                {/* Title + Description */}
-                <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-3">
-                  Science, Soul, and a Bit of Magic — Every Month
-                </p>
-                <p className="text-[14px] opacity-95 leading-snug mb-5">
-                  Practical wisdom for modern minds — best paired with coffee and curiosity.
-                </p>
-
-                {/* Email + Subscribe — now functional */}
-                <form
-                  onSubmit={async (e) => {
-                    e.preventDefault();
-                    const form = e.currentTarget;
-                    const email = form.email.value.trim();
-                    if (!email || !email.includes("@")) {
-                      alert("Please enter a valid email.");
-                      return;
-                    }
-                    try {
-                      const res = await fetch("/api/subscribe", {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({ email }),
-                      });
-                      const data = await res.json();
-                      if (!res.ok) {
-                        console.error("Subscribe failed:", data);
-                        alert("Something went wrong. Please try again.");
-                      } else {
-                        alert("Thank you! You're now subscribed.");
-                        form.reset();
-                      }
-                    } catch (err) {
-                      console.error("Network error:", err);
-                      alert("Please check your connection and try again.");
-                    }
-                  }}
-                  className="flex flex-col sm:flex-row gap-3 sm:gap-2"
+              {/* RIGHT — Newsletter + Socials + Bio */}
+              <div className="grid gap-5 text-left pr-4 lg:pr-10 justify-self-end max-w-[750px]">
+                {/* Newsletter block (improved version) */}
+                <div
+                  className="
+                    rounded-xl bg-[#0f2334]
+                    ring-1 ring-white/10 p-6
+                    shadow-[0_10px_30px_rgba(0,0,0,0.55)]
+                    hover:bg-[#102a3a] transition
+                  "
                 >
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    placeholder="you@example.com"
-                    className="flex-1 rounded-md border border-white/15 bg-white/5 px-3 py-2 placeholder-white/60 outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50"
-                  />
-                  <button
-                    type="submit"
-                    className="shrink-0 rounded-md bg-[var(--color-gold)] text-black px-4 py-2 font-semibold"
-                  >
-                    Subscribe
-                  </button>
-                </form>
-              </div>
+                  {/* Title + Description */}
+                  <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-3">
+                    Science, Soul, and a Bit of Magic — Every Month
+                  </p>
+                  <p className="text-[14px] opacity-95 leading-snug mb-5">
+                    Practical wisdom for modern minds — best paired with coffee and curiosity.
+                  </p>
 
-              {/* Socials */}
-              <div className="flex items-center justify-start mt-2">
-                <SocialFooter />
-              </div>
+                  {/* Email + Subscribe — now client-side */}
+                  <FooterSubscribeClient />
+                </div>
 
-              {/* Bio */}
-              <p className="text-[13px] leading-relaxed opacity-85 -mt-1 max-w-[750px]">
-                Dr. Juan Pablo Salerno is an award-winning mental health science expert and thought leader, author, and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
-              </p>
+                {/* Socials */}
+                <div className="flex items-center justify-start mt-2">
+                  <SocialFooter />
+                </div>
+
+                {/* Bio */}
+                <p className="text-[13px] leading-relaxed opacity-85 -mt-1 max-w-[750px]">
+                  Dr. Juan Pablo Salerno is an award-winning mental health science expert and thought leader, author, and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
+                </p>
+              </div>
             </div>
-          </div>
-        </footer>
- </LayoutFooterGate>
+          </footer>
+        </LayoutFooterGate>
+
         <Analytics />
       </body>
     </html>
