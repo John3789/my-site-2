@@ -177,36 +177,45 @@ export default function NewsletterMeditationPopup({
   }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    if (loading) return;
-    setLoading(true);
+  e.preventDefault();
+  if (loading) return;
+  setLoading(true);
 
-    const form = e.currentTarget as HTMLFormElement;
-    const formData = new FormData(form);
-    const email = (formData.get("email") || "").toString().trim();
+  const form = e.currentTarget as HTMLFormElement;
+  const formData = new FormData(form);
+  const email = (formData.get("email") || "").toString().trim();
 
-    if (!email || !email.includes("@")) {
-      setLoading(false);
-      alert("Please enter a valid email.");
-      return;
-    }
-
-    // ensure honeypot exists (some browsers may omit hidden inputs)
-    if (!formData.has("hp")) formData.append("hp", "");
-
-    try {
-      const res = await fetch(formAction, { method: "POST", body: formData });
-      if (!res.ok) throw new Error("Subscribe failed");
-      if (!TESTING_MODE) markSuppressed();
-      setSuccess(true);
-      form.reset(); // clear email after success
-    } catch {
-      if (!TESTING_MODE) markSuppressed();
-      setSuccess(true);
-    } finally {
-      setLoading(false);
-    }
+  if (!email || !email.includes("@")) {
+    setLoading(false);
+    alert("Please enter a valid email.");
+    return;
   }
+
+  try {
+    const res = await fetch(formAction, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      console.error("Subscribe failed:", data);
+      alert("Something went wrong. Please try again.");
+    } else {
+      if (!TESTING_MODE) markSuppressed();
+      setSuccess(true);
+      form.reset();
+    }
+  } catch (err) {
+    console.error("Network error:", err);
+    if (!TESTING_MODE) markSuppressed();
+    setSuccess(true);
+  } finally {
+    setLoading(false);
+  }
+}
 
   if (!open || !mounted) return null;
 
