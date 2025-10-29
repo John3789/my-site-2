@@ -163,36 +163,46 @@ export default function NewsletterMeditationPopup({
   }
 
   async function handleSubmit(e) {
-    e.preventDefault();
-    if (loading) return;
-    setLoading(true);
+  e.preventDefault();
+  if (loading) return;
+  setLoading(true);
 
-    const formEl = e.currentTarget;
-    const formData = new FormData(formEl);
-    const email = (formData.get("email") || "").toString().trim();
+  const formEl = e.currentTarget;
+  const formData = new FormData(formEl);
+  const email = (formData.get("email") || "").toString().trim();
 
-    if (!email || !email.includes("@")) {
-      setLoading(false);
-      alert("Please enter a valid email.");
-      return;
-    }
-
-    // ✅ ensure honeypot exists
-    if (!formData.has("hp")) formData.append("hp", "");
-
-    try {
-      const res = await fetch(formAction, { method: "POST", body: formData });
-      if (!res.ok) throw new Error("Subscribe failed");
-      if (!TESTING_MODE) markSuppressed();
-      setSuccess(true);
-      formEl.reset(); // ✅ reset form after success
-    } catch {
-      if (!TESTING_MODE) markSuppressed();
-      setSuccess(true);
-    } finally {
-      setLoading(false);
-    }
+  if (!email || !email.includes("@")) {
+    setLoading(false);
+    alert("Please enter a valid email.");
+    return;
   }
+
+  try {
+    const res = await fetch(formAction, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      console.error("Subscribe failed:", data);
+      alert("Something went wrong. Please try again.");
+    } else {
+      if (!TESTING_MODE) markSuppressed();
+      setSuccess(true);
+      formEl.reset();
+    }
+  } catch (err) {
+    console.error("Network error:", err);
+    if (!TESTING_MODE) markSuppressed();
+    setSuccess(true); // still show thank you
+  } finally {
+    setLoading(false);
+  }
+}
+
 
   if (!open || !mounted) return null;
 
