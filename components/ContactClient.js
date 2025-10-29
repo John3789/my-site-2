@@ -348,7 +348,7 @@ export default function ContactClient() {
 
                         {/* Facebook */}
 <a
-  href="https://www.facebook.com/YOURHANDLE"
+  href="https://www.facebook.com/profile.php?id=61582412806274#"
   aria-label="Facebook"
   className="opacity-90 hover:opacity-100"
 >
@@ -607,7 +607,7 @@ export default function ContactClient() {
 
                                       {/* Facebook */}
 <a
-  href="https://www.facebook.com/YOURHANDLE"
+  href="https://www.facebook.com/profile.php?id=61582412806274#"
   aria-label="Facebook"
   className="opacity-90 hover:opacity-100"
 >
