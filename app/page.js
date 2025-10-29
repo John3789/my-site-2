@@ -43,7 +43,8 @@ const jsonLdPerson = {
     "https://www.tiktok.com/@drjuanpablosalerno",
     "https://www.youtube.com/drjpsalerno",
     "https://scholar.google.com/citations?user=qAVSpGYAAAAJ&hl=en",
-    "https://www.linkedin.com/in/drjuanpablosalerno"
+    "https://www.linkedin.com/in/drjuanpablosalerno",
+    "https://www.facebook.com/profile.php?id=61582412806274"
   ]
 };
 
@@ -67,7 +68,8 @@ const jsonLdOrg = {
     "https://www.tiktok.com/@drjuanpablosalerno",
     "https://www.youtube.com/drjpsalerno",
     "https://scholar.google.com/citations?user=qAVSpGYAAAAJ&hl=en",
-    "https://www.linkedin.com/in/drjuanpablosalerno"
+    "https://www.linkedin.com/in/drjuanpablosalerno",
+    "https://www.facebook.com/profile.php?id=61582412806274"
   ],
 
   "contactPoint": [
