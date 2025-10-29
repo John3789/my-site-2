@@ -540,21 +540,34 @@ export default function ContactClient() {
                           </div>
                         ) : (
                           <form onSubmit={handleNewsletterSubmit} className="mt-4 space-y-3">
-                            <input
-                              type="email"
-                              name="email"
-                              required
-                              placeholder="you@example.com"
-                              className="w-full rounded-md border border-white/15 bg-white/5 px-4 py-3 outline-none placeholder-white/60 focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50 text-[15px] autofill:shadow-[inset_0_0_0px_1000px_rgba(13,29,45,1)] autofill:!text-[var(--color-cream)] autofill:!caret-[var(--color-cream)] autofill:!placeholder-white/60"
-                            />
-                            <button
-                              type="submit"
-                              disabled={nlSubmitting}
-                              className="inline-flex w-full items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-4 py-3 font-semibold shadow-md hover:shadow-lg hover:-translate-y-[1px] transition"
-                            >
-                              {nlSubmitting ? "Sending…" : "Subscribe"}
-                            </button>
-                          </form>
+  {/* honeypot (must match API) */}
+  <input
+    type="text"
+    name="hp"
+    tabIndex={-1}
+    autoComplete="off"
+    aria-hidden="true"
+    className="hidden"
+  />
+
+  <div className="flex gap-2">
+    <input
+      type="email"
+      name="email"
+      required
+      placeholder="you@example.com"
+      className="flex-1 rounded-md border border-white/15 bg-white/5 px-3 py-2 placeholder-white/60 outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50"
+    />
+    <button
+      type="submit"
+      disabled={nlSubmitting}
+      className="shrink-0 rounded-md bg-[var(--color-gold)] text-black px-4 py-2 font-semibold"
+    >
+      {nlSubmitting ? "Sending…" : "Subscribe"}
+    </button>
+  </div>
+</form>
+
                         )}
                       </div>
                     </div>
