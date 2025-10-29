@@ -10,16 +10,16 @@ export default function SocialFooter({ className = "" }) {
         Follow Dr. Salerno:
       </span>
 
-      <a href="https://www.tiktok.com/@yourhandleeee" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition" aria-label="TikTok">
+      <a href="https://www.tiktok.com/drjuanpablosalerno" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition" aria-label="TikTok">
         <FaTiktok size={22} />
       </a>
-      <a href="https://www.instagram.com/yourhandleeee" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition" aria-label="Instagram">
+      <a href="https://www.instagram.com/drjuanpablosalerno" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition" aria-label="Instagram">
         <FaInstagram size={22} />
       </a>
-      <a href="https://www.youtube.com/@yourchanneleee" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition" aria-label="YouTube">
+      <a href="https://www.youtube.com/@drjpsalerno" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition" aria-label="YouTube">
         <FaYoutube size={22} />
       </a>
-      <a href="https://www.facebook.com/yourhandleeee" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition" aria-label="Facebook">
+      <a href="https://www.facebook.com/profile.php?id=61582412806274" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition" aria-label="Facebook">
         <FaFacebookF size={22} />
       </a>
     </div>
