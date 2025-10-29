@@ -1,5 +1,5 @@
 // components/SocialFooter.jsx
-import { FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaInstagram, FaYoutube, FaFacebookF } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa6";
 
 export default function SocialFooter({ className = "" }) {
@@ -18,6 +18,9 @@ export default function SocialFooter({ className = "" }) {
       </a>
       <a href="https://www.youtube.com/@yourchanneleee" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition" aria-label="YouTube">
         <FaYoutube size={22} />
+      </a>
+      <a href="https://www.facebook.com/yourhandleeee" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition" aria-label="Facebook">
+        <FaFacebookF size={22} />
       </a>
     </div>
   );
