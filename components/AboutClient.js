@@ -8,7 +8,7 @@ import NewsletterMeditationPopup from "./NewsletterMeditationPopup";
 import { useRef } from "react";
 import { useIosZoomVars } from "./useIosZoom";
 import TopOnMount from "../components/TopOnMount";
-import FooterSubscribeClient from "./MobileFooterSubscribeClient";
+import FooterSubscribeClient from "./FooterSubscribeClient";
 
 
 export default function AboutClient() {
