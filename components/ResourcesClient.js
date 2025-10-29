@@ -338,7 +338,7 @@ export default function ResourcesClient() {
                     <div className="mt-3 flex items-left justify-left gap-8">
                       {/* TikTok */}
                       <a
-                        href="https://www.tiktok.com/@YOURHANDLE"
+                        href="https://www.tiktok.com/@drjuanpablosalerno"
                         aria-label="TikTok"
                         className="opacity-90 hover:opacity-100"
                       >

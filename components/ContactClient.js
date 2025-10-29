@@ -319,7 +319,7 @@ export default function ContactClient() {
                       <p className="uppercase tracking-[0.18em] text-left opacity-70">Follow Dr. Salerno:</p>
                       <div className="mt-3 flex items-left justify-left gap-8">
                         <a
-                          href="https://www.tiktok.com/@YOURHANDLE"
+                        href="https://www.tiktok.com/@drjuanpablosalerno"
                           aria-label="TikTok"
                           className="opacity-90 hover:opacity-100"
                         >
@@ -589,7 +589,7 @@ export default function ContactClient() {
               <div className="flex flex-col items-start text-left">
                 <div className="flex items-center gap-4">
                   <p className="uppercase tracking-[0.18em] opacity-70 text-[12px] m-0">Follow Dr. Salerno:</p>
-                  <a href="https://www.tiktok.com/@YOURHANDLE" aria-label="TikTok" className="opacity-90 hover:opacity-100">
+                  <a href="https://www.tiktok.com/@drjuanpablosalerno" aria-label="TikTok" className="opacity-90 hover:opacity-100">
                     <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
                       <path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z" />
                     </svg>
