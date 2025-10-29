@@ -8,6 +8,7 @@ import NewsletterMeditationPopup from "./NewsletterMeditationPopup";
 import { useRef } from "react";
 import { useIosZoomVars } from "./useIosZoom";
 import TopOnMount from "../components/TopOnMount";
+import MobileFooterSubscribeClient from "./MobileFooterSubscribeClient";
 
 
 export default function AboutClient() {
@@ -298,19 +299,8 @@ export default function AboutClient() {
                     <p className="text-sm opacity-85 mb-3">
                       Practical wisdom for modern minds — best paired with coffee and curiosity.
                     </p>
-                    <div className="flex gap-2">
-                      <input
-                        type="email"
-                        placeholder="you@example.com"
-                        className="flex-1 rounded-md border border-white/15 bg-white/5 px-3 py-2 placeholder-white/60 outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50"
-                      />
-                      <button
-                        type="button"
-                        className="shrink-0 rounded-md bg-[var(--color-gold)] text-black px-4 py-2 font-semibold"
-                      >
-                        Subscribe
-                      </button>
-                    </div>
+<MobileFooterSubscribeClient />
+
                   </div>
 
                   {/* --- MOBILE Jay-style footer block --- */}
