@@ -24,28 +24,41 @@ export default function ContactClient() {
   }, []);
 
   async function handleNewsletterSubmit(e) {
-    e.preventDefault();
-    if (nlSubmitting || nlSubscribed) return;
+  e.preventDefault();
+  if (nlSubmitting || nlSubscribed) return;
 
-    setNlSubmitting(true);
-    const form = new FormData(e.currentTarget);
-    const email = (form.get("email") || "").toString().trim();
+  setNlSubmitting(true);
+  const form = new FormData(e.currentTarget);
+  const email = (form.get("email") || "").toString().trim();
 
-    if (!email || !email.includes("@")) {
-      alert("Please enter a valid email.");
-      setNlSubmitting(false);
-      return;
-    }
-
-    try {
-      await fetch("/api/subscribe", { method: "POST", body: form });
-      setNlSubscribed(true);
-    } catch {
-      setNlSubscribed(true); // show success locally so you can test
-    } finally {
-      setNlSubmitting(false);
-    }
+  if (!email || !email.includes("@")) {
+    alert("Please enter a valid email.");
+    setNlSubmitting(false);
+    return;
   }
+
+  try {
+    const res = await fetch("/api/subscribe", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      console.error("Subscribe failed:", data);
+      alert("Something went wrong. Please try again.");
+    } else {
+      setNlSubscribed(true);
+    }
+  } catch (err) {
+    console.error("Network error:", err);
+    alert("Network error. Please try again.");
+  } finally {
+    setNlSubmitting(false);
+  }
+}
 
   function handleSubmit(e) {
     e.preventDefault();
