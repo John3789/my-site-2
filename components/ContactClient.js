@@ -604,6 +604,17 @@ export default function ContactClient() {
                       <path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" />
                     </svg>
                   </a>
+
+                                      {/* Facebook */}
+<a
+  href="https://www.facebook.com/YOURHANDLE"
+  aria-label="Facebook"
+  className="opacity-90 hover:opacity-100"
+>
+  <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+    <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2v3h-2c-.3 0-.5.2-.5.5V12H16l-.5 3h-2v7A10 10 0 0 0 22 12z" />
+  </svg>
+</a>
                 </div>
                 <p className="mt-4 max-w-[520px] text-[13px] leading-relaxed">
                   Dr. Juan Pablo Salerno is an award-winning mental health science expert and thought leader, author, and
