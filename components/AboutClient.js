@@ -8,7 +8,7 @@ import NewsletterMeditationPopup from "./NewsletterMeditationPopup";
 import { useRef } from "react";
 import { useIosZoomVars } from "./useIosZoom";
 import TopOnMount from "../components/TopOnMount";
-import MobileFooterSubscribeClient from "./MobileFooterSubscribeClient";
+import FooterSubscribeClient from "./MobileFooterSubscribeClient";
 
 
 export default function AboutClient() {
@@ -299,7 +299,7 @@ export default function AboutClient() {
                     <p className="text-sm opacity-85 mb-3">
                       Practical wisdom for modern minds — best paired with coffee and curiosity.
                     </p>
-<MobileFooterSubscribeClient />
+<FooterSubscribeClient />
 
                   </div>
 
