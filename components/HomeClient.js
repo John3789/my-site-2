@@ -365,7 +365,7 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
                       </a>
                       {/* Instagram */}
                       <a
-                        href="https://www.instagram.com/YOURHANDLE"
+                        href="https://www.instagram.com/drjuanpablosalerno/"
                         aria-label="Instagram"
                         className="opacity-90 hover:opacity-100"
                       >
