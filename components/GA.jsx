@@ -1,15 +1,14 @@
 "use client";
 import Script from "next/script";
 import { usePathname, useSearchParams } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 
-const GA_MEASUREMENT_ID = "G-REBVW7XJTS"; // your real ID
+const GA_MEASUREMENT_ID = "G-REBVW7XJTS"; // your GA4 ID
 
-export default function GA() {
+function GAInner() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  // Send a page_view on route changes (App Router)
   useEffect(() => {
     if (!window.gtag || !GA_MEASUREMENT_ID) return;
     const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : "");
@@ -26,5 +25,14 @@ export default function GA() {
         gtag('config', '${GA_MEASUREMENT_ID}');
       `}</Script>
     </>
+  );
+}
+
+export default function GA() {
+  // Suspense wrapper prevents build warnings
+  return (
+    <Suspense fallback={null}>
+      <GAInner />
+    </Suspense>
   );
 }
