@@ -8,6 +8,8 @@ import NewsletterSignup from '../components/NewsletterSignup'
 import Script from 'next/script'
 import LayoutFooterGate from '../components/LayoutFooterGate'
 import FooterSubscribeClient from '../components/FooterSubscribeClient' // ← added
+import GA from "../components/GA";
+
 
 export const metadata = {
   metadataBase: new URL("https://drjuanpablosalerno.com/"),
@@ -152,6 +154,8 @@ export default function RootLayout({ children }) {
   })();
 `}
         </Script>
+
+<GA />
 
         {children}
 
