@@ -135,6 +135,15 @@ export default function BooksClient() {
       <input id="more-c1" type="checkbox" className="peer hidden md:hidden" />
 
       <ul className="list-none divide-y divide-white/10">
+              <li className="flex gap-3 py-4 md:py-4 first:pt-0 md:first:pt-4">
+          <span className="mt-3 h-2 w-2 rounded-full bg-[var(--color-gold)] shrink-0" />
+          <div>
+            Salerno et&nbsp;al. (2025).
+            <em> Forced immigration-related family separation and adverse childhood experiences: effects on mental health among Latinx immigrant youth in the United States.</em>
+            <span className="italic"> Psychiatry Research.</span>{" "}
+            <a href="https://www.researchgate.net/publication/396997892_Forced_Immigration-related_Family_Separation_and_Adverse_Childhood_Experiences_Effects_on_Mental_Health_Among_Latinx_Immigrant_Youth_in_the_United_States" target="_blank" rel="noreferrer" className="underline decoration-[var(--color-gold)] underline-offset-2 hover:opacity-80">Read Here →</a>
+          </div>
+        </li>
         <li className="flex gap-3 py-4 md:py-4 first:pt-0 md:first:pt-4">
           <span className="mt-3 h-2 w-2 rounded-full bg-[var(--color-gold)] shrink-0" />
           <div>
@@ -169,15 +178,6 @@ export default function BooksClient() {
             <em> Impact of Racist Microaggressions and LGBTQ-Related Minority Stressors: Effects on Psychological Distress Among LGBTQ+ Young People of Color.</em>
             <span className="italic"> Preventing Chronic Disease.</span>{" "}
             <a href="https://www.researchgate.net/publication/372481962_Impact_of_Racist_Microaggressions_and_LGBTQ-Related_Minority_Stressors_Effects_on_Psychological_Distress_Among_LGBTQ_Young_People_of_Color" target="_blank" rel="noreferrer" className="underline decoration-[var(--color-gold)] underline-offset-2 hover:opacity-80">Read Here →</a>
-          </div>
-        </li>
-        <li className="flex gap-3 py-4 md:py-4 first:pt-0 md:first:pt-4">
-          <span className="mt-3 h-2 w-2 rounded-full bg-[var(--color-gold)] shrink-0" />
-          <div>
-            Salerno et&nbsp;al. (2022).
-            <em> Impact of Family Rejection and Racism on Sexual and Gender Minority Stress Among LGBTQ Young People of Color During COVID-19.</em>
-            <span className="italic"> Psychological Trauma.</span>{" "}
-            <a href="https://www.researchgate.net/publication/360404871_Impact_of_family_rejection_and_racism_on_sexual_and_gender_minority_stress_among_LGBTQ_young_people_of_color_during_COVID-19" target="_blank" rel="noreferrer" className="underline decoration-[var(--color-gold)] underline-offset-2 hover:opacity-80">Read Here →</a>
           </div>
         </li>
       </ul>
