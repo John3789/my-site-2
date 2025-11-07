@@ -139,7 +139,7 @@ export default function BooksClient() {
           <span className="mt-3 h-2 w-2 rounded-full bg-[var(--color-gold)] shrink-0" />
           <div>
             Salerno et&nbsp;al. (2025).
-            <em> Forced immigration-related family separation and adverse childhood experiences: effects on mental health among Latinx immigrant youth in the United States.</em>
+            <em> Forced immigration-related family separation and adverse childhood experiences: effects on mental health among Latinx immigrant youth.</em>
             <span className="italic"> Psychiatry Research.</span>{" "}
             <a href="https://www.researchgate.net/publication/396997892_Forced_Immigration-related_Family_Separation_and_Adverse_Childhood_Experiences_Effects_on_Mental_Health_Among_Latinx_Immigrant_Youth_in_the_United_States" target="_blank" rel="noreferrer" className="underline decoration-[var(--color-gold)] underline-offset-2 hover:opacity-80">Read Here →</a>
           </div>
