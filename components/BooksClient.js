@@ -234,10 +234,10 @@ export default function BooksClient() {
         <li className="flex gap-3 py-4 md:py-4 first:pt-0 md:first:pt-4">
           <span className="mt-3 h-2 w-2 rounded-full bg-[var(--color-gold)] shrink-0" />
           <div>
-            Colleagues &amp; Salerno (2022).
-            <em> Associations Between Living Arrangement &amp; Sexual &amp; Gender Minority Stressors Among University Students Since the Onset of COVID-19.</em>
-            <span className="italic"> Journal of American College Health.</span>{" "}
-            <a href="https://www.researchgate.net/publication/361075038_Associations_between_living_arrangement_and_sexual_and_gender_minority_stressors_among_university_students_since_the_start_of_the_COVID-19_pandemic" target="_blank" rel="noreferrer" className="underline decoration-[var(--color-gold)] underline-offset-2 hover:opacity-80">Read Here →</a>
+            Salerno et&nbsp;al. (2022).
+            <em> Impact of Family Rejection and Racism on Sexual and Gender Minority Stress Among LGBTQ Young People of Color During COVID-19.</em>
+            <span className="italic"> Psychological Trauma.</span>{" "}
+            <a href="https://www.researchgate.net/publication/360404871_Impact_of_family_rejection_and_racism_on_sexual_and_gender_minority_stress_among_LGBTQ_young_people_of_color_during_COVID-19" target="_blank" rel="noreferrer" className="underline decoration-[var(--color-gold)] underline-offset-2 hover:opacity-80">Read Here →</a>
           </div>
         </li>
         <li className="flex gap-3 py-4 md:py-4 first:pt-0 md:first:pt-4">
