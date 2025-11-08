@@ -1,5 +1,6 @@
 // app/api/billing/portal/route.js
 export const runtime = "nodejs";
+
 import Stripe from "stripe";
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
@@ -12,10 +13,7 @@ export async function POST() {
     const customerId = cookies().get("stripe_cust")?.value;
 
     if (!customerId) {
-      return NextResponse.json(
-        { error: "No Stripe customer on file. Complete checkout first." },
-        { status: 401 }
-      );
+      return NextResponse.json({ error: "No Stripe customer on file." }, { status: 401 });
     }
 
     const portal = await stripe.billingPortal.sessions.create({

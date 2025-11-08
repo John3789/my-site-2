@@ -1,3 +1,9 @@
 // app/api/auth/verify/route.js
-import { NextResponse } from "next/server";
-export async function GET() { return NextResponse.json({ ok: false }, { status: 401 }); }
+export const runtime = "nodejs";
+
+export async function GET() {
+  return new Response(JSON.stringify({ ok: false }), {
+    status: 401,
+    headers: { "content-type": "application/json" },
+  });
+}
