@@ -1,4 +1,5 @@
 // app/api/stripe/finalize/route.js
+export const runtime = "nodejs";
 import Stripe from "stripe";
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
