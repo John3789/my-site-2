@@ -9,7 +9,7 @@ import Script from 'next/script'
 import LayoutFooterGate from '../components/LayoutFooterGate'
 import FooterSubscribeClient from '../components/FooterSubscribeClient' // ← added
 import GA from "../components/GA.jsx";
-
+import MSProvider from './providers/MemberstackProvider'
 
 export const metadata = {
   metadataBase: new URL("https://drjuanpablosalerno.com/"),
@@ -135,6 +135,7 @@ export default function RootLayout({ children }) {
 
       {/* single body (no nesting). NOTE: desktop-only min width to avoid mobile auto-zoom */}
       <body className="lg:min-w-[1200px] bg-[#F4F1EA] text-[#0C1415] antialiased [text-rendering:optimizeLegibility] [-webkit-font-smoothing:antialiased]">
+                <MSProvider>
         <Header />
 
         <Script id="ios-blur-active-input" strategy="afterInteractive">
@@ -220,6 +221,7 @@ export default function RootLayout({ children }) {
         </LayoutFooterGate>
 
         <Analytics />
+                </MSProvider>
       </body>
     </html>
   )
