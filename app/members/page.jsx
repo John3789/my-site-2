@@ -1,23 +1,44 @@
 // app/members/page.jsx
 import Link from "next/link";
 
-function DashCard({ title, desc, href }) {
-  return (
-    <Link href={href} className="block rounded-2xl bg-white/5 p-6 ring-1 ring-white/10 hover:bg-white/10">
-      <div className="text-lg font-semibold">{title}</div>
-      <p className="opacity-80 text-sm mt-1">{desc}</p>
-    </Link>
-  );
-}
+export const metadata = { title: "Members — Dr. Juan Pablo Salerno" };
 
-export default function MembersPage() {
+export default function MembersHome() {
   return (
     <main className="mx-auto max-w-[1100px] px-6 py-10">
-      <h1 className="text-3xl font-bold">Welcome, Member</h1>
-      <div className="mt-6 grid gap-4 md:grid-cols-3">
-        <DashCard title="Meditation Library" href="/library" desc="Weekly drops + full archive." />
-<DashCard title="Resources by Theme" href="/members/resources" desc="Mental Health, Relationships, Stress Relief, Purpose." />
-        <DashCard title="Member Discount" href="/members/discount" desc="Custom Meditation + Discovery Call." />
+      <h1 className="text-3xl font-bold">Welcome, Member ✨</h1>
+      <p className="mt-2 opacity-80">
+        You now have access to members-only resources. Use the links below.
+      </p>
+
+      <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        <Link
+          className="rounded-xl border border-white/15 bg-white/5 px-5 py-4 font-semibold hover:bg-white/10"
+          href="/members/resources"
+        >
+          📚 Members Resources
+        </Link>
+
+        <Link
+          className="rounded-xl border border-white/15 bg-white/5 px-5 py-4 font-semibold hover:bg-white/10"
+          href="/members/discount"
+        >
+          🎧 Discounted Custom Meditation + Discovery Call
+        </Link>
+
+        <Link
+          className="rounded-xl border border-white/15 bg-white/5 px-5 py-4 font-semibold hover:bg-white/10"
+          href="/account"
+        >
+          💳 Manage Billing (Stripe Portal)
+        </Link>
+
+        <Link
+          className="rounded-xl border border-white/15 bg-white/5 px-5 py-4 font-semibold hover:bg-white/10"
+          href="/resources"
+        >
+          🔎 Public Resources (site-wide)
+        </Link>
       </div>
     </main>
   );

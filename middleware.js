@@ -1,21 +1,24 @@
 // middleware.js
 import { NextResponse } from "next/server";
 
-const PROTECTED = [/^\/members(\/.*)?$/, /^\/library(\/.*)?$/, /^\/resources(\/.*)?$/, /^\/account(\/.*)?$/];
-
 export function middleware(req) {
-  const pathname = req.nextUrl.pathname;
-  const isProtected = PROTECTED.some((re) => re.test(pathname));
-  if (!isProtected) return NextResponse.next();
+  const url = req.nextUrl;
+  const { pathname } = url;
 
-  // Stub for now (we’ll wire real verification later).
-  const token = req.cookies.get("ms_session")?.value || req.headers.get("x-ms-session");
-  if (!token) {
-    const url = req.nextUrl.clone();
-    url.pathname = "/join";
-    return NextResponse.redirect(url);
+  // Protect the members area
+  const isMembers = pathname === "/members" || pathname.startsWith("/members/");
+  if (isMembers) {
+    const hasStripeCustomer = req.cookies.get("stripe_cust")?.value;
+    if (!hasStripeCustomer) {
+      const joinUrl = new URL("/join", url.origin);
+      return NextResponse.redirect(joinUrl);
+    }
   }
+
   return NextResponse.next();
 }
 
-export const config = { matcher: ["/members/:path*", "/library/:path*", "/resources/:path*", "/account/:path*"] };
+// Only run on members routes
+export const config = {
+  matcher: ["/members", "/members/:path*"],
+};
