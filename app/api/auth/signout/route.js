@@ -1,14 +1,6 @@
-// app/api/auth/signout/route.js
 export const runtime = "nodejs";
-
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
-
-function requireEnv(name) {
-  const v = process.env[name];
-  if (!v) throw new Error(`Missing required env var: ${name}`);
-  return v;
-}
 
 function cookieDomainFrom(urlString) {
   try {
@@ -20,30 +12,21 @@ function cookieDomainFrom(urlString) {
 }
 
 export async function POST() {
-  const siteUrl = requireEnv("NEXT_PUBLIC_SITE_URL");
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "/";
   const domain = cookieDomainFrom(siteUrl);
 
   // Clear host-scoped cookie
   cookies().set("stripe_cust", "", {
-    httpOnly: true,
-    secure: true,
-    sameSite: "lax",
-    path: "/",
-    maxAge: 0,
+    httpOnly: true, secure: true, sameSite: "lax", path: "/", maxAge: 0,
   });
 
-  // Clear domain-scoped cookie (if it was set with Domain=.example.com)
+  // Clear domain-scoped cookie if applicable
   if (domain) {
     cookies().set("stripe_cust", "", {
-      httpOnly: true,
-      secure: true,
-      sameSite: "lax",
-      path: "/",
-      maxAge: 0,
-      domain,
+      httpOnly: true, secure: true, sameSite: "lax", path: "/", maxAge: 0, domain,
     });
   }
 
-  // Redirect to membership page after logout
+  // Redirect back to the unified membership page
   return NextResponse.redirect(`${siteUrl}/membership`, { status: 303 });
 }
