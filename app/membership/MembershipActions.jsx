@@ -1,23 +1,25 @@
 // app/membership/MembershipActions.jsx
 "use client";
 
+import { useEffect } from "react";
 import { useMemberstack } from "@memberstack/react";
 
-export function FreeSignupButton({ freePlanId, className = "", children = "Create Free Account" }) {
+export function FreeSignupButton({ planId, className = "", children = "Create Free Account" }) {
   const { memberstack, ready } = useMemberstack();
 
-  const openSignup = () => {
-    if (!ready || !memberstack) return;
-    // Attach to a specific Free plan if provided
-    if (freePlanId) {
-      memberstack.openModal("SIGNUP", { planId: freePlanId });
-    } else {
-      memberstack.openModal("SIGNUP");
-    }
-  };
+  useEffect(() => {
+    // expose for quick console checks
+    if (ready && memberstack) window.$ms = memberstack;
+  }, [ready, memberstack]);
+
+  function open() {
+    if (!ready || !memberstack) return console.warn("[MS] not ready yet");
+    if (planId) memberstack.openModal("SIGNUP", { planId });
+    else memberstack.openModal("SIGNUP");
+  }
 
   return (
-    <button type="button" onClick={openSignup} className={className}>
+    <button type="button" onClick={open} className={className}>
       {children}
     </button>
   );
@@ -26,13 +28,17 @@ export function FreeSignupButton({ freePlanId, className = "", children = "Creat
 export function LoginButton({ className = "", children = "Sign in here" }) {
   const { memberstack, ready } = useMemberstack();
 
-  const openLogin = () => {
-    if (!ready || !memberstack) return;
+  useEffect(() => {
+    if (ready && memberstack) window.$ms = memberstack;
+  }, [ready, memberstack]);
+
+  function open() {
+    if (!ready || !memberstack) return console.warn("[MS] not ready yet");
     memberstack.openModal("LOGIN");
-  };
+  }
 
   return (
-    <button type="button" onClick={openLogin} className={className}>
+    <button type="button" onClick={open} className={className}>
       {children}
     </button>
   );

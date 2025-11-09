@@ -5,12 +5,10 @@ import { FreeSignupButton, LoginButton } from "./MembershipActions";
 export const metadata = { title: "Membership — Dr. Juan Pablo Salerno" };
 
 export default function Page() {
-  // Pass the Free plan id from a PUBLIC env var (set in Vercel → Production)
-  const freePlanId = process.env.NEXT_PUBLIC_MS_FREE_PLAN_ID; // e.g., pln_abc123…
+  const freePlanId = process.env.NEXT_PUBLIC_MS_FREE_PLAN_ID; // pln_...
 
   return (
     <main className="mx-auto max-w-[1100px] px-6 py-10">
-      {/* mounts Memberstack on the client */}
       <MembershipClient />
 
       <h1 className="text-3xl font-bold">Membership</h1>
@@ -19,7 +17,7 @@ export default function Page() {
       </p>
 
       <div className="mt-6 grid gap-4 md:grid-cols-2">
-        {/* FREE PLAN */}
+        {/* FREE */}
         <div className="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
           <div className="text-lg font-bold">Free</div>
           <div className="text-4xl font-extrabold my-2">$0</div>
@@ -30,14 +28,14 @@ export default function Page() {
           </ul>
 
           <FreeSignupButton
-            freePlanId={freePlanId}
+            planId={freePlanId}
             className="mt-4 inline-flex rounded-full border border-white/20 bg-white/5 px-4 py-2 font-semibold hover:bg-white/10 active:translate-y-px"
           >
             Create Free Account
           </FreeSignupButton>
         </div>
 
-        {/* PAID PLAN */}
+        {/* PAID */}
         <div className="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
           <div className="text-lg font-bold">Member</div>
           <div className="text-4xl font-extrabold my-2">$19/mo</div>
@@ -47,7 +45,6 @@ export default function Page() {
             <li>• Discount on custom meditations</li>
           </ul>
 
-          {/* Stripe form POST (kept exactly) */}
           <form method="POST" action="/api/checkout/member" className="mt-4">
             <input type="hidden" name="plan" value="monthly" />
             <button
@@ -60,7 +57,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* Sign-in prompt */}
+      {/* Sign-in */}
       <div id="signin" className="mt-10">
         <h2 className="text-xl font-semibold">Already a member?</h2>
         <p className="opacity-80">
