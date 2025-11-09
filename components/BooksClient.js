@@ -3,12 +3,13 @@
 
 import Link from "next/link";
 import TopOnMount from "../components/TopOnMount";
-import NewsletterMeditationPopup from "../components/NewsletterMeditationPopup";
+import PopupIsland from "./PopupIsland";
 import Image from "next/image";
 import HeroImageIphoneAware from "../components/HeroImageIphoneAware";
 import { useRef } from "react";
 import { useIosZoomVars } from "../components/useIosZoom";
 import MobileFooterSubscribeClient from "./MobileFooterSubscribeClient";
+import ClientOnly from "./ClientOnly";
 
 
 
@@ -549,7 +550,9 @@ export default function BooksClient() {
 
 
       </>
-<NewsletterMeditationPopup delayMs={10000} />
+            <ClientOnly>
+<PopupIsland delayMs={10000} />
+      </ClientOnly>
     </TopOnMount>
   );
 }

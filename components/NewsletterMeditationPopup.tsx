@@ -1,12 +1,10 @@
-// app/components/NewsletterMeditationPopup.tsx
+// components/NewsletterMeditationPopup.tsx
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
-import Link from "next/link";
 import { createPortal } from "react-dom";
-import Image from "next/image"; 
+import Image from "next/image";
 import { safeLocal, safeSession } from "./safeStorage";
-
 
 type Props = {
   isMeditationPage?: boolean;
@@ -41,7 +39,7 @@ export default function NewsletterMeditationPopup({
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
-  // ↓↓↓ DEBUG OVERRIDES — remove after testing ↓↓↓
+  // DEBUG OVERRIDES — remove after testing
   useEffect(() => {
     if (typeof window === "undefined") return;
     const url = new URL(window.location.href);
@@ -49,8 +47,8 @@ export default function NewsletterMeditationPopup({
 
     if (action === "reset") {
       try {
-safeLocal.remove(lsKey);
-safeSession.remove(ssKey);
+        safeLocal.remove(lsKey);
+        safeSession.remove(ssKey);
         console.log("[Popup] Reset complete.");
       } catch {}
     }
@@ -63,7 +61,7 @@ safeSession.remove(ssKey);
 
     if (action === "debug") {
       try {
-const untilRaw = safeLocal.get(lsKey);
+        const untilRaw = safeLocal.get(lsKey);
         const until = untilRaw ? Number(untilRaw) : null;
         console.table({
           TESTING_MODE,
@@ -76,30 +74,40 @@ const untilRaw = safeLocal.get(lsKey);
       } catch {}
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mounted]); // only when mounted is set
-  // ↑↑↑ remove this block when you’re done ↑↑↑
+  }, [mounted]);
 
   const suppressed = useCallback((): boolean => {
-  const raw = safeLocal.get(lsKey);
-  if (!raw) return false;
-  const until = parseInt(raw, 10);
-  return Number.isFinite(until) && Date.now() < until;
-}, [lsKey]);
+    try {
+      const raw = safeLocal.get(lsKey);
+      if (!raw) return false;
+      const until = parseInt(raw, 10);
+      return Number.isFinite(until) && Date.now() < until;
+    } catch {
+      return false;
+    }
+  }, [lsKey]);
 
-const sessionShown = useCallback((): boolean => {
-  return safeSession.get(ssKey) === "1";
-}, [ssKey]);
+  const sessionShown = useCallback((): boolean => {
+    try {
+      return safeSession.get(ssKey) === "1";
+    } catch {
+      return false;
+    }
+  }, [ssKey]);
 
-const markSuppressed = useCallback(() => {
-  const d = new Date();
-  d.setDate(d.getDate() + freqDays);
-  safeLocal.set(lsKey, String(d.getTime()));
-}, [freqDays, lsKey]);
+  const markSuppressed = useCallback(() => {
+    try {
+      const d = new Date();
+      d.setDate(d.getDate() + freqDays);
+      safeLocal.set(lsKey, String(d.getTime()));
+    } catch {}
+  }, [freqDays, lsKey]);
 
-const markSessionShown = useCallback(() => {
-  safeSession.set(ssKey, "1");
-}, [ssKey]);
-
+  const markSessionShown = useCallback(() => {
+    try {
+      safeSession.set(ssKey, "1");
+    } catch {}
+  }, [ssKey]);
 
   const showOnce = useCallback(() => {
     if (shownRef.current || typeof window === "undefined") return;
@@ -168,45 +176,45 @@ const markSessionShown = useCallback(() => {
   }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-  e.preventDefault();
-  if (loading) return;
-  setLoading(true);
+    e.preventDefault();
+    if (loading) return;
+    setLoading(true);
 
-  const form = e.currentTarget as HTMLFormElement;
-  const formData = new FormData(form);
-  const email = (formData.get("email") || "").toString().trim();
+    const form = e.currentTarget as HTMLFormElement;
+    const formData = new FormData(form);
+    const email = (formData.get("email") || "").toString().trim();
 
-  if (!email || !email.includes("@")) {
-    setLoading(false);
-    alert("Please enter a valid email.");
-    return;
-  }
+    if (!email || !email.includes("@")) {
+      setLoading(false);
+      alert("Please enter a valid email.");
+      return;
+    }
 
-  try {
-    const res = await fetch(formAction, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email }),
-    });
+    try {
+      const res = await fetch(formAction, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
 
-    const data = await res.json();
+      const data = await res.json();
 
-    if (!res.ok) {
-      console.error("Subscribe failed:", data);
-      alert("Something went wrong. Please try again.");
-    } else {
+      if (!res.ok) {
+        console.error("Subscribe failed:", data);
+        alert("Something went wrong. Please try again.");
+      } else {
+        if (!TESTING_MODE) markSuppressed();
+        setSuccess(true);
+        form.reset();
+      }
+    } catch (err) {
+      console.error("Network error:", err);
       if (!TESTING_MODE) markSuppressed();
       setSuccess(true);
-      form.reset();
+    } finally {
+      setLoading(false);
     }
-  } catch (err) {
-    console.error("Network error:", err);
-    if (!TESTING_MODE) markSuppressed();
-    setSuccess(true);
-  } finally {
-    setLoading(false);
   }
-}
 
   if (!open || !mounted) return null;
 
@@ -262,19 +270,12 @@ const markSessionShown = useCallback(() => {
                   height={1200}
                   quality={95}
                   sizes="(max-width: 950px) 42vw, 220px"
-                  className="
-                    h-full w-full object-cover
-                    object-[45%]
-                    [@media(orientation:landscape)_and_(max-width:950px)]:object-[55%]
-                    md:object-center
-                    md:rounded-l-xl
-                  "
+                  className="h-full w-full object-cover object-[45%] [@media(orientation:landscape)_and_(max-width:950px)]:object-[55%] md:object-center md:rounded-l-xl"
                 />
               </div>
 
               {/* Text + form */}
               <div className="p-4 sm:p-5">
-                {/** PHONE (portrait + landscape up to 950px): SHORT COPY */}
                 <h3 className="hidden [@media(max-width:950px)]:block font-serif text-[22px] leading-snug mb-2 opacity-90">
                   Please accept this guided meditation as a personal gift
                 </h3>
@@ -282,7 +283,6 @@ const markSessionShown = useCallback(() => {
                   — and my invitation to join <span className="italic">Science, Soul, and a Bit of Magic</span>, my monthly newsletter.
                 </p>
 
-                {/** DESKTOP / LARGE TABLETS (> 950px): FULL COPY */}
                 <h3 className="block [@media(max-width:950px)]:hidden font-serif text-[26px] md:text-[30px] leading-snug mb-2 opacity-90">
                   Please accept this guided meditation as a personal gift
                 </h3>
@@ -291,7 +291,7 @@ const markSessionShown = useCallback(() => {
                 </p>
 
                 <form onSubmit={handleSubmit} className="mt-4 space-y-3">
-                  {/* ✅ Honeypot field for bots */}
+                  {/* Honeypot */}
                   <input type="text" name="hp" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
 
                   <input
@@ -299,25 +299,12 @@ const markSessionShown = useCallback(() => {
                     name="email"
                     required
                     placeholder="you@example.com"
-                    className="
-                      w-full rounded-md border border-white/15 bg-white/5
-                      px-4 py-3 outline-none placeholder-white/60
-                      focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50
-                      text-[15px]
-                      [@media(orientation:landscape)_and_(max-width:950px)]:py-2.5
-                    "
+                    className="w-full rounded-md border border-white/15 bg-white/5 px-4 py-3 outline-none placeholder-white/60 focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50 text-[15px]"
                   />
                   <button
                     type="submit"
                     disabled={loading}
-                    className="
-                      inline-flex w-full items-center justify-center
-                      rounded-md bg-[var(--color-gold)] text-black
-                      px-4 py-3 font-semibold
-                      shadow-md hover:shadow-lg hover:-translate-y-[1px]
-                      transition disabled:opacity-80
-                      [@media(orientation:landscape)_and_(max-width:950px)]:py-2.5
-                    "
+                    className="inline-flex w-full items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-4 py-3 font-semibold shadow-md hover:shadow-lg hover:-translate-y-[1px] transition disabled:opacity-80"
                   >
                     {loading ? "Sending…" : "Subscribe"}
                   </button>
@@ -326,19 +313,13 @@ const markSessionShown = useCallback(() => {
             </div>
           ) : (
             <div className="p-5 text-center">
-              <h3 className="font-serif text-[22px] md:text-[30px] leading-snug tracking-[0.02em] opacity-90">
-                Thank you — I’m so glad you’re here
-              </h3>
+              <h3 className="font-serif text-[22px] md:text-[30px] leading-snug tracking-[0.02em] opacity-90">Thank you — I’m so glad you’re here</h3>
               <p className="mt-2 text-[14px] md:text-[18px] opacity-90">
                 Your 5-minute guided meditation download is waiting in your inbox.
                 <br />
                 Your first <span className="italic">Science, Soul, and a Bit of Magic</span> newsletter will arrive soon.
               </p>
-              <button
-                type="button"
-                onClick={dismiss}
-                className="inline-flex items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 mt-3"
-              >
+              <button type="button" onClick={dismiss} className="inline-flex items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 mt-3">
                 Back to the website
               </button>
             </div>

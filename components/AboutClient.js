@@ -4,11 +4,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import HeroImageIphoneAware from "./HeroImageIphoneAware";
-import NewsletterMeditationPopup from "./NewsletterMeditationPopup";
+import PopupIsland from "./PopupIsland";
 import { useRef } from "react";
 import { useIosZoomVars } from "./useIosZoom";
 import TopOnMount from "../components/TopOnMount";
 import MobileFooterSubscribeClient from "./MobileFooterSubscribeClient";
+import ClientOnly from "./ClientOnly";
+
 
 
 export default function AboutClient() {
@@ -466,7 +468,9 @@ export default function AboutClient() {
           </main>
         </div>
       </>
-      <NewsletterMeditationPopup delayMs={15000} />
+            <ClientOnly>
+      <PopupIsland delayMs={15000} />
+            </ClientOnly>
     </TopOnMount>
   );
 }

@@ -2,12 +2,14 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import NewsletterMeditationPopup from "./NewsletterMeditationPopup";
-import NewsletterSignup from "./NewsletterSignup";
+import PopupIsland from "./PopupIsland";
 import HeroImageIphoneAware from "./HeroImageIphoneAware";
 import { useRef } from "react";
 import { useIosZoomVars } from "./useIosZoom";
+import ClientOnly from "./ClientOnly";
+import FooterSubscribeClient from "./FooterSubscribeClient";
 import MobileFooterSubscribeClient from "./MobileFooterSubscribeClient";
+
 
 
 export default function HomeClient() {
@@ -18,13 +20,14 @@ export default function HomeClient() {
 
   return (
         <main data-page="home" id="main" className="!bg-[var(--color-teal-850)] text-[var(--color-cream)] text-[17px] overflow-visible">
-          
-          <NewsletterMeditationPopup
+                <ClientOnly>
+          <PopupIsland
   isMeditationPage={false}
   delayMs={20000}
   freqDays={7}
   formAction="/api/subscribe"
 />
+      </ClientOnly>
 {/* spacer to clear the fixed header (keep) */}
 <div aria-hidden className="nameplate-spacer h-8 bg-[var(--color-teal-800)]" />
 
@@ -480,7 +483,7 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
   }
 `}</style>
 
-
+<FooterSubscribeClient />
         </main>
         
   )

@@ -2,11 +2,13 @@
 "use client";
 
 import TopOnMount from "../components/TopOnMount";
-import NewsletterMeditationPopup from "../components/NewsletterMeditationPopup";
+import PopupIsland from "./PopupIsland";
 import HeroImageIphoneAware from "../components/HeroImageIphoneAware";
 import { useRef } from "react";
 import { useIosZoomVars } from "../components/useIosZoom";
 import MobileFooterSubscribeClient from "./MobileFooterSubscribeClient";
+import ClientOnly from "./ClientOnly";
+
 
 
 
@@ -297,7 +299,9 @@ const wrapRef = useRef(null);
 
         </div>
       </>
-<NewsletterMeditationPopup delayMs={20000} />
+            <ClientOnly>
+<PopupIsland delayMs={20000} />
+      </ClientOnly>
     </TopOnMount>
   );
 }

@@ -1,32 +1,34 @@
 // app/members/discount/page.jsx
-"use client";
+import Link from "next/link";
 
-export default function MemberDiscountPage() {
-  async function startCheckout() {
-    try {
-      const res = await fetch("/api/checkout/custom-meditation", { method: "POST" });
-      const data = await res.json();
-      if (data?.url) window.location.href = data.url;
-      else alert(data?.error || "Could not start checkout.");
-    } catch (e) {
-      console.error(e);
-      alert("Something went wrong.");
-    }
-  }
+export const metadata = { title: "Member Discount — Dr. Juan Pablo Salerno" };
 
+export default function DiscountPage() {
   return (
-    <main className="mx-auto max-w-[1100px] px-6 py-10">
-      <h1 className="text-2xl font-bold">Member Discount — Custom Meditation + Discovery Call</h1>
+    <main className="mx-auto max-w-[1000px] px-6 py-10">
+      <h1 className="text-3xl font-bold">Member Discount</h1>
       <p className="mt-2 opacity-80">
-        As a member, you get a special price. We verify your membership then send you to a
-        pre-discounted Stripe Checkout.
+        Use your member-only discount for a custom meditation + discovery call.
       </p>
-      <button
-        onClick={startCheckout}
-        className="mt-4 rounded-full border border-amber-300 bg-amber-300 text-black px-5 py-2 font-semibold"
-      >
-        Start Checkout
-      </button>
+
+      <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        <form method="POST" action="/api/checkout/custom-meditation">
+          <input type="hidden" name="plan" value="member-discount" />
+          <button
+            type="submit"
+            className="w-full rounded-xl border border-white/15 bg-white/5 px-5 py-4 font-semibold hover:bg-white/10"
+          >
+            Continue to Checkout
+          </button>
+        </form>
+
+        <Link
+          href="/members"
+          className="rounded-xl border border-white/15 bg-white/5 px-5 py-4 font-semibold hover:bg-white/10 inline-flex items-center justify-center"
+        >
+          Back to Members
+        </Link>
+      </div>
     </main>
   );
 }

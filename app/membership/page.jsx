@@ -1,4 +1,8 @@
 // app/membership/page.jsx
+
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 import AuthButtons from "./AuthButtons"; // ← direct import; AuthButtons is a Client Component
 
 export const metadata = { title: "Membership — Dr. Juan Pablo Salerno" };

@@ -2,7 +2,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import NewsletterMeditationPopup from "../components/NewsletterMeditationPopup";
+import PopupIsland from "./PopupIsland";
 import { useIosZoomVars } from "../components/useIosZoom";
 import MobileFooterSubscribeClient from "./MobileFooterSubscribeClient";
 
