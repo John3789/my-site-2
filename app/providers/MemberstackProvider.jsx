@@ -1,11 +1,9 @@
-// app/providers/MemberstackProvider.jsx
 "use client";
-
 import { useEffect, useRef } from "react";
 import memberstackDOM from "@memberstack/dom";
 
-const DOMAIN = (process.env.NEXT_PUBLIC_MS_HOSTED_AUTH_URL || "https://auth.drjuanpablosalerno.com").replace(/\/+$/, "");
-const PUBLIC_KEY = process.env.NEXT_PUBLIC_MS_PUBLIC_KEY; // <- Live public key
+const DOMAIN = "https://memberstack-client.drjuanpablosalerno.com";
+const PUBLIC_KEY = "pk_981855eac27759d0f11f";
 
 export default function MSProvider({ children }) {
   const inited = useRef(false);
@@ -15,7 +13,8 @@ export default function MSProvider({ children }) {
     inited.current = true;
 
     const ms = memberstackDOM.init({ domain: DOMAIN, publicKey: PUBLIC_KEY });
-    window.$memberstack = ms;
+    window.$memberstack = ms; // make it globally available
+    console.log("[MS] init OK", ms);
   }, []);
 
   return children;
