@@ -22,13 +22,15 @@ export async function POST(req) {
       return NextResponse.json({ error: "Missing price id" }, { status: 400 });
     }
 
-    const base = process.env.NEXT_PUBLIC_MS_HOSTED_AUTH_URL || "https://auth.drjuanpablosalerno.com";
+  const site = process.env.SITE_URL || "https://www.drjuanpablosalerno.com";
+  const auth = process.env.AUTH_ORIGIN || "https://auth.drjuanpablosalerno.com"; // if needed elsewhere
+
 
     const session = await stripe.checkout.sessions.create({
       mode: "subscription",
       line_items: [{ price: priceId, quantity: 1 }],
-      success_url: `${base}/members?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${base}/membership`,
+      success_url: `${site}/members?checkout=success`,
+      cancel_url: `${site}/membership?checkout=cancel`,
       allow_promotion_codes: true,
     });
 

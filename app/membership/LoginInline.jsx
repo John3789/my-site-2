@@ -1,74 +1,67 @@
+// app/membership/LoginInline.jsx
 "use client";
 
-import { useMemberstack } from "@memberstack/react";
-import { useCallback, useRef, useState } from "react";
+const AUTH_ORIGIN =
+  process.env.NEXT_PUBLIC_MS_HOSTED_AUTH_ORIGIN ||
+  "https://auth.drjuanpablosalerno.com";
+const REDIRECT_AFTER_LOGIN =
+  process.env.NEXT_PUBLIC_MS_LOGIN_REDIRECT ||
+  "https://www.drjuanpablosalerno.com/members";
 
-export default function LoginInline({ children }) {
-  const { memberstack, ready } = useMemberstack();
-  const [err, setErr] = useState("");
-  const polled = useRef(false);
-
-  const open = useCallback(async () => {
-    setErr("");
-
-    try {
-      if (ready && memberstack && typeof memberstack.openModal === "function") {
-        console.log("[MS] opening modal via React SDK");
-        await memberstack.openModal("LOGIN");
-        pollThenGo(memberstack);
-        return;
-      }
-    } catch (e) {
-      console.warn("[MS] React SDK openModal failed:", e);
-    }
-
-    try {
-      const anyMS =
-        (typeof window !== "undefined" &&
-          (window.memberstack || window.Memberstack || window.$memberstack)) ||
-        null;
-      if (anyMS && typeof anyMS.openModal === "function") {
-        console.log("[MS] opening modal via window global");
-        await anyMS.openModal("LOGIN");
-        pollThenGo(memberstack);
-        return;
-      }
-    } catch (e) {
-      console.warn("[MS] window global openModal failed:", e);
-    }
-
-    console.warn("[MS] modal not available; fallback to /members");
-    if (typeof window !== "undefined") window.location.href = "/members";
-    else setErr("Sign-in temporarily unavailable.");
-  }, [ready, memberstack]);
-
-  return (
-    <>
-      <button type="button" onClick={open} className="group">
-        {children}
-      </button>
-      {err ? <p className="mt-2 text-sm text-red-500">{err}</p> : null}
-    </>
-  );
+function loginHref() {
+  const url = new URL(`${AUTH_ORIGIN}/auth/login`);
+  url.searchParams.set("redirect", REDIRECT_AFTER_LOGIN);
+  return url.toString();
 }
 
-function pollThenGo(memberstack) {
-  if (typeof window === "undefined") return;
-  if (pollThenGo._running) return;
-  pollThenGo._running = true;
-
-  let tries = 0;
-  const tick = async () => {
-    tries++;
+export default function LoginInline({ children = "Sign in", className = "group" }) {
+  async function open() {
+    // 1) Try DOM SDK
     try {
-      const m = await memberstack?.getCurrentMember?.();
-      if (m?.data?.id) {
-        window.location.href = "/members";
+      const ms =
+        (typeof window !== "undefined" &&
+          (window.$memberstack ||
+            window.memberstack ||
+            window.Memberstack)) ||
+        null;
+
+      if (ms?.openModal) {
+        await ms.openModal("LOGIN");
+        // short poll; if member detected, redirect
+        const start = Date.now();
+        const limit = 6000;
+        const check = async () => {
+          try {
+            const m = await ms.getCurrentMember?.();
+            if (m?.data?.id) {
+              window.location.href = REDIRECT_AFTER_LOGIN;
+              return;
+            }
+          } catch {}
+          if (Date.now() - start < limit) {
+            setTimeout(check, 300);
+          } else {
+            window.location.href = REDIRECT_AFTER_LOGIN;
+          }
+        };
+        check();
         return;
       }
     } catch {}
-    if (tries < 20) setTimeout(tick, 300);
-    else window.location.href = "/members"; // middleware will gate if needed
-  };
-  tick();
+
+    // 2) Fallback: go to hosted auth
+    window.location.href = loginHref();
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={open}
+      className={className}
+      data-ms-action="login"
+      data-ms-redirect={REDIRECT_AFTER_LOGIN}
+    >
+      {children}
+    </button>
+  );
 }

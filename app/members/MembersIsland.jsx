@@ -1,20 +1,42 @@
 // app/members/MembersIsland.jsx
 "use client";
 
+import { useState, useCallback } from "react";
 import Link from "next/link";
 
 export default function MembersIsland() {
-  async function handleSignOut(e) {
+  const [signingOut, setSigningOut] = useState(false);
+
+  const handleSignOut = useCallback(async (e) => {
     e.preventDefault();
-    try {
-      // Log out of Memberstack (if loaded)
-      await window.$memberstack?.logout?.();
-    } catch {}
-    // Clear our cookie on the server (if you have this route)
-    try { await fetch("/api/auth/signout", { method: "POST" }); } catch {}
-    // Send them to the Membership page (join + login)
+    if (signingOut) return;
+    setSigningOut(true);
+
+    // Try Memberstack DOM SDK if present
+    const ms =
+      (typeof window !== "undefined" &&
+        (window.$memberstack || window.memberstack || window.Memberstack)) ||
+      null;
+
+    const msLogout = async () => {
+      try {
+        if (ms?.logout) return await ms.logout();
+        if (ms?.signOut) return await ms.signOut();
+      } catch {}
+    };
+
+    const appSignout = async () => {
+      try {
+        await fetch("/api/auth/signout", { method: "POST", keepalive: true });
+      } catch {}
+    };
+
+    // Kick both off; don’t let either block the redirect
+    await Promise.allSettled([msLogout(), appSignout()]);
+
+    // Send them to Membership (login + plans)
     window.location.href = "/membership";
-  }
+  }, [signingOut]);
 
   return (
     <main className="mx-auto max-w-[1100px] px-6 py-10">
@@ -54,9 +76,11 @@ export default function MembersIsland() {
 
         <button
           onClick={handleSignOut}
-          className="rounded-xl border border-white/15 bg-white/5 px-5 py-4 font-semibold hover:bg-white/10 text-left"
+          data-ms-action="logout"      // lets Memberstack intercept if loaded
+          className="rounded-xl border border-white/15 bg-white/5 px-5 py-4 font-semibold hover:bg-white/10 text-left disabled:opacity-60"
+          disabled={signingOut}
         >
-          🚪 Sign out
+          {signingOut ? "🚪 Signing out…" : "🚪 Sign out"}
         </button>
       </div>
     </main>

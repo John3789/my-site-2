@@ -1,29 +1,50 @@
 // app/membership/MembershipActions.jsx
 "use client";
 
-const AUTH = process.env.NEXT_PUBLIC_MS_HOSTED_AUTH_URL || "https://auth.drjuanpablosalerno.com";
+const AUTH_ORIGIN =
+  process.env.NEXT_PUBLIC_MS_HOSTED_AUTH_ORIGIN ||
+  "https://auth.drjuanpablosalerno.com";
 const SITE = "https://www.drjuanpablosalerno.com";
 
-function withRedirect(base, to) {
-  const sep = base.includes("?") ? "&" : "?";
-  return `${base}${sep}redirect=${encodeURIComponent(to)}`;
+function withRedirect(path, redirectTo) {
+  const sep = path.includes("?") ? "&" : "?";
+  return `${path}${sep}redirect=${encodeURIComponent(redirectTo)}`;
 }
 
-export function FreeSignupLink({ className = "", children = "Create Free Account" }) {
-  // After signup, return to /membership
-  const href = withRedirect(AUTH, `${SITE}/membership?joined=1`);
+// ✅ Free Signup Link
+export function FreeSignupLink({
+  className = "",
+  children = "Create Free Account",
+}) {
+  const url = withRedirect(
+    `${AUTH_ORIGIN}/auth/signup`,
+    `${SITE}/membership?joined=1`
+  );
   return (
-    <a href={href} className={className}>
+    <a
+      href={url}
+      className={className}
+      data-ms-action="signup"
+      data-ms-redirect={`${SITE}/membership?joined=1`}
+    >
       {children}
     </a>
   );
 }
 
+// ✅ Login Link
 export function LoginLink({ className = "", children = "Sign in here" }) {
-  // After login, go to /members
-  const href = withRedirect(AUTH, `${SITE}/members`);
+  const url = withRedirect(
+    `${AUTH_ORIGIN}/auth/login`,
+    `${SITE}/members`
+  );
   return (
-    <a href={href} className={className}>
+    <a
+      href={url}
+      className={className}
+      data-ms-action="login"
+      data-ms-redirect={`${SITE}/members`}
+    >
       {children}
     </a>
   );

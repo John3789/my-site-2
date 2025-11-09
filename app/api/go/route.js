@@ -13,7 +13,7 @@ function allowHttp(url) {
 }
 
 export async function GET(req) {
-  const siteUrl = process.env.NEXT_PUBLIC_MS_HOSTED_AUTH_URL || "/";
+  const siteUrl = process.env.SITE_URL || "https://www.drjuanpablosalerno.com";
   const { searchParams } = new URL(req.url);
   const to = searchParams.get("to");
 

@@ -12,7 +12,7 @@ function requireEnv(name) {
 }
 
 const stripe = new Stripe(requireEnv("STRIPE_SECRET_KEY"));
-const siteUrl = requireEnv("NEXT_PUBLIC_MS_HOSTED_AUTH_URL");
+const siteUrl = requireEnv("SITE_URL");
 
 // Derive cookie domain from your public site URL
 function cookieDomainFrom(urlString) {
