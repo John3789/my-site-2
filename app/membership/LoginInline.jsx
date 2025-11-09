@@ -1,4 +1,3 @@
-// app/membership/LoginInline.jsx
 "use client";
 
 import { useMemberstack } from "@memberstack/react";
@@ -7,47 +6,40 @@ import { useCallback, useRef, useState } from "react";
 export default function LoginInline({ children }) {
   const { memberstack, ready } = useMemberstack();
   const [err, setErr] = useState("");
-  const polling = useRef(false);
+  const polled = useRef(false);
 
   const open = useCallback(async () => {
     setErr("");
 
-    // 1) Preferred: React SDK
     try {
       if (ready && memberstack && typeof memberstack.openModal === "function") {
-        console.log("[Memberstack] opening modal via React SDK");
+        console.log("[MS] opening modal via React SDK");
         await memberstack.openModal("LOGIN");
-        afterOpen(memberstack);
+        pollThenGo(memberstack);
         return;
       }
     } catch (e) {
-      console.warn("[Memberstack] React SDK openModal failed:", e);
+      console.warn("[MS] React SDK openModal failed:", e);
     }
 
-    // 2) Window globals fallback
     try {
       const anyMS =
         (typeof window !== "undefined" &&
           (window.memberstack || window.Memberstack || window.$memberstack)) ||
         null;
-
       if (anyMS && typeof anyMS.openModal === "function") {
-        console.log("[Memberstack] opening modal via window global");
+        console.log("[MS] opening modal via window global");
         await anyMS.openModal("LOGIN");
-        afterOpen(memberstack);
+        pollThenGo(memberstack);
         return;
       }
     } catch (e) {
-      console.warn("[Memberstack] window global openModal failed:", e);
+      console.warn("[MS] window global openModal failed:", e);
     }
 
-    // 3) Hard fallback: send them to /members (your middleware will gate)
-    console.warn("[Memberstack] modal not available; hard-fallback to /members");
-    if (typeof window !== "undefined") {
-      window.location.href = "/members";
-    } else {
-      setErr("Sign-in is temporarily unavailable. Please try again.");
-    }
+    console.warn("[MS] modal not available; fallback to /members");
+    if (typeof window !== "undefined") window.location.href = "/members";
+    else setErr("Sign-in temporarily unavailable.");
   }, [ready, memberstack]);
 
   return (
@@ -60,11 +52,12 @@ export default function LoginInline({ children }) {
   );
 }
 
-// After the modal opens, poll briefly to detect session and go to /members
-async function afterOpen(memberstack) {
-  let tries = 0;
-  const maxTries = 20;
+function pollThenGo(memberstack) {
+  if (typeof window === "undefined") return;
+  if (pollThenGo._running) return;
+  pollThenGo._running = true;
 
+  let tries = 0;
   const tick = async () => {
     tries++;
     try {
@@ -73,16 +66,9 @@ async function afterOpen(memberstack) {
         window.location.href = "/members";
         return;
       }
-    } catch {
-      // ignore and retry
-    }
-    if (tries < maxTries) {
-      setTimeout(tick, 300);
-    } else {
-      // If not detected, still go — your middleware will gate appropriately
-      window.location.href = "/members";
-    }
+    } catch {}
+    if (tries < 20) setTimeout(tick, 300);
+    else window.location.href = "/members"; // middleware will gate if needed
   };
-
   tick();
 }
