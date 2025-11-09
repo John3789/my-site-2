@@ -1,4 +1,6 @@
+// app/providers/MemberstackProvider.jsx
 "use client";
+
 import { useEffect, useRef } from "react";
 import memberstackDOM from "@memberstack/dom";
 
@@ -12,9 +14,23 @@ export default function MSProvider({ children }) {
     if (inited.current) return;
     inited.current = true;
 
+    // Init (sync)
     const ms = memberstackDOM.init({ domain: DOMAIN, publicKey: PUBLIC_KEY });
-    window.$memberstack = ms; // make it globally available
+    window.$memberstack = ms;
     console.log("[MS] init OK", ms);
+
+    // ✅ Attach data-ms-* click handlers now
+    if (typeof ms?.mount === "function") {
+      try { ms.mount(); } catch {}
+    }
+
+    // ✅ Re-attach if the DOM changes (App Router often re-renders)
+    const obs = new MutationObserver(() => {
+      try { ms?.mount?.(); } catch {}
+    });
+    obs.observe(document.body, { childList: true, subtree: true });
+
+    return () => obs.disconnect();
   }, []);
 
   return children;
