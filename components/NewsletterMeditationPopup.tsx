@@ -5,6 +5,8 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
 import { createPortal } from "react-dom";
 import Image from "next/image"; 
+import { safeLocal, safeSession } from "./safeStorage";
+
 
 type Props = {
   isMeditationPage?: boolean;
@@ -47,8 +49,8 @@ export default function NewsletterMeditationPopup({
 
     if (action === "reset") {
       try {
-        localStorage.removeItem(lsKey);
-        sessionStorage.removeItem(ssKey);
+safeLocal.remove(lsKey);
+safeSession.remove(ssKey);
         console.log("[Popup] Reset complete.");
       } catch {}
     }
@@ -61,7 +63,7 @@ export default function NewsletterMeditationPopup({
 
     if (action === "debug") {
       try {
-        const untilRaw = localStorage.getItem(lsKey);
+const untilRaw = safeLocal.get(lsKey);
         const until = untilRaw ? Number(untilRaw) : null;
         console.table({
           TESTING_MODE,
@@ -78,37 +80,26 @@ export default function NewsletterMeditationPopup({
   // ↑↑↑ remove this block when you’re done ↑↑↑
 
   const suppressed = useCallback((): boolean => {
-    try {
-      const raw = localStorage.getItem(lsKey);
-      if (!raw) return false;
-      const until = parseInt(raw, 10);
-      return Number.isFinite(until) && Date.now() < until;
-    } catch {
-      return false;
-    }
-  }, [lsKey]);
+  const raw = safeLocal.get(lsKey);
+  if (!raw) return false;
+  const until = parseInt(raw, 10);
+  return Number.isFinite(until) && Date.now() < until;
+}, [lsKey]);
 
-  const sessionShown = useCallback((): boolean => {
-    try {
-      return sessionStorage.getItem(ssKey) === "1";
-    } catch {
-      return false;
-    }
-  }, [ssKey]);
+const sessionShown = useCallback((): boolean => {
+  return safeSession.get(ssKey) === "1";
+}, [ssKey]);
 
-  const markSuppressed = useCallback(() => {
-    try {
-      const d = new Date();
-      d.setDate(d.getDate() + freqDays);
-      localStorage.setItem(lsKey, String(d.getTime()));
-    } catch {}
-  }, [freqDays, lsKey]);
+const markSuppressed = useCallback(() => {
+  const d = new Date();
+  d.setDate(d.getDate() + freqDays);
+  safeLocal.set(lsKey, String(d.getTime()));
+}, [freqDays, lsKey]);
 
-  const markSessionShown = useCallback(() => {
-    try {
-      sessionStorage.setItem(ssKey, "1");
-    } catch {}
-  }, [ssKey]);
+const markSessionShown = useCallback(() => {
+  safeSession.set(ssKey, "1");
+}, [ssKey]);
+
 
   const showOnce = useCallback(() => {
     if (shownRef.current || typeof window === "undefined") return;
