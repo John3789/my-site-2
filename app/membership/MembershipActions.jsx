@@ -1,45 +1,25 @@
 // app/membership/MembershipActions.jsx
 "use client";
 
-import { useEffect } from "react";
-import { useMemberstack } from "@memberstack/react";
+const BASE = "https://memberstack-client.drjuanpablosalerno.com";
+const SITE = "https://www.drjuanpablosalerno.com";
 
-export function FreeSignupButton({ planId, className = "", children = "Create Free Account" }) {
-  const { memberstack, ready } = useMemberstack();
-
-  useEffect(() => {
-    // expose for quick console checks
-    if (ready && memberstack) window.$ms = memberstack;
-  }, [ready, memberstack]);
-
-  function open() {
-    if (!ready || !memberstack) return console.warn("[MS] not ready yet");
-    if (planId) memberstack.openModal("SIGNUP", { planId });
-    else memberstack.openModal("SIGNUP");
-  }
-
+export function FreeSignupLink({ className = "", children = "Create Free Account" }) {
+  // After signup, send them back to your Membership page
+  const href = `${BASE}/signup?redirect=${encodeURIComponent(`${SITE}/membership?joined=1`)}`;
   return (
-    <button type="button" onClick={open} className={className}>
+    <a href={href} className={className}>
       {children}
-    </button>
+    </a>
   );
 }
 
-export function LoginButton({ className = "", children = "Sign in here" }) {
-  const { memberstack, ready } = useMemberstack();
-
-  useEffect(() => {
-    if (ready && memberstack) window.$ms = memberstack;
-  }, [ready, memberstack]);
-
-  function open() {
-    if (!ready || !memberstack) return console.warn("[MS] not ready yet");
-    memberstack.openModal("LOGIN");
-  }
-
+export function LoginLink({ className = "", children = "Sign in here" }) {
+  // After login, send paying members to /members (they’ll be allowed in), others can still land on /membership
+  const href = `${BASE}/login?redirect=${encodeURIComponent(`${SITE}/members`)}`;
   return (
-    <button type="button" onClick={open} className={className}>
+    <a href={href} className={className}>
       {children}
-    </button>
+    </a>
   );
 }

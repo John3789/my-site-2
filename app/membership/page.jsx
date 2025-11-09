@@ -1,12 +1,9 @@
-// app/membership/page.jsx
 import MembershipClient from "./MembershipClient";
-import { FreeSignupButton, LoginButton } from "./MembershipActions";
+import { FreeSignupLink, LoginLink } from "./MembershipActions";
 
 export const metadata = { title: "Membership — Dr. Juan Pablo Salerno" };
 
 export default function Page() {
-  const freePlanId = process.env.NEXT_PUBLIC_MS_FREE_PLAN_ID; // pln_...
-
   return (
     <main className="mx-auto max-w-[1100px] px-6 py-10">
       <MembershipClient />
@@ -17,7 +14,7 @@ export default function Page() {
       </p>
 
       <div className="mt-6 grid gap-4 md:grid-cols-2">
-        {/* FREE */}
+        {/* FREE PLAN */}
         <div className="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
           <div className="text-lg font-bold">Free</div>
           <div className="text-4xl font-extrabold my-2">$0</div>
@@ -27,15 +24,12 @@ export default function Page() {
             <li>• Limited resources</li>
           </ul>
 
-          <FreeSignupButton
-            planId={freePlanId}
-            className="mt-4 inline-flex rounded-full border border-white/20 bg-white/5 px-4 py-2 font-semibold hover:bg-white/10 active:translate-y-px"
-          >
+          <FreeSignupLink className="mt-4 inline-flex rounded-full border border-white/20 bg-white/5 px-4 py-2 font-semibold hover:bg-white/10 active:translate-y-px">
             Create Free Account
-          </FreeSignupButton>
+          </FreeSignupLink>
         </div>
 
-        {/* PAID */}
+        {/* PAID PLAN */}
         <div className="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
           <div className="text-lg font-bold">Member</div>
           <div className="text-4xl font-extrabold my-2">$19/mo</div>
@@ -57,13 +51,13 @@ export default function Page() {
         </div>
       </div>
 
-      {/* Sign-in */}
+      {/* Sign-in prompt */}
       <div id="signin" className="mt-10">
         <h2 className="text-xl font-semibold">Already a member?</h2>
         <p className="opacity-80">
-          <LoginButton className="underline underline-offset-4 hover:opacity-80">
+          <LoginLink className="underline underline-offset-4 hover:opacity-80">
             Sign in here
-          </LoginButton>
+          </LoginLink>
           .
         </p>
       </div>
