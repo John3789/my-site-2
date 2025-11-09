@@ -1,12 +1,16 @@
 // app/membership/page.jsx
 import MembershipClient from "./MembershipClient";
+import { FreeSignupButton, LoginButton } from "./MembershipActions";
 
 export const metadata = { title: "Membership — Dr. Juan Pablo Salerno" };
 
 export default function Page() {
+  // Pass the Free plan id from a PUBLIC env var (set in Vercel → Production)
+  const freePlanId = process.env.NEXT_PUBLIC_MS_FREE_PLAN_ID; // e.g., pln_abc123…
+
   return (
     <main className="mx-auto max-w-[1100px] px-6 py-10">
-      {/* Mounts Memberstack scripts on the client (no props, no handlers) */}
+      {/* mounts Memberstack on the client */}
       <MembershipClient />
 
       <h1 className="text-3xl font-bold">Membership</h1>
@@ -25,15 +29,12 @@ export default function Page() {
             <li>• Limited resources</li>
           </ul>
 
-          {/* Opens Memberstack SIGNUP modal and attaches Free plan */}
-          <button
-            type="button"
-            data-ms-action="signup"
-            data-ms-plan="pln_YOUR_FREE_PLAN_ID"  /* ← replace with your real pln_… */
+          <FreeSignupButton
+            freePlanId={freePlanId}
             className="mt-4 inline-flex rounded-full border border-white/20 bg-white/5 px-4 py-2 font-semibold hover:bg-white/10 active:translate-y-px"
           >
             Create Free Account
-          </button>
+          </FreeSignupButton>
         </div>
 
         {/* PAID PLAN */}
@@ -46,7 +47,7 @@ export default function Page() {
             <li>• Discount on custom meditations</li>
           </ul>
 
-          {/* Stripe form POST (avoids CORS/prefetch) */}
+          {/* Stripe form POST (kept exactly) */}
           <form method="POST" action="/api/checkout/member" className="mt-4">
             <input type="hidden" name="plan" value="monthly" />
             <button
@@ -59,17 +60,13 @@ export default function Page() {
         </div>
       </div>
 
-      {/* Sign-in prompt (no onClick; uses data attributes) */}
+      {/* Sign-in prompt */}
       <div id="signin" className="mt-10">
         <h2 className="text-xl font-semibold">Already a member?</h2>
         <p className="opacity-80">
-          <button
-            type="button"
-            data-ms-action="login"
-            className="underline underline-offset-4 hover:opacity-80"
-          >
+          <LoginButton className="underline underline-offset-4 hover:opacity-80">
             Sign in here
-          </button>
+          </LoginButton>
           .
         </p>
       </div>
