@@ -13,7 +13,7 @@ function requireEnv(name) {
 }
 
 const stripe = new Stripe(requireEnv("STRIPE_SECRET_KEY"));
-const siteUrl = requireEnv("NEXT_PUBLIC_SITE_URL");
+const siteUrl = requireEnv("NEXT_PUBLIC_MS_HOSTED_AUTH_URL");
 
 export async function POST() {
   const customerId = cookies().get("stripe_cust")?.value;

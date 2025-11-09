@@ -22,7 +22,7 @@ export async function POST(req) {
       return NextResponse.json({ error: "Missing price id" }, { status: 400 });
     }
 
-    const base = process.env.NEXT_PUBLIC_SITE_URL || "https://www.drjuanpablosalerno.com";
+    const base = process.env.NEXT_PUBLIC_MS_HOSTED_AUTH_URL || "https://auth.drjuanpablosalerno.com";
 
     const session = await stripe.checkout.sessions.create({
       mode: "subscription",

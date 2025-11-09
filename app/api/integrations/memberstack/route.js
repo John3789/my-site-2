@@ -73,7 +73,7 @@ export async function POST(req) {
     // Only auto-subscribe on creations/updates
     const actionable = /member\.created|member\.updated/i.test(evt) || !evt; // accept empty evt for test tools
     if (actionable) {
-      const base = process.env.NEXT_PUBLIC_SITE_URL || "https://www.drjuanpablosalerno.com";
+      const base = process.env.NEXT_PUBLIC_MS_HOSTED_AUTH_URL || "https://auth.drjuanpablosalerno.com";
       const r = await fetch(`${base}/api/subscribe`, {
         method: "POST",
         headers: { "content-type": "application/json" },

@@ -12,7 +12,7 @@ function cookieDomainFrom(urlString) {
 }
 
 export async function POST() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "/";
+  const siteUrl = process.env.NEXT_PUBLIC_MS_HOSTED_AUTH_URL || "/";
   const domain = cookieDomainFrom(siteUrl);
 
   // Clear host-scoped cookie
