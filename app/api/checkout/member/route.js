@@ -1,28 +1,41 @@
 // app/api/checkout/member/route.js
-export const runtime = "nodejs";
-
 import Stripe from "stripe";
 import { NextResponse } from "next/server";
 
-// ---- Strict env helpers (Production only)
-function requireEnv(name) {
-  const val = process.env[name];
-  if (!val) throw new Error(`Missing required env var: ${name}`);
-  return val;
-}
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
-const stripe = new Stripe(requireEnv("STRIPE_SECRET_KEY"));
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-export async function GET() {
-  const siteUrl = requireEnv("NEXT_PUBLIC_SITE_URL"); // live domain only
-  const priceId = requireEnv("STRIPE_PRICE_MEMBER_MONTHLY"); // LIVE price_xxx
+export async function POST(req) {
+  try {
+    const form = await req.formData();
+    const plan = (form.get("plan") || "monthly").toLowerCase();
 
-  const session = await stripe.checkout.sessions.create({
-    mode: "subscription",
-    line_items: [{ price: priceId, quantity: 1 }],
-    success_url: `${siteUrl}/api/stripe/finalize?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `${siteUrl}/join`,
-  });
+    const priceId =
+      plan === "yearly"
+        ? process.env.STRIPE_PRICE_MEMBER_YEARLY
+        : process.env.STRIPE_PRICE_MEMBER_MONTHLY;
 
-  return NextResponse.redirect(session.url, { status: 303 });
+    if (!priceId) {
+      return NextResponse.json({ error: "Missing price id" }, { status: 400 });
+    }
+
+    const base = process.env.NEXT_PUBLIC_SITE_URL || "https://www.drjuanpablosalerno.com";
+
+    const session = await stripe.checkout.sessions.create({
+      mode: "subscription",
+      line_items: [{ price: priceId, quantity: 1 }],
+      success_url: `${base}/members?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${base}/membership`,
+      allow_promotion_codes: true,
+    });
+
+    // Crucial: 303 redirect makes the browser NAVIGATE to Stripe (no CORS)
+    return NextResponse.redirect(session.url, { status: 303 });
+  } catch (err) {
+    console.error("Stripe checkout error:", err);
+    return NextResponse.json({ error: "checkout_failed" }, { status: 500 });
+  }
 }
