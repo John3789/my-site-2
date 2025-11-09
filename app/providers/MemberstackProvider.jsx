@@ -2,68 +2,52 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import memberstackDOM from "@memberstack/dom";
 
 /**
- * Memberstack Hosted Auth provider for Next.js (App Router).
- * - Injects the hosted script once on the client
- * - Makes window.$memberstack available (for openModal("LOGIN"/"SIGNUP"))
- * - Safe to include in production & dev
+ * Memberstack Hosted Auth (custom domain) for Next.js App Router.
+ * - Uses @memberstack/dom with your hosted auth domain
+ * - Exposes window.$memberstack so existing buttons keep working
+ *   e.g., window.$memberstack?.openModal("LOGIN" | "SIGNUP")
  */
 export default function MSProvider({ children }) {
-  const loadedRef = useRef(false);
+  const inited = useRef(false);
 
   useEffect(() => {
-    if (loadedRef.current) return;
-    loadedRef.current = true;
+    if (inited.current) return;
+    inited.current = true;
 
-    // If already present (hot reloads, multiple mounts), don't inject again
-    if (typeof window !== "undefined" && window.$memberstack) {
-      console.log("[MS] already loaded");
+    // Use env if present; otherwise default to your domain from Memberstack step 3.
+    const domain =
+      process.env.NEXT_PUBLIC_MS_DOMAIN ||
+      "https://memberstack-client.drjuanpablosalerno.com";
+
+    const publicKey = process.env.NEXT_PUBLIC_MEMBERSTACK_PUBLIC_KEY; // you already set this
+
+    if (!publicKey) {
+      console.error(
+        "[MS] Missing NEXT_PUBLIC_MEMBERSTACK_PUBLIC_KEY env var."
+      );
       return;
     }
 
-    // Avoid double-inserting the script
-    if (document.querySelector('script[data-memberstack-app="app_cmhr27ueu00dr0spu834zhexr"]')) {
-      console.log("[MS] script tag already in DOM");
-      return;
-    }
+    let canceled = false;
 
-    // Inject the official hosted script
-    const s = document.createElement("script");
-    s.type = "text/javascript";
-    s.src = "https://static.memberstack.com/scripts/v2/memberstack.js";
-    s.setAttribute("data-memberstack-app", "app_cmhr27ueu00dr0spu834zhexr");
-    s.async = true;
+    memberstackDOM
+      .init({ domain, publicKey })
+      .then((ms) => {
+        if (canceled) return;
+        // Keep old API for your buttons:
+        window.$memberstack = ms;
+        console.log("[MS] Hosted Auth ready:", domain);
+      })
+      .catch((err) => {
+        console.error("[MS] init error:", err);
+      });
 
-    s.onload = () => {
-      // Memberstack usually sets window.$memberstack on load
-      if (window.$memberstack) {
-        console.log("Memberstack React has initialized");
-      } else {
-        // Fallback: poll briefly in case it races
-        const start = Date.now();
-        const t = setInterval(() => {
-          if (window.$memberstack) {
-            console.log("Memberstack React has initialized (polled)");
-            clearInterval(t);
-          } else if (Date.now() - start > 8000) {
-            console.warn("[MS] not ready after 8s");
-            clearInterval(t);
-          }
-        }, 150);
-      }
+    return () => {
+      canceled = true;
     };
-
-    s.onerror = () => {
-      console.error("[MS] failed to load hosted script");
-    };
-
-    document.head.appendChild(s);
-
-    // Optional: listen for readiness events if Memberstack fires them
-    const onReady = () => console.log("[MS] ready event fired");
-    document.addEventListener("ms-ready", onReady);
-    return () => document.removeEventListener("ms-ready", onReady);
   }, []);
 
   return children;
