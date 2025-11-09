@@ -45,6 +45,7 @@ export default function Header() {
             <Link href="/resources" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/resources") ? "nav-active" : ""}`}>Resources</Link>
             <Link href="/speaking" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/speaking") ? "nav-active" : ""}`}>Speaking</Link>
             <Link href="/consulting" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/consulting") ? "nav-active" : ""}`}>Consulting</Link>
+            <Link href="/membership" className={`hidden md:inline hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/membership") ? "nav-active" : ""}`}>Membership</Link>
             <Link href="/contact" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/contact") ? "nav-active" : ""}`}>Contact</Link>
           </nav>
 
@@ -196,6 +197,7 @@ export default function Header() {
               <MobileLink href="/resources" onClick={() => setOpen(false)} active={pathname.startsWith("/resources")}>Resources</MobileLink>
               <MobileLink href="/speaking" onClick={() => setOpen(false)} active={pathname.startsWith("/speaking")}>Speaking</MobileLink>
               <MobileLink href="/consulting" onClick={() => setOpen(false)} active={pathname.startsWith("/consulting")}>Consulting</MobileLink>
+              <MobileLink href="/membership" onClick={() => setOpen(false)} active={pathname.startsWith("/membership")}>Membership</MobileLink>
               <MobileLink href="/contact" onClick={() => setOpen(false)} active={pathname.startsWith("/contact")}>Contact</MobileLink>
             </nav>
 
