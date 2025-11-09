@@ -2,27 +2,31 @@
 "use client";
 
 export default function AuthButtons() {
-  // You set this in Vercel; we’ll handle it even if it includes /auth/login
-  const HOSTED = process.env.NEXT_PUBLIC_MS_HOSTED_AUTH_URL || "https://auth.drjuanpablosalerno.com/auth/login";
-  const REDIRECT = "https://www.drjuanpablosalerno.com/members";
+  // Put JUST the base in Vercel (no path). Example:
+  // NEXT_PUBLIC_MS_HOSTED_AUTH_URL = https://auth.drjuanpablosalerno.com
+  const HOSTED_BASE =
+    process.env.NEXT_PUBLIC_MS_HOSTED_AUTH_URL ||
+    "https://auth.drjuanpablosalerno.com";
+
+  // Redirect back to the exact host you're on (handles www vs non-www)
+  const origin =
+    typeof window !== "undefined"
+      ? window.location.origin
+      : "https://drjuanpablosalerno.com";
+  const REDIRECT = `${origin}/members`;
 
   const urlFor = (kind) => {
     try {
-      const u = new URL(HOSTED);
-      // Normalize path to /auth/login or /auth/signup
-      if (kind === "signup") {
-        u.pathname = u.pathname.replace(/login\/?$/i, "signup");
-        if (!/\/auth\/signup\/?$/i.test(u.pathname)) u.pathname = "/auth/signup";
-      } else {
-        u.pathname = u.pathname.replace(/signup\/?$/i, "login");
-        if (!/\/auth\/login\/?$/i.test(u.pathname)) u.pathname = "/auth/login";
-      }
+      // Build /auth/login or /auth/signup
+      const u = new URL(HOSTED_BASE);
+      u.pathname = `/auth/${kind === "signup" ? "signup" : "login"}`;
       u.searchParams.set("redirect", REDIRECT);
       return u.toString();
     } catch {
-      // Hard fallbacks if env var is missing/bad
-      const base = "https://auth.drjuanpablosalerno.com";
-      return `${base}/auth/${kind}?redirect=${encodeURIComponent(REDIRECT)}`;
+      // Fallback if env is malformed
+      return `https://auth.drjuanpablosalerno.com/auth/${
+        kind === "signup" ? "signup" : "login"
+      }?redirect=${encodeURIComponent(REDIRECT)}`;
     }
   };
 

@@ -4,6 +4,9 @@
 import { useEffect, useRef } from "react";
 import memberstackDOM from "@memberstack/dom";
 
+const DOMAIN = "https://memberstack-client.drjuanpablosalerno.com"; // 👈 EXACTLY this
+const PUBLIC_KEY = "pk_981855eac27759d0f11f"; // 👈 your key
+
 export default function MSProvider({ children }) {
   const inited = useRef(false);
 
@@ -11,30 +14,16 @@ export default function MSProvider({ children }) {
     if (inited.current) return;
     inited.current = true;
 
-    let canceled = false;
+    // IMPORTANT: do not use `.then()` — init returns the API object, not a promise.
+    const ms = memberstackDOM.init({
+      domain: DOMAIN,
+      publicKey: PUBLIC_KEY,
+    });
 
-    try {
-      const ms = memberstackDOM.init({
-        // Hosted Auth subdomain you created in Memberstack
-        domain: "auth.drjuanpablosalerno.com",
-        // Use your public key; env var preferred if you set it
-        publicKey:
-          process.env.NEXT_PUBLIC_MEMBERSTACK_PUBLIC_KEY ||
-          "app_cmhr27ueu00dr0spu834zhexr",
-      });
-
-      if (!canceled) {
-        // keep the global for your buttons: window.$memberstack.openModal("LOGIN"/"SIGNUP")
-        window.$memberstack = ms;
-        console.log("[MS] DOM initialized");
-      }
-    } catch (err) {
-      console.error("[MS] init failed", err);
-    }
-
-    return () => {
-      canceled = true;
-    };
+    // Keep a global for your buttons to use
+    //   window.$memberstack.openModal("LOGIN" | "SIGNUP")
+    window.$memberstack = ms;
+    console.log("[MS] init OK", ms);
   }, []);
 
   return children;
