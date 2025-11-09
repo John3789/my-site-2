@@ -1,9 +1,23 @@
 // app/api/media/[id]/route.js
 export const runtime = "nodejs";
 
+const MEDITATION_SOURCES = {
+  // id: absolute URL to your real audio file (S3, CloudFront, etc.)
+  // Examples — replace with your real URLs:
+  "morning-reset-5m": "https://YOUR-BUCKET.s3.amazonaws.com/audio/morning-reset-5m.mp3",
+  "evening-release-7m": "https://YOUR-BUCKET.s3.amazonaws.com/audio/evening-release-7m.mp3",
+  // add more here...
+};
+
 export async function GET(_req, { params }) {
-  // Temporary: redirect to a sample mp3
-  const placeholder =
-    "https://file-examples.com/storage/fe9b4a0b6f6b8311f4b1e2b/2017/11/file_example_MP3_700KB.mp3";
-  return Response.redirect(placeholder, 302);
+  const id = params?.id;
+  const url = MEDITATION_SOURCES[id];
+  if (!url) {
+    return new Response(JSON.stringify({ error: "Not found" }), {
+      status: 404,
+      headers: { "content-type": "application/json" },
+    });
+  }
+  // 302 so the browser navigates (middleware enforces membership before this code runs)
+  return Response.redirect(url, 302);
 }
