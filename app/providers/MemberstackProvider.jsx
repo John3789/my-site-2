@@ -1,11 +1,20 @@
-// app/providers/MemberstackProvider.jsx
 "use client";
+import { MemberstackProvider } from "@memberstack/react";
 
-import { MemberstackProvider as MS } from "@memberstack/react";
+export default function MemberstackWrapper({ children }) {
+  return (
+    <MemberstackProvider
+      config={{
+        publicKey: process.env.NEXT_PUBLIC_MEMBERSTACK_PUBLIC_KEY,
+      }}
+    >
+      {children}
 
-export default function MemberstackProvider({ children }) {
-  const publicKey =
-    process.env.NEXT_PUBLIC_MEMBERSTACK_PUBLIC_KEY || "pk_placeholder";
-
-  return <MS config={{ publicKey }}>{children}</MS>;
+      {/* ✅ This script loads Memberstack's hosted login/signup modals */}
+      <script
+        src="https://api.memberstack.com/v2/memberstack.js"
+        data-memberstack-id={process.env.NEXT_PUBLIC_MEMBERSTACK_APP_ID}
+      ></script>
+    </MemberstackProvider>
+  );
 }
