@@ -1,30 +1,61 @@
 // components/safeStorage.ts
+
+/** Safely access local/session storage without ever referencing the
+ * bare identifier `localStorage`/`sessionStorage` on the server.
+ * We ONLY touch them via globalThis and optional chaining.
+ */
+
+function getLS(): Storage | undefined {
+  // in browsers, globalThis.localStorage exists; on server it's undefined
+  return (globalThis as any)?.localStorage as Storage | undefined;
+}
+
+function getSS(): Storage | undefined {
+  return (globalThis as any)?.sessionStorage as Storage | undefined;
+}
+
 export const safeLocal = {
   get(key: string): string | null {
-    if (typeof window === "undefined") return null;
-    try { return localStorage.getItem(key); } catch { return null; }
+    try {
+      const ls = getLS();
+      return ls?.getItem(key) ?? null;
+    } catch {
+      return null;
+    }
   },
   set(key: string, val: string) {
-    if (typeof window === "undefined") return;
-    try { localStorage.setItem(key, val); } catch {}
+    try {
+      const ls = getLS();
+      ls?.setItem(key, val);
+    } catch {}
   },
   remove(key: string) {
-    if (typeof window === "undefined") return;
-    try { localStorage.removeItem(key); } catch {}
+    try {
+      const ls = getLS();
+      ls?.removeItem(key);
+    } catch {}
   },
 };
 
 export const safeSession = {
   get(key: string): string | null {
-    if (typeof window === "undefined") return null;
-    try { return sessionStorage.getItem(key); } catch { return null; }
+    try {
+      const ss = getSS();
+      return ss?.getItem(key) ?? null;
+    } catch {
+      return null;
+    }
   },
   set(key: string, val: string) {
-    if (typeof window === "undefined") return;
-    try { sessionStorage.setItem(key, val); } catch {}
+    try {
+      const ss = getSS();
+      ss?.setItem(key, val);
+    } catch {}
   },
   remove(key: string) {
-    if (typeof window === "undefined") return;
-    try { sessionStorage.removeItem(key); } catch {}
+    try {
+      const ss = getSS();
+      ss?.removeItem(key);
+    } catch {}
   },
 };
