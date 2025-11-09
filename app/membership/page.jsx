@@ -62,15 +62,6 @@ function MemberPanel() {
         Manage Billing
       </Link>
 
-      <form action="/api/auth/signout" method="POST" className="mt-1">
-        <button
-          type="submit"
-          className="w-full inline-flex items-center justify-center rounded-xl border border-black/10 bg-white px-5 py-3 font-semibold hover:bg-black/5 active:translate-y-px"
-        >
-          Sign out
-        </button>
-      </form>
-
       <p className="mt-2 text-sm opacity-70">
         You’re signed in on this device. If you don’t see members content elsewhere, sign in again there.
       </p>

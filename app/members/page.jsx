@@ -39,6 +39,17 @@ export default function MembersHome() {
         >
           🔎 Public Resources (site-wide)
         </Link>
+
+        {/* Sign out (members page only) */}
+<form action="/api/auth/signout" method="POST" className="contents">
+  <button
+    type="submit"
+    className="rounded-xl border border-white/15 bg-white/5 px-5 py-4 font-semibold hover:bg-white/10"
+  >
+    🚪 Sign out
+  </button>
+</form>
+
       </div>
     </main>
   );
