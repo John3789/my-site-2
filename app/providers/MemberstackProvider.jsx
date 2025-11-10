@@ -4,7 +4,8 @@
 import { useEffect, useRef } from "react";
 import memberstackDOM from "@memberstack/dom";
 
-const PUBLIC_KEY = process.env.NEXT_PUBLIC_MS_PUBLIC_KEY || "";
+// ✅ Use your actual public key
+const PUBLIC_KEY = process.env.NEXT_PUBLIC_MS_PUBLIC_KEY || "pk_981855eac27759d0f11f";
 
 export default function MSProvider({ children }) {
   const inited = useRef(false);
@@ -13,17 +14,22 @@ export default function MSProvider({ children }) {
     if (inited.current) return;
     inited.current = true;
 
-    if (!PUBLIC_KEY) {
-      console.warn("[MS] Missing NEXT_PUBLIC_MS_PUBLIC_KEY");
-      return;
-    }
+    // ✅ Initialize Memberstack (no custom domain!)
+    const ms = memberstackDOM.init({ publicKey: PUBLIC_KEY });
 
-    const ms = memberstackDOM.init({ publicKey: PUBLIC_KEY }); // ← no domain
+    // ✅ Make it available globally for button actions
     window.$memberstack = ms;
+    console.log("[MS] init OK", ms);
+
+    // ✅ Mount to activate data-ms-action buttons
     try { ms.mount?.(); } catch {}
 
-    const obs = new MutationObserver(() => { try { ms.mount?.(); } catch {} });
+    // ✅ Re-mount if the DOM changes (Next.js App Router sometimes re-renders)
+    const obs = new MutationObserver(() => {
+      try { ms.mount?.(); } catch {}
+    });
     obs.observe(document.body, { childList: true, subtree: true });
+
     return () => obs.disconnect();
   }, []);
 
