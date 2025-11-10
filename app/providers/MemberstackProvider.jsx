@@ -4,7 +4,6 @@
 import { useEffect, useRef } from "react";
 import memberstackDOM from "@memberstack/dom";
 
-const DOMAIN = "https://memberstack-client.drjuanpablosalerno.com";
 const PUBLIC_KEY = "pk_981855eac27759d0f11f";
 
 export default function MSProvider({ children }) {
@@ -15,8 +14,8 @@ export default function MSProvider({ children }) {
     inited.current = true;
 
     // Init (sync)
-    const ms = memberstackDOM.init({ domain: DOMAIN, publicKey: PUBLIC_KEY });
-    window.$memberstack = ms;
+   // TEMP: let the SDK use Memberstack’s default hosted domain
+   const ms = memberstackDOM.init({ publicKey: PUBLIC_KEY });    window.$memberstack = ms;
     console.log("[MS] init OK", ms);
 
     // ✅ Attach data-ms-* click handlers now
