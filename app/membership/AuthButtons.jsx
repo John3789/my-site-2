@@ -1,10 +1,11 @@
+// app/membership/AuthButtons.jsx
 "use client";
 
 export default function AuthButtons() {
-  const redirect = "https://www.drjuanpablosalerno.com/members";
+  // ✅ Use apex (no www)
+  const redirect = "https://drjuanpablosalerno.com/members";
 
   const open = (kind) => (e) => {
-    // If SDK is ready, open explicitly and prevent default.
     const api =
       (typeof window !== "undefined" &&
         (window.$memberstack || window.memberstack || window.Memberstack)) ||
@@ -14,7 +15,7 @@ export default function AuthButtons() {
       e.preventDefault();
       api.openModal(kind === "signup" ? "SIGNUP" : "LOGIN", { redirect });
     }
-    // else: allow data-ms-action to handle it if/when mounted
+    // otherwise let data attributes handle it
   };
 
   return (
