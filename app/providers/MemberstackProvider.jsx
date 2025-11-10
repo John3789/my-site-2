@@ -4,7 +4,11 @@
 import { useEffect, useRef } from "react";
 import memberstackDOM from "@memberstack/dom";
 
-const PUBLIC_KEY = "pk_981855eac27759d0f11f";
+// ✅ Use your original env name; optional fallback just in case
+const PUBLIC_KEY =
+  process.env.NEXT_PUBLIC_MS_PUBLIC_KEY ||
+  process.env.NEXT_PUBLIC_MEMBERSTACK_PUBLIC_KEY ||
+  "";
 
 export default function MSProvider({ children }) {
   const inited = useRef(false);
@@ -13,19 +17,24 @@ export default function MSProvider({ children }) {
     if (inited.current) return;
     inited.current = true;
 
-    // Init (sync)
-   // TEMP: let the SDK use Memberstack’s default hosted domain
-   const ms = memberstackDOM.init({ publicKey: PUBLIC_KEY });    window.$memberstack = ms;
-    console.log("[MS] init OK", ms);
-
-    // ✅ Attach data-ms-* click handlers now
-    if (typeof ms?.mount === "function") {
-      try { ms.mount(); } catch {}
+    if (!PUBLIC_KEY) {
+      console.warn("[MS] Missing PUBLIC KEY env (NEXT_PUBLIC_MS_PUBLIC_KEY).");
+      return;
     }
 
-    // ✅ Re-attach if the DOM changes (App Router often re-renders)
+    // ✅ No domain — let SDK use Memberstack’s hosted domain
+    const ms = memberstackDOM.init({ publicKey: PUBLIC_KEY });
+
+    // Make available for any manual calls (optional)
+    window.$memberstack = ms;
+    console.log("[MS] init OK", ms);
+
+    // Wire up data-ms-action / data-ms-redirect buttons
+    try { ms.mount?.(); } catch {}
+
+    // Re-mount on DOM changes (App Router can swap nodes)
     const obs = new MutationObserver(() => {
-      try { ms?.mount?.(); } catch {}
+      try { ms.mount?.(); } catch {}
     });
     obs.observe(document.body, { childList: true, subtree: true });
 
