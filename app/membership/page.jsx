@@ -112,14 +112,14 @@ export default function Page() {
       <section className="mt-16">
         <h2 className="text-center text-2xl font-bold">Benefits</h2>
         <div className="mt-4 grid gap-4 md:grid-cols-2">
-          <BenefitCard title="Full Meditation Library" desc="A growing collection of guided sessions to build calm, clarity, motivation, compassion, purpose, and more—organized by theme and length for easy practice." />
+          <BenefitCard title="Meditation Library" desc="A growing collection of guided sessions to build calm, clarity, motivation, compassion, purpose, and more—organized by theme and length for easy practice." />
           <BenefitCard title="Social Media Resources Library" desc="My most helpful posts and reframes, curated by theme so you can quickly find the idea or prompt that shifts your day forward." />
           <BenefitCard title="Weekly Wisdom Emails" desc="Short, actionable insights grounded in scientific insight and lived experience. Expect one gentle nudge each week to keep moving." />
-          <BenefitCard title="Monthly live online meditation & personal growth sessions" desc="A live members-only class each month to reset your nervous system and deepen your practice. Recording available until the next session." />
+          <BenefitCard title="Monthly Live Online Meditation & Personal Growth Sessions" desc="A live members-only class each month to reset your nervous system and deepen your practice. Recording available until the next session." />
           <BenefitCard title="Dr. Juan Pablo Salerno AI" desc="Your members-only guidance companion trained on my approach—ask questions and get step-by-step support in my voice." />
-          <BenefitCard title="Discounted custom meditations" desc="Personalized audio created for your goals (5/10/15 min) with guidance on how to use it effectively. Includes a free Vision Call." />
-          <BenefitCard title="Vision calls" desc="A focused 30-minute session to clarify intentions, identify blocks, and map the tone and structure of your custom meditation." />
-          <BenefitCard title="Yearly membership perks" desc="Join annually and receive a free 5-minute custom meditation + Vision Call at signup." />
+          <BenefitCard title="Discounted Custom Meditations" desc="Personalized audio created for your goals (5/10/15 min) with guidance on how to use it effectively. Includes a free Vision Call." />
+          <BenefitCard title="Vision Calls" desc="A focused 30-minute session to clarify intentions, identify blocks, and map the tone and structure of your custom meditation." />
+          <BenefitCard title="Yearly Membership Perks" desc="Join annually and receive a free 5-minute custom meditation + Vision Call at signup." />
         </div>
       </section>
 
@@ -204,7 +204,7 @@ export default function Page() {
         </p>
       </section>
 
-      <div className="hidden lg:block mx-auto max-w-[1200px] px-6">
+      <div className="hidden lg:block mx-auto max-w-[1400px] px-6">
         <hr className="border-t border-[var(--color-cream)]/22 mt-16 -mb-10" />
       </div>
     </main>
