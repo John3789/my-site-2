@@ -24,7 +24,19 @@ export default function Page() {
       {/* HERO */}
       <section className="text-center">
         <h1 className="font-serif text-5xl md:text-5xl tracking-tight pt-10">RISE Membership</h1>
-        <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 mx-auto mt-6 mb-6 rounded" />
+
+
+                {/* Top Sign In link (Option 1) */}
+        <p className="mt-3 mb-3 text-sm opacity-90">
+          Already a member?{" "}
+          <a
+            data-ms-action="login"
+            className="font-semibold text-[var(--color-gold)] hover:underline"
+          >
+            Sign in →
+          </a>
+        </p>
+
         <p className="text-lg md:text-xl opacity-90 leading-relaxed mx-auto max-w-[880px]">
           Feeling emotionally drained or stuck in cycles that hold you back? I’ve been there—and I know
           how hard it is to show up for life when your mind feels off-balance. That’s why I created{" "}
