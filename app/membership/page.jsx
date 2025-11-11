@@ -1,15 +1,15 @@
-// app/membership/page.jsx — ALIGN Membership (v8.5-reordered per request)
+// app/membership/page.jsx — RISE Membership (v8.6 with Questions restored)
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
 export const metadata = {
-  title: "ALIGN Membership — Dr. Juan Pablo Salerno",
+  title: "RISE Membership — Dr. Juan Pablo Salerno",
   description:
     "Guided meditations, weekly wisdom, monthly live sessions, members-only AI guidance, and discounted custom meditations with a complimentary 30-minute Vision Call.",
   alternates: { canonical: "/membership" },
   openGraph: {
-    title: "ALIGN Membership — Dr. Juan Pablo Salerno",
+    title: "RISE Membership — Dr. Juan Pablo Salerno",
     description:
       "Guided meditations, weekly wisdom, monthly live sessions, members-only AI guidance, and discounted custom meditations with a complimentary 30-minute Vision Call.",
     images: ["/hero17.jpg"],
@@ -24,20 +24,18 @@ export default function Page() {
         <h1 className="font-serif text-5xl md:text-5xl tracking-tight pt-10">RISE Membership</h1>
         <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 mx-auto mt-6 mb-6 rounded" />
         <p className="text-lg md:text-xl opacity-90 leading-relaxed mx-auto max-w-[880px]">
-Feeling emotionally drained or stuck in cycles that hold you back? I’ve been there—and I know 
-how hard it is to show up for life when your mind feels off-balance. That’s why I created <span className="font-semibold">RISE</span>—to 
-help you break free from negative patterns, rebuild your energy, and activate the mindset that helps you thrive. 
-<span className="font-semibold"> Join now to reclaim your power and step into the life you 
-    were meant to lead.</span>
-        
-
+          Feeling emotionally drained or stuck in cycles that hold you back? I’ve been there—and I know
+          how hard it is to show up for life when your mind feels off-balance. That’s why I created{" "}
+          <span className="font-semibold">RISE</span>—to help you break free from negative patterns, rebuild your
+          energy, and activate the mindset that helps you thrive.
+          <span className="font-semibold"> Join now to reclaim your power and step into the life you were meant to lead.</span>
         </p>
         <p className="mx-auto mt-6 max-w-[860px] text-xs opacity-75">
           Dr. Juan Pablo Salerno is an award-winning mental health science expert and thought leader, author, and professor.
         </p>
       </section>
 
-      {/* FULL ACCESS — match your screenshot exactly: narrower width, gold ring, inner mini-cards (titles only) */}
+      {/* FULL ACCESS */}
       <section id="pricing" className="mt-12">
         <div className="mx-auto max-w-[725px] rounded-2xl bg-white/5 p-6 ring-1 ring-[var(--color-gold)]/60">
           <div className="relative">
@@ -48,23 +46,20 @@ help you break free from negative patterns, rebuild your energy, and activate th
 
           <div className="text-center text-2xl font-bold">Limited Time Offer</div>
 
-          {/* Pricing (unchanged) */}
+          {/* Pricing */}
           <div className="mt-3 flex items-end justify-center gap-10">
             <div>
               <div className="text-3xl font-semibold leading-none">$9.99</div>
               <div className="-mt-0.5 text-xs opacity-80 text-center">per month after trial</div>
             </div>
-
-            {/* add this span for the “or” */}
             <span className="text-2xl mb-3 font-semibold opacity-100">or</span>
-
             <div>
               <div className="text-3xl font-semibold leading-none">$89.99</div>
               <div className="-mt-0.5 text-xs opacity-80 text-center">per year after trial (≈25% off)</div>
             </div>
           </div>
 
-          {/* Mini CARDS inside (titles only; bigger font; more spacing; same shape as screenshot) */}
+          {/* Mini CARDS */}
           <div className="mt-6 grid gap-5 md:grid-cols-2">
             <MiniTitleCard title="Full Meditation Library" />
             <MiniTitleCard title="Social Media Resources Library" />
@@ -76,7 +71,7 @@ help you break free from negative patterns, rebuild your energy, and activate th
             <MiniTitleCard title="Yearly Membership Perks" />
           </div>
 
-          {/* Single CTA (unchanged) */}
+          {/* CTA */}
           <form method="POST" action="/api/checkout/member" className="mt-7 text-center">
             <input type="hidden" name="plan" value="monthly" />
             <button
@@ -87,7 +82,7 @@ help you break free from negative patterns, rebuild your energy, and activate th
             </button>
           </form>
 
-          {/* Sign in note (unchanged) */}
+          {/* Sign in note */}
           <div className="mt-3 text-center text-xs opacity-75">
             Already a member? <a data-ms-action="login" className="underline hover:no-underline">Sign in</a>
           </div>
@@ -95,7 +90,7 @@ help you break free from negative patterns, rebuild your energy, and activate th
         </div>
       </section>
 
-      {/* ===== MOVED UP: BENEFITS directly under Full Access ===== */}
+      {/* BENEFITS */}
       <section className="mt-16">
         <h2 className="text-center text-2xl font-bold">Benefits</h2>
         <div className="mt-4 grid gap-4 md:grid-cols-2">
@@ -134,7 +129,7 @@ help you break free from negative patterns, rebuild your energy, and activate th
         </div>
       </section>
 
-      {/* THEMES (combined) — now under Benefits */}
+      {/* THEMES */}
       <section className="mt-16">
         <div className="mx-auto max-w-[725px] rounded-xl border border-[var(--color-gold)]/60 bg-white/5 p-6">
           <h3 className="text-center font-semibold text-[var(--color-gold)]">Meditation & Social Media Resources Library Themes</h3>
@@ -145,7 +140,7 @@ help you break free from negative patterns, rebuild your energy, and activate th
         </div>
       </section>
 
-      {/* CUSTOM MEDITATIONS — Member Pricing (now last before CTA) */}
+      {/* CUSTOM MEDITATIONS */}
       <section className="mt-16">
         <div className="mx-auto max-w-[925px] rounded-2xl border border-[var(--color-gold)]/60 bg-white/5 p-6">
           <div className="flex flex-wrap items-center justify-between gap-3">
@@ -165,9 +160,10 @@ help you break free from negative patterns, rebuild your energy, and activate th
             <div className="flex items-start justify-between">
               <div>
                 <div className="font-semibold">Yearly Membership Perk</div>
-                <div className="mt-1 text-sm opacity-85">Free 5-minute custom meditation <span className="whitespace-nowrap">+ Vision Call</span> at signup.</div>
+                <div className="mt-1 text-sm opacity-85">
+                  Free 5-minute custom meditation <span className="whitespace-nowrap">+ Vision Call</span> at signup.
+                </div>
               </div>
-              <div className="hidden" />
             </div>
           </div>
 
@@ -178,7 +174,7 @@ help you break free from negative patterns, rebuild your energy, and activate th
         </div>
       </section>
 
-      {/* Final CTA */}
+      {/* CTA */}
       <section className="mt-16 text-center">
         <p className="text-lg opacity-85">Ready to Transform into the Best Version of Yourself?</p>
         <form method="POST" action="/api/checkout/member" className="mt-4">
@@ -191,17 +187,49 @@ help you break free from negative patterns, rebuild your energy, and activate th
           </button>
         </form>
       </section>
+
       <div className="hidden lg:block mx-auto max-w-[1200px] px-6">
-  <hr className="border-t border-[var(--color-cream)]/22 mt-16 -mb-10" />
-</div>
+        <hr className="border-t border-[var(--color-cream)]/22 mt-16 -mb-10" />
+      </div>
+
+      {/* FAQ */}
+      <section className="mt-20">
+        <h2 className="text-center text-2xl font-bold">FAQ</h2>
+        <div className="mt-4 grid gap-3 md:grid-cols-2">
+          <Faq
+            q="Who is this membership for?"
+            a="People ready to align their mental health, mindset, and purpose using practical tools and personal-growth practices in a supportive space."
+          />
+          <Faq q="Is it beginner-friendly?" a="Yes. You’ll get simple instructions and short practices designed for all levels." />
+          <Faq
+            q="I’ve already done personal growth—will this still help?"
+            a="Yes. The live sessions, themed meditations, and weekly prompts help you consolidate habits and go deeper step by step."
+          />
+          <Faq
+            q="How often are the live sessions, and are recordings available?"
+            a="Monthly. You’ll be notified of date/time; recordings are available until replaced by the next month’s session."
+          />
+          <Faq q="Is this therapy?" a="No—this is education, coaching, and self-growth. It doesn’t replace medical or clinical care." />
+          <Faq q="Can I cancel anytime?" a="Yes—manage or cancel anytime from your account." />
+          <Faq
+            q="What if I don’t feel better?"
+            a="We start small and build simple routines that compound. Most members notice shifts in clarity and calm."
+          />
+        </div>
+        <p className="mt-4 text-center text-xs opacity-70">
+          Disclaimer: Content is for educational purposes and does not constitute medical advice. If you’re in crisis, seek professional help or emergency services immediately.
+        </p>
+      </section>
+            <div className="hidden lg:block mx-auto max-w-[1200px] px-6">
+        <hr className="border-t border-[var(--color-cream)]/22 mt-16 -mb-10" />
+      </div>
     </main>
   );
 }
 
-/* ====== SMALL COMPONENTS ====== */
+/* ===== COMPONENTS ===== */
 
 function MiniTitleCard({ title }) {
-  // Same rounded rectangle look as your screenshot; titles only; bigger font.
   return (
     <div className="rounded-xl border border-white/15 bg-white/5 p-5">
       <div className="text-center text-[16px] md:text-[18px] font-semibold">{title}</div>
@@ -234,6 +262,15 @@ function BenefitCard({ title, desc }) {
     <div className="rounded-xl border border-white/15 bg-white/5 p-5">
       <div className="text-center font-semibold text-[var(--color-gold)]">{title}</div>
       <p className="mt-1 text-center text-sm opacity-85">{desc}</p>
+    </div>
+  );
+}
+
+function Faq({ q, a }) {
+  return (
+    <div className="rounded-xl border border-white/15 bg-white/5 p-5">
+      <div className="font-semibold">{q}</div>
+      <p className="mt-1 opacity-85 text-sm">{a}</p>
     </div>
   );
 }
