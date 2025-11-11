@@ -75,7 +75,7 @@ export default function Page() {
 
           {/* Mini CARDS */}
           <div className="mt-6 grid gap-5 md:grid-cols-2">
-            <MiniTitleCard title="Full Meditation Library" />
+            <MiniTitleCard title="Meditation Library" />
             <MiniTitleCard title="Social Media Resources Library" />
             <MiniTitleCard title="Weekly Wisdom Emails" />
             <MiniTitleCard title="Monthly Live Sessions Online" />

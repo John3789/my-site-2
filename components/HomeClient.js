@@ -483,7 +483,6 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
   }
 `}</style>
 
-<FooterSubscribeClient />
         </main>
         
   )
