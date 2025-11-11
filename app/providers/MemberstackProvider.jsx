@@ -4,8 +4,7 @@
 import { useEffect, useRef } from "react";
 import memberstackDOM from "@memberstack/dom";
 
-// ✅ Use your actual public key
-const PUBLIC_KEY = process.env.NEXT_PUBLIC_MS_PUBLIC_KEY || "pk_981855eac27759d0f11f";
+const PUBLIC_KEY = process.env.NEXT_PUBLIC_MS_PUBLIC_KEY; // keep as-is
 
 export default function MSProvider({ children }) {
   const inited = useRef(false);
@@ -14,23 +13,25 @@ export default function MSProvider({ children }) {
     if (inited.current) return;
     inited.current = true;
 
-    // ✅ Initialize Memberstack (no custom domain!)
-    const ms = memberstackDOM.init({ publicKey: PUBLIC_KEY });
+    if (!PUBLIC_KEY) {
+      console.warn("[MS] Missing NEXT_PUBLIC_MS_PUBLIC_KEY");
+      return;
+    }
 
-    // ✅ Make it available globally for button actions
-    window.$memberstack = ms;
-    console.log("[MS] init OK", ms);
-
-    // ✅ Mount to activate data-ms-action buttons
-    try { ms.mount?.(); } catch {}
-
-    // ✅ Re-mount if the DOM changes (Next.js App Router sometimes re-renders)
-    const obs = new MutationObserver(() => {
-      try { ms.mount?.(); } catch {}
+    // DOM package init (no domain while your custom subdomain is unverified)
+    const ms = memberstackDOM.init({
+      publicKey: PUBLIC_KEY,
+      // Optional session tuning:
+      // useCookies: true,
+      // setCookieOnRootDomain: true,
+      // sessionDurationDays: 14,
     });
-    obs.observe(document.body, { childList: true, subtree: true });
 
-    return () => obs.disconnect();
+    // expose if you want
+    window.$memberstack = ms;
+
+    // bind SDK to DOM (safe if no data-attrs present)
+    try { ms.mount?.(); } catch {}
   }, []);
 
   return children;
