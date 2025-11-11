@@ -51,7 +51,7 @@ export default function Page() {
 
       {/* FULL ACCESS */}
       <section id="pricing" className="mt-12">
-        <div className="mx-auto max-w-[725px] rounded-2xl bg-white/5 p-6 ring-1 ring-[var(--color-gold)]/60">
+        <div className="mx-auto max-w-[750px] rounded-2xl bg-white/5 p-6 ring-1 ring-[var(--color-gold)]/60">
           <div className="relative">
             <div className="absolute -top-3 right-0 inline-flex items-center gap-2 rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)] px-3 py-1 text-sm font-bold text-black shadow">
               $1 first 30 days
@@ -215,7 +215,10 @@ export default function Page() {
 function MiniTitleCard({ title }) {
   return (
     <div className="rounded-xl border border-white/15 bg-white/5 p-5">
-      <div className="text-center text-[16px] md:text-[18px] font-semibold">{title}</div>
+      <div className="flex items-center justify-center gap-2">
+        <span aria-hidden="true" className="text-[var(--color-gold)]">✔︎</span>
+        <span className="text-[16px] md:text-[18px] font-semibold text-center">{title}</span>
+      </div>
     </div>
   );
 }
