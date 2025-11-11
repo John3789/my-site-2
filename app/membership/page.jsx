@@ -150,6 +150,10 @@ export default function Page() {
             <DiscountCard label="15 minutes" memberPrice="$97.50" regularPrice="$150" savings="35%" />
           </div>
 
+     <div className="mt-4 rounded-lg border border-white/15 bg-white/5 p-4 text-sm">
+            <span className="font-semibold text-[var(--color-gold)]">Complimentary 30-minute Vision Call</span> included with
+            <span className="font-semibold"> every custom meditation</span> to set your intentions and personalize your journey.
+          </div>
           <div className="mt-4 rounded-xl border border-white/20 bg-white/5 p-4">
             <div className="flex items-start justify-between">
               <div>
@@ -159,11 +163,6 @@ export default function Page() {
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className="mt-4 rounded-lg border border-white/15 bg-white/5 p-4 text-sm">
-            <span className="font-semibold text-[var(--color-gold)]">Complimentary 30-minute Vision Call</span> is included with
-            <span className="font-semibold"> every custom meditation</span> to set your intentions and personalize your journey.
           </div>
         </div>
       </section>
