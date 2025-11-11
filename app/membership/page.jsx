@@ -1,4 +1,6 @@
-// app/membership/page.jsx — RISE Membership (v8.6 with Questions restored)
+// app/membership/page.jsx — RISE Membership (v8.7 CTA Link style)
+
+import Link from "next/link";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -72,19 +74,23 @@ export default function Page() {
           </div>
 
           {/* CTA */}
-          <form method="POST" action="/api/checkout/member" className="mt-7 text-center">
-            <input type="hidden" name="plan" value="monthly" />
-            <button
-              type="submit"
-              className="inline-flex rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)] px-5 py-2.5 text-[15px] font-semibold text-black shadow-sm active:translate-y-px"
+          <div className="mt-8 mb-2 flex justify-center">
+            <Link
+              href="/api/checkout/member"
+              className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3
+                         font-semibold uppercase tracking-wide text-sm shadow-md transition
+                         hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
             >
               Start Full Access
-            </button>
-          </form>
+            </Link>
+          </div>
 
           {/* Sign in note */}
           <div className="mt-3 text-center text-xs opacity-75">
-            Already a member? <a data-ms-action="login" className="underline hover:no-underline">Sign in</a>
+            Already a member?{" "}
+            <a data-ms-action="login" className="underline hover:no-underline">
+              Sign in
+            </a>
           </div>
           <div className="mt-3 text-center text-xs opacity-70">Manage or cancel anytime from your account.</div>
         </div>
@@ -94,38 +100,14 @@ export default function Page() {
       <section className="mt-16">
         <h2 className="text-center text-2xl font-bold">Benefits</h2>
         <div className="mt-4 grid gap-4 md:grid-cols-2">
-          <BenefitCard
-            title="Full Meditation Library"
-            desc="A growing collection of guided sessions to build calm, clarity, motivation, compassion, purpose, and more—organized by theme and length for easy practice."
-          />
-          <BenefitCard
-            title="Social Media Resources Library"
-            desc="My most helpful posts and reframes, curated by theme so you can quickly find the idea or prompt that shifts your day forward."
-          />
-          <BenefitCard
-            title="Weekly Wisdom Emails"
-            desc="Short, actionable insights grounded in scientific insight and lived experience. Expect one gentle nudge each week to keep moving."
-          />
-          <BenefitCard
-            title="Monthly live online meditation & personal growth sessions"
-            desc="A live members-only class each month to reset your nervous system and deepen your practice. Recording available until the next session."
-          />
-          <BenefitCard
-            title="Dr. Juan Pablo Salerno AI"
-            desc="Your members-only guidance companion trained on my approach—ask questions and get step-by-step support in my voice."
-          />
-          <BenefitCard
-            title="Discounted custom meditations"
-            desc="Personalized audio created for your goals (5/10/15 min) with guidance on how to use it effectively. Includes a free Vision Call."
-          />
-          <BenefitCard
-            title="Vision calls"
-            desc="A focused 30-minute session to clarify intentions, identify blocks, and map the tone and structure of your custom meditation."
-          />
-          <BenefitCard
-            title="Yearly membership perks"
-            desc="Join annually and receive a free 5-minute custom meditation + Vision Call at signup."
-          />
+          <BenefitCard title="Full Meditation Library" desc="A growing collection of guided sessions to build calm, clarity, motivation, compassion, purpose, and more—organized by theme and length for easy practice." />
+          <BenefitCard title="Social Media Resources Library" desc="My most helpful posts and reframes, curated by theme so you can quickly find the idea or prompt that shifts your day forward." />
+          <BenefitCard title="Weekly Wisdom Emails" desc="Short, actionable insights grounded in scientific insight and lived experience. Expect one gentle nudge each week to keep moving." />
+          <BenefitCard title="Monthly live online meditation & personal growth sessions" desc="A live members-only class each month to reset your nervous system and deepen your practice. Recording available until the next session." />
+          <BenefitCard title="Dr. Juan Pablo Salerno AI" desc="Your members-only guidance companion trained on my approach—ask questions and get step-by-step support in my voice." />
+          <BenefitCard title="Discounted custom meditations" desc="Personalized audio created for your goals (5/10/15 min) with guidance on how to use it effectively. Includes a free Vision Call." />
+          <BenefitCard title="Vision calls" desc="A focused 30-minute session to clarify intentions, identify blocks, and map the tone and structure of your custom meditation." />
+          <BenefitCard title="Yearly membership perks" desc="Join annually and receive a free 5-minute custom meditation + Vision Call at signup." />
         </div>
       </section>
 
@@ -177,15 +159,16 @@ export default function Page() {
       {/* CTA */}
       <section className="mt-16 text-center">
         <p className="text-lg opacity-85">Ready to Transform into the Best Version of Yourself?</p>
-        <form method="POST" action="/api/checkout/member" className="mt-4">
-          <input type="hidden" name="plan" value="monthly" />
-          <button
-            type="submit"
-            className="inline-flex rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)] px-5 py-2.5 text-[15px] font-semibold text-black shadow-sm active:translate-y-px"
+        <div className="mt-8 mb-12 flex justify-center">
+          <Link
+            href="/api/checkout/member"
+            className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3
+                       font-semibold uppercase tracking-wide text-sm shadow-md transition
+                       hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
           >
             Start Full Access
-          </button>
-        </form>
+          </Link>
+        </div>
       </section>
 
       <div className="hidden lg:block mx-auto max-w-[1200px] px-6">
@@ -196,31 +179,20 @@ export default function Page() {
       <section className="mt-20">
         <h2 className="text-center text-2xl font-bold">FAQ</h2>
         <div className="mt-4 grid gap-3 md:grid-cols-2">
-          <Faq
-            q="Who is this membership for?"
-            a="People ready to align their mental health, mindset, and purpose using practical tools and personal-growth practices in a supportive space."
-          />
+          <Faq q="Who is this membership for?" a="People ready to align their mental health, mindset, and purpose using practical tools and personal-growth practices in a supportive space." />
           <Faq q="Is it beginner-friendly?" a="Yes. You’ll get simple instructions and short practices designed for all levels." />
-          <Faq
-            q="I’ve already done personal growth—will this still help?"
-            a="Yes. The live sessions, themed meditations, and weekly prompts help you consolidate habits and go deeper step by step."
-          />
-          <Faq
-            q="How often are the live sessions, and are recordings available?"
-            a="Monthly. You’ll be notified of date/time; recordings are available until replaced by the next month’s session."
-          />
+          <Faq q="I’ve already done personal growth—will this still help?" a="Yes. The live sessions, themed meditations, and weekly prompts help you consolidate habits and go deeper step by step." />
+          <Faq q="How often are the live sessions, and are recordings available?" a="Monthly. You’ll be notified of date/time; recordings are available until replaced by the next month’s session." />
           <Faq q="Is this therapy?" a="No—this is education, coaching, and self-growth. It doesn’t replace medical or clinical care." />
           <Faq q="Can I cancel anytime?" a="Yes—manage or cancel anytime from your account." />
-          <Faq
-            q="What if I don’t feel better?"
-            a="We start small and build simple routines that compound. Most members notice shifts in clarity and calm."
-          />
+          <Faq q="What if I don’t feel better?" a="We start small and build simple routines that compound. Most members notice shifts in clarity and calm." />
         </div>
         <p className="mt-4 text-center text-xs opacity-70">
           Disclaimer: Content is for educational purposes and does not constitute medical advice. If you’re in crisis, seek professional help or emergency services immediately.
         </p>
       </section>
-            <div className="hidden lg:block mx-auto max-w-[1200px] px-6">
+
+      <div className="hidden lg:block mx-auto max-w-[1200px] px-6">
         <hr className="border-t border-[var(--color-cream)]/22 mt-16 -mb-10" />
       </div>
     </main>
