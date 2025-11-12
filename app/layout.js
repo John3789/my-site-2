@@ -7,7 +7,7 @@ import Header from '../components/Header'
 import Script from 'next/script'
 import LayoutFooterGate from '../components/LayoutFooterGate'
 import GA from "../components/GA.jsx"
-import MSProvider from "./providers/MemberstackProvider.jsx"
+import MemberstackProvider from "./providers/MemberstackProvider.jsx"
 import FooterSubscribeIsland from "../components/FooterSubscribeIsland";
 import "./polyfills/server-storage-shim.js";
 

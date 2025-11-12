@@ -9,13 +9,19 @@ const PRICE_IDS = {
 export default function BuyButton({ cadence = "monthly", className = "", children }) {
   async function handleClick(e) {
     e.preventDefault();
-    const ms =
+
+    let ms =
       (typeof window !== "undefined" &&
         (window.$memberstack || window.memberstack || window.Memberstack)) ||
       null;
 
+    // If it's a Promise, await it
+    if (ms && typeof ms.then === "function") {
+      try { ms = await ms; } catch {}
+    }
+
     if (!ms?.purchasePlansWithCheckout) {
-      console.error("purchasePlansWithCheckout not available");
+      console.error("[MS] purchasePlansWithCheckout not available", ms);
       alert("Checkout unavailable. Please refresh and try again.");
       return;
     }
@@ -23,13 +29,16 @@ export default function BuyButton({ cadence = "monthly", className = "", childre
     const priceId = PRICE_IDS[cadence] || PRICE_IDS.monthly;
     const { origin } = window.location;
 
-    // ✔ As shown in Playground: Purchase Plans with Checkout → starts Stripe Checkout
-    // ✔ Paid → priceId; account is created during checkout (no pre-login needed)
-    await ms.purchasePlansWithCheckout({
-      priceId,
-      successUrl: `${origin}/members?status=success`,
-      cancelUrl: `${origin}/membership?canceled=1`,
-    });
+    try {
+      await ms.purchasePlansWithCheckout({
+        priceId,
+        successUrl: `${origin}/members?status=success`,
+        cancelUrl: `${origin}/membership?canceled=1`,
+      });
+    } catch (err) {
+      console.error("DOM checkout error:", err);
+      alert("Checkout failed. Please try again.");
+    }
   }
 
   return (

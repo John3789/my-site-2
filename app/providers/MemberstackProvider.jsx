@@ -1,12 +1,11 @@
 // app/providers/MemberstackProvider.jsx
 "use client";
-
 import { useEffect, useRef } from "react";
 import memberstackDOM from "@memberstack/dom";
 
 const PUBLIC_KEY = process.env.NEXT_PUBLIC_MS_PUBLIC_KEY;
 
-export default function MSProvider({ children }) {
+export default function MemberstackProvider({ children }) {
   const inited = useRef(false);
 
   useEffect(() => {
@@ -18,19 +17,18 @@ export default function MSProvider({ children }) {
       return;
     }
 
-    const ms = memberstackDOM.init({ publicKey: PUBLIC_KEY });
-    window.$memberstack = ms;
-
-    // Initial bind
-    try { ms.mount?.(); } catch {}
-
-    // Re-bind on DOM mutations (important for Next App Router)
-    const obs = new MutationObserver(() => {
-      try { ms.mount?.(); } catch {}
-    });
-    obs.observe(document.body, { childList: true, subtree: true });
-
-    return () => obs.disconnect();
+    // IMPORTANT: set window.$memberstack to the *resolved* instance
+    const init = async () => {
+      try {
+        const ms = await memberstackDOM.init({ publicKey: PUBLIC_KEY });
+        window.$memberstack = ms; // resolved instance, not a Promise
+        try { ms.mount?.(); } catch {}
+        console.log("[MS] Ready:", !!ms.purchasePlansWithCheckout, ms);
+      } catch (err) {
+        console.error("[MS] init failed:", err);
+      }
+    };
+    init();
   }, []);
 
   return children;
