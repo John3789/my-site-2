@@ -1,4 +1,3 @@
-// app/membership/BuyButton.jsx
 "use client";
 
 const PRICE_IDS = {
@@ -9,34 +8,53 @@ const PRICE_IDS = {
 export default function BuyButton({ cadence = "monthly", className = "", children }) {
   async function handleClick(e) {
     e.preventDefault();
+    console.log("[BuyButton] click, cadence:", cadence);
 
     let ms =
       (typeof window !== "undefined" &&
         (window.$memberstack || window.memberstack || window.Memberstack)) ||
       null;
 
-    // If it's a Promise, await it
+    // If someone set it to a Promise, await it
     if (ms && typeof ms.then === "function") {
-      try { ms = await ms; } catch {}
+      try { ms = await ms; } catch (err) { console.error("[MS] await failed:", err); }
     }
 
-    if (!ms?.purchasePlansWithCheckout) {
-      console.error("[MS] purchasePlansWithCheckout not available", ms);
+    if (!ms) {
+      console.error("[MS] not initialized (window.$memberstack is null)");
+      alert("Membership not ready. Please refresh and try again.");
+      return;
+    }
+
+    if (typeof ms.purchasePlansWithCheckout !== "function") {
+      console.error("[MS] purchasePlansWithCheckout missing on instance:", ms);
       alert("Checkout unavailable. Please refresh and try again.");
       return;
     }
 
     const priceId = PRICE_IDS[cadence] || PRICE_IDS.monthly;
     const { origin } = window.location;
+    const payload = {
+      priceId,
+      successUrl: `${origin}/members?status=success`,
+      cancelUrl: `${origin}/membership?canceled=1`,
+    };
+
+    console.log("[MS] purchasePlansWithCheckout payload:", payload);
 
     try {
-      await ms.purchasePlansWithCheckout({
-        priceId,
-        successUrl: `${origin}/members?status=success`,
-        cancelUrl: `${origin}/membership?canceled=1`,
-      });
+      // don't await the navigation — kick it off and let it redirect
+      const p = ms.purchasePlansWithCheckout(payload);
+      if (p && typeof p.catch === "function") {
+        p.catch(err => {
+          console.error("[MS] checkout promise rejected:", err);
+          alert("Checkout failed. Please try again.");
+        });
+      }
+      // If the SDK navigates away immediately, code after this won't run.
+      console.log("[MS] purchase invoked");
     } catch (err) {
-      console.error("DOM checkout error:", err);
+      console.error("[MS] purchase threw:", err);
       alert("Checkout failed. Please try again.");
     }
   }
