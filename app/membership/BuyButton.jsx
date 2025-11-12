@@ -1,8 +1,8 @@
 "use client";
 
 const PRICE_IDS = {
-  monthly: "prc_9_99-hj9j03x8",
-  yearly:  "prc_89_99-lt9v0nf5",
+  monthly: "prc_9-99-hj9j03x8",
+  yearly:  "prc_89-99-lt9v0nf5",
 };
 
 async function ensureSession(ms, cadence) {
