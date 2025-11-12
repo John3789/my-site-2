@@ -1,43 +1,53 @@
 // app/api/checkout/member/route.js
-import Stripe from "stripe";
-import { NextResponse } from "next/server";
-
-export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-export const revalidate = 0;
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+const MS_SECRET = process.env.MEMBERSTACK_SECRET_KEY; // <-- server-side key
 
 export async function POST(req) {
   try {
-    const form = await req.formData();
-    const plan = (form.get("plan") || "monthly").toLowerCase();
-
-    const priceId =
-      plan === "yearly"
-        ? process.env.STRIPE_PRICE_MEMBER_YEARLY
-        : process.env.STRIPE_PRICE_MEMBER_MONTHLY;
-
-    if (!priceId) {
-      return NextResponse.json({ error: "Missing price id" }, { status: 400 });
+    if (!MS_SECRET) {
+      return new Response(JSON.stringify({ error: "missing_secret" }), { status: 500 });
     }
 
-  const site = process.env.SITE_URL || "https://www.drjuanpablosalerno.com";
-  const auth = process.env.AUTH_ORIGIN || "https://auth.drjuanpablosalerno.com"; // if needed elsewhere
+    // Build success/cancel URLs from the current request origin
+    const { origin } = new URL(req.url);
+    const successUrl = `${origin}/members?status=success`;
+    const cancelUrl = `${origin}/membership?canceled=1`;
 
-
-    const session = await stripe.checkout.sessions.create({
+    // Offer BOTH monthly + yearly — Memberstack will show the plan picker on Stripe
+    const payload = {
       mode: "subscription",
-      line_items: [{ price: priceId, quantity: 1 }],
-      success_url: `${site}/members?checkout=success`,
-      cancel_url: `${site}/membership?checkout=cancel`,
-      allow_promotion_codes: true,
+      priceIds: [
+        "pln_rise-monthly-plan-y9ao098m",
+        "pln_rise-yearly-plan-4w9s0n01",
+      ],
+      successUrl,
+      cancelUrl,
+    };
+
+    const msRes = await fetch("https://api.memberstack.com/v1/checkout/sessions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${MS_SECRET}`,
+      },
+      body: JSON.stringify(payload),
     });
 
-    // Crucial: 303 redirect makes the browser NAVIGATE to Stripe (no CORS)
-    return NextResponse.redirect(session.url, { status: 303 });
+    if (!msRes.ok) {
+      const text = await msRes.text();
+      return new Response(JSON.stringify({ error: "memberstack_error", details: text }), { status: 500 });
+    }
+
+    const data = await msRes.json();
+
+    // Expecting { url: "https://checkout.stripe.com/..." }
+    if (!data?.url) {
+      return new Response(JSON.stringify({ error: "no_checkout_url_returned" }), { status: 500 });
+    }
+
+    return new Response(JSON.stringify({ url: data.url }), { status: 200 });
   } catch (err) {
-    console.error("Stripe checkout error:", err);
-    return NextResponse.json({ error: "checkout_failed" }, { status: 500 });
+    return new Response(JSON.stringify({ error: "server_error", message: String(err?.message || err) }), { status: 500 });
   }
 }

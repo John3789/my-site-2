@@ -1,9 +1,9 @@
-// app/membership/page.jsx — RISE Membership (v8.7 CTA Link style)
-
-import Link from "next/link";
-
+// app/membership/page.jsx — RISE Membership (v8.7)
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
+
+import SignInButton from "./SignInButton";
+import StartFullAccessButton from "./StartFullAccessButton";
 
 export const metadata = {
   title: "RISE Membership — Dr. Juan Pablo Salerno",
@@ -25,23 +25,24 @@ export default function Page() {
       <section className="text-center">
         <h1 className="font-serif text-5xl md:text-5xl tracking-tight pt-10">RISE Membership</h1>
 
-        {/* Top Sign In link (Option 1) */}
+        {/* Top Sign In link (client component) */}
         <p className="mt-3 mb-3 text-sm opacity-90">
           Already a member?{" "}
-          <a data-ms-action="login" className="font-semibold text-[var(--color-gold)] hover:underline">
+          <SignInButton className="font-semibold text-[var(--color-gold)] hover:underline">
             Sign in →
-          </a>
+          </SignInButton>
         </p>
 
         <p className="text-lg md:text-xl opacity-90 leading-relaxed mx-auto max-w-[880px]">
-          Feeling emotionally drained or stuck in cycles that hold you back? I’ve been there—and I know
-          how hard it is to show up for life when your mind feels off-balance. That’s why I created{" "}
-          <span className="font-semibold">RISE</span>—to help you break free from negative patterns, rebuild your
-          energy, and activate the mindset that helps you thrive.
+          Feeling emotionally drained or stuck in cycles that hold you back? I’ve been there—and I
+          know how hard it is to show up for life when your mind feels off-balance. That’s why I
+          created <span className="font-semibold">RISE</span>—to help you break free from negative
+          patterns, rebuild your energy, and activate the mindset that helps you thrive.
           <span className="font-semibold"> Join now to reclaim your power and step into the life you were meant to lead.</span>
         </p>
         <p className="mx-auto mt-6 max-w-[860px] text-xs opacity-75">
-          Dr. Juan Pablo Salerno is an award-winning mental health science expert and thought leader, author, and professor.
+          Dr. Juan Pablo Salerno is an award-winning mental health science expert and thought leader,
+          author, and professor.
         </p>
       </section>
 
@@ -81,24 +82,27 @@ export default function Page() {
             <MiniTitleCard title="Yearly Membership Perks" />
           </div>
 
-          {/* CTA */}
+          {/* CTA — single button opens Memberstack plan picker */}
           <div className="mt-8 mb-2 flex justify-center">
-            <Link
-              href="/api/checkout/member"
+            <StartFullAccessButton
+              monthlyPlan="pln_rise-monthly-plan-y9ao098m"
+              yearlyPlan="pln_rise-yearly-plan-4w9s0n01"
+              successUrl="/members"
+              cancelUrl="/membership"
               className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
             >
               Start Full Access
-            </Link>
+            </StartFullAccessButton>
           </div>
 
-          {/* Sign in note */}
+          {/* Sign in note (client component) */}
           <div className="mt-3 text-center text-xs opacity-75">
             Already a member?{" "}
-            <a data-ms-action="login" className="underline hover:no-underline">
-              Sign in
-            </a>
+            <SignInButton className="underline hover:no-underline">Sign in</SignInButton>
           </div>
-          <div className="mt-3 text-center text-xs opacity-70">Manage or cancel anytime from your account.</div>
+          <div className="mt-3 text-center text-xs opacity-70">
+            Manage or cancel anytime from your account.
+          </div>
         </div>
       </section>
 
@@ -120,7 +124,9 @@ export default function Page() {
       {/* THEMES */}
       <section className="mt-16">
         <div className="mx-auto max-w-[725px] rounded-xl border border-[var(--color-gold)]/60 bg-white/5 p-6">
-          <h3 className="text-center font-semibold text-[var(--color-gold)]">Meditation & Social Media Resources Library Themes</h3>
+          <h3 className="text-center font-semibold text-[var(--color-gold)]">
+            Meditation & Social Media Resources Library Themes
+          </h3>
           <p className="mt-2 text-center text-sm opacity-85">
             Motivation & Mindset · Mental Health & Stress Relief · Self-Compassion & Healing · Relationships & Connection · Purpose & Alignment · Manifestation & Intention Setting · Feng Shui & Environment
           </p>
@@ -144,8 +150,7 @@ export default function Page() {
           </div>
 
           <div className="mt-4 rounded-lg border border-white/15 bg-white/5 p-4 text-sm">
-            <span className="font-semibold text-[var(--color-gold)]">Complimentary 30-minute Vision Call</span> included with
-            <span className="font-semibold"> every custom meditation</span> to set your intentions and personalize your journey.
+            <span className="font-semibold text-[var(--color-gold)]">Complimentary 30-minute Vision Call</span> included with <span className="font-semibold">every custom meditation</span> to set your intentions and personalize your journey.
           </div>
           <div className="mt-4 rounded-xl border border-white/20 bg-white/5 p-4">
             <div className="flex items-start justify-between">
@@ -163,20 +168,24 @@ export default function Page() {
       {/* CTA */}
       <section className="mt-16 text-center">
         <p className="text-lg opacity-85">Ready to Transform into the Best Version of Yourself?</p>
-        <div className="mt-8 mb-12 flex justify-center">
-          <Link
-            href="/api/checkout/member"
+        {/* CTA — single button opens Memberstack plan picker */}
+        <div className="mt-8 mb-2 flex justify-center">
+          <StartFullAccessButton
+            monthlyPlan="pln_rise-monthly-plan-y9ao098m"
+            yearlyPlan="pln_rise-yearly-plan-4w9s0n01"
+            successUrl="/members"
+            cancelUrl="/membership"
             className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
           >
             Start Full Access
-          </Link>
+          </StartFullAccessButton>
         </div>
       </section>
 
-{/* Divider ABOVE footer, like Contact/Members */}
-<div className="mx-auto max-w-[1200px] px-6 mt-12">
-  <hr className="border-t border-[var(--color-cream)]/22" />
-</div>
+      {/* Divider ABOVE footer, like Contact/Members */}
+      <div className="mx-auto max-w-[1200px] px-6 mt-12">
+        <hr className="border-t border-[var(--color-cream)]/22" />
+      </div>
 
       {/* Desktop footer row */}
       <div className="hidden lg:flex items-start justify-between mx-auto max-w-[1200px] px-6 mt-4 text-[13px] leading-relaxed opacity-85">
@@ -188,14 +197,10 @@ export default function Page() {
               <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z" /></svg>
             </a>
             <a href="https://www.instagram.com/drjuanpablosalerno/" aria-label="Instagram" className="opacity-90 hover:opacity-100">
-              {/* ✅ Fixed Instagram icon (matches working version) */}
               <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z" /></svg>
             </a>
             <a href="https://www.youtube.com/drjpsalerno" aria-label="YouTube" className="opacity-90 hover:opacity-100">
-              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" /></svg>
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=61582412806274#" aria-label="Facebook" className="opacity-90 hover:opacity-100">
-              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2v3h-2c-.3 0-.5.2-.5.5V12H16l-.5 3h-2v7A10 10 0 0 0 22 12z" /></svg>
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s-6.6 0-8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" /></svg>
             </a>
           </div>
           <p className="mt-4 max-w-[520px] text-[13px] leading-relaxed">
@@ -221,24 +226,15 @@ export default function Page() {
         <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
       </div>
 
-      {/* Mobile footer stack (no blue site box; just socials/bio/legal) */}
+      {/* Mobile footer stack */}
       <div className="lg:hidden mx-auto w-full max-w-[900px] px-0 mt-6">
         <div className="mt-0 text-[13px] leading-relaxed">
           <p className="uppercase tracking-[0.18em] text-left opacity-70">Follow Dr. Salerno:</p>
           <div className="mt-3 flex items-left justify-left gap-8">
-            <a href="https://www.tiktok.com/@drjuanpablosalerno" aria-label="TikTok" className="opacity-90 hover:opacity-100">
-              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z" /></svg>
-            </a>
-            <a href="https://www.instagram.com/drjuanpablosalerno/" aria-label="Instagram" className="opacity-90 hover:opacity-100">
-              {/* ✅ Fixed Instagram icon */}
-              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z" /></svg>
-            </a>
-            <a href="https://www.youtube.com/drjpsalerno" aria-label="YouTube" className="opacity-90 hover:opacity-100">
-              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" /></svg>
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=61582412806274#" aria-label="Facebook" className="opacity-90 hover:opacity-100">
-              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2v3h-2c-.3 0-.5.2-.5.5V12H16l-.5 3h-2v7A10 10 0 0 0 22 12z" /></svg>
-            </a>
+            <a href="https://www.tiktok.com/@drjuanpablosalerno" aria-label="TikTok" className="opacity-90 hover:opacity-100"><svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z" /></svg></a>
+            <a href="https://www.instagram.com/drjuanpablosalerno/" aria-label="Instagram" className="opacity-90 hover:opacity-100"><svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z" /></svg></a>
+            <a href="https://www.youtube.com/drjpsalerno" aria-label="YouTube" className="opacity-90 hover:opacity-100"><svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s-6.6 0-8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" /></svg></a>
+            <a href="https://www.facebook.com/profile.php?id=61582412806274#" aria-label="Facebook" className="opacity-90 hover:opacity-100"><svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2v3h-2c-.3 0-.5.2-.5.5V12H16l-.5 3h-2v7A10 10 0 0 0 22 12z" /></svg></a>
           </div>
 
           <p className="mt-5 text-left opacity-85">
@@ -257,11 +253,11 @@ export default function Page() {
       </div>
 
       {/* Hide global site footer ONLY on this page */}
-<style>{`
-  body:has(main[data-page="membership"]) :is(footer, .site-footer, [role="contentinfo"]) {
-    display: none !important;
-  }
-`}</style>
+      <style>{`
+        body:has(main[data-page="membership"]) :is(footer, .site-footer, [role="contentinfo"]) {
+          display: none !important;
+        }
+      `}</style>
     </main>
   );
 }
@@ -289,9 +285,7 @@ function DiscountCard({ label, memberPrice, regularPrice, savings }) {
           <div className="text-xs opacity-75">Member price</div>
         </div>
         <div className="text-right">
-          <div className="inline-flex items-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)]/15 px-2 py-0.5 text-[11px] font-semibold">
-            Save {savings}
-          </div>
+          <div className="inline-flex items-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)]/15 px-2 py-0.5 text-[11px] font-semibold">Save {savings}</div>
           <div className="mt-1 text-xs opacity-75">Reg. {regularPrice}</div>
         </div>
       </div>
