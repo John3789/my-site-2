@@ -18,22 +18,20 @@ export default function MemberstackProvider({ children }) {
       return;
     }
 
-    // ✅ Single, canonical init (with custom client domain)
+    // ❌ REMOVE domain for now
     const ms = memberstackDOM.init({
       publicKey: PUBLIC_KEY,
-      domain: "https://memberstack-client.drjuanpablosalerno.com",
     });
 
     if (typeof window !== "undefined") {
-      // expose it everywhere for buttons, console debugging, etc.
       window.$memberstack = ms;
-      window.Memberstack = ms;
       window.memberstack = ms;
+      window.Memberstack = ms;
     }
 
     try {
       ms.mount?.();
-      console.log("[MS] DOM mounted with custom domain");
+      console.log("[MS] DOM mounted (no custom domain)");
     } catch (err) {
       console.error("[MS] mount error:", err);
     }
