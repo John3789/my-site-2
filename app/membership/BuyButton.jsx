@@ -1,50 +1,47 @@
 // app/membership/BuyButton.jsx
 "use client";
-import { useCallback, useState } from "react";
 
-export default function BuyButton({
-  cadence = "monthly", // "monthly" | "yearly"
-  className = "",
-  children,
-}) {
-  const [busy, setBusy] = useState(false);
+const PRICE_IDS = {
+  monthly: "prc_9-99-hj9j03x8",
+  yearly:  "prc_89-99-lt9v0nf5",
+};
 
-  const handleClick = useCallback(async () => {
-    if (busy) return;
-    setBusy(true);
-    try {
-      const res = await fetch("/api/checkout/member", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ cadence }),
-      });
+export default function BuyButton({ cadence = "monthly", className = "", children }) {
+  async function handleClick(e) {
+    e.preventDefault();
+    const ms =
+      (typeof window !== "undefined" &&
+        (window.$memberstack || window.memberstack || window.Memberstack)) ||
+      null;
 
-      const text = await res.text();
-      let data;
-      try { data = JSON.parse(text); } catch { /* leave as text */ }
-
-      if (!res.ok || !data?.url) {
-        console.error("Checkout create failed:", res.status, data || text);
-        const msg =
-          (data && (data.error || data.message || data.details)) ||
-          "Checkout failed. Please try again.";
-        alert(msg);
-        return;
-      }
-
-      // Go to Stripe (Memberstack-hosted checkout)
-      window.location.href = data.url;
-    } catch (e) {
-      console.error("Checkout error:", e);
-      alert(e?.message || "Checkout failed. Please try again.");
-    } finally {
-      setBusy(false);
+    if (!ms?.purchasePlansWithCheckout) {
+      console.error("purchasePlansWithCheckout not available");
+      alert("Checkout unavailable. Please refresh and try again.");
+      return;
     }
-  }, [busy, cadence]);
+
+    const priceId = PRICE_IDS[cadence] || PRICE_IDS.monthly;
+    const { origin } = window.location;
+
+    // ✔ As shown in Playground: Purchase Plans with Checkout → starts Stripe Checkout
+    // ✔ Paid → priceId; account is created during checkout (no pre-login needed)
+    await ms.purchasePlansWithCheckout({
+      priceId,
+      successUrl: `${origin}/members?status=success`,
+      cancelUrl: `${origin}/membership?canceled=1`,
+    });
+  }
 
   return (
-    <button onClick={handleClick} disabled={busy} className={className}>
-      {busy ? "Starting…" : children || "Start Full Access"}
+    <button
+      type="button"
+      onClick={handleClick}
+      className={
+        className ||
+        "inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
+      }
+    >
+      {children ?? (cadence === "yearly" ? "Start — Yearly" : "Start — Monthly")}
     </button>
   );
 }
