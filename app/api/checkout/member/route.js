@@ -1,7 +1,7 @@
 // app/api/checkout/member/route.js
 export const dynamic = "force-dynamic";
 
-const MS_SECRET = process.env.MEMBERSTACK_SECRET_KEY; // <-- server-side key
+const MS_SECRET = process.env.MEMBERSTACK_SECRET_KEY; // server-side key
 
 export async function POST(req) {
   try {
@@ -9,15 +9,14 @@ export async function POST(req) {
       return new Response(JSON.stringify({ error: "missing_secret" }), { status: 500 });
     }
 
-    // Build success/cancel URLs from the current request origin
     const { origin } = new URL(req.url);
     const successUrl = `${origin}/members?status=success`;
     const cancelUrl = `${origin}/membership?canceled=1`;
 
-    // Offer BOTH monthly + yearly — Memberstack will show the plan picker on Stripe
+    // You provided pln_… IDs → use planIds (not priceIds)
     const payload = {
       mode: "subscription",
-      priceIds: [
+      planIds: [
         "pln_rise-monthly-plan-y9ao098m",
         "pln_rise-yearly-plan-4w9s0n01",
       ],
@@ -36,18 +35,22 @@ export async function POST(req) {
 
     if (!msRes.ok) {
       const text = await msRes.text();
-      return new Response(JSON.stringify({ error: "memberstack_error", details: text }), { status: 500 });
+      return new Response(
+        JSON.stringify({ error: "memberstack_error", status: msRes.status, details: text }),
+        { status: 500 }
+      );
     }
 
     const data = await msRes.json();
-
-    // Expecting { url: "https://checkout.stripe.com/..." }
     if (!data?.url) {
       return new Response(JSON.stringify({ error: "no_checkout_url_returned" }), { status: 500 });
     }
 
     return new Response(JSON.stringify({ url: data.url }), { status: 200 });
   } catch (err) {
-    return new Response(JSON.stringify({ error: "server_error", message: String(err?.message || err) }), { status: 500 });
+    return new Response(
+      JSON.stringify({ error: "server_error", message: String(err?.message || err) }),
+      { status: 500 }
+    );
   }
 }
