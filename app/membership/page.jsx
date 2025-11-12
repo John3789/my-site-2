@@ -87,9 +87,19 @@ export default function Page() {
           </div>
 
           {/* CTA — DOM checkout (two explicit price choices) */}
-<div className="mt-8 mb-2 flex justify-center">
-  <BuyButton cadence="monthly" className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10">
-    Start Full Access
+<div className="mt-8 mb-2 flex justify-center gap-3 flex-wrap">
+  <BuyButton
+    cadence="monthly"
+    className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
+  >
+    Start — Monthly
+  </BuyButton>
+
+  <BuyButton
+    cadence="yearly"
+    className="inline-flex items-center rounded-md bg-transparent text-[var(--color-gold)] border border-[var(--color-gold)] px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:bg-[var(--color-gold)] hover:text-black hover:-translate-y-0.5 ring-1 ring-[var(--color-gold)]/40"
+  >
+    Start — Yearly (save ~25%)
   </BuyButton>
 </div>
 
@@ -167,12 +177,21 @@ export default function Page() {
       <section className="mt-16 text-center">
         <p className="text-lg opacity-85">Ready to Transform into the Best Version of Yourself?</p>
         {/* CTA — DOM checkout (two explicit price choices) */}
-<div className="mt-8 mb-2 flex justify-center">
-  <BuyButton cadence="monthly" className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10">
-    Start Full Access
+<div className="mt-8 mb-2 flex justify-center gap-3 flex-wrap">
+  <BuyButton
+    cadence="monthly"
+    className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
+  >
+    Start — Monthly
+  </BuyButton>
+
+  <BuyButton
+    cadence="yearly"
+    className="inline-flex items-center rounded-md bg-transparent text-[var(--color-gold)] border border-[var(--color-gold)] px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:bg-[var(--color-gold)] hover:text-black hover:-translate-y-0.5 ring-1 ring-[var(--color-gold)]/40"
+  >
+    Start — Yearly (save ~25%)
   </BuyButton>
 </div>
-
       </section>
 
       {/* Divider ABOVE footer, like Contact/Members */}
