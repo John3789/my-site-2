@@ -6,55 +6,59 @@ const PRICE_IDS = {
 };
 
 export default function BuyButton({ cadence = "monthly", className = "", children }) {
+  async function ensureSession(ms) {
+    // Is there a current member?
+    const cur = await ms.getCurrentMember?.().catch(() => null);
+    if (cur?.data) return true;
+
+    // Open modal to sign up / log in
+    try {
+      // You can swap "SIGNUP" for "LOGIN" if you prefer.
+      await ms.openModal?.("SIGNUP");
+    } catch {
+      // user closed the modal
+      return false;
+    }
+
+    // Re-check after modal closes
+    const after = await ms.getCurrentMember?.().catch(() => null);
+    return !!after?.data;
+  }
+
   async function handleClick(e) {
     e.preventDefault();
-    console.log("[BuyButton] click, cadence:", cadence);
 
     let ms =
       (typeof window !== "undefined" &&
         (window.$memberstack || window.memberstack || window.Memberstack)) ||
       null;
 
-    // If someone set it to a Promise, await it
     if (ms && typeof ms.then === "function") {
-      try { ms = await ms; } catch (err) { console.error("[MS] await failed:", err); }
+      try { ms = await ms; } catch {}
     }
 
-    if (!ms) {
-      console.error("[MS] not initialized (window.$memberstack is null)");
-      alert("Membership not ready. Please refresh and try again.");
+    if (!ms || typeof ms.purchasePlansWithCheckout !== "function") {
+      console.error("[MS] not ready", ms);
+      alert("Membership is loading. Please refresh and try again.");
       return;
     }
 
-    if (typeof ms.purchasePlansWithCheckout !== "function") {
-      console.error("[MS] purchasePlansWithCheckout missing on instance:", ms);
-      alert("Checkout unavailable. Please refresh and try again.");
-      return;
-    }
+    // Make sure a session exists (fixes 401 login-required)
+    const hasSession = await ensureSession(ms);
+    if (!hasSession) return; // user closed modal
 
     const priceId = PRICE_IDS[cadence] || PRICE_IDS.monthly;
     const { origin } = window.location;
-    const payload = {
-      priceId,
-      successUrl: `${origin}/members?status=success`,
-      cancelUrl: `${origin}/membership?canceled=1`,
-    };
-
-    console.log("[MS] purchasePlansWithCheckout payload:", payload);
 
     try {
-      // don't await the navigation — kick it off and let it redirect
-      const p = ms.purchasePlansWithCheckout(payload);
-      if (p && typeof p.catch === "function") {
-        p.catch(err => {
-          console.error("[MS] checkout promise rejected:", err);
-          alert("Checkout failed. Please try again.");
-        });
-      }
-      // If the SDK navigates away immediately, code after this won't run.
-      console.log("[MS] purchase invoked");
+      // This will navigate to Stripe Checkout
+      await ms.purchasePlansWithCheckout({
+        priceId,
+        successUrl: `${origin}/members?status=success`,
+        cancelUrl: `${origin}/membership?canceled=1`,
+      });
     } catch (err) {
-      console.error("[MS] purchase threw:", err);
+      console.error("[MS] checkout error:", err);
       alert("Checkout failed. Please try again.");
     }
   }
