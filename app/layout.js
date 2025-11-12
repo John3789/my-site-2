@@ -137,7 +137,7 @@ export default function RootLayout({ children }) {
 
       {/* single body (no nesting). NOTE: desktop-only min width to avoid mobile auto-zoom */}
       <body className="lg:min-w-[1200px] bg-[#F4F1EA] text-[#0C1415] antialiased [text-rendering:optimizeLegibility] [-webkit-font-smoothing:antialiased]">
-                <MSProvider>
+                <MemberstackProvider>
         <Header />
 
         <Script id="ios-blur-active-input" strategy="afterInteractive">
@@ -223,7 +223,7 @@ export default function RootLayout({ children }) {
         </LayoutFooterGate>
 
         <Analytics />
-                </MSProvider>
+                </MemberstackProvider>
       </body>
     </html>
   )
