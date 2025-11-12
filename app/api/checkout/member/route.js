@@ -15,7 +15,6 @@ export async function POST(req) {
       return new Response(JSON.stringify({ error: "Missing MEMBERSTACK_SECRET_KEY" }), { status: 500 });
     }
 
-    // Read cadence from JSON or form data; default monthly
     let cadence = "monthly";
     const ctype = req.headers.get("content-type") || "";
     if (ctype.includes("application/json")) {
@@ -23,8 +22,7 @@ export async function POST(req) {
       cadence = body?.cadence === "yearly" ? "yearly" : "monthly";
     } else if (ctype.includes("application/x-www-form-urlencoded") || ctype.includes("multipart/form-data")) {
       const fd = await req.formData().catch(() => null);
-      const v = fd?.get("cadence");
-      cadence = v === "yearly" ? "yearly" : "monthly";
+      cadence = fd?.get("cadence") === "yearly" ? "yearly" : "monthly";
     }
 
     const planId = PLAN_IDS[cadence];
@@ -44,7 +42,7 @@ export async function POST(req) {
       },
       body: JSON.stringify({
         mode: "subscription",
-        planIds: [planId],     // ← use planIds ONLY
+        planIds: [planId],   // ✅ planIds ONLY, just one plan
         successUrl,
         cancelUrl,
       }),
@@ -54,20 +52,12 @@ export async function POST(req) {
     let data; try { data = JSON.parse(text); } catch {}
 
     if (!res.ok) {
-      // Surface the real Memberstack error so we can act on it
-      return new Response(JSON.stringify({
-        error: "memberstack_error",
-        status: res.status,
-        details: data || text
-      }), { status: 500 });
+      return new Response(JSON.stringify({ error: "memberstack_error", status: res.status, details: data || text }), { status: 500 });
     }
-
-    const url = data?.url;
-    if (!url) {
+    if (!data?.url) {
       return new Response(JSON.stringify({ error: "no_checkout_url_returned", details: data || text }), { status: 500 });
     }
-
-    return new Response(JSON.stringify({ url }), { status: 200 });
+    return new Response(JSON.stringify({ url: data.url }), { status: 200 });
   } catch (err) {
     return new Response(JSON.stringify({ error: "server_error", message: String(err?.message || err) }), { status: 500 });
   }
