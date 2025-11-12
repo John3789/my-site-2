@@ -5,26 +5,34 @@ const PRICE_IDS = {
   yearly:  "prc_89_99-lt9v0nf5",
 };
 
-export default function BuyButton({ cadence = "monthly", className = "", children }) {
-  async function ensureSession(ms) {
-    // Is there a current member?
-    const cur = await ms.getCurrentMember?.().catch(() => null);
+async function ensureSession(ms, cadence) {
+  // already logged in?
+  try {
+    const cur = await ms.getCurrentMember?.();
     if (cur?.data) return true;
+  } catch {}
 
-    // Open modal to sign up / log in
-    try {
-      // You can swap "SIGNUP" for "LOGIN" if you prefer.
-      await ms.openModal?.("SIGNUP");
-    } catch {
-      // user closed the modal
-      return false;
-    }
-
-    // Re-check after modal closes
-    const after = await ms.getCurrentMember?.().catch(() => null);
-    return !!after?.data;
+  // try embedded modal first (SIGNUP shows create-account form)
+  try {
+    await ms.openModal?.("SIGNUP");
+  } catch {
+    /* user closed modal */
   }
 
+  try {
+    const after = await ms.getCurrentMember?.();
+    if (after?.data) return true;
+  } catch {}
+
+  // Fallback: full hosted signup (sets cookies reliably)
+  const origin = window.location.origin;
+  const hosted = (process.env.NEXT_PUBLIC_MS_HOSTED_AUTH_URL || "").replace(/\/$/, "");
+  const ret = `${origin}/membership?joined=1&cadence=${encodeURIComponent(cadence)}`;
+  window.location.href = `${hosted}/#/signup?redirect=${encodeURIComponent(ret)}`;
+  return false; // we navigated away
+}
+
+export default function BuyButton({ cadence = "monthly", className = "", children }) {
   async function handleClick(e) {
     e.preventDefault();
 
@@ -36,22 +44,18 @@ export default function BuyButton({ cadence = "monthly", className = "", childre
     if (ms && typeof ms.then === "function") {
       try { ms = await ms; } catch {}
     }
-
     if (!ms || typeof ms.purchasePlansWithCheckout !== "function") {
-      console.error("[MS] not ready", ms);
       alert("Membership is loading. Please refresh and try again.");
       return;
     }
 
-    // Make sure a session exists (fixes 401 login-required)
-    const hasSession = await ensureSession(ms);
-    if (!hasSession) return; // user closed modal
+    const ok = await ensureSession(ms, cadence);
+    if (!ok) return; // hosted redirect happened
 
     const priceId = PRICE_IDS[cadence] || PRICE_IDS.monthly;
     const { origin } = window.location;
 
     try {
-      // This will navigate to Stripe Checkout
       await ms.purchasePlansWithCheckout({
         priceId,
         successUrl: `${origin}/members?status=success`,

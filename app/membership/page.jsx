@@ -4,6 +4,8 @@ export const revalidate = 0;
 
 import SignInButton from "./SignInButton";
 import BuyButton from "./BuyButton"; // <-- NEW (replaces StartFullAccessButton import)
+import AutoContinueAfterSignup from "./AutoContinueAfterSignup";
+
 
 export const metadata = {
   title: "RISE Membership — Dr. Juan Pablo Salerno",
@@ -21,6 +23,8 @@ export const metadata = {
 export default function Page() {
   return (
     <main data-page="membership" className="mx-auto max-w-[1100px] px-6 py-12">
+          <AutoContinueAfterSignup />
+
       {/* HERO */}
       <section className="text-center">
         <h1 className="font-serif text-5xl md:text-5xl tracking-tight pt-10">RISE Membership</h1>
