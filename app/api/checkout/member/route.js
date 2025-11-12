@@ -17,8 +17,8 @@ export async function POST(req) {
     const payload = {
       mode: "subscription",
       planIds: [
-        "pln_rise-monthly-plan-y9ao098m",
-        "pln_rise-yearly-plan-4w9s0n01",
+    "prc_9-99-hj9j03x8",   // monthly
+    "prc_89-99-lt9v0nf5",  // yearly
       ],
       successUrl,
       cancelUrl,
