@@ -13,12 +13,12 @@ export async function POST(req) {
     const successUrl = `${origin}/members?status=success`;
     const cancelUrl = `${origin}/membership?canceled=1`;
 
-    // You provided pln_… IDs → use planIds (not priceIds)
+    // Use priceIds with prc_… values
     const payload = {
       mode: "subscription",
-      planIds: [
-    "prc_9-99-hj9j03x8",   // monthly
-    "prc_89-99-lt9v0nf5",  // yearly
+      priceIds: [
+        "prc_9-99-hj9j03x8",   // monthly
+        "prc_89-99-lt9v0nf5",  // yearly
       ],
       successUrl,
       cancelUrl,
