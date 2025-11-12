@@ -84,7 +84,9 @@ export default function Page() {
 
           {/* CTA — DOM checkout (two explicit price choices) */}
 <div className="mt-8 mb-2 flex justify-center">
-  <BuyButton cadence="monthly">Start Full Access</BuyButton>
+  <BuyButton cadence="monthly" className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10">
+    Start Full Access
+  </BuyButton>
 </div>
 
           {/* Sign in note (client component) */}
@@ -162,8 +164,11 @@ export default function Page() {
         <p className="text-lg opacity-85">Ready to Transform into the Best Version of Yourself?</p>
         {/* CTA — DOM checkout (two explicit price choices) */}
 <div className="mt-8 mb-2 flex justify-center">
-  <BuyButton cadence="monthly">Start Full Access</BuyButton>
+  <BuyButton cadence="monthly" className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10">
+    Start Full Access
+  </BuyButton>
 </div>
+
       </section>
 
       {/* Divider ABOVE footer, like Contact/Members */}
