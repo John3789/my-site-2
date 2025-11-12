@@ -83,10 +83,9 @@ export default function Page() {
           </div>
 
           {/* CTA — DOM checkout (two explicit price choices) */}
-          <div className="mt-8 mb-2 flex justify-center gap-3 flex-wrap">
-            <BuyButton cadence="monthly">Start — Monthly</BuyButton>
-            <BuyButton cadence="yearly">Start — Yearly</BuyButton>
-          </div>
+<div className="mt-8 mb-2 flex justify-center">
+  <BuyButton cadence="monthly">Start Full Access</BuyButton>
+</div>
 
           {/* Sign in note (client component) */}
           <div className="mt-3 text-center text-xs opacity-75">
@@ -162,10 +161,9 @@ export default function Page() {
       <section className="mt-16 text-center">
         <p className="text-lg opacity-85">Ready to Transform into the Best Version of Yourself?</p>
         {/* CTA — DOM checkout (two explicit price choices) */}
-        <div className="mt-8 mb-2 flex justify-center gap-3 flex-wrap">
-          <BuyButton cadence="monthly">Start — Monthly</BuyButton>
-          <BuyButton cadence="yearly">Start — Yearly</BuyButton>
-        </div>
+<div className="mt-8 mb-2 flex justify-center">
+  <BuyButton cadence="monthly">Start Full Access</BuyButton>
+</div>
       </section>
 
       {/* Divider ABOVE footer, like Contact/Members */}

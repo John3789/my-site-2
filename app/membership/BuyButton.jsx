@@ -21,14 +21,15 @@ export default function BuyButton({ cadence = "monthly" }) {
 
       const priceId = cadence === "yearly" ? YEARLY : MONTHLY;
 
-      await ms.purchasePlansWithCheckout({
-        priceId,
-        successUrl: `${window.location.origin}/members`,
-        cancelUrl: `${window.location.origin}/membership?canceled=1`,
-      });
+ await ms.purchasePlansWithCheckout({
+   priceIds: [priceId],
+   successUrl: `${window.location.origin}/members`,
+   cancelUrl: `${window.location.origin}/membership?canceled=1`,
+ });
     } catch (e) {
-      console.error("[MS checkout] failed:", e);
-      alert("Checkout failed. Please try again.");
+ console.error("[MS checkout] failed:", e);
+ const msg = e?.message || e?.error || "Checkout failed. Please try again.";
+ alert(msg);
     } finally {
       setBusy(false);
     }
