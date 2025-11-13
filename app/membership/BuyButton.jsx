@@ -6,8 +6,10 @@ const PRICE_IDS = {
   yearly: "prc_89-99-lt9v0nf5",
 };
 
-// Stripe coupon: 95% off once
-const COUPON_ID = "QI8eKMjf";
+const COUPON_IDS = {
+  monthly: "UMJ0pIHr",  // ✔ Your $1 coupon
+  yearly: null          // ❌ No yearly coupon
+};
 
 export default function BuyButton({ cadence = "monthly", className = "", children }) {
   async function handleClick(e) {
