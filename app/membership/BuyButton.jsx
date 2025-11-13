@@ -6,39 +6,38 @@ const PRICE_IDS = {
   yearly: "prc_89-99-jwgn03ep",
 };
 
-// Only MONTHLY has a coupon
-const MONTHLY_COUPON = "UMJ0pIHr";
+// Stripe coupon: 95% off once
+const COUPON_ID = "UMJ0pIHr";
 
 export default function BuyButton({ cadence = "monthly", className = "", children }) {
   async function handleClick(e) {
     e.preventDefault();
 
     const ms =
-      window.$memberstackDom ||
-      window.$memberstack ||
-      window.memberstack ||
-      window.Memberstack;
+      (typeof window !== "undefined" &&
+        (window.$memberstack || window.memberstack || window.Memberstack)) ||
+      null;
 
-    if (!ms || !ms.checkout) {
-      console.error("❌ Memberstack checkout() missing", ms);
+    if (!ms?.purchasePlansWithCheckout) {
+      console.error("purchasePlansWithCheckout not available", ms);
       alert("Checkout unavailable. Please refresh and try again.");
       return;
     }
 
-    const priceId = PRICE_IDS[cadence];
-    const options = { priceId };
-
-    // Apply discount ONLY for monthly
-    if (cadence === "monthly") {
-      options.coupon = MONTHLY_COUPON;
-    }
+    const priceId = PRICE_IDS[cadence] || PRICE_IDS.monthly;
+    const { origin } = window.location;
 
     try {
-      console.log("➡️ Calling ms.checkout()", options);
-      await ms.checkout(options);
+      // 👇 THIS is the important part: couponId is added here
+      await ms.purchasePlansWithCheckout({
+        priceId,
+        couponId: COUPON_ID,
+        successUrl: `${origin}/members?status=success`,
+        cancelUrl: `${origin}/membership?canceled=1`,
+      });
     } catch (err) {
-      console.error("❌ Checkout error:", err);
-      alert("Checkout failed. Please try again.");
+      console.error("[BuyButton] checkout error", err);
+      alert("Checkout failed. Please try again or contact support.");
     }
   }
 
@@ -51,8 +50,7 @@ export default function BuyButton({ cadence = "monthly", className = "", childre
         "inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
       }
     >
-      {children ??
-        (cadence === "yearly" ? "Start — Yearly" : "Start — Monthly")}
+      {children ?? (cadence === "yearly" ? "Start — Yearly" : "Start — Monthly")}
     </button>
   );
 }
