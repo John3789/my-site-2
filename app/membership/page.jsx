@@ -57,21 +57,21 @@ export default function Page() {
         <div className="mx-auto max-w-[750px] rounded-2xl bg-white/5 p-6 ring-1 ring-[var(--color-gold)]/60">
 <div className="relative">
   {/* LEFT — Monthly Trial Badge (gold) */}
-  <div className="absolute -top-3 left-0 inline-flex items-center gap-2 rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)] px-3 py-1 text-sm font-bold text-black shadow">
+  <div className="absolute -top-3 left-0 inline-flex items-center gap-2 rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)] px-3 py-1 text-xs font-bold text-black shadow">
     $1 first 30 days (monthly)
   </div>
 
   {/* RIGHT — Yearly Perks Badge (transparent + gold border, matches yearly CTA baseline) */}
-  <div className="absolute -top-3 right-0 inline-flex items-center gap-2 rounded-full border border-[var(--color-gold)] bg-transparent px-3 py-1 text-sm font-semibold text-[var(--color-gold)] shadow-md">
+  <div className="absolute -top-3 right-0 inline-flex items-center gap-2 rounded-full border border-[var(--color-gold)] bg-transparent px-3 py-1 text-xs font-semibold text-[var(--color-gold)] shadow-md">
     Free Custom Meditation (yearly)
   </div>
 </div>
 
 
-          <div className="mt-6 text-center text-2xl font-bold">Limited Time Offer</div>
+          <div className="mt-8 text-center text-2xl font-bold">Limited Time Offer</div>
 
           {/* Pricing */}
-          <div className="mt-3 flex items-end justify-center gap-10">
+          <div className="mt-6 flex items-end justify-center gap-10">
             <div className="text-center">
               <div className="flex items-baseline justify-center gap-2">
                 <span className="text-md opacity-60 line-through">$19.99</span>
