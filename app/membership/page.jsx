@@ -116,9 +116,7 @@ export default function Page() {
             Already a member?{" "}
             <SignInButton className="underline hover:no-underline">Sign in</SignInButton>
           </div>
-          <div className="mt-3 text-center text-xs opacity-70">
-            Manage or cancel anytime from your account.
-          </div>
+ 
         </div>
       </section>
 
