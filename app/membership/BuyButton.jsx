@@ -3,7 +3,7 @@
 
 const PRICE_IDS = {
   monthly: "prc_9-99-hj9j03x8",
-  yearly: "prc_89-99-lt9v0nf5",
+  yearly: "prc_89-99-jwgn03ep",
 };
 
 // Stripe coupon: 95% off once
