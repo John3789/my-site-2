@@ -80,7 +80,7 @@ export default function Page() {
   <img
     src="/sunset2.jpg"
     alt="Hand reaching toward the sun over the water at sunset"
-    className="block w-full h-auto"
+    className="block w-full h-auto opacity-90"
       priority
       fetchPriority="high"
   />
