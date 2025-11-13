@@ -1,11 +1,12 @@
+// app/membership/BuyButton.jsx
 "use client";
 
 const PRICE_IDS = {
   monthly: "prc_9-99-hj9j03x8",
-  yearly:  "prc_89-99-lt9v0nf5",
+  yearly: "prc_89-99-lt9v0nf5",
 };
 
-// Stripe coupon: $8.99 off ONCE (for monthly)
+// Stripe coupon: 95% off once
 const MONTHLY_COUPON_ID = "UMJ0pIHr";
 
 export default function BuyButton({ cadence = "monthly", className = "", children }) {
@@ -26,28 +27,17 @@ export default function BuyButton({ cadence = "monthly", className = "", childre
     const priceId = PRICE_IDS[cadence] || PRICE_IDS.monthly;
     const { origin } = window.location;
 
-    // 👉 Only include coupon for monthly
-    const checkoutOptions =
-      cadence === "monthly"
-        ? {
-            priceId,
-            stripeCouponId: MONTHLY_COUPON_ID, // ✔ coupon only on monthly
-            successUrl: `${origin}/members?status=success`,
-            cancelUrl: `${origin}/membership?canceled=1`,
-          }
-        : {
-            priceId,
-            // ❌ yearly has no coupon
-            successUrl: `${origin}/members?status=success`,
-            cancelUrl: `${origin}/membership?canceled=1`,
-          };
-
     try {
-      console.log("[BuyButton] Starting checkout…", checkoutOptions);
-      await ms.purchasePlansWithCheckout(checkoutOptions);
+      // 👇 THIS is the important part: couponId is added here
+      await ms.purchasePlansWithCheckout({
+        priceId,
+        couponId: COUPON_ID,
+        successUrl: `${origin}/members?status=success`,
+        cancelUrl: `${origin}/membership?canceled=1`,
+      });
     } catch (err) {
-      console.error("[BuyButton] Checkout error:", err);
-      alert("Checkout failed. Please try again.");
+      console.error("[BuyButton] checkout error", err);
+      alert("Checkout failed. Please try again or contact support.");
     }
   }
 
