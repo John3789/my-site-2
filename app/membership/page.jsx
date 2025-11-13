@@ -28,17 +28,18 @@ export default function Page() {
           <AutoContinueAfterSignup />
 
 {/* TOP BANNER — IMAGE ONLY */}
-<section className="mb-6">
+<section className="mt-15 mb-6">
   <div className="relative mx-auto max-w-[1100px] overflow-hidden rounded-2xl border border-[var(--color-gold)]/60">
-    <img
-      src="sunset.jpg"
-      alt="Hand reaching toward the sun over the water at sunset"
-      className="w-full h-full object-cover opacity-90"
-    />
+<img
+  src="sunset.jpg"
+  alt="Hand reaching toward the sun over the water at sunset"
+  className="w-full h-[240px] md:h-[300px] object-cover opacity-80"
+  style={{ objectPosition: "center 60%" }}
+/>
   </div>
 </section>
 
-<h1 className="font-serif text-5xl md:text-5xl tracking-tight text-center mt-10">
+<h1 className="font-serif text-5xl md:text-5xl tracking-tight text-center mt-8">
   RISE Membership
 </h1>
 
@@ -51,14 +52,14 @@ export default function Page() {
           </SignInButton>
         </p>
 
-        <p className="mt-6 text-lg md:text-xl opacity-90 leading-relaxed mx-auto max-w-[880px]">
+        <p className="text-center mt-4 text-lg md:text-xl opacity-90 leading-relaxed mx-auto max-w-[880px]">
           Feeling emotionally drained or stuck in cycles that hold you back? I’ve been there—and I
           know how hard it is to show up for life when your mind feels off-balance. That’s why I
           created <span className="font-semibold">RISE</span>—to help you break free from negative
           patterns, rebuild your energy, and activate the mindset that helps you thrive.
           <span className="font-semibold"> Join now to reclaim your power and step into the life you were meant to lead.</span>
         </p>
-        <p className="mx-auto mt-6 max-w-[860px] text-xs opacity-75">
+        <p className="text-center mx-auto mt-6 max-w-[860px] text-xs opacity-75">
           Dr. Juan Pablo Salerno is an award-winning mental health science expert and thought leader,
           author, and professor.
         </p>
