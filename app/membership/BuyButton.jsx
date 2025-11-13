@@ -3,7 +3,7 @@
 
 const PRICE_IDS = {
   monthly: "prc_9-99-hj9j03x8",
-  yearly: "prc_89-99-lt9v0nf5",
+  yearly:  "prc_89-99-lt9v0nf5",
 };
 
 const COUPON_IDS = {
@@ -21,26 +21,21 @@ export default function BuyButton({ cadence = "monthly", className = "", childre
       null;
 
     if (!ms?.purchasePlansWithCheckout) {
-      console.error("purchasePlansWithCheckout not available", ms);
+      console.error("purchasePlansWithCheckout not available");
       alert("Checkout unavailable. Please refresh and try again.");
       return;
     }
 
-    const priceId = PRICE_IDS[cadence] || PRICE_IDS.monthly;
+    const priceId = PRICE_IDS[cadence];
+    const couponId = COUPON_IDS[cadence] || undefined;  // 👈 Only applies for monthly
     const { origin } = window.location;
 
-    try {
-      // 👇 THIS is the important part: couponId is added here
-      await ms.purchasePlansWithCheckout({
-        priceId,
-        couponId: COUPON_ID,
-        successUrl: `${origin}/members?status=success`,
-        cancelUrl: `${origin}/membership?canceled=1`,
-      });
-    } catch (err) {
-      console.error("[BuyButton] checkout error", err);
-      alert("Checkout failed. Please try again or contact support.");
-    }
+    await ms.purchasePlansWithCheckout({
+      priceId,
+      couponId, // 👈 applies ONLY for monthly
+      successUrl: `${origin}/members?status=success`,
+      cancelUrl: `${origin}/membership?canceled=1`,
+    });
   }
 
   return (
