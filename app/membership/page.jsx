@@ -33,7 +33,7 @@ export default function Page() {
 <img
   src="sunset.jpg"
   alt="Hand reaching toward the sun over the water at sunset"
-  className="w-full h-[240px] md:h-[300px] object-cover opacity-80"
+  className="w-full h-[240px] md:h-[280px] object-cover opacity-80"
   style={{ objectPosition: "center 60%" }}
 />
   </div>
