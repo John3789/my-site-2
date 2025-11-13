@@ -71,9 +71,6 @@ export default function MeditationClient() {
               <p className="text-lg md:text-xl opacity-90 leading-relaxed narrow-landscape-80 narrow-landscape-80-ipad">
                 Practices designed to help reset your body, calm your mind, and uplift your spirit — guiding you through the day with clarity and ease.
               </p>
-              <p className="mt-5 text-sm opacity-70">
-                This page is a work in progress. I’ll be adding new tracks periodically.
-              </p>
             </section>
 
             {/* Divider — match two-column container width */}
