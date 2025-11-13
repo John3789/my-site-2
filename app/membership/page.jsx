@@ -55,11 +55,18 @@ export default function Page() {
       {/* FULL ACCESS */}
       <section id="pricing" className="mt-12">
         <div className="mx-auto max-w-[750px] rounded-2xl bg-white/5 p-6 ring-1 ring-[var(--color-gold)]/60">
-          <div className="relative">
-            <div className="absolute -top-3 right-0 inline-flex items-center gap-2 rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)] px-3 py-1 text-sm font-bold text-black shadow">
-              $1 first 30 days (monthly)
-            </div>
-          </div>
+<div className="relative">
+  {/* LEFT — Monthly Trial Badge (gold) */}
+  <div className="absolute -top-3 left-0 inline-flex items-center gap-2 rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)] px-3 py-1 text-sm font-bold text-black shadow">
+    $1 first 30 days (monthly)
+  </div>
+
+  {/* RIGHT — Yearly Perks Badge (transparent + gold border, matches yearly CTA baseline) */}
+  <div className="absolute -top-3 right-0 inline-flex items-center gap-2 rounded-full border border-[var(--color-gold)] bg-transparent px-3 py-1 text-sm font-semibold text-[var(--color-gold)] shadow-md">
+    Free Custom Meditation (yearly)
+  </div>
+</div>
+
 
           <div className="mt-6 text-center text-2xl font-bold">Limited Time Offer</div>
 
@@ -87,8 +94,8 @@ export default function Page() {
             <MiniTitleCard title="Meditation Library" />
             <MiniTitleCard title="Social Media Resources Library" />
             <MiniTitleCard title="Weekly Wisdom Emails" />
-            <MiniTitleCard title="Monthly Live Sessions Online" />
-            <MiniTitleCard title="Dr. Juan Pablo Salerno AI" />
+            <MiniTitleCard title="Monthly Live Online Sessions" />
+            <MiniTitleCard title="Dr. Salerno AI" />
             <MiniTitleCard title="Discounted Custom Meditations" />
             <MiniTitleCard title="Vision Calls" />
             <MiniTitleCard title="Mental Health & Growth Guides" />
@@ -174,7 +181,7 @@ className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black
               <div>
                 <div className="font-semibold">Yearly Membership Perk</div>
                 <div className="mt-1 text-sm opacity-85">
-                  Free 5-minute custom meditation <span className="whitespace-nowrap">+ Vision Call</span> at signup.
+                  One-time free 5-minute custom meditation <span className="whitespace-nowrap">+ vision call</span> included with your yearly membership purchase ($50 value).
                 </div>
               </div>
             </div>

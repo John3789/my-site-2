@@ -100,7 +100,7 @@ export default function MembersIsland() {
           <Card href="/members/resources#social" icon="📚" title="Social Media Resources Library" desc="Curated posts and reframes by theme. Find the prompt that shifts your day." />
           <Card href="/members/resources#wisdom" icon="✉️" title="Weekly Wisdom Emails" desc="Short, uplifting nudges to keep you moving—one each week." />
           <Card href="/members/resources#guide" icon="📄" title="Mental Health & Growth Guides" desc="A digestible 1–2 page guide with practical insights you can use today." />
-          <Card href="/members/live" icon="📅" title="Monthly Live Sessions Online" desc="Join the next live reset and Q&A. Recordings available until the next session." />
+          <Card href="/members/live" icon="📅" title="Monthly Live Online Sessions" desc="Join the next live reset and Q&A. Recordings available until the next session." />
           <Card href="/members/ai" icon={<img src="/headshot.jpg" alt="Dr. Juan Pablo Salerno" className="h-9 w-9 rounded-full object-cover ring-1 ring-white/15 -mt-2" />} title="Dr. Salerno AI" desc="Chat with my AI self — a digital version of me that knows my insights, guidance, and tools." />
           <Card href="/members/discount" icon="📿" title="Custom Meditations + Vision Calls" desc="Personalized audio (5, 10, 15 min) + a complimentary 30-minute Vision Call." />
           <Card href="/contact" icon="🛟" title="Support & Contact" desc="Reach out with concerns or browse common questions in the FAQ." />
