@@ -153,9 +153,9 @@ export default function Page() {
           </div>
 
           <div className="mt-4 grid gap-4 md:grid-cols-3">
-            <DiscountCard label="5 minutes" memberPrice="$42.50" regularPrice="$50" savings="15%" />
+            <DiscountCard label="5 minutes" memberPrice="$40" regularPrice="$50" savings="20%" />
             <DiscountCard label="10 minutes" memberPrice="$75" regularPrice="$100" savings="25%" />
-            <DiscountCard label="15 minutes" memberPrice="$97.50" regularPrice="$150" savings="35%" />
+            <DiscountCard label="15 minutes" memberPrice="$100" regularPrice="$150" savings="33%" />
           </div>
 
           <div className="mt-4 rounded-lg border border-white/15 bg-white/5 p-4 text-sm">
