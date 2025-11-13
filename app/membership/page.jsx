@@ -112,7 +112,7 @@ export default function Page() {
 </div>
 
           {/* Sign in note (client component) */}
-          <div className="mt-3 text-center text-xs opacity-75">
+          <div className="mt-6 text-center text-xs opacity-75">
             Already a member?{" "}
             <SignInButton className="underline hover:no-underline">Sign in</SignInButton>
           </div>
@@ -182,7 +182,7 @@ export default function Page() {
       </section>
 
       {/* CTA */}
-      <section className="mt-16 text-center">
+      <section className="mt-12 text-center">
         <p className="text-lg opacity-85">Ready to Transform into the Best Version of Yourself?</p>
         {/* CTA — DOM checkout (two explicit price choices) */}
 <div className="mt-8 mb-2 flex justify-center gap-3 flex-wrap">
