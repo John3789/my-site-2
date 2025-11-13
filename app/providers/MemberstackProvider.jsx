@@ -17,7 +17,7 @@ export default function MemberstackProvider({ children }) {
       return;
     }
 
-    // ✅ DO NOT USE CUSTOM DOMAIN
+    // ✅ NO custom domain here
     const ms = memberstackDOM.init({
       publicKey: PUBLIC_KEY,
     });
@@ -38,4 +38,3 @@ export default function MemberstackProvider({ children }) {
 
   return children;
 }
-r
