@@ -7,21 +7,20 @@ import memberstackDOM from "@memberstack/dom";
 const PUBLIC_KEY = process.env.NEXT_PUBLIC_MS_PUBLIC_KEY;
 
 export default function MemberstackProvider({ children }) {
-  const booted = useRef(false);
+  const inited = useRef(false);
 
   useEffect(() => {
-    if (booted.current) return;
-    booted.current = true;
+    if (inited.current) return;
+    inited.current = true;
 
     if (!PUBLIC_KEY) {
       console.warn("[MS] Missing NEXT_PUBLIC_MS_PUBLIC_KEY");
       return;
     }
 
-    // ✅ Use default Memberstack domain for now
+    // ✅ NO domain here – let Memberstack use its hosted auth
     const ms = memberstackDOM.init({
       publicKey: PUBLIC_KEY,
-      // no `domain` key here
     });
 
     if (typeof window !== "undefined") {
@@ -30,13 +29,12 @@ export default function MemberstackProvider({ children }) {
       window.Memberstack = ms;
     }
 
-    ms.mount?.()
-      .then(() => {
-        console.log("[MS] DOM mounted (default domain)");
-      })
-      .catch((err) => {
-        console.error("[MS] mount error:", err);
-      });
+    try {
+      ms.mount?.();
+      console.log("[MS] DOM mounted (no custom domain)");
+    } catch (err) {
+      console.error("[MS] mount error:", err);
+    }
   }, []);
 
   return children;
