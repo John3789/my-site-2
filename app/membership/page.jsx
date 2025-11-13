@@ -89,21 +89,19 @@ export default function Page() {
 
           {/* CTA — DOM checkout (two explicit price choices) */}
 <div className="mt-8 mb-2 flex justify-center gap-3 flex-wrap">
-<button
-  data-ms-plan="pln_rise-monthly-plan-y9ao098m"
-  data-ms-coupon="UMJ0pIHr"
-  class="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
->
-  Start — Monthly
-</button>
+  <BuyButton
+    cadence="monthly"
+    className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
+  >
+    Start — Monthly
+  </BuyButton>
 
-
-<button
-  data-ms-plan="pln_rise-yearly-plan-4w9s0n01"
-  class="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
->
+  <BuyButton
+    cadence="yearly"
+    className="inline-flex items-center rounded-md bg-transparent text-[var(--color-gold)] border border-[var(--color-gold)] px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:bg-[var(--color-gold)] hover:text-black hover:-translate-y-0.5 ring-1 ring-[var(--color-gold)]/40"
+  >
     Start — Yearly (save ~25%)
-</button>
+  </BuyButton>
 </div>
 
           {/* Sign in note (client component) */}
@@ -181,20 +179,19 @@ export default function Page() {
         <p className="text-lg opacity-85">Ready to Transform into the Best Version of Yourself?</p>
         {/* CTA — DOM checkout (two explicit price choices) */}
 <div className="mt-8 mb-2 flex justify-center gap-3 flex-wrap">
-<button
-  data-ms-plan="pln_rise-monthly-plan-y9ao098m"
-  data-ms-coupon="UMJ0pIHr"
-  class="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
->
-  Start — Monthly
-</button>
+  <BuyButton
+    cadence="monthly"
+    className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
+  >
+    Start — Monthly
+  </BuyButton>
 
-<button
-  data-ms-plan="pln_rise-yearly-plan-4w9s0n01"
-  class="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
->
+  <BuyButton
+    cadence="yearly"
+    className="inline-flex items-center rounded-md bg-transparent text-[var(--color-gold)] border border-[var(--color-gold)] px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:bg-[var(--color-gold)] hover:text-black hover:-translate-y-0.5 ring-1 ring-[var(--color-gold)]/40"
+  >
     Start — Yearly (save ~25%)
-</button>
+  </BuyButton>
 </div>
       </section>
 
