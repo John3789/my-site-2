@@ -1,4 +1,3 @@
-// app/membership/BuyButton.jsx
 "use client";
 
 const PRICE_IDS = {
@@ -6,10 +5,8 @@ const PRICE_IDS = {
   yearly:  "prc_89-99-lt9v0nf5",
 };
 
-const COUPON_IDS = {
-  monthly: "UMJ0pIHr",  // ✔ Your $1 coupon
-  yearly: null          // ❌ No yearly coupon
-};
+// Stripe coupon: $8.99 off ONCE (for monthly)
+const MONTHLY_COUPON_ID = "QI8eKMjf";
 
 export default function BuyButton({ cadence = "monthly", className = "", children }) {
   async function handleClick(e) {
@@ -21,21 +18,37 @@ export default function BuyButton({ cadence = "monthly", className = "", childre
       null;
 
     if (!ms?.purchasePlansWithCheckout) {
-      console.error("purchasePlansWithCheckout not available");
+      console.error("purchasePlansWithCheckout not available", ms);
       alert("Checkout unavailable. Please refresh and try again.");
       return;
     }
 
-    const priceId = PRICE_IDS[cadence];
-    const couponId = COUPON_IDS[cadence] || undefined;  // 👈 Only applies for monthly
+    const priceId = PRICE_IDS[cadence] || PRICE_IDS.monthly;
     const { origin } = window.location;
 
-    await ms.purchasePlansWithCheckout({
-      priceId,
-      couponId, // 👈 applies ONLY for monthly
-      successUrl: `${origin}/members?status=success`,
-      cancelUrl: `${origin}/membership?canceled=1`,
-    });
+    // 👉 Only include coupon for monthly
+    const checkoutOptions =
+      cadence === "monthly"
+        ? {
+            priceId,
+            stripeCouponId: MONTHLY_COUPON_ID, // ✔ coupon only on monthly
+            successUrl: `${origin}/members?status=success`,
+            cancelUrl: `${origin}/membership?canceled=1`,
+          }
+        : {
+            priceId,
+            // ❌ yearly has no coupon
+            successUrl: `${origin}/members?status=success`,
+            cancelUrl: `${origin}/membership?canceled=1`,
+          };
+
+    try {
+      console.log("[BuyButton] Starting checkout…", checkoutOptions);
+      await ms.purchasePlansWithCheckout(checkoutOptions);
+    } catch (err) {
+      console.error("[BuyButton] Checkout error:", err);
+      alert("Checkout failed. Please try again.");
+    }
   }
 
   return (
