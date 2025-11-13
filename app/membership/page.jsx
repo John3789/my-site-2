@@ -27,19 +27,31 @@ export default function Page() {
     <main data-page="membership" className="mx-auto max-w-[1100px] px-6 py-12">
           <AutoContinueAfterSignup />
 
-      {/* HERO */}
-      <section className="text-center">
-        <h1 className="font-serif text-5xl md:text-5xl tracking-tight pt-10">RISE Membership</h1>
+{/* TOP BANNER — IMAGE ONLY */}
+<section className="mb-6">
+  <div className="relative mx-auto max-w-[1100px] overflow-hidden rounded-2xl border border-[var(--color-gold)]/60">
+    <img
+      src="sunset.jpg"
+      alt="Hand reaching toward the sun over the water at sunset"
+      className="w-full h-full object-cover opacity-90"
+    />
+  </div>
+</section>
+
+<h1 className="font-serif text-5xl md:text-5xl tracking-tight text-center mt-10">
+  RISE Membership
+</h1>
+
 
         {/* Top Sign In link (client component) */}
-        <p className="mt-3 mb-3 text-sm opacity-90">
+        <p className="mx-auto text-center mt-3 mb-3 text-sm opacity-90">
           Already a member?{" "}
           <SignInButton className="font-semibold text-[var(--color-gold)] hover:underline">
             Sign in →
           </SignInButton>
         </p>
 
-        <p className="text-lg md:text-xl opacity-90 leading-relaxed mx-auto max-w-[880px]">
+        <p className="mt-6 text-lg md:text-xl opacity-90 leading-relaxed mx-auto max-w-[880px]">
           Feeling emotionally drained or stuck in cycles that hold you back? I’ve been there—and I
           know how hard it is to show up for life when your mind feels off-balance. That’s why I
           created <span className="font-semibold">RISE</span>—to help you break free from negative
@@ -50,7 +62,6 @@ export default function Page() {
           Dr. Juan Pablo Salerno is an award-winning mental health science expert and thought leader,
           author, and professor.
         </p>
-      </section>
 
       {/* FULL ACCESS */}
       <section id="pricing" className="mt-12">

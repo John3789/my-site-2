@@ -6,9 +6,6 @@ const PRICE_IDS = {
   yearly: "prc_89-99-jwgn03ep",
 };
 
-// Stripe coupon: 95% off once
-const COUPON_ID = "UMJ0pIHr";
-
 export default function BuyButton({ cadence = "monthly", className = "", children }) {
   async function handleClick(e) {
     e.preventDefault();
@@ -28,10 +25,8 @@ export default function BuyButton({ cadence = "monthly", className = "", childre
     const { origin } = window.location;
 
     try {
-      // 👇 THIS is the important part: couponId is added here
       await ms.purchasePlansWithCheckout({
         priceId,
-        couponId: COUPON_ID,
         successUrl: `${origin}/members?status=success`,
         cancelUrl: `${origin}/membership?canceled=1`,
       });
