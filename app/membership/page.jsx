@@ -81,6 +81,8 @@ export default function Page() {
     src="/sunset2.jpg"
     alt="Hand reaching toward the sun over the water at sunset"
     className="block w-full h-auto"
+      priority
+      fetchPriority="high"
   />
 </div>
             
