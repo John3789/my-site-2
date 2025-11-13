@@ -181,7 +181,7 @@ className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black
               <div>
                 <div className="font-semibold">Yearly Membership Perk</div>
                 <div className="mt-1 text-sm opacity-85">
-                  One-time free 5-minute custom meditation <span className="whitespace-nowrap">+ vision call</span> included with your yearly membership purchase ($50 value).
+                  One-time free 5-minute custom meditation <span className="whitespace-nowrap">+ vision call</span> ($50 value) included with your yearly membership purchase.
                 </div>
               </div>
             </div>
