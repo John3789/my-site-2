@@ -1,69 +1,43 @@
+// app/membership/BuyButton.jsx
 "use client";
 
 const PRICE_IDS = {
   monthly: "prc_9-99-hj9j03x8",
-  yearly:  "prc_89-99-lt9v0nf5",
+  yearly: "prc_89-99-lt9v0nf5",
 };
 
-async function ensureSession(ms, cadence) {
-  // already logged in?
-  try {
-    const cur = await ms.getCurrentMember?.();
-    if (cur?.data) return true;
-  } catch {}
-
-  // try embedded modal first (SIGNUP shows create-account form)
-  try {
-    await ms.openModal?.("SIGNUP");
-  } catch {
-    /* user closed modal */
-  }
-
-  try {
-    const after = await ms.getCurrentMember?.();
-    if (after?.data) return true;
-  } catch {}
-
-  // Fallback: full hosted signup (sets cookies reliably)
-  const origin = window.location.origin;
-  const hosted = (process.env.NEXT_PUBLIC_MS_HOSTED_AUTH_URL || "").replace(/\/$/, "");
-  const ret = `${origin}/membership?joined=1&cadence=${encodeURIComponent(cadence)}`;
-  window.location.href = `${hosted}/#/signup?redirect=${encodeURIComponent(ret)}`;
-  return false; // we navigated away
-}
+// Stripe coupon: 95% off once
+const COUPON_ID = "QI8eKMjf";
 
 export default function BuyButton({ cadence = "monthly", className = "", children }) {
   async function handleClick(e) {
     e.preventDefault();
 
-    let ms =
+    const ms =
       (typeof window !== "undefined" &&
         (window.$memberstack || window.memberstack || window.Memberstack)) ||
       null;
 
-    if (ms && typeof ms.then === "function") {
-      try { ms = await ms; } catch {}
-    }
-    if (!ms || typeof ms.purchasePlansWithCheckout !== "function") {
-      alert("Membership is loading. Please refresh and try again.");
+    if (!ms?.purchasePlansWithCheckout) {
+      console.error("purchasePlansWithCheckout not available", ms);
+      alert("Checkout unavailable. Please refresh and try again.");
       return;
     }
-
-    const ok = await ensureSession(ms, cadence);
-    if (!ok) return; // hosted redirect happened
 
     const priceId = PRICE_IDS[cadence] || PRICE_IDS.monthly;
     const { origin } = window.location;
 
     try {
+      // 👇 THIS is the important part: couponId is added here
       await ms.purchasePlansWithCheckout({
         priceId,
+        couponId: COUPON_ID,
         successUrl: `${origin}/members?status=success`,
         cancelUrl: `${origin}/membership?canceled=1`,
       });
     } catch (err) {
-      console.error("[MS] checkout error:", err);
-      alert("Checkout failed. Please try again.");
+      console.error("[BuyButton] checkout error", err);
+      alert("Checkout failed. Please try again or contact support.");
     }
   }
 

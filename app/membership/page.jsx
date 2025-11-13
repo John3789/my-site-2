@@ -5,6 +5,7 @@ export const revalidate = 0;
 import SignInButton from "./SignInButton";
 import BuyButton from "./BuyButton"; // <-- NEW (replaces StartFullAccessButton import)
 import AutoContinueAfterSignup from "./AutoContinueAfterSignup";
+const STRIPE_COUPON_ID = "QI8eKMjf";  // ⬅️ put your real Stripe coupon/promo ID
 
 
 export const metadata = {
