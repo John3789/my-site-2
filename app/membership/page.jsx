@@ -22,50 +22,80 @@ export const metadata = {
   },
 };
 
+
 export default function Page() {
   return (
-    <main data-page="membership" className="mx-auto max-w-[1100px] px-6 py-12">
-          <AutoContinueAfterSignup />
+    <main
+      data-page="membership"
+      className="mx-auto max-w-[1100px] px-6 py-12"
+    >
+      {/* Keep this firing early */}
+      <AutoContinueAfterSignup />
 
-{/* TOP BANNER — IMAGE ONLY */}
-<section className="mt-15 mb-6">
-  <div className="relative mx-auto max-w-[1100px] overflow-hidden rounded-2xl border border-[var(--color-gold)]/60">
-<img
-  src="sunset.jpg"
-  alt="Hand reaching toward the sun over the water at sunset"
-  className="w-full h-[240px] md:h-[280px] object-cover opacity-80"
-  style={{ objectPosition: "center 60%" }}
-/>
-  </div>
-</section>
+        {/* HERO SECTION: title + copy + image (like About page) */}
+      <section className="mx-auto max-w-[1100px] mt-10 mb-10">
+        {/* Title + sign in */}
+        <div className="text-center">
+          <h1 className="font-serif text-5xl md:text-6xl tracking-tight text-[var(--color-cream)]">
+            RISE Membership
+          </h1>
+          <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto mt-5 mb-0 rounded" />
 
-<h1 className="font-serif text-5xl md:text-5xl tracking-tight text-center mt-8">
-  RISE Membership
-</h1>
+          <p className="mt-1 text-sm opacity-90">
+            Already a member?{" "}
+            <SignInButton className="font-semibold text-[var(--color-gold)] hover:underline mb-5">
+              Sign in →
+            </SignInButton>
+          </p>
+        </div>
 
+        {/* Two-column layout: description + image */}
+        <div className="mt-5 grid gap-10 md:grid-cols-2 md:items-center">
+          {/* LEFT: description */}
+          <div>
+            <p className="text-lg md:text-xl opacity-90 leading-relaxed">
+              Feeling emotionally drained or stuck in cycles that hold you back? I’ve been there—
+              and I know how hard it is to show up for life when your mind feels off-balance.
+              That’s why I created <span className="font-semibold">RISE</span>—to help you break
+              free from negative patterns, rebuild your energy, and activate the mindset that helps
+              you thrive.
+              <span className="font-semibold">
+                {" "}
+                Join now to reclaim your power and step into the life you were meant to lead.
+              </span>
+            </p>
 
-        {/* Top Sign In link (client component) */}
-        <p className="mx-auto text-center mt-3 mb-3 text-sm opacity-90">
-          Already a member?{" "}
-          <SignInButton className="font-semibold text-[var(--color-gold)] hover:underline">
-            Sign in →
-          </SignInButton>
-        </p>
-
-        <p className="text-center mt-4 text-lg md:text-xl opacity-90 leading-relaxed mx-auto max-w-[880px]">
-          Feeling emotionally drained or stuck in cycles that hold you back? I’ve been there—and I
-          know how hard it is to show up for life when your mind feels off-balance. That’s why I
-          created <span className="font-semibold">RISE</span>—to help you break free from negative
-          patterns, rebuild your energy, and activate the mindset that helps you thrive.
-          <span className="font-semibold"> Join now to reclaim your power and step into the life you were meant to lead.</span>
-        </p>
-        <p className="text-center mx-auto mt-6 max-w-[860px] text-xs opacity-75">
+                   
+        <p className="mx-auto mt-6 max-w-[860px] text-xs opacity-75">
           Dr. Juan Pablo Salerno is an award-winning mental health science expert and thought leader,
           author, and professor.
         </p>
 
+
+          </div>
+
+          {/* RIGHT: image (sunset hand) */}
+          <div> 
+<div className="mt-5 mx-auto max-w-[1100px] overflow-hidden squared-2xl">
+  <img
+    src="/sunset2.jpg"
+    alt="Hand reaching toward the sun over the water at sunset"
+    className="block w-full h-auto"
+  />
+</div>
+            
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+ 
+
       {/* FULL ACCESS */}
-      <section id="pricing" className="mt-12">
+      <section id="pricing" className="mt-18">
         <div className="mx-auto max-w-[750px] rounded-2xl bg-white/5 p-6 ring-1 ring-[var(--color-gold)]/60">
 <div className="relative">
   {/* LEFT — Monthly Trial Badge (gold) */}
