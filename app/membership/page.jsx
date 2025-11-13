@@ -1,12 +1,12 @@
-// app/membership/page.jsx — RISE Membership (v8.7)
+// app/membership/page.jsx — RISE Membership (v8.7.1 – 50% anchor pricing)
+
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
 import SignInButton from "./SignInButton";
 import BuyButton from "./BuyButton"; // <-- NEW (replaces StartFullAccessButton import)
 import AutoContinueAfterSignup from "./AutoContinueAfterSignup";
-const STRIPE_COUPON_ID = "QI8eKMjf";  // ⬅️ put your real Stripe coupon/promo ID
-
+const STRIPE_COUPON_ID = "QI8eKMjf"; // ⬅️ put your real Stripe coupon/promo ID
 
 export const metadata = {
   title: "RISE Membership — Dr. Juan Pablo Salerno",
@@ -24,7 +24,7 @@ export const metadata = {
 export default function Page() {
   return (
     <main data-page="membership" className="mx-auto max-w-[1100px] px-6 py-12">
-          <AutoContinueAfterSignup />
+      <AutoContinueAfterSignup />
 
       {/* HERO */}
       <section className="text-center">
@@ -56,23 +56,38 @@ export default function Page() {
         <div className="mx-auto max-w-[750px] rounded-2xl bg-white/5 p-6 ring-1 ring-[var(--color-gold)]/60">
           <div className="relative">
             <div className="absolute -top-3 right-0 inline-flex items-center gap-2 rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)] px-3 py-1 text-sm font-bold text-black shadow">
-              $1 first 30 days
+              $1 first 30 days (monthly)
             </div>
           </div>
 
           <div className="text-center text-2xl font-bold">Limited Time Offer</div>
 
           {/* Pricing */}
-          <div className="mt-3 flex items-end justify-center gap-10">
-            <div>
-              <div className="text-3xl font-semibold leading-none">$9.99</div>
-              <div className="-mt-0.5 text-xs opacity-80 text-center">per month after trial</div>
+          <div className="mt-3 flex flex-col sm:flex-row items-end justify-center gap-8 sm:gap-10">
+            {/* Monthly */}
+            <div className="text-center">
+              <div className="flex items-baseline justify-center gap-2">
+                <span className="text-sm opacity-60 line-through">$19.99</span>
+                <span className="text-3xl font-semibold leading-none">$9.99</span>
+              </div>
+              <div className="mt-1 text-xs opacity-80">per month after trial · save 50%</div>
             </div>
-            <span className="text-2xl mb-3 font-semibold opacity-100">or</span>
-            <div>
-              <div className="text-3xl font-semibold leading-none">$89.99</div>
-              <div className="-mt-0.5 text-xs opacity-80 text-center">per year after trial (≈25% off)</div>
+
+            <span className="hidden sm:inline text-2xl mb-3 font-semibold opacity-100">or</span>
+            <span className="sm:hidden mt-3 text-sm font-semibold opacity-80">or</span>
+
+            {/* Yearly */}
+            <div className="text-center">
+              <div className="flex items-baseline justify-center gap-2">
+                <span className="text-sm opacity-60 line-through">$179.99</span>
+                <span className="text-3xl font-semibold leading-none">$89.99</span>
+              </div>
+              <div className="mt-1 text-xs opacity-80">per year · save 50%</div>
             </div>
+          </div>
+
+          <div className="mt-3 text-center text-[11px] opacity-70">
+            Intro $1 for the first 30 days applies to the monthly plan only. Yearly memberships begin at $89.99 today.
           </div>
 
           {/* Mini CARDS */}
@@ -88,21 +103,21 @@ export default function Page() {
           </div>
 
           {/* CTA — DOM checkout (two explicit price choices) */}
-<div className="mt-8 mb-2 flex justify-center gap-3 flex-wrap">
-  <BuyButton
-    cadence="monthly"
-    className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
-  >
-    Start — Monthly
-  </BuyButton>
+          <div className="mt-8 mb-2 flex justify-center gap-3 flex-wrap">
+            <BuyButton
+              cadence="monthly"
+              className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
+            >
+              Start — Monthly
+            </BuyButton>
 
-  <BuyButton
-    cadence="yearly"
-    className="inline-flex items-center rounded-md bg-transparent text-[var(--color-gold)] border border-[var(--color-gold)] px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:bg-[var(--color-gold)] hover:text-black hover:-translate-y-0.5 ring-1 ring-[var(--color-gold)]/40"
-  >
-    Start — Yearly (save ~25%)
-  </BuyButton>
-</div>
+            <BuyButton
+              cadence="yearly"
+              className="inline-flex items-center rounded-md bg-transparent text-[var(--color-gold)] border border-[var(--color-gold)] px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:bg-[var(--color-gold)] hover:text-black hover:-translate-y-0.5 ring-1 ring-[var(--color-gold)]/40"
+            >
+              Start — Yearly (save 50%)
+            </BuyButton>
+          </div>
 
           {/* Sign in note (client component) */}
           <div className="mt-3 text-center text-xs opacity-75">
@@ -119,14 +134,38 @@ export default function Page() {
       <section className="mt-16">
         <h2 className="text-center text-2xl font-bold">Benefits</h2>
         <div className="mt-4 grid gap-4 md:grid-cols-2">
-          <BenefitCard title="Meditation Library" desc="A growing collection of guided sessions to build calm, clarity, motivation, compassion, purpose, and more—organized by theme and length for easy practice." />
-          <BenefitCard title="Social Media Resources Library" desc="My most helpful posts and reframes, curated by theme so you can quickly find the idea or prompt that shifts your day forward." />
-          <BenefitCard title="Weekly Wisdom Emails" desc="Short, actionable insights grounded in scientific insight and lived experience. Expect one gentle nudge each week to keep moving." />
-          <BenefitCard title="Monthly Live Online Meditation & Personal Growth Sessions" desc="A live members-only class each month to reset your nervous system and deepen your practice. Recording available until the next session." />
-          <BenefitCard title="Dr. Juan Pablo Salerno AI" desc="Your members-only guidance companion trained on my approach—ask questions and get step-by-step support in my voice." />
-          <BenefitCard title="Discounted Custom Meditations" desc="Personalized audio created for your goals (5/10/15 min) with guidance on how to use it effectively. Includes a free Vision Call." />
-          <BenefitCard title="Vision Calls" desc="A focused 30-minute session to clarify intentions, identify blocks, and map the tone and structure of your custom meditation." />
-          <BenefitCard title="Yearly Membership Perks" desc="Join annually and receive a free 5-minute custom meditation + Vision Call at signup." />
+          <BenefitCard
+            title="Meditation Library"
+            desc="A growing collection of guided sessions to build calm, clarity, motivation, compassion, purpose, and more—organized by theme and length for easy practice."
+          />
+          <BenefitCard
+            title="Social Media Resources Library"
+            desc="My most helpful posts and reframes, curated by theme so you can quickly find the idea or prompt that shifts your day forward."
+          />
+          <BenefitCard
+            title="Weekly Wisdom Emails"
+            desc="Short, actionable insights grounded in scientific insight and lived experience. Expect one gentle nudge each week to keep moving."
+          />
+          <BenefitCard
+            title="Monthly Live Online Meditation & Personal Growth Sessions"
+            desc="A live members-only class each month to reset your nervous system and deepen your practice. Recording available until the next session."
+          />
+          <BenefitCard
+            title="Dr. Juan Pablo Salerno AI"
+            desc="Your members-only guidance companion trained on my approach—ask questions and get step-by-step support in my voice."
+          />
+          <BenefitCard
+            title="Discounted Custom Meditations"
+            desc="Personalized audio created for your goals (5/10/15 min) with guidance on how to use it effectively. Includes a free Vision Call."
+          />
+          <BenefitCard
+            title="Vision Calls"
+            desc="A focused 30-minute session to clarify intentions, identify blocks, and map the tone and structure of your custom meditation."
+          />
+          <BenefitCard
+            title="Yearly Membership Perks"
+            desc="Join annually and receive a free 5-minute custom meditation + Vision Call at signup."
+          />
         </div>
       </section>
 
@@ -178,21 +217,21 @@ export default function Page() {
       <section className="mt-16 text-center">
         <p className="text-lg opacity-85">Ready to Transform into the Best Version of Yourself?</p>
         {/* CTA — DOM checkout (two explicit price choices) */}
-<div className="mt-8 mb-2 flex justify-center gap-3 flex-wrap">
-  <BuyButton
-    cadence="monthly"
-    className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
-  >
-    Start — Monthly
-  </BuyButton>
+        <div className="mt-8 mb-2 flex justify-center gap-3 flex-wrap">
+          <BuyButton
+            cadence="monthly"
+            className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
+          >
+            Start — Monthly
+          </BuyButton>
 
-  <BuyButton
-    cadence="yearly"
-    className="inline-flex items-center rounded-md bg-transparent text-[var(--color-gold)] border border-[var(--color-gold)] px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:bg-[var(--color-gold)] hover:text-black hover:-translate-y-0.5 ring-1 ring-[var(--color-gold)]/40"
-  >
-    Start — Yearly (save ~25%)
-  </BuyButton>
-</div>
+          <BuyButton
+            cadence="yearly"
+            className="inline-flex items-center rounded-md bg-transparent text-[var(--color-gold)] border border-[var(--color-gold)] px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:bg-[var(--color-gold)] hover:text-black hover:-translate-y-0.5 ring-1 ring-[var(--color-gold)]/40"
+          >
+            Start — Yearly (save 50%)
+          </BuyButton>
+        </div>
       </section>
 
       {/* Divider ABOVE footer, like Contact/Members */}
@@ -206,34 +245,32 @@ export default function Page() {
         <div className="flex flex-col items-start text-left">
           <div className="flex items-center gap-4">
             <p className="uppercase tracking-[0.18em] opacity-70 text-[12px] m-0">Follow Dr. Salerno:</p>
-                  <a href="https://www.tiktok.com/@drjuanpablosalerno" aria-label="TikTok" className="opacity-90 hover:opacity-100">
-                    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-                      <path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z" />
-                    </svg>
-                  </a>
-                  <a href="https://www.instagram.com/drjuanpablosalerno/" aria-label="Instagram" className="opacity-90 hover:opacity-100">
-                    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-                      <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z" />
-                    </svg>
-                  </a>
-                  <a href="https://www.youtube.com/drjpsalerno" aria-label="YouTube" className="opacity-90 hover:opacity-100">
-                    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-                      <path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" />
-                    </svg>
-                  </a>
+            <a href="https://www.tiktok.com/@drjuanpablosalerno" aria-label="TikTok" className="opacity-90 hover:opacity-100">
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                <path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z" />
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/drjuanpablosalerno/" aria-label="Instagram" className="opacity-90 hover:opacity-100">
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1 5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z" />
+              </svg>
+            </a>
+            <a href="https://www.youtube.com/drjpsalerno" aria-label="YouTube" className="opacity-90 hover:opacity-100">
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                <path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" />
+              </svg>
+            </a>
 
-                                      {/* Facebook */}
-<a
-  href="https://www.facebook.com/profile.php?id=61582412806274#"
-  aria-label="Facebook"
-  className="opacity-90 hover:opacity-100"
->
-  <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-    <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2v3h-2c-.3 0-.5.2-.5.5V12H16l-.5 3h-2v7A10 10 0 0 0 22 12z" />
-  </svg>
-</a>
-           
-           
+            {/* Facebook */}
+            <a
+              href="https://www.facebook.com/profile.php?id=61582412806274#"
+              aria-label="Facebook"
+              className="opacity-90 hover:opacity-100"
+            >
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2v3h-2c-.3 0-.5.2-.5.5V12H16l-.5 3h-2v7A10 10 0 0 0 22 12z" />
+              </svg>
+            </a>
           </div>
           <p className="mt-4 max-w-[520px] text-[13px] leading-relaxed">
             Dr. Juan Pablo Salerno is an award-winning mental health science expert and thought leader, author, and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
@@ -246,9 +283,13 @@ export default function Page() {
           <p className="mt-1">
             <span>All rights reserved</span>
             <span className="mx-2 opacity-50">·</span>
-            <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
+            <a href="/terms" className="underline underline-offset-4 hover:opacity-80">
+              Terms
+            </a>
             <span className="mx-2 opacity-50">·</span>
-            <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
+            <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">
+              Privacy
+            </a>
           </p>
         </div>
       </div>
@@ -263,10 +304,30 @@ export default function Page() {
         <div className="mt-0 text-[13px] leading-relaxed">
           <p className="uppercase tracking-[0.18em] text-left opacity-70">Follow Dr. Salerno:</p>
           <div className="mt-3 flex items-left justify-left gap-8">
-            <a href="https://www.tiktok.com/@drjuanpablosalerno" aria-label="TikTok" className="opacity-90 hover:opacity-100"><svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z" /></svg></a>
-            <a href="https://www.instagram.com/drjuanpablosalerno/" aria-label="Instagram" className="opacity-90 hover:opacity-100"><svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1 5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 0 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z" /></svg></a>
-            <a href="https://www.youtube.com/drjpsalerno" aria-label="YouTube" className="opacity-90 hover:opacity-100"><svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s-6.6 0-8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" /></svg></a>
-            <a href="https://www.facebook.com/profile.php?id=61582412806274#" aria-label="Facebook" className="opacity-90 hover:opacity-100"><svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2v3h-2c-.3 0-.5.2-.5.5V12H16l-.5 3h-2v7A10 10 0 0 0 22 12z" /></svg></a>
+            <a href="https://www.tiktok.com/@drjuanpablosalerno" aria-label="TikTok" className="opacity-90 hover:opacity-100">
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                <path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z" />
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/drjuanpablosalerno/" aria-label="Instagram" className="opacity-90 hover:opacity-100">
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1 5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 0 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z" />
+              </svg>
+            </a>
+            <a href="https://www.youtube.com/drjpsalerno" aria-label="YouTube" className="opacity-90 hover:opacity-100">
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                <path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s-6.6 0-8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" />
+              </svg>
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61582412806274#"
+              aria-label="Facebook"
+              className="opacity-90 hover:opacity-100"
+            >
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2v3h-2c-.3 0-.5.2-.5.5V12H16l-.5 3h-2v7A10 10 0 0 0 22 12z" />
+              </svg>
+            </a>
           </div>
 
           <p className="mt-5 text-left opacity-85">
@@ -275,9 +336,13 @@ export default function Page() {
 
           <p className="mt-6 text-left opacity-85">© Dr. Juan Pablo Salerno™</p>
           <p className="mt-2 mb-5 text-left opacity-85">
-            <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
+            <a href="/terms" className="underline underline-offset-4 hover:opacity-80">
+              Terms
+            </a>
             <span className="mx-2 opacity-50">·</span>
-            <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
+            <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">
+              Privacy
+            </a>
             <span className="mx-2 opacity-50">·</span>
             <span>All rights reserved</span>
           </p>
@@ -300,7 +365,9 @@ function MiniTitleCard({ title }) {
   return (
     <div className="rounded-xl border border-white/15 bg-white/5 p-5">
       <div className="flex items-center justify-center gap-2">
-        <span aria-hidden="true" className="text-[var(--color-gold)]">✔︎</span>
+        <span aria-hidden="true" className="text-[var(--color-gold)]">
+          ✔︎
+        </span>
         <span className="text-[16px] md:text-[18px] font-semibold text-center">{title}</span>
       </div>
     </div>
@@ -317,7 +384,9 @@ function DiscountCard({ label, memberPrice, regularPrice, savings }) {
           <div className="text-xs opacity-75">Member price</div>
         </div>
         <div className="text-right">
-          <div className="inline-flex items-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)]/15 px-2 py-0.5 text-[11px] font-semibold">Save {savings}</div>
+          <div className="inline-flex items-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)]/15 px-2 py-0.5 text-[11px] font-semibold">
+            Save {savings}
+          </div>
           <div className="mt-1 text-xs opacity-75">Reg. {regularPrice}</div>
         </div>
       </div>
