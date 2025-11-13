@@ -96,10 +96,13 @@ export default function Page() {
 
           {/* CTA — DOM checkout (two explicit price choices) */}
 <div className="mt-8 mb-2 flex justify-center gap-3 flex-wrap">
-  <BuyButton
-    cadence="monthly"
-    className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
-  >
+<BuyButton
+  cadence="monthly"
+className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition
+            hover:bg-transparent hover:text-[var(--color-gold)] hover:border hover:border-[var(--color-gold)]
+            hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
+>
+
     Join — Monthly (save 50%)
   </BuyButton>
 
@@ -184,10 +187,13 @@ export default function Page() {
         <p className="text-lg opacity-85">Ready to Transform into the Best Version of Yourself?</p>
         {/* CTA — DOM checkout (two explicit price choices) */}
 <div className="mt-8 mb-2 flex justify-center gap-3 flex-wrap">
-  <BuyButton
-    cadence="monthly"
-    className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
-  >
+<BuyButton
+  cadence="monthly"
+className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition
+            hover:bg-transparent hover:text-[var(--color-gold)] hover:border hover:border-[var(--color-gold)]
+            hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
+>
+
     Join — Monthly (save 50%)
   </BuyButton>
 
