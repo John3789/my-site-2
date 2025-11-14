@@ -10,55 +10,47 @@ export default function BuyButton({ cadence = "monthly", className = "", childre
   async function handleClick(e) {
     e.preventDefault();
 
-    const ms =
-      (typeof window !== "undefined" &&
-        (window.$memberstack || window.memberstack || window.Memberstack)) ||
-      null;
+    if (typeof window === "undefined") return;
 
-    if (!ms) {
-      console.error("[BuyButton] Memberstack instance not found on window");
-      alert("Signup is unavailable right now. Please refresh and try again.");
+    const ms =
+      window.$memberstack || window.memberstack || window.Memberstack || null;
+
+    if (!ms?.purchasePlansWithCheckout) {
+      console.error("purchasePlansWithCheckout not available", ms);
+      alert("Checkout unavailable. Please refresh and try again.");
       return;
     }
 
+    const priceId = PRICE_IDS[cadence] || PRICE_IDS.monthly;
+    const { origin } = window.location;
+
     try {
-      // 1) If user is not logged in, open SIGNUP modal and stop.
-      if (ms.getCurrentMember) {
-        const { data: member } = await ms.getCurrentMember();
-        if (!member) {
-          if (ms.openModal) {
-            await ms.openModal("SIGNUP");
-          }
-          // User will sign up / log in in the modal, then click the button again.
-          return;
-        }
-      }
-
-      // 2) Logged-in member → proceed to checkout
-      if (!ms.purchasePlansWithCheckout) {
-        console.error("purchasePlansWithCheckout not available", ms);
-        alert("Checkout unavailable. Please refresh and try again.");
-        return;
-      }
-
-      const priceId = PRICE_IDS[cadence] || PRICE_IDS.monthly;
-      const { origin } = window.location;
-
-      const response = await ms.purchasePlansWithCheckout({
+      await ms.purchasePlansWithCheckout({
         priceId,
         successUrl: `${origin}/members?status=success`,
         cancelUrl: `${origin}/membership?canceled=1`,
       });
-
-      if (response?.data?.url) {
-        console.log("[BuyButton] Checkout URL:", response.data.url);
-      }
     } catch (err) {
       console.error("[BuyButton] checkout error", err);
 
-      // 3) If Memberstack still says login-required, open SIGNUP modal
-      if (err?.code === "login-required" && ms?.openModal) {
-        await ms.openModal("SIGNUP");
+      const code = err?.code || err?.response?.data?.code;
+      const msg = err?.message || err?.response?.data?.message || "";
+
+      // 🔐 If they aren't logged in, open signup and remember what they picked
+      if (code === "login-required" || /logged in/i.test(msg)) {
+        try {
+          window.localStorage.setItem(
+            "ms_pending_checkout",
+            JSON.stringify({ cadence, priceId })
+          );
+        } catch (_) {}
+
+        if (ms?.openModal) {
+          ms.openModal("signup");
+        } else {
+          // Fallback: send them to your signup/login page
+          window.location.href = "/membership?auth=signup";
+        }
         return;
       }
 
@@ -66,14 +58,14 @@ export default function BuyButton({ cadence = "monthly", className = "", childre
     }
   }
 
-  const baseClasses =
-    "inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10";
-
   return (
     <button
       type="button"
       onClick={handleClick}
-      className={className || baseClasses}
+      className={
+        className ||
+        "inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
+      }
     >
       {children ?? (cadence === "yearly" ? "Start — Yearly" : "Start — Monthly")}
     </button>

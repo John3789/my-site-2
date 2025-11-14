@@ -1,35 +1,50 @@
+// app/membership/AutoContinueAfterSignup.jsx
 "use client";
+
 import { useEffect } from "react";
 
 const PRICE_IDS = {
-  monthly: "prc_9_99-hj9j03x8",
-  yearly:  "prc_89_99-lt9v0nf5",
+  monthly: "prc_9-99-hj9j03x8",
+  yearly: "prc_89-99-jwgn03ep",
 };
 
 export default function AutoContinueAfterSignup() {
   useEffect(() => {
-    const ms = (typeof window !== "undefined" && (window.$memberstack || window.memberstack || window.Memberstack)) || null;
-    if (!ms) return;
+    if (typeof window === "undefined") return;
 
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("joined") !== "1") return; // only run after hosted signup
+    const ms =
+      window.$memberstack || window.memberstack || window.Memberstack || null;
 
-    const cadence = params.get("cadence") || "monthly";
+    if (!ms?.purchasePlansWithCheckout) return;
 
-    (async () => {
-      try {
-        const { data } = await ms.getCurrentMember?.();
-        if (!data) return; // if still not logged in, user can click the button again
+    const raw = window.localStorage.getItem("ms_pending_checkout");
+    if (!raw) return;
 
-        await ms.purchasePlansWithCheckout({
-          priceId: PRICE_IDS[cadence] || PRICE_IDS.monthly,
-          successUrl: `${window.location.origin}/members?status=success`,
-          cancelUrl: `${window.location.origin}/membership?canceled=1`,
-        });
-      } catch (err) {
-        console.error("[MS] auto-continue error:", err);
-      }
-    })();
+    let stored;
+    try {
+      stored = JSON.parse(raw);
+    } catch {
+      window.localStorage.removeItem("ms_pending_checkout");
+      return;
+    }
+
+    const cadence = stored?.cadence === "yearly" ? "yearly" : "monthly";
+    const priceId = stored?.priceId || PRICE_IDS[cadence] || PRICE_IDS.monthly;
+
+    // Clear first so we don't loop if anything goes wrong
+    window.localStorage.removeItem("ms_pending_checkout");
+
+    const { origin } = window.location;
+    const successUrl = `${origin}/members?status=success`;
+    const cancelUrl = `${origin}/membership?canceled=1`;
+
+    ms.purchasePlansWithCheckout({
+      priceId,
+      successUrl,
+      cancelUrl,
+    }).catch((err) => {
+      console.error("[AutoContinueAfterSignup] checkout retry failed", err);
+    });
   }, []);
 
   return null;
