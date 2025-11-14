@@ -3,8 +3,6 @@
 
 import { useState, useCallback, useEffect } from "react";
 import Link from "next/link";
-import AutoRedirectIfNoMember from "./AutoRedirectIfNoMember";
-
 
 export default function MembersIsland() {
   const [signingOut, setSigningOut] = useState(false);
@@ -81,8 +79,6 @@ export default function MembersIsland() {
   return (
     <main data-page="members" className="mx-auto max-w-[1100px] px-6 py-10 mt-10">
       {/* HERO */}
-            <AutoRedirectIfNoMember />
-
       <section className="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-8 shadow-2xl">
         <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
           <div>
