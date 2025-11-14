@@ -10,45 +10,55 @@ export default function BuyButton({ cadence = "monthly", className = "", childre
   async function handleClick(e) {
     e.preventDefault();
 
-    if (typeof window === "undefined") return;
-
     const ms =
-      window.$memberstack || window.memberstack || window.Memberstack || null;
+      (typeof window !== "undefined" &&
+        (window.$memberstack || window.memberstack || window.Memberstack)) ||
+      null;
 
     if (!ms) {
-      console.error("[BuyButton] Memberstack not available yet", ms);
-      alert("Membership system is still loading. Please try again in a moment.");
+      console.error("[BuyButton] Memberstack not found");
+      alert("Checkout unavailable. Please refresh and try again.");
       return;
     }
 
-    // ✅ Make sure cadence is always one of these two strings
-    const safeCadence = cadence === "yearly" ? "yearly" : "monthly";
-    const priceId = PRICE_IDS[safeCadence] || PRICE_IDS.monthly;
-
-    const payload = {
-      cadence: safeCadence,
-      priceId,
-    };
+    const priceId = PRICE_IDS[cadence] || PRICE_IDS.monthly;
+    const { origin } = window.location;
+    const successUrl = `${origin}/members?status=success`;
+    const cancelUrl = `${origin}/membership?canceled=1`;
 
     try {
-      // ✅ Remember what they clicked so AutoContinueAfterSignup can resume checkout
-      window.localStorage.setItem("ms_pending_checkout", JSON.stringify(payload));
+      // 1) Check if user is logged in
+      const current = (await ms.getCurrentMember?.()) || {};
+      const isLoggedIn = !!current?.data?.id;
 
-      // ✅ For *logged-out* people, open the signup modal
-      if (ms.openModal) {
-        await ms.openModal("signup");
-      } else if (ms.showSignup) {
-        await ms.showSignup(); // older SDK API
-      } else {
-        // Fallback if there is some custom method
-        console.warn("[BuyButton] No signup modal method found on Memberstack instance");
+      if (!isLoggedIn) {
+        // remember what they tried to buy
+        window.localStorage.setItem(
+          "ms_pending_checkout",
+          JSON.stringify({ cadence, priceId })
+        );
+
+        // open signup modal
+        if (ms.openModal) {
+          await ms.openModal("signup");
+        } else if (ms.showSignup) {
+          await ms.showSignup();
+        } else {
+          console.warn("[BuyButton] No signup modal method found on Memberstack");
+        }
+
+        return;
       }
 
-      // We do NOT call purchasePlansWithCheckout here anymore.
-      // AutoContinueAfterSignup will do that after signup/login.
+      // 2) Already logged in → go straight to checkout
+      await ms.purchasePlansWithCheckout({
+        priceId,
+        successUrl,
+        cancelUrl,
+      });
     } catch (err) {
-      console.error("[BuyButton] error starting signup/checkout", err);
-      alert("Something went wrong starting checkout. Please try again.");
+      console.error("[BuyButton] checkout error", err);
+      alert("Checkout failed. Please try again or contact support.");
     }
   }
 

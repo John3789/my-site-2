@@ -31,7 +31,7 @@ export default function AutoContinueAfterSignup() {
     const cadence = stored?.cadence === "yearly" ? "yearly" : "monthly";
     const priceId = stored?.priceId || PRICE_IDS[cadence] || PRICE_IDS.monthly;
 
-    // Clear first so we don't loop if anything goes wrong
+    // clear first so we don’t loop
     window.localStorage.removeItem("ms_pending_checkout");
 
     const { origin } = window.location;
