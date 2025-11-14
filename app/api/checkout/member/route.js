@@ -6,7 +6,7 @@ const MS_SECRET = process.env.MEMBERSTACK_SECRET_KEY;
 // ✅ USE YOUR LIVE PLAN IDs from Memberstack dashboard (not Stripe)
 const PLAN_IDS = {
   monthly: "pln_rise-monthly-plan-y9ao098m",
-  yearly:  "pln_rise-yearly-plan-4w9s0n01",
+  yearly:  "pln_rise-yearly-plan-aw6404a4",
 };
 
 export async function POST(req) {

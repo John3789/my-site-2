@@ -33,7 +33,7 @@ export default function BuyButton({ cadence = "monthly", className = "", childre
     className ||
     "inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10";
 
-  const defaultLabel = cadence === "yearly" ? "Start — Yearly" : "Start — Monthly";
+  const defaultLabel = safeCadence === "yearly" ? "Start — Yearly" : "Start — Monthly";
 
   return (
     <button type="button" onClick={handleClick} className={baseClasses}>
