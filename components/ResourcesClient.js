@@ -131,14 +131,6 @@ export default function ResourcesClient() {
     };
   }, [router]);
 
-  if (authStatus !== "ready") {
-    return (
-      <main className="mx-auto flex min-h-screen max-w-[1100px] items-center justify-center px-6 text-center text-[var(--color-cream)]">
-        <p className="text-sm opacity-80">Checking your membership…</p>
-      </main>
-    );
-  }
-
   const [open, setOpen] = useState(false);
   const [activeCollection, setActiveCollection] = useState(null);
   const [currentId, setCurrentId] = useState(THEMES[0].slug);
@@ -230,6 +222,14 @@ export default function ResourcesClient() {
       </div>
     );
   }, [currentId, canScrollLeft, canScrollRight]);
+
+    if (authStatus !== "ready") {
+    return (
+      <main className="mx-auto flex min-h-screen max-w-[1100px] items-center justify-center px-6 text-center text-[var(--color-cream)]">
+        <p className="text-sm opacity-80">Checking your membership…</p>
+      </main>
+    );
+  }
 
   return (
     <>
