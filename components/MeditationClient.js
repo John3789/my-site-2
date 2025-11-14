@@ -211,42 +211,7 @@ export default function MeditationClient() {
                 </a>
               </div>
             </section>
-
-                        {/* FINAL divider above footer — match two-column width, no bleed */}
-            <div className="mx-auto max-w-[1200px] px-6">
-              <hr className="hidden lg:block max-w-[1200px] border-t border-[var(--color-cream)]/22" />
-            </div>
-
-            {/* FAQ / Questions */}
-            <section className="mx-auto max-w-[1200px] px-6 mt-10 mb-12">
-              <h2 className="text-center text-2xl font-bold">Questions</h2>
-              <div className="mt-4 grid gap-4 md:grid-cols-2">
-                <Faq
-                  q="What do I get inside RISE?"
-                  a="You get access to the meditation library, social media resources library, weekly wisdom emails, monthly live online sessions, members-only Dr. Salerno AI guidance, discounted custom meditations, Vision Calls, and Mental Health & Growth Guides."
-                />
-                <Faq
-                  q="How does the $1 trial work?"
-                  a="Your first 30 days are $1 for the monthly plan. After the trial ends, your membership renews at $9.99 per month unless you cancel before the trial period finishes."
-                />
-                <Faq
-                  q="Can I cancel anytime?"
-                  a="Yes. You can cancel your membership at any time. When you cancel, you’ll keep access through the end of your current billing period."
-                />
-                <Faq
-                  q="What’s the difference between monthly and yearly?"
-                  a="The monthly plan renews every month after the $1 trial. The yearly plan is billed once per year at a discounted rate and includes an additional 5-minute custom meditation plus a Vision Call as a perk."
-                />
-                <Faq
-                  q="Is this therapy or medical care?"
-                  a="No. RISE is for education and personal growth. It does not replace therapy, medical care, or emergency services. Always contact a licensed professional or emergency services when needed."
-                />
-                <Faq
-                  q="Do I need prior meditation experience?"
-                  a="No. All meditations and resources are designed for all levels, including complete beginners. You can start gently and move at your own pace."
-                />
-              </div>
-            </section>
+          
 
             {/* FINAL divider above footer — match two-column width, no bleed */}
             <div className="mx-auto max-w-[1200px] px-6">
