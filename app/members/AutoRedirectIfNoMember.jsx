@@ -19,7 +19,11 @@ export default function AutoRedirectIfNoMember() {
 
   useEffect(() => {
     const ms = getMemberstack();
-    if (!ms || !ms.getCurrentMember) return;
+    if (!ms || !ms.getCurrentMember) {
+      // If Memberstack isn't ready at all, be safe and send them away
+      router.replace("/membership?need_member=1");
+      return;
+    }
 
     let cancelled = false;
 
