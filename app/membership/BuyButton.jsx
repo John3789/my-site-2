@@ -10,51 +10,59 @@ export default function BuyButton({ cadence = "monthly", className = "", childre
   async function handleClick(e) {
     e.preventDefault();
 
-    const ms =
-      (typeof window !== "undefined" &&
-        (window.$memberstack || window.memberstack || window.Memberstack)) ||
-      null;
+    if (typeof window === "undefined") return;
 
-    if (!ms) {
-      console.error("[BuyButton] Memberstack not found");
+    const ms =
+      window.$memberstack || window.memberstack || window.Memberstack || null;
+
+    if (!ms?.purchasePlansWithCheckout || !ms?.getCurrentMember) {
+      console.error("Memberstack not ready or missing purchasePlansWithCheckout", ms);
       alert("Checkout unavailable. Please refresh and try again.");
       return;
     }
 
-    const priceId = PRICE_IDS[cadence] || PRICE_IDS.monthly;
+    const safeCadence = cadence === "yearly" ? "yearly" : "monthly";
+    const priceId = PRICE_IDS[safeCadence] || PRICE_IDS.monthly;
     const { origin } = window.location;
-    const successUrl = `${origin}/members?status=success`;
-    const cancelUrl = `${origin}/membership?canceled=1`;
 
+    // 1) Check if user is logged in
+    let member;
     try {
-      // 1) Check if user is logged in
-      const current = (await ms.getCurrentMember?.()) || {};
-      const isLoggedIn = !!current?.data?.id;
+      const res = await ms.getCurrentMember();
+      member = res?.data?.member;
+    } catch (err) {
+      console.warn("[BuyButton] getCurrentMember failed", err);
+    }
 
-      if (!isLoggedIn) {
-        // remember what they tried to buy
+    // 2) If NOT logged in → remember what they wanted + open signup modal
+    if (!member) {
+      try {
         window.localStorage.setItem(
           "ms_pending_checkout",
-          JSON.stringify({ cadence, priceId })
+          JSON.stringify({
+            cadence: safeCadence,
+            priceId,
+            ts: Date.now(),
+          })
         );
+      } catch {}
 
-        // open signup modal
-        if (ms.openModal) {
-          await ms.openModal("signup");
-        } else if (ms.showSignup) {
-          await ms.showSignup();
-        } else {
-          console.warn("[BuyButton] No signup modal method found on Memberstack");
-        }
-
-        return;
+      if (typeof ms.openModal === "function") {
+        ms.openModal("signup");
+      } else if (typeof ms.open === "function") {
+        ms.open("signup");
+      } else {
+        console.error("No Memberstack modal open function found");
       }
+      return;
+    }
 
-      // 2) Already logged in → go straight to checkout
+    // 3) If already logged in → go straight to checkout
+    try {
       await ms.purchasePlansWithCheckout({
         priceId,
-        successUrl,
-        cancelUrl,
+        successUrl: `${origin}/members?status=success`,
+        cancelUrl: `${origin}/membership?canceled=1`,
       });
     } catch (err) {
       console.error("[BuyButton] checkout error", err);
