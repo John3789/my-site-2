@@ -4,7 +4,6 @@
 import { useState } from "react";
 import SignInButton from "./SignInButton";
 import BuyButton from "./BuyButton";
-import AutoContinueAfterSignup from "./AutoContinueAfterSignup";
 
 const STRIPE_COUPON_ID = "QI8eKMjf"; // (currently unused, keeping as in your file)
 
@@ -15,7 +14,6 @@ export default function MembershipPageClient() {
       className="mx-auto max-w-[1100px] px-6 py-12"
     >
       {/* Keep this firing early */}
-      <AutoContinueAfterSignup />
 
       {/* HERO SECTION: title + copy + image (like About page) */}
       <section className="mx-auto max-w-[1100px] mt-10 mb-10">

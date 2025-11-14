@@ -15,34 +15,43 @@ export default function BuyButton({ cadence = "monthly", className = "", childre
         (window.$memberstack || window.memberstack || window.Memberstack)) ||
       null;
 
-    if (!ms?.purchasePlansWithCheckout) {
-      console.error("purchasePlansWithCheckout not available", ms);
-      alert("Checkout unavailable. Please refresh and try again.");
+    if (!ms) {
+      console.error("[BuyButton] Memberstack client not found", ms);
+      alert("Membership system is still loading. Please try again in a moment.");
       return;
     }
 
     const priceId = PRICE_IDS[cadence] || PRICE_IDS.monthly;
     const { origin } = window.location;
-
-    // 🔑 Remember what the user clicked so we can resume after signup
-    try {
-      window.localStorage.setItem(
-        "ms_pending_checkout",
-        JSON.stringify({ cadence, priceId })
-      );
-    } catch {
-      // fail silently – worst case, no auto-continue
-    }
+    const successUrl = `${origin}/members?status=success`;
+    const cancelUrl = `${origin}/membership?canceled=1`;
 
     try {
+      // 1) Check if user is already logged in
+      let member = null;
+      try {
+        const res = await ms.getCurrentMember?.();
+        // Memberstack DOM can return { data: member } or { data: { member } }
+        member = res?.data?.member || res?.data || res?.member || null;
+      } catch (err) {
+        console.warn("[BuyButton] getCurrentMember failed (probably logged out)", err);
+      }
+
+      // 2) If NOT logged in, open the signup modal and wait until it finishes
+      if (!member) {
+        await ms.openModal("SIGNUP"); // resolves after successful signup/login
+      }
+
+      // 3) Now that they’re logged in, start checkout
       await ms.purchasePlansWithCheckout({
         priceId,
-        successUrl: `${origin}/members?status=success`,
-        cancelUrl: `${origin}/membership?canceled=1`,
+        successUrl,
+        cancelUrl,
+        autoRedirect: true, // let Memberstack send them to Stripe
       });
     } catch (err) {
-      console.error("[BuyButton] checkout error", err);
-      alert("Checkout failed. Please try again or contact support.");
+      console.error("[BuyButton] checkout flow error", err);
+      alert("Checkout failed. Please try again, or contact support if it continues.");
     }
   }
 
