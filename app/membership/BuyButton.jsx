@@ -6,9 +6,6 @@ const PRICE_IDS = {
   yearly: "prc_89-99-jwgn03ep",
 };
 
-// Define your single coupon ID here for easy management
-const COUPON_ID = "UMJ0pIHr"; 
-
 export default function BuyButton({ cadence = "monthly", className = "", children }) {
   async function handleClick(e) {
     e.preventDefault();
@@ -29,20 +26,6 @@ export default function BuyButton({ cadence = "monthly", className = "", childre
     const successUrl = `${origin}/members?status=success`;
     const cancelUrl = `${origin}/membership?canceled=1`;
 
-    // --- COUPON LOGIC: Build the options object ---
-    let checkoutOptions = {
-        priceId,
-        successUrl,
-        cancelUrl,
-        autoRedirect: true, // let Memberstack send them to Stripe
-    };
-
-    // Apply the coupon ONLY if the cadence is 'monthly'
-    if (cadence === "monthly") {
-        checkoutOptions.coupon = COUPON_ID;
-    }
-    // --- END OF COUPON LOGIC ---
-
     try {
       // 1) Check if user is already logged in
       let member = null;
@@ -60,10 +43,12 @@ export default function BuyButton({ cadence = "monthly", className = "", childre
       }
 
       // 3) Now that they’re logged in, start checkout
-      // THIS IS THE CRITICAL LINE: We pass the 'checkoutOptions' variable 
-      // which now correctly contains the coupon only for the monthly plan.
-      await ms.purchasePlansWithCheckout(checkoutOptions);
-      
+      await ms.purchasePlansWithCheckout({
+        priceId,
+        successUrl,
+        cancelUrl,
+        autoRedirect: true, // let Memberstack send them to Stripe
+      });
     } catch (err) {
       console.error("[BuyButton] checkout flow error", err);
       alert("Checkout failed. Please try again, or contact support if it continues.");
