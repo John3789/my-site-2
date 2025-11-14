@@ -115,6 +115,29 @@ export default function MeditationClient() {
               </div>
             </section>
 
+                        {/* Divider — match two-column container width */}
+            <div className="mx-auto w-full max-w-[1200px] px-6">
+              <hr className="border-t border-[var(--color-cream)]/15" />
+            </div>
+
+{/* ===== MEDITATION LIBRARY DESCRIPTION ===== */}
+<section className="mx-auto max-w-[750px] px-6 text-center mt-16 mb-12 narrow-landscape-80">
+  <p className="text-lg md:text-xl opacity-90 leading-relaxed">
+    Access a curated library of guided meditations designed to help you reset,
+    restore, and realign — supporting your body, mind, and spirit whenever you
+    need a moment for yourself.
+  </p>
+
+  <p className="mt-4 text-sm opacity-85">
+    Unlock full access when you join
+    <a
+      href="/membership"
+      className="inline-flex ml-2 items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-3 py-1.5 font-semibold text-xs uppercase tracking-wide shadow-md hover:shadow-lg hover:-translate-y-[1px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
+    >
+      RISE Membership
+    </a>
+  </p>
+</section>
             {/* Divider — match two-column container width */}
             <div className="mx-auto w-full max-w-[1200px] px-6">
               <hr className="border-t border-[var(--color-cream)]/15" />
