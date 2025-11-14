@@ -1,3 +1,4 @@
+// middleware.js
 import { NextResponse } from "next/server";
 
 export function middleware(req) {
@@ -9,14 +10,19 @@ export function middleware(req) {
     return NextResponse.next();
   }
 
-  // ✅ NEW: allow /members?status=success through even if cookie isn't set yet
-  if (pathname === "/members" && url.searchParams.get("status") === "success") {
+  // ✅ Allow any /members or /members/ URL with ?status=success through
+  //    so Memberstack can finish setting cookies.
+  if (
+    (pathname === "/members" || pathname === "/members/") &&
+    url.searchParams.get("status") === "success"
+  ) {
     return NextResponse.next();
   }
 
   // Paths that REQUIRE membership
   const isProtected =
     pathname === "/members" ||
+    pathname === "/members/" ||
     pathname.startsWith("/members/") ||
     pathname.startsWith("/api/media/") ||
     pathname === "/api/go";
