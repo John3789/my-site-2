@@ -112,12 +112,12 @@ export default function MeditationLibraryPage() {
     <main className="mx-auto max-w-[1100px] px-6 py-10">
       {/* HEADER */}
       <section className="text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/60">
-          Members Only
-        </p>
-        <h1 className="mt-2 font-serif text-4xl md:text-5xl">
+
+        <h1 className="mt-15 font-serif text-5xl md:text-6xl">
           Meditation Library
         </h1>
+                  <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto mt-5 mb-0 rounded" />
+
         <p className="mt-4 text-sm md:text-base text-white/80">
           A growing collection of guided sessions to build calm, clarity, motivation,
           compassion, and purpose – organized by theme so you can find what you need
