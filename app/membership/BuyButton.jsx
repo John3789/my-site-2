@@ -48,7 +48,6 @@ export default function BuyButton({ cadence = "monthly", className = "", childre
       let member = null;
       try {
         const res = await ms.getCurrentMember?.();
-        // Memberstack DOM can return { data: member } or { data: { member } }
         member = res?.data?.member || res?.data || res?.member || null;
       } catch (err) {
         console.warn("[BuyButton] getCurrentMember failed (probably logged out)", err);
@@ -56,13 +55,12 @@ export default function BuyButton({ cadence = "monthly", className = "", childre
 
       // 2) If NOT logged in, open the signup modal and wait until it finishes
       if (!member) {
-        await ms.openModal("SIGNUP"); // resolves after successful signup/login
+        await ms.openModal("SIGNUP");
       }
 
       // 3) Now that they’re logged in, start checkout
-      // THIS IS THE CRITICAL LINE: We pass the 'checkoutOptions' variable 
-      // which now correctly contains the coupon only for the monthly plan.
-      await ms.purchasePlansWithCheckout(checkoutOptions);
+      // CRITICAL FIX: Pass the 'checkoutOptions' object wrapped in an array [ ]
+      await ms.purchasePlansWithCheckout([checkoutOptions]); 
       
     } catch (err) {
       console.error("[BuyButton] checkout flow error", err);
