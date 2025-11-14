@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useMemo } from "react";
-// Adjust this import path to match where GuardedPlay lives in your project
 import GuardedPlay from "../../components/GuardedPlay";
 
 const MEDITATION_THEMES = [
@@ -109,14 +108,13 @@ export default function MeditationLibraryPage() {
   const lastUpdated = "November 2025"; // Update this as you add recordings
 
   return (
-    <main className="mx-auto max-w-[1100px] px-6 py-10">
+    <main data-page="meditations" className="mx-auto max-w-[1100px] px-6 py-10">
       {/* HEADER */}
       <section className="text-center">
-
         <h1 className="mt-15 font-serif text-5xl md:text-6xl">
           Meditation Library
         </h1>
-                  <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto mt-5 mb-2 rounded" />
+        <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto mt-5 mb-2 rounded" />
 
         <p className="mt-5 text-sm md:text-base text-white/80">
           A growing collection of guided sessions to build calm, clarity, motivation,
@@ -127,8 +125,6 @@ export default function MeditationLibraryPage() {
           Last updated: {lastUpdated}
         </p>
       </section>
-
-     
 
       {/* FILTER BAR */}
       <section className="mt-8">
@@ -159,6 +155,118 @@ export default function MeditationLibraryPage() {
           <ThemeSection key={theme.id} theme={theme} />
         ))}
       </section>
+
+      {/* Divider ABOVE footer, matching membership */}
+      <div className="mx-auto max-w-[1200px] px-6 mt-12">
+        <hr className="border-t border-[var(--color-cream)]/22" />
+      </div>
+
+      {/* Desktop footer row (socials + bio + legal), matching membership */}
+      <div className="hidden lg:flex items-start justify-between mx-auto max-w-[1200px] px-6 mt-4 text-[13px] leading-relaxed opacity-85">
+        {/* LEFT: socials + bio */}
+        <div className="flex flex-col items-start text-left">
+          <div className="flex items-center gap-4">
+            <p className="uppercase tracking-[0.18em] opacity-70 text-[12px] m-0">Follow Dr. Salerno:</p>
+            <a href="https://www.tiktok.com/@drjuanpablosalerno" aria-label="TikTok" className="opacity-90 hover:opacity-100">
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                <path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z" />
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/drjuanpablosalerno/" aria-label="Instagram" className="opacity-90 hover:opacity-100">
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z" />
+              </svg>
+            </a>
+            <a href="https://www.youtube.com/drjpsalerno" aria-label="YouTube" className="opacity-90 hover:opacity-100">
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                <path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" />
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61582412806274#" aria-label="Facebook" className="opacity-90 hover:opacity-100">
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2v3h-2c-.3 0-.5.2-.5.5V12H16l-.5 3h-2v7A10 10 0 0 0 22 12z" />
+              </svg>
+            </a>
+          </div>
+          <p className="mt-4 max-w-[520px] text-[13px] leading-relaxed">
+            Dr. Juan Pablo Salerno is an award-winning mental health science expert and thought leader, author, and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
+          </p>
+        </div>
+
+        {/* RIGHT: legal */}
+        <div className="text-left translate-y-[-4px]">
+          <p>© Dr. Juan Pablo Salerno™</p>
+          <p className="mt-1">
+            <span>All rights reserved</span>
+            <span className="mx-2 opacity-50">·</span>
+            <a href="/terms" className="underline underline-offset-4 hover:opacity-80">
+              Terms
+            </a>
+            <span className="mx-2 opacity-50">·</span>
+            <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">
+              Privacy
+            </a>
+          </p>
+        </div>
+      </div>
+
+      {/* Mobile divider to match membership/contact */}
+      <div className="lg:hidden mx-auto w-full px-0 mt-8">
+        <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
+      </div>
+
+      {/* Mobile footer stack */}
+      <div className="lg:hidden mx-auto w-full max-w-[900px] px-0 mt-6">
+        <div className="mt-0 text-[13px] leading-relaxed">
+          <p className="uppercase tracking-[0.18em] text-left opacity-70">Follow Dr. Salerno:</p>
+          <div className="mt-3 flex items-left justify-left gap-8">
+            <a href="https://www.tiktok.com/@drjuanpablosalerno" aria-label="TikTok" className="opacity-90 hover:opacity-100">
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                <path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z" />
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/drjuanpablosalerno/" aria-label="Instagram" className="opacity-90 hover:opacity-100">
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 0 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z" />
+              </svg>
+            </a>
+            <a href="https://www.youtube.com/drjpsalerno" aria-label="YouTube" className="opacity-90 hover:opacity-100">
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                <path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" />
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61582412806274#" aria-label="Facebook" className="opacity-90 hover:opacity-100">
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2v3h-2c-.3 0-.5.2-.5.5V12H16l-.5 3h-2v7A10 10 0 0 0 22 12z" />
+              </svg>
+            </a>
+          </div>
+
+          <p className="mt-5 text-left opacity-85">
+            Dr. Juan Pablo Salerno is an award-winning mental health science expert and thought leader, author, and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
+          </p>
+
+          <p className="mt-6 text-left opacity-85">© Dr. Juan Pablo Salerno™</p>
+          <p className="mt-2 mb-5 text-left opacity-85">
+            <a href="/terms" className="underline underline-offset-4 hover:opacity-80">
+              Terms
+            </a>
+            <span className="mx-2 opacity-50">·</span>
+            <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">
+              Privacy
+            </a>
+            <span className="mx-2 opacity-50">·</span>
+            <span>All rights reserved</span>
+          </p>
+        </div>
+      </div>
+
+      {/* Hide global site footer ONLY on this page */}
+      <style>{`
+        body:has(main[data-page="meditations"]) :is(footer, .site-footer, [role="contentinfo"]) {
+          display: none !important;
+        }
+      `}</style>
     </main>
   );
 }
