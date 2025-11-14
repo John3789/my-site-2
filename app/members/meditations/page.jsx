@@ -116,7 +116,7 @@ export default function MeditationLibraryPage() {
         <h1 className="mt-15 font-serif text-5xl md:text-6xl">
           Meditation Library
         </h1>
-                  <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto mt-5 mb-0 rounded" />
+                  <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto mt-5 mb-2 rounded" />
 
         <p className="mt-4 text-sm md:text-base text-white/80">
           A growing collection of guided sessions to build calm, clarity, motivation,
