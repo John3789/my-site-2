@@ -5,6 +5,11 @@ export function middleware(req) {
   const url = req.nextUrl;
   const { pathname } = url;
 
+  // 👉 TEMP: Allow Meditation Library without membership check (like members-dev)
+  if (pathname === "/members/meditations") {
+    return NextResponse.next();
+  }
+
   // Paths that REQUIRE membership
   const isProtected =
     pathname === "/members" ||
