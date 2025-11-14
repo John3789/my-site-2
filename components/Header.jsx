@@ -41,10 +41,10 @@ export default function Header() {
             )}
             <Link href="/about" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/about") ? "nav-active" : ""}`}>About</Link>
             <Link href="/books" className={`books-link hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/books") ? "nav-active" : ""}`}> <span className="full-label">Books &amp; Publications</span> <span className="short-label">Publications</span> </Link>
+            <Link href="/membership" className={`hidden md:inline hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/membership") ? "nav-active" : ""}`}>Membership</Link>
             <Link href="/meditations" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/meditations") ? "nav-active" : ""}`}>Meditations</Link>
             <Link href="/speaking" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/speaking") ? "nav-active" : ""}`}>Speaking</Link>
             <Link href="/consulting" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/consulting") ? "nav-active" : ""}`}>Consulting</Link>
-            <Link href="/membership" className={`hidden md:inline hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/membership") ? "nav-active" : ""}`}>Membership</Link>
             <Link href="/contact" className={`hover:underline underline-offset-4 hover:opacity-90 transition ${pathname.startsWith("/contact") ? "nav-active" : ""}`}>Contact</Link>
           </nav>
 
@@ -192,10 +192,10 @@ export default function Header() {
               <MobileLink href="/" onClick={() => setOpen(false)} active={pathname === "/"}>Home</MobileLink>
               <MobileLink href="/about" onClick={() => setOpen(false)} active={pathname.startsWith("/about")}>About</MobileLink>
               <MobileLink href="/books" onClick={() => setOpen(false)} active={pathname.startsWith("/books")}>Books & Publications</MobileLink>
+              <MobileLink href="/membership" onClick={() => setOpen(false)} active={pathname.startsWith("/membership")}>Membership</MobileLink>
               <MobileLink href="/meditations" onClick={() => setOpen(false)} active={pathname.startsWith("/meditations")}>Meditations</MobileLink>
               <MobileLink href="/speaking" onClick={() => setOpen(false)} active={pathname.startsWith("/speaking")}>Speaking</MobileLink>
               <MobileLink href="/consulting" onClick={() => setOpen(false)} active={pathname.startsWith("/consulting")}>Consulting</MobileLink>
-              <MobileLink href="/membership" onClick={() => setOpen(false)} active={pathname.startsWith("/membership")}>Membership</MobileLink>
               <MobileLink href="/contact" onClick={() => setOpen(false)} active={pathname.startsWith("/contact")}>Contact</MobileLink>
             </nav>
 
