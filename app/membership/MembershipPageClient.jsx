@@ -248,6 +248,87 @@ export default function MembershipPageClient() {
         </div>
       </section>
 
+           {/* FAQ / Questions */}
+<section className="mt-16">
+  <h2 className="text-center text-2xl font-bold">Questions</h2>
+  <div className="mt-4 grid gap-4 md:grid-cols-2">
+
+    <Faq
+      q="What do I get inside RISE?"
+      a="You get access to the meditation library, social media resources library, weekly wisdom emails, monthly live online sessions, members-only Dr. Salerno AI guidance, discounted custom meditations, Vision Calls, and Mental Health & Growth Guides."
+    />
+
+    <Faq
+      q="How does the $1 trial work?"
+      a="Your first 30 days are $1 for the monthly plan. After the trial ends, your membership renews at $9.99 per month unless you cancel before the trial period finishes."
+    />
+
+    <Faq
+      q="Can I cancel anytime?"
+      a="Yes. You can cancel your membership at any time. When you cancel, you’ll keep access through the end of your current billing period."
+    />
+
+    <Faq
+      q="What’s the difference between monthly and yearly?"
+      a="The monthly plan renews every month after the $1 trial. The yearly plan is billed once per year at a discounted rate and includes an additional 5-minute custom meditation plus a Vision Call as a perk."
+    />
+
+    <Faq
+      q="Is this therapy or medical care?"
+      a="No. RISE is for education and personal growth. It does not replace therapy, medical care, or emergency services. Always contact a licensed professional or emergency services when needed."
+    />
+
+    <Faq
+      q="Do I need prior meditation experience?"
+      a="No. All meditations and resources are designed for all levels, including complete beginners. You can start gently and move at your own pace."
+    />
+
+    {/* 👉 Added FAQ #2 */}
+    <Faq
+      q="What if I’ve never meditated before?"
+      a="No problem at all — all meditations are beginner-friendly. You can start with short 5-minute resets and gradually move into deeper practices."
+    />
+
+    {/* 👉 Added FAQ #3 */}
+    <Faq
+      q="What if I don’t have a lot of time?"
+      a="RISE is designed for busy people. Most practices are short, powerful, and easy to integrate into your day — even during a quick break."
+    />
+
+    {/* 👉 Added FAQ #4 */}
+    <Faq
+      q="Is the AI advice really like talking to Dr. Salerno?"
+      a="Yes — it’s trained on his guidance, tone, and teaching style so it feels deeply personal, compassionate, and aligned with everything he teaches."
+    />
+
+    {/* 👉 Added FAQ #5 */}
+    <Faq
+      q="Do I need to be on camera for live sessions?"
+      a="No. You can join with your camera off, participate in the chat only, or just listen. Whatever feels best for you."
+    />
+
+    {/* 👉 Added FAQ #6 */}
+    <Faq
+      q="I’m going through a lot emotionally. Is this a good fit?"
+      a="Yes — RISE is built to support you through stress, low motivation, emotional heaviness, and rebuilding your inner strength. You are not alone here."
+    />
+
+    {/* 👉 Added FAQ #8 */}
+    <Faq
+      q="Do I get anything extra if I choose the yearly plan?"
+      a="Yes — yearly members receive a free 30–45 minute 1:1 Vision Call and a free 5-minute custom meditation created personally for them."
+    />
+
+    {/* 👉 Added FAQ #9 */}
+    <Faq
+      q="Will this help even if I’ve tried therapy, books, or motivational content before?"
+      a="Yes — RISE is built for people who feel stuck even after trying many things. It blends mental health science, personal growth, alignment, mindset, and spirituality in a way most programs don’t."
+    />
+
+  </div>
+</section>
+
+
       {/* Divider ABOVE footer, like Contact/Members */}
       <div className="mx-auto max-w-[1200px] px-6 mt-12">
         <hr className="border-t border-[var(--color-cream)]/22" />
