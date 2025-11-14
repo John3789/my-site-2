@@ -17,13 +17,14 @@ function getMemberstack() {
 export default function AutoRedirectIfNoMember() {
   const router = useRouter();
 
-  useEffect(() => {
-    const ms = getMemberstack();
-    if (!ms || !ms.getCurrentMember) {
-      // If Memberstack isn't ready at all, be safe and send them away
-      router.replace("/membership?need_member=1");
-      return;
-    }
+useEffect(() => {
+  const ms = getMemberstack();
+
+  // 👉 If Memberstack isn't ready yet, do NOTHING.
+  // We only want to redirect once we can actually ask "are they a member?"
+  if (!ms || !ms.getCurrentMember) {
+    return;
+  }
 
     let cancelled = false;
 
