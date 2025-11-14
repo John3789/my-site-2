@@ -15,7 +15,7 @@ export default function AutoContinueAfterSignup() {
     const ms =
       window.$memberstack || window.memberstack || window.Memberstack || null;
 
-    if (!ms?.purchasePlansWithCheckout || !ms?.getCurrentMember) return;
+    if (!ms?.purchasePlansWithCheckout) return;
 
     const raw = window.localStorage.getItem("ms_pending_checkout");
     if (!raw) return;
@@ -31,30 +31,20 @@ export default function AutoContinueAfterSignup() {
     const cadence = stored?.cadence === "yearly" ? "yearly" : "monthly";
     const priceId = stored?.priceId || PRICE_IDS[cadence] || PRICE_IDS.monthly;
 
-    // Clear first so we don’t loop
+    // Clear first so we don’t loop if something breaks
     window.localStorage.removeItem("ms_pending_checkout");
 
-    const run = async () => {
-      try {
-        const res = await ms.getCurrentMember();
-        const member = res?.data?.member;
-        if (!member) {
-          // somehow still not logged in – don’t do anything
-          return;
-        }
+    const { origin } = window.location;
+    const successUrl = `${origin}/members?status=success`;
+    const cancelUrl = `${origin}/membership?canceled=1`;
 
-        const { origin } = window.location;
-        await ms.purchasePlansWithCheckout({
-          priceId,
-          successUrl: `${origin}/members?status=success`,
-          cancelUrl: `${origin}/membership?canceled=1`,
-        });
-      } catch (err) {
-        console.error("[AutoContinueAfterSignup] checkout retry failed", err);
-      }
-    };
-
-    run();
+    ms.purchasePlansWithCheckout({
+      priceId,
+      successUrl,
+      cancelUrl,
+    }).catch((err) => {
+      console.error("[AutoContinueAfterSignup] checkout retry failed", err);
+    });
   }, []);
 
   return null;

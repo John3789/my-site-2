@@ -10,54 +10,30 @@ export default function BuyButton({ cadence = "monthly", className = "", childre
   async function handleClick(e) {
     e.preventDefault();
 
-    if (typeof window === "undefined") return;
-
     const ms =
-      window.$memberstack || window.memberstack || window.Memberstack || null;
+      (typeof window !== "undefined" &&
+        (window.$memberstack || window.memberstack || window.Memberstack)) ||
+      null;
 
-    if (!ms?.purchasePlansWithCheckout || !ms?.getCurrentMember) {
-      console.error("Memberstack not ready or missing purchasePlansWithCheckout", ms);
+    if (!ms?.purchasePlansWithCheckout) {
+      console.error("purchasePlansWithCheckout not available", ms);
       alert("Checkout unavailable. Please refresh and try again.");
       return;
     }
 
-    const safeCadence = cadence === "yearly" ? "yearly" : "monthly";
-    const priceId = PRICE_IDS[safeCadence] || PRICE_IDS.monthly;
+    const priceId = PRICE_IDS[cadence] || PRICE_IDS.monthly;
     const { origin } = window.location;
 
-    // 1) Check if user is logged in
-    let member;
+    // 🔑 Remember what the user clicked so we can resume after signup
     try {
-      const res = await ms.getCurrentMember();
-      member = res?.data?.member;
-    } catch (err) {
-      console.warn("[BuyButton] getCurrentMember failed", err);
+      window.localStorage.setItem(
+        "ms_pending_checkout",
+        JSON.stringify({ cadence, priceId })
+      );
+    } catch {
+      // fail silently – worst case, no auto-continue
     }
 
-    // 2) If NOT logged in → remember what they wanted + open signup modal
-    if (!member) {
-      try {
-        window.localStorage.setItem(
-          "ms_pending_checkout",
-          JSON.stringify({
-            cadence: safeCadence,
-            priceId,
-            ts: Date.now(),
-          })
-        );
-      } catch {}
-
-      if (typeof ms.openModal === "function") {
-        ms.openModal("signup");
-      } else if (typeof ms.open === "function") {
-        ms.open("signup");
-      } else {
-        console.error("No Memberstack modal open function found");
-      }
-      return;
-    }
-
-    // 3) If already logged in → go straight to checkout
     try {
       await ms.purchasePlansWithCheckout({
         priceId,
