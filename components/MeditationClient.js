@@ -121,24 +121,36 @@ export default function MeditationClient() {
             </div>
 
 {/* ===== MEDITATION LIBRARY DESCRIPTION ===== */}
-<section className="mx-auto max-w-[1000px] px-6 text-center mt-16 mb-16">
-  <p className="text-[12px] uppercase tracking-[0.18em] opacity-60 mb-2">Meditation Library</p>
-  <h2 className="font-serif text-4xl md:text-5xl opacity-95">Guided Meditation Library</h2>
-  <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-6 rounded mx-auto" />
-  <p className="text-lg md:text-xl opacity-90 leading-relaxed max-w-2xl mx-auto">
-    Access a growing collection of guided meditations designed to help you reset, restore, and realign — from quick daytime resets and grounding practices to deeper sessions for release, intention-setting, and evening wind-downs, all created to support your body, mind, and spirit.
+<section className="mx-auto max-w-[900px] px-6 text-center mt-16 mb-16 narrow-landscape-80">
+  <p className="text-[12px] uppercase tracking-[0.18em] opacity-60 mb-2">
+    Meditation Library
   </p>
-<p className="mt-4 text-sm opacity-85 max-w-xl mx-auto">
-  Gain full access to the entire library when you signup for{" "}
-  <a
-    href="/membership"
-    className="font-bold underline underline-offset-4 text-[var(--color-gold)]"
-  >
-    RISE Membership
-  </a>{" "}
-  and receive new meditations as they are released.
-</p>
+
+  <h2 className="font-serif text-4xl md:text-5xl opacity-95">
+    Guided Meditation Library
+  </h2>
+
+  <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded mx-auto" />
+
+  <p className="text-lg md:text-xl opacity-90 leading-relaxed mx-auto">
+    Access a growing collection of guided meditations designed to help you reset, restore,
+    and realign — from quick daytime resets and grounding practices to deeper sessions
+    focused on release, intention-setting, and evening wind-downs. Every track is created
+    to support your body, mind, and spirit.
+  </p>
+
+  <p className="mt-4 text-sm opacity-85 mx-auto">
+    Gain full access to the entire library when you signup for {" "}
+    <a
+      href="/membership"
+      className="font-bold underline underline-offset-4 text-[var(--color-gold)]"
+    >
+      RISE Membership
+    </a>{" "}
+    and receive new meditations as they are released.
+  </p>
 </section>
+
 
             {/* Divider — match two-column container width */}
             <div className="mx-auto w-full max-w-[1200px] px-6">
