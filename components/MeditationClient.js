@@ -73,7 +73,7 @@ export default function MeditationClient() {
             </div>
 
             {/* ===== MAIN HERO ROW — Custom sessions + photo ===== */}
-            <section className="mx-auto max-w-[1200px] px-6 py-14 md:py-16 narrow-landscape-80">
+            <section className="mx-auto max-w-[1200px] px-6 py-14 md:py-16">
               <div data-med-grid className="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
                 {/* LEFT COLUMN — Custom sessions content */}
                 <div>
