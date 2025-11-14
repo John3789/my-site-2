@@ -121,23 +121,25 @@ export default function MeditationClient() {
             </div>
 
 {/* ===== MEDITATION LIBRARY DESCRIPTION ===== */}
-<section className="mx-auto max-w-[750px] px-6 text-center mt-16 mb-12 narrow-landscape-80">
-  <p className="text-lg md:text-xl opacity-90 leading-relaxed">
-    Access a curated library of guided meditations designed to help you reset,
-    restore, and realign — supporting your body, mind, and spirit whenever you
-    need a moment for yourself.
+<section className="mx-auto max-w-[850px] px-6 text-center mt-16 mb-12 narrow-landscape-80">
+  <p className="text-[12px] uppercase tracking-[0.18em] opacity-60 mb-2">Meditation Library</p>
+  <h2 className="font-serif text-4xl md:text-5xl opacity-95">Guided Meditation Library</h2>
+  <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-6 rounded mx-auto" />
+  <p className="text-lg md:text-xl opacity-90 leading-relaxed max-w-2xl mx-auto">
+    Access a growing collection of guided meditations designed to help you reset, restore, and realign — from quick daytime resets and grounding practices to deeper sessions for release, intention-setting, and evening wind-downs, all created to support your body, mind, and spirit.
   </p>
-
-  <p className="mt-4 text-sm opacity-85">
-    Unlock full access when you join
+  <p className="mt-4 text-sm opacity-85 flex flex-col md:flex-row items-center justify-center gap-2">
+    <span>Gain full access to the library when you join</span>
     <a
       href="/membership"
-      className="inline-flex ml-2 items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-3 py-1.5 font-semibold text-xs uppercase tracking-wide shadow-md hover:shadow-lg hover:-translate-y-[1px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
+      className="inline-flex items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-3 py-1.5 font-semibold text-xs uppercase tracking-wide shadow-md hover:shadow-lg hover:-translate-y-[1px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
     >
       RISE Membership
     </a>
+    <span>and receive new tracks as they are released.</span>
   </p>
 </section>
+
             {/* Divider — match two-column container width */}
             <div className="mx-auto w-full max-w-[1200px] px-6">
               <hr className="border-t border-[var(--color-cream)]/15" />
