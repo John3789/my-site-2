@@ -1,6 +1,7 @@
 // app/resources/page.js
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import PopupIsland from "./PopupIsland";
 import { useIosZoomVars } from "../components/useIosZoom";
@@ -67,6 +68,76 @@ export default function ResourcesClient() {
     document.body.classList.add("hide-footer-on-resources");
     return () => document.body.classList.remove("hide-footer-on-resources");
   }, []);
+
+    // 🔒 Memberstack gate
+  const router = useRouter();
+  const [authStatus, setAuthStatus] = useState("checking");
+
+    useEffect(() => {
+    let cancelled = false;
+
+    async function checkMembership() {
+      const ms =
+        (typeof window !== "undefined" &&
+          (window.$memberstack ||
+            window.memberstack ||
+            window.Memberstack)) ||
+        null;
+
+      // If Memberstack isn't available, treat as not authorized
+      if (!ms || !ms.getCurrentMember) {
+        router.replace("/membership?locked=resources");
+        return;
+      }
+
+      try {
+        const member = await ms.getCurrentMember();
+
+        if (!member || !member.data) {
+          router.replace("/membership?locked=resources");
+          return;
+        }
+
+        const planConnections = member.data.planConnections || [];
+        const activePlanIds = planConnections.map((p) => p.planId);
+
+        // 👉 Replace with your real RISE plan IDs
+        const ALLOWED_PLAN_IDS = [
+          "pln_rise-monthly-plan-y9ao098m",
+          "pln_rise-yearly-plan-aw6404a4",
+        ];
+
+        const hasAccess = activePlanIds.some((id) =>
+          ALLOWED_PLAN_IDS.includes(id)
+        );
+
+        if (!hasAccess) {
+          router.replace("/membership?locked=resources");
+          return;
+        }
+
+        if (!cancelled) {
+          setAuthStatus("ready");
+        }
+      } catch (err) {
+        router.replace("/membership?locked=resources");
+      }
+    }
+
+    checkMembership();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [router]);
+
+  if (authStatus !== "ready") {
+    return (
+      <main className="mx-auto flex min-h-screen max-w-[1100px] items-center justify-center px-6 text-center text-[var(--color-cream)]">
+        <p className="text-sm opacity-80">Checking your membership…</p>
+      </main>
+    );
+  }
 
   const [open, setOpen] = useState(false);
   const [activeCollection, setActiveCollection] = useState(null);
