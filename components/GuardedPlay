@@ -1,9 +1,0 @@
-// components/GuardedPlay.jsx
-export default function GuardedPlay({ id, className = "", children = "Play" }) {
-  // Important: navigate the browser, don’t embed <audio>, so redirects can happen.
-  return (
-    <a href={`/api/media/${id}`} className={className}>
-      {children}
-    </a>
-  );
-}
