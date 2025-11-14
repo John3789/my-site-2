@@ -6,12 +6,6 @@ const PRICE_IDS = {
   yearly: "prc_89-99-jwgn03ep",
 };
 
-// ⬅️ PUT YOUR REAL MEMBERSTACK COUPON ID HERE
-const COUPON_IDS = {
-  monthly: "UMJ0pIHr", // e.g. "coup_rise-50-off-monthly"
-  yearly: null, // no coupon on yearly
-};
-
 export default function BuyButton({ cadence = "monthly", className = "", children }) {
   async function handleClick(e) {
     e.preventDefault();
@@ -21,32 +15,43 @@ export default function BuyButton({ cadence = "monthly", className = "", childre
         (window.$memberstack || window.memberstack || window.Memberstack)) ||
       null;
 
-    if (!ms?.purchasePlansWithCheckout) {
-      console.error("purchasePlansWithCheckout not available", ms);
-      alert("Checkout unavailable. Please refresh and try again.");
+    if (!ms) {
+      console.error("[BuyButton] Memberstack client not found", ms);
+      alert("Membership system is still loading. Please try again in a moment.");
       return;
     }
 
     const priceId = PRICE_IDS[cadence] || PRICE_IDS.monthly;
-    const couponId = COUPON_IDS[cadence] || null;
     const { origin } = window.location;
+    const successUrl = `${origin}/members?status=success`;
+    const cancelUrl = `${origin}/membership?canceled=1`;
 
     try {
-      const payload = {
-        priceId,
-        successUrl: `${origin}/members?status=success`,
-        cancelUrl: `${origin}/membership?canceled=1`,
-      };
-
-      // ✅ Only attach coupon for monthly
-      if (couponId) {
-        payload.couponId = couponId;
+      // 1) Check if user is already logged in
+      let member = null;
+      try {
+        const res = await ms.getCurrentMember?.();
+        // Memberstack DOM can return { data: member } or { data: { member } }
+        member = res?.data?.member || res?.data || res?.member || null;
+      } catch (err) {
+        console.warn("[BuyButton] getCurrentMember failed (probably logged out)", err);
       }
 
-      await ms.purchasePlansWithCheckout(payload);
+      // 2) If NOT logged in, open the signup modal and wait until it finishes
+      if (!member) {
+        await ms.openModal("SIGNUP"); // resolves after successful signup/login
+      }
+
+      // 3) Now that they’re logged in, start checkout
+      await ms.purchasePlansWithCheckout({
+        priceId,
+        successUrl,
+        cancelUrl,
+        autoRedirect: true, // let Memberstack send them to Stripe
+      });
     } catch (err) {
-      console.error("[BuyButton] checkout error", err);
-      alert("Checkout failed. Please try again or contact support.");
+      console.error("[BuyButton] checkout flow error", err);
+      alert("Checkout failed. Please try again, or contact support if it continues.");
     }
   }
 
