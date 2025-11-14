@@ -118,7 +118,7 @@ export default function MeditationLibraryPage() {
         </h1>
                   <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto mt-5 mb-2 rounded" />
 
-        <p className="mt-4 text-sm md:text-base text-white/80">
+        <p className="mt-5 text-sm md:text-base text-white/80">
           A growing collection of guided sessions to build calm, clarity, motivation,
           compassion, and purpose – organized by theme so you can find what you need
           in this exact moment.
