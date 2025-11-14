@@ -17,26 +17,25 @@ function getMemberstack() {
 export default function AutoRedirectIfNoMember() {
   const router = useRouter();
 
-  useEffect(() => {
+useEffect(() => {
+  const ms = getMemberstack();
+
+  // 👉 If Memberstack isn't ready yet, do NOTHING.
+  // We only want to redirect once we can actually ask "are they a member?"
+  if (!ms || !ms.getCurrentMember) {
+    return;
+  }
+
     let cancelled = false;
 
-    async function gate() {
-      const ms = getMemberstack();
-
-      // If Memberstack isn't available at all, we do NOT want this page open
-      if (!ms || !ms.getCurrentMember) {
-        if (!cancelled) {
-          router.replace("/membership?need_member=1");
-        }
-        return;
-      }
-
+    async function checkMember() {
       try {
         const { data: member } = await ms.getCurrentMember();
         const hasPlan =
           Array.isArray(member?.planConnections) &&
           member.planConnections.length > 0;
 
+        // If not logged in OR no active plan → send them away
         if (!hasPlan && !cancelled) {
           router.replace("/membership?need_member=1");
         }
@@ -47,7 +46,7 @@ export default function AutoRedirectIfNoMember() {
       }
     }
 
-    gate();
+    checkMember();
 
     return () => {
       cancelled = true;
