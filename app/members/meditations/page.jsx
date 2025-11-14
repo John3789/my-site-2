@@ -128,22 +128,7 @@ export default function MeditationLibraryPage() {
         </p>
       </section>
 
-      {/* START HERE SUGGESTION (optional, uses existing data) */}
-      <section className="mt-8">
-        <div className="mx-auto max-w-[700px] rounded-xl border border-white/15 bg-white/[0.03] p-4 md:p-5">
-          <h2 className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
-            Not sure where to start?
-          </h2>
-          <p className="mt-2 text-sm text-white/80">
-            Try a quick reset from <span className="font-semibold">Motivation &amp; Mindset</span>,
-            a grounding practice from{" "}
-            <span className="font-semibold">Mental Health &amp; Stress Relief</span>, or a
-            gentle check-in from{" "}
-            <span className="font-semibold">Self-Compassion &amp; Healing</span>. As the
-            library grows, you&apos;ll see more sessions appear in each theme.
-          </p>
-        </div>
-      </section>
+     
 
       {/* FILTER BAR */}
       <section className="mt-8">
