@@ -1,4 +1,3 @@
-// middleware.js
 import { NextResponse } from "next/server";
 
 export function middleware(req) {
@@ -7,6 +6,11 @@ export function middleware(req) {
 
   // 👉 TEMP: Allow Meditation Library without membership check (like members-dev)
   if (pathname === "/members/meditations") {
+    return NextResponse.next();
+  }
+
+  // ✅ NEW: allow /members?status=success through even if cookie isn't set yet
+  if (pathname === "/members" && url.searchParams.get("status") === "success") {
     return NextResponse.next();
   }
 
