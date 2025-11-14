@@ -5,7 +5,6 @@ import { useEffect, useRef } from "react";
 import memberstackDOM from "@memberstack/dom";
 
 const PUBLIC_KEY = process.env.NEXT_PUBLIC_MS_PUBLIC_KEY;
-const DOMAIN = "https://memberstack-client.drjuanpablosalerno.com";
 
 export default function MemberstackProvider({ children }) {
   const inited = useRef(false);
@@ -20,19 +19,19 @@ export default function MemberstackProvider({ children }) {
     }
 
     const ms = memberstackDOM.init({
+      domain: "https://memberstack-client.drjuanpablosalerno.com", // ⬅️ Step 3
       publicKey: PUBLIC_KEY,
-      domain: DOMAIN, // 👈 critical for custom auth domain
     });
 
     if (typeof window !== "undefined") {
       window.$memberstack = ms;
-      window.memberstack = ms;
-      window.Memberstack = ms;
+      window.memberstack  = ms;
+      window.Memberstack  = ms;
     }
 
     try {
       ms.mount?.();
-      console.log("[MS] DOM mounted with custom domain:", DOMAIN);
+      console.log("[MS] DOM mounted with custom client domain");
     } catch (err) {
       console.error("[MS] mount error:", err);
     }
