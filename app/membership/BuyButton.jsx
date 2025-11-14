@@ -1,73 +1,43 @@
 // app/membership/BuyButton.jsx
 "use client";
 
-const PRICE_IDS = {
-  monthly: "prc_9-99-hj9j03x8",
-  yearly: "prc_89-99-jwgn03ep",
-};
-
 export default function BuyButton({ cadence = "monthly", className = "", children }) {
   async function handleClick(e) {
     e.preventDefault();
 
-    if (typeof window === "undefined") return;
-
-    const ms =
-      window.$memberstack || window.memberstack || window.Memberstack || null;
-
-    if (!ms?.purchasePlansWithCheckout) {
-      console.error("purchasePlansWithCheckout not available", ms);
-      alert("Checkout unavailable. Please refresh and try again.");
-      return;
-    }
-
-    const priceId = PRICE_IDS[cadence] || PRICE_IDS.monthly;
-    const { origin } = window.location;
+    const safeCadence = cadence === "yearly" ? "yearly" : "monthly";
 
     try {
-      await ms.purchasePlansWithCheckout({
-        priceId,
-        successUrl: `${origin}/members?status=success`,
-        cancelUrl: `${origin}/membership?canceled=1`,
+      const res = await fetch("/api/checkout/member", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ cadence: safeCadence }),
       });
-    } catch (err) {
-      console.error("[BuyButton] checkout error", err);
 
-      const code = err?.code || err?.response?.data?.code;
-      const msg = err?.message || err?.response?.data?.message || "";
+      const data = await res.json();
 
-      // 🔐 If they aren't logged in, open signup and remember what they picked
-      if (code === "login-required" || /logged in/i.test(msg)) {
-        try {
-          window.localStorage.setItem(
-            "ms_pending_checkout",
-            JSON.stringify({ cadence, priceId })
-          );
-        } catch (_) {}
-
-        if (ms?.openModal) {
-          ms.openModal("signup");
-        } else {
-          // Fallback: send them to your signup/login page
-          window.location.href = "/membership?auth=signup";
-        }
+      if (!res.ok || !data?.url) {
+        console.error("[BuyButton] /api/checkout/member error", data);
+        alert("Checkout unavailable. Please try again in a moment.");
         return;
       }
 
-      alert("Checkout failed. Please try again or contact support.");
+      window.location.href = data.url;
+    } catch (err) {
+      console.error("[BuyButton] unexpected error", err);
+      alert("Checkout failed. Please try again in a moment.");
     }
   }
 
+  const baseClasses =
+    className ||
+    "inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10";
+
+  const defaultLabel = cadence === "yearly" ? "Start — Yearly" : "Start — Monthly";
+
   return (
-    <button
-      type="button"
-      onClick={handleClick}
-      className={
-        className ||
-        "inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
-      }
-    >
-      {children ?? (cadence === "yearly" ? "Start — Yearly" : "Start — Monthly")}
+    <button type="button" onClick={handleClick} className={baseClasses}>
+      {children ?? defaultLabel}
     </button>
   );
 }
