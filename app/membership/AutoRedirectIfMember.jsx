@@ -4,35 +4,61 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
-// Your RISE plan IDs
-const RISE_PLAN_IDS = [
-  "pln_rise-monthly-plan-y9ao098m",
-  "pln_rise-yearly-plan-4w9s0n01",
-];
+function getMemberstack() {
+  if (typeof window === "undefined") return null;
+  return (
+    window.$memberstackDom ||
+    window.memberstack ||
+    window.$memberstack ||
+    null
+  );
+}
 
 export default function AutoRedirectIfMember() {
   const router = useRouter();
 
   useEffect(() => {
-    const ms = window.$memberstack || window.memberstack || window.Memberstack;
-    if (!ms?.getCurrentMember) return;
+    const ms = getMemberstack();
+    if (!ms) return;
 
-    ms.getCurrentMember()
-      .then((res) => {
-        const member = res?.data?.member || res?.member || null;
-        if (!member) return;
+    let cancelled = false;
 
-        const plans = member.activePlans || member.plans || [];
+    async function sendIfMember() {
+      if (!ms.getCurrentMember) return;
+      try {
+        const { data: member } = await ms.getCurrentMember();
+        const hasPlan = !!member?.planConnections?.length;
 
-        const hasRise = plans.some((p) =>
-          RISE_PLAN_IDS.includes(p.id || p.planId)
-        );
-
-        if (hasRise) {
+        if (!cancelled && hasPlan) {
           router.replace("/members");
         }
-      })
-      .catch(() => {});
+      } catch {
+        // ignore
+      }
+    }
+
+    // 1) Check immediately on load (for people coming from successUrl, refresh, etc.)
+    sendIfMember();
+
+    // 2) Listen for login / plan changes
+    let listener;
+    if (ms.onAuthChange) {
+      listener = ms.onAuthChange((memberWrapper) => {
+        if (cancelled) return;
+
+        const member = memberWrapper?.data || memberWrapper;
+        const hasPlan = !!member?.planConnections?.length;
+
+        if (hasPlan) {
+          router.replace("/members");
+        }
+      });
+    }
+
+    return () => {
+      cancelled = true;
+      if (listener?.unsubscribe) listener.unsubscribe();
+    };
   }, [router]);
 
   return null;

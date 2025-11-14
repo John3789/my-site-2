@@ -5,24 +5,16 @@ export function middleware(req) {
   const url = req.nextUrl;
   const pathname = url.pathname;
 
-  // Allow meditation library temporarily
+  // Keep the meditation library fully open while you're editing it
   if (pathname === "/members/meditations") {
     return NextResponse.next();
   }
 
-  // Allow redirect from Stripe immediately after purchase
-  if (pathname === "/members" && url.searchParams.get("status") === "success") {
-    return NextResponse.next();
-  }
+  // Only protect media + /api/go with the stripe_cust cookie for now
+  const needsStripeCookie =
+    pathname.startsWith("/api/media/") || pathname === "/api/go";
 
-  // Protect /members routes
-  const isProtected =
-    pathname === "/members" ||
-    pathname.startsWith("/members/") ||
-    pathname.startsWith("/api/media/") ||
-    pathname === "/api/go";
-
-  if (isProtected) {
+  if (needsStripeCookie) {
     const cookie = req.cookies.get("stripe_cust")?.value;
     if (!cookie) {
       return NextResponse.redirect(new URL("/membership", url.origin));
