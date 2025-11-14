@@ -6,6 +6,9 @@ const PRICE_IDS = {
   yearly: "prc_89-99-jwgn03ep",
 };
 
+// Define your single coupon ID here for easy management
+const COUPON_ID = "UMJ0pIHr"; 
+
 export default function BuyButton({ cadence = "monthly", className = "", children }) {
   async function handleClick(e) {
     e.preventDefault();
@@ -25,6 +28,20 @@ export default function BuyButton({ cadence = "monthly", className = "", childre
     const { origin } = window.location;
     const successUrl = `${origin}/members?status=success`;
     const cancelUrl = `${origin}/membership?canceled=1`;
+
+        // --- START OF COUPON LOGIC ---
+    let checkoutOptions = {
+        priceId,
+        successUrl,
+        cancelUrl,
+        autoRedirect: true, // let Memberstack send them to Stripe
+    };
+
+    // Apply the coupon ONLY if the cadence is 'monthly'
+    if (cadence === "monthly") {
+        checkoutOptions.coupon = COUPON_ID;
+    }
+    // --- END OF COUPON LOGIC ---
 
     try {
       // 1) Check if user is already logged in
