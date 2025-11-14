@@ -4,11 +4,11 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
-function getMemberstack() {
+function getMemberstackCore() {
   if (typeof window === "undefined") return null;
   return (
-    window.$memberstackDom ||
     window.memberstack ||
+    window.$memberstackDom ||
     window.$memberstack ||
     null
   );
@@ -18,46 +18,41 @@ export default function AutoRedirectIfMember() {
   const router = useRouter();
 
   useEffect(() => {
-    const ms = getMemberstack();
-    if (!ms) return;
+    const ms = getMemberstackCore();
+    if (!ms || !ms.onAuthChange) return;
 
-    let cancelled = false;
+    // ⚠️ Only react to *auth changes* (login/logout),
+    // NOT just "page load while already logged in."
+    const stop = ms.onAuthChange(async (member) => {
+      // member will be null/undefined when logged out
+      if (!member) return;
 
-    async function sendIfMember() {
-      if (!ms.getCurrentMember) return;
       try {
-        const { data: member } = await ms.getCurrentMember();
-        const hasPlan = !!member?.planConnections?.length;
+        // Normalise shape: sometimes it's { data }, sometimes it's raw
+        const raw = member?.data || member;
 
-        if (!cancelled && hasPlan) {
-          router.replace("/members");
-        }
-      } catch {
-        // ignore
-      }
-    }
-
-    // 1) Check immediately on load (for people coming from successUrl, refresh, etc.)
-    sendIfMember();
-
-    // 2) Listen for login / plan changes
-    let listener;
-    if (ms.onAuthChange) {
-      listener = ms.onAuthChange((memberWrapper) => {
-        if (cancelled) return;
-
-        const member = memberWrapper?.data || memberWrapper;
-        const hasPlan = !!member?.planConnections?.length;
+        // Check their plans via getCurrentMember
+        if (!ms.getCurrentMember) return;
+        const { data } = await ms.getCurrentMember();
+        const hasPlan =
+          Array.isArray(data?.planConnections) &&
+          data.planConnections.length > 0;
 
         if (hasPlan) {
           router.replace("/members");
         }
-      });
-    }
+      } catch (e) {
+        // If something explodes, do nothing instead of breaking the page
+      }
+    });
 
+    // Clean up listener on unmount
     return () => {
-      cancelled = true;
-      if (listener?.unsubscribe) listener.unsubscribe();
+      if (typeof stop === "function") {
+        stop();
+      } else if (stop?.unsubscribe) {
+        stop.unsubscribe();
+      }
     };
   }, [router]);
 
