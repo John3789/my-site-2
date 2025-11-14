@@ -7,8 +7,8 @@ import { useRouter } from "next/navigation";
 function getMemberstack() {
   if (typeof window === "undefined") return null;
   return (
-    window.memberstack ||
     window.$memberstackDom ||
+    window.memberstack ||
     window.$memberstack ||
     null
   );
@@ -23,8 +23,7 @@ export default function AutoRedirectIfNoMember() {
     async function gate() {
       const ms = getMemberstack();
 
-      // If Memberstack never loads at all, we do NOT want to leave this page open.
-      // Give it a little time, then send them away.
+      // If Memberstack isn't available at all, we do NOT want this page open
       if (!ms || !ms.getCurrentMember) {
         if (!cancelled) {
           router.replace("/membership?need_member=1");

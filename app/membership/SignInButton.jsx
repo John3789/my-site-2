@@ -1,17 +1,36 @@
+// components/SignInButton.jsx (or wherever it lives)
+"use client";
+
 export default function SignInButton({
   children = "Sign in",
   className = "",
   redirect = "/members",
 }) {
-  const onClick = (e) => {
+  const onClick = async (e) => {
     e.preventDefault();
-    const api =
-      (typeof window !== "undefined" &&
-        (window.$memberstack || window.memberstack || window.Memberstack)) ||
+
+    if (typeof window === "undefined") return;
+
+    const ms =
+      window.$memberstackDom ||
+      window.memberstack ||
+      window.$memberstack ||
       null;
 
-    if (api?.openModal) {
-      api.openModal("LOGIN", { redirect });
+    if (!ms || !ms.openModal) return;
+
+    try {
+      // Open the built-in LOGIN modal
+      const result = await ms.openModal("LOGIN");
+
+      // If they actually logged in, result.data will have member info
+      if (result?.data) {
+        // Send them to the members page (or whatever you passed via `redirect`)
+        window.location.assign(redirect);
+      }
+    } catch (err) {
+      // If they close the modal or it errors, just stay put
+      console.error("Login modal error:", err);
     }
   };
 
