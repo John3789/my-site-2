@@ -29,7 +29,7 @@ export default function BuyButton({ cadence = "monthly", className = "", childre
     const successUrl = `${origin}/members?status=success`;
     const cancelUrl = `${origin}/membership?canceled=1`;
 
-        // --- START OF COUPON LOGIC ---
+    // --- COUPON LOGIC: Build the options object ---
     let checkoutOptions = {
         priceId,
         successUrl,
@@ -60,12 +60,10 @@ export default function BuyButton({ cadence = "monthly", className = "", childre
       }
 
       // 3) Now that they’re logged in, start checkout
-      await ms.purchasePlansWithCheckout({
-        priceId,
-        successUrl,
-        cancelUrl,
-        autoRedirect: true, // let Memberstack send them to Stripe
-      });
+      // THIS IS THE CRITICAL LINE: We pass the 'checkoutOptions' variable 
+      // which now correctly contains the coupon only for the monthly plan.
+      await ms.purchasePlansWithCheckout(checkoutOptions);
+      
     } catch (err) {
       console.error("[BuyButton] checkout flow error", err);
       alert("Checkout failed. Please try again, or contact support if it continues.");
