@@ -87,8 +87,13 @@ export default function MembersIsland() {
             <p className="mt-1 text-sm md:text-base opacity-80">Your space to realign and grow.</p>
             <p className="mt-3 text-base md:text-lg opacity-85">Start with the newest RISE meditation, or explore your perks: guided meditations, weekly wisdom, monthly live sessions, members-only AI guidance, and discounted custom meditations with a complimentary 30-minute Vision Call.</p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link href="/members/resources" className="inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-5 py-3 text-sm font-semibold tracking-wide hover:brightness-110 active:translate-y-[1px]">Start meditation</Link>
-            </div>
+  <Link
+    href="/members/meditations"
+    className="inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-5 py-3 text-sm font-semibold tracking-wide hover:brightness-110 active:translate-y-[1px]"
+  >
+    Start meditation
+  </Link>
+</div>
           </div>
         </div>
       </section>
@@ -96,7 +101,12 @@ export default function MembersIsland() {
       {/* QUICK ACTIONS */}
       <section className="mt-8">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <Card href="/members/resources" icon="🧘" title="Meditation Library" desc="Guided sessions for calm, clarity, motivation, compassion, and purpose." />
+<Card
+  href="/members/meditations"
+  icon="🧘"
+  title="Meditation Library"
+  desc="Guided sessions for calm, clarity, motivation, compassion, and purpose."
+/>
           <Card href="/members/resources#social" icon="📚" title="Social Media Resources Library" desc="Curated posts and reframes by theme. Find the prompt that shifts your day." />
           <Card href="/members/resources#wisdom" icon="✉️" title="Weekly Wisdom Emails" desc="Short, uplifting nudges to keep you moving—one each week." />
           <Card href="/members/resources#guide" icon="📄" title="Mental Health & Growth Guides" desc="A digestible 1–2 page guide with practical insights you can use today." />
