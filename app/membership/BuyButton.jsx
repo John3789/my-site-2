@@ -6,15 +6,6 @@ const PRICE_IDS = {
   yearly: "prc_89-99-jwgn03ep",
 };
 
-const PLAN_IDS = {
-  monthly: "pln_rise-monthly-plan-y9ao098m",
-  yearly:  "pln_rise-yearly-plan-4w9s0n01",
-};
-
-// 👇 Stripe/Memberstack coupon ID for $1 trial (monthly)
-const STRIPE_COUPON_ID = "UMJ0pIHr"; // change if your coupon ID is different
-
-
 export default function BuyButton({ cadence = "monthly", className = "", children }) {
   async function handleClick(e) {
     e.preventDefault();
@@ -30,8 +21,10 @@ export default function BuyButton({ cadence = "monthly", className = "", childre
       return;
     }
 
-const planId = PLAN_IDS[cadence] || PLAN_IDS.monthly;
-
+    const priceId = PRICE_IDS[cadence] || PRICE_IDS.monthly;
+    const { origin } = window.location;
+    const successUrl = `${origin}/members?status=success`;
+    const cancelUrl = `${origin}/membership?canceled=1`;
 
     try {
       // 1) Check if user is already logged in
@@ -49,17 +42,13 @@ const planId = PLAN_IDS[cadence] || PLAN_IDS.monthly;
         await ms.openModal("SIGNUP"); // resolves after successful signup/login
       }
 
-// 3) Now that they’re logged in, start checkout WITH plan + optional coupon
-const plans = [
-  {
-    planId,
-    // Only apply coupon for the monthly plan
-    ...(cadence === "monthly" ? { coupon: STRIPE_COUPON_ID } : {}),
-  },
-];
-
-await ms.purchasePlansWithCheckout(plans);
-
+      // 3) Now that they’re logged in, start checkout
+      await ms.purchasePlansWithCheckout({
+        priceId,
+        successUrl,
+        cancelUrl,
+        autoRedirect: true, // let Memberstack send them to Stripe
+      });
     } catch (err) {
       console.error("[BuyButton] checkout flow error", err);
       alert("Checkout failed. Please try again, or contact support if it continues.");
