@@ -141,13 +141,12 @@ export default function MeditationClient() {
 
   <p className="mt-4 text-sm opacity-85 mx-auto">
     Gain full access to the entire library when you signup for {" "}
-    <a
-      href="/membership"
-      className="font-bold underline underline-offset-4 text-[var(--color-gold)]"
-    >
-      RISE Membership
-    </a>{" "}
-    and receive new meditations as they are released.
+<a
+  href="/membership"
+  className="font-bold underline underline-offset-4 text-[var(--color-gold)] brightness-110 hover:brightness-130 transition"
+>
+  RISE Membership
+</a> and receive new meditations as they are released.
   </p>
 </section>
 
