@@ -1,23 +1,30 @@
+// middleware.js
 import { NextResponse } from "next/server";
 
 export function middleware(req) {
   const url = req.nextUrl;
-  const { pathname } = url;
+  const pathname = url.pathname;
 
-  // 👉 TEMP: Allow Meditation Library without membership check (like members-dev)
+  // Allow meditation library temporarily
   if (pathname === "/members/meditations") {
     return NextResponse.next();
   }
 
-  // Paths that REQUIRE membership
+  // Allow redirect from Stripe immediately after purchase
+  if (pathname === "/members" && url.searchParams.get("status") === "success") {
+    return NextResponse.next();
+  }
+
+  // Protect /members routes
   const isProtected =
-    pathname.startsWith("/members/") ||   // subpaths only
+    pathname === "/members" ||
+    pathname.startsWith("/members/") ||
     pathname.startsWith("/api/media/") ||
     pathname === "/api/go";
 
   if (isProtected) {
-    const hasStripeCustomer = req.cookies.get("stripe_cust")?.value;
-    if (!hasStripeCustomer) {
+    const cookie = req.cookies.get("stripe_cust")?.value;
+    if (!cookie) {
       return NextResponse.redirect(new URL("/membership", url.origin));
     }
   }
@@ -26,5 +33,5 @@ export function middleware(req) {
 }
 
 export const config = {
-  matcher: ["/members/:path*", "/api/media/:path*", "/api/go"],
+  matcher: ["/members", "/members/:path*", "/api/media/:path*", "/api/go"],
 };
