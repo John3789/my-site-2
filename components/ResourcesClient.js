@@ -7,6 +7,8 @@ import PopupIsland from "./PopupIsland";
 import { useIosZoomVars } from "../components/useIosZoom";
 import MobileFooterSubscribeClient from "./MobileFooterSubscribeClient";
 
+const BYPASS_RESOURCES_GATE = true; // 👈 set to true while designing
+
 
 /* =========================
    THEMES DATA
@@ -74,21 +76,26 @@ export default function ResourcesClient() {
   const [authStatus, setAuthStatus] = useState("checking");
 
     useEffect(() => {
-    let cancelled = false;
+  let cancelled = false;
 
-    async function checkMembership() {
-      const ms =
-        (typeof window !== "undefined" &&
-          (window.$memberstack ||
-            window.memberstack ||
-            window.Memberstack)) ||
-        null;
+  async function checkMembership() {
+    // 🔧 Bypass in design mode so you can see the page even if Memberstack is broken
+    if (BYPASS_RESOURCES_GATE) {
+      setAuthStatus("ready");
+      return;
+    }
 
-      // If Memberstack isn't available, treat as not authorized
-      if (!ms || !ms.getCurrentMember) {
-        router.replace("/membership?locked=resources");
-        return;
-      }
+    const ms =
+      (typeof window !== "undefined" &&
+        (window.$memberstack ||
+          window.memberstack ||
+          window.Memberstack)) ||
+      null;
+
+    if (!ms || !ms.getCurrentMember) {
+      router.replace("/membership?locked=resources");
+      return;
+    }
 
       try {
         const member = await ms.getCurrentMember();
