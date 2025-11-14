@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import memberstackDOM from "@memberstack/dom";
 
 const PUBLIC_KEY = process.env.NEXT_PUBLIC_MS_PUBLIC_KEY;
+const DOMAIN = "https://memberstack-client.drjuanpablosalerno.com";
 
 export default function MemberstackProvider({ children }) {
   const inited = useRef(false);
@@ -18,9 +19,9 @@ export default function MemberstackProvider({ children }) {
       return;
     }
 
-    // ✅ NO domain here – let Memberstack use its hosted auth
     const ms = memberstackDOM.init({
       publicKey: PUBLIC_KEY,
+      domain: DOMAIN, // 👈 critical for custom auth domain
     });
 
     if (typeof window !== "undefined") {
@@ -31,7 +32,7 @@ export default function MemberstackProvider({ children }) {
 
     try {
       ms.mount?.();
-      console.log("[MS] DOM mounted (no custom domain)");
+      console.log("[MS] DOM mounted with custom domain:", DOMAIN);
     } catch (err) {
       console.error("[MS] mount error:", err);
     }

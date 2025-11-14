@@ -1,9 +1,7 @@
-"use client";
-
 export default function SignInButton({
   children = "Sign in",
   className = "",
-  redirect = "https://www.drjuanpablosalerno.com/members",
+  redirect = "/members",
 }) {
   const onClick = (e) => {
     e.preventDefault();
@@ -11,7 +9,10 @@ export default function SignInButton({
       (typeof window !== "undefined" &&
         (window.$memberstack || window.memberstack || window.Memberstack)) ||
       null;
-    if (api?.openModal) api.openModal("LOGIN", { redirect });
+
+    if (api?.openModal) {
+      api.openModal("LOGIN", { redirect });
+    }
   };
 
   return (
