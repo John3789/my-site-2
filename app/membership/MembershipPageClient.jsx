@@ -4,6 +4,7 @@
 import { useState } from "react";
 import SignInButton from "./SignInButton";
 import BuyButton from "./BuyButton";
+import AutoRedirectIfMember from "./AutoRedirectIfMember";
 
 const STRIPE_COUPON_ID = "QI8eKMjf"; // (currently unused, keeping as in your file)
 
@@ -13,7 +14,9 @@ export default function MembershipPageClient() {
       data-page="membership"
       className="mx-auto max-w-[1100px] px-6 py-12"
     >
-      {/* Keep this firing early */}
+      <AutoRedirectIfMember />
+
+
 
       {/* HERO SECTION: title + copy + image (like About page) */}
       <section className="mx-auto max-w-[1100px] mt-10 mb-10">
