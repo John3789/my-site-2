@@ -63,8 +63,7 @@ export default function MeditationClient() {
             {/* ===== INTRO ===== */}
             <section className="mx-auto max-w-[700px] lg:max-w-[850px] px-6 text-center mb-12 narrow-landscape-80 narrow-landscape-80-ipad">
               <p className="text-lg md:text-xl opacity-90 leading-relaxed narrow-landscape-80 narrow-landscape-80-ipad">
-                Practices designed to help reset your body, calm your mind, and uplift your spirit — guiding you through the day with clarity and ease.
-              </p>
+When your mind feels scattered or your energy feels low, the right meditation can bring you back to center. My meditations are designed to help you reset your body, calm your thoughts, and reconnect with yourself—so you can move through the day with clarity, intention, and ease.              </p>
             </section>
 
             {/* Divider — match two-column container width */}
