@@ -235,10 +235,9 @@ export default function AboutClient() {
                     community. Alongside his academic work, he is building a personal brand that
                     integrates science and soul. His forthcoming book weaves scientific insight and
                     personal growth wisdom to guide others toward balance, purpose, fulfillment, and
-                    mental wellness. On this site, you can explore his offerings - including
-                    organizational wellness consulting, public speaking, guided meditations,
-                    evidence-informed resources for personal growth and mental health, and current
-                    publications.
+                    mental wellness. On this site, you can explore his offerings - including his
+                    signature <Link href="/membership" className="link">RISE Membership</Link>, guided meditations, public speaking, consulting, publications,
+                    and additional resources for personal growth and mental health.
                   </p>
                 </section>
 
