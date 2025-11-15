@@ -78,14 +78,11 @@ export default function MembershipPageClient() {
         <div className="mx-auto max-w-[750px] rounded-2xl bg-white/5 p-6 ring-1 ring-[var(--color-gold)]/60">
           <div className="relative">
             {/* LEFT — Monthly Trial Badge (gold) */}
-            <div className="absolute -top-3 left={0} inline-flex items-center gap-2 rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)] px-3 py-1 text-xs font-bold text-black shadow">
-              $1 first 30 days (monthly)
-            </div>
+            <div className="absolute -top-3 left={0} inline-flex items-center gap-2 rounded-full border border-[var(--color-gold)] bg-transparent px-3 py-1 text-xs font-semibold text-[var(--color-gold)] shadow-md">
+              Free Custom Meditation (yearly plan)
+                          </div>
 
-            {/* RIGHT — Yearly Perks Badge (transparent + gold border, matches yearly CTA baseline) */}
-            <div className="absolute -top-3 right-0 inline-flex items-center gap-2 rounded-full border border-[var(--color-gold)] bg-transparent px-3 py-1 text-xs font-semibold text-[var(--color-gold)] shadow-md">
-              Free Custom Meditation (yearly)
-            </div>
+            
           </div>
 
           <div className="mt-8 text-center text-2xl font-bold">Limited Time Offer</div>
@@ -112,7 +109,7 @@ export default function MembershipPageClient() {
           {/* Mini CARDS */}
           <div className="mt-6 grid gap-5 md:grid-cols-2">
             <MiniTitleCard title="Meditation Library" />
-            <MiniTitleCard title="Social Media Resources Library" />
+            <MiniTitleCard title="Social Media Resource Library" />
             <MiniTitleCard title="Weekly Wisdom Emails" />
             <MiniTitleCard title="Monthly Live Online Sessions" />
             <MiniTitleCard title="Dr. Salerno AI" />
@@ -155,7 +152,7 @@ export default function MembershipPageClient() {
             desc="A growing collection of guided sessions to build calm, clarity, motivation, compassion, and purpose—organized by theme for easy practice."
           />
           <BenefitCard
-            title="Social Media Resources Library"
+            title="Social Media Resource Library"
             desc="My most helpful posts and reframes, curated by theme so you can quickly find the idea or prompt that shifts your day forward."
           />
           <BenefitCard
@@ -189,7 +186,7 @@ export default function MembershipPageClient() {
       <section className="mt-16">
         <div className="mx-auto max-w-[725px] rounded-xl border border-[var(--color-gold)]/60 bg-white/5 p-6">
           <h3 className="text-center font-semibold text-[var(--color-gold)]">
-            Meditation & Social Media Resources Library Themes
+            Meditation & Social Media Resource Library Themes
           </h3>
           <p className="mt-2 text-center text-sm opacity-85">
             Motivation & Mindset · Mental Health & Stress Relief · Self-Compassion & Healing · Relationships & Connection · Purpose & Alignment · Manifestation & Intention Setting · Feng Shui & Environment
