@@ -236,7 +236,7 @@ export default function AboutClient() {
                     integrates science and soul. His forthcoming book weaves scientific insight and
                     personal growth wisdom to guide others toward balance, purpose, fulfillment, and
                     mental wellness. On this site, you can explore his offerings - including his
-                    signature <Link href="/membership" className="link">RISE Membership</Link>, guided meditations, public speaking, consulting, publications,
+                    signature <Link href="/membership" className="link">RISE Membership Program</Link>, guided meditations, public speaking, consulting, publications,
                     and additional resources for personal growth and mental health.
                   </p>
                 </section>
