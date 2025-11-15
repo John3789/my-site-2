@@ -258,10 +258,6 @@ export default function MembershipPageClient() {
       a="You get access to the meditation library, social media resources library, weekly wisdom emails, monthly live online sessions, members-only Dr. Salerno AI guidance, discounted custom meditations, Vision Calls, and Mental Health & Growth Guides."
     />
     <Faq
-      q="How does the $1 trial work?"
-      a="Your first 30 days are $1 for the monthly plan. After the trial ends, your membership renews at $9.99 per month unless you cancel before the trial period finishes."
-    />
-    <Faq
       q="Can I cancel anytime?"
       a="Yes. You can cancel your membership at any time. When you cancel, you’ll keep access through the end of your current billing period."
     />
@@ -278,8 +274,8 @@ export default function MembershipPageClient() {
       a="No. All meditations and resources are designed for all levels, including complete beginners. You can start gently and move at your own pace."
     />
     <Faq
-      q="What if I’ve never meditated before?"
-      a="No problem at all — all meditations are beginner-friendly. You can start with short 5-minute resets and gradually move into deeper practices."
+      q="What if I've never been able to meditate before?"
+      a="The power to meditate IS inside of you, waiting to be awakened. Start with short 5-minute resets and gradually move into deeper practices. For added support you can explore custom meditations."
     />
     <Faq
       q="What if I don’t have a lot of time?"
@@ -299,11 +295,11 @@ export default function MembershipPageClient() {
     />
     <Faq
       q="Do I get anything extra if I choose the yearly plan?"
-      a="Yes — yearly members receive a free 30–45 minute 1:1 Vision Call and a free 5-minute custom meditation created personally for them."
+      a="Yes — yearly members receive a free 30 minute 1:1 vision call and a free 5-minute custom meditation created personally for them."
     />
     <Faq
-      q="Will this help even if I’ve tried therapy, books, or motivational content before?"
-      a="Yes — RISE is built for people who feel stuck even after trying many things. It blends mental health science, personal growth, alignment, mindset, and spirituality in a way most programs don’t."
+      q="I've already tried other programs. How is RISE different?"
+      a="RISE is built for people who feel stuck even after trying many things. It blends mental health science, personal growth, alignment, mindset, and spirituality in powerful ways."
     />
   </div>
 </section>
