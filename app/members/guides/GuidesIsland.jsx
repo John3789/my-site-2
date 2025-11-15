@@ -133,16 +133,43 @@ export default function GuidesIsland() {
           </div>
 
 <div className="flex-1">
-  <div className="overflow-hidden rounded-xl border border-white/15 bg-black/30">
-    <iframe
-      src="https://gamma.app/embed/i6y7c90rpypnru3"
-      title="Integrating Personal Growth Practices to Improve Your Mental Health"
-      style={{ width: "700px", maxWidth: "100%", height: "450px" }}
-      allow="fullscreen"
-      className="block"
-    />
+  <div className="relative overflow-hidden rounded-xl border border-white/15 bg-black/30 shadow-[0_10px_35px_rgba(0,0,0,0.55)]">
+    {/* Scaled-down, non-interactive preview */}
+    <div className="pointer-events-none">
+      <iframe
+        src="https://integrating-personal-gro-bj4hbn8.gamma.site/"
+        title="Integrating Personal Growth Practices to Improve Your Mental Health"
+        style={{
+          width: "140%",
+          height: "800px",
+          transform: "scale(0.7)",
+          transformOrigin: "top left",
+          border: "0",
+        }}
+        className="block"
+      />
+    </div>
+
+    {/* Clickable overlay that opens the full guide */}
+    <a
+      href="https://integrating-personal-gro-bj4hbn8.gamma.site/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/40 via-black/10 to-transparent px-4 pb-3 md:px-5 md:pb-4"
+      aria-label="Open the full Integrating Personal Growth Practices guide in a new tab"
+    >
+      <div className="flex items-center justify-between gap-2">
+        <span className="text-xs md:text-sm font-medium text-[var(--color-cream)]">
+          Open full guide
+        </span>
+        <span className="inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-3 py-1 text-[11px] md:text-xs font-semibold tracking-wide">
+          View in full screen →
+        </span>
+      </div>
+    </a>
   </div>
 </div>
+
 
 
 
