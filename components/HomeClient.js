@@ -245,7 +245,7 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
                   </h2>
                   <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto lg:mx-0 my-5 rounded" />
                   <p className="text-[17px] leading-[1.7] opacity-90 mb-6 max-w-xl text-left mx-auto lg:mx-0">
-If you’ve been craving calm, clarity, or a moment to breathe, my meditation offerings give you a space to reset from the inside out. The Meditation Library includes quick resets, grounding practices, and deeper sessions for stress relief, mindset, alignment, and self-compassion. For more personalized support, custom meditations include a complimentary vision call to help you clarify your intentions and shape your journey. Each session is crafted to help you rise with greater clarity, resilience, and balance.
+If you’ve been craving calm, clarity, or a moment to breathe, my meditation offerings can give you the space you need to reset from the inside out. The Meditation Library includes quick resets, grounding practices, and deeper sessions for stress relief, mindset, alignment, self-compassion, and more. For more personalized support, custom meditations include a complimentary vision call to help you clarify your intentions and shape your journey. Each session is crafted to help you rise with greater clarity, strength, and balance.
                   </p>
                   <div className="flex justify-center lg:justify-start">
                     <Link href="/meditations" className="link">Discover →</Link>
