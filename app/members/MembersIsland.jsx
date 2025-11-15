@@ -89,7 +89,7 @@ export default function MembersIsland() {
             <div className="inline-flex items-center gap-2 rounded-full border border-[var(--color-gold)]/40 bg-[var(--color-cream)]/5 px-3 py-1 text-[11px] md:text-xs font-semibold uppercase tracking-wide text-[var(--color-gold)]">Active Member</div>
             <h1 className="mt-2 font-serif text-4xl md:text-5xl tracking-tight">Welcome to RISE ✨</h1>
             <p className="mt-1 text-sm md:text-base opacity-80">Your space to realign and grow.</p>
-            <p className="mt-3 text-base md:text-lg opacity-85">Start with the newest RISE meditation, or explore your perks: guided meditations, weekly wisdom, monthly live sessions, members-only AI guidance, and discounted custom meditations with vision calls.</p>
+            <p className="mt-3 text-base md:text-lg opacity-85">Start with the newest RISE meditation, or explore your perks: guided meditations, weekly wisdom, monthly live sessions, members-only AI guidance, discounted custom meditations with vision calls, and more.</p>
             <div className="mt-6 flex flex-wrap gap-3">
   <Link
     href="/members/meditations"
