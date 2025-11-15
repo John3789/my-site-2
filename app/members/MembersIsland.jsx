@@ -111,7 +111,7 @@ export default function MembersIsland() {
   title="Meditation Library"
   desc="Guided sessions for calm, clarity, motivation, compassion, and purpose."
 />
-          <Card href="/members/resources#social" icon="📚" title="Social Media Resources Library" desc="Curated posts and reframes by theme. Find the prompt that shifts your day." />
+          <Card href="/resources" icon="📚" title="Social Media Resources Library" desc="Curated posts and reframes by theme. Find the prompt that shifts your day." />
           <Card href="/members/resources#wisdom" icon="✉️" title="Weekly Wisdom Emails" desc="Short, uplifting nudges to keep you moving—one each week." />
           <Card href="/members/resources#guide" icon="📄" title="Mental Health & Growth Guides" desc="A digestible 1–2 page guide with practical insights you can use today." />
           <Card href="/members/live" icon="📅" title="Monthly Live Online Sessions" desc="Join the next live reset and Q&A. Recordings available until the next session." />
