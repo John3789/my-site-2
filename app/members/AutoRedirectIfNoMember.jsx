@@ -93,7 +93,7 @@ export default function AutoRedirectIfNoMember({ children }) {
   // While checking, show the overlay (prevents footer/content flashes)
   if (status !== "allowed") {
     return (
-      <div className="fixed inset-0 z-[9999] bg-[var(--color-teal-900)]" />
+      <div className="fixed inset-0 z-[9999] bg-[var(--color-teal-850)]" />
     );
   }
 
