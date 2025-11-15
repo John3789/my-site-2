@@ -259,7 +259,7 @@ export default function ResourcesClient() {
                                   <MembersHomeLink className="mb-0" />
 
             
-            <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-0">Social Media Resource Library</h1>
+            <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-0">Social Media Inspiration Library</h1>
             <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 mx-auto mt-4 mb-6 rounded" />
 
             <section className="mx-auto max-w-[850px] px-6 text-center mb-6 narrow-landscape-80 narrow-landscape-80-ipad [@media(orientation:portrait)_and_(max-width:600px)]:px-3 [@media(orientation:portrait)_and_(max-width:600px)]:max-w-none [@media(orientation:portrait)_and_(max-width:600px)]:w-[92vw]">
