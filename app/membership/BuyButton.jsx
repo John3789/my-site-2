@@ -2,8 +2,8 @@
 "use client";
 
 const PRICE_IDS = {
-  monthly: "prc_9-99-hj9j03x8",
-  yearly: "prc_89-99-jwgn03ep",
+  monthly: "prc_9-99-fees-8z9903dk",
+  yearly: "prc_89-99-fees-i1kr04by",
 };
 
 export default function BuyButton({ cadence = "monthly", className = "", children }) {
