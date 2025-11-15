@@ -109,7 +109,7 @@ export default function MembershipPageClient() {
           {/* Mini CARDS */}
           <div className="mt-6 grid gap-5 md:grid-cols-2">
             <MiniTitleCard title="Meditation Library" />
-            <MiniTitleCard title="Social Media Resource Library" />
+            <MiniTitleCard title="Social Media Inspiration Library" />
             <MiniTitleCard title="Weekly Wisdom Emails" />
             <MiniTitleCard title="Monthly Live Online Sessions" />
             <MiniTitleCard title="Dr. Salerno AI" />
@@ -152,7 +152,7 @@ export default function MembershipPageClient() {
             desc="A growing collection of guided sessions to build calm, clarity, motivation, compassion, and purpose—organized by theme for easy practice."
           />
           <BenefitCard
-            title="Social Media Resource Library"
+            title="Social Media Inspiration Library"
             desc="My most helpful posts and reframes, curated by theme so you can quickly find the idea or prompt that shifts your day forward."
           />
           <BenefitCard
@@ -186,7 +186,7 @@ export default function MembershipPageClient() {
       <section className="mt-16">
         <div className="mx-auto max-w-[725px] rounded-xl border border-[var(--color-gold)]/60 bg-white/5 p-6">
           <h3 className="text-center font-semibold text-[var(--color-gold)]">
-            Meditation & Social Media Resource Library Themes
+            Meditation & Social Media Inspiration Library Themes
           </h3>
           <p className="mt-2 text-center text-sm opacity-85">
             Motivation & Mindset · Mental Health & Stress Relief · Self-Compassion & Healing · Relationships & Connection · Purpose & Alignment · Manifestation & Intention Setting · Feng Shui & Environment

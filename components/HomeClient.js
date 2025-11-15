@@ -145,46 +145,31 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
             </div>
           </section>
 
-          {/* Consulting */}
-          <section id="consulting" className="w-full">
+          {/* RISE */}
+          <section id="RISE" className="w-full">
             <div className="mx-auto max-w-[1400px] px-6 pt-40 pb-10">
               <hr className="border-t border-[var(--color-cream)]/22 mb-6 pb-3" />
-              <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">Consulting</h5>
+              <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70">RISE</h5>
               <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
 
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start lg:items-center justify-items-stretch">
                 {/* Left: text */}
                 <div className="lg:col-span-6 w-full max-w-[680px] mx-auto lg:mx-0">
                   <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90 text-center lg:text-left">
-                    Organizational Wellness Consulting
+                    RISE Membership
                   </h2>
                   <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto lg:mx-0 my-5 rounded" />
-
-                  <ul className="text-base leading-[1.7] opacity-90 mb-6 max-w-xl space-y-3 text-left mx-auto lg:mx-0">
-                    <li className="flex gap-2">
-                      <span className="text-[var(--color-gold)]">✔︎</span>
-                      <span><strong>Partner</strong> — Collaborate with a community-engaged research expert.</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-[var(--color-gold)]">✔︎</span>
-                      <span><strong>Design</strong> — Build powerful, evidence-based programs that truly resonate.</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-[var(--color-gold)]">✔︎</span>
-                      <span><strong>Implement</strong> — Embed strategies that sustain growth &amp; wellbeing.</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-[var(--color-gold)]">✔︎</span>
-                      <span><strong>Evaluate</strong> — Measure outcomes that matter and prove impact with data.</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-[var(--color-gold)]">✔︎</span>
-                      <span><strong>Scale</strong> — Strengthen and integrate organizational resilience &amp; wellness.</span>
-                    </li>
-                  </ul>
+                  <p className="text-[17px] leading-[1.7] opacity-90 mb-6 max-w-xl text-left mx-auto lg:mx-0">
+                  <span className="font-semibold">RISE</span> is your all-in-one space to reset your mind, rebuild your energy, and step back into 
+                  your power. Inside, you get access to my Meditation Library, Social Media Inspiration Library, 
+                  and Mental Health & Growth Guides—plus weekly wisdom emails, monthly live sessions, members-only 
+                  Dr. Salerno AI for personalized guidance, and discounted custom meditations with vision calls. 
+                  It’s a space to reconnect with yourself, strengthen your inner foundation, and <span className="font-semibold">RISE</span> into the life 
+                  you’re meant to experience.
+                  </p>
 
                   <div className="flex justify-center lg:justify-start">
-                    <Link href="/consulting" className="link">Book Dr. Salerno for consulting →</Link>
+                    <Link href="/membership" className="link">Start Your RISE →</Link>
                   </div>
                 </div>
 
@@ -192,8 +177,8 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
 <div className="lg:col-span-6 w-full max-w-[680px] lg:max-w-[780px] mx-auto lg:mx-0 [@media(orientation:landscape)_and_(max-width:900px)]:max-w-[560px]">                  
 <div className="relative w-full aspect-[3/2] shadow-2xl overflow-hidden">
 <HeroImageIphoneAware
-                      src="/plant1.jpg"
-                      alt="Consulting collaboration"
+                      src="/sunset2.jpg"
+                      alt="Sunrise"
                       fill
                       sizes="(min-width: 1024px) 50vw, 100vw"
                       loading="lazy"
