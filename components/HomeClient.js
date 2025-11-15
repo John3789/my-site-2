@@ -164,7 +164,7 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
                   need to navigate it alone. <span className="font-semibold">RISE</span> was created to help you shift out of survival mode and back 
                   into alignment. Inside the membership, you get access to my Meditation Library, Social Media 
                   Inspiration Library, Mental Health & Growth Guides, weekly wisdom emails, monthly live sessions, 
-                  members-only Dr. Salerno AI, and discounted custom meditations with Vision Calls. It’s a space to reconnect with yourself, strengthen your inner foundation, and <span className="font-semibold">RISE</span> into the life 
+                  members-only Dr. Salerno AI, and discounted custom meditations with vision calls. It’s a space to reconnect with yourself, strengthen your inner foundation, and <span className="font-semibold">RISE</span> into the life 
                   you’re meant to experience.
                   </p>
 
