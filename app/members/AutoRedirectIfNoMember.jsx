@@ -1,7 +1,7 @@
 // app/members/AutoRedirectIfNoMember.jsx
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 function getMemberstack() {
@@ -14,49 +14,31 @@ function getMemberstack() {
   );
 }
 
-export default function AutoRedirectIfNoMember({ children }) {
+export default function AutoRedirectIfNoMember() {
   const router = useRouter();
-  const [status, setStatus] = useState("checking"); // "checking" | "allowed"
 
   useEffect(() => {
     let cancelled = false;
-    let secondCheckTimeout;
 
-    async function runGate(allowRetry = true) {
+    async function runGate() {
       try {
         const ms = getMemberstack();
 
         // If Memberstack still isn't ready, try again shortly
         if (!ms || !ms.getCurrentMember) {
           if (!cancelled) {
-            setTimeout(() => runGate(allowRetry), 300);
+            setTimeout(runGate, 300); // retry in 300ms
           }
           return;
         }
 
-        const result = await ms.getCurrentMember();
-        const member = result?.data ?? result;
-
+        const { data: member } = await ms.getCurrentMember();
         const hasPlan =
           Array.isArray(member?.planConnections) &&
           member.planConnections.length > 0;
 
-        if (cancelled) return;
-
-        if (hasPlan) {
-          // Valid member → allow page to render
-          setStatus("allowed");
-          return;
-        }
-
-        // No plan yet
-        if (allowRetry) {
-          // Give Memberstack a brief moment to attach the plan
-          secondCheckTimeout = setTimeout(() => {
-            runGate(false);
-          }, 400);
-        } else {
-          // Confirmed non-member → redirect away
+        // If not logged in OR no active plan → send them away
+        if (!hasPlan && !cancelled) {
           router.replace("/membership?need_member=1");
         }
       } catch (err) {
@@ -66,19 +48,13 @@ export default function AutoRedirectIfNoMember({ children }) {
       }
     }
 
-    runGate(true);
+    // start the first check
+    runGate();
 
     return () => {
       cancelled = true;
-      if (secondCheckTimeout) clearTimeout(secondCheckTimeout);
     };
   }, [router]);
 
-  // While checking OR redirecting, render nothing.
-  if (status !== "allowed") {
-    return null;
-  }
-
-  // Only render content once we KNOW they’re a valid member.
-  return children;
+  return null;
 }
