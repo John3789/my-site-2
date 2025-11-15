@@ -6,6 +6,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import PopupIsland from "./PopupIsland";
 import { useIosZoomVars } from "../components/useIosZoom";
 import MobileFooterSubscribeClient from "./MobileFooterSubscribeClient";
+import MembersHomeLink from "../app/members/MembersHomeLink";
 
 const BYPASS_RESOURCES_GATE = true; // 👈 set to true while designing
 
@@ -240,7 +241,11 @@ export default function ResourcesClient() {
 
   return (
     <>
-      <main className="relative isolate min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
+      <main 
+        data-page="resources"
+  className="relative isolate min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]"
+>
+
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-[var(--color-teal-850)]" />
 
 
@@ -251,10 +256,14 @@ export default function ResourcesClient() {
         >
           {/* Title + Intro */}
           <div className="mx-auto max-w-[1200px] px-6 pt-20 pb-6">
+                                  <MembersHomeLink className="mb-0" />
+
+            
             <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-0">Social Media Resource Library</h1>
             <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 mx-auto mt-4 mb-6 rounded" />
 
             <section className="mx-auto max-w-[850px] px-6 text-center mb-6 narrow-landscape-80 narrow-landscape-80-ipad [@media(orientation:portrait)_and_(max-width:600px)]:px-3 [@media(orientation:portrait)_and_(max-width:600px)]:max-w-none [@media(orientation:portrait)_and_(max-width:600px)]:w-[92vw]">
+
               <p className="text-lg md:text-xl opacity-90 leading-relaxed">
                 A growing library of concise media collections—shaped by science and lived experience—to sharpen your mind and uplift your life. Each theme is designed to meet you where you are and guide you toward greater confidence, balance, and intentional living.
               </p>
@@ -482,29 +491,114 @@ export default function ResourcesClient() {
 
         </div> {/* closes: ZOOM WRAPPER */}
 
+{/* Desktop footer row (socials + bio / legal) */}
+<div className="hidden lg:flex items-start justify-between mx-auto max-w-[1200px] px-6 mt-4 mb-10 text-[13px] leading-relaxed opacity-85">
+  <div className="flex flex-col items-start text-left">
+    <div className="flex items-center gap-4">
+      <p className="uppercase tracking-[0.18em] opacity-70 text-[12px] m-0">
+        Follow Dr. Salerno:
+      </p>
+
+      {/* TikTok */}
+      <a
+        href="https://www.tiktok.com/@drjuanpablosalerno"
+        aria-label="TikTok"
+        className="opacity-90 hover:opacity-100"
+      >
+        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+          <path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z" />
+        </svg>
+      </a>
+
+      {/* Instagram */}
+      <a
+        href="https://www.instagram.com/drjuanpablosalerno/"
+        aria-label="Instagram"
+        className="opacity-90 hover:opacity-100"
+      >
+        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+          <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z" />
+        </svg>
+      </a>
+
+      {/* YouTube */}
+      <a
+        href="https://www.youtube.com/drjpsalerno"
+        aria-label="YouTube"
+        className="opacity-90 hover:opacity-100"
+      >
+        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+          <path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" />
+        </svg>
+      </a>
+
+      {/* Facebook */}
+      <a
+        href="https://www.facebook.com/profile.php?id=61582412806274#"
+        aria-label="Facebook"
+        className="opacity-90 hover:opacity-100"
+      >
+        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+          <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2v3h-2c-.3 0-.5.2-.5.5V12H16l-.5 3h-2v7A10 10 0 0 0 22 12z" />
+        </svg>
+      </a>
+    </div>
+
+    <p className="mt-4 max-w-[520px] text-[13px] leading-relaxed">
+      Dr. Juan Pablo Salerno is an award-winning mental health science expert and
+      thought leader, author, and professor—credited with more than 30
+      peer-reviewed publications and over 2,000 citations.
+    </p>
+  </div>
+
+  <div className="text-left translate-y-[-4px]">
+    <p>© Dr. Juan Pablo Salerno™</p>
+    <p className="mt-1">
+      <span>All rights reserved</span>
+      <span className="mx-2 opacity-50">·</span>
+      <a
+        href="/terms"
+        className="underline underline-offset-4 hover:opacity-80"
+      >
+        Terms
+      </a>
+      <span className="mx-2 opacity-50">·</span>
+      <a
+        href="/privacy"
+        className="underline underline-offset-4 hover:opacity-80"
+      >
+        Privacy
+      </a>
+    </p>
+  </div>
+</div>
+
 
       </main>
 
       {/* Page-level styles + modal */}
 
-      <style jsx global>{`
-
-        /* iPad Mini PORTRAIT (≈744px wide) — narrower mobile footer */
-@media (orientation: portrait) and (min-width: 700px) and (max-width: 799px) {
-  .mobile-footer-cap > .mx-auto {
-    max-width: 550px !important; /* was max-w-[1400px] via class */
+ <style jsx global>{`
+  /* Hide the global site footer ONLY on /resources */
+  body:has(main[data-page="resources"])
+    :is(footer, .site-footer, [role="contentinfo"]) {
+    display: none !important;
   }
-}
 
-/* iPad PORTRAIT (≈768–834px wide) — slightly wider than mini */
-@media (orientation: portrait) and (min-width: 800px) and (max-width: 900px) {
-  .mobile-footer-cap > .mx-auto {
-    max-width: 610px !important;
+  /* iPad Mini PORTRAIT (≈744px wide) — narrower mobile footer */
+  @media (orientation: portrait) and (min-width: 700px) and (max-width: 799px) {
+    .mobile-footer-cap > .mx-auto {
+      max-width: 550px !important;
+    }
   }
-}
 
-      `}</style>
-
+  /* iPad PORTRAIT (≈768–834px wide) — slightly wider than mini */
+  @media (orientation: portrait) and (min-width: 800px) and (max-width: 900px) {
+    .mobile-footer-cap > .mx-auto {
+      max-width: 610px !important;
+    }
+  }
+`}</style>
       <CollectionModal
         open={open}
         onClose={() => setOpen(false)}
