@@ -62,9 +62,10 @@ export default function AutoRedirectIfNoMember({ children }) {
     };
   }, [router]);
 
-  // While checking (or redirecting), render nothing → no flash
+  // While checking (or redirecting), render an empty shell so the layout
+  // keeps its normal height and the footer doesn't jump to the top.
   if (status !== "allowed") {
-    return null;
+    return <div className="min-h-[60vh]" />;
   }
 
   // Once we KNOW they’re a valid member, show the content
