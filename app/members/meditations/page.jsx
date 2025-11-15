@@ -115,7 +115,7 @@ export default function MeditationLibraryPage() {
             <MembersHomeLink className="mb-6" />
 
       <section className="text-center">
-        <h1 className="mt-15 font-serif text-5xl md:text-6xl">
+        <h1 className="mt-10 font-serif text-5xl md:text-6xl">
           Meditation Library
         </h1>
         <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto mt-5 mb-2 rounded" />
