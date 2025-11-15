@@ -71,10 +71,7 @@ export default function MembershipPageClient() {
         </div>
       </section>
 
-                 {/* FINAL divider above footer — match two-column width, no bleed */}
-            <div className="mx-auto max-w-[1200px] px-6">
-              <hr className="hidden lg:block max-w-[1200px] border-t border-[var(--color-cream)]/22" />
-            </div>
+      
 
       {/* FULL ACCESS */}
       <section id="pricing" className="mt-18">
@@ -149,11 +146,6 @@ export default function MembershipPageClient() {
         </div>
       </section>
 
-                 {/* FINAL divider above footer — match two-column width, no bleed */}
-            <div className="mx-auto max-w-[1200px] px-6 mt-12">
-              <hr className="hidden lg:block max-w-[1200px] border-t border-[var(--color-cream)]/22" />
-            </div>
-
       {/* BENEFITS */}
       <section className="mt-16">
         <h2 className="text-center text-2xl font-bold">Benefits</h2>
@@ -204,11 +196,6 @@ export default function MembershipPageClient() {
           </p>
         </div>
       </section>
-
-                 {/* FINAL divider above footer — match two-column width, no bleed */}
-            <div className="mx-auto max-w-[1200px] px-6 mt-12">
-              <hr className="hidden lg:block max-w-[1200px] border-t border-[var(--color-cream)]/22" />
-            </div>
 
       {/* CUSTOM MEDITATIONS */}
       <section className="mt-16">
@@ -264,11 +251,6 @@ export default function MembershipPageClient() {
           </BuyButton>
         </div>
       </section>
-
-                 {/* FINAL divider above footer — match two-column width, no bleed */}
-            <div className="mx-auto max-w-[1200px] px-6 mt-12">
-              <hr className="hidden lg:block max-w-[1200px] border-t border-[var(--color-cream)]/22" />
-            </div>
 
 {/* FAQ / Questions */}
 <section className="mt-16">

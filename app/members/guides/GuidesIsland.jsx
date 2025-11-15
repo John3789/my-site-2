@@ -1,143 +1,188 @@
-// app/members/MembersIsland.jsx
+// app/members/guides/GuidesIsland.jsx
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
-import Link from "next/link";
-import AutoRedirectIfNoMember from "./AutoRedirectIfNoMember";
+import { useEffect, useState, useCallback } from "react";
+import AutoRedirectIfNoMember from "../AutoRedirectIfNoMember";
+import MembersHomeLink from "../MembersHomeLink";
 
+const THEMES = [
+  {
+    id: "motivation-mindset",
+    label: "Motivation & Mindset",
+    blurb: "Tools to restart your drive, rebuild confidence, and shift limiting beliefs.",
+  },
+  {
+    id: "mental-health-stress",
+    label: "Mental Health & Stress Relief",
+    blurb: "Evidence-based strategies to calm your nervous system and reduce overwhelm.",
+  },
+  {
+    id: "self-compassion-healing",
+    label: "Self-Compassion & Healing",
+    blurb: "Guides to soften self-criticism and support emotional healing.",
+  },
+  {
+    id: "relationships-connection",
+    label: "Relationships & Connection",
+    blurb: "Support for boundaries, communication, and feeling less alone.",
+  },
+  {
+    id: "purpose-alignment",
+    label: "Purpose & Alignment",
+    blurb: "Reflections and exercises for finding direction and living in alignment.",
+  },
+  {
+    id: "manifestation-intention",
+    label: "Manifestation & Intention Setting",
+    blurb: "Grounded, values-based approaches to creating change in your life.",
+  },
+  {
+    id: "fengshui-environment",
+    label: "Feng Shui & Environment",
+    blurb: "How your physical space can support your mental and emotional wellbeing.",
+  },
+];
 
-export default function MembersIsland() {
-  const [signingOut, setSigningOut] = useState(false);
-
-  // Newsletter state (mirrors Contact)
+export default function GuidesIsland() {
+  // mirror MembersIsland footer behavior
   const [nlSubmitting, setNlSubmitting] = useState(false);
   const [nlSubscribed, setNlSubscribed] = useState(false);
 
-  // Optional: body class hook (kept simple; data-page selector does the heavy lifting)
   useEffect(() => {
     document.body.classList.add("hide-footer-on-members");
-    return () => document.body.classList.remove("hide-footer-on-members");
+    return () =>
+      document.body.classList.remove("hide-footer-on-members");
   }, []);
 
-  const handleNewsletterSubmit = useCallback(async (e) => {
-    e.preventDefault();
-    if (nlSubmitting || nlSubscribed) return;
+  const handleNewsletterSubmit = useCallback(
+    async (e) => {
+      e.preventDefault();
+      if (nlSubmitting || nlSubscribed) return;
 
-    setNlSubmitting(true);
-    const form = new FormData(e.currentTarget);
-    const email = (form.get("email") || "").toString().trim();
+      setNlSubmitting(true);
+      const form = new FormData(e.currentTarget);
+      const email = (form.get("email") || "").toString().trim();
 
-    if (!email || !email.includes("@")) {
-      alert("Please enter a valid email.");
-      setNlSubmitting(false);
-      return;
-    }
-
-    try {
-      const res = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        console.error("Subscribe failed:", data);
-        alert("Something went wrong. Please try again.");
-      } else {
-        setNlSubscribed(true);
+      if (!email || !email.includes("@")) {
+        alert("Please enter a valid email.");
+        setNlSubmitting(false);
+        return;
       }
-    } catch (err) {
-      console.error("Network error:", err);
-      alert("Network error. Please try again.");
-    } finally {
-      setNlSubmitting(false);
-    }
-  }, [nlSubmitting, nlSubscribed]);
 
-  const handleSignOut = useCallback(async (e) => {
-    e.preventDefault();
-    if (signingOut) return;
-    setSigningOut(true);
-
-    const ms = (typeof window !== "undefined" && (window.$memberstack || window.memberstack || window.Memberstack)) || null;
-
-    const msLogout = async () => {
       try {
-        if (ms?.logout) return await ms.logout();
-        if (ms?.signOut) return await ms.signOut();
-      } catch {}
-    };
-
-    const appSignout = async () => {
-      try {
-        await fetch("/api/auth/signout", { method: "POST", keepalive: true });
-      } catch {}
-    };
-
-    await Promise.allSettled([msLogout(), appSignout()]);
-    window.location.href = "/membership";
-  }, [signingOut]);
+        const res = await fetch("/api/subscribe", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          console.error("Subscribe failed:", data);
+          alert("Something went wrong. Please try again.");
+        } else {
+          setNlSubscribed(true);
+        }
+      } catch (err) {
+        console.error("Network error:", err);
+        alert("Network error. Please try again.");
+      } finally {
+        setNlSubmitting(false);
+      }
+    },
+    [nlSubmitting, nlSubscribed]
+  );
 
   return (
-    <main data-page="members" className="mx-auto max-w-[1100px] px-6 py-10 mt-10">
-      {/* HERO */}
-            <AutoRedirectIfNoMember />
+     <main
+      data-page="members"
+      className="mx-auto max-w-[1100px] px-6 py-10 mt-10"
+    >
+      <AutoRedirectIfNoMember />
+      <MembersHomeLink className="mb-6" />
 
-      <section className="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-8 shadow-2xl mt-10">
-        <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-          <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--color-gold)]/40 bg-[var(--color-cream)]/5 px-3 py-1 text-[11px] md:text-xs font-semibold uppercase tracking-wide text-[var(--color-gold)]">Active Member</div>
-            <h1 className="mt-2 font-serif text-4xl md:text-5xl tracking-tight">Welcome to RISE ✨</h1>
-            <p className="mt-1 text-sm md:text-base opacity-80">Your space to realign and grow.</p>
-            <p className="mt-3 text-base md:text-lg opacity-85">Start with the newest RISE meditation, or explore your perks: guided meditations, weekly wisdom, monthly live sessions, members-only AI guidance, and discounted custom meditations with a complimentary 30-minute Vision Call.</p>
-            <div className="mt-6 flex flex-wrap gap-3">
-  <Link
-    href="/members/meditations"
-    className="inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-5 py-3 text-sm font-semibold tracking-wide hover:brightness-110 active:translate-y-[1px]"
-  >
-    Start meditation
-  </Link>
-</div>
+      {/* HEADER */}
+      <section className="mb-10">
+        <h1 className="mt-2 font-serif text-4xl md:text-5xl text-[var(--color-cream)]">
+          Mental Health & Growth Guide Library
+        </h1>
+        <p className="mt-3 max-w-2xl text-sm md:text-base text-[var(--color-cream)]/80">
+          In-depth, science-backed guides you can return to anytime. Start with the latest guide below,
+          or explore by theme to find the support that fits what you&apos;re moving through right now.
+        </p>
+      </section>
+
+      {/* FEATURED LATEST GUIDE */}
+      <section className="mb-12 rounded-2xl border border-white/10 bg-white/5 p-5 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)]">
+        <div className="flex flex-col gap-6 md:flex-row md:items-start">
+          <div className="flex-1">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--color-gold)]/70 bg-[var(--color-gold)]/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-gold)]">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-gold)]" />
+              <span>Latest Guide</span>
+            </div>
+            <h2 className="mt-3 font-serif text-2xl md:text-3xl text-[var(--color-cream)]">
+              Integrating Personal Growth Practices to Improve Your Mental Health
+            </h2>
+            <p className="mt-3 text-sm md:text-base text-[var(--color-cream)]/85">
+              A practical, approachable guide to weaving personal growth tools into your everyday life
+              so they actually support your mental health, instead of becoming another thing on your
+              to-do list. Designed to be revisited whenever you feel off-center or stuck.
+            </p>
+            <p className="mt-3 text-xs md:text-[13px] text-[var(--color-cream)]/70">
+              Estimated time: 10–15 minutes • Format: Interactive guide
+            </p>
           </div>
+
+<div className="flex-1">
+  <div className="overflow-hidden rounded-xl border border-white/15 bg-black/30">
+    <iframe
+      src="https://gamma.app/embed/i6y7c90rpypnru3"
+      title="Integrating Personal Growth Practices to Improve Your Mental Health"
+      style={{ width: "700px", maxWidth: "100%", height: "450px" }}
+      allow="fullscreen"
+      className="block"
+    />
+  </div>
+</div>
+
+
+
         </div>
       </section>
 
-      {/* QUICK ACTIONS */}
-      <section className="mt-8">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-<Card
-  href="/members/meditations"
-  icon="🧘"
-  title="Meditation Library"
-  desc="Guided sessions for calm, clarity, motivation, compassion, and purpose."
-/>
-          <Card href="/resources" icon="📚" title="Social Media Resources Library" desc="Curated posts and reframes by theme. Find the prompt that shifts your day." />
-          <Card href="/members/resources#wisdom" icon="✉️" title="Weekly Wisdom Emails" desc="Short, uplifting nudges to keep you moving—one each week." />
-          <Card href="/members/guides" icon="📄" title="Mental Health & Growth Guides" desc="A digestible 1–2 page guide with practical insights you can use today." />
-          <Card href="/members/live" icon="📅" title="Monthly Live Online Sessions" desc="Join the next live reset and Q&A. Recordings available until the next session." />
-          <Card href="/members/ai" icon={<img src="/headshot.jpg" alt="Dr. Juan Pablo Salerno" className="h-9 w-9 rounded-full object-cover ring-1 ring-white/15 -mt-2" />} title="Dr. Salerno AI" desc="Chat with my AI self — a digital version of me that knows my insights, guidance, and tools." />
-          <Card href="/members/discount" icon="📿" title="Custom Meditations + Vision Calls" desc="Personalized audio (5, 10, 15 min) + a complimentary 30-minute Vision Call." />
-          <Card href="/contact" icon="🛟" title="Support & Contact" desc="Reach out with concerns or browse common questions in the FAQ." />
-          <Card href="/account" icon="💳" title="Account & Billing" desc="Update payment details, personal info, password, and more." />
+      {/* ALL GUIDES BY THEME */}
+      <section>
+        <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--color-cream)]/70">
+          All Guides by Theme
+        </h3>
+        <p className="mt-2 mb-5 text-sm md:text-base text-[var(--color-cream)]/75">
+          As the library grows, you&apos;ll find all guides organized into the same themes as your
+          meditation and social media resource libraries. For now, you can start with the latest guide
+          above—more deep dives are on the way.
+        </p>
+
+        <div className="grid gap-4 md:grid-cols-2">
+          {THEMES.map((theme) => (
+            <article
+              key={theme.id}
+              className="flex flex-col justify-between rounded-2xl border border-white/10 bg-white/[0.03] p-4 md:p-5"
+            >
+              <div>
+                <h4 className="font-semibold text-[var(--color-cream)]">
+                  {theme.label}
+                </h4>
+                <p className="mt-2 text-xs md:text-sm text-[var(--color-cream)]/75">
+                  {theme.blurb}
+                </p>
+              </div>
+              <p className="mt-4 text-[11px] uppercase tracking-[0.18em] text-[var(--color-cream)]/55">
+                Additional guides coming soon
+              </p>
+            </article>
+          ))}
         </div>
       </section>
 
-      {/* WHAT'S NEW */}
-      <section className="mt-10 rounded-2xl bg-white/[0.06] ring-1 ring-[var(--color-gold)]/50 p-6 shadow-[0_10px_40px_rgba(0,0,0,0.35)]">
-        <h2 className="text-lg font-bold text-[var(--color-gold)]">What’s new</h2>
-        <div className="mt-3 space-y-2">
-          <UpdateItem label="New Meditation" title="5-Minute Reset (All Levels)" date="Nov 10, 2025" href="/members/resources#reset" />
-          <UpdateItem label="New Weekly Wisdom" title="How to reset on low-energy days" date="Nov 7, 2025" href="/members/resources#wisdom" />
-          <UpdateItem label="Upcoming Live Session" title="November session — details posted" date="Nov 5, 2025" href="/members/live" />
-        </div>
-      </section>
-
-      {/* SIGN OUT */}
-      <div className="mt-8">
-        <button onClick={handleSignOut} data-ms-action="logout" className="inline-flex items-center rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold hover:bg-white/10 text-left disabled:opacity-60 opacity-80" disabled={signingOut}>{signingOut ? "🚪 Signing out…" : "🚪 Sign out"}</button>
-      </div>
-
-      {/* ===== CUSTOM MEMBERS FOOTER (matches Contact) ===== */}
+            {/* ===== CUSTOM MEMBERS FOOTER (matches Contact) ===== */}
 
       {/* Divider (mobile/desktop) */}
       <div className="mx-auto w-full px-0 mt-10">
@@ -271,36 +316,5 @@ export default function MembersIsland() {
         }
       `}</style>
     </main>
-  );
-}
-
-/* ===== Subcomponents ===== */
-
-function Card({ href, icon, title, desc }) {
-  return (
-    <Link href={href} aria-label={`${title} — ${desc}`} className="group rounded-2xl bg-white/5 ring-1 ring-white/10 p-5 hover:bg-white/10 hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] transition">
-      <div className="text-2xl leading-none">{icon}</div>
-      <div className="mt-1 text-base font-semibold">{title}</div>
-      <div className="mt-1 text-sm opacity-80">{desc}</div>
-      <div className="mt-2 text-sm opacity-70 transition group-hover:translate-x-0.5">Explore →</div>
-    </Link>
-  );
-}
-
-function UpdateItem({ label, title, date, href }) {
-  return (
-    <Link href={href} className="group relative flex items-start gap-4 rounded-xl border border-white/10 bg-white/[0.04] p-4 pl-5 hover:bg-white/[0.08] hover:border-[var(--color-gold)]/40 transition">
-      <span className="absolute left-0 top-0 h-full w-[3px] rounded-l-xl bg-[var(--color-gold)]/60" aria-hidden="true"></span>
-      <div className="flex-1">
-        <div className="inline-flex items-center gap-2">
-          <span className="inline-flex items-center rounded-full border border-[var(--color-gold)]/40 bg-[var(--color-cream)]/5 px-2.5 py-0.5 text-[11px] md:text-xs font-semibold uppercase tracking-wide text-[var(--color-gold)]">{label}</span>
-        </div>
-        <div className="mt-1 text-sm font-medium text-[var(--color-cream)] group-hover:text-[var(--color-gold)] transition">{title}</div>
-      </div>
-      <div className="mt-1 flex items-center gap-2 text-xs opacity-80">
-        <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-gold)]/70"></span>
-        {date}
-      </div>
-    </Link>
   );
 }
