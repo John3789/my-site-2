@@ -19,40 +19,28 @@ export default function AutoRedirectIfNoMember() {
 
   useEffect(() => {
     let cancelled = false;
-    let secondCheckTimeout;
 
-    async function runGate(allowRetry = true) {
+    async function runGate() {
       try {
         const ms = getMemberstack();
 
         // If Memberstack still isn't ready, try again shortly
         if (!ms || !ms.getCurrentMember) {
           if (!cancelled) {
-            setTimeout(() => runGate(allowRetry), 300);
+            setTimeout(runGate, 300); // retry in 300ms
           }
           return;
         }
 
-        const result = await ms.getCurrentMember();
-        const member = result?.data ?? result;
-
+        const { data: member } = await ms.getCurrentMember();
         const hasPlan =
           Array.isArray(member?.planConnections) &&
           member.planConnections.length > 0;
 
+        // If not logged in OR no active plan → send them away
         if (!hasPlan && !cancelled) {
-          if (allowRetry) {
-            // Give Memberstack a brief moment to finish attaching the plan,
-            // then check ONE more time before redirecting.
-            secondCheckTimeout = setTimeout(() => {
-              runGate(false);
-            }, 400);
-          } else {
-            router.replace("/membership?need_member=1");
-          }
+          router.replace("/membership?need_member=1");
         }
-
-        // If hasPlan === true, do nothing — they stay on /members
       } catch (err) {
         if (!cancelled) {
           router.replace("/membership?need_member=1");
@@ -61,14 +49,12 @@ export default function AutoRedirectIfNoMember() {
     }
 
     // start the first check
-    runGate(true);
+    runGate();
 
     return () => {
       cancelled = true;
-      if (secondCheckTimeout) clearTimeout(secondCheckTimeout);
     };
   }, [router]);
 
-  // This component is still "invisible" — same as before.
   return null;
 }
