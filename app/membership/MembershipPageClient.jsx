@@ -92,7 +92,7 @@ export default function MembershipPageClient() {
           <span className="text-md opacity-60 line-through">$19.99</span>
           <span className="text-3xl font-semibold leading-none">$9.99</span>
           <span className="text-xs opacity-60 leading-none">
-            + fees<sup>a</sup>
+            + fees
           </span>
         </div>
         <div className="mt-0 text-xs opacity-80 text-center">per month · save 50%</div>
@@ -105,7 +105,7 @@ export default function MembershipPageClient() {
           <span className="text-md opacity-60 line-through">$179.99</span>
           <span className="text-3xl font-semibold leading-none">$89.99</span>
           <span className="text-xs opacity-60 leading-none">
-            + fees<sup>a</sup>
+            + fees
           </span>
         </div>
         <div className="mt-0 text-xs opacity-80 text-center">per year · save 50%</div>
@@ -147,10 +147,6 @@ export default function MembershipPageClient() {
       <SignInButton className="underline hover:no-underline">Sign in</SignInButton>
     </div>
 
-<div className="absolute left-4 bottom-4 text-[10px] opacity-60 leading-tight">
-  <div><sup>a</sup> Processing fees are approximately 7% +</div>
-  <div>&nbsp;&nbsp;$0.30 per transaction</div>
-</div>
 
   </div>
 </section>
