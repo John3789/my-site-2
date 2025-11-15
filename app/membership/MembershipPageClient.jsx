@@ -94,7 +94,7 @@ export default function MembershipPageClient() {
                 <span className="text-md opacity-60 line-through">$19.99</span>
                 <span className="text-3xl font-semibold leading-none">$9.99</span>
               </div>
-              <div className="mt-0 text-xs opacity-80 text-center">per month after $1 trial · save 50%</div>
+              <div className="mt-0 text-xs opacity-80 text-center">per month · save 50%</div>
             </div>
             <span className="text-2xl mb-3 font-semibold opacity-100">or</span>
             <div className="text-center">
