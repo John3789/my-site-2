@@ -68,14 +68,21 @@ export default function MembersIsland() {
       } catch {}
     };
 
-    const appSignout = async () => {
-      try {
-        await fetch("/api/auth/signout", { method: "POST", keepalive: true });
-      } catch {}
-    };
+const appSignout = async () => {
+  try {
+    await fetch("/api/auth/signout", { method: "POST", keepalive: true });
+  } catch {}
+};
 
-    await Promise.allSettled([msLogout(), appSignout()]);
-    window.location.href = "/membership";
+await Promise.allSettled([msLogout(), appSignout()]);
+
+// 🔹 Clear the "already checked member" flag in this tab (optional but tidy)
+if (typeof window !== "undefined") {
+  window.__salernoMemberOk = false;
+}
+
+window.location.href = "/membership";
+
   }, [signingOut]);
 
   return (
