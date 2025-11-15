@@ -2,6 +2,8 @@
 
 import { useState, useMemo } from "react";
 import GuardedPlay from "../../components/GuardedPlay";
+import MembersHomeLink from "../MembersHomeLink";
+
 
 const MEDITATION_THEMES = [
   {
@@ -110,6 +112,8 @@ export default function MeditationLibraryPage() {
   return (
     <main data-page="meditations" className="mx-auto max-w-[1100px] px-6 py-10">
       {/* HEADER */}
+            <MembersHomeLink className="mb-6" />
+
       <section className="text-center">
         <h1 className="mt-15 font-serif text-5xl md:text-6xl">
           Meditation Library
