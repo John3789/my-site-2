@@ -1,60 +1,14 @@
-// app/members/AutoRedirectIfNoMember.jsx
-"use client";
+// app/members/page.jsx
+import AutoRedirectIfNoMember from "./AutoRedirectIfNoMember";
+import MembersIsland from "./MembersIsland";
 
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
-function getMemberstack() {
-  if (typeof window === "undefined") return null;
+export default function Page() {
   return (
-    window.$memberstackDom ||
-    window.memberstack ||
-    window.$memberstack ||
-    null
+    <AutoRedirectIfNoMember>
+      <MembersIsland />
+    </AutoRedirectIfNoMember>
   );
-}
-
-export default function AutoRedirectIfNoMember() {
-  const router = useRouter();
-
-  useEffect(() => {
-    let cancelled = false;
-
-    async function runGate() {
-      try {
-        const ms = getMemberstack();
-
-        // If Memberstack still isn't ready, try again shortly
-        if (!ms || !ms.getCurrentMember) {
-          if (!cancelled) {
-            setTimeout(runGate, 300); // retry in 300ms
-          }
-          return;
-        }
-
-        const { data: member } = await ms.getCurrentMember();
-        const hasPlan =
-          Array.isArray(member?.planConnections) &&
-          member.planConnections.length > 0;
-
-        // If not logged in OR no active plan → send them away
-        if (!hasPlan && !cancelled) {
-          router.replace("/membership?need_member=1");
-        }
-      } catch (err) {
-        if (!cancelled) {
-          router.replace("/membership?need_member=1");
-        }
-      }
-    }
-
-    // start the first check
-    runGate();
-
-    return () => {
-      cancelled = true;
-    };
-  }, [router]);
-
-  return null;
 }
