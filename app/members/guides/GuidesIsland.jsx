@@ -133,41 +133,59 @@ export default function GuidesIsland() {
           </div>
 
 <div className="flex-1">
-  <div className="relative overflow-hidden rounded-xl border border-white/15 bg-black/30 shadow-[0_10px_35px_rgba(0,0,0,0.55)]">
-    {/* Scaled-down, non-interactive preview */}
-    <div className="pointer-events-none">
-      <iframe
-        src="https://integrating-personal-gro-bj4hbn8.gamma.site/"
-        title="Integrating Personal Growth Practices to Improve Your Mental Health"
-        style={{
-          width: "140%",
-          height: "800px",
-          transform: "scale(0.7)",
-          transformOrigin: "top left",
-          border: "0",
-        }}
-        className="block"
-      />
-    </div>
+  <a
+    href="https://integrating-personal-gro-bj4hbn8.gamma.site/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group block h-full"
+    aria-label="Open the full Integrating Personal Growth Practices guide in a new tab"
+  >
+    <div className="flex h-full flex-col justify-between rounded-xl bg-[var(--color-cream)] text-slate-900 shadow-[0_10px_35px_rgba(0,0,0,0.55)] border border-white/40 px-5 py-6">
+      <div>
+        {/* Top pill */}
+        <div className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-700">
+          <span className="inline-block h-1.5 w-1.5 rounded-full bg-slate-600" />
+          <span>Interactive Guide</span>
+        </div>
 
-    {/* Clickable overlay that opens the full guide */}
-    <a
-      href="https://integrating-personal-gro-bj4hbn8.gamma.site/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/40 via-black/10 to-transparent px-4 pb-3 md:px-5 md:pb-4"
-      aria-label="Open the full Integrating Personal Growth Practices guide in a new tab"
-    >
-      <div className="flex items-center justify-between gap-2">
-        <span className="text-xs md:text-sm font-medium text-[var(--color-cream)]">
-          Open full guide
+        {/* Faux page preview */}
+        <div className="mt-4 rounded-lg bg-white/80 border border-slate-200 px-4 py-3 shadow-inner">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+            Preview
+          </p>
+          <p className="mt-2 text-sm font-serif leading-snug text-slate-900">
+            Integrating Personal Growth Practices
+          </p>
+          <p className="text-sm font-serif leading-snug text-slate-900">
+            to Improve Your Mental Health
+          </p>
+
+          <div className="mt-3 space-y-1.5">
+            <div className="h-1.5 w-11/12 rounded-full bg-slate-200" />
+            <div className="h-1.5 w-10/12 rounded-full bg-slate-200" />
+            <div className="h-1.5 w-9/12 rounded-full bg-slate-200" />
+            <div className="h-1.5 w-7/12 rounded-full bg-slate-200" />
+          </div>
+
+          <div className="mt-3 flex items-center justify-between text-[10px] text-slate-500">
+            <span>5–10 min • Interactive</span>
+            <span className="inline-flex items-center gap-1">
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom CTA row */}
+      <div className="mt-5 flex items-center justify-between gap-3">
+        <span className="text-[11px] md:text-xs text-slate-600">
+          Click to open the full-screen guide in a new tab.
         </span>
-        <span className="inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-3 py-1 text-[11px] md:text-xs font-semibold tracking-wide">
-          View in full screen →
+        <span className="inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-3 py-1 text-[11px] md:text-xs font-semibold tracking-wide group-hover:brightness-110 group-active:translate-y-[1px]">
+          View full guide →
         </span>
       </div>
-    </a>
-  </div>
+    </div>
+  </a>
 </div>
 
 
