@@ -21,33 +21,53 @@ export default function AutoRedirectIfMember() {
     const ms = getMemberstackCore();
     if (!ms || !ms.onAuthChange) return;
 
-    // ⚠️ Only react to *auth changes* (login/logout),
-    // NOT just "page load while already logged in."
-    const stop = ms.onAuthChange(async (member) => {
-      // member will be null/undefined when logged out
-      if (!member) return;
+    let cancelled = false;
+    let retryTimeout;
 
+    async function checkAndMaybeRedirect(allowRetry = true) {
       try {
-        // Normalise shape: sometimes it's { data }, sometimes it's raw
-        const raw = member?.data || member;
-
-        // Check their plans via getCurrentMember
         if (!ms.getCurrentMember) return;
-        const { data } = await ms.getCurrentMember();
+
+        const result = await ms.getCurrentMember();
+        const data = result?.data ?? result;
+
         const hasPlan =
           Array.isArray(data?.planConnections) &&
           data.planConnections.length > 0;
 
+        if (cancelled) return;
+
         if (hasPlan) {
+          // Logged-in paying member → send them to /members
           router.replace("/members");
+        } else if (allowRetry) {
+          // Give Memberstack a brief moment to attach the plan,
+          // then check ONE more time before giving up.
+          retryTimeout = setTimeout(() => {
+            checkAndMaybeRedirect(false);
+          }, 600);
         }
+        // If !hasPlan and !allowRetry: do nothing, they stay on /membership
       } catch (e) {
-        // If something explodes, do nothing instead of breaking the page
+        if (cancelled) return;
+        // On error, do nothing instead of breaking the page
       }
+    }
+
+    // React only to auth changes (login/logout)
+    const stop = ms.onAuthChange((member) => {
+      // member will be null/undefined when logged out
+      if (!member) return;
+
+      // First check, with a single optional retry
+      checkAndMaybeRedirect(true);
     });
 
     // Clean up listener on unmount
     return () => {
+      cancelled = true;
+      if (retryTimeout) clearTimeout(retryTimeout);
+
       if (typeof stop === "function") {
         stop();
       } else if (stop?.unsubscribe) {
