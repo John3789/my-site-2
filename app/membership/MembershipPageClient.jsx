@@ -72,76 +72,88 @@ export default function MembershipPageClient() {
       </section>
 
       
+{/* FULL ACCESS */}
+<section id="pricing" className="mt-18">
+  <div className="relative mx-auto max-w-[750px] rounded-2xl bg-white/5 p-6 ring-1 ring-[var(--color-gold)]/60">
+    
+    <div className="relative">
+      {/* LEFT — Monthly Trial Badge (gold) */}
+      <div className="absolute -top-3 left={0} inline-flex items-center gap-2 rounded-full border border-[var(--color-gold)] bg-transparent px-3 py-1 text-xs font-semibold text-[var(--color-gold)] shadow-md">
+        Free Custom Meditation (yearly plan)
+      </div>
+    </div>
 
-      {/* FULL ACCESS */}
-      <section id="pricing" className="mt-18">
-        <div className="mx-auto max-w-[750px] rounded-2xl bg-white/5 p-6 ring-1 ring-[var(--color-gold)]/60">
-          <div className="relative">
-            {/* LEFT — Monthly Trial Badge (gold) */}
-            <div className="absolute -top-3 left={0} inline-flex items-center gap-2 rounded-full border border-[var(--color-gold)] bg-transparent px-3 py-1 text-xs font-semibold text-[var(--color-gold)] shadow-md">
-              Free Custom Meditation (yearly plan)
-                          </div>
+    <div className="mt-8 text-center text-2xl font-bold">Limited Time Offer</div>
 
-            
-          </div>
-
-          <div className="mt-8 text-center text-2xl font-bold">Limited Time Offer</div>
-
-          {/* Pricing */}
-          <div className="mt-6 flex items-end justify-center gap-10">
-            <div className="text-center">
-              <div className="flex items-baseline justify-center gap-2">
-                <span className="text-md opacity-60 line-through">$19.99</span>
-                <span className="text-3xl font-semibold leading-none">$9.99</span>
-              </div>
-              <div className="mt-0 text-xs opacity-80 text-center">per month · save 50%</div>
-            </div>
-            <span className="text-2xl mb-3 font-semibold opacity-100">or</span>
-            <div className="text-center">
-              <div className="flex items-baseline justify-center gap-2">
-                <span className="text-md opacity-60 line-through">$179.99</span>
-                <span className="text-3xl font-semibold leading-none">$89.99</span>
-              </div>
-              <div className="mt-0 text-xs opacity-80 text-center">per year · save 50%</div>
-            </div>
-          </div>
-
-          {/* Mini CARDS */}
-          <div className="mt-6 grid gap-5 md:grid-cols-2">
-            <MiniTitleCard title="Meditation Library" />
-            <MiniTitleCard title="Social Media Inspiration Library" />
-            <MiniTitleCard title="Weekly Wisdom Emails" />
-            <MiniTitleCard title="Monthly Live Online Sessions" />
-            <MiniTitleCard title="Dr. Salerno AI" />
-            <MiniTitleCard title="Discounted Custom Meditations" />
-            <MiniTitleCard title="Vision Calls" />
-            <MiniTitleCard title="Mental Health & Growth Guides" />
-          </div>
-
-          {/* CTA — DOM checkout (two explicit price choices) */}
-          <div className="mt-8 mb-2 flex justify-center gap-3 flex-wrap">
-            <BuyButton
-              cadence="monthly"
-              className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:bg-transparent hover:text-[var(--color-gold)] hover:border hover:border-[var(--color-gold)] hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
-            >
-              Join — Monthly (save 50%)
-            </BuyButton>
-
-            <BuyButton
-              cadence="yearly"
-              className="inline-flex items-center rounded-md bg-transparent text-[var(--color-gold)] border border-[var(--color-gold)] px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:bg-[var(--color-gold)] hover:text-black hover:-translate-y-0.5 ring-1 ring-[var(--color-gold)]/40"
-            >
-              Join — Yearly (save 50%)
-            </BuyButton>
-          </div>
-
-          {/* Sign in note (client component) */}
-          <div className="mt-6 text-center text-xs opacity-75">
-            Already a member?{" "}
-            <SignInButton className="underline hover:no-underline">Sign in</SignInButton>
-          </div>
+    {/* Pricing */}
+    <div className="mt-6 flex items-end justify-center gap-10">
+      <div className="text-center">
+        <div className="flex items-baseline justify-center gap-2">
+          <span className="text-md opacity-60 line-through">$19.99</span>
+          <span className="text-3xl font-semibold leading-none">$9.99</span>
+          <span className="text-xs opacity-60 leading-none">
+            + fees<sup>a</sup>
+          </span>
         </div>
-      </section>
+        <div className="mt-0 text-xs opacity-80 text-center">per month · save 50%</div>
+      </div>
+
+      <span className="text-2xl mb-3 font-semibold opacity-100">or</span>
+
+      <div className="text-center">
+        <div className="flex items-baseline justify-center gap-2">
+          <span className="text-md opacity-60 line-through">$179.99</span>
+          <span className="text-3xl font-semibold leading-none">$89.99</span>
+          <span className="text-xs opacity-60 leading-none">
+            + fees<sup>a</sup>
+          </span>
+        </div>
+        <div className="mt-0 text-xs opacity-80 text-center">per year · save 50%</div>
+      </div>
+    </div>
+
+    {/* Mini CARDS */}
+    <div className="mt-6 grid gap-5 md:grid-cols-2">
+      <MiniTitleCard title="Meditation Library" />
+      <MiniTitleCard title="Social Media Inspiration Library" />
+      <MiniTitleCard title="Weekly Wisdom Emails" />
+      <MiniTitleCard title="Monthly Live Online Sessions" />
+      <MiniTitleCard title="Dr. Salerno AI" />
+      <MiniTitleCard title="Discounted Custom Meditations" />
+      <MiniTitleCard title="Vision Calls" />
+      <MiniTitleCard title="Mental Health & Growth Guides" />
+    </div>
+
+    {/* CTA — DOM checkout (two explicit price choices) */}
+    <div className="mt-8 mb-2 flex justify-center gap-3 flex-wrap">
+      <BuyButton
+        cadence="monthly"
+        className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:bg-transparent hover:text-[var(--color-gold)] hover:border hover:border-[var(--color-gold)] hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
+      >
+        Join — Monthly (save 50%)
+      </BuyButton>
+
+      <BuyButton
+        cadence="yearly"
+        className="inline-flex items-center rounded-md bg-transparent text-[var(--color-gold)] border border-[var(--color-gold)] px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:bg-[var(--color-gold)] hover:text-black hover:-translate-y-0.5 ring-1 ring-[var(--color-gold)]/40"
+      >
+        Join — Yearly (save 50%)
+      </BuyButton>
+    </div>
+
+    {/* Sign in note (client component) */}
+    <div className="mt-6 text-center text-xs opacity-75">
+      Already a member?{" "}
+      <SignInButton className="underline hover:no-underline">Sign in</SignInButton>
+    </div>
+
+    {/* FOOTNOTE — bottom-left of card */}
+    <div className="absolute left-4 bottom-4 text-[10px] opacity-60">
+      <sup>a</sup> processing fees are approximately 7%
+    </div>
+
+  </div>
+</section>
 
       {/* BENEFITS */}
       <section className="mt-16">
