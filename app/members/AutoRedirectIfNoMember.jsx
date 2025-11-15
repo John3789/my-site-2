@@ -1,7 +1,7 @@
 // app/members/AutoRedirectIfNoMember.jsx
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 function getMemberstack() {
@@ -14,8 +14,9 @@ function getMemberstack() {
   );
 }
 
-export default function AutoRedirectIfNoMember() {
+export default function AutoRedirectIfNoMember({ children }) {
   const router = useRouter();
+  const [status, setStatus] = useState("checking"); // "checking" | "allowed"
 
   useEffect(() => {
     let cancelled = false;
@@ -37,8 +38,13 @@ export default function AutoRedirectIfNoMember() {
           Array.isArray(member?.planConnections) &&
           member.planConnections.length > 0;
 
-        // If not logged in OR no active plan → send them away
-        if (!hasPlan && !cancelled) {
+        if (cancelled) return;
+
+        if (hasPlan) {
+          // Valid member → allow page to render
+          setStatus("allowed");
+        } else {
+          // Not logged in OR no active plan → send them away
           router.replace("/membership?need_member=1");
         }
       } catch (err) {
@@ -56,5 +62,11 @@ export default function AutoRedirectIfNoMember() {
     };
   }, [router]);
 
-  return null;
+  // While checking (or redirecting), render nothing → no flash
+  if (status !== "allowed") {
+    return null;
+  }
+
+  // Once we KNOW they’re a valid member, show the content
+  return children;
 }
