@@ -115,8 +115,8 @@ export default function MembershipPageClient() {
     {/* Mini CARDS */}
     <div className="mt-6 grid gap-5 md:grid-cols-2">
       <MiniTitleCard title="Meditation Library" />
-      <MiniTitleCard title="Social Media Inspiration Library" />
-      <MiniTitleCard title="Weekly Wisdom Emails" />
+      <MiniTitleCard title="Social Media Inspiration Space" />
+      <MiniTitleCard title="Weekly Wisdom Collection" />
       <MiniTitleCard title="Monthly Live Online Sessions" />
       <MiniTitleCard title="Dr. Salerno AI" />
       <MiniTitleCard title="Discounted Custom Meditations" />
@@ -157,22 +157,22 @@ export default function MembershipPageClient() {
         <div className="mt-4 grid gap-4 md:grid-cols-2">
           <BenefitCard
             title="Meditation Library"
-            desc="A growing collection of guided sessions to build calm, clarity, motivation, compassion, and purpose—organized by theme for easy practice."
+            desc="A growing resource of guided sessions to build calm, clarity, motivation, compassion, and purpose—organized by theme for easy practice."
           />
           <BenefitCard
-            title="Social Media Inspiration Library"
+            title="Social Media Inspiration Space"
             desc="My most helpful posts and reframes, curated by theme so you can quickly find the idea or prompt that shifts your day forward."
           />
           <BenefitCard
-            title="Weekly Wisdom Emails"
+            title="Weekly Wisdom Collection"
             desc="Short, actionable insights grounded in scientific insight and lived experience. Expect one gentle nudge each week to keep you grounded and aligned."
           />
           <BenefitCard
-            title="Monthly Live Online Meditation & Personal Growth Sessions"
-            desc="A live members-only session each month to reset your mind and deepen your practice. Recording available until the next session."
+            title="Monthly Live Online Inner Growth Sessions"
+            desc="A members-only live session each month designed to reset your mind and deepen your practice through active and guided meditation."
           />
           <BenefitCard
-            title="Dr. Salerno AI"
+            title="Dr. Salerno AI Advisor"
             desc="Your members-only guidance companion trained on my approach—ask questions and get step-by-step support in my voice."
           />
           <BenefitCard
@@ -184,7 +184,7 @@ export default function MembershipPageClient() {
             desc="Focused 30-minute sessions to clarify intentions, identify blocks, and map the tone and structure of your custom meditation."
           />
           <BenefitCard
-            title="Mental Health & Growth Guides"
+            title="Mental Health & Alignment Guides"
             desc="Short, powerful guides curated to help you shift your mindset and take meaningful action today."
           />
         </div>
@@ -194,7 +194,7 @@ export default function MembershipPageClient() {
       <section className="mt-16">
         <div className="mx-auto max-w-[725px] rounded-xl border border-[var(--color-gold)]/60 bg-white/5 p-6">
           <h3 className="text-center font-semibold text-[var(--color-gold)]">
-            Meditation & Social Media Inspiration Library Themes
+            Meditation Library & Social Media Inspiration Space Themes
           </h3>
           <p className="mt-2 text-center text-sm opacity-85">
             Motivation & Mindset · Mental Health & Stress Relief · Self-Compassion & Healing · Relationships & Connection · Purpose & Alignment · Manifestation & Intention Setting · Feng Shui & Environment
@@ -263,7 +263,7 @@ export default function MembershipPageClient() {
   <div className="mt-4 space-y-3 md:space-y-0 md:columns-2 md:gap-4">
     <Faq
       q="What do I get inside RISE?"
-      a="You get access to the meditation library, social media resources library, weekly wisdom emails, monthly live online sessions, members-only Dr. Salerno AI guidance, discounted custom meditations, Vision Calls, and Mental Health & Growth Guides."
+      a="You get access to the meditation library, social media resources space, weekly wisdom emails, monthly live online sessions, members-only Dr. Salerno AI guidance, discounted custom meditations, Vision Calls, and Mental Health & Growth Guides."
     />
     <Faq
       q="Can I cancel anytime?"
@@ -271,7 +271,7 @@ export default function MembershipPageClient() {
     />
     <Faq
       q="What’s the difference between monthly and yearly?"
-      a="The monthly plan renews every month after the $1 trial. The yearly plan is billed once per year at a discounted rate and includes an additional 5-minute custom meditation plus a Vision Call as a perk."
+      a="The monthly plan renews every month. The yearly plan is billed once per year at a discounted rate and includes an additional 5-minute custom meditation plus a Vision Call as a perk."
     />
     <Faq
       q="Is this therapy or medical care?"
