@@ -263,7 +263,7 @@ export default function MembershipPageClient() {
   <div className="mt-4 space-y-3 md:space-y-0 md:columns-2 md:gap-4">
     <Faq
       q="What do I get inside RISE?"
-      a="You get access to the meditation library, social media resources space, weekly wisdom emails, monthly live online sessions, members-only Dr. Salerno AI guidance, discounted custom meditations, Vision Calls, and Mental Health & Growth Guides."
+      a="You get access to the meditation library, social media resources space, weekly wisdom collection, monthly live online inner growth sessions, Dr. Salerno AI advisor, discounted custom meditations with vision calls, and mental health & alignment guides."
     />
     <Faq
       q="Can I cancel anytime?"
@@ -271,7 +271,7 @@ export default function MembershipPageClient() {
     />
     <Faq
       q="What’s the difference between monthly and yearly?"
-      a="The monthly plan renews every month. The yearly plan is billed once per year at a discounted rate and includes an additional 5-minute custom meditation plus a Vision Call as a perk."
+      a="The monthly plan renews every month. The yearly plan is billed once per year at a discounted rate and includes an additional 5-minute custom meditation plus a vision call as a perk."
     />
     <Faq
       q="Is this therapy or medical care?"
@@ -290,7 +290,7 @@ export default function MembershipPageClient() {
       a="RISE is designed for busy people. Most practices are short, powerful, and easy to integrate into your day — even during a quick break."
     />
     <Faq
-      q="Is the AI advice really like talking to Dr. Salerno?"
+      q="Is the AI advisor really like talking to Dr. Salerno?"
       a="Yes — it’s trained on his guidance, tone, and teaching style so it feels deeply personal, compassionate, and aligned with everything he teaches."
     />
     <Faq
