@@ -30,7 +30,7 @@ export default function WeeklyWisdomPage() {
 
         {hasEmails ? (
           <p className="mt-3 max-w-[650px] text-sm md:text-base text-[var(--color-cream)]/80">
-            Short reflections by Dr. Salerno you can return to anytime. Start with the this week's Weekly Wisdom 
+            Short reflections by Dr. Salerno you can return to anytime. Start with the this week's wisdom
             below, or browse notes from previous weeks for the one that fits what you&apos;re moving through
             right now.
           </p>

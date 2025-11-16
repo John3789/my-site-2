@@ -6,7 +6,7 @@ export const weeklyWisdomEmails = [
     slug: "reset-and-recharge",
     title: "Reset and recharge: Meditative practices to elevate your day",
     teaser:
-      "Ever had one of those days where your brain feels like a browser with 27 open tabs—none of them working? This week’s email shares simple, science-backed practices to help you reset your mind and body in just a few minutes.",
+      "Ever had one of those days where your brain feels like a browser with 27 open tabs—none of them working? This week’s wisdom shares simple practices to help you reset your mind and body in just a few minutes.",
     displayDate: "November 15, 2025",
     body: (
       <>
