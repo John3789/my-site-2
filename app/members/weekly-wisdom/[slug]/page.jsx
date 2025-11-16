@@ -229,6 +229,9 @@ export default function WeeklyWisdomDetailPage({ params }) {
         body :is(footer, .site-footer, [role="contentinfo"]) {
           display: none !important;
         }
+            body {
+    background: #1B1C26 !important;
+  }
       `}</style>
     </main>
   );
