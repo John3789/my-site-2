@@ -19,7 +19,7 @@ export default function MembershipPageClient() {
 
 
       {/* HERO SECTION: title + copy + image (like About page) */}
-      <section className="mx-auto max-w-[1100px] mt-10 mb-10">
+      <section className="mx-auto max-w-[1100x] mt-10 mb-10">
         {/* Title + sign in */}
         <div className="text-center">
           <h1 className="font-serif text-5xl md:text-6xl tracking-tight text-[var(--color-cream)]">
@@ -74,7 +74,7 @@ export default function MembershipPageClient() {
       
 {/* FULL ACCESS */}
 <section id="pricing" className="mt-18">
-  <div className="relative mx-auto max-w-[750px] rounded-2xl bg-white/5 p-6 ring-1 ring-[var(--color-gold)]/60">
+  <div className="relative mx-auto max-w-[800px] rounded-2xl bg-white/5 p-6 ring-1 ring-[var(--color-gold)]/60">
     
     <div className="relative">
       {/* LEFT — Monthly Trial Badge (gold) */}
@@ -117,11 +117,11 @@ export default function MembershipPageClient() {
       <MiniTitleCard title="Meditation Library" />
       <MiniTitleCard title="Social Media Inspiration Space" />
       <MiniTitleCard title="Weekly Wisdom Collection" />
-      <MiniTitleCard title="Monthly Live Online Sessions" />
+      <MiniTitleCard title="Monthly Inner Growth Sessions" />
       <MiniTitleCard title="Dr. Salerno AI" />
       <MiniTitleCard title="Discounted Custom Meditations" />
       <MiniTitleCard title="Vision Calls" />
-      <MiniTitleCard title="Mental Health & Growth Guides" />
+      <MiniTitleCard title="Mental Health & Alignment Guides" />
     </div>
 
     {/* CTA — DOM checkout (two explicit price choices) */}
