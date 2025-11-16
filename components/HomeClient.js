@@ -166,7 +166,7 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
                   Inspiration Space, Weekly Wisdom Collection, Mental Health & Alignment Guides, Monthly Inner Growth Sessions, 
                   Dr. Salerno AI Advisor, and discounted Custom Meditations with Vision Calls. It’s a space to reconnect with yourself, unlock your inner strength, and <span className="font-semibold">RISE</span> into the life 
                   you’re meant to lead.
-                  </p>e
+                  </p>
 
                   <div className="flex justify-center lg:justify-start">
                     <Link href="/membership" className="link">Start Your RISE →</Link>
