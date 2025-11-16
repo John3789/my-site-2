@@ -83,7 +83,7 @@ export default function MembershipPageClient() {
       </div>
     </div>
 
-    <div className="mt-8 text-center text-2xl font-bold">Limited Time Offer</div>
+    <div className="mt-8 text-center text-2xl font-bold">LAUNCHING JANUARY 2026</div>
 
     {/* Pricing */}
     <div className="mt-6 flex items-end justify-center gap-10">
@@ -118,7 +118,7 @@ export default function MembershipPageClient() {
       <MiniTitleCard title="Social Media Inspiration Space" />
       <MiniTitleCard title="Weekly Wisdom Collection" />
       <MiniTitleCard title="Monthly Inner Growth Sessions" />
-      <MiniTitleCard title="Dr. Salerno AI" />
+      <MiniTitleCard title="Dr. Salerno AI Advisor" />
       <MiniTitleCard title="Discounted Custom Meditations" />
       <MiniTitleCard title="Vision Calls" />
       <MiniTitleCard title="Mental Health & Alignment Guides" />
