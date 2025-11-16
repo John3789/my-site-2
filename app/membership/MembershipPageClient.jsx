@@ -177,7 +177,7 @@ export default function MembershipPageClient() {
           />
           <BenefitCard
             title="Discounted Custom Meditations"
-            desc="Personalized audio created for your goals (5/10/15 min) with guidance on how to use it effectively. Includes a free Vision Call."
+            desc="Personalized audio created for your goals (5/10/15 min) with guidance on how to use it effectively. Includes a free vision call."
           />
           <BenefitCard
             title="Vision Calls"
