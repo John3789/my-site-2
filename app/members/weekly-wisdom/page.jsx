@@ -30,13 +30,13 @@ export default function WeeklyWisdomPage() {
 
         {hasEmails ? (
           <p className="mt-3 max-w-[650px] text-sm md:text-base text-[var(--color-cream)]/80">
-            Short reflections by Dr. Salerno you can return to anytime. Start with the latest email
-            below, or browse recent notes for the one that fits what you&apos;re moving through
+            Short reflections by Dr. Salerno you can return to anytime. Start with the this week's Weekly Wisdom 
+            below, or browse notes from previous weeks for the one that fits what you&apos;re moving through
             right now.
           </p>
         ) : (
           <p className="mt-3 max-w-[650px] text-sm md:text-base text-[var(--color-cream)]/80">
-            Your Weekly Wisdom emails will appear here once they’re published.
+            Your Weekly Wisdom writings will appear here once they’re published.
           </p>
         )}
       </header>
@@ -116,7 +116,7 @@ export default function WeeklyWisdomPage() {
                       Click to open the full Weekly Wisdom in a new view.
                     </span>
                     <span className="inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-3 py-1 text-[11px] md:text-xs font-semibold tracking-wide group-hover:brightness-110 group-active:translate-y-[1px]">
-                      View full email →
+                      View full entry →
                     </span>
                   </div>
                 </div>
