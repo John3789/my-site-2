@@ -103,10 +103,10 @@ export default function GuidesIsland() {
       {/* HEADER */}
       <section className="mb-10">
         <h1 className="mt-2 font-serif text-4xl md:text-5xl text-[var(--color-cream)]">
-          Mental Health & Growth Guide Library
+          Mental Health & Alignment Guides
         </h1>
         <p className="mt-3 max-w-2xl text-sm md:text-base text-[var(--color-cream)]/80">
-          In-depth, science-backed guides you can return to anytime. Start with the latest guide below,
+          In-depth guides that you can return to anytime. Start with the latest guide below,
           or explore by theme to find the support that fits what you&apos;re moving through right now.
         </p>
       </section>
