@@ -5,6 +5,7 @@ import { useRef } from "react";
 import TopOnMount from "../../../components/TopOnMount";
 import { useIosZoomVars } from "../../../components/useIosZoom";
 import MembersHomeLink from "../MembersHomeLink";
+import AutoRedirectIfNoMember from "../AutoRedirectIfNoMember";
 
 // 🔧 Update these details each month
 const NEXT_SESSION = {
@@ -29,6 +30,7 @@ export default function LiveSessionsPage() {
 
   return (
     <div ref={wrapRef}>
+        <AutoRedirectIfNoMember />
       <TopOnMount />
       <main className="mx-auto w-full max-w-[880px] px-6 pb-16 pt-10 space-y-8">
         {/* HEADER */}
