@@ -88,6 +88,7 @@ export default function ContactClient() {
     "focus:border-[var(--color-gold)]/50 transition";
 
   const topics = [
+    { value: "Monthly Inner Growth Sessions", label: "Monthly Live Sessions" },
     { value: "Membership", label: "Membership" },
     { value: "Consulting", label: "Consulting" },
     { value: "Speaking", label: "Speaking" },
