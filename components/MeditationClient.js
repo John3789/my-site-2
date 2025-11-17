@@ -77,7 +77,7 @@ When your mind feels scattered or your energy feels low, the right meditation ca
                 {/* LEFT COLUMN — Custom sessions content */}
                 <div>
                   <p className="text-[12px] uppercase tracking-[0.18em] opacity-60 mb-2 [@media(orientation:portrait)_and_(max-width:920px)]:text-center [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto">
-                    Custom
+                    Intro
                   </p>
                   <h2 className="font-serif text-4xl md:text-5xl opacity-95 [@media(orientation:portrait)_and_(max-width:920px)]:text-center [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto">
                     Custom-Made Sessions
@@ -87,12 +87,6 @@ When your mind feels scattered or your energy feels low, the right meditation ca
                     I design custom meditations tailored to your goals and challenges — whether it’s cultivating resilience, deepening focus, easing stress, creating space for empowerment and manifestation, or something uniquely yours. Each recording becomes a personalized pathway to growth and wellbeing.{" "}
                     <span className="font-bold">All custom meditation purchases include a complimentary 30-minute vision call.</span> Click below to get started.
                   </p>
-                  <a
-                    href="/contact"
-                    className="mt-8 inline-flex items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto"
-                  >
-                    Inquire about a custom session
-                  </a>
                 </div>
 
 <div className="flex justify-center">
@@ -111,7 +105,74 @@ When your mind feels scattered or your energy feels low, the right meditation ca
   </div>
 </div>
               </div>
+                        </section>
+                                           {/* Divider — match two-column container width */}
+            <div className="mx-auto w-full max-w-[1200px] px-6 mb-16">
+              <hr className="border-t border-[var(--color-cream)]/15" />
+            </div>
+
+
+            {/* CUSTOM MEDITATIONS — DEEPER EXPLAINER */}
+            <section className="mx-auto max-w-[900px] px-6 pb-12 narrow-landscape-80">
+              <p className="text-[12px] uppercase tracking-[0.18em] opacity-60 mb-2 text-center">
+                Custom Meditations
+              </p>
+
+              <h3 className="font-serif text-4xl md:text-5xl opacity-95 text-center">
+                What a Custom Meditation Really Is
+              </h3>
+
+              <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded mx-auto" />
+
+              <p className="text-base md:text-lg opacity-90 leading-relaxed mb-4">
+                A custom meditation is a personalized audio session created specifically for your inner
+                landscape — what you&apos;re feeling, navigating, and wanting to shift right now.
+                It&apos;s designed to meet you where you are, rather than asking you to fit into a generic script.
+              </p>
+
+              <p className="text-base md:text-lg opacity-90 leading-relaxed mb-4">
+                You&apos;ll start with a <span className="font-semibold">complimentary 30-minute Vision Call</span>,
+                where we talk through your goals, emotional patterns, personal history, and the energetic or mental
+                blocks you want support with. This conversation helps me understand your story on a deeper level so
+                your meditation can feel grounded, relevant, and truly supportive.
+              </p>
+
+              <p className="text-base md:text-lg opacity-90 leading-relaxed mb-4">
+                From there, I create a tailored meditation — 5, 10, or 15 minutes — designed to support your nervous
+                system, mindset, and spiritual alignment. Every detail is chosen for you: the pacing, tone, breath
+                cues, affirmations, imagery, and emotional journey woven through the session.
+              </p>
+
+              <ul className="mt-2 mb-4 space-y-2 text-base md:text-lg opacity-90 leading-relaxed">
+                <li>• release mental fog, overwhelm, or tension</li>
+                <li>• reconnect with clarity and self-trust</li>
+                <li>• strengthen resilience and grounded confidence</li>
+                <li>• shift specific patterns like self-doubt, fear, or stagnation</li>
+                <li>• cultivate a deeper sense of meaning, calm, and direction</li>
+              </ul>
+
+              <p className="text-base md:text-lg opacity-90 leading-relaxed">
+                Your custom meditation becomes a tool you can return to anytime you need support — a grounding reminder
+                of who you are and who you&apos;re becoming.{" "}
+                <span className="font-semibold">
+                  Custom lengths are available in 5, 10, and 15 minutes, and each one includes a 30-minute Vision Call.
+                </span>
+                              </p>
+
+<div className="mt-8 flex justify-center">
+  <a
+    href="/contact"
+    className="inline-flex items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
+  >
+    Inquire about a custom session
+  </a>
+  </div>
+
+
             </section>
+
+  
+
 
                         {/* Divider — match two-column container width */}
             <div className="mx-auto w-full max-w-[1200px] px-6">
