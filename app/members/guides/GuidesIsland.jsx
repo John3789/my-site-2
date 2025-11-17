@@ -2,7 +2,6 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import AutoRedirectIfNoMember from "../AutoRedirectIfNoMember";
 import MembersHomeLink from "../MembersHomeLink";
 
 const THEMES = [
@@ -97,7 +96,6 @@ export default function GuidesIsland() {
       data-page="members"
       className="mx-auto max-w-[1100px] px-6 py-10 mt-10"
     >
-      <AutoRedirectIfNoMember />
       <MembersHomeLink className="mb-6" />
 
       {/* HEADER */}
