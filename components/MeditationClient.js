@@ -95,22 +95,21 @@ When your mind feels scattered or your energy feels low, the right meditation ca
                   </a>
                 </div>
 
-                {/* RIGHT COLUMN — iPhone-optimized photo */}
-                <div className="flex justify-center">
-                  <div className="relative w-full max-w-[390px] aspect-[3/4] shadow-2xl ring-1 ring-white/10 overflow-hidden">
-                    <HeroImageIphoneAware
-                      src="/hero20.jpg"
-                      alt="Dr. Juan Pablo Salerno"
-                      width={2279}
-                      height={3021}
-                      sizes="(max-width: 768px) 95vw, 390px"
-                      className="object-cover"
-                      quality={95}
-                      priority
-                      fetchPriority="high"
-                    />
-                  </div>
-                </div>
+<div className="flex justify-center">
+  <div className="relative w-full max-w-[320px] md:max-w-[360px] aspect-[3/4] shadow-2xl ring-1 ring-white/10 overflow-hidden">
+    <HeroImageIphoneAware
+      src="/meditation4.jpg"
+      alt="Meditation photo"
+      width={1200}
+      height={1600}
+      sizes="(max-width: 768px) 95vw, 320px"
+      className="object-cover"
+      quality={95}
+      priority
+      fetchPriority="high"
+    />
+  </div>
+</div>
               </div>
             </section>
 

@@ -37,7 +37,7 @@ export default function BooksClient() {
             overflow-visible
           `}
         >
-          <main data-page="books" className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)">
+          <main data-page="books" className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)]">
 
             {/* Page title */}
             <div className="mx-auto max-w-[1400px] px-6 pt-20 mb-12 text-center">
@@ -88,19 +88,22 @@ export default function BooksClient() {
                 </div>
 
 {/* Right column image (plain) - optimized only on iPhone */}
-<div className="flex justify-center [transform:none] [width:auto]">
-  <HeroImageIphoneAware
-    src="/award2.jpg"
-    alt="Book or award"
-    width={3024}
-    height={4032}
-    className="w-full max-w-md h-auto shadow-lg object-cover mt-3"
-    sizes="(max-width: 768px) 95vw, 448px"
-    quality={95}
-    priority
-    fetchPriority="high"
+                <div className="flex justify-center">
+                  <div className="relative w-full max-w-[440px] aspect-[3/4] shadow-2xl  ring-white/10 overflow-hidden">
+                    <HeroImageIphoneAware
+                      src="/hero20.jpg"
+                      alt="Dr. Juan Pablo Salerno"
+                      width={2279}
+                      height={3021}
+                      sizes="(max-width: 768px) 95vw, 440px"
+                      className="object-cover"
+                      quality={95}
+                      priority
+                      fetchPriority="high"
   />
 </div>
+                  </div>
+
 
               </div>
             </div>
