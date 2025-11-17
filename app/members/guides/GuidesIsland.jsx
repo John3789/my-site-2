@@ -282,7 +282,9 @@ export default function GuidesIsland() {
               </a>
             </div>
 
-            <p className="mt-5 text-left opacity-85">Dr. Juan Pablo Salerno is an award-winning mental health science expert and thought leader, author, and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.</p>
+            <p className="mt-5 text-left opacity-85">                      Dr. Juan Pablo Salerno is an award-winning mental health science expert
+                      and transformation advisor, author, and professor—credited with more than 30 peer-reviewed
+                      publications and over 2,000 citations.</p>
 
             <p className="mt-6 text-left opacity-85">© Dr. Juan Pablo Salerno™</p>
             <p className="mt-2 mb-5 text-left opacity-85">

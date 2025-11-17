@@ -199,7 +199,9 @@ window.location.href = "/membership";
               </a>
             </div>
 
-            <p className="mt-5 text-left opacity-85">Dr. Juan Pablo Salerno is an award-winning mental health science expert and thought leader, author, and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.</p>
+            <p className="mt-5 text-left opacity-85">                      Dr. Juan Pablo Salerno is an award-winning mental health science expert
+                      and transformation advisor, author, and professor—credited with more than 30 peer-reviewed
+                      publications and over 2,000 citations.</p>
 
             <p className="mt-6 text-left opacity-85">© Dr. Juan Pablo Salerno™</p>
             <p className="mt-2 mb-5 text-left opacity-85">
@@ -239,7 +241,9 @@ window.location.href = "/membership";
               <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2v3h-2c-.3 0-.5.2-.5.5V12H16l-.5 3h-2v7A10 10 0 0 0 22 12z" /></svg>
             </a>
           </div>
-          <p className="mt-4 max-w-[520px] text-[13px] leading-relaxed">Dr. Juan Pablo Salerno is an award-winning mental health science expert and thought leader, author, and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.</p>
+          <p className="mt-4 max-w-[500px] text-[13px] leading-relaxed">                      Dr. Juan Pablo Salerno is an award-winning mental health science expert
+                      and transformation advisor, author, and professor—credited with more than 30 peer-reviewed
+                      publications and over 2,000 citations.</p>
         </div>
 
         <div className="text-left translate-y-[-4px]">

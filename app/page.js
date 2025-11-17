@@ -23,7 +23,7 @@ const jsonLdPerson = {
   "name": "Dr. Juan Pablo Salerno",
   "jobTitle": "Mental Health Science Expert, Author, Professor, Speaker",
   "description":
-    "Award-winning mental health science expert and thought leader, author, and professor blending research and practical tools for transformation, purpose, and wellbeing.",
+    "Award-winning mental health science expert and transformation advisor, author, and professor blending research and practical tools for transformation, purpose, and wellbeing.",
   "url": "https://drjuanpablosalerno.com/",
   "image": "https://drjuanpablosalerno.com/hero17.jpg",
 "alumniOf": { "@type": "CollegeOrUniversity", "name": "Columbia University" },

@@ -215,8 +215,9 @@ export default function RootLayout({ children }) {
 
                 {/* Bio */}
                 <p className="text-[13px] leading-relaxed opacity-85 -mt-1 max-w-[750px]">
-                  Dr. Juan Pablo Salerno is an award-winning mental health science expert and thought leader, author, and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
-                </p>
+                      Dr. Juan Pablo Salerno is an award-winning mental health science expert
+                      and transformation advisor, author, and professor—credited with more than 30 peer-reviewed
+                      publications and over 2,000 citations.                </p>
               </div>
             </div>
           </footer>

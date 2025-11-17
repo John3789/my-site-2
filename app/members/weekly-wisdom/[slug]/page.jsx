@@ -136,9 +136,9 @@ export default function WeeklyWisdomDetailPage({ params }) {
             </div>
 
             <p className="mt-5 text-left opacity-85">
-              Dr. Juan Pablo Salerno is an award-winning mental health science expert and thought
-              leader, author, and professor—credited with more than 30 peer-reviewed publications
-              and over 2,000 citations.
+                      Dr. Juan Pablo Salerno is an award-winning mental health science expert
+                      and transformation advisor, author, and professor—credited with more than 30 peer-reviewed
+                      publications and over 2,000 citations.
             </p>
 
             <p className="mt-6 text-left opacity-85">© Dr. Juan Pablo Salerno™</p>
@@ -201,10 +201,10 @@ export default function WeeklyWisdomDetailPage({ params }) {
               </svg>
             </a>
           </div>
-          <p className="mt-4 max-w-[520px] text-[13px] leading-relaxed">
-            Dr. Juan Pablo Salerno is an award-winning mental health science expert and thought
-            leader, author, and professor—credited with more than 30 peer-reviewed publications
-            and over 2,000 citations.
+          <p className="mt-4 max-w-[500px] text-[13px] leading-relaxed">
+                      Dr. Juan Pablo Salerno is an award-winning mental health science expert
+                      and transformation advisor, author, and professor—credited with more than 30 peer-reviewed
+                      publications and over 2,000 citations.
           </p>
         </div>
 
