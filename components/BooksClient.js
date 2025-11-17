@@ -89,13 +89,13 @@ export default function BooksClient() {
 
 {/* Right column image (plain) - optimized only on iPhone */}
                 <div className="flex justify-center">
-                  <div className="relative w-full max-w-[440px] aspect-[3/4] shadow-2xl  ring-white/10 overflow-hidden">
+                  <div className="relative w-full max-w-[400px] aspect-[3/4] shadow-2xl  ring-white/10 overflow-hidden mt-5">
                     <HeroImageIphoneAware
                       src="/hero20.jpg"
                       alt="Dr. Juan Pablo Salerno"
                       width={2279}
                       height={3021}
-                      sizes="(max-width: 768px) 95vw, 440px"
+                      sizes="(max-width: 768px) 95vw, 400px"
                       className="object-cover"
                       quality={95}
                       priority
