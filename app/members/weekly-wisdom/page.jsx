@@ -1,6 +1,8 @@
 // app/members/weekly-wisdom/page.jsx
 import Link from "next/link";
 import { weeklyWisdomEmails } from "./weeklyWisdomData";
+import MembersHomeLink from "../MembersHomeLink";
+
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -17,12 +19,8 @@ export default function WeeklyWisdomPage() {
     >
       {/* PAGE HEADER */}
       <header>
-        <Link
-          href="/members"
-          className="text-[13px] font-semibold text-[var(--color-gold)] hover:opacity-80"
-        >
-          ← Members Home
-        </Link>
+<MembersHomeLink />
+
 
         <h1 className="mt-10 font-serif text-4xl md:text-5xl tracking-tight text-[var(--color-cream)]">
           {hasEmails ? "Weekly Wisdom Collection" : "Weekly Wisdom"}

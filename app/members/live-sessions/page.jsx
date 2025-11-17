@@ -4,6 +4,7 @@
 import { useRef } from "react";
 import TopOnMount from "../../../components/TopOnMount";
 import { useIosZoomVars } from "../../../components/useIosZoom";
+import MembersHomeLink from "../MembersHomeLink";
 
 // 🔧 Update these details each month
 const NEXT_SESSION = {
@@ -31,10 +32,9 @@ export default function LiveSessionsPage() {
       <TopOnMount />
       <main className="mx-auto w-full max-w-[880px] px-6 pb-16 pt-10 space-y-8">
         {/* HEADER */}
+              <MembersHomeLink className="mb-6" />
         <header>
-          <p className="mt-10 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-gold)] opacity-80">
-            RISE Membership
-          </p>
+  
           <h1 className="mt-3 text-3xl font-semibold leading-tight text-[var(--color-cream)]">
             Monthly Live Inner Growth Sessions
           </h1>

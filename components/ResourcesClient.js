@@ -254,13 +254,21 @@ export default function ResourcesClient() {
           ref={wrapRef}
           className={`lg:contents origin-top data-[zoom=on]:[transform:scale(var(--z))] data-[zoom=on]:[width:calc(100%/var(--z))] mx-auto lg:[transform:none] lg:[width:100%] landscape:data-[zoom=on]:[transform:scale(calc(var(--zoomL)/var(--vv,1)))] landscape:data-[zoom=on]:[width:calc(100%/(var(--zoomL)/var(--vv,1)))] overflow-visible`}
         >
-          {/* Title + Intro */}
-          <div className="mx-auto max-w-[1200px] px-6 pt-20 pb-6">
-                                  <MembersHomeLink className="mb-0" />
+          {/* Members home link — placed higher */}
+          <div className="mx-auto max-w-[1200px] px-6 pt-12 pb-2">
+<MembersHomeLink className="lg:ml-18" />
+          </div>
 
-            
-            <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-0">Social Media Inspiration Space</h1>
+          {/* Title + intro */}
+          <div className="mx-auto max-w-[1200px] px-6 pt-4 pb-6">
+            <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-0">
+              Social Media Inspiration Space
+            </h1>
+
             <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 mx-auto mt-4 mb-6 rounded" />
+          </div>
+
+
 
             <section className="mx-auto max-w-[850px] px-6 text-center mb-6 narrow-landscape-80 narrow-landscape-80-ipad [@media(orientation:portrait)_and_(max-width:600px)]:px-3 [@media(orientation:portrait)_and_(max-width:600px)]:max-w-none [@media(orientation:portrait)_and_(max-width:600px)]:w-[92vw]">
 
@@ -490,7 +498,7 @@ export default function ResourcesClient() {
 </div>
 </div>
 
-        </div> {/* closes: ZOOM WRAPPER */}
+ {/* closes: ZOOM WRAPPER */}
 
 {/* Desktop footer row (socials + bio / legal) */}
 <div className="hidden lg:flex items-start justify-between mx-auto max-w-[1200px] px-6 mt-4 mb-10 text-[13px] leading-relaxed opacity-85">
