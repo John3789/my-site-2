@@ -1,8 +1,9 @@
-// app/membership/AutoRedirectIfMember.jsx
 "use client";
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+
+const MEMBER_OK_FLAG = "__salernoMemberOk";
 
 function getMemberstackCore() {
   if (typeof window === "undefined") return null;
@@ -14,6 +15,10 @@ function getMemberstackCore() {
   );
 }
 
+function setMemberFlag() {
+  if (typeof window === "undefined") return;
+  window[MEMBER_OK_FLAG] = true;
+}
 export default function AutoRedirectIfMember() {
   const router = useRouter();
 
@@ -38,6 +43,8 @@ export default function AutoRedirectIfMember() {
         if (cancelled) return;
 
         if (hasPlan) {
+          // ✅ Mark this tab as "member OK" so /members doesn't bounce them back
+          setMemberFlag();
           // Logged-in paying member → send them to /members
           router.replace("/members");
         } else if (allowRetry) {

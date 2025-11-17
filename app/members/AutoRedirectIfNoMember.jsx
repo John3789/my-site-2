@@ -39,6 +39,7 @@ export default function AutoRedirectIfNoMember({ children }) {
 
   useEffect(() => {
     let cancelled = false;
+    let retryTimeout;
 
     // If we've already marked this tab as "member ok", don't re-check
     if (hasMemberFlag()) {
@@ -46,18 +47,8 @@ export default function AutoRedirectIfNoMember({ children }) {
       return;
     }
 
-    async function runGate() {
+    async function checkMember(ms, allowRetry) {
       try {
-        const ms = getMemberstack();
-
-        // If Memberstack still isn't ready, try again shortly
-        if (!ms || !ms.getCurrentMember) {
-          if (!cancelled) {
-            setTimeout(runGate, 300); // retry in 300ms
-          }
-          return;
-        }
-
         const { data: member } = await ms.getCurrentMember();
         const hasPlan =
           Array.isArray(member?.planConnections) &&
@@ -69,8 +60,13 @@ export default function AutoRedirectIfNoMember({ children }) {
           // Valid member → remember it for this tab and allow page to render
           setMemberFlag();
           setStatus("allowed");
+        } else if (allowRetry) {
+          // Give Memberstack a bit more time to attach the plan, then check ONCE more
+          retryTimeout = window.setTimeout(() => {
+            if (!cancelled) checkMember(ms, false);
+          }, 700);
         } else {
-          // Not logged in OR no active plan → send them away
+          // Still no plan after retry → send them away
           router.replace("/membership?need_member=1");
         }
       } catch (err) {
@@ -80,13 +76,30 @@ export default function AutoRedirectIfNoMember({ children }) {
       }
     }
 
-    // start the first check (only if we didn't already know they're a member)
+    function runGate() {
+      const ms = getMemberstack();
+
+      // If Memberstack still isn't ready, try again shortly
+      if (!ms || !ms.getCurrentMember) {
+        if (!cancelled) {
+          retryTimeout = window.setTimeout(runGate, 300);
+        }
+        return;
+      }
+
+      // First check, with a single optional retry
+      checkMember(ms, true);
+    }
+
     if (status === "checking") {
       runGate();
     }
 
     return () => {
       cancelled = true;
+      if (retryTimeout) {
+        window.clearTimeout(retryTimeout);
+      }
     };
   }, [router, status]);
 
