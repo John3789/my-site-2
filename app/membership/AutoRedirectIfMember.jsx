@@ -1,3 +1,4 @@
+// app/membership/AutoRedirectIfMember.jsx
 "use client";
 
 import { useEffect } from "react";
@@ -19,6 +20,7 @@ function setMemberFlag() {
   if (typeof window === "undefined") return;
   window[MEMBER_OK_FLAG] = true;
 }
+
 export default function AutoRedirectIfMember() {
   const router = useRouter();
 
@@ -43,34 +45,28 @@ export default function AutoRedirectIfMember() {
         if (cancelled) return;
 
         if (hasPlan) {
-          // ✅ Mark this tab as "member OK" so /members doesn't bounce them back
+          // ✅ Mark this tab as already validated
           setMemberFlag();
-          // Logged-in paying member → send them to /members
+
+          // Send directly to /members
           router.replace("/members");
         } else if (allowRetry) {
-          // Give Memberstack a brief moment to attach the plan,
-          // then check ONE more time before giving up.
+          // Retry once after a brief delay
           retryTimeout = setTimeout(() => {
             checkAndMaybeRedirect(false);
           }, 600);
         }
-        // If !hasPlan and !allowRetry: do nothing, they stay on /membership
+        // If !hasPlan and !allowRetry, do nothing (stay on membership page)
       } catch (e) {
         if (cancelled) return;
-        // On error, do nothing instead of breaking the page
       }
     }
 
-    // React only to auth changes (login/logout)
     const stop = ms.onAuthChange((member) => {
-      // member will be null/undefined when logged out
       if (!member) return;
-
-      // First check, with a single optional retry
       checkAndMaybeRedirect(true);
     });
 
-    // Clean up listener on unmount
     return () => {
       cancelled = true;
       if (retryTimeout) clearTimeout(retryTimeout);
