@@ -63,7 +63,8 @@ export default function MeditationClient() {
             {/* ===== INTRO ===== */}
             <section className="mx-auto max-w-[700px] lg:max-w-[850px] px-6 text-center mb-12 narrow-landscape-80 narrow-landscape-80-ipad">
               <p className="text-lg md:text-xl opacity-90 leading-relaxed narrow-landscape-80 narrow-landscape-80-ipad">
-When your mind feels scattered or your energy feels low, the right meditation can bring you back to center. My meditations are designed to help you reset your body, calm your thoughts, and reconnect with yourself—so you can move through the day with clarity, intention, and ease.              </p>
+                When your mind feels scattered or your energy feels low, the right meditation can bring you back to center. My meditations are designed to help you reset your body, calm your thoughts, and reconnect with yourself—so you can move through the day with clarity, intention, and ease.
+              </p>
             </section>
 
             {/* Divider — match two-column container width */}
@@ -71,144 +72,179 @@ When your mind feels scattered or your energy feels low, the right meditation ca
               <hr className="border-t border-[var(--color-cream)]/15" />
             </div>
 
-            {/* ===== MAIN HERO ROW — Custom sessions + photo ===== */}
-            <section className="mx-auto max-w-[1200px] px-6 py-14 md:py-16">
-              <div data-med-grid className="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
-                {/* LEFT COLUMN — Custom sessions content */}
-                <div>
-                  <p className="text-[12px] uppercase tracking-[0.18em] opacity-60 mb-2 [@media(orientation:portrait)_and_(max-width:920px)]:text-center [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto">
-                    Intro
-                  </p>
-                  <h2 className="font-serif text-4xl md:text-5xl opacity-95 [@media(orientation:portrait)_and_(max-width:920px)]:text-center [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto">
-                    Custom-Made Sessions
-                  </h2>
-                  <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-6 rounded [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto" />
-                  <p className="text-lg md:text-xl opacity-90 leading-relaxed max-w-2xl text-left [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto">
-                    I design custom meditations tailored to your goals and challenges — whether it’s cultivating resilience, deepening focus, easing stress, creating space for empowerment and manifestation, or something uniquely yours. Each recording becomes a personalized pathway to growth and wellbeing.{" "}
-                    <span className="font-bold">All custom meditation purchases include a complimentary 30-minute vision call.</span> Click below to get started.
-                  </p>
-                </div>
 
-<div className="flex justify-center">
-  <div className="relative w-full max-w-[320px] md:max-w-[360px] aspect-[3/4] shadow-2xl ring-1 ring-white/10 overflow-hidden">
-    <HeroImageIphoneAware
-      src="/meditation4.jpg"
-      alt="Meditation photo"
-      width={1200}
-      height={1600}
-      sizes="(max-width: 768px) 95vw, 320px"
-      className="object-cover"
-      quality={95}
-      priority
-      fetchPriority="high"
-    />
+
+{/* ===== MAIN HERO ROW — Custom sessions + photo ===== */}
+<section className="mx-auto max-w-[1200px] px-6 py-14 md:py-16">
+  <div data-med-grid className="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
+    {/* LEFT COLUMN — Custom sessions content */}
+    <div>
+      <p className="text-[12px] uppercase tracking-[0.18em] opacity-60 mb-2 [@media(orientation:portrait)_and_(max-width:920px)]:text-center [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto">
+        Meditations
+      </p>
+      <h2 className="font-serif text-4xl md:text-5xl opacity-95 [@media(orientation:portrait)_and_(max-width:920px)]:text-center [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto">
+        Custom Meditations 
+      </h2>
+      <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-5 rounded [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto" />
+
+      <p className="text-base md:text-lg opacity-90 leading-relaxed max-w-2xl text-left [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto">
+        I design custom meditations tailored to your goals and challenges — whether it’s cultivating 
+        resilience, deepening focus, easing stress, creating space for empowerment and manifestation, 
+        or something uniquely yours. Each recording becomes a personalized pathway to growth and wellbeing.
+        </p>
+
+      <p className="mt-3 text-base md:text-lg opacity-90 leading-relaxed max-w-2xl text-left [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto">
+        Custom meditations are one-on-one audio sessions created specifically for your inner world—
+        what you&apos;re feeling, navigating, and wanting to shift right now. Instead of a generic script,
+        we co-create something that speaks directly to you.
+      </p>
+
+      <p className="mt-3 text-base md:text-lg opacity-90 leading-relaxed max-w-2xl text-left [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto">
+        Every custom meditation includes a <span className="font-semibold">complimentary 30-minute Vision Call</span> before your session, so
+        we can clarify what you need support with—emotionally, mentally, and spiritually.
+      </p>
+
+      {/* Quick pill row */}
+      <div className="mt-4 flex flex-wrap gap-2 [@media(orientation:portrait)_and_(max-width:920px)]:justify-center">
+        <span className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] opacity-85">
+          5, 10, or 15 minutes
+        </span>
+        <span className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] opacity-85">
+          Vision call included
+        </span>
+        <span className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] opacity-85">
+          One-time purchase — from $50
+        </span>
+      </div>
+
+      {/* CTA */}
+      <div className="mt-7 [@media(orientation:portrait)_and_(max-width:920px)]:flex [@media(orientation:portrait)_and_(max-width:920px)]:justify-center">
+        <a
+          href="/contact"
+          className="inline-flex items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
+        >
+          Request a custom meditation
+        </a>
+      </div>
+
+    </div>
+
+    {/* RIGHT COLUMN — Photo unchanged */}
+    <div className="flex justify-center">
+      <div className="relative w-full max-w-[320px] md:max-w-[448px] aspect-[3/4] shadow-2xl ring-1 ring-white/10 overflow-hidden">
+        <HeroImageIphoneAware
+          src="/meditation4.jpg"
+          alt="Meditation photo"
+          width={1200}
+          height={1600}
+          sizes="(max-width: 768px) 95vw, 448px"
+          className="object-cover"
+          quality={95}
+          priority
+          fetchPriority="high"
+        />
+      </div>
+    </div>
   </div>
+</section>
+
+{/* Divider — match two-column container width */}
+<div className="mx-auto w-full max-w-[1200px] px-6 mb-10">
+  <hr className="border-t border-[var(--color-cream)]/15" />
 </div>
-              </div>
-                        </section>
-                                           {/* Divider — match two-column container width */}
-            <div className="mx-auto w-full max-w-[1200px] px-6 mb-16">
-              <hr className="border-t border-[var(--color-cream)]/15" />
-            </div>
 
+{/* CUSTOM MEDITATIONS — HOW IT WORKS / IS IT FOR YOU */}
+<section className="mx-auto max-w-[1100px] px-6 pb-12 narrow-landscape-80">
+  <div className="grid gap-10 lg:grid-cols-2">
+    {/* How it works */}
+    <div>
+      <h3 className="font-serif text-3xl md:text-4xl opacity-95">How It Works</h3>
+      <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded" />
 
-            {/* CUSTOM MEDITATIONS — DEEPER EXPLAINER */}
-            <section className="mx-auto max-w-[900px] px-6 pb-12 narrow-landscape-80">
-              <p className="text-[12px] uppercase tracking-[0.18em] opacity-60 mb-2 text-center">
-                Custom Meditations
-              </p>
+      <div className="space-y-4">
+        <StepCard
+          number="1"
+          title="Share what you need"
+          body="You reach out with a short message about what you’re moving through and what you’d like support with—no perfect wording needed."
+        />
+        <StepCard
+          number="2"
+          title="Vision Call"
+          body="We schedule a complimentary 30-minute Vision Call to explore your emotional patterns, goals, and spiritual or mindset themes."
+        />
+        <StepCard
+          number="3"
+          title="Receive your custom meditation"
+          body="Within 5–7 days of our call, you receive your personalized meditation (5, 10, or 15 minutes) plus guidance on how to integrate it into your routine."
+        />
+      </div>
+    </div>
 
-              <h3 className="font-serif text-4xl md:text-5xl opacity-95 text-center">
-                What a Custom Meditation Really Is
-              </h3>
+    {/* Is this for you */}
+    <div>
+      <h3 className="font-serif text-3xl md:text-4xl opacity-95">Who This Is For</h3>
+      <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded" />
 
-              <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded mx-auto" />
+      <p className="text-base md:text-lg opacity-90 leading-relaxed mb-4">
+        Custom meditations are especially supportive if you&apos;re:
+      </p>
 
-              <p className="text-base md:text-lg opacity-90 leading-relaxed mb-4">
-                A custom meditation is a personalized audio session created specifically for your inner
-                landscape — what you&apos;re feeling, navigating, and wanting to shift right now.
-                It&apos;s designed to meet you where you are, rather than asking you to fit into a generic script.
-              </p>
+      <ul className="space-y-2 text-sm md:text-base opacity-90 leading-relaxed">
+        <li>• Feeling emotionally drained, overwhelmed, or stuck in repeating patterns</li>
+        <li>• Moving through burnout or big shifts at work, home, or in relationships</li>
+        <li>• Wanting something deeper and more personal than general meditations</li>
+        <li>• Ready to build a simple ritual you can return to when things feel heavy</li>
+        <li>• Craving a grounded, affirming reminder of your strength and direction</li>
+      </ul>
 
-              <p className="text-base md:text-lg opacity-90 leading-relaxed mb-4">
-                You&apos;ll start with a <span className="font-semibold">complimentary 30-minute Vision Call</span>,
-                where we talk through your goals, emotional patterns, personal history, and the energetic or mental
-                blocks you want support with. This conversation helps me understand your story on a deeper level so
-                your meditation can feel grounded, relevant, and truly supportive.
-              </p>
-
-              <p className="text-base md:text-lg opacity-90 leading-relaxed mb-4">
-                From there, I create a tailored meditation — 5, 10, or 15 minutes — designed to support your nervous
-                system, mindset, and spiritual alignment. Every detail is chosen for you: the pacing, tone, breath
-                cues, affirmations, imagery, and emotional journey woven through the session.
-              </p>
-
-              <ul className="mt-2 mb-4 space-y-2 text-base md:text-lg opacity-90 leading-relaxed">
-                <li>• release mental fog, overwhelm, or tension</li>
-                <li>• reconnect with clarity and self-trust</li>
-                <li>• strengthen resilience and grounded confidence</li>
-                <li>• shift specific patterns like self-doubt, fear, or stagnation</li>
-                <li>• cultivate a deeper sense of meaning, calm, and direction</li>
-              </ul>
-
-              <p className="text-base md:text-lg opacity-90 leading-relaxed">
-                Your custom meditation becomes a tool you can return to anytime you need support — a grounding reminder
-                of who you are and who you&apos;re becoming.{" "}
-                <span className="font-semibold">
-                  Custom lengths are available in 5, 10, and 15 minutes, and each one includes a 30-minute Vision Call.
-                </span>
-                              </p>
-
-<div className="mt-8 flex justify-center">
-  <a
-    href="/contact"
-    className="inline-flex items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
-  >
-    Inquire about a custom session
-  </a>
+      <p className="mt-5 text-sm md:text-base opacity-85">
+        Custom meditations are available as a one-time purchase starting at{" "}
+        <span className="font-semibold">$50</span>. If you signup for {" "}
+        <a href="/membership" className="font-bold underline underline-offset-4 text-[var(--color-gold)] brightness-110 hover:brightness-130 transition">
+          RISE Membership
+        </a>
+        , you&apos;ll receive discounted rates (all plans) and/or a free 5-minute custom meditation (yearly plan).
+      </p>
+    </div>
   </div>
+</section>
 
 
-            </section>
-
-  
 
 
-                        {/* Divider — match two-column container width */}
+
+            {/* Divider — match two-column container width */}
             <div className="mx-auto w-full max-w-[1200px] px-6">
               <hr className="border-t border-[var(--color-cream)]/15" />
             </div>
 
-{/* ===== MEDITATION LIBRARY DESCRIPTION ===== */}
-<section className="mx-auto max-w-[900px] px-6 text-center mt-16 mb-16 narrow-landscape-80">
-  <p className="text-[12px] uppercase tracking-[0.18em] opacity-60 mb-2">
-    Meditation Library
-  </p>
+            {/* ===== MEDITATION LIBRARY DESCRIPTION ===== */}
+            <section className="mx-auto max-w-[900px] px-6 text-center mt-16 mb-16 narrow-landscape-80">
+              <p className="text-[12px] uppercase tracking-[0.18em] opacity-60 mb-2">
+                Meditation Library
+              </p>
 
-  <h2 className="font-serif text-4xl md:text-5xl opacity-95">
-    Guided Meditation Library
-  </h2>
+              <h2 className="font-serif text-4xl md:text-5xl opacity-95">
+                Guided Meditation Library
+              </h2>
 
-  <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded mx-auto" />
+              <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded mx-auto" />
 
-  <p className="text-lg md:text-xl opacity-90 leading-relaxed mx-auto">
-    Access a growing collection of guided meditations designed to help you reset, restore,
-    and realign — from quick daytime resets and grounding practices to deeper sessions
-    focused on release, intention-setting, and evening wind-downs. Every track is created
-    to support your body, mind, and spirit.
-  </p>
+              <p className="text-lg md:text-xl opacity-90 leading-relaxed mx-auto">
+                Access a growing collection of guided meditations designed to help you reset, restore, and realign—from quick daytime resets and grounding practices to deeper sessions focused on release, intention-setting, and evening wind-downs. Every track is created to support your body, mind, and spirit.
+              </p>
 
-  <p className="mt-4 text-sm opacity-85 mx-auto">
-    Gain full access to the entire library when you signup for {" "}
-<a
-  href="/membership"
-  className="font-bold underline underline-offset-4 text-[var(--color-gold)] brightness-110 hover:brightness-130 transition"
->
-  RISE Membership
-</a> and receive new meditations as they are released.
-  </p>
-</section>
-
+              <p className="mt-4 text-sm opacity-85 mx-auto">
+                Gain full access to the entire library when you signup for{" "}
+                <a
+                  href="/membership"
+                  className="font-bold underline underline-offset-4 text-[var(--color-gold)] brightness-110 hover:brightness-130 transition"
+                >
+                  RISE Membership
+                </a>{" "}
+                and receive new meditations as they are released.
+              </p>
+            </section>
 
             {/* Divider — match two-column container width */}
             <div className="mx-auto w-full max-w-[1200px] px-6">
@@ -279,11 +315,10 @@ When your mind feels scattered or your energy feels low, the right meditation ca
                   href="/contact"
                   className="inline-flex items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
                 >
-                  Inquire about a custom session
+                  Request your custom meditation
                 </a>
               </div>
             </section>
-          
 
             {/* FINAL divider above footer — match two-column width, no bleed */}
             <div className="mx-auto max-w-[1200px] px-6">
@@ -342,7 +377,8 @@ When your mind feels scattered or your energy feels low, the right meditation ca
                     <p className="mt-5 text-left opacity-85">
                       Dr. Juan Pablo Salerno is an award-winning mental health science expert
                       and transformation advisor, author, and professor—credited with more than 30 peer-reviewed
-                      publications and over 2,000 citations.                    </p>
+                      publications and over 2,000 citations.
+                    </p>
 
                     <p className="mt-6 text-left opacity-85">© Dr. Juan Pablo Salerno™</p>
 
@@ -352,8 +388,7 @@ When your mind feels scattered or your energy feels low, the right meditation ca
                       </a>
                       <span className="mx-2 opacity-50">·</span>
                       <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">
-                        Privacy
-                      </a>
+                        Privacy</a>
                       <span className="mx-2 opacity-50">·</span>
                       <span>All rights reserved</span>
                     </p>
@@ -406,6 +441,20 @@ function Faq({ q, a }) {
     <div className="rounded-xl border border-white/15 bg-white/5 p-5">
       <div className="font-semibold">{q}</div>
       <p className="mt-1 opacity-85 text-sm">{a}</p>
+    </div>
+  );
+}
+
+function StepCard({ number, title, body }) {
+  return (
+    <div className="flex gap-4 rounded-xl border border-white/12 bg-white/5 px-4 py-3">
+      <div className="mt-1 flex h-7 w-7 items-center justify-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)]/10 text-xs font-semibold">
+        {number}
+      </div>
+      <div>
+        <div className="font-semibold mb-1 text-sm md:text-base">{title}</div>
+        <p className="text-xs md:text-sm opacity-90 leading-relaxed">{body}</p>
+      </div>
     </div>
   );
 }
