@@ -122,7 +122,7 @@ window.location.href = "/membership";
           <Card href="/members/live-sessions" icon="📅" title="Monthly Live Inner Growth Sessions" desc="Join the next live reset and Q&A. Recordings available until the next session." />
           <Card href="/members/ai" icon={<img src="/headshot.jpg" alt="Dr. Juan Pablo Salerno" className="h-9 w-9 rounded-full object-cover ring-1 ring-white/15 -mt-2" />} title="Dr. Salerno AI Advisor" desc="Seek guidance from my AI self — grounded in my approach, insights, and tools." />
           <Card href="/members/custom-meditation" icon="📿" title="Custom Meditations + Vision Calls" desc="Personalized audio (5, 10, 15 min) + a complimentary 30-minute Vision Call." />
-          <Card href="/contact" icon="🛟" title="Support & Contact" desc="Reach out with concerns or browse common questions in the FAQ." />
+          <Card href="/contact" icon="🛟" title="Support & Contact" desc="Reach out anytime with questions or concerns about your membership or benefits." />
           <Card href="/account" icon="💳" title="Account & Billing" desc="Update payment details, personal info, password, and more." />
         </div>
       </section>
