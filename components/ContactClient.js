@@ -101,10 +101,11 @@ export default function ContactClient() {
   return (
     <>
       <div className="mx-auto">
-        <main
-          data-page="contact"
-          className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] min-h-screen md:min-h-0 narrow-landscape-70 mt-16"
-        >
+<main
+  data-page="contact"
+  className="w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] min-h-screen md:min-h-0 narrow-landscape-70 mt-16 pb-16"
+>
+
           {/* ============== MOBILE (zoom lives INSIDE here) ============== */}
           <div className="lg:hidden mx-auto max-w-[1400px] px-3 pt-0 pb-0 narrow-landscape-80">
             <div
