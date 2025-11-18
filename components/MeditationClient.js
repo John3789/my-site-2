@@ -4,7 +4,7 @@
 import TopOnMount from "../components/TopOnMount";
 import PopupIsland from "./PopupIsland";
 import HeroImageIphoneAware from "../components/HeroImageIphoneAware";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useIosZoomVars } from "../components/useIosZoom";
 import MobileFooterSubscribeClient from "./MobileFooterSubscribeClient";
 import ClientOnly from "./ClientOnly";
@@ -44,6 +44,48 @@ function RegularPriceCard({ label, price }) {
 export default function MeditationClient() {
   const wrapRef = useRef(null);
   useIosZoomVars(wrapRef, { portraitZoom: 3.0, landscapeZoom: 1.0 });
+
+  const [formStatus, setFormStatus] = useState("idle"); // idle | submitting | success | error
+  const [formError, setFormError] = useState("");
+
+  const handleRequestSubmit = async (e) => {
+    e.preventDefault();
+    if (formStatus === "submitting") return;
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      name: formData.get("name")?.toString() || "",
+      email: formData.get("email")?.toString() || "",
+      current: formData.get("current")?.toString() || "",
+      support: formData.get("support")?.toString() || "",
+      length: formData.get("length")?.toString() || "",
+      timing: formData.get("timing")?.toString() || "",
+      preferences: formData.get("preferences")?.toString() || "",
+    };
+
+    try {
+      setFormStatus("submitting");
+      setFormError("");
+
+      const res = await fetch("/api/custom-meditation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) throw new Error("Request failed");
+
+      setFormStatus("success");
+      form.reset();
+    } catch (err) {
+      console.error(err);
+      setFormError("Something went wrong. Please try again or email me directly.");
+      setFormStatus("error");
+    }
+  };
+
 
   return (
     <TopOnMount>
@@ -117,15 +159,7 @@ export default function MeditationClient() {
         </span>
       </div>
 
-      {/* CTA */}
-      <div className="mt-7 [@media(orientation:portrait)_and_(max-width:920px)]:flex [@media(orientation:portrait)_and_(max-width:920px)]:justify-center">
-        <a
-          href="/contact"
-          className="inline-flex items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
-        >
-          Request a custom meditation
-        </a>
-      </div>
+
 
     </div>
 
@@ -175,10 +209,23 @@ export default function MeditationClient() {
         <StepCard
           number="3"
           title="Receive your custom meditation"
-          body="Within 5–7 days of our call, you receive your personalized meditation (5, 10, or 15 minutes) plus guidance on how to integrate it into your routine."
+          body="Within 5–7 days of our call, you receive your custom meditation (5, 10, or 15 minutes), plus guidance on how to integrate it into your routine."
         />
-      </div>
+              {/* CTA BUTTONS */}
+              <div className="mt-12 flex flex-col items-center gap-4">
+               <a
+  href="#custom-pricing"
+    className="inline-flex items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
+>
+  See Custom Meditation Pricing
+</a>
     </div>
+
+    </div>
+
+
+
+      </div>
 
     {/* Is this for you */}
     <div>
@@ -251,8 +298,10 @@ export default function MeditationClient() {
               <hr className="border-t border-[var(--color-cream)]/15" />
             </div>
 
-            {/* CUSTOM MEDITATIONS PRICING */}
-            <section className="mx-auto max-w-[1200px] px-6 py-14 md:py-16 narrow-landscape-80">
+           <section
+  id="custom-pricing"
+  className="mx-auto max-w-[1200px] px-6 py-14 md:py-16 narrow-landscape-80"
+>
               <div className="mx-auto max-w-[925px] rounded-2xl border border-[var(--color-gold)]/60 bg-white/5 p-6">
                 {/* Regular / non-member pricing */}
                 <div className="flex flex-wrap items-center justify-between gap-3">
@@ -311,14 +360,158 @@ export default function MeditationClient() {
 
               {/* CTA BUTTONS */}
               <div className="mt-8 flex flex-col items-center gap-4">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
-                >
-                  Request your custom meditation
-                </a>
+               <a
+  href="#custom-request-form"
+  className="inline-flex items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
+>
+  Request a custom meditation
+</a>
+
               </div>
             </section>
+
+
+            {/* FINAL divider above footer — match two-column width, no bleed */}
+            <div className="mx-auto max-w-[1200px] px-6">
+              <hr className="hidden lg:block max-w-[1200px] border-t border-[var(--color-cream)]/22" />
+            </div>
+                        {/* PUBLIC CUSTOM MEDITATION REQUEST FORM */}
+            <section
+              id="custom-request-form"
+              className="mx-auto max-w-[900px] px-6 py-14 md:py-16 narrow-landscape-80"
+            >
+              <p className="text-[12px] uppercase tracking-[0.18em] opacity-60 mb-2 text-center">
+                Request a Custom Meditation
+              </p>
+
+              <h2 className="font-serif text-3xl md:text-4xl opacity-95 text-center">
+                Tell Me What You Need Support With
+              </h2>
+
+              <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded mx-auto" />
+
+              <p className="text-base md:text-lg opacity-90 leading-relaxed text-center mb-6">
+                Use this form to share what you&apos;re moving through and what you&apos;d like
+                your meditation to support. Once I receive your request, I&apos;ll reach out to
+                schedule your complimentary 30-minute Vision Call and confirm next steps.
+              </p>
+
+              <div className="mt-6 rounded-2xl border border-white/20 bg-white/5 p-5 md:p-6 shadow-2xl">
+                <form className="space-y-4" onSubmit={handleRequestSubmit}>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div>
+                      <label className="block text-sm font-medium mb-1">Name</label>
+                      <input
+                        type="text"
+                        name="name"
+                        className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
+                        placeholder="Your name"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-1">Email</label>
+                      <input
+                        type="email"
+                        name="email"
+                        className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
+                        placeholder="you@example.com"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium mb-1">
+                      What are you currently moving through?
+                    </label>
+                    <textarea
+                      name="current"
+                      className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
+                      rows={3}
+                      placeholder="Share what you’re navigating emotionally, mentally, or spiritually."
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium mb-1">
+                      What would you like this meditation to support?
+                    </label>
+                    <textarea
+                      name="support"
+                      className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
+                      rows={3}
+                      placeholder="For example: anxiety, burnout, confidence, clarity, grief, motivation, self-trust, etc."
+                      required
+                    />
+                  </div>
+
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div>
+                      <label className="block text-sm font-medium mb-1">Preferred length</label>
+                      <select
+                        name="length"
+                        className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
+                        defaultValue=""
+                      >
+                        <option value="" disabled>
+                          Select an option
+                        </option>
+                        <option value="5">5 minutes</option>
+                        <option value="10">10 minutes</option>
+                        <option value="15">15 minutes</option>
+                        <option value="unsure">I&apos;m not sure yet</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-1">
+                        When do you imagine using this meditation?
+                      </label>
+                      <input
+                        type="text"
+                        name="timing"
+                        className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
+                        placeholder="Mornings, before bed, between shifts, after work, etc."
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium mb-1">
+                      Language or spiritual preferences (optional)
+                    </label>
+                    <textarea
+                      name="preferences"
+                      className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
+                      rows={2}
+                      placeholder="For example: English or Spanish, any phrases you resonate with, or anything you'd prefer to avoid."
+                    />
+                  </div>
+
+                  {formError && (
+                    <p className="text-sm text-red-300">{formError}</p>
+                  )}
+
+                  {formStatus === "success" && (
+                    <p className="text-sm text-[var(--color-gold)]">
+                      Thank you — your request was received. I&apos;ll be in touch soon to
+                      schedule your Vision Call.
+                    </p>
+                  )}
+
+                  <div className="pt-2 flex justify-center">
+                    <button
+                      type="submit"
+                      disabled={formStatus === "submitting"}
+                      className="inline-flex items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-6 py-2.5 text-sm font-semibold uppercase tracking-wide shadow-md hover:shadow-lg hover:-translate-y-[1px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 disabled:opacity-60"
+                    >
+                      {formStatus === "submitting" ? "Sending…" : "Submit Request"}
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </section>
+
 
             {/* FINAL divider above footer — match two-column width, no bleed */}
             <div className="mx-auto max-w-[1200px] px-6">
