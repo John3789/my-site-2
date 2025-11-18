@@ -130,7 +130,7 @@ export default function MeditationClient() {
       <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-5 rounded [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto" />
 
       <p className="text-base md:text-lg opacity-90 leading-relaxed max-w-2xl text-left [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto">
-        I create custom meditations shaped around your goals and challenges — whether you're cultivating 
+        I create custom meditations shaped around your goals and challenges — whether you’re cultivating 
         resilience, deepening focus, easing stress, activating empowerment and manifestation, 
         or working through something uniquely personal. Each recording becomes a guided pathway to growth and wellbeing.
         </p>
