@@ -121,7 +121,7 @@ export default function MeditationClient() {
   <div data-med-grid className="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
     {/* LEFT COLUMN — Custom sessions content */}
     <div>
-      <p className="text-[12px] uppercase tracking-[0.18em] opacity-60 mb-2 [@media(orientation:portrait)_and_(max-width:920px)]:text-center [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto">
+      <p className="-mt-8 text-[12px] uppercase tracking-[0.18em] opacity-60 mb-2 [@media(orientation:portrait)_and_(max-width:920px)]:text-center [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto">
         Meditations
       </p>
       <h2 className="font-serif text-4xl md:text-5xl opacity-95 [@media(orientation:portrait)_and_(max-width:920px)]:text-center [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto">
@@ -147,7 +147,7 @@ export default function MeditationClient() {
       </p>
 
       {/* Quick pill row */}
-      <div className="mt-4 flex flex-wrap gap-2 [@media(orientation:portrait)_and_(max-width:920px)]:justify-center">
+      <div className="mt-8 flex flex-wrap gap-2 [@media(orientation:portrait)_and_(max-width:920px)]:justify-center">
         <span className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] opacity-85">
           5, 10, or 15 minutes
         </span>
