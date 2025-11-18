@@ -158,7 +158,7 @@ export default function MeditationClient() {
   <div className="grid gap-10 lg:grid-cols-2">
     {/* How it works */}
     <div>
-      <h3 className="font-serif text-3xl md:text-4xl opacity-95">How It Works</h3>
+      <h3 className="mt-5 font-serif text-3xl md:text-4xl opacity-95">How It Works</h3>
       <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded" />
 
       <div className="space-y-4">
@@ -182,7 +182,7 @@ export default function MeditationClient() {
 
     {/* Is this for you */}
     <div>
-      <h3 className="font-serif text-3xl md:text-4xl opacity-95">Who This Is For</h3>
+      <h3 className="mt-5 font-serif text-3xl md:text-4xl opacity-95">Who This Is For</h3>
       <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded" />
 
       <p className="text-base md:text-lg opacity-90 leading-relaxed mb-4">
