@@ -350,11 +350,24 @@ const handleRequestSubmit = async (e) => {
 </form>
           </div>
 
+           {/* QUESTIONS / CONTACT */}
+<div className="mt-8 text-center">
+  <p className="text-base md:text-lg font-semibold text-[var(--color-cream)]">
+    Additional questions? Include them in your form or{" "}
+    <a
+      href="/contact"
+      className="text-[var(--color-gold)] underline underline-offset-4 hover:opacity-90"
+    >
+      Contact Dr. Salerno
+    </a>
+  </p>
+</div>
+
           </section>
 
 
              {/* Divider — match other section borders */}
-          <div className="mt-2 mx-auto w-full max-w-[1100px] px-6">
+          <div className="mt-0 mx-auto w-full max-w-[1100px] px-6">
             <hr className="border-t border-[var(--color-cream)]/15" />
           </div>
 
