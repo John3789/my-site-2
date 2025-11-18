@@ -372,7 +372,7 @@ const handleRequestSubmit = async (e) => {
           </div>
 
           {/* IMPORTANT NOTES */}
-          <section className="mx-auto max-w-[900px] px-6 py-12 narrow-landscape-80">
+          <section className="-mt-1 mx-auto max-w-[900px] px-6 py-12 narrow-landscape-80">
             <h2 className="font-serif text-3xl md:text-4xl opacity-95 text-center">
               Important Notes
             </h2>

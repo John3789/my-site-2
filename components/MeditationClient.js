@@ -524,7 +524,29 @@ export default function MeditationClient() {
   </p>
 </div>
             </section>
+             {/* Divider — match other section borders */}
+          <div className="-mt-6 mx-auto w-full max-w-[1100px] px-6">
+            <hr className="border-t border-[var(--color-cream)]/15" />
+          </div>
 
+          {/* IMPORTANT NOTES */}
+          <section className="-mt-1 mx-auto max-w-[900px] px-6 py-12 narrow-landscape-80">
+            <h2 className="font-serif text-3xl md:text-4xl opacity-95 text-center">
+              Important Notes
+            </h2>
+            <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded mx-auto" />
+            <ul className="space-y-2 text-sm md:text-base opacity-90 leading-relaxed mb-0">
+              <li>
+                • Custom meditations are for personal growth and emotional support. They do not replace therapy, medical care, or crisis services.
+              </li>
+              <li>
+                • If you are in immediate distress or experiencing a crisis, please reach out to local emergency services or a crisis hotline before using these tools.
+              </li>
+              <li>
+                • These meditations are for your personal use only. Please don&apos;t share, repost, or resell them.
+              </li>
+            </ul>
+          </section>
 
             {/* FINAL divider above footer — match two-column width, no bleed */}
             <div className="mx-auto max-w-[1200px] px-6">
