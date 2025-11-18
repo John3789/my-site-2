@@ -372,10 +372,6 @@ export default function MeditationClient() {
             </section>
 
 
-            {/* FINAL divider above footer — match two-column width, no bleed */}
-            <div className="mx-auto max-w-[1200px] px-6">
-              <hr className="hidden lg:block max-w-[1200px] border-t border-[var(--color-cream)]/22" />
-            </div>
                         {/* PUBLIC CUSTOM MEDITATION REQUEST FORM */}
             <section
               id="custom-request-form"
