@@ -138,7 +138,7 @@ export default function MeditationClient() {
       <p className="mt-3 text-base md:text-lg opacity-90 leading-relaxed max-w-2xl text-left [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto">
         Custom meditations are one-on-one audio sessions designed specifically for your inner world—
         what you&apos;re feeling, navigating, and wanting to shift right now. Instead of a generic script,
-        we co-construct something that speaks directly to you.
+        we co-construct something that speaks directly to you. 
       </p>
 
       <p className="mt-3 text-base md:text-lg opacity-90 leading-relaxed max-w-2xl text-left [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto">
