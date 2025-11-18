@@ -510,6 +510,18 @@ export default function MeditationClient() {
                   </div>
                 </form>
               </div>
+                    {/* QUESTIONS / CONTACT */}
+<div className="mt-8 text-center">
+  <p className="text-base md:text-lg font-semibold text-[var(--color-cream)]">
+    Additional questions? Include them in your form or{" "}
+    <a
+      href="/contact"
+      className="text-[var(--color-gold)] underline underline-offset-4 hover:opacity-90"
+    >
+      contact Dr. Salerno.
+    </a>
+  </p>
+</div>
             </section>
 
 

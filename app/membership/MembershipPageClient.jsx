@@ -311,6 +311,19 @@ export default function MembershipPageClient() {
       a="RISE is built for people who feel stuck even after trying many things. It blends mental health science, personal growth, alignment, mindset, and spirituality in powerful ways."
     />
   </div>
+
+        {/* QUESTIONS / CONTACT */}
+<div className="mt-8 text-center">
+  <p className="text-base md:text-lg font-semibold text-[var(--color-cream)]">
+    Additional Questions?{" "}
+    <a
+      href="/contact"
+      className="text-[var(--color-gold)] underline underline-offset-4 hover:opacity-90"
+    >
+      Contact Dr. Salerno
+    </a>
+  </p>
+</div>
 </section>
 
 
