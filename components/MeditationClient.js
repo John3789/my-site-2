@@ -105,7 +105,7 @@ export default function MeditationClient() {
             {/* ===== INTRO ===== */}
             <section className="mx-auto max-w-[700px] lg:max-w-[850px] px-6 text-center mb-12 narrow-landscape-80 narrow-landscape-80-ipad">
               <p className="text-lg md:text-xl opacity-90 leading-relaxed narrow-landscape-80 narrow-landscape-80-ipad">
-                When your mind feels scattered or your energy feels low, the right meditation can bring you back to center. My meditations are designed to help you reset your body, calm your thoughts, and reconnect with yourself—so you can move through the day with clarity, intention, and ease.
+                When your mind feels heavy, unclear, or emotionally charged, the right meditation can bring you back to center. My meditations are designed to help you reset your body, calm your thoughts, and reconnect with yourself—so you can move through the day with clarity, intention, and ease.
               </p>
             </section>
 
@@ -130,20 +130,21 @@ export default function MeditationClient() {
       <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-3 mb-5 rounded [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto" />
 
       <p className="text-base md:text-lg opacity-90 leading-relaxed max-w-2xl text-left [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto">
-        I design custom meditations tailored to your goals and challenges — whether it’s cultivating 
-        resilience, deepening focus, easing stress, creating space for empowerment and manifestation, 
-        or something uniquely yours. Each recording becomes a personalized pathway to growth and wellbeing.
+        I create custom meditations shaped around your goals and challenges — whether you're cultivating 
+        resilience, deepening focus, easing stress, activating empowerment and manifestation, 
+        or working through something uniquely personal. Each recording becomes a guided pathway to growth and wellbeing.
         </p>
 
       <p className="mt-3 text-base md:text-lg opacity-90 leading-relaxed max-w-2xl text-left [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto">
-        Custom meditations are one-on-one audio sessions created specifically for your inner world—
+        Custom meditations are one-on-one audio sessions designed specifically for your inner world—
         what you&apos;re feeling, navigating, and wanting to shift right now. Instead of a generic script,
-        we co-create something that speaks directly to you.
+        we co-construct something that speaks directly to you.
       </p>
 
       <p className="mt-3 text-base md:text-lg opacity-90 leading-relaxed max-w-2xl text-left [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto">
-        Every custom meditation includes a <span className="font-semibold">complimentary 30-minute Vision Call</span> before your session, so
-        we can clarify what you need support with—emotionally, mentally, and spiritually.
+        Every custom meditation includes a <span className="font-semibold">complimentary 30-minute vision call</span>, 
+        where we explore what you need emotionally, mentally, and spiritually so your session feels grounded, 
+        supportive, and truly aligned with you.
       </p>
 
       {/* Quick pill row */}
@@ -199,7 +200,7 @@ export default function MeditationClient() {
         <StepCard
           number="1"
           title="Share what you need"
-          body="You reach out with a short message about what you’re moving through and what you’d like support with—no perfect wording needed."
+          body="Start by using the short form below to share what you're navigating and what kind of support you’re seeking—no perfect wording needed."
         />
         <StepCard
           number="2"
