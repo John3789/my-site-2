@@ -4,6 +4,16 @@
 import { useState, useCallback, useEffect } from "react";
 import Link from "next/link";
 
+function getMemberstack() {
+  if (typeof window === "undefined") return null;
+  return (
+    window.$memberstackDom ||
+    window.$memberstack ||
+    window.memberstack ||
+    window.Memberstack ||
+    null
+  );
+}
 
 export default function MembersIsland() {
   const [signingOut, setSigningOut] = useState(false);
@@ -84,6 +94,21 @@ window.location.href = "/membership";
 
   }, [signingOut]);
 
+    const handleAccountBillingClick = async () => {
+    const ms = getMemberstack();
+    if (!ms) {
+      alert("Loading your account… please try again in a moment.");
+      return;
+    }
+
+    try {
+      await ms.openModal("PROFILE", { defaultTab: "account" });
+    } catch (err) {
+      console.error("Error opening profile modal", err);
+      alert("Unable to open your account settings right now.");
+    }
+  };
+
   return (
     <main data-page="members" className="mx-auto max-w-[1100px] px-6 py-10 mt-10">
       {/* HERO */}
@@ -123,7 +148,7 @@ window.location.href = "/membership";
           <Card href="/members/ai" icon={<img src="/headshot.jpg" alt="Dr. Juan Pablo Salerno" className="h-9 w-9 rounded-full object-cover ring-1 ring-white/15 -mt-2" />} title="Dr. Salerno AI Advisor" desc="Seek guidance from my AI self — grounded in my approach, insights, and tools." />
           <Card href="/members/custom-meditation" icon="📿" title="Custom Meditations + Vision Calls" desc="Personalized audio (5, 10, 15 min) + a complimentary 30-minute Vision Call." />
           <Card href="/contact" icon="🛟" title="Support & Contact" desc="Reach out anytime with questions or concerns about your membership or benefits." />
-          <Card href="/account" icon="💳" title="Account & Billing" desc="Update payment details, personal info, password, and more." />
+<Card icon="💳" title="Account & Billing" desc="Update payment details, personal info, password, and more." onClick={handleAccountBillingClick} />
         </div>
       </section>
 
@@ -285,16 +310,36 @@ window.location.href = "/membership";
 
 /* ===== Subcomponents ===== */
 
-function Card({ href, icon, title, desc }) {
-  return (
-    <Link href={href} aria-label={`${title} — ${desc}`} className="group rounded-2xl bg-white/5 ring-1 ring-white/10 p-5 hover:bg-white/10 hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] transition">
+function Card({ href, icon, title, desc, onClick }) {
+  const content = (
+    <>
       <div className="text-2xl leading-none">{icon}</div>
       <div className="mt-1 text-base font-semibold">{title}</div>
       <div className="mt-1 text-sm opacity-80">{desc}</div>
       <div className="mt-2 text-sm opacity-70 transition group-hover:translate-x-0.5">Explore →</div>
+    </>
+  );
+
+  if (onClick) {
+    return (
+      <button
+        type="button"
+        onClick={onClick}
+        aria-label={`${title} — ${desc}`}
+        className="group w-full text-left rounded-2xl bg-white/5 ring-1 ring-white/10 p-5 hover:bg-white/10 hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] transition"
+      >
+        {content}
+      </button>
+    );
+  }
+
+  return (
+    <Link href={href} aria-label={`${title} — ${desc}`} className="group rounded-2xl bg-white/5 ring-1 ring-white/10 p-5 hover:bg-white/10 hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] transition">
+      {content}
     </Link>
   );
 }
+
 
 function UpdateItem({ label, title, date, href }) {
   return (

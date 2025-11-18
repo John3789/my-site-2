@@ -1,50 +1,70 @@
-// app/account/AccountIsland.jsx
 "use client";
 
-import { useState } from "react";
+function getMemberstack() {
+  if (typeof window === "undefined") return null;
+  return (
+    window.$memberstackDom ||
+    window.memberstack ||
+    window.$memberstack ||
+    null
+  );
+}
 
 export default function AccountIsland() {
-  const [loading, setLoading] = useState(false);
-  const [err, setErr] = useState("");
-
-  const goToStripePortal = async (e) => {
-    e.preventDefault();
-    if (loading) return;
-    setLoading(true);
-    setErr("");
+  const openProfile = async () => {
+    const ms = getMemberstack();
+    if (!ms) {
+      alert("Loading your account… please try again.");
+      return;
+    }
 
     try {
-      const res = await fetch("/api/billing/portal", { method: "POST" });
-      if (!res.ok) throw new Error(await res.text());
-      const data = await res.json(); // { url: "https://billing.stripe.com/..." }
-      if (data?.url) {
-        window.location.href = data.url;
-      } else {
-        throw new Error("No portal URL returned");
-      }
-    } catch (e) {
-      setErr("Unable to open billing portal. Please try again.");
-      console.error(e);
-      setLoading(false);
+      await ms.openModal("PROFILE", { defaultTab: "account" });
+    } catch (err) {
+      console.error("Error opening profile modal", err);
+      alert("Unable to open your profile settings.");
+    }
+  };
+
+  const openBilling = async () => {
+    const ms = getMemberstack();
+    if (!ms) {
+      alert("Loading your billing… please try again.");
+      return;
+    }
+
+    try {
+      await ms.launchStripeCustomerPortal();
+    } catch (err) {
+      console.error("Error opening billing portal", err);
+      alert("Unable to open your billing portal.");
     }
   };
 
   return (
-    <main className="mx-auto max-w-[1100px] px-6 py-10">
-      <h1 className="text-3xl font-bold">Manage Billing</h1>
-      <p className="mt-2 opacity-80">
-        Update your payment method, view invoices, or cancel your plan.
+    <div className="mx-auto max-w-[650px] px-6 py-12 text-[var(--color-cream)]">
+      <h1 className="text-2xl font-bold">Account &amp; Billing</h1>
+      <p className="mt-3 text-sm opacity-80">
+        Manage your personal details, password, and payment information below.
       </p>
 
-      <button
-        onClick={goToStripePortal}
-        disabled={loading}
-        className="mt-6 inline-flex rounded-full border border-amber-300 bg-amber-300 text-black px-5 py-3 font-semibold active:translate-y-px disabled:opacity-60"
-      >
-        {loading ? "Opening…" : "Open Billing Portal"}
-      </button>
+      <div className="mt-10 space-y-6">
+        <button
+          type="button"
+          onClick={openProfile}
+          className="w-full rounded-xl bg-white/5 p-4 text-left text-sm font-semibold ring-1 ring-white/10 transition hover:bg-white/10"
+        >
+          Update username, email &amp; password
+        </button>
 
-      {err && <p className="mt-3 text-red-400">{err}</p>}
-    </main>
+        <button
+          type="button"
+          onClick={openBilling}
+          className="w-full rounded-xl bg-white/5 p-4 text-left text-sm font-semibold ring-1 ring-white/10 transition hover:bg-white/10"
+        >
+          Manage payment methods &amp; subscription
+        </button>
+      </div>
+    </div>
   );
 }
