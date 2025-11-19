@@ -121,12 +121,13 @@ window.location.href = "/membership";
             <p className="mt-1 text-sm md:text-base opacity-80">Your space to realign and grow.</p>
             <p className="mt-3 text-base md:text-lg opacity-85">Start with the newest RISE meditation, or explore your perks: guided meditations, weekly wisdom, monthly live sessions, members-only AI guidance, discounted custom meditations with vision calls, and more.</p>
             <div className="mt-6 flex flex-wrap gap-3">
-  <Link
-    href="/members/meditations"
-    className="inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-5 py-3 text-sm font-semibold tracking-wide hover:brightness-110 active:translate-y-[1px]"
-  >
-    Start meditation
-  </Link>
+<Link
+  href="#whats-new"
+  className="inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-5 py-3 text-sm font-semibold tracking-wide hover:brightness-110 active:translate-y-[1px]"
+>
+  News and Updates
+</Link>
+
 </div>
           </div>
         </div>
@@ -152,8 +153,9 @@ window.location.href = "/membership";
         </div>
       </section>
 
-      {/* WHAT'S NEW */}
-      <section className="mt-10 rounded-2xl bg-white/[0.06] ring-1 ring-[var(--color-gold)]/50 p-6 shadow-[0_10px_40px_rgba(0,0,0,0.35)]">
+{/* WHAT'S NEW */}
+<section id="whats-new" className="mt-10 rounded-2xl bg-white/[0.06] ring-1 ring-[var(--color-gold)]/50 p-6 shadow-[0_10px_40px_rgba(0,0,0,0.35)]">
+
         <h2 className="text-lg font-bold text-[var(--color-gold)]">What’s new</h2>
         <div className="mt-3 space-y-2">
           <UpdateItem label="New Meditation" title="5-Minute Reset (All Levels)" date="Nov 10, 2025" href="/members/resources#reset" />
