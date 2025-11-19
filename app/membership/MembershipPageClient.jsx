@@ -156,7 +156,7 @@ export default function MembershipPageClient() {
     cadence="monthly"
     className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3.5 font-semibold tracking-wide text-sm shadow-md transition hover:bg-transparent hover:text-[var(--color-gold)] hover:border hover:border-[var(--color-gold)] hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
   >
-    Monthly — $9.99/mo (Save 50%)
+    Monthly — $15.99/mo (Save 20%)
   </BuyButton>
 
   {/* Yearly — outlined, best value */}
@@ -164,7 +164,7 @@ export default function MembershipPageClient() {
     cadence="yearly"
     className="inline-flex items-center rounded-md bg-transparent text-[var(--color-gold)] border border-[var(--color-gold)] px-6 py-3.5 font-semibold tracking-wide text-sm shadow-md transition hover:bg-[var(--color-gold)] hover:text-black hover:-translate-y-0.5 ring-1 ring-[var(--color-gold)]/40"
   >
-    Yearly — $89.99/yr (Best Value)
+    Yearly — $97.50/yr (Best Value)
   </BuyButton>
 </div>
 
@@ -273,14 +273,14 @@ export default function MembershipPageClient() {
             cadence="monthly"
             className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold tracking-wide text-sm shadow-md transition hover:bg-transparent hover:text-[var(--color-gold)] hover:border hover:border-[var(--color-gold)] hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
           >
-    Monthly — $9.99/mo (Save 50%)
+    Monthly — $15.99/mo (Save 20%)
           </BuyButton>
 
           <BuyButton
             cadence="yearly"
             className="inline-flex items-center rounded-md bg-transparent text-[var(--color-gold)] border border-[var(--color-gold)] px-6 py-3 font-semibold tracking-wide text-sm shadow-md transition hover:bg-[var(--color-gold)] hover:text-black hover:-translate-y-0.5 ring-1 ring-[var(--color-gold)]/40"
           >
-    Yearly — $89.99/yr (Best Value)
+    Yearly — $97.50/yr (Best Value)
           </BuyButton>
         </div>
       </section>
