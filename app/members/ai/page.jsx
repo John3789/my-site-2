@@ -14,7 +14,7 @@ export default function MembersAiPage() {
   const [messages, setMessages] = useState([
     {
       role: "assistant",
-      content: "I’m here with you. Take a breath. What’s on your mind or heart today?",
+      content: "What’s been moving through your mind, heart, or energy today?",
     },
   ]);
   const [input, setInput] = useState("");
