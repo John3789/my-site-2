@@ -99,13 +99,13 @@ export default function MembershipPageClient() {
             + fees
           </span>
         </div>
-        <div className="mt-[2px] text-xs opacity-80 text-center">save 50% · per month</div>
+        <div className="mt-[2px] text-xs opacity-80 text-center">save 50% monthly</div>
       </div>
 
 <div className="opacity-0 text-xs mt-[4px]">spacer</div>
 
 
-<span className="text-2xl mb-3 font-semibold opacity-100 -translate-x-[31px] inline-block">
+<span className="text-2xl mb-3 font-semibold opacity-100 -translate-x-[32px] inline-block">
   or
 </span>
 
@@ -116,7 +116,7 @@ export default function MembershipPageClient() {
          {/* Best Value Badge */}
     <div className="inline-flex items-center justify-center mb-1.5 px-3 py-1 rounded-full 
       bg-[var(--color-gold)] text-black text-[10px] font-semibold tracking-wide">
-      BEST VALUE — Save 25% yearly
+      BEST VALUE
     </div>
         <div className="flex items-baseline justify-center gap-2">
           <span className="text-sm opacity-60 line-through">$129.99</span>
@@ -126,11 +126,11 @@ export default function MembershipPageClient() {
           </span>
               
         </div>
-        <div className="mt-[2px] text-xs opacity-80 text-center">save 30% · per year</div>
+        <div className="mt-[2px] text-xs opacity-80 text-center">save 30% yearly</div>
 
             {/* Per-month breakdown */}
 <div className="mt-1 text-xs text-[var(--color-gold)] font-semibold underline decoration-[var(--color-gold)]/50">
-  ≈ $7.49 per month
+  $7.49/mo · save 25% monthly
 </div>
 
       </div>
@@ -271,16 +271,16 @@ export default function MembershipPageClient() {
         <div className="mt-8 mb-2 flex justify-center gap-3 flex-wrap">
           <BuyButton
             cadence="monthly"
-            className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:bg-transparent hover:text-[var(--color-gold)] hover:border hover:border-[var(--color-gold)] hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
+            className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold tracking-wide text-sm shadow-md transition hover:bg-transparent hover:text-[var(--color-gold)] hover:border hover:border-[var(--color-gold)] hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
           >
-            Join — Monthly (save 50%)
+    Monthly — $9.99/mo (Save 50%)
           </BuyButton>
 
           <BuyButton
             cadence="yearly"
-            className="inline-flex items-center rounded-md bg-transparent text-[var(--color-gold)] border border-[var(--color-gold)] px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:bg-[var(--color-gold)] hover:text-black hover:-translate-y-0.5 ring-1 ring-[var(--color-gold)]/40"
+            className="inline-flex items-center rounded-md bg-transparent text-[var(--color-gold)] border border-[var(--color-gold)] px-6 py-3 font-semibold tracking-wide text-sm shadow-md transition hover:bg-[var(--color-gold)] hover:text-black hover:-translate-y-0.5 ring-1 ring-[var(--color-gold)]/40"
           >
-            Join — Yearly (save 50%)
+    Yearly — $89.99/yr (Best Value)
           </BuyButton>
         </div>
       </section>
