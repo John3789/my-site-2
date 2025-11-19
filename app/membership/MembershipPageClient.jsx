@@ -85,32 +85,56 @@ export default function MembershipPageClient() {
     </div>
 
     <div className="mt-8 text-center text-2xl font-bold">LAUNCHING JANUARY 2026</div>
+<div className="text-center text-xs opacity-60 tracking-wide">
+  Choose your plan
+</div>
 
     {/* Pricing */}
     <div className="mt-6 flex items-end justify-center gap-10">
-      <div className="text-center">
+      <div className="text-center ml-10 -translate-x-[15px]">
         <div className="flex items-baseline justify-center gap-2">
-          <span className="text-md opacity-60 line-through">$19.99</span>
+          <span className="text-sm opacity-60 line-through">$19.99</span>
           <span className="text-3xl font-semibold leading-none">$9.99</span>
           <span className="text-xs opacity-60 leading-none">
             + fees
           </span>
         </div>
-        <div className="mt-0 text-xs opacity-80 text-center">per month · save 50%</div>
+        <div className="mt-[2px] text-xs opacity-80 text-center">save 50% · per month</div>
       </div>
 
-      <span className="text-2xl mb-3 font-semibold opacity-100">or</span>
+<div className="opacity-0 text-xs mt-[4px]">spacer</div>
 
-      <div className="text-center">
+
+<span className="text-2xl mb-3 font-semibold opacity-100 -translate-x-[31px] inline-block">
+  or
+</span>
+
+       {/* YEARLY — Highlighted */}
+<div className="text-center border border-[var(--color-gold)]/40 rounded-lg px-3 py-2 mr-0 -translate-x-[1px]">
+
+
+         {/* Best Value Badge */}
+    <div className="inline-flex items-center justify-center mb-1.5 px-3 py-1 rounded-full 
+      bg-[var(--color-gold)] text-black text-[10px] font-semibold tracking-wide">
+      BEST VALUE — Save 25% yearly
+    </div>
         <div className="flex items-baseline justify-center gap-2">
-          <span className="text-md opacity-60 line-through">$179.99</span>
+          <span className="text-sm opacity-60 line-through">$129.99</span>
           <span className="text-3xl font-semibold leading-none">$89.99</span>
           <span className="text-xs opacity-60 leading-none">
             + fees
           </span>
+              
         </div>
-        <div className="mt-0 text-xs opacity-80 text-center">per year · save 50%</div>
+        <div className="mt-[2px] text-xs opacity-80 text-center">save 30% · per year</div>
+
+            {/* Per-month breakdown */}
+<div className="mt-1 text-xs text-[var(--color-gold)] font-semibold underline decoration-[var(--color-gold)]/50">
+  ≈ $7.49 per month
+</div>
+
       </div>
+
     </div>
 
     {/* Mini CARDS */}
@@ -125,28 +149,31 @@ export default function MembershipPageClient() {
       <MiniTitleCard title="Mental Health & Alignment Guides" />
     </div>
 
-    {/* CTA — DOM checkout (two explicit price choices) */}
-    <div className="mt-8 mb-2 flex justify-center gap-3 flex-wrap">
-      <BuyButton
-        cadence="monthly"
-        className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:bg-transparent hover:text-[var(--color-gold)] hover:border hover:border-[var(--color-gold)] hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
-      >
-        Join — Monthly (save 50%)
-      </BuyButton>
+{/* CTA — DOM checkout (two explicit price choices) */}
+<div className="mt-8 mb-2 flex justify-center gap-3 flex-wrap">
+  {/* Monthly — primary, solid gold */}
+  <BuyButton
+    cadence="monthly"
+    className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3.5 font-semibold tracking-wide text-sm shadow-md transition hover:bg-transparent hover:text-[var(--color-gold)] hover:border hover:border-[var(--color-gold)] hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
+  >
+    Monthly — $9.99/mo (Save 50%)
+  </BuyButton>
 
-      <BuyButton
-        cadence="yearly"
-        className="inline-flex items-center rounded-md bg-transparent text-[var(--color-gold)] border border-[var(--color-gold)] px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md transition hover:bg-[var(--color-gold)] hover:text-black hover:-translate-y-0.5 ring-1 ring-[var(--color-gold)]/40"
-      >
-        Join — Yearly (save 50%)
-      </BuyButton>
-    </div>
+  {/* Yearly — outlined, best value */}
+  <BuyButton
+    cadence="yearly"
+    className="inline-flex items-center rounded-md bg-transparent text-[var(--color-gold)] border border-[var(--color-gold)] px-6 py-3.5 font-semibold tracking-wide text-sm shadow-md transition hover:bg-[var(--color-gold)] hover:text-black hover:-translate-y-0.5 ring-1 ring-[var(--color-gold)]/40"
+  >
+    Yearly — $89.99/yr (Best Value)
+  </BuyButton>
+</div>
 
-    {/* Sign in note (client component) */}
-    <div className="mt-6 text-center text-xs opacity-75">
-      Already a member?{" "}
-      <SignInButton className="underline hover:no-underline">Sign in</SignInButton>
-    </div>
+{/* Sign in note (client component) */}
+<div className="mt-6 text-center text-xs opacity-60">
+  Already a member?{" "}
+  <SignInButton className="underline hover:no-underline">Sign in</SignInButton>
+</div>
+
 
 
   </div>
