@@ -126,7 +126,7 @@ export default function GuidesIsland() {
               to-do list. Designed to be revisited whenever you feel off-center or stuck.
             </p>
             <p className="mt-3 text-xs md:text-[13px] text-[var(--color-cream)]/70">
-              Estimated time: 10–15 minutes • Format: Interactive guide
+              Estimated time: 5–10 minutes • Format: Interactive guide
             </p>
           </div>
 
