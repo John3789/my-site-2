@@ -6,7 +6,7 @@ import { cookies } from "next/headers";
 export const runtime = "nodejs";
 
 // Optional: keep models configurable via env so you can swap to a fine-tuned model later
-const MODEL_ID = process.env.SALERNO_AI_MODEL || "gpt-4.1-mini";
+const MODEL_ID = process.env.SALERNO_AI_MODEL || "gpt-5.1-chat-latest";
 
 // ---- System Prompt — Launch Draft v4 ----
 const SYSTEM_PROMPT = `
