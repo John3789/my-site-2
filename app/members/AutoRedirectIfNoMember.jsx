@@ -29,7 +29,6 @@ function setMemberFlag() {
 export default function AutoRedirectIfNoMember({ children }) {
   const router = useRouter();
 
-  // If we've *already* confirmed membership in this tab, skip the check
   const [status, setStatus] = useState(() => {
     if (typeof window !== "undefined" && hasMemberFlag()) {
       return "allowed";
@@ -38,60 +37,75 @@ export default function AutoRedirectIfNoMember({ children }) {
   });
 
   useEffect(() => {
+    if (status !== "checking") return;
+
     let cancelled = false;
     let retryTimeout;
+    let attempts = 0;
+    const maxAttempts = 6; // 6 × 500ms ≈ 3s patience total
 
-    // If we've already marked this tab as "member ok", don't re-check
-    if (hasMemberFlag()) {
-      setStatus("allowed");
-      return;
-    }
+    async function runGate() {
+      if (cancelled) return;
 
-    async function checkMember(ms, allowRetry) {
+      const ms = getMemberstack();
+
+      // Memberstack script not ready yet → retry
+      if (!ms || !ms.getCurrentMember) {
+        if (attempts >= maxAttempts) {
+          router.replace("/membership?need_member=1");
+          return;
+        }
+        attempts += 1;
+        retryTimeout = window.setTimeout(runGate, 500);
+        return;
+      }
+
       try {
-        const { data: member } = await ms.getCurrentMember();
+        const result = await ms.getCurrentMember();
+        const member = result?.data;
+        if (cancelled) return;
+
         const hasPlan =
           Array.isArray(member?.planConnections) &&
           member.planConnections.length > 0;
 
-        if (cancelled) return;
-
         if (hasPlan) {
-          // Valid member → remember it for this tab and allow page to render
           setMemberFlag();
           setStatus("allowed");
-        } else if (allowRetry) {
-          // Give Memberstack a bit more time to attach the plan, then check ONCE more
-          retryTimeout = window.setTimeout(() => {
-            if (!cancelled) checkMember(ms, false);
-          }, 700);
-        } else {
-          // Still no plan after retry → send them away
-          router.replace("/membership?need_member=1");
+          return;
         }
+
+        const isLoggedIn = !!member?.id;
+
+        // If nobody is logged in yet and we still have attempts left,
+        // it might just be the first-load handshake → retry.
+        if (!isLoggedIn && attempts < maxAttempts) {
+          attempts += 1;
+          retryTimeout = window.setTimeout(runGate, 500);
+          return;
+        }
+
+        // If we got here, we either:
+        // - see a non-member, or
+        // - waited long enough and still no member → redirect.
+        router.replace("/membership?need_member=1");
       } catch (err) {
-        if (!cancelled) {
+        if (cancelled) return;
+
+        // Treat transient errors like "still initializing" up to maxAttempts
+        if (attempts < maxAttempts) {
+          attempts += 1;
+          retryTimeout = window.setTimeout(runGate, 500);
+        } else {
           router.replace("/membership?need_member=1");
         }
       }
     }
 
-    function runGate() {
-      const ms = getMemberstack();
-
-      // If Memberstack still isn't ready, try again shortly
-      if (!ms || !ms.getCurrentMember) {
-        if (!cancelled) {
-          retryTimeout = window.setTimeout(runGate, 300);
-        }
-        return;
-      }
-
-      // First check, with a single optional retry
-      checkMember(ms, true);
-    }
-
-    if (status === "checking") {
+    // If we've already marked this tab ok somehow, skip everything
+    if (hasMemberFlag()) {
+      setStatus("allowed");
+    } else {
       runGate();
     }
 
@@ -103,14 +117,11 @@ export default function AutoRedirectIfNoMember({ children }) {
     };
   }, [router, status]);
 
-  // While checking, show the overlay (prevents footer/content flashes)
   if (status !== "allowed") {
     return (
       <div className="fixed inset-0 z-[9999] bg-[var(--color-teal-850)]" />
     );
   }
 
-  // Once we KNOW they’re a valid member (or we've already confirmed them
-  // earlier in this tab), show the content immediately.
   return children;
 }
