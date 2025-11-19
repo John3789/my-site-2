@@ -162,8 +162,8 @@ If you are in immediate danger, please contact emergency services right away. Yo
 `;
 
 // --- Membership check: basic v1 (with dev bypass) ---
-function validateMemberFromCookies() {
-  const cookieStore = cookies();
+async function validateMemberFromCookies() {
+  const cookieStore = await cookies();
   const stripeCust = cookieStore.get("stripe_cust")?.value;
 
   // 🔹 DEV BYPASS: allow all requests in non-production for testing
@@ -195,7 +195,7 @@ export async function POST(req) {
     });
 
     // 1) Gate by membership (dev bypass will allow you through locally)
-    const activeMember = validateMemberFromCookies();
+    const activeMember = await validateMemberFromCookies();
     if (!activeMember) {
       return new Response("Unauthorized", { status: 401 });
     }
@@ -236,13 +236,14 @@ export async function POST(req) {
     ];
 
     // 5) Call OpenAI with streaming
-    const stream = await client.chat.completions.create({
-      model: MODEL_ID,
-      messages: openAiMessages,
-      temperature: 0.7,
-      max_tokens: 800,
-      stream: true,
-    });
+const stream = await client.chat.completions.create({
+  model: MODEL_ID,
+  messages: openAiMessages,
+  max_completion_tokens: 800,
+  stream: true,
+});
+
+
 
     const encoder = new TextEncoder();
 

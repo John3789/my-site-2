@@ -26,5 +26,5 @@ export async function POST() {
     return_url: `${siteUrl}/account`,
   });
 
-  return NextResponse.json({ url: portal.url }); 
+  return NextResponse.json({ url: portal.url });
 }
