@@ -255,7 +255,7 @@ export default function MembersAiPage() {
               <form onSubmit={handleSend} className="flex flex-col gap-2 md:flex-row md:items-end">
                 <div className="flex-1">
                   <label className="mb-1 block text-[11px] uppercase tracking-[0.18em] text-[var(--color-cream)]/70">
-                    Ask me anything
+                    Ask your question
                   </label>
                 </div>
 
@@ -264,7 +264,7 @@ export default function MembersAiPage() {
   rows={5}
   value={input}
   onChange={(e) => setInput(e.target.value)}
-  placeholder="Tell me what’s going on, how you’re feeling, or what you want to shift…"
+  placeholder="Tell me what’s been showing up for you. I’m here to listen and support you."
   className="w-full resize-none rounded-xl border border-white/15 bg-black/30 px-3 py-2 text-sm text-[var(--color-cream)] outline-none ring-0 placeholder:text-[var(--color-cream)]/45 focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
 />
 
