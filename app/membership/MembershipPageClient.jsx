@@ -94,12 +94,12 @@ export default function MembershipPageClient() {
       <div className="text-center ml-10 -translate-x-[15px]">
         <div className="flex items-baseline justify-center gap-2">
           <span className="text-sm opacity-60 line-through">$19.99</span>
-          <span className="text-3xl font-semibold leading-none">$9.99</span>
+          <span className="text-3xl font-semibold leading-none">$15.99</span>
           <span className="text-xs opacity-60 leading-none">
             + fees
           </span>
         </div>
-        <div className="mt-[2px] text-xs opacity-80 text-center">save 50% monthly</div>
+        <div className="mt-[2px] text-xs opacity-80 text-center">save 20% monthly</div>
       </div>
 
 <div className="opacity-0 text-xs mt-[4px]">spacer</div>
@@ -120,17 +120,17 @@ export default function MembershipPageClient() {
     </div>
         <div className="flex items-baseline justify-center gap-2">
           <span className="text-sm opacity-60 line-through">$129.99</span>
-          <span className="text-3xl font-semibold leading-none">$89.99</span>
+          <span className="text-3xl font-semibold leading-none">$97.50</span>
           <span className="text-xs opacity-60 leading-none">
             + fees
           </span>
               
         </div>
-        <div className="mt-[2px] text-xs opacity-80 text-center">save 30% yearly</div>
+        <div className="mt-[2px] text-xs opacity-80 text-center">save 25% yearly</div>
 
             {/* Per-month breakdown */}
 <div className="mt-1 text-xs text-[var(--color-gold)] font-semibold underline decoration-[var(--color-gold)]/50">
-  $7.49/mo · save 25% monthly
+  $8.12/mo · save 51% monthly
 </div>
 
       </div>
