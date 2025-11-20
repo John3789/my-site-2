@@ -71,20 +71,37 @@ export async function POST(req) {
     }
 
     // Only auto-subscribe on creations/updates
-    const actionable = /member\.created|member\.updated/i.test(evt) || !evt; // accept empty evt for test tools
+    const actionable =
+      /member\.created|member\.updated|member\.plan\.updated/i.test(evt) || !evt; // accept empty evt for test tools
+
     if (actionable) {
-      const base = process.env.AUTH_ORIGIN || "https://auth.drjuanpablosalerno.com";
+      // Use your *main* site origin, not the old auth subdomain
+      const base =
+        process.env.NEXT_PUBLIC_SITE_ORIGIN ||
+        process.env.AUTH_ORIGIN ||
+        "https://www.drjuanpablosalerno.com";
+
       const r = await fetch(`${base}/api/subscribe`, {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ email, name }),
+        body: JSON.stringify({
+          email,
+          name,
+          // 👇 Tag/segment so HoppyCopy can see these as RISE / Memberstack people
+          source: "rise-memberstack",
+        }),
       });
+
       if (!r.ok) {
         const txt = await r.text();
         console.error("[MS webhook] /api/subscribe failed:", txt);
-        return NextResponse.json({ ok: false, error: "subscribe_failed" }, { status: 500 });
+        return NextResponse.json(
+          { ok: false, error: "subscribe_failed" },
+          { status: 500 }
+        );
       }
     }
+
 
     return NextResponse.json({ ok: true });
   } catch (e) {
