@@ -91,7 +91,7 @@ export default function MembershipPageClient() {
 
     {/* Pricing */}
     <div className="mt-6 flex items-end justify-center gap-10">
-      <div className="text-center ml-10 -translate-x-[15px]">
+      <div className="text-center ml-10 -translate-x-[16px]">
         <div className="flex items-baseline justify-center gap-2">
           <span className="text-sm opacity-60 line-through">$19.99</span>
           <span className="text-3xl font-semibold leading-none">$15.99</span>
@@ -105,12 +105,12 @@ export default function MembershipPageClient() {
 <div className="opacity-0 text-xs mt-[4px]">spacer</div>
 
 
-<span className="text-2xl mb-3 font-semibold opacity-100 -translate-x-[32px] inline-block">
+<span className="text-2xl mb-3 font-semibold opacity-100 -translate-x-[40px] inline-block">
   or
 </span>
 
        {/* YEARLY — Highlighted */}
-<div className="text-center border border-[var(--color-gold)]/40 rounded-lg px-3 py-2 mr-0 -translate-x-[1px]">
+<div className="text-center border border-[var(--color-gold)]/40 rounded-lg px-3 py-2 mr-0 -translate-x-[13px]">
 
 
          {/* Best Value Badge */}
