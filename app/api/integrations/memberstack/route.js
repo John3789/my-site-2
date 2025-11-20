@@ -63,6 +63,21 @@ export async function POST(req) {
       "";
     const name = [first, last].filter(Boolean).join(" ").trim() || null;
 
+    // 🔹 Determine whether this is a paid member or a lead (account created / no plan)
+    const planConnectionsRaw =
+      p?.planConnections ||
+      p?.member?.planConnections ||
+      [];
+    const planConnections = Array.isArray(planConnectionsRaw)
+      ? planConnectionsRaw
+      : [];
+    const hasPlan = planConnections.length > 0;
+
+    let memberType = "rise-lead"; // default: account created / no active plan
+    if (/member\.plan\.updated/i.test(evt) || hasPlan) {
+      memberType = "rise-paid";
+    }
+
     if (!email) {
       console.error("[MS webhook] no email in payload:", json);
       return NextResponse.json(
@@ -88,6 +103,8 @@ export async function POST(req) {
         name,
         // Tag so we know this came via Memberstack / RISE
         source: "rise-memberstack",
+        // Used in Hoppy Copy segments: newsletter vs rise-lead vs rise-paid
+        member_type: memberType,
       };
 
       const r = await fetch(`${base}/api/subscribe`, {
