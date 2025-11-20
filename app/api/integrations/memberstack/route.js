@@ -1,4 +1,3 @@
-// app/api/integrations/memberstack/route.js
 import { NextResponse } from "next/server";
 import crypto from "crypto";
 
@@ -19,6 +18,7 @@ function getSigHeader(req) {
     "x-ms-signature",
     "x-webhook-signature",
     "webhook-signature",
+    "svix-signature",
   ];
   for (const n of names) {
     const v = req.headers.get(n);
@@ -30,24 +30,43 @@ function getSigHeader(req) {
 export async function POST(req) {
   try {
     const raw = await req.text();
-    const secret = process.env.MEMBERSTACK_SIGNING_SECRET || "";
+
+    // ✅ Look for BOTH possible env var names
+    const secret =
+      process.env.MEMBERSTACK_SIGNING_SECRET ||
+      process.env.MS_SIGNING_SECRET ||
+      "";
 
     // Accept unsigned tests, but verify if a signature header is present
     const sigHeader = getSigHeader(req);
     if (sigHeader && secret) {
-      const provided = sigHeader.includes("=") ? sigHeader.split("=").pop() : sigHeader;
-      const computed = crypto.createHmac("sha256", secret).update(raw).digest("hex");
+      const provided = sigHeader.includes("=")
+        ? sigHeader.split("=").pop()
+        : sigHeader;
+      const computed = crypto
+        .createHmac("sha256", secret)
+        .update(raw)
+        .digest("hex");
       if (!safeEqual(computed, provided)) {
-        return NextResponse.json({ ok: false, error: "bad_signature" }, { status: 401 });
+        console.error("[MS webhook] bad signature");
+        return NextResponse.json(
+          { ok: false, error: "bad_signature" },
+          { status: 401 }
+        );
       }
     }
 
     // Parse payload (supports both legacy and current shapes)
     let json = {};
-    try { json = JSON.parse(raw || "{}"); } catch {}
-    // Your test sample uses { event, payload: { auth.email, customFields['first-name'], ... } }
+    try {
+      json = JSON.parse(raw || "{}");
+    } catch (err) {
+      console.error("[MS webhook] JSON parse error:", err);
+    }
+
     const evt = json.event || json.type || "";
     const p = json.payload || json.data || {};
+
     const email =
       p?.auth?.email?.trim() ||
       p?.member?.email?.trim() ||
@@ -67,34 +86,42 @@ export async function POST(req) {
     const name = [first, last].filter(Boolean).join(" ").trim() || null;
 
     if (!email) {
-      return NextResponse.json({ ok: false, error: "no_email" }, { status: 400 });
+      console.error("[MS webhook] no email in payload:", json);
+      return NextResponse.json(
+        { ok: false, error: "no_email" },
+        { status: 400 }
+      );
     }
 
     // Only auto-subscribe on creations/updates
     const actionable =
-      /member\.created|member\.updated|member\.plan\.updated/i.test(evt) || !evt; // accept empty evt for test tools
+      /member\.created|member\.updated|member\.plan\.updated/i.test(evt) || !evt;
 
     if (actionable) {
-      // Use your *main* site origin, not the old auth subdomain
+      // ✅ Use env vars you already have in Vercel
       const base =
+        process.env.NEXT_PUBLIC_SITE_URL ||
+        process.env.SITE_URL ||
         process.env.NEXT_PUBLIC_SITE_ORIGIN ||
         process.env.AUTH_ORIGIN ||
         "https://www.drjuanpablosalerno.com";
 
+      const subscribeBody = {
+        email,
+        name,
+        // Tag in Hoppy Copy as coming from Memberstack / RISE
+        source: "rise-memberstack",
+      };
+
       const r = await fetch(`${base}/api/subscribe`, {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          email,
-          name,
-          // 👇 Tag/segment so HoppyCopy can see these as RISE / Memberstack people
-          source: "rise-memberstack",
-        }),
+        body: JSON.stringify(subscribeBody),
       });
 
       if (!r.ok) {
         const txt = await r.text();
-        console.error("[MS webhook] /api/subscribe failed:", txt);
+        console.error("[MS webhook] /api/subscribe failed:", r.status, txt);
         return NextResponse.json(
           { ok: false, error: "subscribe_failed" },
           { status: 500 }
@@ -102,11 +129,13 @@ export async function POST(req) {
       }
     }
 
-
     return NextResponse.json({ ok: true });
   } catch (e) {
     console.error("[MS webhook] Error:", e);
-    return NextResponse.json({ ok: false, error: "server_error" }, { status: 500 });
+    return NextResponse.json(
+      { ok: false, error: "server_error" },
+      { status: 500 }
+    );
   }
 }
 
