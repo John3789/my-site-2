@@ -45,7 +45,7 @@ export default function MembershipPageClient() {
         </div>
 
         {/* Single CTA: explore what's inside (gold) */}
-        <div className="mt-4 flex flex-wrap justify-center gap-3">
+        <div className="mt-0 flex flex-wrap justify-center gap-3">
           <a
             href="#what-you-get"
             className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-2.5 font-semibold tracking-wide text-sm shadow-md transition hover:bg-transparent hover:text-[var(--color-gold)] hover:border hover:border-[var(--color-gold)] hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
@@ -55,7 +55,7 @@ export default function MembershipPageClient() {
         </div>
 
         {/* Two-column layout: pricing card (left) + intro (right) */}
-        <div className="mt-8 grid gap-10 md:grid-cols-2 md:items-start">
+        <div className="mt-12 grid gap-10 md:grid-cols-2 md:items-start">
           {/* LEFT: PRICING CARD */}
           <div id="membership-pricing" className="flex justify-center md:justify-start">
             <div className="relative w-full max-w-[430px] rounded-2xl bg-white/5 p-4 ring-1 ring-[var(--color-gold)]/60">
@@ -364,7 +364,7 @@ export default function MembershipPageClient() {
       </section>
 
       {/* CTA */}
-      <section className="mt-16 text-center">
+      <section className="mt-12 text-center">
         <p className="text-lg opacity-85">
           Ready to transform into the best version of yourself?
         </p>
@@ -465,9 +465,9 @@ export default function MembershipPageClient() {
           </div>
         </div>
 
-        <div className="mt-8 text-center">
+        <div className="mt-10 text-center">
           <p className="text-base md:text-lg font-semibold text-[var(--color-cream)]">
-            Still unsure if it&apos;s a fit?{" "}
+            Additional questions?{" "}
             <a
               href="/contact"
               className="text-[var(--color-gold)] underline underline-offset-4 hover:opacity-90"
