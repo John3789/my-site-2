@@ -74,7 +74,7 @@ export default function MembershipPageClient() {
               <div className="mt-5 grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start justify-items-center gap-4">
                 {/* Monthly */}
                 <div className="flex flex-col items-center gap-1">
-                  <div className="pt-10 flex items-baseline justify-center gap-2">
+                  <div className="pt-13 flex items-baseline justify-center gap-2">
                     <span className="text-xs opacity-60 line-through">$19.99</span>
                     <span className="text-2xl font-semibold leading-none">$15.99</span>
                     <span className="text-[11px] opacity-60 leading-none">+ fees</span>
@@ -93,7 +93,7 @@ export default function MembershipPageClient() {
                   <div className="flex items-baseline justify-center gap-1">
                     <span className="text-xs opacity-60 line-through">$129.99</span>
                     <span className="inline-flex items-baseline gap-1">
-                      <span className="text-2xl font-semibold">$97.50</span>
+                      <span className="text-2xl font-semibold ">$97.50</span>
                       <span className="text-[11px] opacity-60 whitespace-nowrap">+ fees</span>
                     </span>
                   </div>
