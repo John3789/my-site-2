@@ -16,10 +16,8 @@ export default function MembershipPageClient() {
     >
       <AutoRedirectIfMember />
 
-
-
       {/* HERO SECTION: title + copy + image (like About page) */}
-      <section className="mx-auto max-w-[1100x] mt-10 mb-10">
+      <section className="mx-auto max-w-[1100px] mt-10 mb-10">
         {/* Title + sign in */}
         <div className="text-center">
           <h1 className="font-serif text-5xl md:text-6xl tracking-tight text-[var(--color-cream)]">
@@ -35,10 +33,10 @@ export default function MembershipPageClient() {
           </p>
         </div>
 
-        {/* Two-column layout: description + image */}
+                {/* Two-column layout: description + image */}
         <div className="mt-5 grid gap-10 md:grid-cols-2 md:items-center">
-          {/* LEFT: description */}
-          <div>
+          {/* RIGHT on desktop: description */}
+          <div className="md:order-2">
             <p className="text-lg md:text-xl opacity-90 leading-relaxed">
               Feeling emotionally drained or stuck in cycles that hold you back? I’ve been there—
               and I know how hard it is to show up for life when your mind feels off-balance.
@@ -52,14 +50,14 @@ export default function MembershipPageClient() {
             </p>
 
             <p className="mx-auto mt-6 max-w-[860px] text-xs opacity-75">
-                      Dr. Juan Pablo Salerno is an award-winning mental health science expert
-                      and transformation advisor, author, and professor—credited with more than 30 peer-reviewed
-                      publications and over 2,000 citations.
+              Dr. Juan Pablo Salerno is an award-winning mental health science expert
+              and transformation advisor, author, and professor—credited with more than 30 peer-reviewed
+              publications and over 2,000 citations.
             </p>
           </div>
 
-          {/* RIGHT: image (sunset hand) */}
-          <div>
+          {/* LEFT on desktop: image (sunset hand) */}
+          <div className="md:order-1">
             <div className="mt-5 mx-auto max-w-[1100px] overflow-hidden squared-2xl">
               <img
                 src="/sunset2.jpg"
@@ -70,121 +68,225 @@ export default function MembershipPageClient() {
             </div>
           </div>
         </div>
+
       </section>
 
-      
-{/* FULL ACCESS */}
-<section id="pricing" className="mt-18">
-  <div className="relative mx-auto max-w-[800px] rounded-2xl bg-white/5 p-6 ring-1 ring-[var(--color-gold)]/60">
-    
-    <div className="relative">
-      {/* LEFT — Monthly Trial Badge (gold) */}
-      <div className="absolute -top-3 left={0} inline-flex items-center gap-2 rounded-full border border-[var(--color-gold)] bg-transparent px-3 py-1 text-xs font-semibold text-[var(--color-gold)] shadow-md">
-        Free Custom Meditation (yearly plan)
-      </div>
-    </div>
-
-    <div className="mt-8 text-center text-2xl font-bold">LAUNCHING JANUARY 2026</div>
-<div className="text-center text-xs opacity-60 tracking-wide">
-  Choose your plan
-</div>
-
-    {/* Pricing */}
-    <div className="mt-6 flex items-end justify-center gap-10">
-      <div className="text-center ml-10 -translate-x-[16px]">
-        <div className="flex items-baseline justify-center gap-2">
-          <span className="text-sm opacity-60 line-through">$19.99</span>
-          <span className="text-3xl font-semibold leading-none">$15.99</span>
-          <span className="text-xs opacity-60 leading-none">
-            + fees
-          </span>
-        </div>
-        <div className="mt-[2px] text-xs opacity-80 text-center">save 20% monthly</div>
+      {/* Divider ABOVE footer, like Contact/Members */}
+      <div className="mx-auto max-w-[1200px] px-6 mt-12">
+        <hr className="border-t border-[var(--color-cream)]/22" />
       </div>
 
-<div className="opacity-0 text-xs mt-[4px]">spacer</div>
+   {/* OVERVIEW + HIGHLIGHTS + BENEFITS */}
+      <section className="mt-20">
+        {/* Inside RISE text + PRICING CARD side by side */}
+        <div className="mx-auto max-w-[1100px]">
+          <div className="grid gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:items-start">
+            {/* LEFT: heading + text */}
+            <div>
+              <h2 className="font-serif text-3xl md:text-4xl tracking-tight text-[var(--color-cream)] text-left md:text-left text-center">
+                Inside RISE: Where Your Next Chapter Begins
+              </h2>
+              <p className="mt-4 text-base md:text-lg opacity-90 leading-relaxed">
+                RISE is where you strengthen your mindset, elevate your energy, and transform into the greatest version of yourself. It&apos;s where you reconnect with the part of you that knows you&apos;re meant for more than feeling drained, overwhelmed, or lost in the motions of your days. Inside, you&apos;ll find grounded guidance that helps you quiet the noise, rebuild your inner strength, and access the version of you who leads with power, purpose, and intention. RISE gives you the support and tools to break through what&apos;s been weighing you down and step boldly into your next chapter—the one where you feel aligned, energized, and fully connected to the life you&apos;re here to create.
+              </p>
+            </div>
 
+            {/* RIGHT: smaller, more symmetrical PRICING CARD */}
+            <div className="flex justify-center md:justify-end">
+              <div className="relative w-full max-w-[450px] rounded-2xl bg-white/5 p-4 ring-1 ring-[var(--color-gold)]/60">
+                <div className="inline-flex items-center gap-2 rounded-full border border-[var(--color-gold)] bg-transparent px-3 py-0.5 text-[11px] font-semibold text-[var(--color-gold)]">
+                  Free Custom Meditation (yearly plan)
+                </div>
 
-<span className="text-2xl mb-3 font-semibold opacity-100 -translate-x-[40px] inline-block">
-  or
-</span>
+                <div className="mt-4 text-center text-xl font-bold text-[var(--color-cream)]">
+                  LAUNCHING JANUARY 2026
+                </div>
+                <div className="text-center text-[10px] uppercase tracking-[0.18em] opacity-60">
+                  Choose your plan
+                </div>
 
-       {/* YEARLY — Highlighted */}
-<div className="text-center border border-[var(--color-gold)]/40 rounded-lg px-3 py-2 mr-0 -translate-x-[13px]">
+                {/* Pricing row — aligned prices */}
+                <div className="mt-5 grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start justify-items-center gap-4">
+                  {/* Monthly */}
+                  <div className="flex flex-col items-center gap-1">
+                    <div className="pt-12 flex items-baseline justify-center gap-2">
+                      <span className="text-xs opacity-60 line-through">$19.99</span>
+                      <span className="text-2xl font-semibold leading-none">$15.99</span>
+                      <span className="text-[11px] opacity-60 leading-none">+ fees</span>
+                    </div>
+                    <div className="text-[11px] opacity-80 text-center">save 20% monthly</div>
+                  </div>
 
+                  {/* OR */}
+                  <span className="self-center text-sm font-semibold opacity-80">or</span>
 
-         {/* Best Value Badge */}
-    <div className="inline-flex items-center justify-center mb-1.5 px-3 py-1 rounded-full 
-      bg-[var(--color-gold)] text-black text-[10px] font-semibold tracking-wide">
-      BEST VALUE
-    </div>
-        <div className="flex items-baseline justify-center gap-2">
-          <span className="text-sm opacity-60 line-through">$129.99</span>
-          <span className="text-3xl font-semibold leading-none">$97.50</span>
-          <span className="text-xs opacity-60 leading-none">
-            + fees
-          </span>
-              
-        </div>
-        <div className="mt-[2px] text-xs opacity-80 text-center">save 25% yearly</div>
-
-            {/* Per-month breakdown */}
-<div className="mt-1 text-xs text-[var(--color-gold)] font-semibold underline decoration-[var(--color-gold)]/50">
-  $8.12/mo · save 51% monthly
-</div>
-
-      </div>
-
-    </div>
-
-    {/* Mini CARDS */}
-    <div className="mt-6 grid gap-5 md:grid-cols-2">
-      <MiniTitleCard title="Meditation Library" />
-      <MiniTitleCard title="Social Media Inspiration Space" />
-      <MiniTitleCard title="Weekly Wisdom Collection" />
-      <MiniTitleCard title="Monthly Inner Growth Sessions" />
-      <MiniTitleCard title="Dr. Salerno AI Advisor" />
-      <MiniTitleCard title="Discounted Custom Meditations" />
-      <MiniTitleCard title="Vision Calls" />
-      <MiniTitleCard title="Mental Health & Alignment Guides" />
-    </div>
-
-{/* CTA — DOM checkout (two explicit price choices) */}
-<div className="mt-8 mb-2 flex justify-center gap-3 flex-wrap">
-  {/* Monthly — primary, solid gold */}
-  <BuyButton
-    cadence="monthly"
-    className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3.5 font-semibold tracking-wide text-sm shadow-md transition hover:bg-transparent hover:text-[var(--color-gold)] hover:border hover:border-[var(--color-gold)] hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
-  >
-    Monthly — $15.99/mo (Save 20%)
-  </BuyButton>
-
-  {/* Yearly — outlined, best value */}
-  <BuyButton
-    cadence="yearly"
-    className="inline-flex items-center rounded-md bg-transparent text-[var(--color-gold)] border border-[var(--color-gold)] px-6 py-3.5 font-semibold tracking-wide text-sm shadow-md transition hover:bg-[var(--color-gold)] hover:text-black hover:-translate-y-0.5 ring-1 ring-[var(--color-gold)]/40"
-  >
-    Yearly — $97.50/yr (Best Value)
-  </BuyButton>
-</div>
-
-{/* Sign in note (client component) */}
-<div className="mt-6 text-center text-xs opacity-60">
-  Already a member?{" "}
-  <SignInButton className="underline hover:no-underline">Sign in</SignInButton>
-</div>
-
-
-
+                  {/* Yearly */}
+<div className="flex flex-col items-center gap-1 border border-[var(--color-gold)]/40 rounded-lg px-3 py-2">
+  <div className="inline-flex items-center justify-center mt-1 mb-1 px-3 py-1 rounded-full bg-[var(--color-gold)] text-black text-[10px] font-semibold tracking-wide">
+    BEST VALUE
   </div>
-</section>
+  <div className="flex items-baseline justify-center gap-1">
+    <span className="text-xs opacity-60 line-through">$129.99</span>
 
-      {/* BENEFITS */}
-      <section className="mt-16">
-        <h2 className="text-center text-2xl font-bold">Benefits</h2>
-        <div className="mt-4 grid gap-4 md:grid-cols-2">
+
+    {/* group 97.50 + fees so they stay together */}
+    <span className="inline-flex items-baseline gap-1">
+      <span className="text-2xl font-semibold">$97.50</span>
+      <span className="text-[11px] opacity-60 whitespace-nowrap">+ fees</span>
+    </span>
+  </div>
+
+
+  <div className="text-[11px] opacity-80 text-center leading-relaxed">save 25% yearly</div>
+  <div className="text-[11px] text-[var(--color-gold)] font-semibold underline decoration-[var(--color-gold)]/50">
+    $8.12/mo · save 51% monthly
+  </div>
+</div>
+
+                </div>
+
+ {/* CTAs — placed under each price column */}
+<div className="mt-6 grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start justify-items-center gap-4">
+
+  {/* CTA under MONTHLY */}
+  <div className="flex justify-center">
+    <BuyButton
+      cadence="monthly"
+      className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-5 py-2.5 font-semibold tracking-wide text-xs shadow-md transition hover:bg-transparent hover:text-[var(--color-gold)] hover:border hover:border-[var(--color-gold)] hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
+    >
+      Join Monthly
+    </BuyButton>
+  </div>
+
+  {/* empty spacer where "or" is */}
+  <div></div>
+
+  {/* CTA under YEARLY */}
+  <div className="flex justify-center">
+    <BuyButton
+      cadence="yearly"
+      className="inline-flex items-center rounded-md bg-transparent text-[var(--color-gold)] border border-[var(--color-gold)] px-5 py-2.5 font-semibold tracking-wide text-xs shadow-md transition hover:bg-[var(--color-gold)] hover:text-black hover:-translate-y-0.5 ring-1 ring-[var(--color-gold)]/40"
+    >
+      Join Yearly
+    </BuyButton>
+  </div>
+
+</div>
+
+
+                <div className="mt-4 text-center text-[11px] opacity-60">
+                  Already a member?{" "}
+                  <SignInButton className="underline hover:no-underline">Sign in</SignInButton>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+{/* WIDE WRAPPER for blue cards (ONLY this section widens) */}
+<div className="mt-20">
+  {/* Full-bleed strip that can exceed the main 1100px container */}
+  <div className="relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] w-screen px-6">
+    <div className="mx-auto max-w-[1350px]">
+
+      {/* TWO BLUE CARDS SIDE BY SIDE */}
+      <div className="grid gap-8 md:grid-cols-2 md:gap-10 mx-auto max-w-[1305px]">
+
+        {/* Monthly Inner Growth Sessions — CARD ONLY */}
+        <div className="relative rounded-2xl border border-[var(--color-gold)]/70 bg-[rgba(9,22,32,0.96)] p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)]">
+          <div className="inline-flex items-center rounded-full border border-[var(--color-gold)]/60 bg-[var(--color-gold)]/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-gold)]">
+            Live each month
+          </div>
+
+          <h3 className="mt-3 font-serif text-2xl md:text-3xl tracking-tight text-[var(--color-cream)]">
+            Monthly Inner Growth Sessions
+          </h3>
+
+          <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
+Once a month, we gather live to help you reset your mind, release emotional heaviness, 
+and realign with who you’re becoming. Through grounding practices, meditation, and 
+intention work, you’ll leave feeling restored and realigned.
+          </p>
+
+          <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
+You’ll be invited to slow down, breathe, and reconnect with the part of you that 
+believes in what’s possible—so you can rise above old patterns, tap into your 
+inner strength, and move forward with clarity and purpose.
+          </p>
+
+          {/* THEMES LIST */}
+          <div className="mt-4 rounded-xl border border-white/15 bg-white/5 p-3">
+            <div className="text-[11px] font-semibold tracking-[0.16em] uppercase text-[var(--color-gold)]">
+              Themes we explore
+            </div>
+            <p className="mt-1 text-xs md:text-sm opacity-90 leading-relaxed">
+              Motivation & Mindset · Stress Relief · Self-Compassion · Healing · 
+              Relationships · Purpose · Alignment · Manifestation · Inner Calm · Energy Reset
+            </p>
+          </div>
+        </div>
+
+        {/* Dr. Salerno AI Advisor — CARD ONLY */}
+        <div className="relative rounded-2xl border border-[var(--color-gold)]/80 bg-[rgba(10,24,36,0.98)] p-6 md:p-7 shadow-[0_20px_55px_rgba(0,0,0,0.6)]">
+          <div className="inline-flex items-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)]/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-gold)]">
+            24/7 guidance 
+          </div>
+
+          <h3 className="mt-3 font-serif text-2xl md:text-3xl tracking-tight text-[var(--color-cream)]">
+            Your Personal Dr. Salerno AI Advisor
+          </h3>
+
+          <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
+Imagine having me in your corner anytime your mind feels heavy or your path feels 
+unclear—steady, grounded guidance that helps you rise above self-doubt and step back into your power.
+          </p>
+
+          <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
+Dr. Salerno AI helps you see what’s truly possible for your life, reconnect with your inner strength, 
+and move forward feeling aligned, grounded, and guided toward the version of you you’re meant to become.
+          </p>
+
+          {/* ASK ABOUT LIST */}
+          <div className="mt-4 rounded-xl border border-white/15 bg-white/5 p-3">
+            <div className="text-[11px] font-semibold tracking-[0.16em] uppercase text-[var(--color-gold)]">
+              You can ask about
+            </div>
+            <p className="mt-1 text-xs md:text-sm opacity-90 leading-relaxed">
+              Motivation · Stress · Relationships · Overthinking · Purpose · Confidence · Resetting your energy
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      {/* IMAGE UNDER BOTH CARDS */}
+      <div className="mt-20 mx-auto max-w-[600px] overflow-hidden squared-2xl border border-white/10">
+        <img
+          src="/hands2.jpg"
+          alt="Dr. Salerno AI Advisor"
+          className="w-full h-auto object-cover opacity-95"
+        />
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+        {/* BENEFITS HEADING */}
+        <div className="mt-16 text-center">
+          <h3 className="font-serif text-3xl md:text-4xl text-[var(--color-cream)] tracking-tight">
+            And So Much More Inside RISE
+          </h3>
+          <p className="mt-3 text-sm md:text-base opacity-80 max-w-[650px] mx-auto">
+            Beyond the live sessions and AI support, your membership gives you powerful tools you can return to anytime you need a reset, a reminder, or a gentle push forward.
+          </p>
+        </div>
+
+        {/* BENEFITS GRID */}
+        <div className="mt-8 grid gap-4 md:grid-cols-2">
           <BenefitCard
             title="Meditation Library"
+            href="/meditations"
             desc="A growing resource of guided sessions to build calm, clarity, motivation, compassion, and purpose—organized by theme for easy practice."
           />
           <BenefitCard
@@ -205,6 +307,7 @@ export default function MembershipPageClient() {
           />
           <BenefitCard
             title="Discounted Custom Meditations"
+            href="/meditations"
             desc="Personalized audio created for your goals (5/10/15 min) with guidance on how to use it effectively. Includes a free vision call."
           />
           <BenefitCard
@@ -218,6 +321,7 @@ export default function MembershipPageClient() {
         </div>
       </section>
 
+
       {/* THEMES */}
       <section className="mt-16">
         <div className="mx-auto max-w-[725px] rounded-xl border border-[var(--color-gold)]/60 bg-white/5 p-6">
@@ -229,6 +333,8 @@ export default function MembershipPageClient() {
           </p>
         </div>
       </section>
+
+      
 
       {/* CUSTOM MEDITATIONS */}
       <section className="mt-16">
@@ -266,93 +372,55 @@ export default function MembershipPageClient() {
 
       {/* CTA */}
       <section className="mt-12 text-center">
-        <p className="text-lg opacity-85">Ready to Transform into the Best Version of Yourself?</p>
+        <p className="text-lg opacity-85">Ready to transform into the best version of yourself?</p>
         {/* CTA — DOM checkout (two explicit price choices) */}
         <div className="mt-8 mb-2 flex justify-center gap-3 flex-wrap">
           <BuyButton
             cadence="monthly"
             className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold tracking-wide text-sm shadow-md transition hover:bg-transparent hover:text-[var(--color-gold)] hover:border hover:border-[var(--color-gold)] hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
           >
-    Monthly — $15.99/mo (Save 20%)
+            Monthly — $15.99/mo (Save 20%)
           </BuyButton>
 
           <BuyButton
             cadence="yearly"
             className="inline-flex items-center rounded-md bg-transparent text-[var(--color-gold)] border border-[var(--color-gold)] px-6 py-3 font-semibold tracking-wide text-sm shadow-md transition hover:bg-[var(--color-gold)] hover:text-black hover:-translate-y-0.5 ring-1 ring-[var(--color-gold)]/40"
           >
-    Yearly — $97.50/yr (Best Value)
+            Yearly — $97.50/yr (Best Value)
           </BuyButton>
         </div>
       </section>
 
-{/* FAQ / Questions */}
-<section className="mt-16">
-  <h2 className="text-center text-2xl font-bold">Questions</h2>
-  <div className="mt-4 space-y-3 md:space-y-0 md:columns-2 md:gap-4">
-    <Faq
-      q="What do I get inside RISE?"
-      a="You get access to the meditation library, social media resources space, weekly wisdom collection, monthly live online inner growth sessions, Dr. Salerno AI advisor, discounted custom meditations with vision calls, and mental health & alignment guides."
-    />
-    <Faq
-      q="Can I cancel anytime?"
-      a="Yes. You can cancel your membership at any time. When you cancel, you’ll keep access through the end of your current billing period."
-    />
-    <Faq
-      q="What’s the difference between monthly and yearly?"
-      a="The monthly plan renews every month. The yearly plan is billed once per year at a discounted rate and includes an additional 5-minute custom meditation plus a vision call as a perk."
-    />
-    <Faq
-      q="Is this therapy or medical care?"
-      a="No. RISE is for education and personal growth. It does not replace therapy, medical care, or emergency services. Always contact a licensed professional or emergency services when needed."
-    />
-    <Faq
-      q="Do I need prior meditation experience?"
-      a="No. All meditations and resources are designed for all levels, including complete beginners. You can start gently and move at your own pace."
-    />
-    <Faq
-      q="What if I've never been able to meditate before?"
-      a="The power to meditate IS inside of you, waiting to be awakened. Start with short 5-minute resets and gradually move into deeper practices. For added support you can explore custom meditations."
-    />
-    <Faq
-      q="What if I don’t have a lot of time?"
-      a="RISE is designed for busy people. Most practices are short, powerful, and easy to integrate into your day — even during a quick break."
-    />
-    <Faq
-      q="Is the AI advisor really like talking to Dr. Salerno?"
-      a="Yes — it’s trained on his guidance, tone, and teaching style so it feels deeply personal, compassionate, and aligned with everything he teaches."
-    />
-    <Faq
-      q="Do I need to be on camera for live sessions?"
-      a="No. You can join with your camera off, participate in the chat only, or just listen. Whatever feels best for you."
-    />
-    <Faq
-      q="I’m going through a lot emotionally. Is this a good fit?"
-      a="Yes — RISE is built to support you through stress, low motivation, emotional heaviness, and rebuilding your inner strength. You are not alone here."
-    />
-    <Faq
-      q="Do I get anything extra if I choose the yearly plan?"
-      a="Yes — yearly members receive a free 30 minute 1:1 vision call and a free 5-minute custom meditation created personally for them."
-    />
-    <Faq
-      q="I've already tried other programs. How is RISE different?"
-      a="RISE is built for people who feel stuck even after trying many things. It blends mental health science, personal growth, alignment, mindset, and spirituality in powerful ways."
-    />
-  </div>
+      {/* FAQ */}
+      <section className="mt-16">
+        <h2 className="text-center text-2xl font-bold">Questions</h2>
+        <div className="mt-4 space-y-3 md:space-y-0 md:columns-2 md:gap-4">
+          <Faq
+            q="What do I get inside RISE?"
+            a="You get access to the meditation library, social media resources space, weekly wisdom collection, monthly live online inner growth sessions, Dr. Salerno AI advisor, discounted custom meditations with vision calls, and mental health & alignment guides."
+          />
+          <Faq q="Can I cancel anytime?" a="Yes. You can cancel your membership at any time. When you cancel, you’ll keep access through the end of your current billing period." />
+          <Faq q="What’s the difference between monthly and yearly?" a="The monthly plan renews every month. The yearly plan is billed once per year at a discounted rate and includes an additional 5-minute custom meditation plus a vision call as a perk." />
+          <Faq q="Is this therapy or medical care?" a="No. RISE is for education and personal growth. It does not replace therapy, medical care, or emergency services." />
+          <Faq q="Do I need prior meditation experience?" a="No. All meditations and resources are designed for all levels, including complete beginners." />
+          <Faq q="What if I've never been able to meditate before?" a="Start with short 5-minute resets and gradually move into deeper practices. Custom meditations can help too." />
+          <Faq q="What if I don’t have a lot of time?" a="RISE is designed for busy people. Most practices are short and powerful." />
+          <Faq q="Is the AI advisor really like talking to Dr. Salerno?" a="Yes — it’s trained on his guidance, tone, and teaching style." />
+          <Faq q="Do I need to be on camera for live sessions?" a="No — you can join however feels best." />
+          <Faq q="I’m going through a lot emotionally. Is this a good fit?" a="Yes — RISE supports you through stress, low motivation, and emotional heaviness." />
+          <Faq q="Do I get extra perks if I choose the yearly plan?" a="Yes — a free 30-minute vision call and a free 5-minute custom meditation." />
+          <Faq q="I've already tried other programs. How is RISE different?" a="It blends science, alignment, mindset, spirituality, and lived experience." />
+        </div>
 
-        {/* QUESTIONS / CONTACT */}
-<div className="mt-8 text-center">
-  <p className="text-base md:text-lg font-semibold text-[var(--color-cream)]">
-    Additional Questions?{" "}
-    <a
-      href="/contact"
-      className="text-[var(--color-gold)] underline underline-offset-4 hover:opacity-90"
-    >
-      Contact Dr. Salerno
-    </a>
-  </p>
-</div>
-</section>
-
+        <div className="mt-8 text-center">
+          <p className="text-base md:text-lg font-semibold text-[var(--color-cream)]">
+            Additional Questions?{" "}
+            <a href="/contact" className="text-[var(--color-gold)] underline underline-offset-4 hover:opacity-90">
+              Contact Dr. Salerno
+            </a>
+          </p>
+        </div>
+      </section>
 
       {/* Divider ABOVE footer, like Contact/Members */}
       <div className="mx-auto max-w-[1200px] px-6 mt-12">
@@ -494,14 +562,11 @@ export default function MembershipPageClient() {
 }
 
 /* ===== COMPONENTS ===== */
-
 function MiniTitleCard({ title }) {
   return (
     <div className="rounded-xl border border-white/15 bg-white/5 p-5">
       <div className="flex items-center justify-center gap-2">
-        <span aria-hidden="true" className="text-[var(--color-gold)]">
-          ✔︎
-        </span>
+        <span aria-hidden="true" className="text-[var(--color-gold)]">✔︎</span>
         <span className="text-[16px] md:text-[18px] font-semibold text-center">{title}</span>
       </div>
     </div>
@@ -528,10 +593,21 @@ function DiscountCard({ label, memberPrice, regularPrice, savings }) {
   );
 }
 
-function BenefitCard({ title, desc }) {
+function BenefitCard({ title, desc, href }) {
   return (
     <div className="rounded-xl border border-white/15 bg-white/5 p-5">
-      <div className="text-center font-semibold text-[var(--color-gold)]">{title}</div>
+      {href ? (
+        <a
+          href={href}
+          className="block text-center font-semibold text-[var(--color-gold)] underline underline-offset-4 decoration-[var(--color-gold)] cursor-pointer hover:opacity-90"
+        >
+          {title}
+        </a>
+      ) : (
+        <div className="text-center font-semibold text-[var(--color-gold)]">
+          {title}
+        </div>
+      )}
       <p className="mt-1 text-center text-sm opacity-85">{desc}</p>
     </div>
   );
@@ -560,4 +636,3 @@ function Faq({ q, a }) {
     </div>
   );
 }
-
