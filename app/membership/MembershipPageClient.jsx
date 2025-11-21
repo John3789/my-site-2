@@ -414,26 +414,7 @@ export default function MembershipPageClient() {
             </div>
           </div>
 
-          {/* Group 2: Logistics & Billing */}
-          <div>
-            <h3 className="text-sm uppercase tracking-[0.18em] text-center md:text-left opacity-70">
-              Logistics & Billing
-            </h3>
-            <div className="mt-3 space-y-3 md:space-y-0 md:columns-2 md:gap-4">
-              <Faq
-                q="Can I cancel anytime?"
-                a="Yes. You can cancel your membership at any time from your account settings. When you cancel, you’ll keep access through the end of your current billing period — no penalties, no hidden steps."
-              />
-              <Faq
-                q="What’s the difference between monthly and yearly?"
-                a="The monthly plan renews every month and is great if you want to try things out. The yearly plan is billed once per year at a discounted rate and includes a free 5-minute custom meditation plus a vision call as a one-time perk."
-              />
-              <Faq
-                q="Do I need to be on camera for live sessions?"
-                a="Not at all — you can join however feels best for you."
-              />
-            </div>
-          </div>
+
 
           {/* Group 3: Is this right for me? */}
           <div>
@@ -460,6 +441,27 @@ export default function MembershipPageClient() {
               <Faq
                 q="I’ve already tried other programs. How is RISE different?"
                 a="RISE blends science, emotional alignment, and lived experience — without fluff or pressure. Instead of giving you a giant to-do list, it offers small, repeatable tools and a supportive environment to keep coming back to yourself."
+              />
+            </div>
+          </div>
+
+                    {/* Group 2: Logistics & Billing */}
+          <div>
+            <h3 className="text-sm uppercase tracking-[0.18em] text-center md:text-left opacity-70">
+              Logistics & Billing
+            </h3>
+            <div className="mt-3 space-y-3 md:space-y-0 md:columns-2 md:gap-4">
+              <Faq
+                q="Can I cancel anytime?"
+                a="Yes. You can cancel your membership at any time from your account settings. When you cancel, you’ll keep access through the end of your current billing period — no penalties, no hidden steps."
+              />
+              <Faq
+                q="What’s the difference between monthly and yearly?"
+                a="The monthly plan renews every month and is great if you want to try things out. The yearly plan is billed once per year at a discounted rate and includes a free 5-minute custom meditation plus a vision call as a one-time perk."
+              />
+              <Faq
+                q="Do I need to be on camera for live sessions?"
+                a="Not at all — you can join however feels best for you."
               />
             </div>
           </div>
