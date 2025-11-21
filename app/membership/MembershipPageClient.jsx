@@ -113,7 +113,7 @@ export default function MembershipPageClient() {
                     cadence="monthly"
                     className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-5 py-2.5 font-semibold tracking-wide text-xs shadow-md transition hover:bg-transparent hover:text-[var(--color-gold)] hover:border hover:border-[var(--color-gold)] hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
                   >
-                    Join Monthly
+                    Join RISE Monthly
                   </BuyButton>
                 </div>
                 <div />
@@ -122,7 +122,7 @@ export default function MembershipPageClient() {
                     cadence="yearly"
                     className="inline-flex items-center rounded-md bg-transparent text-[var(--color-gold)] border border-[var(--color-gold)] px-5 py-2.5 font-semibold tracking-wide text-xs shadow-md transition hover:bg-[var(--color-gold)] hover:text-black hover:-translate-y-0.5 ring-1 ring-[var(--color-gold)]/40"
                   >
-                    Join Yearly
+                    Join RISE Yearly
                   </BuyButton>
                 </div>
               </div>
@@ -373,13 +373,13 @@ export default function MembershipPageClient() {
             cadence="monthly"
             className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold tracking-wide text-sm shadow-md transition hover:bg-transparent hover:text-[var(--color-gold)] hover:border hover:border-[var(--color-gold)] hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
           >
-            Monthly — $15.99/mo (Save 20%)
+            Join RISE Monthly 
           </BuyButton>
           <BuyButton
             cadence="yearly"
             className="inline-flex items-center rounded-md bg-transparent text-[var(--color-gold)] border border-[var(--color-gold)] px-6 py-3 font-semibold tracking-wide text-sm shadow-md transition hover:bg-[var(--color-gold)] hover:text-black hover:-translate-y-0.5 ring-1 ring-[var(--color-gold)]/40"
           >
-            Yearly — $97.50/yr (Best Value)
+            Join RISE Yearly 
           </BuyButton>
         </div>
       </section>
