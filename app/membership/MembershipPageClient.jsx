@@ -196,7 +196,7 @@ export default function MembershipPageClient() {
               </p>
               <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
                 You&apos;ll slow down, breathe, and reconnect with the part of you that
-                 believes in what&apos;s possible — so you can rise above old
+                 believes in what&apos;s possible — so you can rise above unhelpful
                 patterns and move forward with clarity and purpose.
               </p>
               <div className="mt-4 rounded-xl border border-white/15 bg-white/5 p-3">
