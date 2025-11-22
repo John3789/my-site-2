@@ -10,52 +10,61 @@ export default function MembersCustomMeditationPage() {
   const wrapRef = useRef(null);
   useIosZoomVars(wrapRef, { portraitZoom: 3.0, landscapeZoom: 1.0 });
 
-    const [formStatus, setFormStatus] = useState("idle"); // idle | submitting | success | error
-  const [formError, setFormError] = useState("");
+ const [formStatus, setFormStatus] = useState("idle");
+const [formError, setFormError] = useState("");
 
 const handleRequestSubmit = async (e) => {
   e.preventDefault();
   if (formStatus === "submitting") return;
 
-  // ✅ Save the form BEFORE any await
   const form = e.currentTarget;
-
-  setFormStatus("submitting");
-  setFormError("");
-
   const formData = new FormData(form);
 
   const payload = {
-    name: formData.get("name")?.toString() || "",
-    email: formData.get("email")?.toString() || "",
-    current: formData.get("current")?.toString() || "",
-    support: formData.get("support")?.toString() || "",
-    length: formData.get("length")?.toString() || "",
-    timing: formData.get("timing")?.toString() || "",
-    preferences: formData.get("preferences")?.toString() || "",
+    name: formData.get("name")?.toString().trim() || "",
+    email: formData.get("email")?.toString().trim() || "",
+    current: formData.get("current")?.toString().trim() || "",
+    support: formData.get("support")?.toString().trim() || "",
+    length: formData.get("length")?.toString().trim() || "",
+    timing: formData.get("timing")?.toString().trim() || "",
+    preferences: formData.get("preferences")?.toString().trim() || "",
   };
 
+  if (!payload.name || !payload.email || !payload.support) {
+    setFormError(
+      "Please fill in your name, email, and what you’d like this meditation to support."
+    );
+    setFormStatus("error");
+    return;
+  }
+
   try {
+    setFormStatus("submitting");
+    setFormError("");
+
     const res = await fetch("/api/custom-meditation", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     });
 
-    if (!res.ok) throw new Error("Request failed");
+    const data = await res.json();
+
+    if (!res.ok || !data?.ok) {
+      throw new Error(data?.error || "Request failed");
+    }
 
     setFormStatus("success");
-
-    // ✅ Use the saved form element, NOT e.currentTarget
     form.reset();
   } catch (err) {
-    console.error(err);
+    console.error("Member custom meditation error:", err);
     setFormError(
       "Something went wrong. Please try again or email me directly."
     );
     setFormStatus("error");
   }
 };
+
 
 
 
