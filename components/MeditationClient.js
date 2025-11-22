@@ -46,46 +46,78 @@ export default function MeditationClient() {
   useIosZoomVars(wrapRef, { portraitZoom: 3.0, landscapeZoom: 1.0 });
 
   const [formStatus, setFormStatus] = useState("idle"); // idle | submitting | success | error
-  const [formError, setFormError] = useState("");
+const [formError, setFormError] = useState("");
 
-  const handleRequestSubmit = async (e) => {
-    e.preventDefault();
-    if (formStatus === "submitting") return;
+const handleRequestSubmit = async (e) => {
+  e.preventDefault();
+  if (formStatus === "submitting") return;
 
-    const form = e.currentTarget;
-    const formData = new FormData(form);
+  const form = e.currentTarget;
+  const formData = new FormData(form);
 
-    const payload = {
-      name: formData.get("name")?.toString() || "",
-      email: formData.get("email")?.toString() || "",
-      current: formData.get("current")?.toString() || "",
-      support: formData.get("support")?.toString() || "",
-      length: formData.get("length")?.toString() || "",
-      timing: formData.get("timing")?.toString() || "",
-      preferences: formData.get("preferences")?.toString() || "",
-    };
-
-    try {
-      setFormStatus("submitting");
-      setFormError("");
-
-      const res = await fetch("/api/custom-meditation", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      if (!res.ok) throw new Error("Request failed");
-
-      setFormStatus("success");
-      form.reset();
-    } catch (err) {
-      console.error(err);
-      setFormError("Something went wrong. Please try again or email me directly.");
-      setFormStatus("error");
-    }
+  const payload = {
+    name: formData.get("name")?.toString().trim() || "",
+    email: formData.get("email")?.toString().trim() || "",
+    current: formData.get("current")?.toString().trim() || "",
+    support: formData.get("support")?.toString().trim() || "",
+    length: formData.get("length")?.toString().trim() || "",
+    timing: formData.get("timing")?.toString().trim() || "",
+    preferences: formData.get("preferences")?.toString().trim() || "",
   };
 
+  // ✅ Front-end validation for the required fields
+  if (!payload.name || !payload.email || !payload.support) {
+    setFormError(
+      "Please fill in your name, email, and what you’d like this meditation to support."
+    );
+    setFormStatus("error");
+    return;
+  }
+
+  try {
+    setFormStatus("submitting");
+    setFormError("");
+
+    // 1) Send the request email
+    const res = await fetch("/api/custom-meditation", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok || !data?.ok) {
+      throw new Error(data?.error || "Request failed");
+    }
+
+    // 2) Add to HoppyCopy via your existing /api/subscribe (best-effort)
+    try {
+      await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: payload.email,
+          name: payload.name,
+          source: "custom-meditation-public",
+          // whatever fields your /api/subscribe expects
+        }),
+      });
+    } catch (err) {
+      console.warn("Non-fatal: failed to subscribe in HoppyCopy", err);
+      // we do NOT block success if this fails
+    }
+
+    setFormStatus("success");
+    form.reset();
+  } catch (err) {
+    console.error("Public custom meditation error:", err);
+    setFormError(
+      "Something went wrong. Please try again or email me directly."
+    );
+    setFormStatus("error");
+  }
+};
 
   return (
     <TopOnMount>

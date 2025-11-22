@@ -1,4 +1,3 @@
-// app/api/custom-meditation/route.js
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { google } from "googleapis";
@@ -44,6 +43,8 @@ async function createTransporter() {
 export async function POST(req) {
   try {
     const body = await req.json();
+    console.log("➡️ /api/custom-meditation body:", body);
+
     const {
       name,
       email,
@@ -56,13 +57,13 @@ export async function POST(req) {
 
     if (!name || !email || !support) {
       return NextResponse.json(
-        { error: "Missing required fields" },
+        { ok: false, error: "Missing required fields" },
         { status: 400 }
       );
     }
 
     const html = `
-      <h2>New Custom Meditation Request (RISE Member)</h2>
+      <h2>New Custom Meditation Request</h2>
 
       <p><strong>Name:</strong> ${name || "—"}</p>
       <p><strong>Email:</strong> ${email || "—"}</p>
@@ -84,7 +85,7 @@ export async function POST(req) {
     await transporter.sendMail({
       from: `Dr. Juan Pablo <${OAUTH_USER}>`,
       to: TO_EMAILS,
-      subject: "New Custom Meditation Request (RISE Member)",
+      subject: "New Custom Meditation Request",
       html,
       replyTo: email,
     });
@@ -93,7 +94,7 @@ export async function POST(req) {
   } catch (err) {
     console.error("Custom meditation request error:", err);
     return NextResponse.json(
-      { error: "Server error" },
+      { ok: false, error: "Server error" },
       { status: 500 }
     );
   }
