@@ -52,6 +52,7 @@ export async function POST(req) {
       length,
       timing,
       preferences,
+      origin,   // <--- NEW
     } = body;
 
     if (!name || !email || !support) {
@@ -61,8 +62,14 @@ export async function POST(req) {
       );
     }
 
+    // Public vs member detection
+    const cameFromMemberPage = origin === "member";
+
+    // ------------------------------
+    // 1) SEND YOUR EMAIL (always)
+    // ------------------------------
     const html = `
-      <h2>New Custom Meditation Request (RISE Member)</h2>
+      <h2>New Custom Meditation Request</h2>
 
       <p><strong>Name:</strong> ${name || "—"}</p>
       <p><strong>Email:</strong> ${email || "—"}</p>
@@ -84,10 +91,41 @@ export async function POST(req) {
     await transporter.sendMail({
       from: `Dr. Juan Pablo <${OAUTH_USER}>`,
       to: TO_EMAILS,
-      subject: "New Custom Meditation Request (RISE Member)",
+      subject: "New Custom Meditation Request",
       html,
       replyTo: email,
     });
+
+    // ------------------------------
+    // 2) HOPPY COPY SUBSCRIBE (PUBLIC ONLY)
+    // ------------------------------
+    if (!cameFromMemberPage) {
+      const base =
+        process.env.NEXT_PUBLIC_SITE_URL ||
+        process.env.SITE_URL ||
+        process.env.NEXT_PUBLIC_SITE_ORIGIN ||
+        process.env.AUTH_ORIGIN ||
+        "https://drjuanpablosalerno.com";
+
+      const subscribeBody = {
+        email,
+        name: name || null,
+        source: "custom-meditation-request",
+        member_type: "rise-lead",
+      };
+
+      const r = await fetch(`${base}/api/subscribe`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(subscribeBody),
+      });
+
+      if (!r.ok) {
+        const txt = await r.text();
+        console.error("[Custom Meditation] /api/subscribe failed:", r.status, txt);
+        // Not blocking the user if subscribe fails
+      }
+    }
 
     return NextResponse.json({ ok: true });
   } catch (err) {

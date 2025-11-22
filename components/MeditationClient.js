@@ -423,6 +423,7 @@ When your mind feels heavy or overwhelmed, the right meditation can help you com
 
               <div className="mt-6 rounded-2xl border border-white/20 bg-white/5 p-5 md:p-6 shadow-2xl">
                 <form className="space-y-4" onSubmit={handleRequestSubmit}>
+  <input type="hidden" name="origin" value="public" />
                   <div className="grid gap-4 md:grid-cols-2">
                     <div>
                       <label className="block text-sm font-medium mb-1">Name</label>
