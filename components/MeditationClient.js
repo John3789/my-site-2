@@ -269,7 +269,7 @@ When your mind feels heavy or overwhelmed, the right meditation can help you com
             </div>
 
 {/* MEET YOUR MEDITATION GUIDE */}
-<section className="mt-10">
+<section className="mt-8">
   <div className="mx-auto max-w-[915px] grid gap-8 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:items-center">
 
     {/* LEFT: TEXT */}
@@ -316,7 +316,7 @@ When your mind feels heavy or overwhelmed, the right meditation can help you com
 
 
             {/* Divider — match two-column container width */}
-            <div className="mx-auto w-full max-w-[1200px] px-6 mt-8 mb-1">
+            <div className="mx-auto w-full max-w-[1200px] px-6 mt-7 mb-1">
               <hr className="border-t border-[var(--color-cream)]/15" />
             </div>
 
