@@ -220,12 +220,10 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
                 Your Personal Dr. Salerno AI Advisor
               </h3>
               <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
-                A members-only guidance companion trained on my approach — available
-                anytime your mind feels heavy or your path feels unclear.
+A members-only guidance companion shaped by my voice and perspective — here anytime you need direction, clarity, or a renewed sense of strength.
               </p>
               <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
-                Get grounded, step-by-step support to reconnect with your inner strength
-                and move forward feeling aligned, supported, and guided.
+Receive step-by-step guidance to help you reconnect with your inner power, move forward with grounded confidence, and rise into the person you’re here to become.
               </p>
               <div className="mt-4 rounded-xl border border-white/15 bg-white/5 p-3">
                 <div className="text-[11px] font-semibold tracking-[0.16em] uppercase text-[var(--color-gold)]">

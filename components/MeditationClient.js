@@ -108,21 +108,7 @@ export default function MeditationClient() {
     When your mind feels heavy or overwhelmed, the right meditation can bring you back to center. My meditations are designed to help you reset your body, calm your thoughts, and reconnect with yourself.
   </p>
 
-  {/* BUTTONS — placed immediately under intro text */}
-  <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-    <a
-      href="#custom-meditations"
-      className="rounded-full bg-[var(--color-gold)] text-black px-6 py-3 text-sm font-semibold tracking-wide hover:bg-[var(--color-gold)]/90 transition"
-    >
-      Explore Custom Meditations
-    </a>
-    <a
-      href="#meditation-library"
-      className="rounded-full border border-[var(--color-gold)] text-[var(--color-gold)] px-6 py-3 text-sm font-semibold tracking-wide hover:bg-[var(--color-gold)]/10 transition"
-    >
-      Browse Meditation Library
-    </a>
-  </div>
+  
 </section>
 
 
@@ -158,18 +144,17 @@ export default function MeditationClient() {
         supportive, and truly aligned with you.
       </p>
 
-      {/* Quick pill row */}
-      <div className="mt-8 flex flex-wrap gap-2 [@media(orientation:portrait)_and_(max-width:920px)]:justify-center">
-        <span className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] opacity-85">
-          5, 10, or 15 minutes
-        </span>
-        <span className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] opacity-85">
-          Vision call included
-        </span>
-        <span className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] opacity-85">
-          One-time purchase — from $50
-        </span>
-      </div>
+
+
+              {/* CTA BUTTONS */}
+              <div className="mt-8 flex gap-4">
+               <a
+  href="#custom-pricing"
+    className="inline-flex items-center mx-auto rounded-md bg-[var(--color-gold)] text-black px-5 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
+>
+  See Custom Meditation Pricing
+</a>
+    </div>
 
 
 
@@ -177,13 +162,13 @@ export default function MeditationClient() {
 
     {/* RIGHT COLUMN — Photo unchanged */}
     <div className="flex justify-center">
-      <div className="relative w-full max-w-[320px] md:max-w-[360px] aspect-[3/4] shadow-2xl ring-1 ring-white/10 overflow-hidden">
+      <div className="relative w-full max-w-[320px] md:max-w-[340px] aspect-[3/4] shadow-2xl ring-1 ring-white/10 overflow-hidden">
         <HeroImageIphoneAware
           src="/meditation4.jpg"
           alt="Meditation photo"
           width={1200}
           height={1600}
-          sizes="(max-width: 768px) 95vw, 448px"
+          sizes="(max-width: 768px) 95vw, 340px"
           className="object-cover"
           quality={95}
           priority
@@ -207,7 +192,7 @@ export default function MeditationClient() {
       <h3 className="mt-5 font-serif text-3xl md:text-4xl opacity-95">How It Works</h3>
       <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-8 rounded" />
 
-      <div className="space-y-4">
+      <div className="space-y-5">
         <StepCard
           number="1"
           title="Share what you need"
@@ -223,15 +208,6 @@ export default function MeditationClient() {
           title="Receive your custom meditation"
           body="Within 5–7 days, you receive your custom meditation (5, 10, or 15 minutes), plus guidance on how to integrate it into your routine."
         />
-              {/* CTA BUTTONS */}
-              <div className="mt-8 flex flex-col items-center gap-4">
-               <a
-  href="#custom-pricing"
-    className="inline-flex items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
->
-  See Custom Meditation Pricing
-</a>
-    </div>
 
     </div>
 
@@ -248,7 +224,7 @@ export default function MeditationClient() {
         Custom meditations are especially supportive if you&apos;re:
       </p>
 
-<ul className="space-y-3 text-sm md:text-base opacity-90 leading-relaxed">
+<ul className="space-y-2 text-sm md:text-base opacity-90 leading-relaxed">
   <li className="flex items-start gap-2">
     <span className="text-[var(--color-gold)] mt-[2px]">✔︎</span>
     <span>Feeling emotionally drained, overwhelmed, or stuck on autopilot</span>
@@ -287,42 +263,6 @@ export default function MeditationClient() {
   </div>
 </section>
 
-
-
-
-
-            {/* Divider — match two-column container width */}
-            <div className="mx-auto w-full max-w-[1200px] px-6">
-              <hr className="border-t border-[var(--color-cream)]/15" />
-            </div>
-
-            {/* ===== MEDITATION LIBRARY DESCRIPTION ===== */}
-            <section id="meditation-library" className="mx-auto max-w-[900px] px-6 text-center mt-16 mb-16 narrow-landscape-80">
-              <p className="text-[12px] uppercase tracking-[0.18em] opacity-60 mb-2">
-                Meditation Library
-              </p>
-
-              <h2 className="font-serif text-4xl md:text-5xl opacity-95">
-                Guided Meditation Library
-              </h2>
-
-              <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded mx-auto" />
-
-              <p className="text-lg md:text-xl opacity-90 leading-relaxed mx-auto">
-                Access a growing collection of guided meditations designed to help you reset, restore, and realign—from quick daytime resets and grounding practices to deeper sessions focused on release, intention-setting, and evening wind-downs. Every track is created to support your body, mind, and spirit.
-              </p>
-
-              <p className="mt-4 text-sm opacity-85 mx-auto">
-                Gain full access to the entire library when you signup for{" "}
-                <a
-                  href="/membership"
-                  className="font-bold underline underline-offset-4 text-[var(--color-gold)] brightness-110 hover:brightness-130 transition"
-                >
-                  RISE Membership
-                </a>{" "}
-                and receive new meditations as they are released.
-              </p>
-            </section>
 
             {/* Divider — match two-column container width */}
             <div className="mx-auto w-full max-w-[1200px] px-6">
@@ -512,7 +452,7 @@ export default function MeditationClient() {
 
                   <div>
                     <label className="block text-sm font-medium mb-1">
-                      Language or spiritual preferences (optional)
+                      Questions, preferences, comments? (optional)
                     </label>
                     <textarea
                       name="preferences"
@@ -565,20 +505,53 @@ export default function MeditationClient() {
           {/* IMPORTANT NOTES */}
           <section className="-mt-2 mx-auto max-w-[900px] px-6 py-12 narrow-landscape-80">
             <h2 className="font-serif text-3xl md:text-4xl opacity-95 text-center">
-              Important Notes
-            </h2>
-            <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-4 rounded mx-auto" />
-            <ul className="space-y-1 text-sm md:text-base opacity-90 leading-relaxed mb-0">
-              <li>
-                • Custom meditations are for personal growth and emotional support. They do not replace therapy, medical care, or crisis services.
-              </li>
-              <li>
-                • If you are in immediate distress or experiencing a crisis, please reach out to local emergency services or a crisis hotline before using these tools.
-              </li>
-              <li>
-                • These meditations are for your personal use only. Please don&apos;t share, repost, or resell them.
-              </li>
-            </ul>
+  Important Notes
+</h2>
+<div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-4 rounded mx-auto" />
+
+<ul className="space-y-1 text-sm md:text-base opacity-90 leading-relaxed mb-0">
+
+  {/* NEW FIRST BULLET */}
+  <li className="flex items-start gap-2">
+    <span className="text-[var(--color-gold)] mt-[2px]">✔︎</span>
+    <span>
+      If you prefer guided meditations you can use anytime, my full Meditation Library
+      is offered as part of the{" "}
+      <a
+        href="/membership"
+      className="text-[var(--color-gold)] brightness-110 underline underline-offset-[2px]"
+      >
+        RISE Membership Program
+      </a>.
+    </span>
+  </li>
+
+  <li className="flex items-start gap-2">
+    <span className="text-[var(--color-gold)] mt-[3px]">•</span>
+    <span>
+      Custom meditations are for personal growth and emotional support. They do not
+      replace therapy, medical care, or crisis services.
+    </span>
+  </li>
+
+  <li className="flex items-start gap-2">
+    <span className="text-[var(--color-gold)] mt-[3px]">•</span>
+    <span>
+      If you are in immediate distress or experiencing a crisis, please reach out to
+      local emergency services or a crisis hotline before using these tools.
+    </span>
+  </li>
+
+  <li className="flex items-start gap-2">
+    <span className="text-[var(--color-gold)] mt-[3px]">•</span>
+    <span>
+      These meditations are for your personal use only. Please don&apos;t share,
+      repost, or resell them.
+    </span>
+  </li>
+
+</ul>
+
           </section>
 
             {/* FINAL divider above footer — match two-column width, no bleed */}
