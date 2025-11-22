@@ -18,8 +18,8 @@ export async function GET() {
   return new Response(
     JSON.stringify({
       ok: true,
-      hasHoppyApiKey: !!process.env.HOPPY_API_KEY,
-      hasWorkspaceId: !!process.env.HOPPY_WORKSPACE_ID,
+      hasHoppyApiKey: !!process.env.HOPPY_COPY_API_KEY,
+      hasWorkspaceId: !!process.env.HOPPY_COPY_WORKSPACE_ID,
       node: process.version,
       env: process.env.VERCEL ? "vercel" : "local",
       probe: { googleOk, hoppyOk }
@@ -39,11 +39,11 @@ export async function POST(req) {
     if (!email || !/^\S+@\S+\.\S+$/.test(email))
       return new Response(JSON.stringify({ error: "Valid email required" }), { status: 400 });
 
-    const apiKey = process.env.HOPPY_API_KEY;
-    const workspaceId = process.env.HOPPY_WORKSPACE_ID;
+    const apiKey = process.env.HOPPY_COPY_API_KEY;
+    const workspaceId = process.env.HOPPY_COPY_WORKSPACE_ID;
     if (!apiKey || !workspaceId)
       return new Response(
-        JSON.stringify({ error: "Missing HOPPY_API_KEY or HOPPY_WORKSPACE_ID in environment variables" }),
+        JSON.stringify({ error: "Missing HOPPY_COPY_API_KEY or HOPPY_COPY_WORKSPACE_ID in environment variables" }),
         { status: 500 }
       );
 

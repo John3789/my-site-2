@@ -90,6 +90,23 @@ const handleRequestSubmit = async (e) => {
       throw new Error(data?.error || "Request failed");
     }
 
+    try {
+  // PUBLIC ONLY: Add to HoppyCopy
+  await fetch("/api/subscribe", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      email: payload.email,
+      name: payload.name,
+      source: "custom-meditation",
+      // (Do NOT add audience id — per your rules)
+      workspaceId: process.env.NEXT_PUBLIC_HOPPY_WORKSPACE_ID
+    }),
+  });
+} catch (err) {
+  console.warn("⚠️ HoppyCopy subscribe failed (non-fatal):", err);
+}
+
     setFormStatus("success");
     form.reset();
   } catch (err) {
