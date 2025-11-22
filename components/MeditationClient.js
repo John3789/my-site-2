@@ -91,20 +91,17 @@ const handleRequestSubmit = async (e) => {
     }
 
     try {
-  // PUBLIC ONLY: Add to HoppyCopy
   await fetch("/api/subscribe", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       email: payload.email,
-      name: payload.name,
-      source: "custom-meditation",
-      // (Do NOT add audience id — per your rules)
-      workspaceId: process.env.NEXT_PUBLIC_HOPPY_WORKSPACE_ID
+      // Your /api/subscribe only *requires* email.
+      // It will ignore any extra fields if you add them later.
     }),
   });
 } catch (err) {
-  console.warn("⚠️ HoppyCopy subscribe failed (non-fatal):", err);
+  console.warn("HoppyCopy subscribe failed (non-fatal):", err);
 }
 
     setFormStatus("success");
