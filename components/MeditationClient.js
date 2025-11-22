@@ -45,7 +45,7 @@ export default function MeditationClient() {
   const wrapRef = useRef(null);
   useIosZoomVars(wrapRef, { portraitZoom: 3.0, landscapeZoom: 1.0 });
 
-  const [formStatus, setFormStatus] = useState("idle"); // idle | submitting | success | error
+const [formStatus, setFormStatus] = useState("idle");
 const [formError, setFormError] = useState("");
 
 const handleRequestSubmit = async (e) => {
@@ -65,7 +65,7 @@ const handleRequestSubmit = async (e) => {
     preferences: formData.get("preferences")?.toString().trim() || "",
   };
 
-  // ✅ Front-end validation for the required fields
+  // Front-end check to match the route's simple requirement
   if (!payload.name || !payload.email || !payload.support) {
     setFormError(
       "Please fill in your name, email, and what you’d like this meditation to support."
@@ -78,7 +78,6 @@ const handleRequestSubmit = async (e) => {
     setFormStatus("submitting");
     setFormError("");
 
-    // 1) Send the request email
     const res = await fetch("/api/custom-meditation", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -89,23 +88,6 @@ const handleRequestSubmit = async (e) => {
 
     if (!res.ok || !data?.ok) {
       throw new Error(data?.error || "Request failed");
-    }
-
-    // 2) Add to HoppyCopy via your existing /api/subscribe (best-effort)
-    try {
-      await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: payload.email,
-          name: payload.name,
-          source: "custom-meditation-public",
-          // whatever fields your /api/subscribe expects
-        }),
-      });
-    } catch (err) {
-      console.warn("Non-fatal: failed to subscribe in HoppyCopy", err);
-      // we do NOT block success if this fails
     }
 
     setFormStatus("success");
