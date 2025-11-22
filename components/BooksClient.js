@@ -48,7 +48,7 @@ export default function BooksClient() {
             </div>
 
             {/* Intro + image */}
-            <div className="mx-auto max-w-[1400px] px-6 pb-20 narrow-landscape-80">
+            <div className="mx-auto max-w-[1200px] px-6 pb-20 narrow-landscape-80">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
                 {/* Left column */}
 <div className="mx-auto">
@@ -74,7 +74,7 @@ export default function BooksClient() {
 
 
                     {/* Button */}
-                    <div className="flex justify-center mt-12">
+                    <div className="flex justify-center mt-10">
                       <Link
                         href="/contact"
                         className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3
@@ -89,13 +89,13 @@ export default function BooksClient() {
 
 {/* Right column image (plain) - optimized only on iPhone */}
                 <div className="flex justify-center">
-                  <div className="relative w-full max-w-[448px] aspect-[3/4] shadow-2xl  ring-white/10 overflow-hidden">
+                  <div className="relative w-full max-w-[425px] aspect-[3/4] shadow-2xl  ring-white/10 overflow-hidden">
                     <HeroImageIphoneAware
                       src="/hero20.jpg"
                       alt="Dr. Juan Pablo Salerno"
                       width={2279}
                       height={3021}
-                      sizes="(max-width: 768px) 95vw, 448px"
+                      sizes="(max-width: 768px) 95vw, 400px"
                       className="object-cover"
                       quality={95}
                       priority
@@ -110,7 +110,7 @@ export default function BooksClient() {
 
             {/* Selected Publications */}
             <div className="mx-auto max-w-[100%] md:max-w-[80%] lg:max-w-[1000px] xl:max-w-[1100px] px-6 pb-20">
-              <hr className="border-t border-[var(--color-cream)]/22 mb-8" />
+              <hr className="border-t border-[var(--color-cream)]/22 mb-8 -mt-10" />
               <h2 className="font-serif text-[clamp(28px,3.8vw,40px)] leading-[1.08] text-center opacity-90">
                 Selected Publications
               </h2>
