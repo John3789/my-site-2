@@ -90,19 +90,22 @@ const handleRequestSubmit = async (e) => {
       throw new Error(data?.error || "Request failed");
     }
 
-    try {
+    // 2) Add to HoppyCopy as rise-lead (PUBLIC ONLY)
+try {
   await fetch("/api/subscribe", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       email: payload.email,
-      // Your /api/subscribe only *requires* email.
-      // It will ignore any extra fields if you add them later.
+      name: payload.name,
+      source: "rise-memberstack",  // or "rise-memberstack" if you *really* want it identical
+      member_type: "rise-lead",   // 👈 this is the key to match your segments
     }),
   });
 } catch (err) {
   console.warn("HoppyCopy subscribe failed (non-fatal):", err);
 }
+
 
     setFormStatus("success");
     form.reset();
