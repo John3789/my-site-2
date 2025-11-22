@@ -14,19 +14,19 @@ export default function MembershipPageClient() {
       <AutoRedirectIfMember />
 
       {/* SUNRISE BANNER (NON FULL-BLEED) */}
-      <section className="mb-10">
-<div className="mx-auto max-w-[1100px] px-0 overflow-hidden rounded-2xl border border-white/10">
+      <section className="mt-10 mb-10">
+<div className="mx-auto max-w-[1100px] px-0 overflow-hidden rounded-3xl border border-white/10">
   <img
     src="/sunset2.jpg"
     alt="Sunrise over the ocean"
-    className="w-full aspect-[32/9] object-cover opacity-90"
+    className="w-full aspect-[32/9] object-cover opacity-80"
     fetchPriority="high"
   />
 </div>
       </section>
 
       {/* HERO SECTION: title + hook + pricing + intro */}
-      <section className="mx-auto max-w-[1100px] mb-12">
+      <section className="mx-auto max-w-[990px] mb-12">
         {/* Title + sign in */}
         <div className="text-center">
           <h1 className="font-serif text-5xl md:text-6xl tracking-tight text-[var(--color-cream)]">
@@ -36,16 +36,11 @@ export default function MembershipPageClient() {
           <p className="mt-3 text-lg md:text-xl font-medium text-[var(--color-cream)] opacity-90">
             Rebuild your energy, clarity, and confidence — with the tools to rise every day.
           </p>
-          <p className="mt-2 text-sm opacity-90">
-            Already a member?{" "}
-            <SignInButton className="font-semibold text-[var(--color-gold)] hover:underline mb-5">
-              Sign in →
-            </SignInButton>
-          </p>
+
         </div>
 
         {/* Single CTA: explore what's inside (gold) */}
-        <div className="mt-0 flex flex-wrap justify-center gap-3">
+        <div className="mt-3 flex flex-wrap justify-center gap-3">
           <a
             href="#what-you-get"
             className="inline-flex items-center rounded-md bg-[var(--color-gold)] text-black px-6 py-2.5 font-semibold tracking-wide text-sm shadow-md transition hover:bg-transparent hover:text-[var(--color-gold)] hover:border hover:border-[var(--color-gold)] hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-black/10"
@@ -53,7 +48,12 @@ export default function MembershipPageClient() {
             Explore what&apos;s inside
           </a>
         </div>
-
+          <p className="mt-4 text-sm opacity-90 text-center">
+            Already a member?{" "}
+            <SignInButton className="font-semibold text-[var(--color-gold)] hover:underline mb-5">
+              Sign in →
+            </SignInButton>
+          </p>
         {/* Two-column layout: pricing card (left) + intro (right) */}
         <div className="mt-12 grid gap-10 md:grid-cols-2 md:items-start">
           {/* LEFT: PRICING CARD */}
@@ -74,19 +74,19 @@ export default function MembershipPageClient() {
               <div className="mt-5 grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start justify-items-center gap-4">
                 {/* Monthly */}
                 <div className="flex flex-col items-center gap-1">
-                  <div className="pt-13 flex items-baseline justify-center gap-2">
+                  <div className="pt-12 flex items-baseline justify-center gap-1">
                     <span className="text-xs opacity-60 line-through">$19.99</span>
-                    <span className="text-2xl font-semibold leading-none">$15.99</span>
-                    <span className="text-[11px] opacity-60 leading-none">+ fees</span>
+                    <span className="text-2xl font-semibold">$15.99</span>
+                    <span className="text-[11px] opacity-60 whitespace-nowrap">+ fees</span>
                   </div>
                   <div className="text-[11px] opacity-80 text-center">save 20% monthly</div>
                 </div>
 
                 {/* OR */}
-                <span className="self-center text-sm font-semibold opacity-80">or</span>
+                <span className="-translate-x-1 self-center text-sm font-semibold opacity-80">or</span>
 
                 {/* Yearly */}
-                <div className="flex flex-col items-center gap-1 border border-[var(--color-gold)]/40 rounded-lg px-3 py-2">
+                <div className="flex flex-col items-center gap-1 border border-[var(--color-gold)]/40 rounded-lg px-1.5 py-2">
                   <div className="inline-flex items-center justify-center mt-1 mb-1 px-3 py-1 rounded-full bg-[var(--color-gold)] text-black text-[10px] font-semibold tracking-wide">
                     BEST VALUE
                   </div>
@@ -172,6 +172,8 @@ export default function MembershipPageClient() {
           <h2 className="font-serif text-3xl md:text-4xl tracking-tight text-[var(--color-cream)]">
             What You Get Inside RISE
           </h2>
+                            <div className="mx-auto h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-4 rounded" />
+
           <p className="mt-3 text-sm md:text-base opacity-80 max-w-[650px] mx-auto">
             Your membership gives you powerful tools you can return to anytime you need a
             reset, a reminder, or a gentle push forward.
@@ -275,7 +277,7 @@ export default function MembershipPageClient() {
       <section className="mt-20">
         <div className="mx-auto max-w-[1100px] grid gap-10 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-center">
           {/* LEFT: image */}
-          <div className="mx-auto max-w-[340px] overflow-hidden squared-2xl border border-white/12 bg-black/10">
+          <div className="mx-auto max-w-[320px] overflow-hidden squared-2xl border border-white/12 bg-black/10">
             <img
               src="/shadow4.jpg"
               alt="Person walking at sunrise"
@@ -288,6 +290,8 @@ export default function MembershipPageClient() {
             <h2 className="text-center font-serif text-3xl md:text-4xl tracking-tight text-[var(--color-cream)]">
               Who RISE Is For
             </h2>
+                  <div className="mx-auto h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-5 rounded" />
+
             <p className="mt-3 text-base md:text-lg opacity-90 leading-relaxed">
               RISE is for you if you know you&apos;re meant for more than just pushing
               through your days — and you want a gentler, more grounded way to rise.
@@ -324,12 +328,14 @@ export default function MembershipPageClient() {
 
       {/* PHOTO OF YOU + SHORT BIO (above FAQ) */}
       <section className="mt-20">
-        <div className="mx-auto max-w-[900px] grid gap-8 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:items-center">
+        <div className="mx-auto max-w-[875px] grid gap-8 md:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] md:items-center">
           {/* LEFT: text */}
           <div>
             <h2 className="text-center font-serif text-3xl md:text-4xl tracking-tight text-[var(--color-cream)]">
               Meet Your Guide
             </h2>
+                              <div className="mx-auto h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-5 rounded" />
+
                   <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
               Dr. Salerno is a mental health science expert and transformation
               advisor, committed to guiding others on their healing journeys and
@@ -418,7 +424,7 @@ export default function MembershipPageClient() {
 
           {/* Group 3: Is this right for me? */}
           <div>
-            <h3 className="text-sm uppercase tracking-[0.18em] text-center md:text-left opacity-70">
+            <h3 className="-mt-2.5 text-sm uppercase tracking-[0.18em] text-center md:text-left opacity-70">
               Is This Right For Me?
             </h3>
             <div className="mt-3 space-y-3 md:space-y-0 md:columns-2 md:gap-4">
@@ -549,41 +555,24 @@ export default function MembershipPageClient() {
             Follow Dr. Salerno:
           </p>
           <div className="mt-3 flex items-left justify-left gap-8">
-            <a
-              href="https://www.tiktok.com/@drjuanpablosalerno"
-              aria-label="TikTok"
-              className="opacity-90 hover:opacity-100"
-            >
-              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-                <path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z" />
-              </svg>
+            <a href="https://www.tiktok.com/@drjuanpablosalerno" aria-label="TikTok" className="opacity-90 hover:opacity-100">
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z" /></svg>
             </a>
-            <a
-              href="https://www.instagram.com/drjuanpablosalerno/"
-              aria-label="Instagram"
-              className="opacity-90 hover:opacity-100"
-            >
-              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 0 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z" />
-              </svg>
+<a
+  href="https://www.instagram.com/drjuanpablosalerno/"
+  aria-label="Instagram"
+  className="opacity-90 hover:opacity-100"
+>
+  <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
+    <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 2.75a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5Zm0 1.75a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm5.5-2.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z" />
+  </svg>
+</a>
+
+            <a href="https://www.youtube.com/drjpsalerno" aria-label="YouTube" className="opacity-90 hover:opacity-100">
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" /></svg>
             </a>
-            <a
-              href="https://www.youtube.com/drjpsalerno"
-              aria-label="YouTube"
-              className="opacity-90 hover:opacity-100"
-            >
-              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-                <path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s-6.6 0-8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" />
-              </svg>
-            </a>
-            <a
-              href="https://www.facebook.com/profile.php?id=61582412806274#"
-              aria-label="Facebook"
-              className="opacity-90 hover:opacity-100"
-            >
-              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-                <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2v3h-2c-.3 0-.5.2-.5.5V12H16l-.5 3h-2v7A10 10 0 0 0 22 12z" />
-              </svg>
+            <a href="https://www.facebook.com/profile.php?id=61582412806274#" aria-label="Facebook" className="opacity-90 hover:opacity-100">
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2v3h-2c-.3 0-.5.2-.5.5V12H16l-.5 3h-2v7A10 10 0 0 0 22 12z" /></svg>
             </a>
           </div>
 

@@ -102,12 +102,29 @@ export default function MeditationClient() {
               <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 mx-auto mt-4 rounded" />
             </section>
 
-            {/* ===== INTRO ===== */}
-            <section className="mx-auto max-w-[700px] lg:max-w-[850px] px-6 text-center mb-12 narrow-landscape-80 narrow-landscape-80-ipad">
-              <p className="text-lg md:text-xl opacity-90 leading-relaxed narrow-landscape-80 narrow-landscape-80-ipad">
-                When your mind feels heavy, unclear, or emotionally charged, the right meditation can bring you back to center. My meditations are designed to help you reset your body, calm your thoughts, and reconnect with yourself—so you can move through the day with clarity, intention, and ease.
-              </p>
-            </section>
+           {/* ===== INTRO ===== */}
+<section className="mx-auto max-w-[700px] lg:max-w-[850px] px-6 text-center mb-12 narrow-landscape-80 narrow-landscape-80-ipad">
+  <p className="text-lg md:text-xl opacity-90 leading-relaxed narrow-landscape-80 narrow-landscape-80-ipad">
+    When your mind feels heavy or overwhelmed, the right meditation can bring you back to center. My meditations are designed to help you reset your body, calm your thoughts, and reconnect with yourself.
+  </p>
+
+  {/* BUTTONS — placed immediately under intro text */}
+  <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+    <a
+      href="#custom-meditations"
+      className="rounded-full bg-[var(--color-gold)] text-black px-6 py-3 text-sm font-semibold tracking-wide hover:bg-[var(--color-gold)]/90 transition"
+    >
+      Explore Custom Meditations
+    </a>
+    <a
+      href="#meditation-library"
+      className="rounded-full border border-[var(--color-gold)] text-[var(--color-gold)] px-6 py-3 text-sm font-semibold tracking-wide hover:bg-[var(--color-gold)]/10 transition"
+    >
+      Browse Meditation Library
+    </a>
+  </div>
+</section>
+
 
             {/* Divider — match two-column container width */}
             <div className="mx-auto w-full max-w-[1200px] px-6">
@@ -117,7 +134,7 @@ export default function MeditationClient() {
 
 
 {/* ===== MAIN HERO ROW — Custom sessions + photo ===== */}
-<section className="mx-auto max-w-[1200px] px-6 py-14 md:py-16">
+<section id="custom-meditations" className="mx-auto max-w-[1200px] px-6 py-14 md:py-16">
   <div data-med-grid className="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
     {/* LEFT COLUMN — Custom sessions content */}
     <div>
@@ -134,12 +151,6 @@ export default function MeditationClient() {
         resilience, deepening focus, easing stress, activating empowerment and manifestation, 
         or working through something uniquely personal. Each recording becomes a guided pathway to growth and wellbeing.
         </p>
-
-      <p className="mt-3 text-base md:text-lg opacity-90 leading-relaxed max-w-2xl text-left [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto">
-        Custom meditations are one-on-one audio sessions designed specifically for your inner world—
-        what you&apos;re feeling, navigating, and wanting to shift right now. Instead of a generic script,
-        we co-construct something that speaks directly to you. 
-      </p>
 
       <p className="mt-3 text-base md:text-lg opacity-90 leading-relaxed max-w-2xl text-left [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto">
         Every custom meditation includes a <span className="font-semibold">complimentary 30-minute vision call</span>, 
@@ -166,7 +177,7 @@ export default function MeditationClient() {
 
     {/* RIGHT COLUMN — Photo unchanged */}
     <div className="flex justify-center">
-      <div className="relative w-full max-w-[320px] md:max-w-[448px] aspect-[3/4] shadow-2xl ring-1 ring-white/10 overflow-hidden">
+      <div className="relative w-full max-w-[320px] md:max-w-[360px] aspect-[3/4] shadow-2xl ring-1 ring-white/10 overflow-hidden">
         <HeroImageIphoneAware
           src="/meditation4.jpg"
           alt="Meditation photo"
@@ -194,13 +205,13 @@ export default function MeditationClient() {
     {/* How it works */}
     <div>
       <h3 className="mt-5 font-serif text-3xl md:text-4xl opacity-95">How It Works</h3>
-      <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded" />
+      <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-8 rounded" />
 
       <div className="space-y-4">
         <StepCard
           number="1"
           title="Share what you need"
-          body="Start by using the short form below to share what you're navigating and what kind of support you’re seeking—no perfect wording needed."
+          body="Start by using the short form below to share what you're navigating and what kind of support you’re seeking."
         />
         <StepCard
           number="2"
@@ -210,10 +221,10 @@ export default function MeditationClient() {
         <StepCard
           number="3"
           title="Receive your custom meditation"
-          body="Within 5–7 days of our call, you receive your custom meditation (5, 10, or 15 minutes), plus guidance on how to integrate it into your routine."
+          body="Within 5–7 days, you receive your custom meditation (5, 10, or 15 minutes), plus guidance on how to integrate it into your routine."
         />
               {/* CTA BUTTONS */}
-              <div className="mt-12 flex flex-col items-center gap-4">
+              <div className="mt-8 flex flex-col items-center gap-4">
                <a
   href="#custom-pricing"
     className="inline-flex items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
@@ -237,15 +248,34 @@ export default function MeditationClient() {
         Custom meditations are especially supportive if you&apos;re:
       </p>
 
-      <ul className="space-y-2 text-sm md:text-base opacity-90 leading-relaxed">
-        <li>• Feeling emotionally drained, overwhelmed, or stuck in repeating patterns</li>
-        <li>• Moving through burnout or big shifts at work, home, or in relationships</li>
-        <li>• Wanting something deeper and more personal than general meditations</li>
-        <li>• Ready to build a simple ritual you can return to when things feel heavy</li>
-        <li>• Craving a grounded, affirming reminder of your strength and direction</li>
-      </ul>
+<ul className="space-y-3 text-sm md:text-base opacity-90 leading-relaxed">
+  <li className="flex items-start gap-2">
+    <span className="text-[var(--color-gold)] mt-[2px]">✔︎</span>
+    <span>Feeling emotionally drained, overwhelmed, or stuck on autopilot</span>
+  </li>
 
-      <p className="mt-5 text-sm md:text-base opacity-85">
+  <li className="flex items-start gap-2">
+    <span className="text-[var(--color-gold)] mt-[2px]">✔︎</span>
+    <span>Experiencing burnout or big shifts at work, home, or in relationships</span>
+  </li>
+
+  <li className="flex items-start gap-2">
+    <span className="text-[var(--color-gold)] mt-[2px]">✔︎</span>
+    <span>Wanting deeper and more personalized meditations</span>
+  </li>
+
+  <li className="flex items-start gap-2">
+    <span className="text-[var(--color-gold)] mt-[2px]">✔︎</span>
+    <span>Ready to build an easy ritual you can return to when life feel heavy</span>
+  </li>
+
+  <li className="flex items-start gap-2">
+    <span className="text-[var(--color-gold)] mt-[2px]">✔︎</span>
+    <span>Craving a grounded, affirming reminder of your strength and path</span>
+  </li>
+</ul>
+
+      <p className="mt-4 text-sm md:text-base opacity-85">
         Custom meditations are available as a one-time purchase starting at{" "}
         <span className="font-semibold">$50</span>. If you signup for {" "}
         <a href="/membership" className="font-bold underline underline-offset-4 text-[var(--color-gold)] brightness-110 hover:brightness-130 transition">
@@ -267,7 +297,7 @@ export default function MeditationClient() {
             </div>
 
             {/* ===== MEDITATION LIBRARY DESCRIPTION ===== */}
-            <section className="mx-auto max-w-[900px] px-6 text-center mt-16 mb-16 narrow-landscape-80">
+            <section id="meditation-library" className="mx-auto max-w-[900px] px-6 text-center mt-16 mb-16 narrow-landscape-80">
               <p className="text-[12px] uppercase tracking-[0.18em] opacity-60 mb-2">
                 Meditation Library
               </p>
@@ -299,77 +329,80 @@ export default function MeditationClient() {
               <hr className="border-t border-[var(--color-cream)]/15" />
             </div>
 
-           <section
+<section
   id="custom-pricing"
   className="mx-auto max-w-[1200px] px-6 py-14 md:py-16 narrow-landscape-80"
 >
-              <div className="mx-auto max-w-[925px] rounded-2xl border border-[var(--color-gold)]/60 bg-white/5 p-6">
-                {/* Regular / non-member pricing */}
-                <div className="flex flex-wrap items-center justify-between gap-3">
-                  <h3 className="text-xl font-bold">Custom Meditations — Regular Pricing</h3>
-                  <span className="inline-flex items-center rounded-full border border-white/30 bg-white/10 px-2.5 py-0.5 text-[11px] font-semibold">
-                    Standard rates shown below
-                  </span>
-                </div>
+  <div className="mx-auto max-w-[925px] rounded-2xl border border-[var(--color-gold)]/60 bg-white/5 p-6">
+    {/* Regular / non-member pricing */}
+    <div className="flex flex-wrap items-center justify-between gap-3">
+      <h3 className="text-xl font-bold">Custom Meditations — Regular Pricing</h3>
+      <span className="inline-flex items-center rounded-full border border-white/30 bg-white/10 px-2.5 py-0.5 text-[11px] font-semibold">
+        Standard rates shown below
+      </span>
+    </div>
 
-                <div className="mt-4 grid gap-4 md:grid-cols-3">
-                  <RegularPriceCard label="5 minutes" price="$50" />
-                  <RegularPriceCard label="10 minutes" price="$100" />
-                  <RegularPriceCard label="15 minutes" price="$150" />
-                </div>
+    <div className="mt-4 grid gap-4 md:grid-cols-3">
+      <RegularPriceCard label="5 minutes" price="$50" />
+      <RegularPriceCard label="10 minutes" price="$100" />
+      <RegularPriceCard label="15 minutes" price="$150" />
+    </div>
 
-                <p className="mt-5 text-sm opacity-85 text-center md:text-left flex flex-col md:flex-row items-center gap-2">
-                  <span>Signup for</span>
-                  <a
-                    href="/membership"
-                    className="inline-flex items-center justify-center rounded-md bg-[var(--color-gold)] brightness-120 relative z-10 !text-black px-3 py-1.5 font-semibold text-xs uppercase tracking-wide shadow-md hover:shadow-lg hover:-translate-y-[1px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
-                  >
-                    RISE Membership
-                  </a>
-                  <span>to unlock member pricing on all custom meditations.</span>
-                </p>
+    <p className="mt-5 text-sm opacity-85 text-center md:text-left flex flex-col md:flex-row items-center gap-2">
+      <span>Signup for</span>
+      <a
+        href="/membership"
+        className="inline-flex items-center justify-center rounded-md bg-[var(--color-gold)] brightness-120 relative z-10 !text-black px-3 py-1.5 font-semibold text-xs uppercase tracking-wide shadow-md hover:shadow-lg hover:-translate-y-[1px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
+      >
+        RISE Membership
+      </a>
+      <span>to unlock member pricing on all custom meditations.</span>
+    </p>
 
-                {/* Member pricing */}
-                <div className="mt-8 flex flex-wrap items-center justify-between gap-3">
-                  <h3 className="text-xl font-bold">Custom Meditations — RISE Member Pricing</h3>
-                  <span className="inline-flex items-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)]/15 px-2.5 py-0.5 text-[11px] font-semibold">
-                    Member savings highlighted below
-                  </span>
-                </div>
+    {/* Member pricing */}
+    <div className="mt-8 flex flex-wrap items-center justify-between gap-3">
+      <h3 className="text-xl font-bold">Custom Meditations — RISE Member Pricing</h3>
+      <span className="inline-flex items-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)]/15 px-2.5 py-0.5 text-[11px] font-semibold">
+        Member savings highlighted below
+      </span>
+    </div>
 
-                <div className="mt-4 grid gap-4 md:grid-cols-3">
-                  <DiscountCard label="5 minutes" memberPrice="$40" regularPrice="$50" savings="20%" />
-                  <DiscountCard label="10 minutes" memberPrice="$75" regularPrice="$100" savings="25%" />
-                  <DiscountCard label="15 minutes" memberPrice="$100" regularPrice="$150" savings="33%" />
-                </div>
+    <div className="mt-4 grid gap-4 md:grid-cols-3">
+      <DiscountCard label="5 minutes" memberPrice="$40" regularPrice="$50" savings="20%" />
+      <DiscountCard label="10 minutes" memberPrice="$75" regularPrice="$100" savings="25%" />
+      <DiscountCard label="15 minutes" memberPrice="$100" regularPrice="$150" savings="33%" />
+    </div>
 
-                <div className="mt-4 rounded-lg border border-white/15 bg-white/5 p-4 text-sm">
-                  <span className="font-semibold text-[var(--color-gold)]">Complimentary 30-minute Vision Call</span> included with <span className="font-semibold">every custom meditation</span> to set your intentions and personalize your journey.
-                </div>
+    {/* Complimentary vision call for EVERY custom meditation */}
+    <div className="mt-4 rounded-lg border border-white/15 bg-white/5 p-4 text-sm">
+      <span className="font-semibold text-[var(--color-gold)]">Complimentary 30-minute Vision Call</span>{" "}
+      included with <span className="font-semibold">every custom meditation</span> to set your intentions
+      and personalize your journey emotionally, mentally, and spiritually.
+    </div>
 
-                <div className="mt-4 rounded-xl border border-white/20 bg-white/5 p-4">
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <div className="font-semibold">Yearly Membership Perk</div>
-                      <div className="mt-1 text-sm opacity-85">
-                        One-time free 5-minute custom meditation <span className="whitespace-nowrap">+ vision call</span> ($50 value) included with your yearly membership purchase.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+    {/* Yearly membership perk in preferred blue card */}
+    <div className="mt-4 rounded-xl border border-white/20 bg-[rgba(9,22,32,0.96)] p-4">
+      <div className="font-semibold text-[var(--color-gold)]">Yearly Membership Bonus</div>
+      <div className="mt-1 text-sm opacity-90">
+        Yearly RISE members also receive a{" "}
+        <span className="font-semibold">one-time free 5-minute custom meditation</span> (a $50 value) as
+        a bonus when you join — created just for you to help you start your membership with clarity and
+        intention.
+      </div>
+    </div>
 
-              {/* CTA BUTTONS */}
-              <div className="mt-8 flex flex-col items-center gap-4">
-               <a
-  href="#custom-request-form"
-  className="inline-flex items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
->
-  Request a custom meditation
-</a>
+    {/* CTA BUTTONS */}
+    <div className="mt-8 flex flex-col items-center gap-4">
+      <a
+        href="#custom-request-form"
+        className="inline-flex items-center justify-center rounded-md bg-[var(--color-gold)] text-black px-6 py-3 font-semibold uppercase tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-[2px] transition focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50"
+      >
+        Request a custom meditation
+      </a>
+    </div>
+  </div>
+</section>
 
-              </div>
-            </section>
 
 
             {/* FINAL divider above footer — match two-column width, no bleed */}
@@ -530,12 +563,12 @@ export default function MeditationClient() {
           </div>
 
           {/* IMPORTANT NOTES */}
-          <section className="-mt-1 mx-auto max-w-[900px] px-6 py-12 narrow-landscape-80">
+          <section className="-mt-2 mx-auto max-w-[900px] px-6 py-12 narrow-landscape-80">
             <h2 className="font-serif text-3xl md:text-4xl opacity-95 text-center">
               Important Notes
             </h2>
-            <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded mx-auto" />
-            <ul className="space-y-2 text-sm md:text-base opacity-90 leading-relaxed mb-0">
+            <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-4 rounded mx-auto" />
+            <ul className="space-y-1 text-sm md:text-base opacity-90 leading-relaxed mb-0">
               <li>
                 • Custom meditations are for personal growth and emotional support. They do not replace therapy, medical care, or crisis services.
               </li>
@@ -580,26 +613,25 @@ export default function MeditationClient() {
                   <div className="mt-6 text-[13px] leading-relaxed">
                     <p className="uppercase tracking-[0.18em] text-left opacity-70">Follow Dr. Salerno:</p>
                     <div className="mt-3 flex items-left justify-left gap-8">
-                      <a href="https://www.tiktok.com/@drjuanpablosalerno" aria-label="TikTok" className="opacity-90 hover:opacity-100">
-                        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-                          <path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z" />
-                        </svg>
-                      </a>
-                      <a href="https://www.instagram.com/drjuanpablosalerno/" aria-label="Instagram" className="opacity-90 hover:opacity-100">
-                        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-                          <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1 5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 0 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z" />
-                        </svg>
-                      </a>
-                      <a href="https://www.youtube.com/@YOURHANDLE" aria-label="YouTube" className="opacity-90 hover:opacity-100">
-                        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-                          <path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s-6.6 0-8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" />
-                        </svg>
-                      </a>
-                      <a href="https://www.facebook.com/profile.php?id=61582412806274#" aria-label="Facebook" className="opacity-90 hover:opacity-100">
-                        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-                          <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2v3h-2c-.3 0-.5.2-.5.5V12H16l-.5 3h-2v7A10 10 0 0 0 22 12z" />
-                        </svg>
-                      </a>
+            <a href="https://www.tiktok.com/@drjuanpablosalerno" aria-label="TikTok" className="opacity-90 hover:opacity-100">
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z" /></svg>
+            </a>
+<a
+  href="https://www.instagram.com/drjuanpablosalerno/"
+  aria-label="Instagram"
+  className="opacity-90 hover:opacity-100"
+>
+  <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
+    <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 2.75a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5Zm0 1.75a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm5.5-2.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z" />
+  </svg>
+</a>
+
+            <a href="https://www.youtube.com/drjpsalerno" aria-label="YouTube" className="opacity-90 hover:opacity-100">
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" /></svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61582412806274#" aria-label="Facebook" className="opacity-90 hover:opacity-100">
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2v3h-2c-.3 0-.5.2-.5.5V12H16l-.5 3h-2v7A10 10 0 0 0 22 12z" /></svg>
+            </a>
                     </div>
 
                     <p className="mt-5 text-left opacity-85">
