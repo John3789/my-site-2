@@ -241,7 +241,6 @@ Receive step-by-step guidance to help you reconnect with your inner power, move 
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             <BenefitCard
               title="Meditation Library"
-              href="/meditations"
               desc="Guided sessions for calm, clarity, and alignment — organized by theme so you always know where to start."
             />
             <BenefitCard
@@ -386,9 +385,14 @@ Receive step-by-step guidance to help you reconnect with your inner power, move 
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="mt-16">
-        <h2 className="text-center text-2xl md:text-3xl font-bold">Questions</h2>
+{/* FAQ */}
+<section className="mt-16 text-center">
+  <h2 className="mt-5 font-serif text-3xl md:text-4xl opacity-95 text-center">
+    Questions
+  </h2>
+  <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mx-auto mt-4 mb-6 rounded" />
+
+
 
         <div className="mt-6 space-y-8">
           {/* Group 1: Understanding RISE */}
