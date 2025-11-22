@@ -193,47 +193,51 @@ const payload = {
             <hr className="border-t border-[var(--color-cream)]/15" />
           </div>
 
-          {/* WHAT I'LL ASK YOU / IS THIS RIGHT FOR YOU */}
-          <section className="mx-auto max-w-[1100px] px-6 py-12 narrow-landscape-80">
-            <div className="grid gap-10 lg:grid-cols-2">
-              {/* What I'll ask you */}
-              <div>
-                <h2 className="font-serif text-3xl md:text-4xl opacity-95">What I’ll Ask You</h2>
-                <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded" />
-                <p className="text-base md:text-lg opacity-90 leading-relaxed mb-4">
-                  These questions help me create a meditation that feels deeply aligned with your current season of life:
-                </p>
-                <ul className="space-y-2 text-sm md:text-base opacity-90 leading-relaxed">
-                  <li>• What you&apos;re currently moving through (emotionally, mentally, spiritually)</li>
-                  <li>• What you want this meditation to support</li>
-                  <li>• Any specific patterns, blocks, or themes you want to shift</li>
-                  <li>• Your preferred meditation length (5, 10, or 15 minutes)</li>
-                  <li>• When you plan to use it (morning, evenings, between shifts, before or after work, etc.)</li>
-                  <li>• Any language, spiritual, or cultural preferences you&apos;d like honored</li>
-                </ul>
-                <p className="mt-4 text-sm opacity-85">
-                  You don&apos;t need to write long answers. Whatever feels natural is enough — we&apos;ll refine everything together during the Vision Call.
-                </p>
-              </div>
+{/* WHAT I'LL ASK YOU / IS THIS RIGHT FOR YOU */}
+<section className="mx-auto max-w-[1100px] px-6 py-12 narrow-landscape-80">
+  <div className="grid gap-10 lg:grid-cols-2">
+    {/* What I'll ask you */}
+    <div>
+      <h2 className="font-serif text-3xl md:text-4xl opacity-95">What I’ll Ask You</h2>
+      <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded" />
+      <p className="text-base md:text-lg opacity-90 leading-relaxed mb-4">
+        These questions help me create a meditation that feels deeply aligned with your current season of life:
+      </p>
 
-              {/* Is this right for you */}
-              <div>
-                <h2 className="font-serif text-3xl md:text-4xl opacity-95">Is This Right for You?</h2>
-                <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded" />
-                <p className="text-base md:text-lg opacity-90 leading-relaxed mb-4">
-                  Custom meditations are especially supportive if you are:
-                </p>
-                <ul className="space-y-2 text-sm md:text-base opacity-90 leading-relaxed">
-                  <li>• Feeling emotionally drained, overwhelmed, or stuck in old patterns</li>
-                  <li>• Moving through burnout or a demanding season at work or home</li>
-                  <li>• Navigating a big life transition or change</li>
-                  <li>• Wanting something more personal than general meditations</li>
-                  <li>• Ready to build a grounding ritual that you can return to again and again</li>
-                  <li>• Looking for a gentle, structured way to reconnect with clarity and self-trust</li>
-                </ul>
-              </div>
-            </div>
-          </section>
+      <ul className="space-y-2 text-sm md:text-base opacity-90 leading-relaxed">
+        <li><span className="text-[var(--color-gold)]">✔︎</span> What you're currently moving through (emotionally, mentally, spiritually)</li>
+        <li><span className="text-[var(--color-gold)]">✔︎</span> What you want this meditation to support</li>
+        <li><span className="text-[var(--color-gold)]">✔︎</span> Any specific patterns, blocks, or themes you want to shift</li>
+        <li><span className="text-[var(--color-gold)]">✔︎</span> Your preferred meditation length (5, 10, or 15 minutes)</li>
+        <li><span className="text-[var(--color-gold)]">✔︎</span> When you plan to use it (morning, evenings, between shifts, before or after work, etc.)</li>
+        <li><span className="text-[var(--color-gold)]">✔︎</span> Any language, spiritual, or cultural preferences you'd like honored</li>
+      </ul>
+
+      <p className="mt-4 text-sm opacity-85">
+        You don't need to write long answers. Whatever feels natural is enough — we&apos;ll refine everything together during the Vision Call.
+      </p>
+    </div>
+
+    {/* Is this right for you */}
+    <div>
+      <h2 className="font-serif text-3xl md:text-4xl opacity-95">Is This Right for You?</h2>
+      <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded" />
+      <p className="text-base md:text-lg opacity-90 leading-relaxed mb-4">
+        Custom meditations are especially supportive if you are:
+      </p>
+
+      <ul className="space-y-2 text-sm md:text-base opacity-90 leading-relaxed">
+        <li><span className="text-[var(--color-gold)]">✔︎</span> Feeling emotionally drained, overwhelmed, or stuck in old patterns</li>
+        <li><span className="text-[var(--color-gold)]">✔︎</span> Moving through burnout or a demanding season at work or home</li>
+        <li><span className="text-[var(--color-gold)]">✔︎</span> Navigating a big life transition or change</li>
+        <li><span className="text-[var(--color-gold)]">✔︎</span> Wanting something more personal than general meditations</li>
+        <li><span className="text-[var(--color-gold)]">✔︎</span> Ready to build a grounding ritual you can return to again and again</li>
+        <li><span className="text-[var(--color-gold)]">✔︎</span> Looking for a gentle, structured way to reconnect with clarity and self-trust</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 
           {/* Divider */}
           <div className="mx-auto w-full max-w-[1100px] px-6">
