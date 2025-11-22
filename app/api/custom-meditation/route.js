@@ -1,4 +1,3 @@
-// app/api/custom-meditation/route.js
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { google } from "googleapis";
@@ -27,6 +26,7 @@ export async function POST(req) {
       length,
       timing,
       preferences,
+      context, // 👈 NEW: "rise-member" or "public"
     } = body || {};
 
     if (!name || !email || !support) {
@@ -36,6 +36,12 @@ export async function POST(req) {
         { status: 400 },
       );
     }
+
+    // Decide how to label the origin in the email
+    let originLabel = "Public (non-member)";
+    if (context === "rise-member") originLabel = "RISE Member";
+    else if (context === "public") originLabel = "Public (non-member)";
+    else if (context) originLabel = context; // fallback if you ever pass other strings
 
     // --- STEP A: Validate env vars ----
     const {
@@ -99,6 +105,8 @@ export async function POST(req) {
     const html = `
       <h2>New Custom Meditation Request</h2>
 
+      <p><strong>Request origin:</strong> ${originLabel}</p>
+
       <p><strong>Name:</strong> ${name || "—"}</p>
       <p><strong>Email:</strong> ${email || "—"}</p>
       <p><strong>Preferred length:</strong> ${length || "—"}</p>
@@ -115,6 +123,8 @@ export async function POST(req) {
     `;
 
     const text = [
+      `Request origin: ${originLabel}`,
+      "",
       `Name: ${name || "—"}`,
       `Email: ${email || "—"}`,
       "",
@@ -136,7 +146,7 @@ export async function POST(req) {
     await transporter.sendMail({
       from: `Dr. Juan Pablo <${OAUTH_USER}>`,
       to: ["contact@drjuanpablosalerno.com", "john3789@gmail.com"],
-      subject: "New Custom Meditation Request",
+      subject: `New Custom Meditation Request — ${originLabel}`, // 👈 subject shows member vs public
       text,
       html,
       replyTo: email,

@@ -20,15 +20,17 @@ const handleRequestSubmit = async (e) => {
   const form = e.currentTarget;
   const formData = new FormData(form);
 
-  const payload = {
-    name: formData.get("name")?.toString().trim() || "",
-    email: formData.get("email")?.toString().trim() || "",
-    current: formData.get("current")?.toString().trim() || "",
-    support: formData.get("support")?.toString().trim() || "",
-    length: formData.get("length")?.toString().trim() || "",
-    timing: formData.get("timing")?.toString().trim() || "",
-    preferences: formData.get("preferences")?.toString().trim() || "",
-  };
+const payload = {
+  name: formData.get("name")?.toString().trim() || "",
+  email: formData.get("email")?.toString().trim() || "",
+  current: formData.get("current")?.toString().trim() || "",
+  support: formData.get("support")?.toString().trim() || "",
+  length: formData.get("length")?.toString().trim() || "",
+  timing: formData.get("timing")?.toString().trim() || "",
+  preferences: formData.get("preferences")?.toString().trim() || "",
+  context: "rise-member", // 👈 MEMBER REQUEST (discount pricing)
+};
+
 
   if (!payload.name || !payload.email || !payload.support) {
     setFormError(
