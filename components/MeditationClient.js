@@ -56,16 +56,13 @@ export default function MeditationClient() {
     const formData = new FormData(form);
 
     const payload = {
-      name: formData.get("name")?.toString().trim() || "",
-      email: formData.get("email")?.toString().trim() || "",
-      current: formData.get("current")?.toString().trim() || "",
-      support: formData.get("support")?.toString().trim() || "",
-      length: formData.get("length")?.toString().trim() || "",
-      timing: formData.get("timing")?.toString().trim() || "",
-      preferences: formData.get("preferences")?.toString().trim() || "",
-      // 🔹 public-only flags
-      subscribeToHoppyCopy: true,
-      context: "public",
+      name: formData.get("name")?.toString() || "",
+      email: formData.get("email")?.toString() || "",
+      current: formData.get("current")?.toString() || "",
+      support: formData.get("support")?.toString() || "",
+      length: formData.get("length")?.toString() || "",
+      timing: formData.get("timing")?.toString() || "",
+      preferences: formData.get("preferences")?.toString() || "",
     };
 
     try {
@@ -78,24 +75,16 @@ export default function MeditationClient() {
         body: JSON.stringify(payload),
       });
 
-      const data = await res.json();
-
-      if (!res.ok || !data?.ok) {
-        throw new Error(data?.error || "Request failed");
-      }
+      if (!res.ok) throw new Error("Request failed");
 
       setFormStatus("success");
       form.reset();
     } catch (err) {
-      console.error("Public custom meditation error:", err);
-      setFormError(
-        "Something went wrong. Please try again or email me directly."
-      );
+      console.error(err);
+      setFormError("Something went wrong. Please try again or email me directly.");
       setFormStatus("error");
     }
   };
-
-
 
 
   return (
