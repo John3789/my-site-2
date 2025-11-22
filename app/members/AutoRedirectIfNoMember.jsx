@@ -42,7 +42,7 @@ export default function AutoRedirectIfNoMember({ children }) {
     let cancelled = false;
     let retryTimeout;
     let attempts = 0;
-    const maxAttempts = 6; // 6 × 500ms ≈ 3s patience total
+    const maxAttempts = 10; // 10 × 500ms ≈ 5s total patience
 
     async function runGate() {
       if (cancelled) return;
@@ -52,6 +52,7 @@ export default function AutoRedirectIfNoMember({ children }) {
       // Memberstack script not ready yet → retry
       if (!ms || !ms.getCurrentMember) {
         if (attempts >= maxAttempts) {
+          // After enough tries with no Memberstack, treat as "no member"
           router.replace("/membership?need_member=1");
           return;
         }
@@ -69,30 +70,37 @@ export default function AutoRedirectIfNoMember({ children }) {
           Array.isArray(member?.planConnections) &&
           member.planConnections.length > 0;
 
+        const isLoggedIn = !!member?.id;
+
+        // ✅ Paid member with a plan: allow through and remember for this tab
         if (hasPlan) {
           setMemberFlag();
           setStatus("allowed");
           return;
         }
 
-        const isLoggedIn = !!member?.id;
-
-        // If nobody is logged in yet and we still have attempts left,
-        // it might just be the first-load handshake → retry.
+        // ⏳ Not logged in yet – could still be the first-load handshake
         if (!isLoggedIn && attempts < maxAttempts) {
           attempts += 1;
           retryTimeout = window.setTimeout(runGate, 500);
           return;
         }
 
-        // If we got here, we either:
-        // - see a non-member, or
-        // - waited long enough and still no member → redirect.
+        // ⏳ Logged in but no plan yet – likely just created account / just paid
+        // Give Memberstack more time to attach planConnections before we eject them
+        if (isLoggedIn && attempts < maxAttempts) {
+          attempts += 1;
+          retryTimeout = window.setTimeout(runGate, 500);
+          return;
+        }
+
+        // ❌ After all attempts:
+        // - either not logged in, or logged in but still no plan → send back
         router.replace("/membership?need_member=1");
       } catch (err) {
         if (cancelled) return;
 
-        // Treat transient errors like "still initializing" up to maxAttempts
+        // Treat errors like "still initializing" up to maxAttempts
         if (attempts < maxAttempts) {
           attempts += 1;
           retryTimeout = window.setTimeout(runGate, 500);
@@ -117,6 +125,7 @@ export default function AutoRedirectIfNoMember({ children }) {
     };
   }, [router, status]);
 
+  // While checking, keep the overlay (your existing behavior)
   if (status !== "allowed") {
     return (
       <div className="fixed inset-0 z-[9999] bg-[var(--color-teal-850)]" />
