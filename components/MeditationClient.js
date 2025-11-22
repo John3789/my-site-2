@@ -105,8 +105,7 @@ export default function MeditationClient() {
            {/* ===== INTRO ===== */}
 <section className="mx-auto max-w-[700px] lg:max-w-[850px] px-6 text-center mb-12 narrow-landscape-80 narrow-landscape-80-ipad">
   <p className="text-lg md:text-xl opacity-90 leading-relaxed narrow-landscape-80 narrow-landscape-80-ipad">
-    When your mind feels heavy or overwhelmed, the right meditation can bring you back to center. My meditations are designed to help you reset your body, calm your thoughts, and reconnect with yourself.
-  </p>
+When your mind feels heavy or overwhelmed, the right meditation can help you come back to center — resetting your body, calming your thoughts, and reconnecting with yourself.  </p>
 
   
 </section>
@@ -257,7 +256,7 @@ export default function MeditationClient() {
         <a href="/membership" className="font-bold underline underline-offset-4 text-[var(--color-gold)] brightness-110 hover:brightness-130 transition">
           RISE Membership
         </a>
-        , you&apos;ll receive discounted rates (all plans) and/or a free 5-minute custom meditation (yearly plan).
+        , you&apos;ll receive discounted rates (all plans) and a free 5-minute custom meditation (yearly plan).
       </p>
     </div>
   </div>
@@ -266,6 +265,58 @@ export default function MeditationClient() {
 
             {/* Divider — match two-column container width */}
             <div className="mx-auto w-full max-w-[1200px] px-6">
+              <hr className="border-t border-[var(--color-cream)]/15" />
+            </div>
+
+{/* MEET YOUR MEDITATION GUIDE */}
+<section className="mt-10">
+  <div className="mx-auto max-w-[915px] grid gap-8 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:items-center">
+
+    {/* LEFT: TEXT */}
+    <div>
+      <h2 className="font-serif text-3xl md:text-4xl opacity-95 text-center md:text-left">
+        Meet Your Meditation Guide
+      </h2>
+      <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded mx-auto md:mx-0" />
+
+      <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
+        Dr. Salerno understands what it feels like to carry a lot and stay strong for everyone, 
+        while sensing that something inside you is ready for more. His work blends mental health 
+        science with grounded spiritual practice to help you shift out of survival mode and into 
+        the highest version of yourself — the person you’re meant to become.
+      </p>
+
+      <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
+        He creates meditations that meet you exactly where you are — steady, supportive, and 
+        designed to help you rise into more clarity, purpose, and inner strength. Not returning 
+        to who you were before, but growing into a life that feels more aligned, intentional, 
+        and authentic to the real you.
+      </p>
+
+      <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
+        These practices are here to help you feel clearer, more centered, and more connected to 
+        who you’re becoming — one intentional moment at a time.
+      </p>
+    </div>
+
+    {/* RIGHT: IMAGE */}
+   <div className="transform scale-[0.85] md:scale-[0.85] origin-center">
+  <div className="overflow-hidden squared-2xl border border-white/15 bg-black/10">
+    <img
+      src="/heroabout.jpg"
+      alt="Dr. Juan Pablo Salerno"
+      className="w-full h-full object-cover opacity-95"
+    />
+  </div>
+</div>
+</div>
+
+</section>
+
+
+
+            {/* Divider — match two-column container width */}
+            <div className="mx-auto w-full max-w-[1200px] px-6 mt-8 mb-1">
               <hr className="border-t border-[var(--color-cream)]/15" />
             </div>
 
@@ -321,7 +372,7 @@ export default function MeditationClient() {
     </div>
 
     {/* Yearly membership perk in preferred blue card */}
-    <div className="mt-4 rounded-xl border border-white/20 bg-[rgba(9,22,32,0.96)] p-4">
+    <div className="mt-4 rounded-xl border border-white/20 bg-[#0f2334] p-4">
       <div className="font-semibold text-[var(--color-gold)]">Yearly Membership Bonus</div>
       <div className="mt-1 text-sm opacity-90">
         Yearly RISE members also receive a{" "}
