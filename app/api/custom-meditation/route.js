@@ -52,8 +52,6 @@ export async function POST(req) {
       length,
       timing,
       preferences,
-      // origin is allowed but not required; we just ignore it here
-      origin,
     } = body;
 
     if (!name || !email || !support) {
@@ -64,7 +62,7 @@ export async function POST(req) {
     }
 
     const html = `
-      <h2>New Custom Meditation Request</h2>
+      <h2>New Custom Meditation Request (RISE Member)</h2>
 
       <p><strong>Name:</strong> ${name || "—"}</p>
       <p><strong>Email:</strong> ${email || "—"}</p>
@@ -86,7 +84,7 @@ export async function POST(req) {
     await transporter.sendMail({
       from: `Dr. Juan Pablo <${OAUTH_USER}>`,
       to: TO_EMAILS,
-      subject: "New Custom Meditation Request",
+      subject: "New Custom Meditation Request (RISE Member)",
       html,
       replyTo: email,
     });

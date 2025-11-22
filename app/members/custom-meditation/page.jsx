@@ -246,7 +246,6 @@ const handleRequestSubmit = async (e) => {
             <div className="mt-6 rounded-2xl border border-white/20 bg-white/5 p-5 md:p-6 shadow-2xl">
               <h3 className="text-lg font-semibold mb-4">Custom Meditation Request Form</h3>
               <form className="space-y-4" onSubmit={handleRequestSubmit}>
-                  <input type="hidden" name="origin" value="member" />
   <div className="grid gap-4 md:grid-cols-2">
     <div>
       <label className="block text-sm font-medium mb-1">Name</label>
