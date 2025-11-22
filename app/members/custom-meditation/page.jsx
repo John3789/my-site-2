@@ -330,7 +330,7 @@ const payload = {
   </div>
 
   <div>
-    <label className="block text-sm font-medium mb-1">Language or spiritual preferences (optional)</label>
+    <label className="block text-sm font-medium mb-1">Questions, preferences, comments? (optional)</label>
     <textarea
       name="preferences"
       className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
