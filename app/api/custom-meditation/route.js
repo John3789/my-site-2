@@ -19,9 +19,18 @@ export async function POST(req) {
     const body = await req.json();
     console.log("➡️ CUSTOM MEDITATION POST BODY:", body);
 
-    const { name, email, support } = body || {};
+    const {
+      name,
+      email,
+      current,
+      support,
+      length,
+      timing,
+      preferences,
+    } = body || {};
 
     if (!name || !email || !support) {
+      console.warn("⚠️ Missing required fields:", { name, email, support });
       return NextResponse.json(
         { ok: false, error: "Missing required fields" },
         { status: 400 },
@@ -36,7 +45,12 @@ export async function POST(req) {
       OAUTH_USER,
     } = process.env;
 
-    if (!OAUTH_CLIENT_ID || !OAUTH_CLIENT_SECRET || !OAUTH_REFRESH_TOKEN || !OAUTH_USER) {
+    if (
+      !OAUTH_CLIENT_ID ||
+      !OAUTH_CLIENT_SECRET ||
+      !OAUTH_REFRESH_TOKEN ||
+      !OAUTH_USER
+    ) {
       console.error("❌ Missing OAUTH ENV VARS");
       return NextResponse.json(
         { ok: false, error: "Server email config missing" },
@@ -82,13 +96,50 @@ export async function POST(req) {
       },
     });
 
+    const html = `
+      <h2>New Custom Meditation Request</h2>
+
+      <p><strong>Name:</strong> ${name || "—"}</p>
+      <p><strong>Email:</strong> ${email || "—"}</p>
+      <p><strong>Preferred length:</strong> ${length || "—"}</p>
+      <p><strong>When they'll use it:</strong> ${timing || "—"}</p>
+
+      <p><strong>What they're currently moving through:</strong></p>
+      <p>${(current || "").replace(/\n/g, "<br />")}</p>
+
+      <p><strong>What they'd like this meditation to support:</strong></p>
+      <p>${(support || "").replace(/\n/g, "<br />")}</p>
+
+      <p><strong>Questions, preferences, context:</strong></p>
+      <p>${(preferences || "").replace(/\n/g, "<br />")}</p>
+    `;
+
+    const text = [
+      `Name: ${name || "—"}`,
+      `Email: ${email || "—"}`,
+      "",
+      `Preferred length: ${length || "—"}`,
+      `When they'll use it: ${timing || "—"}`,
+      "",
+      `What they're currently moving through:`,
+      current || "—",
+      "",
+      `What they'd like this meditation to support:`,
+      support || "—",
+      "",
+      `Questions, preferences, context:`,
+      preferences || "—",
+    ].join("\n");
+
     // --- STEP D: Send the email ---
     console.log("➡️ Sending email...");
     await transporter.sendMail({
       from: `Dr. Juan Pablo <${OAUTH_USER}>`,
       to: ["contact@drjuanpablosalerno.com", "john3789@gmail.com"],
       subject: "New Custom Meditation Request",
-      text: `Name: ${name}\nEmail: ${email}\nSupport: ${support}`,
+      text,
+      html,
+      replyTo: email,
     });
 
     console.log("✔️ Email sent!");
