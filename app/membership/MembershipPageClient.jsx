@@ -34,8 +34,7 @@ export default function MembershipPageClient() {
           </h1>
           <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto mt-5 mb-0 rounded" />
           <p className="mt-3 text-lg md:text-xl font-medium text-[var(--color-cream)] opacity-90">
-            Rebuild your energy, clarity, and confidence — with the tools to rise every day.
-          </p>
+Reset your mind, strengthen your energy, and rise into your greatest self.         </p>
 
         </div>
 
@@ -193,12 +192,11 @@ export default function MembershipPageClient() {
                 Monthly Inner Growth Sessions
               </h3>
               <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
-                Guided live sessions to reset your mind, release emotional heaviness, and
-                realign with who you&apos;re becoming.
+                Live sessions to reset your mind, release emotional heaviness, and
+                realign yourself through guided practices like active meditation, intention setting, and mindset work.
               </p>
               <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
-                You&apos;ll slow down, breathe, and reconnect with the part of you that
-                 believes in what&apos;s possible — so you can rise above unhelpful
+                You&apos;ll slow down, breathe, and reconnect with who you truly are — so you can rise above unhelpful
                 patterns and move forward with clarity and purpose.
               </p>
               <div className="mt-4 rounded-xl border border-white/15 bg-white/5 p-3">
@@ -206,8 +204,8 @@ export default function MembershipPageClient() {
                   Themes we explore
                 </div>
                 <p className="mt-1 text-xs md:text-sm opacity-90 leading-relaxed">
-                  Motivation & Mindset · Stress Relief · Self-Compassion · Healing ·
-                  Relationships · Purpose · Alignment · Manifestation · Inner Calm ·
+                  Mindset · Stress · Self-Compassion · Healing ·
+                  Relationships · Purpose · Alignment · Manifestation ·
                   Energy Reset
                 </p>
               </div>
