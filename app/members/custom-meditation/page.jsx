@@ -387,23 +387,51 @@ const payload = {
           </div>
 
           {/* IMPORTANT NOTES */}
-          <section className="-mt-1 mx-auto max-w-[900px] px-6 py-12 narrow-landscape-80">
+          <section className="-mt-2 mx-auto max-w-[900px] px-6 py-12 narrow-landscape-80">
             <h2 className="font-serif text-3xl md:text-4xl opacity-95 text-center">
-              Important Notes
-            </h2>
-            <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded mx-auto" />
-            <ul className="space-y-2 text-sm md:text-base opacity-90 leading-relaxed mb-0">
-              <li>
-                • Custom meditations are for personal growth and emotional support. They do not replace therapy, medical care, or crisis services.
-              </li>
-              <li>
-                • If you are in immediate distress or experiencing a crisis, please reach out to local emergency services or a crisis hotline before using these tools.
-              </li>
-              <li>
-                • These meditations are for your personal use only. Please don&apos;t share, repost, or resell them.
-              </li>
-            </ul>
+  Important Notes
+</h2>
+<div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-4 rounded mx-auto" />
+
+<ul className="space-y-1 text-sm md:text-base opacity-90 leading-relaxed mb-0">
+
+  {/* NEW FIRST BULLET */}
+  <li className="flex items-start gap-2">
+    <span className="text-[var(--color-gold)] mt-[2px]">✔︎</span>
+    <span>
+      If you prefer guided meditations you can use anytime, check out the full Meditation Library found in the members page.
+   
+    </span>
+  </li>
+
+  <li className="flex items-start gap-2">
+    <span className="text-[var(--color-gold)] mt-[3px]">•</span>
+    <span>
+      Custom meditations are for personal growth and emotional support. They do not
+      replace therapy, medical care, or crisis services.
+    </span>
+  </li>
+
+  <li className="flex items-start gap-2">
+    <span className="text-[var(--color-gold)] mt-[3px]">•</span>
+    <span>
+      If you are in immediate distress or experiencing a crisis, please reach out to
+      local emergency services or a crisis hotline before using these tools.
+    </span>
+  </li>
+
+  <li className="flex items-start gap-2">
+    <span className="text-[var(--color-gold)] mt-[3px]">•</span>
+    <span>
+      These meditations are for your personal use only. Please don&apos;t share,
+      repost, or resell them.
+    </span>
+  </li>
+
+</ul>
+
           </section>
+
                 {/* Divider ABOVE footer, matching membership/meditations */}
       <div className="mx-auto max-w-[1200px] px-6 mt-0">
         <hr className="border-t border-[var(--color-cream)]/22" />
