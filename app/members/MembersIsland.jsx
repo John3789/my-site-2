@@ -872,12 +872,22 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
             title="Dr. Salerno AI Advisor"
             desc="Seek guidance from my AI self—grounded in my approach, insights, and tools."
           />
-          <Card
-            href="/members/custom-meditation"
-            icon="📿"
-            title="Custom Meditations + Vision Calls"
-            desc="Personalized audio (5, 10, 15 min) + a complimentary 30-minute Vision Call."
-          />
+<Card
+  href="/members/custom-meditation"
+  icon="📿"
+  title="Custom Meditations + Vision Calls"
+  desc="Personalized audio (5, 10, 15 min) + a complimentary 30-minute Vision Call."
+classNameExtra="
+  ring-[var(--color-gold)]/55
+  before:pointer-events-none before:absolute before:inset-0 before:rounded-2xl
+  before:border before:border-[var(--color-gold)]/40
+  after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl
+  after:shadow-[inset_0_0_8px_rgba(255,215,130,0.08)]
+"
+
+/>
+
+
           <Card
             href="/contact"
             icon="🛟"
@@ -1317,7 +1327,9 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
 
 /* ===== Subcomponents ===== */
 
-function Card({ href, icon, title, desc, onClick }) {
+/* ===== Subcomponents ===== */
+
+function Card({ href, icon, title, desc, onClick, classNameExtra = "" }) {
   const content = (
     <>
       <div className="text-2xl leading-none">{icon}</div>
@@ -1329,13 +1341,16 @@ function Card({ href, icon, title, desc, onClick }) {
     </>
   );
 
+  const baseClasses =
+    "group relative rounded-2xl bg-white/5 ring-1 ring-white/10 p-5 hover:bg-white/10 hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] transition";
+
   if (onClick) {
     return (
       <button
         type="button"
         onClick={onClick}
         aria-label={`${title} — ${desc}`}
-        className="group w-full text-left rounded-2xl bg-white/5 ring-1 ring-white/10 p-5 hover:bg-white/10 hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] transition"
+        className={`w-full text-left ${baseClasses} ${classNameExtra}`}
       >
         {content}
       </button>
@@ -1346,12 +1361,14 @@ function Card({ href, icon, title, desc, onClick }) {
     <Link
       href={href}
       aria-label={`${title} — ${desc}`}
-      className="group rounded-2xl bg-white/5 ring-1 ring-white/10 p-5 hover:bg-white/10 hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] transition"
+      className={`${baseClasses} ${classNameExtra}`}
     >
       {content}
     </Link>
   );
 }
+
+
 
 function UpdateItem({ label, title, date, href }) {
   return (
