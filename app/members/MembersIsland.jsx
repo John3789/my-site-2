@@ -27,28 +27,28 @@ export default function MembersIsland() {
   const [nlSubscribed, setNlSubscribed] = useState(false);
 
     const handleJump = useCallback((id) => {
-  if (typeof document === "undefined") return;
+    if (typeof document === "undefined") return;
 
-  const el = document.getElementById(id);
-  if (!el) return;
+    const el = document.getElementById(id);
+    if (!el) return;
 
-  // Base offset for most sections
-  let yOffset = -120;
+    // Base offset for most sections
+    let yOffset = -120;
 
-  // Fine-tune for specific sections if needed
-  if (id === "everything-rise") {
-    yOffset = -140; // move a bit further down so the title is fully visible
-  }
+    // Fine-tune for specific sections if needed
+    if (id === "everything-rise") {
+      yOffset = -120; // scrolls slightly lower so the section sits a bit further down
+    }
 
-  const rect = el.getBoundingClientRect();
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  const targetY = rect.top + scrollTop + yOffset;
+    const rect = el.getBoundingClientRect();
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const targetY = rect.top + scrollTop + yOffset;
 
-  window.scrollTo({
-    top: targetY,
-    behavior: "smooth",
-  });
-}, []);
+    window.scrollTo({
+      top: targetY,
+      behavior: "smooth",
+    });
+  }, []);
 
 
 
@@ -198,14 +198,15 @@ export default function MembersIsland() {
   </section>
 
 
- {/* STICKY QUICK ACTION BAR */}
+{/* STICKY QUICK ACTION BAR */}
 <section className="sticky top-[2.5rem] z-30 mt-4 mb-4">
-  <div className="flex flex-wrap items-center gap-2 md:gap-3 rounded-full bg-[var(--color-teal-850)]/0 ring-1 ring-white/10 px-3 py-2 shadow-[0_10px_35px_rgba(0,0,0,0.45)] backdrop-blur-sm">
+  <div className="flex flex-wrap items-center gap-2 md:gap-3 rounded-full bg-[var(--color-teal-850)]/20 ring-1 ring-white/20 px-4 py-3 shadow-[0_10px_35px_rgba(0,0,0,0.45)] backdrop-blur-sm transition">
+
     {/* Start Here */}
     <button
       type="button"
       onClick={() => handleJump("start-here")}
-      className="inline-flex items-center gap-1 rounded-full border border-white/18 bg-white/[0.06] px-3.5 py-1.5 text-[11px] md:text-xs font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
+      className="inline-flex items-center gap-1 rounded-full border border-white/20 bg-white/[0.08] px-4 py-1.5 text-[11px] md:text-xs font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/15 active:translate-y-[1px] transition"
     >
       <span>📘</span>
       <span>Start here</span>
@@ -215,27 +216,17 @@ export default function MembersIsland() {
     <button
       type="button"
       onClick={() => handleJump("regular-rhythm")}
-      className="inline-flex items-center gap-1 rounded-full border border-white/18 bg-white/[0.04] px-3.5 py-1.5 text-[11px] md:text-xs font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/10 active:translate-y-[1px] transition"
+      className="inline-flex items-center gap-1 rounded-full border border-white/20 bg-white/[0.06] px-4 py-1.5 text-[11px] md:text-xs font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
     >
       <span>🔁</span>
       <span>Your rhythm</span>
     </button>
 
-    {/* Everything in RISE */}
-    <button
-      type="button"
-      onClick={() => handleJump("everything-rise")}
-      className="inline-flex items-center gap-1 rounded-full border border-white/18 bg-white/[0.04] px-3.5 py-1.5 text-[11px] md:text-xs font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/10 active:translate-y-[1px] transition"
-    >
-      <span>🌐</span>
-      <span>Everything in RISE</span>
-    </button>
-
-    {/* Dr. Salerno AI — tiny headshot */}
+    {/* Dr. Salerno AI */}
     <button
       type="button"
       onClick={() => handleJump("ai-guide")}
-      className="inline-flex items-center gap-2 rounded-full border border-white/18 bg-white/[0.04] px-3.5 py-1.5 text-[11px] md:text-xs font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/10 active:translate-y-[1px] transition"
+      className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.06] px-4 py-1.5 text-[11px] md:text-xs font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
     >
       <img
         src="/headshot.jpg"
@@ -249,38 +240,53 @@ export default function MembersIsland() {
     <button
       type="button"
       onClick={() => handleJump("monthly-session")}
-      className="inline-flex items-center gap-1 rounded-full border border-white/18 bg-white/[0.04] px-3.5 py-1.5 text-[11px] md:text-xs font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/10 active:translate-y-[1px] transition"
+      className="inline-flex items-center gap-1 rounded-full border border-white/20 bg-white/[0.06] px-4 py-1.5 text-[11px] md:text-xs font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
     >
       <span>📅</span>
       <span>Monthly session</span>
     </button>
 
-    {/* Roadmap */}
+    {/* Everything in RISE */}
     <button
       type="button"
-      onClick={() => handleJump("roadmap")}
-      className="inline-flex items-center gap-1 rounded-full border border-white/18 bg-white/[0.04] px-3.5 py-1.5 text-[11px] md:text-xs font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/10 active:translate-y-[1px] transition"
+      onClick={() => handleJump("everything-rise")}
+      className="inline-flex items-center gap-1 rounded-full border border-white/20 bg-white/[0.06] px-4 py-1.5 text-[11px] md:text-xs font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
     >
-      <span>📄</span>
-      <span>RISE roadmap</span>
+      <span>🌐</span>
+      <span>Everything in RISE</span>
     </button>
 
-    {/* What’s new */}
+    {/* FAQs */}
     <button
       type="button"
       onClick={() => handleJump("faqs")}
-      className="inline-flex items-center gap-1 rounded-full border border-white/18 bg-white/[0.04] px-3.5 py-1.5 text-[11px] md:text-xs font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/10 active:translate-y-[1px] transition"
+      className="inline-flex items-center gap-1 rounded-full border border-white/20 bg-white/[0.06] px-4 py-1.5 text-[11px] md:text-xs font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
     >
       <span>❓</span>
       <span>FAQs</span>
     </button>
+
+    {/* RISE roadmap */}
+    <button
+      type="button"
+      onClick={() => handleJump("roadmap")}
+      className="inline-flex items-center gap-1 rounded-full border border-white/20 bg-white/[0.06] px-4 py-1.5 text-[11px] md:text-xs font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
+    >
+      <span>📄</span>
+      <span>RISE roadmap</span>
+    </button>
   </div>
 </section>
+
+
+{/* Section divider */}
+<div className="mt-11 md:mt-13 h-px w-full bg-[var(--color-gold)]/15" />
 
 {/* START HERE – FIRST 7 DAYS (Accordion Cards) */}
 <section
 id="start-here"
-className="mt-8 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
+className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
+          <p className="text-xs md:text-sm uppercase tracking-[0.16em] opacity-70 mb-1">A gentle place to begin</p>
   <h2 className="font-serif text-2xl md:text-3xl tracking-tight">
     Start here — your first 7 days
   </h2>
@@ -379,19 +385,20 @@ className="mt-8 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
 </section>
 
 
-
+{/* Section divider */}
+<div className="mt-10 md:mt-12 h-px w-full bg-[var(--color-gold)]/15" />
 
        {/* REGULAR RHYTHM */}
 <section
   id="regular-rhythm"
-  className="mt-6 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7"
+  className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7"
 >
   <h2 className="font-serif text-2xl md:text-3xl tracking-tight">
     Your regular rhythm
   </h2>
   <p className="mt-2 text-sm md:text-base opacity-85">
     A calm structure you can lean on—so you always know how to plug back in, even on low-energy
-    weeks. These four anchors work together to support you daily, weekly, and monthly.
+    weeks. These four anchors hold you daily, weekly, and monthly.
   </p>
 
   {/* WATERFALL LAYOUT (matching Start Here) */}
@@ -414,9 +421,9 @@ className="mt-8 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
       </summary>
       <div className="mt-2">
         <p className="text-sm opacity-80">
-          Come back to a short meditation whenever you need to reset—whether that&apos;s a few times a
-          week or in the moments that feel heavier. Choose a track that matches how you feel (stress,
-          fogginess, low energy, or needing clarity) and let it walk you back to yourself.
+          On heavy days or in the small in-between moments, a short meditation becomes your reset
+          button. Pick a track that matches how you feel and let it bring you back into your body
+          and into your day.
         </p>
         <p className="mt-2 text-[10.5px] uppercase tracking-[0.16em] opacity-75 font-bold">
           Suggested rhythm: daily, most days, or a few times a week
@@ -439,9 +446,9 @@ className="mt-8 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
       </summary>
       <div className="mt-2">
         <p className="text-sm opacity-80">
-          Once a week, you&apos;ll receive a short, grounding message that helps you reconnect with your
-          intentions and shift back into possibility. These notes are designed to meet you where you are,
-          offering practical insights, gentle reframes, and reminders you can carry into your day.
+          Once a week, a short note lands in your inbox to steady your mind and bring you back to
+          what matters. Think of it as a gentle nudge toward possibility right when you’re drifting
+          into autopilot.
         </p>
         <p className="mt-2 text-[10.5px] uppercase tracking-[0.16em] opacity-75 font-bold">
           Suggested rhythm: read once each week
@@ -472,10 +479,9 @@ className="mt-8 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
 
       <div className="mt-2">
         <p className="text-sm opacity-90">
-          Dr. Salerno AI is there to help process what you&apos;re feeling, untangle a situation, or get a
-          clear next step. Share what&apos;s going on and ask for a grounding practice, a reframe, or a
-          simple plan for the week. He&apos;s there for you on the days when you don&apos;t want to carry
-          everything by yourself.
+          Use Dr. Salerno AI when you’re spiraling, stuck, or unsure what’s next. Share what’s
+          happening and ask for grounding, a reframe, or a simple plan for the week—so you don’t
+          have to carry it all by yourself.
         </p>
         <p className="mt-2 text-[10.4px] uppercase tracking-[0.16em] opacity-75 font-bold">
           Suggested rhythm: anytime you feel stuck or need support
@@ -502,9 +508,9 @@ className="mt-8 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
 
       <div className="mt-2">
         <p className="text-sm opacity-80">
-          Once a month, we come together for a live reset—grounding, emotional clearing, and realignment
-          with who you&apos;re becoming. Join live when you can, or catch the replay when it fits your life.
-          Each session is a space to soften, release, and reconnect to your path.
+          Once a month, we gather live for a guided reset—grounding, emotional release, and
+          realignment with who you’re becoming. Join live when you can, or lean on the replay when
+          you need a deeper, held space.
         </p>
         <p className="mt-2 text-[10.5px] uppercase tracking-[0.16em] opacity-75 font-bold">
           Suggested rhythm: join live or watch replay once a month
@@ -514,18 +520,226 @@ className="mt-8 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
   </div>
 
   <p className="mt-3 text-xs md:text-sm opacity-75">
-    Always remember: consistency over intensity. Use these four anchors in whatever rhythm feels
-    supportive for your season—there&apos;s no single right pace.
+    Always remember: consistency over intensity. Let these four anchors support you in whatever
+    rhythm fits your season—there’s no single “right” pace.
   </p>
 </section>
 
 
+{/* Section divider */}
+<div className="mt-10 md:mt-12 h-px w-full bg-[var(--color-gold)]/15" />
 
+{/* FEATURED SUPPORT – DR. SALERNO AI + MONTHLY SESSION */}
+      <p className="text-center mt-9 text-xs md:text-sm uppercase tracking-[0.16em] opacity-70 mb-1">  Your two most interactive support tools inside RISE
+</p>
+
+<div className="mt-8 md:mt-10 grid gap-6 md:grid-cols-2">
+  {/* DR. SALERNO AI FEATURE SECTION – DEEP BLUE CARD */}
+  <section
+    id="ai-guide"
+    className="rounded-2xl bg-[#0f2334] ring-1 ring-white/12 p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)] h-full"
+  >
+    <h2 className="font-serif text-2xl md:text-3xl tracking-tight flex items-center gap-3">
+      <img
+        src="/headshot.jpg"
+        alt="Dr. Juan Pablo Salerno"
+        className="h-17 h-17 rounded-full object-cover ring-1 ring-white/25"
+      />
+      <span>When you feel stuck, talk to Dr. Salerno AI</span>
+    </h2>
+    <p className="mt-2 text-sm md:text-base opacity-90">
+      Instead of carrying everything in your head, use this space to sort through what you&apos;re
+      feeling and leave with a kinder next step.
+    </p>
+
+    {/* 1 column on mobile, 3-column waterfall on desktop */}
+    <div className="mt-4 columns-1 md:columns-3" style={{ columnGap: "0.75rem" }}>
+      {/* When to open it */}
+      <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
+        <summary className="flex items-center justify-between text-sm font-semibold list-none">
+          <span>When to reach out</span>
+          <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
+        </summary>
+<ul className="mt-2 text-sm space-y-1">
+  <li className="flex gap-2">
+    <span className="text-[var(--color-gold)]">•</span>
+    <span>Your mind won&apos;t stop spiraling</span>
+  </li>
+  <li className="flex gap-2">
+    <span className="text-[var(--color-gold)]">•</span>
+    <span>You feel heavy and don&apos;t know why</span>
+  </li>
+  <li className="flex gap-2">
+    <span className="text-[var(--color-gold)]">•</span>
+    <span>You&apos;re overthinking a decision</span>
+  </li>
+  <li className="flex gap-2">
+    <span className="text-[var(--color-gold)]">•</span>
+    <span>You want to feel calmer before bed</span>
+  </li>
+</ul>
+
+      </details>
+
+      {/* What to say */}
+      <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
+        <summary className="flex items-center justify-between text-sm font-semibold list-none">
+          <span>What to say to him</span>
+          <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
+        </summary>
+<ul className="mt-2 text-sm space-y-1">
+  <li className="flex gap-2">
+    <span className="text-[var(--color-gold)]">•</span>
+    <span>“Here&apos;s what happened today… help me process it.”</span>
+  </li>
+  <li className="flex gap-2">
+    <span className="text-[var(--color-gold)]">•</span>
+    <span>“I feel anxious and tight in my chest—what can I do right now?”</span>
+  </li>
+  <li className="flex gap-2">
+    <span className="text-[var(--color-gold)]">•</span>
+    <span>“I&apos;m stuck between two options. Help me think this through.”</span>
+  </li>
+  <li className="flex gap-2">
+    <span className="text-[var(--color-gold)]">•</span>
+    <span>“Give me a 3-step plan for the next week.”</span>
+  </li>
+</ul>
+
+      </details>
+
+      {/* What you leave with */}
+      <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
+        <summary className="flex items-center justify-between text-sm font-semibold list-none">
+          <span>What you leave with</span>
+          <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
+        </summary>
+<ul className="mt-2 text-sm space-y-1">
+  <li className="flex gap-2">
+    <span className="text-[var(--color-gold)]">•</span>
+    <span>A clearer way to see your situation</span>
+  </li>
+  <li className="flex gap-2">
+    <span className="text-[var(--color-gold)]">•</span>
+    <span>1–3 gentle, doable next steps</span>
+  </li>
+  <li className="flex gap-2">
+    <span className="text-[var(--color-gold)]">•</span>
+    <span>A grounding practice you can repeat</span>
+  </li>
+  <li className="flex gap-2">
+    <span className="text-[var(--color-gold)]">•</span>
+    <span>Less “it&apos;s all on me,” more “I&apos;m supported”</span>
+  </li>
+</ul>
+
+      </details>
+    </div>
+
+    <div className="mt-5">
+      <Link
+        href="/members/ai"
+        className="inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-5 py-3 text-sm font-semibold tracking-wide hover:brightness-110 active:translate-y-[1px]"
+      >
+        Start your conversation
+      </Link>
+    </div>
+  </section>
+
+  {/* MONTHLY INNER GROWTH SESSION SECTION – DEEP BLUE CARD */}
+  <section
+    id="monthly-session"
+    className="rounded-2xl bg-[#0f2334] ring-1 ring-white/12 p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)] h-full"
+  >
+<h2 className="font-serif text-2xl md:text-3xl tracking-tight flex items-center gap-3">
+  <span className="text-[2.5rem] leading-none">📅</span>
+  <span>Your monthly reset &amp; inner growth session</span>
+</h2>
+
+    <p className="mt-2 text-sm md:text-base opacity-90">
+      Once a month, we pause together—so you can release what you&apos;re carrying, realign with
+      yourself, and step into the next month feeling clearer.
+    </p>
+
+    {/* 1 column on mobile, 2-column waterfall on desktop */}
+    <div className="mt-4 columns-1 md:columns-2" style={{ columnGap: "0.75rem" }}>
+      {/* In each session */}
+      <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
+        <summary className="flex items-center justify-between text-sm font-semibold list-none">
+          <span>In each session, you can expect</span>
+          <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
+        </summary>
+<ul className="mt-2 text-sm space-y-1">
+  <li className="flex gap-2">
+    <span className="text-[var(--color-gold)]">•</span>
+    <span>Grounding and breath to arrive fully</span>
+  </li>
+  <li className="flex gap-2">
+    <span className="text-[var(--color-gold)]">•</span>
+    <span>Emotional release so you feel lighter</span>
+  </li>
+  <li className="flex gap-2">
+    <span className="text-[var(--color-gold)]">•</span>
+    <span>Guided or active meditation to reset your energy</span>
+  </li>
+  <li className="flex gap-2">
+    <span className="text-[var(--color-gold)]">•</span>
+    <span>Reflection and reframes for what you&apos;re moving through</span>
+  </li>
+  <li className="flex gap-2">
+    <span className="text-[var(--color-gold)]">•</span>
+    <span>Intention setting for the month ahead</span>
+  </li>
+</ul>
+
+      </details>
+
+      {/* How it supports your month */}
+      <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
+        <summary className="flex items-center justify-between text-sm font-semibold list-none">
+          <span>How it supports your month</span>
+          <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
+        </summary>
+<ul className="mt-2 text-sm space-y-1">
+  <li className="flex gap-2">
+    <span className="text-[var(--color-gold)]">•</span>
+    <span>A clean emotional slate to start from</span>
+  </li>
+  <li className="flex gap-2">
+    <span className="text-[var(--color-gold)]">•</span>
+    <span>A moment to feel seen and supported</span>
+  </li>
+  <li className="flex gap-2">
+    <span className="text-[var(--color-gold)]">•</span>
+    <span>A clear intention you can return to</span>
+  </li>
+  <li className="flex gap-2">
+    <span className="text-[var(--color-gold)]">•</span>
+    <span>A reminder you don&apos;t have to do this alone</span>
+  </li>
+</ul>
+
+      </details>
+    </div>
+
+    <div className="mt-5">
+      <Link
+        href="/members/live-sessions"
+        className="inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-5 py-3 text-xs md:text-sm font-semibold tracking-wide hover:brightness-110 active:translate-y-[1px]"
+      >
+        See upcoming sessions &amp; replays
+      </Link>
+    </div>
+  </section>
+</div>
+
+{/* Section divider */}
+<div className="mt-13 h-px w-full bg-[var(--color-gold)]/15" />
 
       {/* QUICK ACTIONS / OVERVIEW OF RISE */}
             <section
         id="everything-rise" 
-      className="mt-8">
+      className="mt-9">
         <div className="flex items-baseline justify-between mb-3">
           <div>
             <h2 className="font-serif text-2xl md:text-3xl tracking-tight">Everything in your RISE space</h2>
@@ -599,143 +813,11 @@ className="mt-8 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
         </div>
       </section>
 
-{/* DR. SALERNO AI FEATURE SECTION – DEEP BLUE BLOCK */}
-<section
-  id="ai-guide"
-  className="mt-10 rounded-2xl bg-[#0f2334] ring-1 ring-white/12 p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)]"
->
-  <div className="flex items-center gap-2">
-    <img
-      src="/headshot.jpg"
-      alt="Dr. Juan Pablo Salerno"
-      className="h-13 w-13 rounded-full object-cover ring-1 ring-white/20"
-    />
-    <h2 className="font-serif text-2xl md:text-3xl tracking-tight">
-      When you feel stuck, talk to Dr. Salerno AI
-    </h2>
-  </div>
-
-  <p className="mt-2 text-sm md:text-base opacity-90">
-    Instead of carrying everything in your head, use this space to sort through what you&apos;re
-    feeling and leave with a kinder next step.
-  </p>
-
-  {/* 1 column on mobile, 3-column waterfall on desktop */}
-  <div className="mt-4 columns-1 md:columns-3" style={{ columnGap: "0.75rem" }}>
-    {/* When to open it */}
-    <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
-      <summary className="flex items-center justify-between text-sm font-semibold list-none">
-        <span>When to open it</span>
-        <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
-      </summary>
-      <ul className="mt-2 text-sm opacity-85 space-y-1">
-        <li>• Your mind won&apos;t stop spiraling</li>
-        <li>• You feel heavy and don&apos;t know why</li>
-        <li>• You&apos;re overthinking a decision</li>
-        <li>• You want to feel calmer before bed</li>
-      </ul>
-    </details>
-
-    {/* What to say */}
-    <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
-      <summary className="flex items-center justify-between text-sm font-semibold list-none">
-        <span>What to say</span>
-        <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
-      </summary>
-      <ul className="mt-2 text-sm opacity-85 space-y-1">
-        <li>“Here&apos;s what happened today… help me process it.”</li>
-        <li>“I feel anxious and tight in my chest—what can I do right now?”</li>
-        <li>“I&apos;m stuck between two options. Help me think this through.”</li>
-        <li>“Give me a 3-step plan for the next week.”</li>
-      </ul>
-    </details>
-
-    {/* What you leave with */}
-    <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
-      <summary className="flex items-center justify-between text-sm font-semibold list-none">
-        <span>What you leave with</span>
-        <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
-      </summary>
-      <ul className="mt-2 text-sm opacity-85 space-y-1">
-        <li>• A clearer way to see your situation</li>
-        <li>• 1–3 gentle, doable next steps</li>
-        <li>• A grounding practice you can repeat</li>
-        <li>• Less “it&apos;s all on me,” more “I&apos;m supported”</li>
-      </ul>
-    </details>
-  </div>
-
-  <div className="mt-5">
-    <Link
-      href="/members/ai"
-      className="inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-5 py-3 text-sm font-semibold tracking-wide hover:brightness-110 active:translate-y-[1px]"
-    >
-      Start your conversation
-    </Link>
-  </div>
-</section>
-
-{/* MONTHLY INNER GROWTH SESSION SECTION – DEEP BLUE BLOCK */}
-<section
-  id="monthly-session"
-  className="mt-8 rounded-2xl bg-[#0f2334] ring-1 ring-white/12 p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)]"
->
-  <h2 className="font-serif text-2xl md:text-3xl tracking-tight">
-    Your monthly reset &amp; inner growth session
-  </h2>
-  <p className="mt-2 text-sm md:text-base opacity-90">
-    Once a month, we pause together—so you can release what you&apos;re carrying, realign with
-    yourself, and step into the next month feeling clearer.
-  </p>
-
-  {/* 1 column on mobile, 2-column waterfall on desktop */}
-  <div className="mt-4 columns-1 md:columns-2" style={{ columnGap: "0.75rem" }}>
-    {/* In each session */}
-    <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
-      <summary className="flex items-center justify-between text-sm font-semibold list-none">
-        <span>In each session, you can expect</span>
-        <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
-      </summary>
-      <ul className="mt-2 text-sm opacity-85 space-y-1">
-        <li>• Grounding and breath to arrive fully</li>
-        <li>• Emotional release so you feel lighter</li>
-        <li>• Guided or active meditation to reset your energy</li>
-        <li>• Reflection and reframes for what you&apos;re moving through</li>
-        <li>• Intention setting for the month ahead</li>
-      </ul>
-    </details>
-
-    {/* How it supports your month */}
-    <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
-      <summary className="flex items-center justify-between text-sm font-semibold list-none">
-        <span>How it supports your month</span>
-        <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
-      </summary>
-      <ul className="mt-2 text-sm opacity-85 space-y-1">
-        <li>• A clean emotional slate to start from</li>
-        <li>• A moment to feel seen and supported</li>
-        <li>• A clear intention you can return to</li>
-        <li>• A reminder you don&apos;t have to do this alone</li>
-      </ul>
-    </details>
-  </div>
-
-  {/* BUTTON MOVED HERE — bottom-left of the big blue card */}
-  <div className="mt-5">
-    <Link
-      href="/members/live-sessions"
-      className="inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-5 py-3 text-sm font-semibold tracking-wide hover:brightness-110 active:translate-y-[1px]"
-    >
-      See upcoming sessions &amp; replays
-    </Link>
-  </div>
-</section>
-
-
-
+     {/* Section divider */}
+<div className="mt-10 md:mt-12 h-px w-full bg-[var(--color-gold)]/15" />
 
      {/* FAQS – COLLAPSIBLE SECTION */}
-<section id="faqs" className="mt-10 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
+<section id="faqs" className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
   <details className="group">
     {/* Header row (closed state) */}
     <summary className="flex cursor-pointer list-none items-center justify-between">
@@ -882,14 +964,34 @@ className="mt-8 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
         </Link>
       </section>
 
-      {/* WHAT'S NEW — Deep Blue Feature Panel */}
+            {/* SOFT LANDING MESSAGE */}
+      <section className="mt-8 max-w-[600px] mx-auto text-center text-xs md:text-sm opacity-80 leading-relaxed">
+<p className="mt-17 md:mt-20 text-sm md:text-base opacity-80 text-center">
+  Keep moving in the direction that feels right for you. Every small choice toward alignment matters.
+</p>
+
+      </section>
+
+      {/* Section divider */}
+<div className="mt-15 md:mt-18 h-px w-full bg-[var(--color-gold)]/15" />
+
+{/* WHAT'S NEW — Deep Blue Feature Panel */}
 <section
   id="whats-new"
-  className="mt-10 rounded-2xl bg-[#0f2334] ring-1 ring-white/10 p-6 shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
+  className="mt-10 md:mt-12 rounded-2xl bg-[#0f2334] ring-1 ring-white/10 p-6 shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
 >
-  <h2 className="text-lg font-semibold text-[var(--color-gold)]">
-    What’s new
+  {/* Celebratory subheading */}
+  <p className="text-xs md:text-sm uppercase tracking-[0.16em] opacity-70 mb-1 flex items-center gap-1">
+    <span className="text-[var(--color-gold)]">✨</span>
+    <span>Your latest updates, all in one place</span>
+  </p>
+
+  {/* Upgraded main heading */}
+  <h2 className="mt-1 flex items-center gap-2 text-lg font-semibold text-[var(--color-gold)]">
+    <span className="text-[1.35rem]">🎉</span>
+    <span>What’s New in RISE</span>
   </h2>
+
   <div className="mt-3 space-y-2">
     <UpdateItem
       label="New Meditation"
@@ -911,7 +1013,6 @@ className="mt-8 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
     />
   </div>
 </section>
-
 
       {/* SIGN OUT */}
       <div className="mt-8">
