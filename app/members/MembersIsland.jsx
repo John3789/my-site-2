@@ -604,9 +604,17 @@ className="mt-8 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
   id="ai-guide"
   className="mt-10 rounded-2xl bg-[#0f2334] ring-1 ring-white/12 p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)]"
 >
-  <h2 className="font-serif text-2xl md:text-3xl tracking-tight">
-    When you feel stuck, talk to Dr. Salerno AI
-  </h2>
+  <div className="flex items-center gap-2">
+    <img
+      src="/headshot.jpg"
+      alt="Dr. Juan Pablo Salerno"
+      className="h-13 w-13 rounded-full object-cover ring-1 ring-white/20"
+    />
+    <h2 className="font-serif text-2xl md:text-3xl tracking-tight">
+      When you feel stuck, talk to Dr. Salerno AI
+    </h2>
+  </div>
+
   <p className="mt-2 text-sm md:text-base opacity-90">
     Instead of carrying everything in your head, use this space to sort through what you&apos;re
     feeling and leave with a kinder next step.
