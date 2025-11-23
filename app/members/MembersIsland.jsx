@@ -268,11 +268,11 @@ export default function MembersIsland() {
     {/* What’s new */}
     <button
       type="button"
-      onClick={() => handleJump("whats-new")}
+      onClick={() => handleJump("faqs")}
       className="inline-flex items-center gap-1 rounded-full border border-white/18 bg-white/[0.04] px-3.5 py-1.5 text-[11px] md:text-xs font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/10 active:translate-y-[1px] transition"
     >
-      <span>🆕</span>
-      <span>What’s new</span>
+      <span>❓</span>
+      <span>FAQs</span>
     </button>
   </div>
 </section>
