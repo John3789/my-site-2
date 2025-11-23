@@ -461,7 +461,7 @@ className="mt-8 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
             alt="Dr. Juan Pablo Salerno"
             className="h-6 w-6 rounded-full object-cover ring-1 ring-white/20"
           />
-          <span className="text-sm font-semibold uppercase tracking-wide opacity-90">
+          <span className="text-sm font-semibold uppercase tracking-wide opacity-80">
             Dr. Salerno AI Check-in
           </span>
         </div>
@@ -491,7 +491,7 @@ className="mt-8 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
       <summary className="flex cursor-pointer list-none items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="text-base">📅</span>
-          <span className="text-sm font-semibold uppercase tracking-wide opacity-90">
+          <span className="text-sm font-semibold uppercase tracking-wide opacity-80">
             Monthly Inner Growth Session
           </span>
         </div>
