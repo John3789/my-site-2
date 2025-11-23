@@ -179,93 +179,147 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
           </p>
         </div>
 
-        {/* BIG CARD WRAPPER: BLUE CARDS + GRID */}
-        <div className="mt-8 rounded-2xl border border-white/18 bg-white/[0.04] p-6 md:p-7">
-          {/* Blue feature cards */}
-          <div className="grid gap-8 md:grid-cols-2 md:gap-10">
-            {/* Monthly Inner Growth Sessions */}
-            <div className="relative rounded-2xl border border-[var(--color-gold)]/70 bg-[rgba(9,22,32,0.96)] p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)]">
-              <div className="inline-flex items-center rounded-full border border-[var(--color-gold)]/60 bg-[var(--color-gold)]/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-gold)]">
-                Live each month
-              </div>
-              <h3 className="mt-3 font-serif text-2xl md:text-3xl tracking-tight text-[var(--color-cream)]">
-                Monthly Inner Growth Sessions
-              </h3>
-              <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
-                Live sessions to reset your mind, release emotional heaviness, and
-                realign yourself through guided practices like active meditation, intention setting, and mindset work.
-              </p>
-              <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
-                You&apos;ll slow down, breathe, and reconnect with who you truly are — so you can rise above unhelpful
-                patterns and move forward with clarity and purpose.
-              </p>
-              <div className="mt-4 rounded-xl border border-white/15 bg-white/5 p-3">
-                <div className="text-[11px] font-semibold tracking-[0.16em] uppercase text-[var(--color-gold)]">
-                  Themes we explore
-                </div>
-                <p className="mt-1 text-xs md:text-sm opacity-90 leading-relaxed">
-                  Mindset · Stress · Self-Compassion · Healing ·
-                  Relationships · Purpose · Alignment · Manifestation ·
-                  Energy Reset
-                </p>
-              </div>
-            </div>
+{/* BIG CARD WRAPPER: BLUE CARDS + GRID */}
+<div className="mt-8 rounded-2xl border border-white/18 bg-white/[0.04] p-6 md:p-7">
+  {/* Blue feature cards */}
+  <div className="grid gap-8 md:grid-cols-2 md:gap-10">
 
-            {/* Dr. Salerno AI Advisor */}
-            <div className="relative rounded-2xl border border-[var(--color-gold)]/80 bg-[rgba(10,24,36,0.98)] p-6 md:p-7 shadow-[0_20px_55px_rgba(0,0,0,0.6)]">
-              <div className="inline-flex items-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)]/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-gold)]">
-                24/7 guidance
-              </div>
-              <h3 className="mt-3 font-serif text-2xl md:text-3xl tracking-tight text-[var(--color-cream)]">
-                Your Personal Dr. Salerno AI Advisor
-              </h3>
-              <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
-A members-only guidance companion shaped by my voice and perspective — here anytime you need direction, clarity, or a renewed sense of strength.
-              </p>
-              <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
-Receive step-by-step guidance to help you reconnect with your inner power, move forward with grounded confidence, and rise into the person you’re here to become.
-              </p>
-              <div className="mt-4 rounded-xl border border-white/15 bg-white/5 p-3">
-                <div className="text-[11px] font-semibold tracking-[0.16em] uppercase text-[var(--color-gold)]">
-                  You can ask about
-                </div>
-                <p className="mt-1 text-xs md:text-sm opacity-90 leading-relaxed">
-                  Motivation · Stress · Relationships · Overthinking · Confidence ·
-                  Purpose · Resetting your energy
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Benefits grid (trimmed descriptions) */}
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            <BenefitCard
-              title="Meditation Library"
-              desc="Guided sessions for calm, clarity, and alignment — organized by theme so you always know where to start."
-            />
-            <BenefitCard
-              title="Social Media Inspiration Space"
-              desc="Curated posts and reframes by theme — quick prompts to shift your day forward."
-            />
-            <BenefitCard
-              title="Weekly Wisdom Collection"
-              desc="One short, grounded insight each week to keep you focused, encouraged, and aligned."
-            />
-            <BenefitCard
-              title="Discounted Custom Meditations"
-              href="/meditations"
-              desc="Personalized 5/10/15-minute audios with a vision call to help you use them intentionally."
-            />
-            <BenefitCard
-              title="Vision Calls"
-              desc="Focused 30-minute sessions to clarify intentions, identify blocks, and map your next chapter."
-            />
-            <BenefitCard
-              title="Mental Health & Alignment Guides"
-              desc="Short, practical guides to shift your mindset and take meaningful action today."
-            />
-          </div>
+    {/* Monthly Inner Growth Sessions */}
+    <div className="relative rounded-2xl border border-[var(--color-gold)]/70 bg-[rgba(9,22,32,0.96)] p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)]">
+      <div className="inline-flex items-center rounded-full border border-[var(--color-gold)]/60 bg-[var(--color-gold)]/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-gold)]">
+        Live each month
+      </div>
+      <h3 className="mt-3 font-serif text-2xl md:text-3xl tracking-tight text-[var(--color-cream)]">
+        Monthly Inner Growth Sessions
+      </h3>
+      <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
+        Live sessions to reset your mind, release emotional heaviness, and
+        realign yourself through guided practices like active meditation, intention setting, and mindset work.
+      </p>
+      <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
+        You&apos;ll slow down, breathe, and reconnect with who you truly are — so you can rise above unhelpful
+        patterns and move forward with clarity and purpose.
+      </p>
+      <div className="mt-4 rounded-xl border border-white/15 bg-white/5 p-3">
+        <div className="text-[11px] font-semibold tracking-[0.16em] uppercase text-[var(--color-gold)]">
+          Themes we explore
         </div>
+        <p className="mt-1 text-xs md:text-sm opacity-90 leading-relaxed">
+          Mindset · Stress · Self-Compassion · Healing ·
+          Relationships · Purpose · Alignment · Manifestation ·
+          Energy Reset
+        </p>
+      </div>
+    </div>
+
+    {/* Dr. Salerno AI Advisor */}
+    <div className="relative rounded-2xl border border-[var(--color-gold)]/80 bg-[rgba(10,24,36,0.98)] p-6 md:p-7 shadow-[0_20px_55px_rgba(0,0,0,0.6)]">
+      <div className="inline-flex items-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)]/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-gold)]">
+        24/7 guidance
+      </div>
+      <h3 className="mt-3 font-serif text-2xl md:text-3xl tracking-tight text-[var(--color-cream)]">
+        Your Personal Dr. Salerno AI Advisor
+      </h3>
+      <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
+        A members-only guidance companion shaped by my voice and perspective — here anytime you need direction, clarity, or a renewed sense of strength.
+      </p>
+      <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
+        Receive step-by-step guidance to help you reconnect with your inner power, move forward with grounded confidence, and rise into the person you’re here to become.
+      </p>
+      <div className="mt-4 rounded-xl border border-white/15 bg-white/5 p-3">
+        <div className="text-[11px] font-semibold tracking-[0.16em] uppercase text-[var(--color-gold)]">
+          You can ask about
+        </div>
+        <p className="mt-1 text-xs md:text-sm opacity-90 leading-relaxed">
+          Motivation · Stress · Relationships · Overthinking · Confidence ·
+          Purpose · Resetting your energy
+        </p>
+      </div>
+    </div>
+
+        {/* NEW BLUE CARD: Discounted Custom Meditations */}
+    <div className="relative rounded-2xl border border-[var(--color-gold)]/70 bg-[rgba(9,22,32,0.96)] p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)]">
+      <div className="inline-flex items-center rounded-full border border-[var(--color-gold)]/60 bg-[var(--color-gold)]/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-gold)]">
+        Member pricing
+      </div>
+      <h3 className="mt-3 font-serif text-2xl md:text-3xl tracking-tight text-[var(--color-cream)]">
+        Discounted Custom Meditations
+      </h3>
+      <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
+        A fully personalized meditation crafted around your goals, challenges, and feelings.
+        Every detail is intentional and specific to your emotional and spiritual
+        landscape.
+      </p>
+      <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
+        Each custom meditation includes a vision call where we set clear intentions together, explore what you&apos;re
+        moving through, and shape a grounding ritual you can return to.
+      </p>
+      <div className="mt-4 rounded-xl border border-white/15 bg-white/5 p-3">
+        <div className="text-[11px] font-semibold tracking-[0.16em] uppercase text-[var(--color-gold)]">
+          Designed to support
+        </div>
+        <p className="mt-1 text-xs md:text-sm opacity-90 leading-relaxed">
+          Burnout &amp; stress · Emotional heaviness · Confidence &amp; self-worth · Life transitions · Boundaries ·
+          Healing · Purpose
+        </p>
+      </div>
+    </div>
+
+    {/* NEW BLUE CARD: Vision Calls */}
+    <div className="relative rounded-2xl border border-[var(--color-gold)]/80 bg-[rgba(10,24,36,0.98)] p-6 md:p-7 shadow-[0_20px_55px_rgba(0,0,0,0.6)]">
+      <div className="inline-flex items-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)]/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-gold)]">
+        1:1 guidance
+      </div>
+      <h3 className="mt-3 font-serif text-2xl md:text-3xl tracking-tight text-[var(--color-cream)]">
+        Vision Calls with Dr. Salerno
+      </h3>
+      <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
+        A focused session for RISE members who want deeper, personalized support — clear
+        the fog, reconnect with your inner strength, and uncover tools for your next chapter.
+      </p>
+      <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
+        Structured with a short centering meditation, space to share your story,
+        deep personalized guidance, and more — so this feels like a powerful reset, not another obligation.
+      </p>
+      <div className="mt-4 rounded-xl border border-white/15 bg-white/5 p-3">
+        <div className="text-[11px] font-semibold tracking-[0.16em] uppercase text-[var(--color-gold)]">
+          During your hour we may
+        </div>
+        <p className="mt-1 text-xs md:text-sm opacity-90 leading-relaxed">
+          Identify patterns &amp; fears · Create self-worth affirmations
+         · Explore mindset & journaling tools · Craft a micro-meditation 
+        </p>
+      </div>
+      </div>
+  </div>
+
+
+  {/* Benefits grid (trimmed descriptions) */}
+  <div className="mt-8 grid gap-4 md:grid-cols-2">
+
+    <BenefitCard
+      title="Meditation Library"
+      desc="Guided sessions for calm, clarity, and alignment — organized by theme so you always know where to start."
+    />
+
+    <BenefitCard
+      title="Social Media Inspiration Space"
+      desc="Curated posts and reframes by theme — quick prompts to shift your day forward."
+    />
+
+    <BenefitCard
+      title="Weekly Wisdom Collection"
+      desc="One short, grounded insight each week to keep you focused, encouraged, and aligned."
+    />
+
+    <BenefitCard
+      title="Mental Health & Alignment Guides"
+      desc="Short, practical guides to shift your mindset and take meaningful action today."
+    />
+
+  </div>
+</div>
+
       </section>
 
       {/* WHO RISE IS FOR */}
