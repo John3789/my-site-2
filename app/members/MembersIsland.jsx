@@ -450,11 +450,11 @@ className="mt-8 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
     </details>
 
     {/* Dr. Salerno AI – Softened Footer Blue + Gold Spine */}
-    <details className="group relative mb-3 break-inside-avoid rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-4 shadow-[0_5px_16px_rgba(0,0,0,0.32)]">
+    <details className="group mb-3 break-inside-avoid rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-4 shadow-[0_5px_16px_rgba(0,0,0,0.32)]">
       {/* Gold Gradient Spine */}
       <div className="absolute inset-y-0 left-0 w-1.5 rounded-l-xl bg-gradient-to-b from-[var(--color-gold)]/95 via-[var(--color-gold)]/70 to-[var(--color-gold)]/40" />
 
-      <summary className="flex cursor-pointer list-none items-center justify-between pl-2">
+      <summary className="flex cursor-pointer list-none items-center justify-between">
         <div className="flex items-center gap-2">
           <img
             src="/headshot.jpg"
@@ -484,11 +484,11 @@ className="mt-8 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
     </details>
 
     {/* Monthly Inner Growth Session — Featured */}
-    <details className="group relative mb-3 break-inside-avoid rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-4 shadow-[0_5px_16px_rgba(0,0,0,0.32)]">
+    <details className="group mb-3 break-inside-avoid rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-4 shadow-[0_5px_16px_rgba(0,0,0,0.32)]">
       {/* Soft Gold Accent Bar */}
       <div className="absolute inset-y-0 left-0 w-1.5 rounded-l-xl bg-gradient-to-b from-[var(--color-gold)]/95 via-[var(--color-gold)]/70 to-[var(--color-gold)]/40" />
 
-      <summary className="flex cursor-pointer list-none items-center justify-between pl-2">
+      <summary className="flex cursor-pointer list-none items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="text-base">📅</span>
           <span className="text-sm font-semibold uppercase tracking-wide opacity-90">
