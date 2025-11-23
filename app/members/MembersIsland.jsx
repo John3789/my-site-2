@@ -713,7 +713,7 @@ className="mt-8 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
   </div>
 
   {/* BUTTON MOVED HERE — bottom-left of the big blue card */}
-  <div className="mt-4">
+  <div className="mt-5">
     <Link
       href="/members/live-sessions"
       className="inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-5 py-3 text-sm font-semibold tracking-wide hover:brightness-110 active:translate-y-[1px]"
