@@ -530,7 +530,7 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
 <div className="mt-10 md:mt-12 h-px w-full bg-[var(--color-gold)]/15" />
 
 {/* FEATURED SUPPORT – DR. SALERNO AI + MONTHLY SESSION */}
-      <p className="text-center mt-9 text-xs md:text-sm uppercase tracking-[0.16em] opacity-70 mb-1">  Your two most interactive support tools inside RISE
+      <p className="text-center mt-9 text-xs md:text-sm uppercase tracking-[0.16em] opacity-70 mb-1">  Your three most interactive support tools inside RISE
 </p>
 
 <div className="mt-8 md:mt-10 grid gap-6 md:grid-cols-2">
@@ -728,6 +728,86 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
         className="inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-5 py-3 text-xs md:text-sm font-semibold tracking-wide hover:brightness-110 active:translate-y-[1px]"
       >
         See upcoming sessions &amp; replays
+      </Link>
+    </div>
+  </section>
+</div>
+
+{/* FEATURED – CUSTOM MEDITATIONS (Centered 3rd Blue Card) */}
+<div className="mt-8 md:mt-10 flex justify-center">
+  <section
+    id="custom-meditations"
+    className="w-full md:w-[75%] rounded-2xl bg-[#0f2334] ring-1 ring-white/12 p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)]"
+  >
+    <h2 className="font-serif text-2xl md:text-3xl tracking-tight flex items-center gap-3">
+      <span className="text-[2.3rem] leading-none">🎧</span>
+      <span>Custom Meditation + Vision Call</span>
+    </h2>
+
+<p className="mt-2 text-sm md:text-base opacity-90">
+  Get a meditation created just for you—your energy, your season of life, your goals.
+  You&apos;ll also get a complimentary 30 minute vision call to feel truly seen and supported.
+  As a RISE member, you receive exclusive discounted pricing on every custom meditation.
+</p>
+
+
+    {/* Waterfall layout (matching others) */}
+    <div className="mt-4 columns-1 md:columns-2" style={{ columnGap: "0.75rem" }}>
+
+      {/* What you can personalize */}
+      <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
+        <summary className="flex items-center justify-between text-sm font-semibold list-none">
+          <span>What you can personalize</span>
+          <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
+        </summary>
+
+        <ul className="mt-2 text-sm space-y-1">
+          <li className="flex gap-2">
+            <span className="text-[var(--color-gold)]">•</span>
+            <span>Your emotional season & what you’re moving through</span>
+          </li>
+          <li className="flex gap-2">
+            <span className="text-[var(--color-gold)]">•</span>
+            <span>Your goals (clarity, grounding, confidence, healing)</span>
+          </li>
+          <li className="flex gap-2">
+            <span className="text-[var(--color-gold)]">•</span>
+            <span>Your preferred length & pace</span>
+          </li>
+        </ul>
+      </details>
+
+      {/* What you receive */}
+      <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
+        <summary className="flex items-center justify-between text-sm font-semibold list-none">
+          <span>What you receive</span>
+          <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
+        </summary>
+
+        <ul className="mt-2 text-sm space-y-1">
+          <li className="flex gap-2">
+            <span className="text-[var(--color-gold)]">•</span>
+            <span>A meditation recorded specifically for you</span>
+          </li>
+          <li className="flex gap-2">
+            <span className="text-[var(--color-gold)]">•</span>
+            <span>A vision call to help you feel seen & supported</span>
+          </li>
+<li className="flex gap-2">
+  <span className="text-[var(--color-gold)]">•</span>
+  <span>Member-only discounted pricing on your meditation</span>
+</li>
+        </ul>
+      </details>
+
+    </div>
+
+    <div className="mt-5">
+      <Link
+        href="/members/custom-meditation"
+        className="inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-5 py-3 text-sm font-semibold tracking-wide hover:brightness-110 active:translate-y-[1px]"
+      >
+        Explore custom meditations
       </Link>
     </div>
   </section>
