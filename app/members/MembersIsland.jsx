@@ -16,6 +16,10 @@ function getMemberstack() {
 }
 
 export default function MembersIsland() {
+  const [activeDay, setActiveDay] = useState("1");
+  const [openDay, setOpenDay] = useState(null);
+
+
   const [signingOut, setSigningOut] = useState(false);
 
   // Newsletter state (mirrors Contact)
@@ -28,73 +32,80 @@ export default function MembersIsland() {
     return () => document.body.classList.remove("hide-footer-on-members");
   }, []);
 
-  const handleNewsletterSubmit = useCallback(async (e) => {
-    e.preventDefault();
-    if (nlSubmitting || nlSubscribed) return;
+  const handleNewsletterSubmit = useCallback(
+    async (e) => {
+      e.preventDefault();
+      if (nlSubmitting || nlSubscribed) return;
 
-    setNlSubmitting(true);
-    const form = new FormData(e.currentTarget);
-    const email = (form.get("email") || "").toString().trim();
+      setNlSubmitting(true);
+      const form = new FormData(e.currentTarget);
+      const email = (form.get("email") || "").toString().trim();
 
-    if (!email || !email.includes("@")) {
-      alert("Please enter a valid email.");
-      setNlSubmitting(false);
-      return;
-    }
-
-    try {
-      const res = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        console.error("Subscribe failed:", data);
-        alert("Something went wrong. Please try again.");
-      } else {
-        setNlSubscribed(true);
+      if (!email || !email.includes("@")) {
+        alert("Please enter a valid email.");
+        setNlSubmitting(false);
+        return;
       }
-    } catch (err) {
-      console.error("Network error:", err);
-      alert("Network error. Please try again.");
-    } finally {
-      setNlSubmitting(false);
-    }
-  }, [nlSubmitting, nlSubscribed]);
 
-  const handleSignOut = useCallback(async (e) => {
-    e.preventDefault();
-    if (signingOut) return;
-    setSigningOut(true);
-
-    const ms = (typeof window !== "undefined" && (window.$memberstack || window.memberstack || window.Memberstack)) || null;
-
-    const msLogout = async () => {
       try {
-        if (ms?.logout) return await ms.logout();
-        if (ms?.signOut) return await ms.signOut();
-      } catch {}
-    };
+        const res = await fetch("/api/subscribe", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          console.error("Subscribe failed:", data);
+          alert("Something went wrong. Please try again.");
+        } else {
+          setNlSubscribed(true);
+        }
+      } catch (err) {
+        console.error("Network error:", err);
+        alert("Network error. Please try again.");
+      } finally {
+        setNlSubmitting(false);
+      }
+    },
+    [nlSubmitting, nlSubscribed]
+  );
 
-const appSignout = async () => {
-  try {
-    await fetch("/api/auth/signout", { method: "POST", keepalive: true });
-  } catch {}
-};
+  const handleSignOut = useCallback(
+    async (e) => {
+      e.preventDefault();
+      if (signingOut) return;
+      setSigningOut(true);
 
-await Promise.allSettled([msLogout(), appSignout()]);
+      const ms =
+        (typeof window !== "undefined" &&
+          (window.$memberstack || window.memberstack || window.Memberstack)) ||
+        null;
 
-// 🔹 Clear the "already checked member" flag in this tab (optional but tidy)
-if (typeof window !== "undefined") {
-  window.__salernoMemberOk = false;
-}
+      const msLogout = async () => {
+        try {
+          if (ms?.logout) return await ms.logout();
+          if (ms?.signOut) return await ms.signOut();
+        } catch {}
+      };
 
-window.location.href = "/membership";
+      const appSignout = async () => {
+        try {
+          await fetch("/api/auth/signout", { method: "POST", keepalive: true });
+        } catch {}
+      };
 
-  }, [signingOut]);
+      await Promise.allSettled([msLogout(), appSignout()]);
 
-    const handleAccountBillingClick = async () => {
+      if (typeof window !== "undefined") {
+        window.__salernoMemberOk = false;
+      }
+
+      window.location.href = "/membership";
+    },
+    [signingOut]
+  );
+
+  const handleAccountBillingClick = async () => {
     const ms = getMemberstack();
     if (!ms) {
       alert("Loading your account… please try again in a moment.");
@@ -112,61 +123,510 @@ window.location.href = "/membership";
   return (
     <main data-page="members" className="mx-auto max-w-[1100px] px-6 py-10 mt-10">
       {/* HERO */}
-
       <section className="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-8 shadow-2xl mt-10">
         <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--color-gold)]/40 bg-[var(--color-cream)]/5 px-3 py-1 text-[11px] md:text-xs font-semibold uppercase tracking-wide text-[var(--color-gold)]">Active Member</div>
-            <h1 className="mt-2 font-serif text-4xl md:text-5xl tracking-tight">Welcome to RISE ✨</h1>
+            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--color-gold)]/40 bg-[var(--color-cream)]/5 px-3 py-1 text-[11px] md:text-xs font-semibold uppercase tracking-wide text-[var(--color-gold)]">
+              Active Member
+            </div>
+            <h1 className="mt-2 font-serif text-4xl md:text-5xl tracking-tight">
+              Welcome to RISE ✨
+            </h1>
             <p className="mt-1 text-sm md:text-base opacity-80">Your space to realign and grow.</p>
-            <p className="mt-3 text-base md:text-lg opacity-85">Start with the newest RISE meditation, or explore your perks: guided meditations, weekly wisdom, monthly live sessions, members-only AI guidance, discounted custom meditations with vision calls, and more.</p>
+            <p className="mt-3 text-base md:text-lg opacity-85">
+              Inside RISE, you&apos;ll find guided meditations, weekly wisdom, monthly live sessions,
+              members-only AI guidance, alignment guides, and an inspiration library. You can move
+              slowly—everything here is designed to support you, not overwhelm you.
+            </p>
+            <p className="mt-2 text-sm md:text-base opacity-80">
+              Start with the simple 7-day path below, and come back here anytime you need to reset.
+            </p>
             <div className="mt-6 flex flex-wrap gap-3">
-<Link
-  href="#whats-new"
-  className="inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-5 py-3 text-sm font-semibold tracking-wide hover:brightness-110 active:translate-y-[1px]"
->
-  News and Updates
-</Link>
-
-</div>
+              <Link
+                href="#whats-new"
+                className="inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-5 py-3 text-sm font-semibold tracking-wide hover:brightness-110 active:translate-y-[1px]"
+              >
+                News and Updates
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* QUICK ACTIONS */}
+{/* START HERE – FIRST 7 DAYS (Accordion Cards) */}
+<section className="mt-8 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
+  <h2 className="font-serif text-2xl md:text-3xl tracking-tight">
+    Start here — your first 7 days
+  </h2>
+  <p className="mt-2 text-sm md:text-base opacity-85">
+    A simple, calm path to help you ease into RISE without pressure. Take what you need and move at your own pace.
+  </p>
+
+  {/* 1 column on mobile, 2-column waterfall on larger screens */}
+  <div
+    className="mt-5 columns-1 md:columns-2"
+    style={{ columnGap: "0.75rem" }}
+  >
+    {/* DAY CARD COMPONENT */}
+    {[
+      {
+        num: "1",
+        title: "Arrive & get oriented",
+        content:
+          "Watch the welcome video, then skim the RISE roadmap (you’ll find the download further down this page). Notice one idea that makes you feel a bit more hopeful and keep it in your notes app.",
+        highlight: true,
+      },
+      {
+        num: "2",
+        title: "Your first meditation",
+        content:
+          "Choose a short meditation that matches how you feel today—stress, low energy, or needing clarity. You don't need to do it perfectly; just press play and stay with it as best you can.",
+      },
+      {
+        num: "3",
+        title: "Weekly wisdom reset",
+        content:
+          "Read your most recent Weekly Wisdom email. If one line really lands, star the email or screenshot it so you can come back to it when you’re having a harder day.",
+      },
+      {
+        num: "4",
+        title: "Ask Dr. Salerno AI",
+        content:
+          "Open Dr. Salerno AI and share what you're moving through. Ask for a grounding exercise, a simple next step, or a new way to look at your situation. Save any response that really helps you.",
+      },
+      {
+        num: "5",
+        title: "Get ready for the live session",
+        content:
+          "Check the date of the next Monthly Inner Growth Session. Read the event description and preparation notes, then add it to your calendar with a reminder so you can come prepared and be fully present.",
+      },
+      {
+        num: "6",
+        title: "Explore custom support",
+        content:
+          "Visit the Custom Meditations + Vision Calls page and read how it works. Notice whether having a personalized meditation and 1:1 call feels like something you might want in this season.",
+      },
+      {
+        num: "7",
+        title: "Choose one thing that speaks to you",
+        content:
+          "Browse the Alignment Guides or Inspiration Library and pick one guide, post, or message that really resonates. Let that be your theme for the week instead of trying to do everything at once.",
+      },
+      {
+        num: "8+",
+        title: "Find your ongoing rhythm",
+        content:
+          "Now that you've tried the core parts of RISE, choose a simple weekly rhythm that works for you. You’ll find suggestions below and in the RISE roadmap—use it as a guide, then adjust based on what feels supportive for you.",
+      },
+    ].map(({ num, title, content, highlight }) => (
+      <details
+        key={num}
+        className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/10 p-4 cursor-pointer"
+      >
+<summary className="flex items-center justify-between text-sm font-semibold list-none">
+  <div className="flex items-center gap-2">
+    <span
+      className="inline-flex h-6 w-6 items-center justify-center rounded-full text-[11px] font-bold bg-[var(--color-gold)]/90 text-black"
+    >
+      {num}
+    </span>
+    <span className="uppercase tracking-[0.14em] opacity-85 text-[11px]">
+      {title}
+    </span>
+  </div>
+  <span className="text-xs opacity-70 transition-transform group-open:rotate-90">
+    ▶
+  </span>
+</summary>
+
+
+        <p className="mt-3 text-xs md:text-sm opacity-80 leading-relaxed pr-1">
+          {content}
+        </p>
+      </details>
+    ))}
+  </div>
+
+  <p className="mt-4 text-xs md:text-sm opacity-75">
+    This path is meant to support you, not pressure you. There is no ‘right’ timeline here — the pace that feels natural to you is the perfect one.
+  </p>
+</section>
+
+
+
+
+      {/* REGULAR RHYTHM */}
+      <section className="mt-6 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
+        <h2 className="font-serif text-2xl md:text-3xl tracking-tight">Your regular rhythm</h2>
+        <p className="mt-2 text-sm md:text-base opacity-85">
+          A calm structure you can lean on—so you always know how to plug back in, even on low-energy weeks. These four anchors work together to support you daily, weekly, and monthly.
+        </p>
+
+        <div className="mt-4 grid gap-4 md:grid-cols-2">
+          {/* Meditation */}
+          <div className="rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wide opacity-80">
+              ✨ Meditation as your anchor
+            </h3>
+            <p className="mt-1 text-sm opacity-80">
+              Come back to a short meditation whenever you need to reset—whether that&apos;s a few times a week or in the moments that feel heavier. Choose a track that matches how you feel (stress, fogginess, low energy, or needing clarity) and let it walk you back to yourself.
+            </p>
+            <p className="mt-2 text-[10.5px] uppercase tracking-[0.16em] opacity-65">
+              Suggested rhythm: daily, most days, or a few times a week
+            </p>
+          </div>
+
+          {/* Weekly Wisdom */}
+          <div className="rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wide opacity-80">
+              ✉️ Weekly Wisdom Email
+            </h3>
+            <p className="mt-1 text-sm opacity-80">
+              Once a week, you&apos;ll receive a short, grounding message that helps you reconnect with your intentions and shift back into possibility. These notes are designed to meet you where you are, offering practical insights, gentle reframes, and reminders you can carry into your day.
+            </p>
+            <p className="mt-2 text-[10.5px] uppercase tracking-[0.16em] opacity-65">
+              Suggested rhythm: read once each week
+            </p>
+          </div>
+
+          {/* Dr. Salerno AI – Softened Footer Blue + Gold Spine */}
+          <div className="relative rounded-xl bg-[#163147] ring-1 ring-white/10 p-4 shadow-[0_5px_16px_rgba(0,0,0,0.32)]">
+            {/* Gold Gradient Spine */}
+            <div className="absolute inset-y-0 left-0 w-1.5 rounded-l-xl bg-gradient-to-b from-[var(--color-gold)]/95 via-[var(--color-gold)]/70 to-[var(--color-gold)]/40"></div>
+
+           <h3 className="text-sm font-semibold uppercase tracking-wide opacity-90 flex items-center gap-2">
+  <img
+    src="/headshot.jpg"
+    alt="Dr. Juan Pablo Salerno"
+    className="h-6 w-6 rounded-full object-cover ring-1 ring-white/20"
+  />
+  <span>Dr. Salerno AI Check-in</span>
+</h3>
+
+            <p className="mt-1 text-sm opacity-90">
+              Dr. Salerno AI is there to help process what you&apos;re feeling, untangle a situation, or get a clear next step. Share what&apos;s going on and ask for a grounding practice, a reframe, or a simple plan for the week. He&apos;s there for you on the days when you don&apos;t want to carry everything by yourself.
+            </p>
+            <p className="mt-2 text-[10.5px] uppercase tracking-[0.16em] opacity-70">
+              Suggested rhythm: anytime you feel stuck or need support
+            </p>
+          </div>
+
+         {/* Monthly Inner Growth Session — Featured */}
+<div className="relative rounded-xl bg-white/7 ring-1 ring-white/10 p-4 shadow-[0_5px_16px_rgba(0,0,0,0.28)]">
+  {/* Soft Gold Accent Bar */}
+  <div className="absolute inset-y-0 left-0 w-1 rounded-l-xl bg-[var(--color-gold)]/55"></div>
+
+  <h3 className="text-sm font-semibold uppercase tracking-wide opacity-80">
+    📅 Monthly Inner Growth Session
+  </h3>
+
+            <p className="mt-1 text-sm opacity-80">
+              Once a month, we come together for a live reset—grounding, emotional clearing, and realignment with who you&apos;re becoming. Join live when you can, or catch the replay when it fits your life. Each session is a space to soften, release, and reconnect to your path.
+            </p>
+            <p className="mt-2 text-[10.5px] uppercase tracking-[0.16em] opacity-65">
+              Suggested rhythm: join live or watch replay once a month
+            </p>
+          </div>
+        </div>
+
+        <p className="mt-3 text-xs md:text-sm opacity-75">
+          Always remember: consistency over intensity. Use these four anchors in whatever rhythm feels supportive for your season—there&apos;s no single right pace.
+        </p>
+      </section>
+
+
+      {/* QUICK ACTIONS / OVERVIEW OF RISE */}
       <section className="mt-8">
+        <div className="flex items-baseline justify-between mb-3">
+          <div>
+            <h2 className="font-serif text-2xl md:text-3xl tracking-tight">Everything in your RISE space</h2>
+            <p className="mt-1 text-sm md:text-base opacity-80">
+              Use these cards to explore all the tools available to you as a member.
+            </p>
+          </div>
+        </div>
+
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-<Card
-  href="/members/meditations"
-  icon="🧘"
-  title="Meditation Library"
-  desc="Guided sessions for calm, clarity, motivation, compassion, and purpose."
-/>
-          <Card href="/resources" icon="📚" title="Social Media Inspiration Space" desc="Curated posts and reframes by theme. Find the prompt that shifts your day." />
-          <Card href="/members/weekly-wisdom" icon="✉️" title="Weekly Wisdom Collection" desc="Short, uplifting nudges to keep you moving—one each week." />
-          <Card href="/members/guides" icon="📄" title="Mental Health & Alignment Guides" desc="A digestible 1–2 page guide with practical insights you can use today." />
-          <Card href="/members/live-sessions" icon="📅" title="Monthly Live Inner Growth Sessions" desc="Join the next live reset and Q&A. Recordings available until the next session." />
-          <Card href="/members/ai" icon={<img src="/headshot.jpg" alt="Dr. Juan Pablo Salerno" className="h-9 w-9 rounded-full object-cover ring-1 ring-white/15 -mt-2" />} title="Dr. Salerno AI Advisor" desc="Seek guidance from my AI self — grounded in my approach, insights, and tools." />
-          <Card href="/members/custom-meditation" icon="📿" title="Custom Meditations + Vision Calls" desc="Personalized audio (5, 10, 15 min) + a complimentary 30-minute Vision Call." />
-          <Card href="/contact" icon="🛟" title="Support & Contact" desc="Reach out anytime with questions or concerns about your membership or benefits." />
-<Card icon="💳" title="Account & Billing" desc="Update payment details, personal info, password, and more." onClick={handleAccountBillingClick} />
+          <Card
+            href="/members/meditations"
+            icon="🧘"
+            title="Meditation Library"
+            desc="Guided sessions for calm, clarity, motivation, compassion, and purpose."
+          />
+          <Card
+            href="/resources"
+            icon="📚"
+            title="Social Media Inspiration Space"
+            desc="Curated posts and reframes by theme. Find the prompt that shifts your day."
+          />
+          <Card
+            href="/members/weekly-wisdom"
+            icon="✉️"
+            title="Weekly Wisdom Collection"
+            desc="Short, uplifting nudges to keep you moving—one each week."
+          />
+          <Card
+            href="/members/guides"
+            icon="📄"
+            title="Mental Health & Alignment Guides"
+            desc="Digestible 1–2 page guides with practical insights you can use today."
+          />
+          <Card
+            href="/members/live-sessions"
+            icon="📅"
+            title="Monthly Live Inner Growth Sessions"
+            desc="Join the next live reset and Q&A. Recordings available until the next session."
+          />
+          <Card
+            href="/members/ai"
+            icon={
+              <img
+                src="/headshot.jpg"
+                alt="Dr. Juan Pablo Salerno"
+                className="h-9 w-9 rounded-full object-cover ring-1 ring-white/15 -mt-2"
+              />
+            }
+            title="Dr. Salerno AI Advisor"
+            desc="Seek guidance from my AI self—grounded in my approach, insights, and tools."
+          />
+          <Card
+            href="/members/custom-meditation"
+            icon="📿"
+            title="Custom Meditations + Vision Calls"
+            desc="Personalized audio (5, 10, 15 min) + a complimentary 30-minute Vision Call."
+          />
+          <Card
+            href="/contact"
+            icon="🛟"
+            title="Support & Contact"
+            desc="Reach out anytime with questions or concerns about your membership or benefits."
+          />
+          <Card
+            icon="💳"
+            title="Account & Billing"
+            desc="Update payment details, personal info, password, and more."
+            onClick={handleAccountBillingClick}
+          />
         </div>
       </section>
 
-{/* WHAT'S NEW */}
-<section id="whats-new" className="mt-10 rounded-2xl bg-white/[0.06] ring-1 ring-[var(--color-gold)]/50 p-6 shadow-[0_10px_40px_rgba(0,0,0,0.35)]">
+      {/* DR. SALERNO AI FEATURE SECTION */}
+      <section id="ai-guide" className="mt-10 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
+        <h2 className="font-serif text-2xl md:text-3xl tracking-tight">Meet Dr. Salerno AI</h2>
+        <p className="mt-2 text-sm md:text-base opacity-85">
+          Think of this as on-demand support in your pocket—rooted in my research, lived experience, and
+          spiritual perspective.
+        </p>
+        <div className="mt-4 grid gap-4 md:grid-cols-3">
+          <div className="rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wide opacity-80">What it can help with</h3>
+            <p className="mt-1 text-sm opacity-80">
+              Overwhelm, anxiety, feeling stuck, low motivation, life transitions, clarity, emotional
+              grounding, and more.
+            </p>
+          </div>
+          <div className="rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wide opacity-80">Try prompts like</h3>
+            <ul className="mt-1 text-sm opacity-80 space-y-1">
+              <li>“I&apos;m feeling stressed—help me reset.”</li>
+              <li>“Guide me through a grounding exercise.”</li>
+              <li>“Help me understand why I feel stuck.”</li>
+              <li>“What should I focus on today?”</li>
+            </ul>
+          </div>
+          <div className="rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wide opacity-80">Why it&apos;s powerful</h3>
+            <p className="mt-1 text-sm opacity-80">
+              It blends science, psychology, and spiritual insight—so your guidance feels both grounded and
+              hopeful, not fluffy.
+            </p>
+          </div>
+        </div>
+        <div className="mt-5">
+          <Link
+            href="/members/ai"
+            className="inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-5 py-3 text-sm font-semibold tracking-wide hover:brightness-110 active:translate-y-[1px]"
+          >
+            Start your conversation
+          </Link>
+        </div>
+      </section>
 
+      {/* MONTHLY INNER GROWTH SESSION SECTION */}
+      <section id="monthly-session" className="mt-8 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
+        <h2 className="font-serif text-2xl md:text-3xl tracking-tight">Monthly Inner Growth Session</h2>
+        <p className="mt-2 text-sm md:text-base opacity-85">
+          Once a month, we gather live for a guided reset—to release emotional heaviness, reconnect to your
+          inner strength, and realign with who you&apos;re becoming.
+        </p>
+        <div className="mt-4 grid gap-4 md:grid-cols-2">
+          <div className="rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wide opacity-80">During each session</h3>
+            <ul className="mt-1 text-sm opacity-80 space-y-1">
+              <li>Grounding breathwork</li>
+              <li>Emotional clearing and release</li>
+              <li>Active or guided meditation</li>
+              <li>Perspective-shifting reframes</li>
+              <li>Intention setting for the month ahead</li>
+            </ul>
+          </div>
+          <div className="rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wide opacity-80">Join live or watch later</h3>
+            <p className="mt-1 text-sm opacity-80">
+              Come live when you can, and use the replay when life is full. Either way, you&apos;ll have a
+              dedicated space each month to realign and rise.
+            </p>
+            <Link
+              href="/members/live-sessions"
+              className="mt-3 inline-flex items-center rounded-full bg-white/5 px-4 py-2 text-xs md:text-sm font-semibold border border-white/20 hover:bg-white/10"
+            >
+              See upcoming sessions and replays
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQS */}
+      <section id="faqs" className="mt-10 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
+        <h2 className="font-serif text-2xl md:text-3xl tracking-tight">Frequently asked questions</h2>
+        <p className="mt-2 text-sm md:text-base opacity-85">
+          A few quick answers to help you feel grounded and clear as you move through RISE.
+        </p>
+        <div className="mt-4 space-y-3">
+          <details className="group rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
+            <summary className="flex cursor-pointer list-none items-center justify-between text-sm md:text-base font-semibold">
+              <span>How often should I use the membership?</span>
+              <span className="ml-3 text-xs opacity-70 group-open:rotate-90 transition-transform">
+                ▶
+              </span>
+            </summary>
+            <p className="mt-2 text-sm opacity-80">
+              As often as it feels supportive. You can follow the weekly rhythm above if you like
+              structure, but you&apos;re free to move slower or faster depending on your season.
+            </p>
+          </details>
+
+          <details className="group rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
+            <summary className="flex cursor-pointer list-none items-center justify-between text-sm md:text-base font-semibold">
+              <span>What if I miss the monthly session?</span>
+              <span className="ml-3 text-xs opacity-70 group-open:rotate-90 transition-transform">
+                ▶
+              </span>
+            </summary>
+            <p className="mt-2 text-sm opacity-80">
+              Replays are always available in the Monthly Inner Growth Sessions area, so you can tune in
+              when it works for you.
+            </p>
+          </details>
+
+          <details className="group rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
+            <summary className="flex cursor-pointer list-none items-center justify-between text-sm md:text-base font-semibold">
+              <span>How do I use Dr. Salerno AI?</span>
+              <span className="ml-3 text-xs opacity-70 group-open:rotate-90 transition-transform">
+                ▶
+              </span>
+            </summary>
+            <p className="mt-2 text-sm opacity-80">
+              Open the AI page and talk to it like you would with me. Share what you&apos;re feeling or
+              facing, and ask for grounding, clarity, or next steps. The more specific you are, the more
+              personalized the guidance will feel.
+            </p>
+          </details>
+
+          <details className="group rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
+            <summary className="flex cursor-pointer list-none items-center justify-between text-sm md:text-base font-semibold">
+              <span>What if I don&apos;t feel motivated?</span>
+              <span className="ml-3 text-xs opacity-70 group-open:rotate-90 transition-transform">
+                ▶
+              </span>
+            </summary>
+            <p className="mt-2 text-sm opacity-80">
+              Start small. One 5-minute meditation, one wisdom email, or one message to the AI is enough.
+              RISE is built for real life—not for perfect motivation.
+            </p>
+          </details>
+
+          <details className="group rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
+            <summary className="flex cursor-pointer list-none items-center justify-between text-sm md:text-base font-semibold">
+              <span>Where do I find replays?</span>
+              <span className="ml-3 text-xs opacity-70 group-open:rotate-90 transition-transform">
+                ▶
+              </span>
+            </summary>
+            <p className="mt-2 text-sm opacity-80">
+              All replays are stored inside the Monthly Inner Growth Sessions area. You can revisit them
+              anytime you need a reset.
+            </p>
+          </details>
+
+          <details className="group rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
+            <summary className="flex cursor-pointer list-none items-center justify-between text-sm md:text-base font-semibold">
+              <span>Can I cancel anytime?</span>
+              <span className="ml-3 text-xs opacity-70 group-open:rotate-90 transition-transform">
+                ▶
+              </span>
+            </summary>
+            <p className="mt-2 text-sm opacity-80">
+              Yes. You&apos;re always in control of your membership. You can manage your plan in the
+              Account &amp; Billing section.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      {/* ROADMAP PDF DOWNLOAD */}
+      <section className="mt-8 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
+        <h2 className="font-serif text-2xl md:text-3xl tracking-tight">Download your RISE roadmap</h2>
+        <p className="mt-2 text-sm md:text-base opacity-85">
+          Prefer a single, simple guide you can save or print? The RISE Roadmap PDF includes your first 7
+          days, weekly rhythm, monthly flow, and a deeper overview of every tool inside the membership.
+        </p>
+        <Link
+          href="/members/rise-roadmap"
+          className="mt-4 inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-5 py-3 text-sm font-semibold tracking-wide hover:brightness-110 active:translate-y-[1px]"
+        >
+          Download the roadmap
+        </Link>
+      </section>
+
+      {/* WHAT'S NEW */}
+      <section
+        id="whats-new"
+        className="mt-10 rounded-2xl bg-white/[0.06] ring-1 ring-[var(--color-gold)]/50 p-6 shadow-[0_10px_40px_rgba(0,0,0,0.35)]"
+      >
         <h2 className="text-lg font-bold text-[var(--color-gold)]">What’s new</h2>
         <div className="mt-3 space-y-2">
-          <UpdateItem label="New Meditation" title="5-Minute Reset (All Levels)" date="Nov 10, 2025" href="/members/resources#reset" />
-          <UpdateItem label="New Weekly Wisdom" title="How to reset on low-energy days" date="Nov 7, 2025" href="/members/resources#wisdom" />
-          <UpdateItem label="Upcoming Live Session" title="November session — details posted" date="Nov 5, 2025" href="/members/live" />
+          <UpdateItem
+            label="New Meditation"
+            title="5-Minute Reset (All Levels)"
+            date="Nov 10, 2025"
+            href="/members/resources#reset"
+          />
+          <UpdateItem
+            label="New Weekly Wisdom"
+            title="How to reset on low-energy days"
+            date="Nov 7, 2025"
+            href="/members/resources#wisdom"
+          />
+          <UpdateItem
+            label="Upcoming Live Session"
+            title="November session — details posted"
+            date="Nov 5, 2025"
+            href="/members/live"
+          />
         </div>
       </section>
 
       {/* SIGN OUT */}
       <div className="mt-8">
-        <button onClick={handleSignOut} data-ms-action="logout" className="inline-flex items-center rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold hover:bg-white/10 text-left disabled:opacity-60 opacity-80" disabled={signingOut}>{signingOut ? "🚪 Signing out…" : "🚪 Sign out"}</button>
+        <button
+          onClick={handleSignOut}
+          data-ms-action="logout"
+          className="inline-flex items-center rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold hover:bg-white/10 text-left disabled:opacity-60 opacity-80"
+          disabled={signingOut}
+        >
+          {signingOut ? "🚪 Signing out…" : "🚪 Sign out"}
+        </button>
       </div>
 
       {/* ===== CUSTOM MEMBERS FOOTER (matches Contact) ===== */}
@@ -181,19 +641,44 @@ window.location.href = "/membership";
         <div className="mx-auto w-full px-0">
           {/* Newsletter card */}
           <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-6">
-            <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">Science, Soul, and a Bit of Magic — Every Month</p>
-            <p className="text-sm opacity-85 mb-3">Practical wisdom for modern minds — best paired with coffee and curiosity.</p>
+            <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
+              Science, Soul, and a Bit of Magic — Every Month
+            </p>
+            <p className="text-sm opacity-85 mb-3">
+              Practical wisdom for modern minds — best paired with coffee and curiosity.
+            </p>
 
             {nlSubscribed ? (
               <div className="flex gap-2">
-                <div className="flex-1 rounded-md border border-[var(--color-gold)]/90 text-[var(--color-gold)]/90 px-3 py-2 font-semibold text-center cursor-default select-none">Thank you!</div>
+                <div className="flex-1 rounded-md border border-[var(--color-gold)]/90 text-[var(--color-gold)]/90 px-3 py-2 font-semibold text-center cursor-default select-none">
+                  Thank you!
+                </div>
               </div>
             ) : (
               <form onSubmit={handleNewsletterSubmit} className="mt-4 space-y-3">
-                <input type="text" name="hp" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
+                <input
+                  type="text"
+                  name="hp"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  className="hidden"
+                />
                 <div className="flex gap-2">
-                  <input type="email" name="email" required placeholder="you@example.com" className="flex-1 rounded-md border border-white/15 bg-white/5 px-3 py-2 placeholder-white/60 outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50" />
-                  <button type="submit" disabled={nlSubmitting} className="shrink-0 rounded-md bg-[var(--color-gold)] text-black px-4 py-2 font-semibold">{nlSubmitting ? "Sending…" : "Subscribe"}</button>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="you@example.com"
+                    className="flex-1 rounded-md border border-white/15 bg-white/5 px-3 py-2 placeholder-white/60 outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50"
+                  />
+                  <button
+                    type="submit"
+                    disabled={nlSubmitting}
+                    className="shrink-0 rounded-md bg-[var(--color-gold)] text-black px-4 py-2 font-semibold"
+                  >
+                    {nlSubmitting ? "Sending…" : "Subscribe"}
+                  </button>
                 </div>
               </form>
             )}
@@ -203,36 +688,59 @@ window.location.href = "/membership";
           <div className="mt-6 text-[13px] leading-relaxed">
             <p className="uppercase tracking-[0.18em] text-left opacity-70">Follow Dr. Salerno:</p>
             <div className="mt-3 flex items-left justify-left gap-8">
-              <a href="https://www.tiktok.com/@drjuanpablosalerno" aria-label="TikTok" className="opacity-90 hover:opacity-100">
-                <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z" /></svg>
+              <a
+                href="https://www.tiktok.com/@drjuanpablosalerno"
+                aria-label="TikTok"
+                className="opacity-90 hover:opacity-100"
+              >
+                <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                  <path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z" />
+                </svg>
               </a>
-       <a
-  href="https://www.instagram.com/drjuanpablosalerno/"
-  aria-label="Instagram"
-  className="opacity-90 hover:opacity-100"
->
-  <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
-    <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 2.75a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5Zm0 1.75a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm5.5-2.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z" />
-  </svg>
-</a>
-
-              <a href="https://www.youtube.com/drjpsalerno" aria-label="YouTube" className="opacity-90 hover:opacity-100">
-                <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" /></svg>
+              <a
+                href="https://www.instagram.com/drjuanpablosalerno/"
+                aria-label="Instagram"
+                className="opacity-90 hover:opacity-100"
+              >
+                <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
+                  <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 2.75a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5Zm0 1.75a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm5.5-2.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z" />
+                </svg>
               </a>
-              <a href="https://www.facebook.com/profile.php?id=61582412806274#" aria-label="Facebook" className="opacity-90 hover:opacity-100">
-                <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2v3h-2c-.3 0-.5.2-.5.5V12H16l-.5 3h-2v7A10 10 0 0 0 22 12z" /></svg>
+              <a
+                href="https://www.youtube.com/drjpsalerno"
+                aria-label="YouTube"
+                className="opacity-90 hover:opacity-100"
+              >
+                <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                  <path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" />
+                </svg>
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=61582412806274#"
+                aria-label="Facebook"
+                className="opacity-90 hover:opacity-100"
+              >
+                <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                  <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2v3h-2c-.3 0-.5.2-.5.5V12H16l-.5 3h-2v7A10 10 0 0 0 22 12z" />
+                </svg>
               </a>
             </div>
 
-            <p className="mt-5 text-left opacity-85">                      Dr. Juan Pablo Salerno is an award-winning mental health science expert
-                      and transformation advisor, author, and professor—credited with more than 30 peer-reviewed
-                      publications and over 2,000 citations.</p>
+            <p className="mt-5 text-left opacity-85">
+              Dr. Juan Pablo Salerno is an award-winning mental health science expert and transformation
+              advisor, author, and professor—credited with more than 30 peer-reviewed publications and over
+              2,000 citations.
+            </p>
 
             <p className="mt-6 text-left opacity-85">© Dr. Juan Pablo Salerno™</p>
             <p className="mt-2 mb-5 text-left opacity-85">
-              <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
+              <a href="/terms" className="underline underline-offset-4 hover:opacity-80">
+                Terms
+              </a>
               <span className="mx-2 opacity-50">·</span>
-              <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
+              <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">
+                Privacy
+              </a>
               <span className="mx-2 opacity-50">·</span>
               <span>All rights reserved</span>
             </p>
@@ -240,35 +748,53 @@ window.location.href = "/membership";
         </div>
       </div>
 
-
       {/* Desktop footer row (socials + bio / legal) */}
       <div className="hidden lg:flex items-start justify-between mx-auto max-w-[1200px] px-6 mt-4 text-[13px] leading-relaxed opacity-85">
         <div className="flex flex-col items-start text-left">
           <div className="flex items-center gap-4">
             <p className="uppercase tracking-[0.18em] opacity-70 text-[12px] m-0">Follow Dr. Salerno:</p>
-            <a href="https://www.tiktok.com/@drjuanpablosalerno" aria-label="TikTok" className="opacity-90 hover:opacity-100">
-              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z" /></svg>
+            <a
+              href="https://www.tiktok.com/@drjuanpablosalerno"
+              aria-label="TikTok"
+              className="opacity-90 hover:opacity-100"
+            >
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                <path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z" />
+              </svg>
             </a>
-<a
-  href="https://www.instagram.com/drjuanpablosalerno/"
-  aria-label="Instagram"
-  className="opacity-90 hover:opacity-100"
->
-  <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
-    <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 2.75a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5Zm0 1.75a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm5.5-2.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z" />
-  </svg>
-</a>
-
-            <a href="https://www.youtube.com/drjpsalerno" aria-label="YouTube" className="opacity-90 hover:opacity-100">
-              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" /></svg>
+            <a
+              href="https://www.instagram.com/drjuanpablosalerno/"
+              aria-label="Instagram"
+              className="opacity-90 hover:opacity-100"
+            >
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
+                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 2.75a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5Zm0 1.75a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm5.5-2.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z" />
+              </svg>
             </a>
-            <a href="https://www.facebook.com/profile.php?id=61582412806274#" aria-label="Facebook" className="opacity-90 hover:opacity-100">
-              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2v3h-2c-.3 0-.5.2-.5.5V12H16l-.5 3h-2v7A10 10 0 0 0 22 12z" /></svg>
+            <a
+              href="https://www.youtube.com/drjpsalerno"
+              aria-label="YouTube"
+              className="opacity-90 hover:opacity-100"
+            >
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                <path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" />
+              </svg>
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61582412806274#"
+              aria-label="Facebook"
+              className="opacity-90 hover:opacity-100"
+            >
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2v3h-2c-.3 0-.5.2-.5.5V12H16l-.5 3h-2v7A10 10 0 0 0 22 12z" />
+              </svg>
             </a>
           </div>
-          <p className="mt-4 max-w-[500px] text-[13px] leading-relaxed">                      Dr. Juan Pablo Salerno is an award-winning mental health science expert
-                      and transformation advisor, author, and professor—credited with more than 30 peer-reviewed
-                      publications and over 2,000 citations.</p>
+          <p className="mt-4 max-w-[500px] text-[13px] leading-relaxed">
+            Dr. Juan Pablo Salerno is an award-winning mental health science expert and transformation
+            advisor, author, and professor—credited with more than 30 peer-reviewed publications and over
+            2,000 citations.
+          </p>
         </div>
 
         <div className="text-left translate-y-[-4px]">
@@ -276,20 +802,22 @@ window.location.href = "/membership";
           <p className="mt-1">
             <span>All rights reserved</span>
             <span className="mx-2 opacity-50">·</span>
-            <a href="/terms" className="underline underline-offset-4 hover:opacity-80">Terms</a>
+            <a href="/terms" className="underline underline-offset-4 hover:opacity-80">
+              Terms
+            </a>
             <span className="mx-2 opacity-50">·</span>
-            <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">Privacy</a>
+            <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">
+              Privacy
+            </a>
           </p>
         </div>
       </div>
 
       {/* GLOBAL PAGE-SPECIFIC STYLES (hide site footer, tidy spacing) */}
       <style jsx global>{`
-        /* Hide the global site footer ONLY on /members */
         body:has(main[data-page="members"]) :is(footer, .site-footer, [role="contentinfo"]) {
           display: none !important;
         }
-        /* Prevent autofill white background on email field (newsletter input) */
         input:-webkit-autofill,
         input:-webkit-autofill:focus,
         input:-webkit-autofill:hover {
@@ -298,8 +826,8 @@ window.location.href = "/membership";
           caret-color: var(--color-cream) !important;
           transition: background-color 9999s ease-in-out 0s;
         }
-        /* iOS Safari flicker fix for media */
-        img, video {
+        img,
+        video {
           -webkit-transform: translateZ(0);
           transform: translateZ(0);
           -webkit-backface-visibility: hidden;
@@ -318,7 +846,9 @@ function Card({ href, icon, title, desc, onClick }) {
       <div className="text-2xl leading-none">{icon}</div>
       <div className="mt-1 text-base font-semibold">{title}</div>
       <div className="mt-1 text-sm opacity-80">{desc}</div>
-      <div className="mt-2 text-sm opacity-70 transition group-hover:translate-x-0.5">Explore →</div>
+      <div className="mt-2 text-sm opacity-70 transition group-hover:translate-x-0.5">
+        Explore →
+      </div>
     </>
   );
 
@@ -336,22 +866,35 @@ function Card({ href, icon, title, desc, onClick }) {
   }
 
   return (
-    <Link href={href} aria-label={`${title} — ${desc}`} className="group rounded-2xl bg-white/5 ring-1 ring-white/10 p-5 hover:bg-white/10 hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] transition">
+    <Link
+      href={href}
+      aria-label={`${title} — ${desc}`}
+      className="group rounded-2xl bg-white/5 ring-1 ring-white/10 p-5 hover:bg-white/10 hover:shadow-[0_10px_40px_rgba(0,0,0,0.35)] transition"
+    >
       {content}
     </Link>
   );
 }
 
-
 function UpdateItem({ label, title, date, href }) {
   return (
-    <Link href={href} className="group relative flex items-start gap-4 rounded-xl border border-white/10 bg-white/[0.04] p-4 pl-5 hover:bg-white/[0.08] hover:border-[var(--color-gold)]/40 transition">
-      <span className="absolute left-0 top-0 h-full w-[3px] rounded-l-xl bg-[var(--color-gold)]/60" aria-hidden="true"></span>
+    <Link
+      href={href}
+      className="group relative flex items-start gap-4 rounded-xl border border-white/10 bg-white/[0.04] p-4 pl-5 hover:bg-white/[0.08] hover:border-[var(--color-gold)]/40 transition"
+    >
+      <span
+        className="absolute left-0 top-0 h-full w-[3px] rounded-l-xl bg-[var(--color-gold)]/60"
+        aria-hidden="true"
+      ></span>
       <div className="flex-1">
         <div className="inline-flex items-center gap-2">
-          <span className="inline-flex items-center rounded-full border border-[var(--color-gold)]/40 bg-[var(--color-cream)]/5 px-2.5 py-0.5 text-[11px] md:text-xs font-semibold uppercase tracking-wide text-[var(--color-gold)]">{label}</span>
+          <span className="inline-flex items-center rounded-full border border-[var(--color-gold)]/40 bg-[var(--color-cream)]/5 px-2.5 py-0.5 text-[11px] md:text-xs font-semibold uppercase tracking-wide text-[var(--color-gold)]">
+            {label}
+          </span>
         </div>
-        <div className="mt-1 text-sm font-medium text-[var(--color-cream)] group-hover:text-[var(--color-gold)] transition">{title}</div>
+        <div className="mt-1 text-sm font-medium text-[var(--color-cream)] group-hover:text-[var(--color-gold)] transition">
+          {title}
+        </div>
       </div>
       <div className="mt-1 flex items-center gap-2 text-xs opacity-80">
         <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-gold)]/70"></span>
