@@ -599,118 +599,129 @@ className="mt-8 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
         </div>
       </section>
 
-      {/* DR. SALERNO AI FEATURE SECTION – DEEP BLUE BLOCK */}
-      <section
-        id="ai-guide"
-        className="mt-10 rounded-2xl bg-[#0f2334] ring-1 ring-white/12 p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)]"
-      >
-        <h2 className="font-serif text-2xl md:text-3xl tracking-tight">
-          When you feel stuck, talk to Dr. Salerno AI
-        </h2>
-        <p className="mt-2 text-sm md:text-base opacity-90">
-          Instead of carrying everything in your head, use this space to sort through what you&apos;re feeling
-          and leave with a kinder next step.
-        </p>
-
-        <div className="mt-4 grid gap-4 md:grid-cols-3">
-          {/* When to open it */}
-          <div className="rounded-xl bg-white/5 ring-1 ring-white/12 p-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wide opacity-85">
-              When to open it
-            </h3>
-            <ul className="mt-1 text-sm opacity-85 space-y-1">
-              <li>• Your mind won&apos;t stop spiraling</li>
-              <li>• You feel heavy and don&apos;t know why</li>
-              <li>• You&apos;re overthinking a decision</li>
-              <li>• You want to feel calmer before bed</li>
-            </ul>
-          </div>
-
-          {/* What to say */}
-          <div className="rounded-xl bg-white/5 ring-1 ring-white/12 p-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wide opacity-85">
-              What to say
-            </h3>
-            <ul className="mt-1 text-sm opacity-85 space-y-1">
-              <li>“Here&apos;s what happened today… help me process it.”</li>
-              <li>“I feel anxious and tight in my chest—what can I do right now?”</li>
-              <li>“I&apos;m stuck between two options. Help me think this through.”</li>
-              <li>“Give me a 3-step plan for the next week.”</li>
-            </ul>
-          </div>
-
-          {/* What you leave with */}
-          <div className="rounded-xl bg-white/5 ring-1 ring-white/12 p-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wide opacity-85">
-              What you leave with
-            </h3>
-            <ul className="mt-1 text-sm opacity-85 space-y-1">
-              <li>• A clearer way to see your situation</li>
-              <li>• 1–3 gentle, doable next steps</li>
-              <li>• A grounding practice you can repeat</li>
-              <li>• Less “it&apos;s all on me,” more “I&apos;m supported”</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="mt-5">
-          <Link
-            href="/members/ai"
-            className="inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-5 py-3 text-sm font-semibold tracking-wide hover:brightness-110 active:translate-y-[1px]"
-          >
-            Start your conversation
-          </Link>
-        </div>
-      </section>
-
-      {/* MONTHLY INNER GROWTH SESSION SECTION – DEEP BLUE BLOCK */}
-      <section
-        id="monthly-session"
-        className="mt-8 rounded-2xl bg-[#0f2334] ring-1 ring-white/12 p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)]"
-      >
-        <h2 className="font-serif text-2xl md:text-3xl tracking-tight">
-          Your monthly reset & inner growth session
-        </h2>
-        <p className="mt-2 text-sm md:text-base opacity-90">
-          Once a month, we pause together—so you can release what you&apos;re carrying, realign with yourself,
-          and step into the next month feeling clearer.
-        </p>
-
-        <div className="mt-4 grid gap-4 md:grid-cols-2">
-          {/* What happens in the session */}
-          <div className="rounded-xl bg-white/5 ring-1 ring-white/12 p-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wide opacity-85">
-              In each session, you can expect
-            </h3>
-            <ul className="mt-1 text-sm opacity-85 space-y-1">
-              <li>• Grounding and breath to arrive fully</li>
-              <li>• Emotional release so you feel lighter</li>
-              <li>• Guided or active meditation to reset your energy</li>
-              <li>• Reflection and reframes for what you&apos;re moving through</li>
-              <li>• Intention setting for the month ahead</li>
-            </ul>
-          </div>
-
-          {/* How it supports your month */}
-          <div className="rounded-xl bg-white/5 ring-1 ring-white/12 p-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wide opacity-85">
-              How it supports your month
-            </h3>
-            <ul className="mt-1 text-sm opacity-85 space-y-1">
-              <li>• A clean emotional slate to start from</li>
-              <li>• A moment to feel seen and supported</li>
-              <li>• A clear intention you can return to</li>
-              <li>• A reminder you don&apos;t have to do this alone</li>
-            </ul>
-<Link
-  href="/members/live-sessions"
-  className="mt-3 inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-5 py-3 text-xs md:text-sm font-semibold tracking-wide hover:brightness-110 active:translate-y-[1px]"
+{/* DR. SALERNO AI FEATURE SECTION – DEEP BLUE BLOCK */}
+<section
+  id="ai-guide"
+  className="mt-10 rounded-2xl bg-[#0f2334] ring-1 ring-white/12 p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)]"
 >
-  See upcoming sessions &amp; replays
-</Link>
-          </div>
-        </div>
-      </section>
+  <h2 className="font-serif text-2xl md:text-3xl tracking-tight">
+    When you feel stuck, talk to Dr. Salerno AI
+  </h2>
+  <p className="mt-2 text-sm md:text-base opacity-90">
+    Instead of carrying everything in your head, use this space to sort through what you&apos;re
+    feeling and leave with a kinder next step.
+  </p>
+
+  {/* 1 column on mobile, 3-column waterfall on desktop */}
+  <div className="mt-4 columns-1 md:columns-3" style={{ columnGap: "0.75rem" }}>
+    {/* When to open it */}
+    <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
+      <summary className="flex items-center justify-between text-sm font-semibold list-none">
+        <span>When to open it</span>
+        <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
+      </summary>
+      <ul className="mt-2 text-sm opacity-85 space-y-1">
+        <li>• Your mind won&apos;t stop spiraling</li>
+        <li>• You feel heavy and don&apos;t know why</li>
+        <li>• You&apos;re overthinking a decision</li>
+        <li>• You want to feel calmer before bed</li>
+      </ul>
+    </details>
+
+    {/* What to say */}
+    <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
+      <summary className="flex items-center justify-between text-sm font-semibold list-none">
+        <span>What to say</span>
+        <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
+      </summary>
+      <ul className="mt-2 text-sm opacity-85 space-y-1">
+        <li>“Here&apos;s what happened today… help me process it.”</li>
+        <li>“I feel anxious and tight in my chest—what can I do right now?”</li>
+        <li>“I&apos;m stuck between two options. Help me think this through.”</li>
+        <li>“Give me a 3-step plan for the next week.”</li>
+      </ul>
+    </details>
+
+    {/* What you leave with */}
+    <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
+      <summary className="flex items-center justify-between text-sm font-semibold list-none">
+        <span>What you leave with</span>
+        <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
+      </summary>
+      <ul className="mt-2 text-sm opacity-85 space-y-1">
+        <li>• A clearer way to see your situation</li>
+        <li>• 1–3 gentle, doable next steps</li>
+        <li>• A grounding practice you can repeat</li>
+        <li>• Less “it&apos;s all on me,” more “I&apos;m supported”</li>
+      </ul>
+    </details>
+  </div>
+
+  <div className="mt-5">
+    <Link
+      href="/members/ai"
+      className="inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-5 py-3 text-sm font-semibold tracking-wide hover:brightness-110 active:translate-y-[1px]"
+    >
+      Start your conversation
+    </Link>
+  </div>
+</section>
+
+{/* MONTHLY INNER GROWTH SESSION SECTION – DEEP BLUE BLOCK */}
+<section
+  id="monthly-session"
+  className="mt-8 rounded-2xl bg-[#0f2334] ring-1 ring-white/12 p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)]"
+>
+  <h2 className="font-serif text-2xl md:text-3xl tracking-tight">
+    Your monthly reset &amp; inner growth session
+  </h2>
+  <p className="mt-2 text-sm md:text-base opacity-90">
+    Once a month, we pause together—so you can release what you&apos;re carrying, realign with
+    yourself, and step into the next month feeling clearer.
+  </p>
+
+  {/* 1 column on mobile, 2-column waterfall on desktop */}
+  <div className="mt-4 columns-1 md:columns-2" style={{ columnGap: "0.75rem" }}>
+    {/* In each session */}
+    <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
+      <summary className="flex items-center justify-between text-sm font-semibold list-none">
+        <span>In each session, you can expect</span>
+        <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
+      </summary>
+      <ul className="mt-2 text-sm opacity-85 space-y-1">
+        <li>• Grounding and breath to arrive fully</li>
+        <li>• Emotional release so you feel lighter</li>
+        <li>• Guided or active meditation to reset your energy</li>
+        <li>• Reflection and reframes for what you&apos;re moving through</li>
+        <li>• Intention setting for the month ahead</li>
+      </ul>
+    </details>
+
+    {/* How it supports your month */}
+    <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
+      <summary className="flex items-center justify-between text-sm font-semibold list-none">
+        <span>How it supports your month</span>
+        <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
+      </summary>
+      <ul className="mt-2 text-sm opacity-85 space-y-1">
+        <li>• A clean emotional slate to start from</li>
+        <li>• A moment to feel seen and supported</li>
+        <li>• A clear intention you can return to</li>
+        <li>• A reminder you don&apos;t have to do this alone</li>
+      </ul>
+    </details>
+  </div>
+
+  {/* BUTTON MOVED HERE — bottom-left of the big blue card */}
+  <div className="mt-4">
+    <Link
+      href="/members/live-sessions"
+      className="inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-5 py-3 text-sm font-semibold tracking-wide hover:brightness-110 active:translate-y-[1px]"
+    >
+      See upcoming sessions &amp; replays
+    </Link>
+  </div>
+</section>
 
 
 
