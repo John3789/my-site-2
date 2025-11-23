@@ -290,7 +290,7 @@ export default function MembersIsland() {
           </div>
 
           {/* Dr. Salerno AI – Softened Footer Blue + Gold Spine */}
-          <div className="relative rounded-xl bg-[#163147] ring-1 ring-white/10 p-4 shadow-[0_5px_16px_rgba(0,0,0,0.32)]">
+          <div className="relative rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-4 shadow-[0_5px_16px_rgba(0,0,0,0.32)]">
             {/* Gold Gradient Spine */}
             <div className="absolute inset-y-0 left-0 w-1.5 rounded-l-xl bg-gradient-to-b from-[var(--color-gold)]/95 via-[var(--color-gold)]/70 to-[var(--color-gold)]/40"></div>
 
@@ -312,11 +312,11 @@ export default function MembersIsland() {
           </div>
 
          {/* Monthly Inner Growth Session — Featured */}
-<div className="relative rounded-xl bg-white/7 ring-1 ring-white/10 p-4 shadow-[0_5px_16px_rgba(0,0,0,0.28)]">
+<div className="relative rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-4 shadow-[0_5px_16px_rgba(0,0,0,0.32)]">
   {/* Soft Gold Accent Bar */}
-  <div className="absolute inset-y-0 left-0 w-1 rounded-l-xl bg-[var(--color-gold)]/55"></div>
+  <div className="absolute inset-y-0 left-0 w-1.5 rounded-l-xl bg-gradient-to-b from-[var(--color-gold)]/95 via-[var(--color-gold)]/70 to-[var(--color-gold)]/40"></div>
 
-  <h3 className="text-sm font-semibold uppercase tracking-wide opacity-80">
+  <h3 className="text-sm font-semibold uppercase tracking-wide opacity-90 flex items-center gap-2">
     📅 Monthly Inner Growth Session
   </h3>
 
@@ -410,38 +410,60 @@ export default function MembersIsland() {
         </div>
       </section>
 
-      {/* DR. SALERNO AI FEATURE SECTION */}
-      <section id="ai-guide" className="mt-10 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
-        <h2 className="font-serif text-2xl md:text-3xl tracking-tight">Meet Dr. Salerno AI</h2>
-        <p className="mt-2 text-sm md:text-base opacity-85">
-          Think of this as on-demand support in your pocket—rooted in my research, lived experience, and
-          spiritual perspective.
+      {/* DR. SALERNO AI FEATURE SECTION – DEEP BLUE BLOCK */}
+      <section
+        id="ai-guide"
+        className="mt-10 rounded-2xl bg-[#0f2334] ring-1 ring-white/12 p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)]"
+      >
+        <h2 className="font-serif text-2xl md:text-3xl tracking-tight">
+          When you feel stuck, talk to Dr. Salerno AI
+        </h2>
+        <p className="mt-2 text-sm md:text-base opacity-90">
+          Instead of carrying everything in your head, use this space to sort through what you&apos;re feeling
+          and leave with a kinder next step.
         </p>
+
         <div className="mt-4 grid gap-4 md:grid-cols-3">
-          <div className="rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wide opacity-80">What it can help with</h3>
-            <p className="mt-1 text-sm opacity-80">
-              Overwhelm, anxiety, feeling stuck, low motivation, life transitions, clarity, emotional
-              grounding, and more.
-            </p>
-          </div>
-          <div className="rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wide opacity-80">Try prompts like</h3>
-            <ul className="mt-1 text-sm opacity-80 space-y-1">
-              <li>“I&apos;m feeling stressed—help me reset.”</li>
-              <li>“Guide me through a grounding exercise.”</li>
-              <li>“Help me understand why I feel stuck.”</li>
-              <li>“What should I focus on today?”</li>
+          {/* When to open it */}
+          <div className="rounded-xl bg-white/5 ring-1 ring-white/12 p-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wide opacity-85">
+              When to open it
+            </h3>
+            <ul className="mt-1 text-sm opacity-85 space-y-1">
+              <li>• Your mind won&apos;t stop spiraling</li>
+              <li>• You feel heavy and don&apos;t know why</li>
+              <li>• You&apos;re overthinking a decision</li>
+              <li>• You want to feel calmer before bed</li>
             </ul>
           </div>
-          <div className="rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wide opacity-80">Why it&apos;s powerful</h3>
-            <p className="mt-1 text-sm opacity-80">
-              It blends science, psychology, and spiritual insight—so your guidance feels both grounded and
-              hopeful, not fluffy.
-            </p>
+
+          {/* What to say */}
+          <div className="rounded-xl bg-white/5 ring-1 ring-white/12 p-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wide opacity-85">
+              What to say
+            </h3>
+            <ul className="mt-1 text-sm opacity-85 space-y-1">
+              <li>“Here&apos;s what happened today… help me process it.”</li>
+              <li>“I feel anxious and tight in my chest—what can I do right now?”</li>
+              <li>“I&apos;m stuck between two options. Help me think this through.”</li>
+              <li>“Give me a 3-step plan for the next week.”</li>
+            </ul>
+          </div>
+
+          {/* What you leave with */}
+          <div className="rounded-xl bg-white/5 ring-1 ring-white/12 p-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wide opacity-85">
+              What you leave with
+            </h3>
+            <ul className="mt-1 text-sm opacity-85 space-y-1">
+              <li>• A clearer way to see your situation</li>
+              <li>• 1–3 gentle, doable next steps</li>
+              <li>• A grounding practice you can repeat</li>
+              <li>• Less “it&apos;s all on me,” more “I&apos;m supported”</li>
+            </ul>
           </div>
         </div>
+
         <div className="mt-5">
           <Link
             href="/members/ai"
@@ -452,127 +474,188 @@ export default function MembersIsland() {
         </div>
       </section>
 
-      {/* MONTHLY INNER GROWTH SESSION SECTION */}
-      <section id="monthly-session" className="mt-8 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
-        <h2 className="font-serif text-2xl md:text-3xl tracking-tight">Monthly Inner Growth Session</h2>
-        <p className="mt-2 text-sm md:text-base opacity-85">
-          Once a month, we gather live for a guided reset—to release emotional heaviness, reconnect to your
-          inner strength, and realign with who you&apos;re becoming.
+      {/* MONTHLY INNER GROWTH SESSION SECTION – DEEP BLUE BLOCK */}
+      <section
+        id="monthly-session"
+        className="mt-8 rounded-2xl bg-[#0f2334] ring-1 ring-white/12 p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)]"
+      >
+        <h2 className="font-serif text-2xl md:text-3xl tracking-tight">
+          Your monthly reset & inner growth session
+        </h2>
+        <p className="mt-2 text-sm md:text-base opacity-90">
+          Once a month, we pause together—so you can release what you&apos;re carrying, realign with yourself,
+          and step into the next month feeling clearer.
         </p>
+
         <div className="mt-4 grid gap-4 md:grid-cols-2">
-          <div className="rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wide opacity-80">During each session</h3>
-            <ul className="mt-1 text-sm opacity-80 space-y-1">
-              <li>Grounding breathwork</li>
-              <li>Emotional clearing and release</li>
-              <li>Active or guided meditation</li>
-              <li>Perspective-shifting reframes</li>
-              <li>Intention setting for the month ahead</li>
+          {/* What happens in the session */}
+          <div className="rounded-xl bg-white/5 ring-1 ring-white/12 p-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wide opacity-85">
+              In each session, you can expect
+            </h3>
+            <ul className="mt-1 text-sm opacity-85 space-y-1">
+              <li>• Grounding and breath to arrive fully</li>
+              <li>• Emotional release so you feel lighter</li>
+              <li>• Guided or active meditation to reset your energy</li>
+              <li>• Reflection and reframes for what you&apos;re moving through</li>
+              <li>• Intention setting for the month ahead</li>
             </ul>
           </div>
-          <div className="rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wide opacity-80">Join live or watch later</h3>
-            <p className="mt-1 text-sm opacity-80">
-              Come live when you can, and use the replay when life is full. Either way, you&apos;ll have a
-              dedicated space each month to realign and rise.
-            </p>
-            <Link
-              href="/members/live-sessions"
-              className="mt-3 inline-flex items-center rounded-full bg-white/5 px-4 py-2 text-xs md:text-sm font-semibold border border-white/20 hover:bg-white/10"
-            >
-              See upcoming sessions and replays
-            </Link>
+
+          {/* How it supports your month */}
+          <div className="rounded-xl bg-white/5 ring-1 ring-white/12 p-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wide opacity-85">
+              How it supports your month
+            </h3>
+            <ul className="mt-1 text-sm opacity-85 space-y-1">
+              <li>• A clean emotional slate to start from</li>
+              <li>• A moment to feel seen and supported</li>
+              <li>• A clear intention you can return to</li>
+              <li>• A reminder you don&apos;t have to do this alone</li>
+            </ul>
+<Link
+  href="/members/live-sessions"
+  className="mt-3 inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-5 py-3 text-xs md:text-sm font-semibold tracking-wide hover:brightness-110 active:translate-y-[1px]"
+>
+  See upcoming sessions &amp; replays
+</Link>
           </div>
         </div>
       </section>
 
-      {/* FAQS */}
-      <section id="faqs" className="mt-10 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
-        <h2 className="font-serif text-2xl md:text-3xl tracking-tight">Frequently asked questions</h2>
+
+
+
+     {/* FAQS – COLLAPSIBLE SECTION */}
+<section id="faqs" className="mt-10 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
+  <details className="group">
+    {/* Header row (closed state) */}
+    <summary className="flex cursor-pointer list-none items-center justify-between">
+      <div>
+        <h2 className="font-serif text-2xl md:text-3xl tracking-tight">
+          Frequently asked questions
+        </h2>
         <p className="mt-2 text-sm md:text-base opacity-85">
           A few quick answers to help you feel grounded and clear as you move through RISE.
         </p>
-        <div className="mt-4 space-y-3">
-          <details className="group rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
-            <summary className="flex cursor-pointer list-none items-center justify-between text-sm md:text-base font-semibold">
-              <span>How often should I use the membership?</span>
-              <span className="ml-3 text-xs opacity-70 group-open:rotate-90 transition-transform">
-                ▶
-              </span>
-            </summary>
-            <p className="mt-2 text-sm opacity-80">
-              As often as it feels supportive. You can follow the weekly rhythm above if you like
-              structure, but you&apos;re free to move slower or faster depending on your season.
-            </p>
-          </details>
+      </div>
+      <span className="ml-4 text-sm opacity-70 transition-transform group-open:rotate-90">
+        ▶
+      </span>
+    </summary>
 
-          <details className="group rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
-            <summary className="flex cursor-pointer list-none items-center justify-between text-sm md:text-base font-semibold">
-              <span>What if I miss the monthly session?</span>
-              <span className="ml-3 text-xs opacity-70 group-open:rotate-90 transition-transform">
-                ▶
-              </span>
-            </summary>
-            <p className="mt-2 text-sm opacity-80">
-              Replays are always available in the Monthly Inner Growth Sessions area, so you can tune in
-              when it works for you.
-            </p>
-          </details>
+    {/* Inner FAQs */}
+    <div className="mt-4 space-y-3">
 
-          <details className="group rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
-            <summary className="flex cursor-pointer list-none items-center justify-between text-sm md:text-base font-semibold">
-              <span>How do I use Dr. Salerno AI?</span>
-              <span className="ml-3 text-xs opacity-70 group-open:rotate-90 transition-transform">
-                ▶
-              </span>
-            </summary>
-            <p className="mt-2 text-sm opacity-80">
-              Open the AI page and talk to it like you would with me. Share what you&apos;re feeling or
-              facing, and ask for grounding, clarity, or next steps. The more specific you are, the more
-              personalized the guidance will feel.
-            </p>
-          </details>
+      <details className="group rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
+        <summary className="flex cursor-pointer list-none items-center justify-between text-sm md:text-base font-semibold">
+          <span>How often should I use the membership?</span>
+          <span className="ml-3 text-xs opacity-70 group-open:rotate-90 transition-transform">
+            ▶
+          </span>
+        </summary>
+        <p className="mt-2 text-sm opacity-80">
+          There’s no right pace. Some members check in daily, others once a week. Use the rhythms above
+          as a guide, then adjust based on what feels supportive in your current season.
+        </p>
+      </details>
 
-          <details className="group rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
-            <summary className="flex cursor-pointer list-none items-center justify-between text-sm md:text-base font-semibold">
-              <span>What if I don&apos;t feel motivated?</span>
-              <span className="ml-3 text-xs opacity-70 group-open:rotate-90 transition-transform">
-                ▶
-              </span>
-            </summary>
-            <p className="mt-2 text-sm opacity-80">
-              Start small. One 5-minute meditation, one wisdom email, or one message to the AI is enough.
-              RISE is built for real life—not for perfect motivation.
-            </p>
-          </details>
+      <details className="group rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
+        <summary className="flex cursor-pointer list-none items-center justify-between text-sm md:text-base font-semibold">
+          <span>What if I miss the monthly session?</span>
+          <span className="ml-3 text-xs opacity-70 group-open:rotate-90 transition-transform">
+            ▶
+          </span>
+        </summary>
+        <p className="mt-2 text-sm opacity-80">
+          Replays are always available in the Monthly Inner Growth Sessions area, so you can tune in
+          when it fits your life. You won’t “fall behind” — each session is designed to meet you where you are.
+        </p>
+      </details>
 
-          <details className="group rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
-            <summary className="flex cursor-pointer list-none items-center justify-between text-sm md:text-base font-semibold">
-              <span>Where do I find replays?</span>
-              <span className="ml-3 text-xs opacity-70 group-open:rotate-90 transition-transform">
-                ▶
-              </span>
-            </summary>
-            <p className="mt-2 text-sm opacity-80">
-              All replays are stored inside the Monthly Inner Growth Sessions area. You can revisit them
-              anytime you need a reset.
-            </p>
-          </details>
+      <details className="group rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
+        <summary className="flex cursor-pointer list-none items-center justify-between text-sm md:text-base font-semibold">
+          <span>How do I use Dr. Salerno AI?</span>
+          <span className="ml-3 text-xs opacity-70 group-open:rotate-90 transition-transform">
+            ▶
+          </span>
+        </summary>
+        <p className="mt-2 text-sm opacity-80">
+          Open the AI page and talk to it like you would with me. Share what you&apos;re feeling or facing,
+          then ask for grounding, clarity, or a simple plan for the next few days. The more specific you are,
+          the more tailored the guidance will feel.
+        </p>
+      </details>
 
-          <details className="group rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
-            <summary className="flex cursor-pointer list-none items-center justify-between text-sm md:text-base font-semibold">
-              <span>Can I cancel anytime?</span>
-              <span className="ml-3 text-xs opacity-70 group-open:rotate-90 transition-transform">
-                ▶
-              </span>
-            </summary>
-            <p className="mt-2 text-sm opacity-80">
-              Yes. You&apos;re always in control of your membership. You can manage your plan in the
-              Account &amp; Billing section.
-            </p>
-          </details>
-        </div>
-      </section>
+      <details className="group rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
+        <summary className="flex cursor-pointer list-none items-center justify-between text-sm md:text-base font-semibold">
+          <span>What if I’ve never been able to meditate before?</span>
+          <span className="ml-3 text-xs opacity-70 group-open:rotate-90 transition-transform">
+            ▶
+          </span>
+        </summary>
+        <p className="mt-2 text-sm opacity-80">
+          You’re not alone. We keep things simple and approachable. Start with short guided resets,
+          let the AI advisor suggest a track for how you&apos;re feeling today, and move at a pace that feels
+          doable — even a few minutes counts.
+        </p>
+      </details>
+
+      <details className="group rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
+        <summary className="flex cursor-pointer list-none items-center justify-between text-sm md:text-base font-semibold">
+          <span>What if I don&apos;t feel motivated?</span>
+          <span className="ml-3 text-xs opacity-70 group-open:rotate-90 transition-transform">
+            ▶
+          </span>
+        </summary>
+        <p className="mt-2 text-sm opacity-80">
+          Start with the smallest step: one 5-minute meditation, one Weekly Wisdom email, or one message
+          to the AI. RISE is built for real life — low-energy days included — not for perfect motivation.
+        </p>
+      </details>
+
+      <details className="group rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
+        <summary className="flex cursor-pointer list-none items-center justify-between text-sm md:text-base font-semibold">
+          <span>What if I fall behind or take a break?</span>
+          <span className="ml-3 text-xs opacity-70 group-open:rotate-90 transition-transform">
+            ▶
+          </span>
+        </summary>
+        <p className="mt-2 text-sm opacity-80">
+          Nothing breaks. You can always come back to a single meditation, session replay, or AI check-in
+          to restart. RISE is designed to meet you where you return, not where you think you “should” be.
+        </p>
+      </details>
+
+      <details className="group rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
+        <summary className="flex cursor-pointer list-none items-center justify-between text-sm md:text-base font-semibold">
+          <span>Where do I find replays?</span>
+          <span className="ml-3 text-xs opacity-70 group-open:rotate-90 transition-transform">
+            ▶
+          </span>
+        </summary>
+        <p className="mt-2 text-sm opacity-80">
+          All replays live inside the Monthly Inner Growth Sessions area. You can revisit them anytime you
+          want a guided reset.
+        </p>
+      </details>
+
+      <details className="group rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
+        <summary className="flex cursor-pointer list-none items-center justify-between text-sm md:text-base font-semibold">
+          <span>Can I cancel anytime?</span>
+          <span className="ml-3 text-xs opacity-70 group-open:rotate-90 transition-transform">
+            ▶
+          </span>
+        </summary>
+        <p className="mt-2 text-sm opacity-80">
+          Yes. You&apos;re always in control of your membership. You can manage or cancel your plan anytime
+          from the Account &amp; Billing section.
+        </p>
+      </details>
+    </div>
+  </details>
+</section>
+
 
       {/* ROADMAP PDF DOWNLOAD */}
       <section className="mt-8 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
@@ -589,33 +672,36 @@ export default function MembersIsland() {
         </Link>
       </section>
 
-      {/* WHAT'S NEW */}
-      <section
-        id="whats-new"
-        className="mt-10 rounded-2xl bg-white/[0.06] ring-1 ring-[var(--color-gold)]/50 p-6 shadow-[0_10px_40px_rgba(0,0,0,0.35)]"
-      >
-        <h2 className="text-lg font-bold text-[var(--color-gold)]">What’s new</h2>
-        <div className="mt-3 space-y-2">
-          <UpdateItem
-            label="New Meditation"
-            title="5-Minute Reset (All Levels)"
-            date="Nov 10, 2025"
-            href="/members/resources#reset"
-          />
-          <UpdateItem
-            label="New Weekly Wisdom"
-            title="How to reset on low-energy days"
-            date="Nov 7, 2025"
-            href="/members/resources#wisdom"
-          />
-          <UpdateItem
-            label="Upcoming Live Session"
-            title="November session — details posted"
-            date="Nov 5, 2025"
-            href="/members/live"
-          />
-        </div>
-      </section>
+      {/* WHAT'S NEW — Deep Blue Feature Panel */}
+<section
+  id="whats-new"
+  className="mt-10 rounded-2xl bg-[#0f2334] ring-1 ring-white/10 p-6 shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
+>
+  <h2 className="text-lg font-semibold text-[var(--color-gold)]">
+    What’s new
+  </h2>
+  <div className="mt-3 space-y-2">
+    <UpdateItem
+      label="New Meditation"
+      title="5-Minute Reset (All Levels)"
+      date="Nov 10, 2025"
+      href="/members/resources#reset"
+    />
+    <UpdateItem
+      label="New Weekly Wisdom"
+      title="How to reset on low-energy days"
+      date="Nov 7, 2025"
+      href="/members/resources#wisdom"
+    />
+    <UpdateItem
+      label="Upcoming Live Session"
+      title="November session — details posted"
+      date="Nov 5, 2025"
+      href="/members/live"
+    />
+  </div>
+</section>
+
 
       {/* SIGN OUT */}
       <div className="mt-8">
