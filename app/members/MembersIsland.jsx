@@ -161,7 +161,7 @@ export default function MembersIsland() {
   type="button"
   onClick={handleSignOut}
   disabled={signingOut}
-  className="inline-flex items-center gap-1.5 rounded-full border border-white/18 bg-white/[0.03] px-3.5 py-1.5 text-[11px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/10 disabled:opacity-60 disabled:cursor-not-allowed active:translate-y-[1px] transition"
+  className="inline-flex items-center gap-1.5 rounded-full border border-white/18 bg-white/[0.03] px-3.5 py-1 text-[12px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/10 disabled:opacity-60 disabled:cursor-not-allowed active:translate-y-[1px] transition"
 >
   <span>🚪</span>
   <span>{signingOut ? "Signing out..." : "Sign out"}</span>
@@ -381,86 +381,145 @@ className="mt-8 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
 
 
 
-      {/* REGULAR RHYTHM */}
- <section
-        id="regular-rhythm"
-      className="mt-6 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
-        <h2 className="font-serif text-2xl md:text-3xl tracking-tight">Your regular rhythm</h2>
-        <p className="mt-2 text-sm md:text-base opacity-85">
-          A calm structure you can lean on—so you always know how to plug back in, even on low-energy weeks. These four anchors work together to support you daily, weekly, and monthly.
-        </p>
+       {/* REGULAR RHYTHM */}
+<section
+  id="regular-rhythm"
+  className="mt-6 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7"
+>
+  <h2 className="font-serif text-2xl md:text-3xl tracking-tight">
+    Your regular rhythm
+  </h2>
+  <p className="mt-2 text-sm md:text-base opacity-85">
+    A calm structure you can lean on—so you always know how to plug back in, even on low-energy
+    weeks. These four anchors work together to support you daily, weekly, and monthly.
+  </p>
 
-        <div className="mt-4 grid gap-4 md:grid-cols-2">
-          {/* Meditation */}
-          <div className="rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wide opacity-80">
-              ✨ Meditation as your anchor
-            </h3>
-            <p className="mt-1 text-sm opacity-80">
-              Come back to a short meditation whenever you need to reset—whether that&apos;s a few times a week or in the moments that feel heavier. Choose a track that matches how you feel (stress, fogginess, low energy, or needing clarity) and let it walk you back to yourself.
-            </p>
-            <p className="mt-2 text-[10.5px] uppercase tracking-[0.16em] opacity-75 font-bold">
-              Suggested rhythm: daily, most days, or a few times a week
-            </p>
-          </div>
-
-          {/* Weekly Wisdom */}
-          <div className="rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wide opacity-80">
-              ✉️ Weekly Wisdom Email
-            </h3>
-            <p className="mt-1 text-sm opacity-80">
-              Once a week, you&apos;ll receive a short, grounding message that helps you reconnect with your intentions and shift back into possibility. These notes are designed to meet you where you are, offering practical insights, gentle reframes, and reminders you can carry into your day.
-            </p>
-            <p className="mt-2 text-[10.5px] uppercase tracking-[0.16em] opacity-75 font-bold">
-              Suggested rhythm: read once each week
-            </p>
-          </div>
-
-          {/* Dr. Salerno AI – Softened Footer Blue + Gold Spine */}
-          <div className="relative rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-4 shadow-[0_5px_16px_rgba(0,0,0,0.32)]">
-            {/* Gold Gradient Spine */}
-            <div className="absolute inset-y-0 left-0 w-1.5 rounded-l-xl bg-gradient-to-b from-[var(--color-gold)]/95 via-[var(--color-gold)]/70 to-[var(--color-gold)]/40"></div>
-
-           <h3 className="text-sm font-semibold uppercase tracking-wide opacity-90 flex items-center gap-2">
-  <img
-    src="/headshot.jpg"
-    alt="Dr. Juan Pablo Salerno"
-    className="h-6 w-6 rounded-full object-cover ring-1 ring-white/20"
-  />
-  <span>Dr. Salerno AI Check-in</span>
-</h3>
-
-            <p className="mt-1 text-sm opacity-90">
-              Dr. Salerno AI is there to help process what you&apos;re feeling, untangle a situation, or get a clear next step. Share what&apos;s going on and ask for a grounding practice, a reframe, or a simple plan for the week. He&apos;s there for you on the days when you don&apos;t want to carry everything by yourself.
-            </p>
-            <p className="mt-2 text-[10.4px] uppercase tracking-[0.16em] opacity-75 font-bold">
-              Suggested rhythm: anytime you feel stuck or need support
-            </p>
-          </div>
-
-         {/* Monthly Inner Growth Session — Featured */}
-<div className="relative rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-4 shadow-[0_5px_16px_rgba(0,0,0,0.32)]">
-  {/* Soft Gold Accent Bar */}
-  <div className="absolute inset-y-0 left-0 w-1.5 rounded-l-xl bg-gradient-to-b from-[var(--color-gold)]/95 via-[var(--color-gold)]/70 to-[var(--color-gold)]/40"></div>
-
-  <h3 className="text-sm font-semibold uppercase tracking-wide opacity-90 flex items-center gap-2">
-    📅 Monthly Inner Growth Session
-  </h3>
-
-            <p className="mt-1 text-sm opacity-80">
-              Once a month, we come together for a live reset—grounding, emotional clearing, and realignment with who you&apos;re becoming. Join live when you can, or catch the replay when it fits your life. Each session is a space to soften, release, and reconnect to your path.
-            </p>
-            <p className="mt-2 text-[10.5px] uppercase tracking-[0.16em] opacity-75 font-bold">
-              Suggested rhythm: join live or watch replay once a month
-            </p>
-          </div>
+  {/* WATERFALL LAYOUT (matching Start Here) */}
+  <div
+    className="mt-4 columns-1 md:columns-2"
+    style={{ columnGap: "0.75rem" }}
+  >
+    {/* Meditation */}
+    <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
+      <summary className="flex cursor-pointer list-none items-center justify-between">
+        <div className="flex items-center gap-2">
+          <span className="text-base">✨</span>
+          <span className="text-sm font-semibold uppercase tracking-wide opacity-80">
+            Meditation as your anchor
+          </span>
         </div>
-
-        <p className="mt-3 text-xs md:text-sm opacity-75">
-          Always remember: consistency over intensity. Use these four anchors in whatever rhythm feels supportive for your season—there&apos;s no single right pace.
+        <span className="ml-3 text-xs opacity-70 transition-transform group-open:rotate-90">
+          ▶
+        </span>
+      </summary>
+      <div className="mt-2">
+        <p className="text-sm opacity-80">
+          Come back to a short meditation whenever you need to reset—whether that&apos;s a few times a
+          week or in the moments that feel heavier. Choose a track that matches how you feel (stress,
+          fogginess, low energy, or needing clarity) and let it walk you back to yourself.
         </p>
-      </section>
+        <p className="mt-2 text-[10.5px] uppercase tracking-[0.16em] opacity-75 font-bold">
+          Suggested rhythm: daily, most days, or a few times a week
+        </p>
+      </div>
+    </details>
+
+    {/* Weekly Wisdom */}
+    <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
+      <summary className="flex cursor-pointer list-none items-center justify-between">
+        <div className="flex items-center gap-2">
+          <span className="text-base">✉️</span>
+          <span className="text-sm font-semibold uppercase tracking-wide opacity-80">
+            Weekly Wisdom Email
+          </span>
+        </div>
+        <span className="ml-3 text-xs opacity-70 transition-transform group-open:rotate-90">
+          ▶
+        </span>
+      </summary>
+      <div className="mt-2">
+        <p className="text-sm opacity-80">
+          Once a week, you&apos;ll receive a short, grounding message that helps you reconnect with your
+          intentions and shift back into possibility. These notes are designed to meet you where you are,
+          offering practical insights, gentle reframes, and reminders you can carry into your day.
+        </p>
+        <p className="mt-2 text-[10.5px] uppercase tracking-[0.16em] opacity-75 font-bold">
+          Suggested rhythm: read once each week
+        </p>
+      </div>
+    </details>
+
+    {/* Dr. Salerno AI – Softened Footer Blue + Gold Spine */}
+    <details className="group relative mb-3 break-inside-avoid rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-4 shadow-[0_5px_16px_rgba(0,0,0,0.32)]">
+      {/* Gold Gradient Spine */}
+      <div className="absolute inset-y-0 left-0 w-1.5 rounded-l-xl bg-gradient-to-b from-[var(--color-gold)]/95 via-[var(--color-gold)]/70 to-[var(--color-gold)]/40" />
+
+      <summary className="flex cursor-pointer list-none items-center justify-between pl-2">
+        <div className="flex items-center gap-2">
+          <img
+            src="/headshot.jpg"
+            alt="Dr. Juan Pablo Salerno"
+            className="h-6 w-6 rounded-full object-cover ring-1 ring-white/20"
+          />
+          <span className="text-sm font-semibold uppercase tracking-wide opacity-90">
+            Dr. Salerno AI Check-in
+          </span>
+        </div>
+        <span className="ml-3 text-xs opacity-70 transition-transform group-open:rotate-90">
+          ▶
+        </span>
+      </summary>
+
+      <div className="mt-2">
+        <p className="text-sm opacity-90">
+          Dr. Salerno AI is there to help process what you&apos;re feeling, untangle a situation, or get a
+          clear next step. Share what&apos;s going on and ask for a grounding practice, a reframe, or a
+          simple plan for the week. He&apos;s there for you on the days when you don&apos;t want to carry
+          everything by yourself.
+        </p>
+        <p className="mt-2 text-[10.4px] uppercase tracking-[0.16em] opacity-75 font-bold">
+          Suggested rhythm: anytime you feel stuck or need support
+        </p>
+      </div>
+    </details>
+
+    {/* Monthly Inner Growth Session — Featured */}
+    <details className="group relative mb-3 break-inside-avoid rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-4 shadow-[0_5px_16px_rgba(0,0,0,0.32)]">
+      {/* Soft Gold Accent Bar */}
+      <div className="absolute inset-y-0 left-0 w-1.5 rounded-l-xl bg-gradient-to-b from-[var(--color-gold)]/95 via-[var(--color-gold)]/70 to-[var(--color-gold)]/40" />
+
+      <summary className="flex cursor-pointer list-none items-center justify-between pl-2">
+        <div className="flex items-center gap-2">
+          <span className="text-base">📅</span>
+          <span className="text-sm font-semibold uppercase tracking-wide opacity-90">
+            Monthly Inner Growth Session
+          </span>
+        </div>
+        <span className="ml-3 text-xs opacity-70 transition-transform group-open:rotate-90">
+          ▶
+        </span>
+      </summary>
+
+      <div className="mt-2">
+        <p className="text-sm opacity-80">
+          Once a month, we come together for a live reset—grounding, emotional clearing, and realignment
+          with who you&apos;re becoming. Join live when you can, or catch the replay when it fits your life.
+          Each session is a space to soften, release, and reconnect to your path.
+        </p>
+        <p className="mt-2 text-[10.5px] uppercase tracking-[0.16em] opacity-75 font-bold">
+          Suggested rhythm: join live or watch replay once a month
+        </p>
+      </div>
+    </details>
+  </div>
+
+  <p className="mt-3 text-xs md:text-sm opacity-75">
+    Always remember: consistency over intensity. Use these four anchors in whatever rhythm feels
+    supportive for your season—there&apos;s no single right pace.
+  </p>
+</section>
+
+
 
 
       {/* QUICK ACTIONS / OVERVIEW OF RISE */}
