@@ -357,7 +357,7 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
     ].map(({ num, title, content, highlight }) => (
       <details
         key={num}
-        className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/10 p-4 cursor-pointer"
+        className="group mb-0 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/10 p-4 cursor-pointer"
       >
 <summary className="flex items-center justify-between text-sm font-semibold list-none">
   <div className="flex items-center gap-2">
@@ -461,7 +461,7 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
     </details>
 
     {/* Dr. Salerno AI – Softened Footer Blue + Gold Spine */}
-    <details className="group mb-3 break-inside-avoid rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-4 shadow-[0_5px_16px_rgba(0,0,0,0.32)]">
+    <details className="group mb-2.5 break-inside-avoid rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-4 shadow-[0_5px_16px_rgba(0,0,0,0.32)]">
       {/* Gold Gradient Spine */}
       <div className="absolute inset-y-0 left-0 w-1.5 rounded-l-xl bg-gradient-to-b from-[var(--color-gold)]/95 via-[var(--color-gold)]/70 to-[var(--color-gold)]/40" />
 
