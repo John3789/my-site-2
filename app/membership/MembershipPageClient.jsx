@@ -185,8 +185,8 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
   <div className="grid gap-8 md:grid-cols-2 md:gap-10">
 
     {/* Monthly Inner Growth Sessions */}
-    <div className="relative rounded-2xl border border-[var(--color-gold)]/70 bg-[rgba(9,22,32,0.96)] p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)]">
-      <div className="inline-flex items-center rounded-full border border-[var(--color-gold)]/60 bg-[var(--color-gold)]/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-gold)]">
+    <div className="relative rounded-2xl border border-white/22 bg-[rgba(9,22,32,0.96)] p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)]">
+      <div className="inline-flex items-center rounded-full border border-white/35 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-cream)]/80">
         Live each month
       </div>
       <h3 className="mt-3 font-serif text-2xl md:text-3xl tracking-tight text-[var(--color-cream)]">
@@ -213,8 +213,8 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
     </div>
 
     {/* Dr. Salerno AI Advisor */}
-    <div className="relative rounded-2xl border border-[var(--color-gold)]/80 bg-[rgba(10,24,36,0.98)] p-6 md:p-7 shadow-[0_20px_55px_rgba(0,0,0,0.6)]">
-      <div className="inline-flex items-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)]/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-gold)]">
+    <div className="relative rounded-2xl border border-white/22 bg-[rgba(10,24,36,0.98)] p-6 md:p-7 shadow-[0_20px_55px_rgba(0,0,0,0.6)]">
+      <div className="inline-flex items-center rounded-full border border-white/35 bg-white/6 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-cream)]/80">
         24/7 guidance
       </div>
       <h3 className="mt-3 font-serif text-2xl md:text-3xl tracking-tight text-[var(--color-cream)]">
@@ -237,10 +237,10 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
       </div>
     </div>
 
-        {/* NEW BLUE CARD: Discounted Custom Meditations */}
+    {/* NEW BLUE CARD: Discounted Custom Meditations */}
     <div className="relative rounded-2xl border border-[var(--color-gold)]/70 bg-[rgba(9,22,32,0.96)] p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)]">
       <div className="inline-flex items-center rounded-full border border-[var(--color-gold)]/60 bg-[var(--color-gold)]/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-gold)]">
-        Member pricing
+        Premium 1:1 support
       </div>
       <h3 className="mt-3 font-serif text-2xl md:text-3xl tracking-tight text-[var(--color-cream)]">
         Discounted Custom Meditations
@@ -268,7 +268,7 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
     {/* NEW BLUE CARD: Vision Calls */}
     <div className="relative rounded-2xl border border-[var(--color-gold)]/80 bg-[rgba(10,24,36,0.98)] p-6 md:p-7 shadow-[0_20px_55px_rgba(0,0,0,0.6)]">
       <div className="inline-flex items-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)]/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-gold)]">
-        1:1 guidance
+        Premium 1:1 support
       </div>
       <h3 className="mt-3 font-serif text-2xl md:text-3xl tracking-tight text-[var(--color-cream)]">
         Vision Calls with Dr. Salerno
@@ -287,10 +287,10 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
         </div>
         <p className="mt-1 text-xs md:text-sm opacity-90 leading-relaxed">
           Identify patterns &amp; fears · Create self-worth affirmations
-         · Explore mindset & journaling tools · Craft a micro-meditation 
+          · Explore mindset &amp; journaling tools · Craft a micro-meditation 
         </p>
       </div>
-      </div>
+    </div>
   </div>
 
 

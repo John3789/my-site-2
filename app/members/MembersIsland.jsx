@@ -237,7 +237,7 @@ export default function MembersIsland() {
         alt="Dr. Salerno AI"
         className="h-5 w-5 rounded-full object-cover ring-1 ring-white/25"
       />
-      <span>Top four tools</span>
+      <span>Core RISE tools</span>
     </button>
 
     {/* Everything in RISE */}
@@ -277,7 +277,7 @@ export default function MembersIsland() {
       className="inline-flex items-center gap-1 rounded-full border border-white/20 bg-white/[0.06] px-4 py-1.5 text-[11px] md:text-xs font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
     >
       <span>💳</span>
-      <span>Account and billing</span>
+      <span>Account &amp; billing</span>
     </button>
 
   </div>
@@ -537,7 +537,7 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
 
 {/* FEATURED SUPPORT – DR. SALERNO AI + MONTHLY SESSION */}
 <p className="text-center mt-9 text-xs md:text-sm uppercase tracking-[0.16em] opacity-70 mb-1">
-  Your four most interactive support tools inside RISE
+  Your core tools and deeper support inside RISE
 </p>
 
 <div className="mt-8 md:mt-10 grid gap-6 md:grid-cols-2">
@@ -546,6 +546,9 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
     id="ai-guide"
     className="rounded-2xl bg-[#0f2334] ring-1 ring-white/12 p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)] h-full"
   >
+    <p className="text-[10px] md:text-[11px] uppercase tracking-[0.18em] text-[var(--color-cream)]/70 mb-2">
+      Everyday support
+    </p>
     <h2 className="font-serif text-2xl md:text-3xl tracking-tight flex items-center gap-3">
       <img
         src="/headshot.jpg"
@@ -554,9 +557,9 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
       />
       <span>When you feel stuck, talk to Dr. Salerno AI</span>
     </h2>
-    <p className="mt-2 text-sm md:text-base opacity-90">
-      Instead of carrying everything in your head, use this space to sort through what you&apos;re
-      feeling and leave with a kinder next step.
+    <p className="mt-2 text-sm md:text-base opacity-90 max-w-[33rem]">
+      Talk to him when you want thoughtful guidance, emotional clarity, or a trusted perspective.
+      He helps you understand your feelings, see things more clearly, and choose your next step.
     </p>
 
     {/* 1 column on mobile, 3-column waterfall on desktop */}
@@ -578,11 +581,7 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
           </li>
           <li className="flex gap-2">
             <span className="text-[var(--color-gold)]">•</span>
-            <span>You&apos;re overthinking a decision</span>
-          </li>
-          <li className="flex gap-2">
-            <span className="text-[var(--color-gold)]">•</span>
-            <span>You want to feel calmer before bed</span>
+            <span>You&apos;re overthinking a decision or next step</span>
           </li>
         </ul>
       </details>
@@ -600,11 +599,7 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
           </li>
           <li className="flex gap-2">
             <span className="text-[var(--color-gold)]">•</span>
-            <span>“I feel anxious and tight in my chest—what can I do right now?”</span>
-          </li>
-          <li className="flex gap-2">
-            <span className="text-[var(--color-gold)]">•</span>
-            <span>“I&apos;m stuck between two options. Help me think this through.”</span>
+            <span>“I feel anxious in my body—what can I do right now?”</span>
           </li>
           <li className="flex gap-2">
             <span className="text-[var(--color-gold)]">•</span>
@@ -622,7 +617,7 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
         <ul className="mt-2 text-sm space-y-1">
           <li className="flex gap-2">
             <span className="text-[var(--color-gold)]">•</span>
-            <span>A clearer way to see your situation</span>
+            <span>A calmer, clearer way to see your situation</span>
           </li>
           <li className="flex gap-2">
             <span className="text-[var(--color-gold)]">•</span>
@@ -630,11 +625,7 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
           </li>
           <li className="flex gap-2">
             <span className="text-[var(--color-gold)]">•</span>
-            <span>A grounding practice you can repeat</span>
-          </li>
-          <li className="flex gap-2">
-            <span className="text-[var(--color-gold)]">•</span>
-            <span>Less “it&apos;s all on me,” more “I&apos;m supported”</span>
+            <span>A grounding practice you can repeat anytime</span>
           </li>
         </ul>
       </details>
@@ -655,14 +646,20 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
     id="monthly-session"
     className="rounded-2xl bg-[#0f2334] ring-1 ring-white/12 p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)] h-full"
   >
+    <p className="text-[10px] md:text-[11px] uppercase tracking-[0.18em] text-[var(--color-cream)]/70 mb-2">
+      Monthly live session
+    </p>
     <h2 className="font-serif text-2xl md:text-3xl tracking-tight flex items-center gap-3">
-      <span className="text-[2.5rem] leading-none">📅</span>
-      <span>Your monthly reset &amp; inner growth session</span>
+      <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/5 text-2xl">📅</span>
+      <span className="leading-tight">
+<span className="block">Your monthly realignment</span>
+    <span className="block"> and inner growth session</span>
+  </span>
     </h2>
 
     <p className="mt-2 text-sm md:text-base opacity-90">
-      Once a month, we pause together—so you can release what you&apos;re carrying, realign with
-      yourself, and step into the next month feeling clearer.
+      Once a month, we pause together so you can release what you&apos;re carrying and realign with who you&apos;re becoming.{" "}
+      <span className="font-semibold">You start the month feeling clearer, lighter, and more grounded.</span>
     </p>
 
     {/* 1 column on mobile, 2-column waterfall on desktop */}
@@ -686,14 +683,6 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
             <span className="text-[var(--color-gold)]">•</span>
             <span>Guided or active meditation to reset your energy</span>
           </li>
-          <li className="flex gap-2">
-            <span className="text-[var(--color-gold)]">•</span>
-            <span>Reflection and reframes for what you&apos;re moving through</span>
-          </li>
-          <li className="flex gap-2">
-            <span className="text-[var(--color-gold)]">•</span>
-            <span>Intention setting for the month ahead</span>
-          </li>
         </ul>
       </details>
 
@@ -714,11 +703,7 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
           </li>
           <li className="flex gap-2">
             <span className="text-[var(--color-gold)]">•</span>
-            <span>A clear intention you can return to</span>
-          </li>
-          <li className="flex gap-2">
-            <span className="text-[var(--color-gold)]">•</span>
-            <span>A reminder you don&apos;t have to do this alone</span>
+            <span>A clear intention you can return to all month</span>
           </li>
         </ul>
       </details>
@@ -734,28 +719,34 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
     </div>
   </section>
 
-  {/* FEATURED – CUSTOM MEDITATIONS – DEEP BLUE CARD */}
+  {/* FEATURED – CUSTOM MEDITATIONS – PREMIUM 1:1 */}
   <section
     id="custom-meditations"
-    className="rounded-2xl bg-[#0f2334] ring-1 ring-white/12 p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)] h-full"
+    className="relative rounded-2xl bg-[#0f2334] ring-1 ring-white/12 border border-[var(--color-gold)]/40 p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)] h-full"
   >
+    <p className="text-[10px] md:text-[11px] uppercase tracking-[0.18em] text-[var(--color-gold)]/85 mb-2">
+      Premium 1:1 support
+    </p>
     <h2 className="font-serif text-2xl md:text-3xl tracking-tight flex items-center gap-3">
-      <span className="text-[2.3rem] leading-none">🎧</span>
-      <span>If you need a powerful reset, consider a custom meditation</span>
+      <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/5 text-2xl">🎧</span>
+      <span className="leading-tight">
+        <span className="block">If you need a powerful reset,</span>
+        <span className="block">consider a Custom Meditation</span>
+      </span>
     </h2>
 
     <p className="mt-2 text-sm md:text-base opacity-90">
-      A meditation created just for your energy, season of life, and goals. 
-      Includes a complimentary 30-minute Vision Call to set your intentions.
-      Discounted pricing unlocked for RISE members.
+      A meditation created just for your energy, season of life, and goals.{" "}
+      <span className="font-semibold">You&apos;ll be guided through a 30-minute Vision Call to set your intentions</span> and
+      receive member-only discounted pricing on your meditation.
     </p>
 
     {/* Waterfall layout (matching others) */}
     <div className="mt-4 columns-1 md:columns-2" style={{ columnGap: "0.75rem" }}>
       {/* What you can personalize */}
-      <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
+      <details className="group mb-3 break-inside-avoid rounded-xl bg:white/5 ring-1 ring-white/12 p-4 cursor-pointer bg-white/5">
         <summary className="flex items-center justify-between text-sm font-semibold list-none">
-          <span>What you can personalize in your meditation</span>
+          <span>What you can personalize</span>
           <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
         </summary>
 
@@ -766,7 +757,7 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
           </li>
           <li className="flex gap-2">
             <span className="text-[var(--color-gold)]">•</span>
-            <span>Your goals (clarity, grounding, confidence, healing)</span>
+            <span>Your focus (clarity, grounding, confidence, healing)</span>
           </li>
           <li className="flex gap-2">
             <span className="text-[var(--color-gold)]">•</span>
@@ -778,7 +769,7 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
       {/* What you receive */}
       <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
         <summary className="flex items-center justify-between text-sm font-semibold list-none">
-          <span>What you receive in your meditation package</span>
+          <span>What&apos;s included in your package</span>
           <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
         </summary>
 
@@ -789,7 +780,7 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
           </li>
           <li className="flex gap-2">
             <span className="text-[var(--color-gold)]">•</span>
-            <span>A Vision Call to help you feel seen and supported</span>
+            <span>A Vision Call where you feel deeply seen and supported</span>
           </li>
           <li className="flex gap-2">
             <span className="text-[var(--color-gold)]">•</span>
@@ -804,23 +795,31 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
         href="/members/custom-meditation"
         className="inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-5 py-3 text-xs md:text-sm font-semibold tracking-wide hover:brightness-110 active:translate-y-[1px]"
       >
-        Explore custom meditations
+        Create your custom meditation
       </Link>
     </div>
   </section>
 
-  {/* FEATURED – VISION CALLS – DEEP BLUE CARD */}
+  {/* FEATURED – VISION CALLS – PREMIUM 1:1 */}
   <section
     id="vision-call"
-    className="rounded-2xl bg-[#0f2334] ring-1 ring-white/12 p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)] h-full"
+    className="relative rounded-2xl bg-[#0f2334] ring-1 ring-white/12 border border-[var(--color-gold)]/40 p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)] h-full"
   >
+    <p className="text-[10px] md:text-[11px] uppercase tracking-[0.18em] text-[var(--color-gold)]/85 mb-2">
+      Premium 1:1 support
+    </p>
     <h2 className="font-serif text-2xl md:text-3xl tracking-tight flex items-center gap-3">
-      <span className="text-[2.3rem] leading-none">🧭</span>
-      <span>Get deeper support on a vision call with Dr. Salerno</span>
+      <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/5 text-2xl">🧭</span>
+      <span className="leading-tight">
+        <span className="block">Get deeper support on a vision call</span>
+        <span className="block">with Dr. Salerno</span>
+      </span>
     </h2>
 
     <p className="mt-2 text-sm md:text-base opacity-90">
-      A 60-minute session where we slow down, ground your energy, and focus fully on you. We&apos;ll spend most of the hour in deep, personalized guidance, so you leave with clarity and tools.
+      A 60-minute session where we slow down, ground your energy, and focus fully on you.{" "}
+      <span className="font-semibold">Most of the hour is spent in deep, personalized guidance</span> so you leave with practical tools
+      and a clearer sense of your next chapter.
     </p>
 
     {/* Waterfall layout */}
@@ -828,7 +827,7 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
       {/* When this is helpful */}
       <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
         <summary className="flex items-center justify-between text-sm font-semibold list-none">
-          <span>When is a vision call helpful</span>
+          <span>When a vision call is helpful</span>
           <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
         </summary>
         <ul className="mt-2 text-sm space-y-1">
@@ -870,10 +869,6 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
             <span className="text-[var(--color-gold)]">•</span>
             <span>Explore mindset and journaling tools tailored to you</span>
           </li>
-          <li className="flex gap-2">
-            <span className="text-[var(--color-gold)]">•</span>
-            <span>Close with a micro-meditation to anchor your next steps</span>
-          </li>
         </ul>
       </details>
     </div>
@@ -883,12 +878,13 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
         href="/members/vision-call"
         className="inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-5 py-3 text-xs md:text-sm font-semibold tracking-wide hover:brightness-110 active:translate-y-[1px]"
       >
-        Learn about vision calls
+        Book a vision call
       </Link>
     </div>
   </section>
-
 </div>
+
+
 
 {/* Section divider */}
 <div className="mt-13 h-px w-full bg-[var(--color-gold)]/15" />
