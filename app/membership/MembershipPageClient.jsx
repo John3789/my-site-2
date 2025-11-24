@@ -173,10 +173,12 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
           </h2>
           <div className="mx-auto h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-4 rounded" />
 
-          <p className="mt-3 text-sm md:text-base opacity-80 max-w-[650px] mx-auto">
-            Your membership gives you powerful tools you can return to anytime you
-            need a reset, a reminder, or a gentle push forward — plus the option
-            to add deeper 1:1 support at member-only rates.
+          <p className="mt-3 text-sm md:text-base opacity-80 max-w-[700px] mx-auto">
+            Your membership includes powerful tools to support your evolution — helping you 
+            find emotional clarity, energetic alignment, and purposeful growth 
+            as you expand into the person you’re becoming. You’ll also have access to 
+            members-only premium 1:1 guidance with me. 
+
           </p>
         </div>
 
@@ -316,7 +318,7 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
                 a grounding ritual you can return to.
               </p>
               <p className="mt-3 text-xs opacity-80 leading-relaxed">
-                Available as a paid upgrade for RISE members only. Member pricing is listed
+                Available at an exclusive discounted rate for RISE members only. Member pricing is listed
                 below.
               </p>
               <div className="mt-4 rounded-xl border border-white/15 bg-white/5 p-3">
@@ -350,7 +352,7 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
                 powerful reset, not another obligation.
               </p>
               <p className="mt-3 text-xs opacity-80 leading-relaxed">
-               Available as a paid add-on for RISE members only. Member pricing is listed below.
+               Available to RISE members only as an exclusive add-on. Member pricing is listed below.
               </p>
               <div className="mt-4 rounded-xl border border-white/15 bg-white/5 p-3">
                 <div className="text-[11px] font-semibold tracking-[0.16em] uppercase text-[var(--color-gold)]">

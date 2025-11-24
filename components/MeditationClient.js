@@ -598,7 +598,7 @@ When your mind feels heavy or overwhelmed, the right meditation can help you com
   <li className="flex items-start gap-2">
     <span className="text-[var(--color-gold)] mt-[2px]">✔︎</span>
     <span>
-      If you prefer guided meditations you can use anytime, my full Meditation Library
+      If you prefer pre-recorded guided meditations you can use anytime, my full Meditation Library
       is offered as part of the{" "}
       <a
         href="/membership"
