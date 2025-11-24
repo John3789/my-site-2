@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 const MEMBER_OK_FLAG = "__salernoMemberOk";
+const POST_LOGIN_FLAG = "postLoginReload"; // must match what you set after login
 
 function getMemberstack() {
   if (typeof window === "undefined") return null;
@@ -36,6 +37,23 @@ export default function AutoRedirectIfNoMember({ children }) {
     return "checking";
   });
 
+  // ✅ 1) Handle the "post-login reload" case first
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const flag = window.sessionStorage?.getItem(POST_LOGIN_FLAG);
+    if (!flag) return;
+
+    // We just came back from a hard reload after login/payment
+    window.sessionStorage.removeItem(POST_LOGIN_FLAG);
+
+    // Mark this tab as allowed and go to members home
+    setMemberFlag();
+    setStatus("allowed");
+    router.replace("/members");
+  }, [router]);
+
+  // ✅ 2) Normal Memberstack gate (unchanged except for using status)
   useEffect(() => {
     if (status !== "checking") return;
 

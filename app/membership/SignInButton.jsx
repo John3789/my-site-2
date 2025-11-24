@@ -1,5 +1,7 @@
-// components/SignInButton.jsx (or wherever it lives)
+// components/SignInButton.jsx
 "use client";
+
+const POST_LOGIN_FLAG = "postLoginReload"; // must match AutoRedirectIfNoMember
 
 export default function SignInButton({
   children = "Sign in",
@@ -25,7 +27,38 @@ export default function SignInButton({
 
       // If they actually logged in, result.data will have member info
       if (result?.data) {
-        // Send them to the members page (or whatever you passed via `redirect`)
+        // 🔍 After login, try to confirm they actually have a paid plan
+        try {
+          if (typeof ms.getCurrentMember === "function") {
+            const res = await ms.getCurrentMember();
+            const member =
+              res?.data?.member || res?.data || res?.member || null;
+
+            const hasPlan =
+              Array.isArray(member?.planConnections) &&
+              member.planConnections.length > 0;
+
+            // ✅ Only set the post-login flag if they REALLY have a plan
+            if (hasPlan && typeof window !== "undefined") {
+              try {
+                window.sessionStorage?.setItem(POST_LOGIN_FLAG, "1");
+              } catch (err) {
+                console.warn(
+                  "[SignInButton] Unable to set postLoginReload flag",
+                  err
+                );
+              }
+            }
+          }
+        } catch (err) {
+          console.warn(
+            "[SignInButton] getCurrentMember after login failed",
+            err
+          );
+          // If this fails, we just fall back to normal redirect with no flag.
+        }
+
+        // 🔁 Redirect as before (AutoRedirectIfNoMember will handle the flag)
         window.location.assign(redirect);
       }
     } catch (err) {
