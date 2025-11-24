@@ -301,10 +301,8 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
   </p>
 
   {/* 1 column on mobile, 2-column waterfall on larger screens */}
-  <div
-    className="mt-5 columns-1 md:columns-2"
-    style={{ columnGap: "0.75rem" }}
-  >
+  <div className="mt-5 grid gap-3 md:grid-cols-2">
+
     {/* DAY CARD COMPONENT */}
     {[
       {
