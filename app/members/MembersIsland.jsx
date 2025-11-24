@@ -277,7 +277,7 @@ export default function MembersIsland() {
       className="inline-flex items-center gap-1 rounded-full border border-white/20 bg-white/[0.06] px-4 py-1.5 text-[11px] md:text-xs font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
     >
       <span>💳</span>
-      <span>Account &amp; billing</span>
+      <span>Account and billing</span>
     </button>
 
   </div>
