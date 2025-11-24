@@ -3,7 +3,7 @@
 
 const PRICE_IDS = {
   monthly: "prc_15-99-dxji011p",
-  yearly: "prc_97-50-eij00ppe",
+  yearly: "prc_99-99-od7m0akf",
 };
 
 export default function BuyButton({ cadence = "monthly", className = "", children }) {

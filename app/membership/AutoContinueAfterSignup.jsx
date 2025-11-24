@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 const PRICE_IDS = {
   monthly: "prc_9-99-hj9j03x8",
-  yearly: "prc_89-99-jwgn03ep",
+  yearly: "prc_99-99-od7m0akf",
 };
 
 export default function AutoContinueAfterSignup() {
