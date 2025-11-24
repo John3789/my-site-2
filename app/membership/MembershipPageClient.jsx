@@ -92,15 +92,15 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
                   <div className="flex items-baseline justify-center gap-1">
                     <span className="text-xs opacity-60 line-through">$129.99</span>
                     <span className="inline-flex items-baseline gap-1">
-                      <span className="text-2xl font-semibold ">$97.50</span>
+                      <span className="text-2xl font-semibold ">$99.99</span>
                       <span className="text-[11px] opacity-60 whitespace-nowrap">+ fees</span>
                     </span>
                   </div>
                   <div className="text-[11px] opacity-80 text-center leading-relaxed">
-                    save 25% yearly
+                    save 23% yearly
                   </div>
                   <div className="text-[11px] text-[var(--color-gold)] font-semibold underline decoration-[var(--color-gold)]/50">
-                    $8.12/mo · save 51% monthly
+                    $8.33/mo · save 52% monthly
                   </div>
                 </div>
               </div>
