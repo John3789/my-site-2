@@ -1134,7 +1134,7 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
           days, weekly rhythm, monthly flow, and a deeper overview of every tool inside the membership.
         </p>
         <Link
-          href="/members/rise-roadmap"
+          href="/members/roadmap"
           className="mt-4 inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-5 py-3 text-sm font-semibold tracking-wide hover:brightness-110 active:translate-y-[1px]"
         >
           Download the roadmap

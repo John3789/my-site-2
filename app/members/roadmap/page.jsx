@@ -37,7 +37,7 @@ export default function MembersRoadmapPage() {
               height: "calc(100vh - 60px)", // adjust if header height changes
               border: "none",
             }}
-            allow="fullscreen"
+            allow="fullscreen" 
             title="RISE Roadmap"
           />
         </main>
