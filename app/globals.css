@@ -461,3 +461,19 @@ html.menu-open, body.menu-open {
     justify-self: center;   /* grid-friendly centering */
   }
 }
+
+/* ============================================
+   SPECIAL HEADER COLOR FOR THE ROADMAP PAGE
+   ============================================ */
+
+body.roadmap-page header,
+body.roadmap-page .site-header,
+body.roadmap-page .topbar,
+body.roadmap-page .nav-wrapper,
+body.roadmap-page .main-nav {
+  background-color: var(--roadmap-teal) !important;
+}
+
+:root {
+  --roadmap-teal: #1d4240;         
+}
