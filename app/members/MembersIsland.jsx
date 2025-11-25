@@ -1151,7 +1151,7 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
 
     {/* OPEN PDF — Opens in browser tab */}
     <a
-      href="/Welcome-to-RISE-by.pdf"
+      href="/RISE_by_DrSalerno.pdf"
       target="_blank"
       rel="noopener noreferrer"
       className="inline-flex items-center rounded-full border border-[var(--color-gold)]/70 bg-transparent px-5 py-3 text-sm font-semibold tracking-wide text-[var(--color-gold)] hover:bg-[var(--color-gold)]/10 active:translate-y-[1px]"
