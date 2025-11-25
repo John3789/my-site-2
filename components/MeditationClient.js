@@ -23,7 +23,7 @@ function DiscountCard({ label, memberPrice, regularPrice, savings }) {
           </span>
         </div>
       </div>
-      <p className="mt-3 text-[11px] opacity-80">RISE member pricing.</p>
+      <p className="mt-3 text-[11px] opacity-80">RISE member pricing</p>
     </div>
   );
 }
@@ -36,7 +36,7 @@ function RegularPriceCard({ label, price }) {
         <div className="text-xs font-semibold uppercase tracking-[0.16em] opacity-70">{label}</div>
         <div className="mt-2 text-2xl font-semibold">{price}</div>
       </div>
-      <p className="mt-3 text-[11px] opacity-80">Regular pricing.</p>
+      <p className="mt-3 text-[11px] opacity-80">Regular pricing</p>
     </div>
   );
 }
