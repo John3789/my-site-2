@@ -1124,22 +1124,44 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
 </section>
 
 
-      {/* ROADMAP PDF DOWNLOAD */}
-      <section
+{/* ROADMAP PDF + BROWSER VIEW */}
+<section
   id="roadmap"
-      className="mt-8 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
-        <h2 className="font-serif text-2xl md:text-3xl tracking-tight">Download your RISE roadmap</h2>
-        <p className="mt-2 text-sm md:text-base opacity-85">
-          Prefer a single, simple guide you can save or print? The RISE Roadmap PDF includes your first 7
-          days, weekly rhythm, monthly flow, and a deeper overview of every tool inside the membership.
-        </p>
-        <Link
-          href="/members/roadmap"
-          className="mt-4 inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-5 py-3 text-sm font-semibold tracking-wide hover:brightness-110 active:translate-y-[1px]"
-        >
-          Download the roadmap
-        </Link>
-      </section>
+  className="mt-8 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7"
+>
+  <h2 className="font-serif text-2xl md:text-3xl tracking-tight">RISE roadmap</h2>
+
+  <p className="mt-2 text-sm md:text-base opacity-85">
+    Prefer a clean, guided overview of how to move through RISE? Access the full roadmap below—
+    view it in your browser or open the PDF version.
+  </p>
+
+  {/* CTAs */}
+  <div className="mt-5 flex flex-wrap gap-3">
+
+    {/* OPEN IN BROWSER — Gamma full-view */}
+    <a
+      href="https://gamma.app/embed/rgasoco648olpx2?mode=fullscreen"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-5 py-3 text-sm font-semibold tracking-wide hover:brightness-110 active:translate-y-[1px]"
+    >
+      Open in browser
+    </a>
+
+    {/* OPEN PDF — Opens in browser tab */}
+    <a
+      href="/Welcome-to-RISE-by.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center rounded-full border border-[var(--color-gold)]/70 bg-transparent px-5 py-3 text-sm font-semibold tracking-wide text-[var(--color-gold)] hover:bg-[var(--color-gold)]/10 active:translate-y-[1px]"
+    >
+      Open PDF
+    </a>
+
+  </div>
+</section>
+
 
       {/* ACCOUNT & BILLING SECTION */}
 <section
