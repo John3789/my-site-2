@@ -9,6 +9,7 @@ export default function MembersRoadmapPage() {
   const wrapRef = useRef(null);
   useIosZoomVars(wrapRef, { portraitZoom: 3.0, landscapeZoom: 1.0 });
 
+  // Gamma fullscreen view
   const GAMMA_URL = "https://gamma.app/embed/rgasoco648olpx2";
 
   // Add/remove class on <body> so header + top area can be styled differently
@@ -37,11 +38,21 @@ export default function MembersRoadmapPage() {
               height: "calc(100vh - 60px)", // adjust if header height changes
               border: "none",
             }}
-            allow="fullscreen" 
+            allow="fullscreen"
             title="RISE Roadmap"
           />
         </main>
       </div>
+
+      {/* Page-specific global styles: hide site header/nav on the roadmap page */}
+      <style jsx global>{`
+        /* Hide any main site header/nav only on the roadmap page */
+        body.roadmap-page header,
+        body.roadmap-page .site-header,
+        body.roadmap-page nav[aria-label="Main"] {
+          display: none !important;
+        }
+      `}</style>
     </>
   );
 }
