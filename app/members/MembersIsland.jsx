@@ -1133,7 +1133,7 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
 
   <p className="mt-2 text-sm md:text-base opacity-85">
     Prefer a clean, guided overview of how to move through RISE? Access the full roadmap below—
-    view it in your browser or open the PDF version.
+    view it in your browser or download the PDF version.
   </p>
 
   {/* CTAs */}
