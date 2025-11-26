@@ -59,7 +59,7 @@ const payload = {
 await fetch("/api/forms/meditation-members", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(payload), // ✅ FIXED — use payload, not formData
+  body: JSON.stringify(payload), 
 });
 
     setFormStatus("success");

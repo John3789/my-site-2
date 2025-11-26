@@ -77,7 +77,7 @@ export default function MembershipPageClient() {
 await fetch("/api/forms/vision-call", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(payload), // ✅ FIXED — use payload, not formData
+  body: JSON.stringify(payload), 
 });
 
       setVcFormStatus("success");
