@@ -107,10 +107,11 @@ try {
   console.warn("HoppyCopy subscribe failed (non-fatal):", err);
 }
 
+// 3) Log to Google Sheets (use `payload`, not FormData)
 await fetch("/api/forms/meditation-non-members", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(formData),
+  body: JSON.stringify(payload),
 });
 
     setFormStatus("success");
