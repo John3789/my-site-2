@@ -512,7 +512,7 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
       <section className="mt-20">
         <div className="mx-auto max-w-[1100px] grid gap-10 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-center">
           {/* LEFT: image */}
-          <div className="mt-10 mx-auto max-w-[320px] overflow-hidden squared-2xl border border-white/12 bg-black/10">
+          <div className="mt-12 mx-auto max-w-[330px] overflow-hidden squared-2xl border border-white/12 bg-black/10">
             <img
               src="/shadow4.jpg"
               alt="Person walking at sunrise"

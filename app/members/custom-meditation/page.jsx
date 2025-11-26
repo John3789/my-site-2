@@ -56,6 +56,12 @@ const payload = {
       throw new Error(data?.error || "Request failed");
     }
 
+    await fetch("/api/forms/meditation-members", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(formData),
+});
+
     setFormStatus("success");
     form.reset();
   } catch (err) {

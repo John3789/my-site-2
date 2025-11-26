@@ -107,6 +107,11 @@ try {
   console.warn("HoppyCopy subscribe failed (non-fatal):", err);
 }
 
+await fetch("/api/forms/meditation-non-members", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(formData),
+});
 
     setFormStatus("success");
     form.reset();
@@ -193,13 +198,13 @@ When your mind feels heavy or overwhelmed, the right meditation can help you com
 
     {/* RIGHT COLUMN — Photo unchanged */}
     <div className="flex justify-center">
-      <div className="relative w-full max-w-[320px] md:max-w-[340px] aspect-[3/4] shadow-2xl ring-1 ring-white/10 overflow-hidden">
+      <div className="relative w-full max-w-[320px] md:max-w-[350px] aspect-[3/4] shadow-2xl ring-1 ring-white/10 overflow-hidden">
         <HeroImageIphoneAware
           src="/meditation4.jpg"
           alt="Meditation photo"
           width={1200}
           height={1600}
-          sizes="(max-width: 768px) 95vw, 340px"
+          sizes="(max-width: 768px) 95vw, 350px"
           className="object-cover"
           quality={95}
           priority
