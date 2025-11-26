@@ -4,6 +4,11 @@
 import { useRef } from "react";
 import { useIosZoomVars } from "../../components/useIosZoom";
 
+export const metadata = {
+  title: "Terms & Conditions — Dr. Juan Pablo Salerno",
+  description: "Review the terms and conditions for using this website and services.",
+  alternates: { canonical: "/terms" },
+};
 
 export default function TermsPage() {
   const wrapRef = useRef(null);

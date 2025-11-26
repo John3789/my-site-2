@@ -4,6 +4,12 @@
 import { useRef } from "react";
 import { useIosZoomVars } from "../../components/useIosZoom";
 
+export const metadata = {
+  title: "Privacy Policy — Dr. Juan Pablo Salerno",
+  description: "Learn how your data is collected, used, and protected on this website.",
+  alternates: { canonical: "/privacy" },
+};
+
 export default function PrivacyPage() {
   const wrapRef = useRef(null);
   useIosZoomVars(wrapRef, { portraitZoom: 3.0, landscapeZoom: 1.00 });

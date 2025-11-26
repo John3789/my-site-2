@@ -4,11 +4,11 @@ import AboutClient from "../../components/AboutClient";
 export const metadata = {
   title: "About — Dr. Juan Pablo Salerno",
   description:
-    "Dr. Juan Pablo Salerno, award-winning mental health science expert and thought leader, author and professor— inspiring transformation, purpose, and healing.",
+    "Dr. Juan Pablo Salerno, award-winning mental health science expert and transformation advisor, author and professor— inspiring purpose, healing, and growth.",
   openGraph: {
     title: "Dr. Juan Pablo Salerno",
     description:
-      "Dr. Juan Pablo Salerno, award-winning mental health science expert and thought leader, author and professor— inspiring transformation, purpose, and healing.",
+    "Dr. Juan Pablo Salerno, award-winning mental health science expert and transformation advisor, author and professor— inspiring purpose, healing, and growth.",
     images: ["/hero17.jpg"],
   },
   alternates: { canonical: "/about" },

@@ -4,11 +4,11 @@ import ContactClient from "../../components/ContactClient";
 export const metadata = {
   title: "Contact — Dr. Juan Pablo Salerno",
   description:
-    "Connect for speaking, consulting, media, or collaborations. Share your goals and we’ll explore the best way to work together.",
+   "Reach out to Dr. Juan Pablo Salerno for questions about custom meditations, RISE membership, collaborations, or speaking engagements.",
   openGraph: {
     title: "Contact — Dr. Juan Pablo Salerno",
     description:
-      "Connect for speaking, consulting, media, or collaborations. Share your goals and we’ll explore the best way to work together.",
+   "Reach out to Dr. Juan Pablo Salerno for questions about custom meditations, RISE membership, collaborations, or speaking engagements.",
     images: ["/hero17.jpg"],
   },
   alternates: { canonical: "/contact" },

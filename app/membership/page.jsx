@@ -12,7 +12,7 @@ export const metadata = {
   description:
     "Reset your mind, strengthen your energy, and rise into your greatest self.",
   alternates: {
-    canonical: "https://drjuanpablosalerno.com/membership",
+    canonical: "/membership",
   },
   openGraph: {
     title: "RISE Membership Program — Dr. Juan Pablo Salerno",
