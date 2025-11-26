@@ -74,10 +74,10 @@ export default function MembershipPageClient() {
         throw new Error(data?.error || "Request failed");
       }
 
-      await fetch("/api/forms/vision-call", {
+await fetch("/api/forms/vision-call", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(formData), // same object you use for the email request
+  body: JSON.stringify(payload), // ✅ FIXED — use payload, not formData
 });
 
       setVcFormStatus("success");
