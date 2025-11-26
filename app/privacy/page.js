@@ -1,5 +1,5 @@
 // app/privacy/page.js
-import PrivacyClient from "./PrivacyClient";
+import PrivacyClient from "../../components/PrivacyClient";
 
 export const metadata = {
   title: "Privacy Policy — Dr. Juan Pablo Salerno",
