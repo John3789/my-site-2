@@ -9,39 +9,43 @@ export const dynamic = "force-dynamic";
 export async function GET() {
   return NextResponse.json({
     ok: true,
-    message: "custom-meditation endpoint alive",
+    message: "vision-call endpoint alive",
   });
 }
 
 export async function POST(req) {
   try {
     const body = await req.json();
-    console.log("➡️ CUSTOM MEDITATION POST BODY:", body);
+    console.log("➡️ VISION CALL POST BODY:", body);
 
     const {
       name,
       email,
-      current,
-      support,
-      length,
-      timing,
+      focus,
+      goals,
+      background,
+      availability,
       preferences,
-      context, // 👈 NEW: "rise-member" or "public"
+      context, // e.g. "vision-call-request"
     } = body || {};
 
-    if (!name || !email || !support) {
-      console.warn("⚠️ Missing required fields:", { name, email, support });
+    if (!name || !email || !focus || !goals) {
+      console.warn("⚠️ Missing required fields:", {
+        name,
+        email,
+        focus,
+        goals,
+      });
       return NextResponse.json(
         { ok: false, error: "Missing required fields" },
         { status: 400 },
       );
     }
 
-    // Decide how to label the origin in the email
-    let originLabel = "Public (non-member)";
-    if (context === "rise-member") originLabel = "RISE Member";
-    else if (context === "public") originLabel = "Public (non-member)";
-    else if (context) originLabel = context; // fallback if you ever pass other strings
+    // For now, Vision Calls are always from RISE members
+    // but we still log the context just in case you change it later
+    let originLabel = "RISE Member";
+    if (context) originLabel = `RISE Member (${context})`;
 
     // --- STEP A: Validate env vars ----
     const {
@@ -57,7 +61,7 @@ export async function POST(req) {
       !OAUTH_REFRESH_TOKEN ||
       !OAUTH_USER
     ) {
-      console.error("❌ Missing OAUTH ENV VARS");
+      console.error("❌ Missing OAUTH ENV VARS (vision-call)");
       return NextResponse.json(
         { ok: false, error: "Server email config missing" },
         { status: 500 },
@@ -65,7 +69,7 @@ export async function POST(req) {
     }
 
     // --- STEP B: Create OAuth client ---
-    console.log("➡️ Creating OAuth2 client...");
+    console.log("➡️ [VISION CALL] Creating OAuth2 client...");
     const oAuth2Client = new google.auth.OAuth2(
       OAUTH_CLIENT_ID,
       OAUTH_CLIENT_SECRET,
@@ -76,12 +80,12 @@ export async function POST(req) {
 
     let accessToken;
     try {
-      console.log("➡️ Getting access token...");
+      console.log("➡️ [VISION CALL] Getting access token...");
       const tokenResult = await oAuth2Client.getAccessToken();
       accessToken = tokenResult?.token;
-      console.log("✔️ Access token acquired");
+      console.log("✔️ [VISION CALL] Access token acquired");
     } catch (err) {
-      console.error("❌ Error getting access token:", err);
+      console.error("❌ [VISION CALL] Error getting access token:", err);
       return NextResponse.json(
         { ok: false, error: "OAuth access token failed: " + err.message },
         { status: 500 },
@@ -89,7 +93,7 @@ export async function POST(req) {
     }
 
     // --- STEP C: Create nodemailer transporter ---
-    console.log("➡️ Creating transporter...");
+    console.log("➡️ [VISION CALL] Creating transporter...");
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -103,23 +107,29 @@ export async function POST(req) {
     });
 
     const html = `
-      <h2>New Custom Meditation Request</h2>
+      <h2>New Vision Call Request</h2>
 
       <p><strong>Request origin:</strong> ${originLabel}</p>
 
       <p><strong>Name:</strong> ${name || "—"}</p>
       <p><strong>Email:</strong> ${email || "—"}</p>
-      <p><strong>Preferred length:</strong> ${length || "—"}</p>
-      <p><strong>When they'll use it:</strong> ${timing || "—"}</p>
 
-      <p><strong>What they're currently moving through:</strong></p>
-      <p>${(current || "").replace(/\n/g, "<br />")}</p>
+      <p><strong>What feels most important to talk about right now?</strong></p>
+      <p>${(focus || "—").replace(/\n/g, "<br />")}</p>
 
-      <p><strong>What they'd like this meditation to support:</strong></p>
-      <p>${(support || "").replace(/\n/g, "<br />")}</p>
+      <p><strong>What they’re hoping to walk away with from this Vision Call:</strong></p>
+      <p>${(goals || "—").replace(/\n/g, "<br />")}</p>
 
-      <p><strong>Questions, preferences, context:</strong></p>
-      <p>${(preferences || "").replace(/\n/g, "<br />")}</p>
+      <p><strong>Anything they’ve already tried to support themselves:</strong></p>
+      <p>${(background || "—").replace(/\n/g, "<br />")}</p>
+
+      <p><strong>Preferred days/times for the call:</strong></p>
+      <p>${(availability || "—").replace(/\n/g, "<br />")}</p>
+
+      <p><strong>Preferences or notes:</strong></p>
+      <p>${(preferences || "—").replace(/\n/g, "<br />")}</p>
+
+      <p><strong>Context:</strong> ${context || "—"}</p>
     `;
 
     const text = [
@@ -128,34 +138,39 @@ export async function POST(req) {
       `Name: ${name || "—"}`,
       `Email: ${email || "—"}`,
       "",
-      `Preferred length: ${length || "—"}`,
-      `When they'll use it: ${timing || "—"}`,
+      `What feels most important to talk about right now?`,
+      focus || "—",
       "",
-      `What they're currently moving through:`,
-      current || "—",
+      `What they’re hoping to walk away with from this Vision Call:`,
+      goals || "—",
       "",
-      `What they'd like this meditation to support:`,
-      support || "—",
+      `Anything they’ve already tried to support themselves:`,
+      background || "—",
       "",
-      `Questions, preferences, context:`,
+      `Preferred days/times for the call:`,
+      availability || "—",
+      "",
+      `Preferences or notes:`,
       preferences || "—",
+      "",
+      `Context: ${context || "—"}`,
     ].join("\n");
 
     // --- STEP D: Send the email ---
-    console.log("➡️ Sending email...");
+    console.log("➡️ [VISION CALL] Sending email...");
     await transporter.sendMail({
       from: `Dr. Juan Pablo Salerno <${OAUTH_USER}>`,
       to: ["contact@drjuanpablosalerno.com", "john3789@gmail.com"],
-      subject: `New Custom Meditation Request — ${originLabel}`, // 👈 subject shows member vs public
+      subject: "New Vision Call Request - RISE Member",
       text,
       html,
       replyTo: email,
     });
 
-    console.log("✔️ Email sent!");
+    console.log("✔️ [VISION CALL] Email sent!");
     return NextResponse.json({ ok: true });
   } catch (err) {
-    console.error("❌ FINAL CATCH ERROR:", err);
+    console.error("❌ [VISION CALL] FINAL CATCH ERROR:", err);
     return NextResponse.json(
       { ok: false, error: err?.message || "Server error" },
       { status: 500 },
