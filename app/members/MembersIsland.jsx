@@ -808,11 +808,10 @@ export default function MembersIsland() {
     <p className="text-[10px] md:text-[11px] uppercase tracking-[0.18em] text-[var(--color-gold)]/85 mb-2">
       Premium 1:1 support
     </p>
-    <h2 className="font-serif text-2xl md:text-3xl tracking-tight flex items-center gap-3">
+    <h2 className="font-serif text-2xl md:text-3xl tracking-tight flex items-center gap-2">
       <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/5 text-2xl">🧭</span>
       <span className="leading-tight">
-        <span className="block">Get deeper support on a Transformation Call</span>
-        <span className="block">with Dr. Salerno</span>
+        <span className="block">Get deeper support on a Transformation Call with Dr. Salerno</span>
       </span>
     </h2>
 
@@ -849,7 +848,7 @@ export default function MembersIsland() {
       {/* During your hour */}
       <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
         <summary className="flex items-center justify-between text-sm font-semibold list-none">
-          <span>During your transformation call we may</span>
+          <span>In your transformation call we may</span>
           <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
         </summary>
         <ul className="mt-2 text-sm space-y-1">
