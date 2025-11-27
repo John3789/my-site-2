@@ -176,7 +176,7 @@ When your mind feels heavy or overwhelmed, the right meditation can help you com
         </p>
 
       <p className="mt-3 text-base md:text-lg opacity-90 leading-relaxed max-w-2xl text-left [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto">
-        Every custom meditation includes a <span className="font-semibold">complimentary 30-minute vision call</span>, 
+        Every custom meditation includes a <span className="font-semibold">complimentary 30-minute Vision Call</span>, 
         where we explore what you need emotionally, mentally, and spiritually so your session feels grounded, 
         supportive, and truly aligned with you.
       </p>
