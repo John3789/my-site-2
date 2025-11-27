@@ -515,7 +515,7 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
       <section className="mt-20">
         <div className="mx-auto max-w-[1100px] grid gap-10 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-center">
           {/* LEFT: image */}
-          <div className="mt-12 mx-auto max-w-[330px] overflow-hidden squared-2xl border border-white/12 bg-black/10">
+          <div className="mt-20 mx-auto max-w-[315px] overflow-hidden squared-2xl border border-white/12 bg-black/10">
             <img
               src="/shadow4.jpg"
               alt="Person walking at sunrise"
@@ -566,7 +566,7 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
 
       {/* PHOTO OF YOU + SHORT BIO (above FAQ) */}
       <section className="mt-20">
-        <div className="mx-auto max-w-[875px] grid gap-8 md:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] md:items-center">
+        <div className="mx-auto max-w-[875px] grid gap-12 md:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] md:items-center">
           {/* LEFT: text */}
           <div>
             <h2 className="text-center font-serif text-3xl md:text-4xl tracking-tight text-[var(--color-cream)]">
@@ -597,7 +597,7 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
           </div>
 
           {/* RIGHT: image */}
-          <div className="overflow-hidden squared-2xl border border-white/15 bg-black/10">
+          <div className="mt-7 overflow-hidden max-w-[330px] squared-2xl border border-white/15 bg-black/10">
             <img
               src="/heroabout.jpg"
               alt="Dr. Juan Pablo Salerno"
