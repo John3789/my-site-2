@@ -260,7 +260,7 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
 
     <BenefitCard
       title="Meditation Library"
-      desc="Guided sessions for calm, clarity, and inner balance — organized by theme so you always know where to start."
+      desc="Guided sessions for calm, clarity, and balance, organized by theme so you always know where to start."
     />
 
     <BenefitCard
@@ -270,7 +270,7 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
 
     <BenefitCard
       title="Weekly Wisdom Collection"
-      desc="Each week you'll get meaningful insight + a journal prompt and affirmation to keep you aligned."
+      desc="Weekly insights with journal prompts and affirmations to keep you aligned."
 
     />
 
