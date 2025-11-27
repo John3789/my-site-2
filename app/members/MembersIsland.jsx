@@ -344,7 +344,7 @@ export default function MembersIsland() {
         num: "6",
         title: "Explore custom support",
         content:
-          "Visit the Custom Meditations + Vision Calls page and read how it works. Notice whether having a personalized meditation and 1:1 call feels like something you might want in this season.",
+          "Visit the Custom Meditations + Transformation Calls page and read how it works. Notice whether having a personalized meditation and 1:1 call feels like something you might want in this season.",
       },
       {
         num: "7",
@@ -800,7 +800,7 @@ export default function MembersIsland() {
     </div>
   </section>
 
-  {/* FEATURED – VISION CALLS – PREMIUM 1:1 */}
+  {/* FEATURED – TRANSFORMATION CALLS – PREMIUM 1:1 */}
   <section
     id="vision-call"
     className="relative rounded-2xl bg-[#0f2334] ring-1 ring-white/12 border border-[var(--color-gold)]/40 p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)] h-full"
@@ -811,7 +811,7 @@ export default function MembersIsland() {
     <h2 className="font-serif text-2xl md:text-3xl tracking-tight flex items-center gap-3">
       <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/5 text-2xl">🧭</span>
       <span className="leading-tight">
-        <span className="block">Get deeper support on a vision call</span>
+        <span className="block">Get deeper support on a Transformation Call</span>
         <span className="block">with Dr. Salerno</span>
       </span>
     </h2>
@@ -827,7 +827,7 @@ export default function MembersIsland() {
       {/* When this is helpful */}
       <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
         <summary className="flex items-center justify-between text-sm font-semibold list-none">
-          <span>When a vision call is helpful</span>
+          <span>When a transformation call is helpful</span>
           <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
         </summary>
         <ul className="mt-2 text-sm space-y-1">
@@ -849,7 +849,7 @@ export default function MembersIsland() {
       {/* During your hour */}
       <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
         <summary className="flex items-center justify-between text-sm font-semibold list-none">
-          <span>During your vision call we may</span>
+          <span>During your transformation call we may</span>
           <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
         </summary>
         <ul className="mt-2 text-sm space-y-1">
@@ -878,7 +878,7 @@ export default function MembersIsland() {
         href="/members/vision-call"
         className="inline-flex items-center rounded-full bg-[var(--color-gold)] text-black px-5 py-3 text-xs md:text-sm font-semibold tracking-wide hover:brightness-110 active:translate-y-[1px]"
       >
-        Book a vision call
+        Book a transformation call
       </Link>
     </div>
   </section>
@@ -970,7 +970,7 @@ export default function MembersIsland() {
   <Card
     href="/members/vision-call"
     icon="🧭"
-    title="Vision Calls with Dr. Salerno"
+    title="Transformation Call with Dr. Salerno"
     desc="A focused 60-minute session to reset, get clarity, and move forward with confidence."
     classNameExtra="
       ring-[var(--color-gold)]/55

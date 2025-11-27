@@ -83,7 +83,7 @@ await fetch("/api/forms/vision-call", {
       setVcFormStatus("success");
       form.reset();
     } catch (err) {
-      console.error("Vision Call request error:", err);
+      console.error("Transformation Call request error:", err);
       setVcFormError("Something went wrong. Please try again or email me directly.");
       setVcFormStatus("error");
     }
@@ -99,7 +99,7 @@ await fetch("/api/forms/vision-call", {
 
         {/* Centered page title + intro */}
         <header className="mx-auto max-w-3xl text-center mt-5">
-          <h1 className="font-serif text-3xl md:text-4xl leading-tight">Vision Call with Dr. Salerno</h1>
+          <h1 className="font-serif text-3xl md:text-4xl leading-tight">Transformation Call with Dr. Salerno</h1>
           <div className="mx-auto mt-3 h-[2px] w-16 rounded bg-[var(--color-gold)]/85" />
           <p className="mt-4 text-sm md:text-base leading-relaxed opacity-85">
             A focused, one-time session for RISE members who want deeper, personalized support — so you can clear the fog, reconnect with your inner strength, and walk away with a grounded plan for your next chapter.
@@ -172,7 +172,7 @@ await fetch("/api/forms/vision-call", {
               <div className="rounded-xl bg-white/[0.03] px-4 py-4 ring-1 ring-white/10">
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-gold)]/95">Members-only access</p>
                 <p className="mt-2 text-xs leading-relaxed opacity-85 md:text-sm">
-                  Vision Calls are reserved for active RISE members. You can book up to one Vision Call per month, so these sessions stay intentional, focused, and sustainably paced — not weekly or regularly scheduled calls.
+                  Transformation Calls are reserved for active RISE members. You can book up to one Transformation Call per month, so these sessions stay intentional, focused, and sustainably paced — not weekly or regularly scheduled calls.
                 </p>
               </div>
             </div>
@@ -190,7 +190,7 @@ await fetch("/api/forms/vision-call", {
                 <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-gold)]/90">Step 1</p>
                 <h3 className="mt-1 text-sm font-semibold md:text-base">Book your session</h3>
                 <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
-                  You&apos;ll complete your payment and receive an email confirmation with a link to schedule your Vision Call at a time that works for you.
+                  You&apos;ll complete your payment and receive an email confirmation with a link to schedule your Transformation Call at a time that works for you.
                 </p>
               </div>
               {/* Step 2 – Short intake form & schedule your call */}
@@ -206,7 +206,7 @@ await fetch("/api/forms/vision-call", {
                 <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-gold)]/90">Step 3</p>
                 <h3 className="mt-1 text-sm font-semibold md:text-base">60-minute live session</h3>
                 <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
-                  We meet on Zoom (or your preferred platform) for your Vision Call — a full hour devoted to your clarity, emotions, and next steps.
+                  We meet on Zoom (or your preferred platform) for your Transformation Call — a full hour devoted to your clarity, emotions, and next steps.
                 </p>
               </div>
               {/* Step 4 – After the call */}
@@ -214,7 +214,7 @@ await fetch("/api/forms/vision-call", {
                 <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-gold)]/90">Step 4</p>
                 <h3 className="mt-1 text-sm font-semibold md:text-base">After the call</h3>
                 <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
-                  You&apos;ll leave with your action steps, practices, and mindset tools. If you ever need more support, you can book another Vision Call in a future month or pair this with a custom meditation.
+                  You&apos;ll leave with your action steps, practices, and mindset tools. If you ever need more support, you can book another Transformation Call in a future month or pair this with a custom meditation.
                 </p>
               </div>
             </div>
@@ -224,7 +224,7 @@ await fetch("/api/forms/vision-call", {
         {/* WHO THIS IS FOR */}
         <section id="who-its-for" className="mt-8">
           <div className="mx-auto max-w-[900px] rounded-2xl bg-white/[0.03] px-5 py-6 ring-1 ring-white/10 shadow-[0_14px_40px_rgba(0,0,0,0.5)] md:px-6 md:py-7">
-            <h2 className="font-serif text-2xl md:text-3xl opacity-95">Who this Vision Call is for</h2>
+            <h2 className="font-serif text-2xl md:text-3xl opacity-95">Who this Transformation Call is for</h2>
             <div className="mt-3 h-[2px] w-10 rounded bg-[var(--color-gold)]/80" />
             <p className="mt-4 text-sm leading-relaxed opacity-85 md:text-base">
               This session is for a specific kind of RISE member — the one who feels called to more intimate, one-on-one support:
@@ -284,7 +284,7 @@ await fetch("/api/forms/vision-call", {
             <h2 className="font-serif text-2xl md:text-3xl opacity-95">What we’ll do in your hour</h2>
             <div className="mt-3 h-[2px] w-10 rounded bg-[var(--color-gold)]/80" />
             <p className="mt-4 text-sm leading-relaxed opacity-85 md:text-base">
-              Your Vision Call follows a gentle structure so you feel grounded, heard, and supported — while still leaving room to follow what you most need.
+              Your Transformation Call follows a gentle structure so you feel grounded, heard, and supported — while still leaving room to follow what you most need.
             </p>
             <div className="mt-5 grid gap-4 md:grid-cols-3">
               {/* Step 1 */}
@@ -316,7 +316,7 @@ await fetch("/api/forms/vision-call", {
                 <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-gold)]/90">Step 4</p>
                 <h3 className="mt-1 text-base font-semibold opacity-90 md:text-lg">Deep personalized guidance</h3>
                 <p className="mt-3 text-sm leading-relaxed opacity-90 md:text-base">
-                  This is the heart of your Vision Call — the part you&apos;re really coming for. In the remaining time, we focus on what will genuinely move the needle for you:
+                  This is the heart of your Transformation Call — the part you&apos;re really coming for. In the remaining time, we focus on what will genuinely move the needle for you:
                 </p>
 
                 <div className="mt-4 grid gap-3 md:grid-cols-2">
@@ -449,9 +449,9 @@ await fetch("/api/forms/vision-call", {
         {/* READY TO SCHEDULE CTA */}
         <section id="book-call" className="mt-10 mb-10">
           <div className="mx-auto max-w-2xl rounded-2xl border border-[var(--color-gold)]/55 bg-[var(--color-teal-850)]/85 px-6 py-6 shadow-[0_18px_40px_rgba(0,0,0,0.5)]">
-            <h2 className="font-serif text-xl md:text-2xl">Ready to schedule your Vision Call?</h2>
+            <h2 className="font-serif text-xl md:text-2xl">Ready to schedule your Transformation Call?</h2>
             <p className="mt-3 text-sm leading-relaxed opacity-90 md:text-base">
-              Vision Calls are there for you when you need deeper one-on-one support. They&apos;re meant to be occasional, powerful check-ins that help you realign with who you&apos;re becoming — not just more appointments on your calendar.
+              Transformation Calls are there for you when you need deeper one-on-one support. They&apos;re meant to be occasional, powerful check-ins that help you realign with who you&apos;re becoming — not just more appointments on your calendar.
             </p>
             <a
               href="#vision-call-request"
@@ -461,24 +461,24 @@ await fetch("/api/forms/vision-call", {
               }}
               className="mt-4 inline-flex items-center justify-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)] px-5 py-2.5 text-xs md:text-sm font-semibold tracking-wide text-black shadow-sm hover:brightness-110 transition"
             >
-              Request a Vision Call
+              Request a Transformation Call
             </a>
           </div>
         </section>
 
         {/* VISION CALL REQUEST FORM (bottom of page) */}
         <section id="vision-call-request" className="mt-4 mx-auto max-w-[900px] px-6 py-12 narrow-landscape-80">
-          <h2 className="font-serif text-3xl md:text-4xl opacity-95 text-center -mt-3">Vision Call Request Form</h2>
+          <h2 className="font-serif text-3xl md:text-4xl opacity-95 text-center -mt-3">Transformation Call Request Form</h2>
           <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded mx-auto" />
 
           <div className="text-center mb-6">
             <p className="text-base md:text-lg opacity-90 leading-relaxed">
-              If a Vision Call feels right for you, you can share a bit about what you&apos;re moving through below. Once I receive your form, I&apos;ll review it personally and email you with next steps and a link to complete payment and schedule your call.
+              If a Transformation Call feels right for you, you can share a bit about what you&apos;re moving through below. Once I receive your form, I&apos;ll review it personally and email you with next steps and a link to complete payment and schedule your call.
             </p>
           </div>
 
           <div className="mt-6 rounded-2xl border border-white/20 bg-white/5 p-5 md:p-6 shadow-2xl">
-            <h3 className="text-lg font-semibold mb-4">Request a Vision Call</h3>
+            <h3 className="text-lg font-semibold mb-4">Request a Transformation Call</h3>
 
             <form className="space-y-4" onSubmit={handleVisionCallSubmit}>
               <div className="grid gap-4 md:grid-cols-2">
@@ -516,7 +516,7 @@ await fetch("/api/forms/vision-call", {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-1">What are you hoping to walk away with from this Vision Call?</label>
+                <label className="block text-sm font-medium mb-1">What are you hoping to walk away with from this Transformation Call?</label>
                 <textarea
                   name="goals"
                   className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
@@ -561,7 +561,7 @@ await fetch("/api/forms/vision-call", {
 
               {vcFormStatus === "success" && (
                 <p className="text-sm text-[var(--color-gold)]">
-                  Thank you — your request was received. I&apos;ll review it and email you soon with next steps to complete payment and schedule your Vision Call.
+                  Thank you — your request was received. I&apos;ll review it and email you soon with next steps to complete payment and schedule your Transformation Call.
                 </p>
               )}
 

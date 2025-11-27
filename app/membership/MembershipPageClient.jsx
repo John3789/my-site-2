@@ -313,11 +313,13 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
                 and feelings. Every detail is intentional and specific to your
                 emotional and spiritual landscape.
               </p>
-              <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
-                Each custom meditation includes a vision call where we set clear
-                intentions together, explore what you&apos;re moving through, and shape
-                a grounding ritual you can return to.
-              </p>
+<p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
+  Each custom meditation <strong><u>includes a Vision Call</u></strong> where we set clear
+  intentions together, explore what you&apos;re moving through, and shape
+  a grounding ritual you can return to.
+</p>
+
+
               <p className="mt-3 text-xs opacity-80 leading-relaxed">
                 Available at an exclusive discounted rate for RISE members only. Member pricing is listed
                 below.
@@ -334,13 +336,13 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
             </div>
 
 
-            {/* Vision Calls */}
+            {/* Transformation Calls */}
             <div className="relative rounded-2xl border border-[var(--color-gold)]/80 bg-[rgba(10,24,36,0.98)] p-6 md:p-7 shadow-[0_20px_55px_rgba(0,0,0,0.6)]">
               <div className="inline-flex items-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)]/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-gold)]">
                 Premium 1:1 support
               </div>
               <h3 className="mt-3 font-serif text-2xl md:text-3xl tracking-tight text-[var(--color-cream)]">
-                Vision Calls with Dr. Salerno
+                Transformation Call with Dr. Salerno
               </h3>
               <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
                 A focused session for RISE members who want deeper, personalized
@@ -469,10 +471,10 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
 
 
 
-  {/* Vision Call pricing summary */}
+  {/* Transformation Call pricing summary */}
   <div className="rounded-2xl border border-white/18 bg-white/[0.04] p-5 md:p-6">
     <h4 className="font-serif text-xl md:text-2xl tracking-tight text-[var(--color-cream)]">
-      Vision Call Investment
+      Transformation Call Investment
     </h4>
 
     <div className="mt-4 grid gap-4">
@@ -495,7 +497,7 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
           Members-only access
         </div>
         <p className="mt-2 text-sm opacity-85 leading-relaxed">
-          Vision Calls are exclusive to RISE members. Limiting bookings to once per month
+          Transformation Calls are exclusive to RISE members. Limiting bookings to once per month
           creates a rhythm that supports integration and genuine transformation.
         </p>
       </div>
