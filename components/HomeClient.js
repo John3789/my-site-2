@@ -161,10 +161,9 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
                   <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto lg:mx-0 my-5 rounded" />
                   <p className="text-[17px] leading-[1.7] opacity-90 mb-6 max-w-xl text-left mx-auto lg:mx-0">
                   When life feels heavy or like you’re moving through cycles you’re tired of repeating, you don’t 
-                  need to navigate it alone. <span className="font-semibold">RISE</span> was created to help you shift out of survival mode and back 
-                  into alignment. Inside the membership, you get access to my Meditation Library, Social Media 
-                  Inspiration Space, Weekly Wisdom Collection, Mental Health & Alignment Guides, Monthly Inner Growth Sessions, 
-                  Dr. Salerno AI Advisor, and discounted Custom Meditations with Vision Calls. It’s a space to reconnect with yourself, unlock your inner strength, and <span className="font-semibold">RISE</span> into the life 
+                  need to navigate it alone. RISE was created to help you shift out of survival mode and back 
+                  into alignment. Inside RISE, you get access to powerful tools like my Monthly Inner Growth Sessions, 
+                  Dr. Salerno AI Advisor, discounted Custom Meditations, and 1:1 Transformation Calls. It’s a space to reconnect with yourself, unlock your inner strength, and rise into the life 
                   you’re meant to lead.
                   </p>
 
@@ -239,13 +238,17 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
                 </div>
 
                 {/* Right: text */}
-                <div className="lg:col-span-6 w-full max-w-[680px] mx-auto lg:mx-0">
+                <div className="lg:col-span-6 w-full max-w-[670px] mx-auto lg:mx-0">
                   <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90 text-center lg:text-left">
                     Meditation with Dr. Salerno
                   </h2>
                   <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto lg:mx-0 my-5 rounded" />
                   <p className="text-[17px] leading-[1.7] opacity-90 mb-6 max-w-xl text-left mx-auto lg:mx-0">
-If you’ve been craving calm, clarity, or a moment to breathe, my meditation offerings can give you the space you need to reset from the inside out. The Meditation Library includes quick resets, grounding practices, and deeper sessions for stress relief, mindset, alignment, self-compassion, and more. For more personalized support, custom meditations include a complimentary vision call to help you clarify your intentions and shape your journey. Each session is crafted to help you rise with greater clarity, strength, and balance.
+                    If you’ve been craving calm, clarity, or a moment to breathe, my meditation offerings 
+                    can give you the space you need to reset from the inside out. The Meditation Library 
+                    includes guided sessions for stress relief, mindset, alignment, self-compassion, and more.  
+                    Customized meditations include a 1:1 complimentary Vision Call to help you clarify your 
+                    intentions. Each session is crafted to help you rise with greater clarity, strength, and balance.
                   </p>
                   <div className="flex justify-center lg:justify-start">
                     <Link href="/meditations" className="link">Discover →</Link>
