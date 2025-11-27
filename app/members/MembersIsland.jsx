@@ -290,27 +290,31 @@ export default function MembersIsland() {
 
 {/* START HERE – FIRST 7 DAYS (Accordion Cards) */}
 <section
-id="start-here"
-className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7">
-          <p className="text-xs md:text-sm uppercase tracking-[0.16em] opacity-70 mb-1">A gentle place to begin</p>
+  id="start-here"
+  className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7"
+>
+  <p className="text-xs md:text-sm uppercase tracking-[0.16em] opacity-70 mb-1">
+    A gentle place to begin
+  </p>
   <h2 className="font-serif text-2xl md:text-3xl tracking-tight">
     Start here — your first 7 days
   </h2>
   <p className="mt-2 text-sm md:text-base opacity-85">
-    A simple, calm path to help you ease into RISE without pressure. Take what you need and move at your own pace.
+    A simple, calm path to help you ease into RISE without pressure. Take what you need and move at
+    your own pace.
   </p>
 
   {/* 1 column on mobile, 2-column waterfall on larger screens */}
-  <div className="mt-5 grid gap-3 md:grid-cols-2">
-
-    {/* DAY CARD COMPONENT */}
+  <div
+    className="mt-5 columns-1 md:columns-2"
+    style={{ columnGap: "0.75rem" }}
+  >
     {[
       {
         num: "1",
         title: "Arrive & get oriented",
         content:
           "Watch the welcome video, then skim the RISE roadmap (you’ll find the download further down this page). Notice one idea that makes you feel a bit more hopeful and keep it in your notes app.",
-        highlight: true,
       },
       {
         num: "2",
@@ -354,27 +358,24 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
         content:
           "Now that you've tried the core parts of RISE, choose a simple weekly rhythm that works for you. You’ll find suggestions below and in the RISE roadmap—use it as a guide, then adjust based on what feels supportive for you.",
       },
-    ].map(({ num, title, content, highlight }) => (
+    ].map(({ num, title, content }) => (
       <details
         key={num}
-        className="group mb-0 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/10 p-4 cursor-pointer"
+        className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/10 p-4 cursor-pointer"
       >
-<summary className="flex items-center justify-between text-sm font-semibold list-none">
-  <div className="flex items-center gap-2">
-    <span
-      className="inline-flex h-6 w-6 items-center justify-center rounded-full text-[11px] font-bold bg-[var(--color-gold)]/90 text-black"
-    >
-      {num}
-    </span>
-    <span className="uppercase tracking-[0.14em] opacity-85 text-[11px]">
-      {title}
-    </span>
-  </div>
-  <span className="text-xs opacity-70 transition-transform group-open:rotate-90">
-    ▶
-  </span>
-</summary>
-
+        <summary className="flex items-center justify-between text-sm font-semibold list-none">
+          <div className="flex items-center gap-2">
+            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full text-[11px] font-bold bg-[var(--color-gold)]/90 text-black">
+              {num}
+            </span>
+            <span className="uppercase tracking-[0.14em] opacity-85 text-[11px]">
+              {title}
+            </span>
+          </div>
+          <span className="text-xs opacity-70 transition-transform group-open:rotate-90">
+            ▶
+          </span>
+        </summary>
 
         <p className="mt-3 text-xs md:text-sm opacity-80 leading-relaxed pr-1">
           {content}
@@ -384,7 +385,8 @@ className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7
   </div>
 
   <p className="mt-4 text-xs md:text-sm opacity-75">
-    This path is meant to support you, not pressure you. There is no ‘right’ timeline here — the pace that feels natural to you is the perfect one.
+    This path is meant to support you, not pressure you. There is no ‘right’ timeline here — the
+    pace that feels natural to you is the perfect one.
   </p>
 </section>
 
