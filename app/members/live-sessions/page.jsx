@@ -32,13 +32,19 @@ export default function LiveSessionsPage() {
       <TopOnMount />
       <main className="mx-auto w-full max-w-[880px] px-6 pb-16 pt-10 space-y-8">
         {/* HEADER */}
-              <MembersHomeLink className="mb-6" />
+<div className="sticky top-4 z-30 flex justify-start">
+  <MembersHomeLink
+    className="mb-0 mt-9 inline-flex items-center rounded-full border border-[var(--color-gold)] bg-transparent px-2.5 py-[3px] text-[9px] font-semibold tracking-[0.14em] text-[var(--color-gold)] backdrop-blur-sm"
+  />
+</div>
         <header>
   
-          <h1 className="mt-3 text-3xl font-semibold leading-tight text-[var(--color-cream)]">
+          <h1 className="mx-auto text-center font-serif mt-3 text-4xl md:text-5xl font-semibold leading-tight text-[var(--color-cream)]">
             Monthly Live Inner Growth Sessions
           </h1>
-          <p className="mt-4 text-sm leading-relaxed text-[var(--color-cream)]/80">
+                    <div className="mx-auto mt-3 mb-4 h-[2px] w-16 rounded bg-[var(--color-gold)]/85" />
+
+          <p className="mx-auto max-w-[735px] text-center mt-4 text-sm leading-relaxed text-[var(--color-cream)]/80">
             A live reset, Q&amp;A, and guided inner work experience to help you realign, release what is
             weighing you down, and rise with more clarity and strength. Included with your membership.
             Recordings remain available until the next live session.

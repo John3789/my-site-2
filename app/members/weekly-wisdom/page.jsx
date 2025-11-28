@@ -15,29 +15,35 @@ export default function WeeklyWisdomPage() {
   return (
     <main
       data-page="members"
-      className="mx-auto max-w-[1100px] px-6 py-12"
+      className="mx-auto max-w-[1100px] px-6 py-12 mt-7"
     >
-      {/* PAGE HEADER */}
-      <header>
-<MembersHomeLink />
+          {/* Sticky Members Home button */}
+<div className="sticky top-4 z-30 flex justify-start">
+  <MembersHomeLink
+    className="inline-flex items-center rounded-full border border-[var(--color-gold)] bg-transparent px-2.5 py-[3px] text-[9px] font-semibold tracking-[0.14em] text-[var(--color-gold)] backdrop-blur-sm"
+  />
+</div>
+   {/* PAGE HEADER */}
+  <header>
 
+    <h1 className="mt-9 font-serif text-4xl md:text-5xl tracking-tight leading-tight text-[var(--color-cream)]">
+      {hasEmails ? "Weekly Wisdom Collection" : "Weekly Wisdom"}
+    </h1>
+          <div className="mt-3 mb-4 h-[2px] w-16 rounded bg-[var(--color-gold)]/85" />
 
-        <h1 className="mt-10 font-serif text-4xl md:text-5xl tracking-tight text-[var(--color-cream)]">
-          {hasEmails ? "Weekly Wisdom Collection" : "Weekly Wisdom"}
-        </h1>
+    {hasEmails ? (
+      <p className="mt-3 max-w-[650px] text-sm md:text-base text-[var(--color-cream)]/80">
+        Short reflections by Dr. Salerno you can return to anytime. Start with the this week's wisdom
+        below, or browse notes from previous weeks for the one that fits what you&apos;re moving through
+        right now.
+      </p>
+    ) : (
+      <p className="mt-3 max-w-[650px] text-sm md:text-base text-[var(--color-cream)]/80">
+        Your Weekly Wisdom writings will appear here once they’re published.
+      </p>
+    )}
+  </header>
 
-        {hasEmails ? (
-          <p className="mt-3 max-w-[650px] text-sm md:text-base text-[var(--color-cream)]/80">
-            Short reflections by Dr. Salerno you can return to anytime. Start with the this week's wisdom
-            below, or browse notes from previous weeks for the one that fits what you&apos;re moving through
-            right now.
-          </p>
-        ) : (
-          <p className="mt-3 max-w-[650px] text-sm md:text-base text-[var(--color-cream)]/80">
-            Your Weekly Wisdom writings will appear here once they’re published.
-          </p>
-        )}
-      </header>
 
             {/* FEATURED EMAIL — LATEST WEEKLY WISDOM (styled like Guides) */}
       {hasEmails && featured && (

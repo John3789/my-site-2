@@ -93,13 +93,15 @@ await fetch("/api/forms/vision-call", {
     <div className="min-h-screen bg-[var(--color-deep-teal)] text-[var(--color-cream)]">
       <main className="mx-auto max-w-[1100px] px-6 py-10 narrow-landscape-80">
         {/* Top link back to members home */}
-        <div className="mb-4 mt-5">
-          <MembersHomeLink />
-        </div>
+<div className="sticky top-4 z-30 flex justify-start">
+  <MembersHomeLink
+    className="mb-4 mt-9 inline-flex items-center rounded-full border border-[var(--color-gold)] bg-transparent px-2.5 py-[3px] text-[9px] font-semibold tracking-[0.14em] text-[var(--color-gold)] backdrop-blur-sm"
+  />
+</div>
 
         {/* Centered page title + intro */}
         <header className="mx-auto max-w-3xl text-center mt-5">
-          <h1 className="font-serif text-3xl md:text-4xl leading-tight">Transformation Call with Dr. Salerno</h1>
+          <h1 className="font-serif text-4xl md:text-5xl leading-tight">Transformation Call with Dr. Salerno</h1>
           <div className="mx-auto mt-3 h-[2px] w-16 rounded bg-[var(--color-gold)]/85" />
           <p className="mt-4 text-sm md:text-base leading-relaxed opacity-85">
             A focused, one-time session for RISE members who want deeper, personalized support — so you can clear the fog, reconnect with your inner strength, and walk away with a grounded plan for your next chapter.

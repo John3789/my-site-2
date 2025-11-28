@@ -94,15 +94,22 @@ export default function GuidesIsland() {
   return (
      <main
       data-page="members"
-      className="mx-auto max-w-[1100px] px-6 py-10 mt-10"
+      className="mx-auto max-w-[1100px] px-6 py-10 mt-9"
     >
-      <MembersHomeLink className="mb-6" />
+<div className="sticky top-4 z-30 flex justify-start">
+  <MembersHomeLink
+    className="mb-6 inline-flex items-center rounded-full border border-[var(--color-gold)] bg-transparent px-2.5 py-[3px] text-[9px] font-semibold tracking-[0.14em] text-[var(--color-gold)] backdrop-blur-sm"
+  />
+</div>
+
 
       {/* HEADER */}
       <section className="mb-10">
-        <h1 className="mt-2 font-serif text-4xl md:text-5xl text-[var(--color-cream)]">
+        <h1 className="mt-4 font-serif text-4xl md:text-5xl text-[var(--color-cream)]">
           Mental Health & Alignment Guides
         </h1>
+                  <div className="mt-4 mb-3 h-[2px] w-16 rounded bg-[var(--color-gold)]/85" />
+
         <p className="mt-3 max-w-2xl text-sm md:text-base text-[var(--color-cream)]/80">
           In-depth guides that you can return to anytime. Start with the latest guide below,
           or explore by theme to find the support that fits what you&apos;re moving through right now.

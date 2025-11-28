@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import GuardedPlay from "../../components/GuardedPlay";
 import MembersHomeLink from "../MembersHomeLink";
 
@@ -97,23 +97,43 @@ const MEDITATION_THEMES = [
   }
 ];
 
-const ALL_FILTER_OPTION = { id: "all", label: "All themes" };
-
 export default function MeditationLibraryPage() {
-  const [activeFilter, setActiveFilter] = useState(ALL_FILTER_OPTION.id);
+  // No "all" filter anymore → null means show everything
+  const [activeFilter, setActiveFilter] = useState(null);
 
   const visibleThemes = useMemo(() => {
-    if (activeFilter === ALL_FILTER_OPTION.id) return MEDITATION_THEMES;
+    // If no filter is selected, show ALL themes
+    if (!activeFilter) return MEDITATION_THEMES;
+
+    // Otherwise show only the selected theme
     return MEDITATION_THEMES.filter((theme) => theme.id === activeFilter);
   }, [activeFilter]);
+
+    // Scrollable nav state (same as Social Media Inspiration Space)
+  const navScrollRef = useRef(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const updateNavScrollState = () => {
+    const el = navScrollRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 4);
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
+  };
+
+  useEffect(() => {
+    updateNavScrollState();
+    const el = navScrollRef.current;
+    if (!el) return;
+    el.addEventListener("scroll", updateNavScrollState, { passive: true });
+    return () => el.removeEventListener("scroll", updateNavScrollState);
+  }, []);
 
   const lastUpdated = "November 2025"; // Update this as you add recordings
 
   return (
     <main data-page="meditations" className="mx-auto max-w-[1100px] px-6 py-10">
       {/* HEADER */}
-            <MembersHomeLink className="mb-6" />
-
       <section className="text-center">
         <h1 className="mt-10 font-serif text-5xl md:text-6xl">
           Meditation Library
@@ -130,28 +150,82 @@ export default function MeditationLibraryPage() {
         </p>
       </section>
 
-      {/* FILTER BAR */}
-      <section className="mt-8">
-        <div className="flex flex-wrap items-center justify-center gap-2">
-          {[ALL_FILTER_OPTION, ...MEDITATION_THEMES].map((option) => {
-            const isActive = activeFilter === option.id;
-            return (
-              <button
-                key={option.id}
-                type="button"
-                onClick={() => setActiveFilter(option.id)}
-                className={
-                  isActive
-                    ? "inline-flex items-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)] px-3.5 py-1.5 text-xs font-semibold tracking-wide text-black shadow-sm transition active:scale-95"
-                    : "inline-flex items-center rounded-full border border-white/20 bg-white/[0.03] px-3.5 py-1.5 text-xs font-semibold tracking-wide text-[var(--color-cream)] transition hover:bg-white/[0.07] active:scale-95"
-                }
-              >
-                {option.label}
-              </button>
-            );
-          })}
-        </div>
-      </section>
+{/* FILTER BAR (sticky, scrollable with arrows) */}
+<section className="mt-8 sticky top-10 z-30 bg-[var(--color-teal-850)]/96 backdrop-blur-sm border-b border-white/10">
+
+  {/* Outer wrapper so arrows can sit outside the scroll container */}
+  <div className="relative mx-auto max-w-[1100px] px-6 py-3">
+
+    {/* Scrollable row */}
+    <div
+      ref={navScrollRef}
+      className="flex gap-2 overflow-x-auto no-scrollbar scroll-smooth"
+      onScroll={updateNavScrollState}
+    >
+      {/* GOLD MEMBERS HOME PILL */}
+      <a
+        href="/members"
+        className="flex-shrink-0 inline-flex items-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)] px-3.5 py-1.5 text-xs font-semibold tracking-wide text-black shadow-sm transition active:scale-95"
+      >
+        Members Home
+      </a>
+
+      {/* THEME FILTER BUTTONS */}
+      {MEDITATION_THEMES.map((option) => {
+        const isActive = activeFilter === option.id;
+        return (
+          <button
+            key={option.id}
+            type="button"
+            onClick={() => setActiveFilter(option.id)}
+            className={
+              isActive
+                ? "flex-shrink-0 inline-flex items-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)] px-3.5 py-1.5 text-xs font-semibold tracking-wide text-black shadow-sm transition active:scale-95"
+                : "flex-shrink-0 inline-flex items-center rounded-full border border-white/20 bg-white/[0.03] px-3.5 py-1.5 text-xs font-semibold tracking-wide text-[var(--color-cream)] transition hover:bg-white/[0.07] active:scale-95"
+            }
+          >
+            {option.label}
+          </button>
+        );
+      })}
+    </div>
+
+    {/* Left arrow */}
+    <button
+      onClick={() => navScrollRef.current?.scrollBy({ left: -240, behavior: "smooth" })}
+      disabled={!canScrollLeft}
+      aria-label="Scroll left"
+      className={[
+        "hidden md:flex items-center justify-center absolute left-1 top-1/2 -translate-y-1/2 rounded-full border px-2 py-1 text-sm z-20",
+        canScrollLeft
+          ? "border-white/25 bg-white/10 hover:bg-white/20"
+          : "border-white/10 bg-white/5 opacity-50 cursor-not-allowed"
+      ].join(" ")}
+    >
+      ‹
+    </button>
+
+    {/* Right arrow */}
+    <button
+      onClick={() => navScrollRef.current?.scrollBy({ left: 240, behavior: "smooth" })}
+      disabled={!canScrollRight}
+      aria-label="Scroll right"
+      className={[
+        "hidden md:flex items-center justify-center absolute right-1 top-1/2 -translate-y-1/2 rounded-full border px-2 py-1 text-sm z-20",
+        canScrollRight
+          ? "border-white/25 bg-white/10 hover:bg-white/20"
+          : "border-white/10 bg-white/5 opacity-50 cursor-not-allowed"
+      ].join(" ")}
+    >
+      ›
+    </button>
+
+  </div>
+</section>
+
+
+
+
 
       {/* THEMES + MEDITATION CARDS */}
       <section className="mt-10 space-y-12">

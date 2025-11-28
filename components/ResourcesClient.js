@@ -196,11 +196,24 @@ export default function ResourcesClient() {
   };
 
   /* ========= Desktop sticky subnav (outside zoom) ========= */
-  const Nav = useMemo(() => {
+    const Nav = useMemo(() => {
     return (
       <div className="z-30 bg-transparent lg:bg-[var(--color-teal-850)]/80">
         <div className="relative mx-auto max-w-[1200px] px-6 py-3">
-          <div ref={navScrollRef} className="flex gap-2 overflow-x-auto no-scrollbar scroll-smooth" onScroll={updateNavScrollState}>
+          <div
+            ref={navScrollRef}
+            className="flex gap-2 overflow-x-auto no-scrollbar scroll-smooth"
+            onScroll={updateNavScrollState}
+          >
+            {/* First pill: Members Home (gold) */}
+            <a
+              href="/members"
+              className="whitespace-nowrap rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)] px-3.5 py-1.5 text-[12px] font-semibold tracking-wide text-black shadow-sm transition active:scale-95"
+            >
+              Members Home
+            </a>
+
+            {/* Theme pills: always green */}
             {THEMES.map((t) => {
               const active = currentId === t.slug;
               return (
@@ -208,7 +221,7 @@ export default function ResourcesClient() {
                   key={t.slug}
                   onClick={() => handleJump(t.slug)}
                   aria-current={active ? "true" : "false"}
-                  className={["whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[12px] font-semibold tracking-wide transition", active ? "border-[var(--color-gold)] bg-[var(--color-gold)] text-black shadow-sm" : "border-white/20 bg-white/5 text-[var(--color-cream)] hover:bg-white/10"].join(" ")}
+                  className="whitespace-nowrap rounded-full border border-white/20 bg-white/5 px-3.5 py-1.5 text-[12px] font-semibold tracking-wide text-[var(--color-cream)] transition hover:bg-white/10"
                 >
                   {t.title}
                 </button>
@@ -217,8 +230,28 @@ export default function ResourcesClient() {
           </div>
 
           <div className="hidden lg:block">
-            <button onClick={() => scrollNavBy(-240)} disabled={!canScrollLeft} aria-label="Scroll left" className={["absolute left-1 top-1/2 -translate-y-1/2 rounded-full border px-2 py-1 text-sm", canScrollLeft ? "border-white/25 bg-white/10 hover:bg-white/20" : "border-white/10 bg-white/5 opacity-50 cursor-not-allowed"].join(" ")}>‹</button>
-            <button onClick={() => scrollNavBy(240)} disabled={!canScrollRight} aria-label="Scroll right" className={["absolute right-1 top-1/2 -translate-y-1/2 rounded-full border px-2 py-1 text-sm", canScrollRight ? "border-white/25 bg-white/10 hover:bg-white/20" : "border-white/10 bg-white/5 opacity-50 cursor-not-allowed"].join(" ")}>›</button>
+            <button
+              onClick={() => scrollNavBy(-240)}
+              disabled={!canScrollLeft}
+              aria-label="Scroll left"
+              className={[
+                "absolute left-1 top-1/2 -translate-y-1/2 rounded-full border px-2 py-1 text-sm",
+                canScrollLeft ? "border-white/25 bg-white/10 hover:bg-white/20" : "border-white/10 bg-white/5 opacity-50 cursor-not-allowed",
+              ].join(" ")}
+            >
+              ‹
+            </button>
+            <button
+              onClick={() => scrollNavBy(240)}
+              disabled={!canScrollRight}
+              aria-label="Scroll right"
+              className={[
+                "absolute right-1 top-1/2 -translate-y-1/2 rounded-full border px-2 py-1 text-sm",
+                canScrollRight ? "border-white/25 bg-white/10 hover:bg-white/20" : "border-white/10 bg-white/5 opacity-50 cursor-not-allowed",
+              ].join(" ")}
+            >
+              ›
+            </button>
           </div>
         </div>
 
@@ -256,12 +289,11 @@ export default function ResourcesClient() {
         >
           {/* Members home link — placed higher */}
           <div className="mx-auto max-w-[1200px] px-6 pt-12 pb-2">
-<MembersHomeLink className="lg:ml-18" />
           </div>
 
           {/* Title + intro */}
           <div className="mx-auto max-w-[1200px] px-6 pt-4 pb-6">
-            <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-0">
+            <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-10">
               Social Media Inspiration Space
             </h1>
 

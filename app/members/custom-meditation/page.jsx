@@ -88,12 +88,13 @@ await fetch("/api/forms/meditation-members", {
 >
           {/* HERO */}
           <section className="mx-auto max-w-[1100px] px-6 pt-20 pb-10">
-            <div className="mb-6">
-              <MembersHomeLink />
-            </div>
+<div className="sticky top-4 z-30 flex justify-start">
+  <MembersHomeLink
+    className="mb-6 -mt-1 inline-flex items-center rounded-full border border-[var(--color-gold)] bg-transparent px-2.5 py-[3px] text-[9px] font-semibold tracking-[0.14em] text-[var(--color-gold)] backdrop-blur-sm"
+  />
+</div>
 
             <div className="max-w-[720px]">
-              <p className="text-[11px] uppercase tracking-[0.22em] opacity-60 mb-2">For RISE Members</p>
               <h1 className="font-serif text-4xl md:text-5xl leading-tight opacity-95">Custom Meditations &amp; Vision Calls</h1>
               <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 mt-4 mb-5 rounded" />
               <p className="text-base md:text-lg opacity-90 leading-relaxed">
