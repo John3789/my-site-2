@@ -88,11 +88,10 @@ export default function ContactClient() {
     "focus:border-[var(--color-gold)]/50 transition";
 
   const topics = [
-    { value: "Monthly Inner Growth Sessions", label: "Monthly Live Sessions" },
-    { value: "Membership", label: "Membership" },
+    { value: "Membership", label: "RISE" },
+        { value: "Meditations", label: "Meditations" },
     { value: "Consulting", label: "Consulting" },
     { value: "Speaking", label: "Speaking" },
-    { value: "Meditations", label: "Meditations" },
     { value: "Media", label: "Media / Press" },
     { value: "Collaborations", label: "Collaborations" },
     { value: "Other", label: "Another Inquiry" },
