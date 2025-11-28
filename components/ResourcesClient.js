@@ -198,7 +198,7 @@ export default function ResourcesClient() {
   /* ========= Desktop sticky subnav (outside zoom) ========= */
     const Nav = useMemo(() => {
     return (
-      <div className="z-30 bg-transparent lg:bg-[var(--color-teal-850)]/80">
+      <div className="z-30 bg-transparent">
         <div className="relative mx-auto max-w-[1200px] px-6 py-3">
           <div
             ref={navScrollRef}

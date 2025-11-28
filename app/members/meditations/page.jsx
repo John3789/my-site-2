@@ -151,7 +151,7 @@ export default function MeditationLibraryPage() {
       </section>
 
 {/* FILTER BAR (sticky, scrollable with arrows) */}
-<section className="mt-8 sticky top-10 z-30 bg-[var(--color-teal-850)]/96 backdrop-blur-sm border-b border-white/10">
+<section className="mt-8 sticky top-10 z-30 backdrop-blur-sm border-b border-white/10">
 
   {/* Outer wrapper so arrows can sit outside the scroll container */}
   <div className="relative mx-auto max-w-[1100px] px-6 py-3">

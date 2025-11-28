@@ -18,7 +18,7 @@ export default function WeeklyWisdomPage() {
       className="mx-auto max-w-[1100px] px-6 py-12 mt-7"
     >
           {/* Sticky Members Home button */}
-<div className="sticky top-4 z-30 flex justify-start">
+<div className="sticky top-8 z-30 flex justify-start">
   <MembersHomeLink
     className="inline-flex items-center rounded-full border border-[var(--color-gold)] bg-transparent px-2.5 py-[3px] text-[9px] font-semibold tracking-[0.14em] text-[var(--color-gold)] backdrop-blur-sm"
   />

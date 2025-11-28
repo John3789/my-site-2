@@ -3,6 +3,8 @@
 
 import { useState } from "react";
 import MembersHomeLink from "../MembersHomeLink";
+import Link from "next/link";
+
 
 export default function MembershipPageClient() {
   const navItems = [
@@ -92,13 +94,7 @@ await fetch("/api/forms/vision-call", {
   return (
     <div className="min-h-screen bg-[var(--color-deep-teal)] text-[var(--color-cream)]">
       <main className="mx-auto max-w-[1100px] px-6 py-10 narrow-landscape-80">
-        {/* Top link back to members home */}
-<div className="sticky top-4 z-30 flex justify-start">
-  <MembersHomeLink
-    className="mb-4 mt-9 inline-flex items-center rounded-full border border-[var(--color-gold)] bg-transparent px-2.5 py-[3px] text-[9px] font-semibold tracking-[0.14em] text-[var(--color-gold)] backdrop-blur-sm"
-  />
-</div>
-
+       
         {/* Centered page title + intro */}
         <header className="mx-auto max-w-3xl text-center mt-5">
           <h1 className="font-serif text-4xl md:text-5xl leading-tight">Transformation Call with Dr. Salerno</h1>
@@ -112,32 +108,42 @@ await fetch("/api/forms/vision-call", {
         </header>
 
         {/* Sticky section nav */}
-        <nav className="sticky top-4 z-30 mt-6">
-  <div className="mx-auto max-w-[900px]">
-    <div className="rounded-full bg-[var(--color-teal-850)]/85 ring-1 ring-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-      <div className="flex flex-wrap items-center justify-center gap-2 px-3 py-3">
-        {navItems.map((item) => (
-          <a
-            key={item.id}
-            href={`#${item.id}`}
-            onClick={(e) => {
-              e.preventDefault();
-              // bigger offset for the sticky-nav "Book now" so it scrolls lower
-              handleJump(item.id, item.isPrimary ? 80 : undefined);
-            }}
-            className={
-              item.isPrimary
-                ? "inline-flex items-center justify-center whitespace-nowrap rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)] px-5 md:px-6 py-1.5 text-[11px] md:text-[12px] font-semibold tracking-wide text-black shadow-sm hover:brightness-110 transition min-w-[110px] md:min-w-[130px]"
-                : "inline-flex items-center justify-center whitespace-nowrap rounded-full border border-white/20 bg-white/5 px-4 md:px-5 py-1.5 text-[11px] md:text-[12px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/10 transition min-w-[100px] md:min-w-[120px]"
-            }
-          >
-            {item.label}
-          </a>
-        ))}
-      </div>
-    </div>
-  </div>
-</nav>
+        <nav className="sticky top-8 z-30 mt-6">
+          <div className="mx-auto max-w-[1000px]">
+            <div className="rounded-full backdrop-blur-sm ring-1 ring-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+              <div className="flex flex-wrap items-center justify-center gap-2 px-3 py-3">
+                {/* Members home – first gold button */}
+                <Link
+                  href="/members"
+                  className="inline-flex items-center justify-center whitespace-nowrap rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)] px-5 md:px-6 py-1.5 text-[11px] md:text-[12px] font-semibold tracking-wide text-black shadow-sm hover:brightness-110 transition min-w-[110px] md:min-w-[130px]"
+                >
+                  Members home
+                </Link>
+
+                {navItems.map((item) => (
+                  <a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      // bigger offset for the sticky-nav "Book now" so it scrolls lower
+                      handleJump(item.id, item.isPrimary ? 80 : undefined);
+                    }}
+                    className={
+                      item.isPrimary
+                        ? "inline-flex items-center justify-center whitespace-nowrap rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)] px-5 md:px-6 py-1.5 text-[11px] md:text-[12px] font-semibold tracking-wide text-black shadow-sm hover:brightness-110 transition min-w-[110px] md:min-w-[130px]"
+                        : "inline-flex items-center justify-center whitespace-nowrap rounded-full border border-white/20 bg-white/5 px-4 md:px-5 py-1.5 text-[11px] md:text-[12px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/10 transition min-w-[100px] md:min-w-[120px]"
+                    }
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </nav>
+
+
 
 
         {/* Investment + access card */}

@@ -32,7 +32,7 @@ export default function LiveSessionsPage() {
       <TopOnMount />
       <main className="mx-auto w-full max-w-[880px] px-6 pb-16 pt-10 space-y-8">
         {/* HEADER */}
-<div className="sticky top-4 z-30 flex justify-start">
+<div className="sticky top-0 z-30 flex justify-start">
   <MembersHomeLink
     className="mb-0 mt-9 inline-flex items-center rounded-full border border-[var(--color-gold)] bg-transparent px-2.5 py-[3px] text-[9px] font-semibold tracking-[0.14em] text-[var(--color-gold)] backdrop-blur-sm"
   />

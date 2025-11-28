@@ -1,7 +1,7 @@
 // app/members/custom-meditation/page.jsx
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import TopOnMount from "../../../components/TopOnMount";
 import { useIosZoomVars } from "../../../components/useIosZoom";
 import MembersHomeLink from "../MembersHomeLink";
@@ -9,6 +9,8 @@ import MembersHomeLink from "../MembersHomeLink";
 export default function MembersCustomMeditationPage() {
   const wrapRef = useRef(null);
   useIosZoomVars(wrapRef, { portraitZoom: 3.0, landscapeZoom: 1.0 });
+
+const [stickyTop, setStickyTop] = useState("4rem"); // Start a bit lower initially
 
  const [formStatus, setFormStatus] = useState("idle");
 const [formError, setFormError] = useState("");
@@ -73,7 +75,18 @@ await fetch("/api/forms/meditation-members", {
   }
 };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setStickyTop("1rem"); // Move it closer to top after scrolling 100px
+      } else {
+        setStickyTop("4rem"); // Original lower position
+      }
+    };
 
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
 
   return (
@@ -86,13 +99,25 @@ await fetch("/api/forms/meditation-members", {
   data-page="members-custom-meditation"
   className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] pb-16"
 >
-          {/* HERO */}
-          <section className="mx-auto max-w-[1100px] px-6 pt-20 pb-10">
-<div className="sticky top-4 z-30 flex justify-start">
+            {/* Sticky element with inline style */}
+        <div
+  className="sticky z-30 transition-[top] duration-300 ease-in-out"
+  style={{
+    top: stickyTop,
+    maxWidth: '1100px', // Match your content width
+    margin: '0 auto',      // Center it horizontally
+    padding: '0 1.5rem' // Same side padding as your content
+  }}
+>
   <MembersHomeLink
-    className="mb-6 -mt-1 inline-flex items-center rounded-full border border-[var(--color-gold)] bg-transparent px-2.5 py-[3px] text-[9px] font-semibold tracking-[0.14em] text-[var(--color-gold)] backdrop-blur-sm"
+    className="mb-21 mt-3 inline-flex items-center rounded-full border border-[var(--color-gold)] bg-transparent px-2.5 py-[3px] text-[9px] font-semibold tracking-[0.14em] text-[var(--color-gold)] backdrop-blur-sm"
   />
 </div>
+
+
+  {/* HERO */}
+  <section className="mx-auto max-w-[1100px] px-6 pt-4 pb-10">
+
 
             <div className="max-w-[720px]">
               <h1 className="font-serif text-4xl md:text-5xl leading-tight opacity-95">Custom Meditations &amp; Vision Calls</h1>

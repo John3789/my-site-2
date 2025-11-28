@@ -121,7 +121,7 @@ export default function MembersAiPage() {
       <div ref={wrapRef} className="min-h-[100vh] px-4 py-8 md:px-6 md:py-10">
         <div className="mx-auto max-w-[950px]">
           {/* Sticky Members Home pill */}
-          <div className="sticky top-4 z-30 flex justify-start">
+          <div className="sticky top-0 z-30 flex justify-start">
             <MembersHomeLink className="mb-4 mt-9 inline-flex items-center rounded-full border border-[var(--color-gold)] bg-transparent px-2.5 py-[3px] text-[9px] font-semibold tracking-[0.14em] text-[var(--color-gold)] backdrop-blur-sm" />
           </div>
 
@@ -239,7 +239,7 @@ export default function MembersAiPage() {
                 <div className="rounded-xl bg-white/[0.04] p-4 ring-1 ring-[var(--color-gold)]/60">
                   <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-cream)]/75">Tips for Deeper Guidance</h3>
                   <ul className="space-y-1.5 mt-2 list-disc list-inside text-sm leading-relaxed text-[var(--color-cream)]/85">
-                    <li>Honesty and specificity leads to more precise guidance.</li>
+                    <li>Honesty and specificity equates to more precise guidance.</li>
                     <li>Ask follow-up questions if something doesn&apos;t land at first.</li>
                     <li>Return to the same topic over time to track your growth.</li>
                   </ul>
