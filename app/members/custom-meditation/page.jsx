@@ -115,22 +115,40 @@ await fetch("/api/forms/meditation-members", {
 </div>
 
 
-  {/* HERO */}
-  <section className="mx-auto max-w-[1100px] px-6 pt-4 pb-10">
+ {/* HERO */}
+<section className="mx-auto max-w-[1100px] px-6 pt-4 pb-10">
+  <div className="max-w-[720px]">
+    <h1 className="font-serif text-4xl md:text-5xl leading-tight opacity-95">
+      Custom Meditations &amp; Vision Calls
+    </h1>
 
+    <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 mt-4 mb-5 rounded" />
 
-            <div className="max-w-[720px]">
-              <h1 className="font-serif text-4xl md:text-5xl leading-tight opacity-95">Custom Meditations &amp; Vision Calls</h1>
-              <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 mt-4 mb-5 rounded" />
-              <p className="text-base md:text-lg opacity-90 leading-relaxed">
-                Personalized audio and a focused 1:1 call to support what you&apos;re moving through right now — created just for you, with exclusive RISE member benefits.
-              </p>
-              <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-[var(--color-gold)]/70 bg-[var(--color-gold)]/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em]">
-                <span className="w-2 h-2 rounded-full bg-[var(--color-gold)]" />
-                Complimentary 30-minute Vision Call included
-              </div>
-            </div>
-          </section>
+    <p className="text-base md:text-lg opacity-90 leading-relaxed">
+      Personalized audio and a focused <strong>complimentary 1:1 Vision Call</strong> 
+      to support what you're moving through right now — created just for you, 
+      with exclusive RISE member benefits.
+    </p>
+
+    {/* Gold CTA replacing the old complimentary pill */}
+    <a
+      href="#pricing"
+      onClick={(e) => {
+        e.preventDefault();
+        const el = document.getElementById("pricing");
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          const targetY = rect.top + window.scrollY - 110;
+          window.scrollTo({ top: targetY, behavior: "smooth" });
+        }
+      }}
+      className="mt-5 inline-flex items-center justify-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)] px-6 py-2.5 text-sm font-semibold tracking-wide text-black shadow-sm hover:brightness-110 transition"
+    >
+      View Pricing
+    </a>
+  </div>
+</section>
+
 
           {/* Divider */}
           <div className="mx-auto w-full max-w-[1100px] px-6">
@@ -198,25 +216,45 @@ await fetch("/api/forms/meditation-members", {
               </div>
 
               {/* Member pricing */}
-              <div className="rounded-2xl border border-[var(--color-gold)]/60 bg-white/5 p-5 shadow-2xl">
-                <h2 className="text-xl font-semibold">Your Member Pricing</h2>
-                <p className="mt-2 text-sm opacity-85">
-                  As a RISE member, you receive exclusive reduced rates on all custom meditations.
-                </p>
+<div className="rounded-2xl border border-[var(--color-gold)]/60 bg-white/5 p-5 shadow-2xl">
+  <h2 id="pricing" className="text-xl font-semibold">Your Member Pricing</h2>
+  <p className="mt-2 text-sm opacity-85">
+    As a RISE member, you receive exclusive reduced rates on all custom meditations.
+  </p>
 
-                <div className="mt-5 grid gap-3">
-                  <PricingRow label="5 minutes" member="$40" regular="$50" />
-                  <PricingRow label="10 minutes" member="$75" regular="$100" />
-                  <PricingRow label="15 minutes" member="$100" regular="$150" />
-                </div>
+  <div className="mt-5 grid gap-3">
+    <PricingRow label="5 minutes" member="$40" regular="$50" />
+    <PricingRow label="10 minutes" member="$75" regular="$100" />
+    <PricingRow label="15 minutes" member="$100" regular="$150" />
+  </div>
 
-                <div className="mt-6 rounded-xl border border-[var(--color-gold)]/70 bg-[var(--color-gold)]/10 px-4 py-3 text-sm">
-                  <div className="font-semibold">Yearly Member Perk</div>
-                  <p className="mt-1 opacity-90">
-                    If you&apos;re on the yearly plan, you also receive a <span className="font-semibold">free 5-minute custom meditation + Vision Call</span> (a $50 value). You can redeem it anytime using the form below.
-                  </p>
-                </div>
-              </div>
+  <div className="mt-6 rounded-xl border border-[var(--color-gold)]/70 bg-[var(--color-gold)]/10 px-4 py-3 text-sm">
+    <div className="font-semibold">Yearly Member Perk</div>
+    <p className="mt-1 opacity-90">
+      If you're on the yearly plan, you also receive a <span className="font-semibold">free 5-minute custom meditation + Vision Call</span> (a $50 value). You can redeem it anytime using the form below.
+    </p>
+  </div>
+
+  {/* New centered gold CTA */}
+  <div className="mt-6 flex justify-center">
+    <a
+      href="#custom-meditation-request"
+      onClick={(e) => {
+        e.preventDefault();
+        const el = document.getElementById("custom-meditation-request");
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          const targetY = rect.top + window.scrollY - 110;
+          window.scrollTo({ top: targetY, behavior: "smooth" });
+        }
+      }}
+      className="mt-3 inline-flex items-center justify-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)] px-6 py-2.5 text-sm font-semibold tracking-wide text-black shadow-sm hover:brightness-110 transition"
+    >
+      Book now
+    </a>
+  </div>
+</div>
+
             </div>
           </section>
 
@@ -279,7 +317,7 @@ await fetch("/api/forms/meditation-members", {
           {/* IMPORTANT NOTES + FORM */}
           <section className="mx-auto max-w-[900px] px-6 py-12 narrow-landscape-80">
                                     <h2 className="font-serif text-3xl md:text-4xl opacity-95 text-center">Custom Meditation Request Form</h2>
-                                                <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded mx-auto" />
+                                                <div id="custom-meditation-request" className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded mx-auto" />
 
 
 
