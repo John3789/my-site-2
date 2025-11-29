@@ -165,8 +165,8 @@ await fetch("/api/forms/vision-call", {
                     Book now
                   </a>
                 </div>
-                <div className="mt-3 flex flex-wrap items-baseline justify-start gap-2">
-                  <p className="text-xl font-semibold md:text-2xl">
+                <div className="leading-tight mt-3 flex flex-wrap items-baseline justify-start gap-2">
+                  <p className="leading-tight text-xl font-semibold md:text-2xl">
                     $150 <span className="text-sm font-normal opacity-80 md:text-base">USD</span>
                   </p>
                   <span className="text-xs opacity-75 md:text-sm">per 60-minute session</span>
@@ -180,7 +180,7 @@ await fetch("/api/forms/vision-call", {
               <div className="rounded-xl bg-white/[0.03] px-4 py-4 ring-1 ring-white/10">
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-gold)]/95">Members-only access</p>
                 <p className="mt-2 text-xs leading-relaxed opacity-85 md:text-sm">
-                  Transformation Calls are reserved for active RISE members. You can book up to one Transformation Call per month, so these sessions stay intentional, focused, and sustainably paced — not weekly or regularly scheduled calls.
+                  Transformation Calls are reserved for active RISE members. You can book up to one Transformation Call per month, so these sessions stay intentional, focused, and sustainably paced.
                 </p>
               </div>
             </div>
@@ -196,25 +196,26 @@ await fetch("/api/forms/vision-call", {
               {/* Step 1 – Book your session */}
               <div className="rounded-xl bg-white/[0.03] px-4 py-4 ring-1 ring-white/10">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-gold)]/90">Step 1</p>
-                <h3 className="mt-1 text-sm font-semibold md:text-base">Book your session</h3>
-                <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
-                  You&apos;ll complete your payment and receive an email confirmation with a link to schedule your Transformation Call at a time that works for you.
+                <h3 className="mt-1 text-sm font-semibold md:text-base">Short intake form</h3>
+                                <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
+                  First, you&apos;ll fill out a brief form so I can understand what you&apos;re moving through and prepare a tailored plan for our session.
                 </p>
               </div>
               {/* Step 2 – Short intake form & schedule your call */}
               <div className="rounded-xl bg-white/[0.03] px-4 py-4 ring-1 ring-white/10">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-gold)]/90">Step 2</p>
-                <h3 className="mt-1 text-sm font-semibold md:text-base">Short intake form & schedule your call</h3>
+                <h3 className="mt-1 text-sm font-semibold md:text-base">Book your session & schedule your call</h3>
                 <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
-                  Before we meet, you&apos;ll fill out a brief form and confirm your time so I can understand what you&apos;re moving through and prepare a tailored plan for our session.
+                  You&apos;ll then receive an email confirmation with details and a link to complete your payment and schedule your Transformation Call.
                 </p>
+
               </div>
               {/* Step 3 – 60-minute live session */}
               <div className="rounded-xl bg-white/[0.03] px-4 py-4 ring-1 ring-white/10">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-gold)]/90">Step 3</p>
                 <h3 className="mt-1 text-sm font-semibold md:text-base">60-minute live session</h3>
                 <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
-                  We meet on Zoom (or your preferred platform) for your Transformation Call — a full hour devoted to your clarity, emotions, and next steps.
+                  We meet on Zoom (or a similar platform) for your Transformation Call — a full hour devoted to your clarity, emotions, and next steps.
                 </p>
               </div>
               {/* Step 4 – After the call */}
@@ -222,7 +223,7 @@ await fetch("/api/forms/vision-call", {
                 <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-gold)]/90">Step 4</p>
                 <h3 className="mt-1 text-sm font-semibold md:text-base">After the call</h3>
                 <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
-                  You&apos;ll leave with your action steps, practices, and mindset tools. If you ever need more support, you can book another Transformation Call in a future month or pair this with a custom meditation.
+                  You&apos;ll leave with your action steps, practices, and mindset tools. If you ever need more support, you can book another Transformation Call in a future month.
                 </p>
               </div>
             </div>
