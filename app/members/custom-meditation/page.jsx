@@ -168,8 +168,8 @@ await fetch("/api/forms/meditation-members", {
               />
               <Step
                 number="2"
-                title="Vision Call"
-                body="We’ll schedule a complimentary 30-minute Vision Call to explore your intentions, emotional patterns, spiritual needs, and the themes you’d like reflected in your meditation."
+                title="Book your session & schedule your Vision Call"
+                body="You'll then receive an email confirmation and a link to complete your payment and schedule your complimentary 30-minute Vision Call to explore your intentions, emotional patterns, and spiritual needs."
               />
               <Step
                 number="3"
