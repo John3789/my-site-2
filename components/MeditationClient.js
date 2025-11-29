@@ -224,33 +224,39 @@ When your mind feels heavy or overwhelmed, the right meditation can help you com
 {/* CUSTOM MEDITATIONS — HOW IT WORKS / IS IT FOR YOU */}
 <section className="mx-auto max-w-[1100px] px-6 pb-12 narrow-landscape-80">
   <div className="grid gap-10 lg:grid-cols-2">
-    {/* How it works */}
-    <div>
-      <h3 className="mt-5 font-serif text-3xl md:text-4xl opacity-95">How It Works</h3>
-      <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-8 rounded" />
+{/* How it works */}
+<div>
+  <h3 className="mt-5 font-serif text-3xl md:text-4xl opacity-95">How It Works</h3>
+  <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-8 rounded" />
 
-      <div className="space-y-5">
-        <StepCard
-          number="1"
-          title="Share what you need"
-          body="Start by using the short form below to share what you're navigating and what kind of support you’re seeking."
-        />
-        <StepCard
-          number="2"
-          title="Vision Call"
-          body="We schedule a complimentary 30-minute Vision Call to explore your emotional patterns, goals, and spiritual or mindset themes."
-        />
-        <StepCard
-          number="3"
-          title="Receive your custom meditation"
-          body="Within 5–7 days, you receive your custom meditation (5, 10, or 15 minutes), plus guidance on how to integrate it into your routine."
-        />
+  {/* 2×2 grid of StepCards */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+    <StepCard
+      number="1"
+      title="Share what you need"
+      body="Start by using the short form below to share what you're navigating and what kind of support you’re seeking at your present moment."
+    />
 
-    </div>
+    <StepCard
+      number="2"
+      title="Review and booking"
+      body="You'll receive a confirmation email and link to complete your payment and schedule your complimentary 30-minute Vision Call."
+    />
 
+    <StepCard
+      number="3"
+      title="Vision Call"
+      body="During your complimentary Vision Call we will explore your emotional patterns, intentions, goals, and mindset or spiritual themes."
+    />
 
+    <StepCard
+      number="4"
+      title="Custom meditation"
+      body="Within 5–7 days, you will receive your customized meditation plus guidance on how to integrate it into your regular routine."
+    />
+  </div>
+</div>
 
-      </div>
 
     {/* Is this for you */}
     <div>
@@ -769,7 +775,7 @@ function Faq({ q, a }) {
 function StepCard({ number, title, body }) {
   return (
     <div className="flex gap-4 rounded-xl border border-white/12 bg-white/5 px-4 py-3">
-      <div className="mt-1 flex h-7 w-7 items-center justify-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)]/10 text-xs font-semibold">
+      <div className="mt-1 flex h-7 w-11.5 items-center justify-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)]/10 text-xs font-semibold">
         {number}
       </div>
       <div>
