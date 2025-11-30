@@ -3,6 +3,8 @@
 
 import { useState, useCallback, useEffect } from "react";
 import Link from "next/link";
+import MembersSurveyBanner from "../../components/MembersSurveyBanner"; // adjust path as needed
+
 
 function getMemberstack() {
   if (typeof window === "undefined") return null;
@@ -283,6 +285,7 @@ export default function MembersIsland() {
   </div>
 </section>
 
+      <MembersSurveyBanner />
 
 
 {/* Section divider */}
