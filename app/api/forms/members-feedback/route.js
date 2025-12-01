@@ -5,38 +5,6 @@ import { google } from "googleapis";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-// Map area keys -> labels for nicer email text
-const AREA_LABELS = {
-  overall: "1. Overall Experience",
-  welcome: "2. Welcome and Orientation",
-  website: "3. RISE Membership Website & Members Area",
-  ai: "4. Dr. Salerno AI",
-  liveSessions: "5. Monthly Live Inner Growth Sessions",
-  customMeditations: "6. Custom Meditations + Vision Calls",
-  transformationCalls: "7. Transformation Calls",
-  meditationLibrary: "8. Meditation Library",
-  weeklyWisdom: "9. Weekly Wisdom Emails",
-  socialMediaSpace: "10. Social Media Inspiration Space",
-  mhGuides: "11. Mental Health & Alignment Guides",
-  somethingElse: "12. Something Else",
-};
-
-// Small helpers
-function formatHtml(value) {
-  if (value === null || value === undefined) return "—";
-  if (typeof value !== "string") return String(value);
-  if (!value.trim()) return "—";
-  return value.replace(/\n/g, "<br />");
-}
-
-function formatText(value) {
-  if (value === null || value === undefined) return "—";
-  if (typeof value !== "string") return String(value);
-  if (!value.trim()) return "—";
-  return value;
-}
-
-// GET – health check
 export async function GET() {
   return NextResponse.json({
     ok: true,
@@ -49,9 +17,42 @@ export async function POST(req) {
     const body = await req.json();
     console.log("➡️ MEMBERS FEEDBACK POST BODY:", body);
 
-    const { selectedAreas = [], ...formData } = body || {};
+    // -----------------------------
+    // 1️⃣ FORWARD TO GOOGLE SHEETS
+    // -----------------------------
+    const scriptUrl = process.env.FORMS_SCRIPT_URL;
 
-    // --- STEP A: Validate env vars (EXACT same pattern as Vision Call) ---
+    if (!scriptUrl) {
+      console.error("❌ Missing FORMS_SCRIPT_URL env var");
+    } else {
+      try {
+        const res = await fetch(scriptUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            ...body,
+            formType: "members-feedback",
+          }),
+        });
+
+        let json = {};
+        try {
+          json = await res.json();
+        } catch {}
+
+        if (!res.ok || !json.ok) {
+          console.error("❌ Sheet append failed:", json);
+        } else {
+          console.log("✔️ Sheet updated successfully");
+        }
+      } catch (err) {
+        console.error("❌ Error calling FORMS_SCRIPT_URL:", err);
+      }
+    }
+
+    // -----------------------------
+    // 2️⃣ EMAIL NOTIFICATION
+    // -----------------------------
     const {
       OAUTH_CLIENT_ID,
       OAUTH_CLIENT_SECRET,
@@ -59,45 +60,15 @@ export async function POST(req) {
       OAUTH_USER,
     } = process.env;
 
-    if (
-      !OAUTH_CLIENT_ID ||
-      !OAUTH_CLIENT_SECRET ||
-      !OAUTH_REFRESH_TOKEN ||
-      !OAUTH_USER
-    ) {
-      console.error("❌ Missing OAUTH ENV VARS (members-feedback)");
-      return NextResponse.json(
-        { ok: false, error: "Server email config missing" },
-        { status: 500 },
-      );
-    }
-
-    // --- STEP B: Create OAuth client (same as Vision Call) ---
-    console.log("➡️ [MEMBERS FEEDBACK] Creating OAuth2 client...");
     const oAuth2Client = new google.auth.OAuth2(
       OAUTH_CLIENT_ID,
       OAUTH_CLIENT_SECRET,
-      "https://developers.google.com/oauthplayground",
+      "https://developers.google.com/oauthplayground"
     );
-
     oAuth2Client.setCredentials({ refresh_token: OAUTH_REFRESH_TOKEN });
 
-    let accessToken;
-    try {
-      console.log("➡️ [MEMBERS FEEDBACK] Getting access token...");
-      const tokenResult = await oAuth2Client.getAccessToken();
-      accessToken = tokenResult?.token;
-      console.log("✔️ [MEMBERS FEEDBACK] Access token acquired");
-    } catch (err) {
-      console.error("❌ [MEMBERS FEEDBACK] Error getting access token:", err);
-      return NextResponse.json(
-        { ok: false, error: "OAuth access token failed: " + err.message },
-        { status: 500 },
-      );
-    }
+    const accessToken = (await oAuth2Client.getAccessToken())?.token;
 
-    // --- STEP C: Create nodemailer transporter (same pattern) ---
-    console.log("➡️ [MEMBERS FEEDBACK] Creating transporter...");
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -110,77 +81,30 @@ export async function POST(req) {
       },
     });
 
-    // Selected areas label
-    const areasLabel =
-      selectedAreas.length > 0
-        ? selectedAreas
-            .map((key) => AREA_LABELS[key] || key)
-            .join(", ")
-        : "No specific areas selected";
-
-    // HTML – generic dump of all fields
-    const htmlFields = Object.entries(formData).map(([key, value]) => {
-      return `
-        <p>
-          <strong>${key}</strong><br />
-          ${formatHtml(value)}
-        </p>
-      `;
-    });
+    const selectedAreasText = Array.isArray(body.selectedAreas)
+      ? body.selectedAreas.join(", ")
+      : "—";
 
     const html = `
-      <h2>New RISE Member Experience Feedback Submission</h2>
-
-      <p><strong>Selected feedback areas:</strong> ${areasLabel}</p>
-
-      <hr />
-
-      <h3>Full Responses (raw field/key view)</h3>
-      ${htmlFields.join("\n")}
-
-      <hr />
-      <p style="font-size: 12px; color: #777;">
-        Raw JSON body for reference:
-      </p>
-      <pre style="font-size: 11px; background: #111; color: #eee; padding: 10px; border-radius: 4px; white-space: pre-wrap;">
-${JSON.stringify(body, null, 2)}
-      </pre>
+      <h2>New RISE Member Feedback</h2>
+      <p><strong>Selected Areas:</strong> ${selectedAreasText}</p>
+      <pre>${JSON.stringify(body, null, 2)
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")}</pre>
     `;
 
-    // TEXT version
-    const textLines = [
-      `Selected feedback areas: ${areasLabel}`,
-      "",
-      "Full responses (raw field/key view):",
-      "",
-      ...Object.entries(formData).map(([key, value]) => {
-        return `${key}:\n${formatText(value)}\n`;
-      }),
-      "",
-      "Raw JSON body:",
-      JSON.stringify(body, null, 2),
-    ];
-
-    const text = textLines.join("\n");
-
-    // --- STEP D: Send the email (same style as Vision Call) ---
-    console.log("➡️ [MEMBERS FEEDBACK] Sending email...");
     await transporter.sendMail({
       from: `Dr. Juan Pablo Salerno <${OAUTH_USER}>`,
       to: ["contact@drjuanpablosalerno.com", "john3789@gmail.com"],
-      subject: "New RISE Member Experience Feedback Submission",
-      text,
+      subject: "New RISE Member Feedback Submitted",
       html,
-      // no replyTo – you’re not collecting respondent email here
+      text: JSON.stringify(body, null, 2),
     });
 
-    console.log("✔️ [MEMBERS FEEDBACK] Email sent!");
+    console.log("✔️ Email sent!");
     return NextResponse.json({ ok: true });
   } catch (err) {
-    console.error("❌ [MEMBERS FEEDBACK] FINAL CATCH ERROR:", err);
-    return NextResponse.json(
-      { ok: false, error: err?.message || "Server error" },
-      { status: 500 },
-    );
+    console.error("❌ Members Feedback Error:", err);
+    return NextResponse.json({ ok: false, error: err.message });
   }
 }
