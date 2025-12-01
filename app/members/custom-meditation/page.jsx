@@ -419,7 +419,7 @@ await fetch("/api/forms/meditation-members", {
 
   {formStatus === "success" && (
     <p className="text-sm text-[var(--color-gold)]">
-      Thank you — your request was received. I&apos;ll be in touch soon to schedule your Vision Call.
+      Thank you — your request was received. I&apos;ll review it and email you soon with next steps to complete payment and schedule your Vision Call.
     </p>
   )}
 
