@@ -1326,7 +1326,7 @@ export default function MembersIsland() {
                 </svg>
               </a>
               <a
-                href="https://www.youtube.com/drjpsalerno"
+                href="https://www.youtube.com/drjuanpablosalerno"
                 aria-label="YouTube"
                 className="opacity-90 hover:opacity-100"
               >
@@ -1391,7 +1391,7 @@ export default function MembersIsland() {
               </svg>
             </a>
             <a
-              href="https://www.youtube.com/drjpsalerno"
+              href="https://www.youtube.com/drjuanpablosalerno"
               aria-label="YouTube"
               className="opacity-90 hover:opacity-100"
             >
