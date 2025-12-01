@@ -538,7 +538,7 @@ await fetch("/api/forms/meditation-members", {
             </a>
             {/* YouTube */}
             <a
-              href="https://www.youtube.com/drjuanpablosalerno"
+              href="https://www.youtube.com/@drjuanpablosalerno"
               aria-label="YouTube"
               className="opacity-90 hover:opacity-100"
             >

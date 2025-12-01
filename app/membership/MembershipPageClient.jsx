@@ -755,7 +755,7 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
   </svg>
 </a>
 
-            <a href="https://www.youtube.com/drjuanpablosalerno" aria-label="YouTube" className="opacity-90 hover:opacity-100">
+            <a href="https://www.youtube.com/@drjuanpablosalerno" aria-label="YouTube" className="opacity-90 hover:opacity-100">
               <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" /></svg>
             </a>
             <a href="https://www.facebook.com/profile.php?id=61582412806274#" aria-label="Facebook" className="opacity-90 hover:opacity-100">
@@ -811,7 +811,7 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
   </svg>
 </a>
 
-            <a href="https://www.youtube.com/drjuanpablosalerno" aria-label="YouTube" className="opacity-90 hover:opacity-100">
+            <a href="https://www.youtube.com/@drjuanpablosalerno" aria-label="YouTube" className="opacity-90 hover:opacity-100">
               <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" /></svg>
             </a>
             <a href="https://www.facebook.com/profile.php?id=61582412806274#" aria-label="Facebook" className="opacity-90 hover:opacity-100">
