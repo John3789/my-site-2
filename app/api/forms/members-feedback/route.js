@@ -21,16 +21,15 @@ const AREA_LABELS = {
   somethingElse: "12. Something Else",
 };
 
-// Simple helper: format values with line breaks for HTML
-function formatHtmlValue(value) {
+// Small helpers
+function formatHtml(value) {
   if (value === null || value === undefined) return "—";
   if (typeof value !== "string") return String(value);
   if (!value.trim()) return "—";
   return value.replace(/\n/g, "<br />");
 }
 
-// And for plain text
-function formatTextValue(value) {
+function formatText(value) {
   if (value === null || value === undefined) return "—";
   if (typeof value !== "string") return String(value);
   if (!value.trim()) return "—";
@@ -52,7 +51,7 @@ export async function POST(req) {
 
     const { selectedAreas = [], ...formData } = body || {};
 
-    // --- STEP A: Validate env vars (same pattern as Vision Call) ---
+    // --- STEP A: Validate env vars (EXACT same pattern as Vision Call) ---
     const {
       OAUTH_CLIENT_ID,
       OAUTH_CLIENT_SECRET,
@@ -73,7 +72,7 @@ export async function POST(req) {
       );
     }
 
-    // --- STEP B: Create OAuth client ---
+    // --- STEP B: Create OAuth client (same as Vision Call) ---
     console.log("➡️ [MEMBERS FEEDBACK] Creating OAuth2 client...");
     const oAuth2Client = new google.auth.OAuth2(
       OAUTH_CLIENT_ID,
@@ -97,7 +96,7 @@ export async function POST(req) {
       );
     }
 
-    // --- STEP C: Create nodemailer transporter (same as Vision Call) ---
+    // --- STEP C: Create nodemailer transporter (same pattern) ---
     console.log("➡️ [MEMBERS FEEDBACK] Creating transporter...");
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -111,7 +110,7 @@ export async function POST(req) {
       },
     });
 
-    // Selected areas (pretty labels)
+    // Selected areas label
     const areasLabel =
       selectedAreas.length > 0
         ? selectedAreas
@@ -119,12 +118,12 @@ export async function POST(req) {
             .join(", ")
         : "No specific areas selected";
 
-    // Build HTML block of all responses
-    const htmlLines = Object.entries(formData).map(([key, value]) => {
+    // HTML – generic dump of all fields
+    const htmlFields = Object.entries(formData).map(([key, value]) => {
       return `
         <p>
-          <strong>${key}:</strong><br />
-          ${formatHtmlValue(value)}
+          <strong>${key}</strong><br />
+          ${formatHtml(value)}
         </p>
       `;
     });
@@ -136,24 +135,35 @@ export async function POST(req) {
 
       <hr />
 
-      <h3>Full Responses</h3>
-      ${htmlLines.join("\n")}
+      <h3>Full Responses (raw field/key view)</h3>
+      ${htmlFields.join("\n")}
+
+      <hr />
+      <p style="font-size: 12px; color: #777;">
+        Raw JSON body for reference:
+      </p>
+      <pre style="font-size: 11px; background: #111; color: #eee; padding: 10px; border-radius: 4px; white-space: pre-wrap;">
+${JSON.stringify(body, null, 2)}
+      </pre>
     `;
 
-    // Plain-text version
+    // TEXT version
     const textLines = [
       `Selected feedback areas: ${areasLabel}`,
       "",
-      "Full responses:",
+      "Full responses (raw field/key view):",
       "",
       ...Object.entries(formData).map(([key, value]) => {
-        return `${key}:\n${formatTextValue(value)}\n`;
+        return `${key}:\n${formatText(value)}\n`;
       }),
+      "",
+      "Raw JSON body:",
+      JSON.stringify(body, null, 2),
     ];
 
     const text = textLines.join("\n");
 
-    // --- STEP D: Send the email ---
+    // --- STEP D: Send the email (same style as Vision Call) ---
     console.log("➡️ [MEMBERS FEEDBACK] Sending email...");
     await transporter.sendMail({
       from: `Dr. Juan Pablo Salerno <${OAUTH_USER}>`,
@@ -161,7 +171,7 @@ export async function POST(req) {
       subject: "New RISE Member Experience Feedback Submission",
       text,
       html,
-      // no replyTo here because the survey currently doesn't collect respondent email
+      // no replyTo – you’re not collecting respondent email here
     });
 
     console.log("✔️ [MEMBERS FEEDBACK] Email sent!");
