@@ -432,7 +432,7 @@ export default function BooksClient() {
                       </a>
                       {/* YouTube */}
                       <a
-                        href="https://www.youtube.com/@YOURHANDLE"
+                        href="https://www.youtube.com/@drjuanpablosalerno"
                         aria-label="YouTube"
                         className="opacity-90 hover:opacity-100"
                       >
