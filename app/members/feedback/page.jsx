@@ -212,7 +212,7 @@ export default function MembersFeedbackPage() {
           {/* MAIN CHOICE */}
           <section className="space-y-3">
             <h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--color-cream)]/80">What part of RISE would you like to share feedback on today?</h2>
-            <p className="text-xs text-[var(--color-cream)]/70">You can select one or more areas below.</p>
+            <p className="text-xs text-[var(--color-cream)]/70">You can select one or more areas below and then scroll down.</p>
             <div className="mt-4 space-y-2">
               {AREA_OPTIONS.map(area => {
                 const active = areaSelected(area.key);
