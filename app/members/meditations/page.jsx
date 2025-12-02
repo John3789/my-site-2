@@ -43,13 +43,14 @@ const MEDITATION_THEMES = [
     ]
   },
   {
-    id: "self-compassion-healing",
-    label: "Self-Compassion & Healing",
-    description: "Practices to soften your inner critic and meet yourself with more gentleness and care.",
+    id: "confidence-self-worth",
+    label: "Confidence & Self-Worth",
+    description: "Practices to soften your inner critic, strengthen your self-confidence, self-trust, and sense of enoughness.",
+
     meditations: [
       {
         id: "inner-friend-8min",
-        title: "Speaking to Yourself Like a Friend",
+        title: "Speaking to Yourself Like Your Child",
         length: "8 min",
         level: "All levels",
         mood: ["soft", "heart-opening"],
@@ -67,21 +68,15 @@ const MEDITATION_THEMES = [
     meditations: []
   },
   {
-    id: "purpose-alignment",
-    label: "Purpose & Alignment",
-    description: "Sessions to hepp you return to your values, vision, and the deeper “why” behind your life.",
+    id: "lost-finding-way",
+    label: "Feeling Lost & Finding Your Way",
+    description: "Short sessions that help you understand what’s going on inside, clear the mental fog, and reconnect with a sense of direction—one small step at a time.",
     meditations: []
   },
   {
     id: "manifestation-intention",
     label: "Manifestation & Intention Setting",
     description: "Practices to align your energy, beliefs, and actions with what you’re calling in.",
-    meditations: []
-  },
-  {
-    id: "confidence-self-worth",
-    label: "Confidence & Self-Worth",
-    description: "Sessions to strengthen your inner confidence, self-trust, and sense of enoughness.",
     meditations: []
   },
   {
@@ -147,7 +142,7 @@ export default function MeditationLibraryPage() {
         </h1>
         <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto mt-5 mb-2 rounded" />
 
-        <p className="mt-5 text-sm md:text-base text-white/80">
+        <p className="text-center mx-auto max-w-[720px] mt-5 text-sm md:text-base text-white/80">
           A growing collection of guided sessions to build calm, clarity, motivation,
           compassion, and purpose – organized by theme so you can find what you need
           in this exact moment.

@@ -18,7 +18,7 @@ export default function WeeklyWisdomPage() {
       className="mx-auto max-w-[1100px] px-6 py-12 mt-7"
     >
           {/* Sticky Members Home button */}
-<div className="sticky top-8 z-30 flex justify-start">
+<div className="ml-8 sticky top-8 z-30 flex justify-start">
   <MembersHomeLink
     className="inline-flex items-center rounded-full border border-[var(--color-gold)] bg-transparent px-2.5 py-[3px] text-[9px] font-semibold tracking-[0.14em] text-[var(--color-gold)] backdrop-blur-sm"
   />
@@ -26,13 +26,13 @@ export default function WeeklyWisdomPage() {
    {/* PAGE HEADER */}
   <header>
 
-    <h1 className="mt-9 font-serif text-4xl md:text-5xl tracking-tight leading-tight text-[var(--color-cream)]">
+    <h1 className="mx-auto mt-9 font-serif text-5xl md:text-6xl tracking-tight leading-tight text-[var(--color-cream)] text-center">
       {hasEmails ? "Weekly Wisdom Collection" : "Weekly Wisdom"}
     </h1>
-          <div className="mt-3 mb-4 h-[2px] w-16 rounded bg-[var(--color-gold)]/85" />
+          <div className="mx-auto text-center mt-4 mb-6 h-[2px] w-16 rounded bg-[var(--color-gold)]/85" />
 
     {hasEmails ? (
-      <p className="mt-3 max-w-[650px] text-sm md:text-base text-[var(--color-cream)]/80">
+      <p className="mx-auto text-center mt-3 max-w-[720px] text-sm md:text-base text-[var(--color-cream)]/80">
         Concise reflections by Dr. Salerno you can return to anytime. Start with the this week's wisdom
         below, or browse notes from previous weeks for the one that fits what you&apos;re moving through
         right now.

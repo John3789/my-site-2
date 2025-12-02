@@ -456,7 +456,7 @@ export default function ResourcesClient() {
               Social Media Inspiration Space
             </h1>
 
-            <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 mx-auto mt-4 mb-6 rounded" />
+            <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 mx-auto mt-4 -mb-1 rounded" />
           </div>
 
 
