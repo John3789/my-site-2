@@ -8,39 +8,35 @@ const THEMES = [
   {
     id: "motivation-mindset",
     label: "Motivation & Mindset",
-    blurb: "Tools to restart your drive, rebuild confidence, and shift limiting beliefs.",
+    blurb: "Guides to rebuild momentum, reframe negative thought patterns, and turn insight into small, actionable shifts.",
   },
   {
     id: "mental-health-stress",
     label: "Mental Health & Stress Relief",
-    blurb: "Evidence-based strategies to calm your nervous system and reduce overwhelm.",
+    blurb: "Tools to calm overwhelm, regulate your nervous system, and help you feel grounded again—right in the middle of real-life moments.",
   },
   {
-    id: "self-compassion-healing",
-    label: "Self-Compassion & Healing",
-    blurb: "Guides to soften self-criticism and support emotional healing.",
+    id: "confidence-self-worth",
+    label: "Confidence & Self-Worth",
+    blurb: "Deep-dive exercises to soften self-criticism and practice showing up with grounded confidence.",
   },
   {
     id: "relationships-connection",
     label: "Relationships & Connection",
-    blurb: "Support for boundaries, communication, and feeling less alone.",
+    blurb: "Guided reflections for untangling patterns in family, friendships, dating, and community so connection feels safer and more nourishing.",
   },
   {
-    id: "purpose-alignment",
-    label: "Purpose & Alignment",
-    blurb: "Reflections and exercises for finding direction and living in alignment.",
+    id: "lost-finding-way",
+    label: "Feeling Lost & Finding Your Way",
+    blurb: "Frameworks and prompts for when life feels confusing or off-track—so you can understand what’s shifting and choose a compassionate next step.",
   },
   {
     id: "manifestation-intention",
     label: "Manifestation & Intention Setting",
-    blurb: "Grounded, values-based approaches to creating change in your life.",
-  },
-  {
-    id: "fengshui-environment",
-    label: "Feng Shui & Environment",
-    blurb: "How your physical space can support your mental and emotional wellbeing.",
+    blurb: "Values-based planning pages to clarify what you want, align your energy, and pair intention with grounded action.",
   },
 ];
+
 
 export default function GuidesIsland() {
   // mirror MembersIsland footer behavior
@@ -210,25 +206,31 @@ Short, practical guides you can use anytime to reset, realign, and move forward.
         </p>
 
         <div className="grid gap-4 md:grid-cols-2">
-          {THEMES.map((theme) => (
-            <article
-              key={theme.id}
-              className="flex flex-col justify-between rounded-2xl border border-white/10 bg-white/[0.03] p-4 md:p-5"
-            >
-              <div>
-                <h4 className="font-semibold text-[var(--color-cream)]">
-                  {theme.label}
-                </h4>
-                <p className="mt-2 text-xs md:text-sm text-[var(--color-cream)]/75">
-                  {theme.blurb}
-                </p>
-              </div>
-              <p className="mt-4 text-[11px] uppercase tracking-[0.18em] text-[var(--color-cream)]/55">
-                Additional guides coming soon
-              </p>
-            </article>
-          ))}
-        </div>
+  {THEMES.map((theme) => (
+    <article
+      key={theme.id}
+      className="relative flex flex-col justify-between rounded-2xl border border-white/10 bg-white/[0.03] p-4 md:p-5 transition hover:-translate-y-0.5 hover:bg-white/[0.05]"
+    >
+      {/* Gold spine */}
+      <span className="pointer-events-none absolute inset-y-1.5 left-0 w-[3px] rounded-l-4xl bg-[var(--color-gold)]/80" />
+
+      <div>
+        <h4 className="flex items-center gap-2 font-semibold text-[var(--color-cream)] opacity-92">
+          <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-gold)]" />
+          <span>{theme.label}</span>
+        </h4>
+        <p className="mt-2 text-xs md:text-sm text-[var(--color-cream)]/75">
+          {theme.blurb}
+        </p>
+      </div>
+
+      <p className="mt-4 text-[11px] uppercase tracking-[0.18em] text-[var(--color-gold)]/80">
+        Additional guides coming soon
+      </p>
+    </article>
+  ))}
+</div>
+
         {/* QUESTIONS / CONTACT */}
 <div className="mt-8 text-center">
   <p className="text-base md:text-lg font-semibold text-[var(--color-cream)]">
