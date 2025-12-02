@@ -219,7 +219,7 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
               <h5 className="uppercase tracking-[0.18em] text-[11px] font-medium text-center opacity-70 pt-3">Meditations</h5>
               <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
 
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start lg:items-center justify-items-stretch">
+<div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 lg:gap-24 items-start lg:items-center">
                 {/* Left: image */}
 <div className="lg:col-span-6 w-full max-w-[680px] lg:max-w-[780px] mx-auto lg:mx-0 [@media(orientation:landscape)_and_(max-width:900px)]:max-w-[560px]">                  
                   <div className="relative w-full aspect-[3/2] shadow-2xl overflow-hidden">
@@ -238,7 +238,7 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
                 </div>
 
                 {/* Right: text */}
-                <div className="lg:col-span-6 w-full max-w-[670px] mx-auto lg:mx-0">
+<div className="lg:col-span-6 max-w-[680px] mx-auto lg:mx-0 lg:justify-self-end">
                   <h2 className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90 text-center lg:text-left">
                     Meditation with Dr. Salerno
                   </h2>
