@@ -10,6 +10,8 @@ import GA from "../components/GA.jsx"
 import MemberstackProvider from "./providers/MemberstackProvider.jsx"
 import FooterSubscribeIsland from "../components/FooterSubscribeIsland";
 import "./polyfills/server-storage-shim.js";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 
 
 
@@ -225,6 +227,7 @@ export default function RootLayout({ children }) {
 
         <Analytics />
                 </MemberstackProvider>
+                <SpeedInsights />
       </body>
     </html>
   )
