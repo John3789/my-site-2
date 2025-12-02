@@ -30,7 +30,10 @@ export default function LiveSessionsPage() {
   return (
     <div ref={wrapRef}>
       <TopOnMount />
-      <main className="mx-auto w-full max-w-[880px] px-6 pb-16 pt-10 space-y-8">
+<main
+  data-page="live-sessions"
+  className="mx-auto w-full max-w-[880px] px-6 pb-16 pt-10 space-y-8"
+>
         {/* HEADER */}
 <div className="sticky top-0 z-30 flex justify-start">
   <MembersHomeLink
@@ -42,7 +45,7 @@ export default function LiveSessionsPage() {
           <h1 className="mx-auto text-center font-serif mt-3 text-4xl md:text-5xl font-semibold leading-tight text-[var(--color-cream)]">
             Monthly Live Inner Growth Sessions
           </h1>
-                    <div className="mx-auto mt-3 mb-4 h-[2px] w-16 rounded bg-[var(--color-gold)]/85" />
+                    <div className="mx-auto mt-4 mb-6 h-[2px] w-16 rounded bg-[var(--color-gold)]/85" />
 
           <p className="mx-auto max-w-[735px] text-center mt-4 text-sm leading-relaxed text-[var(--color-cream)]/80">
             A live reset, Q&amp;A, and guided inner work experience to help you realign, release what is
@@ -101,7 +104,7 @@ export default function LiveSessionsPage() {
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-gold)]">
                 Theme of the Month
               </p>
-              <p className="mt-2 text-base font-semibold text-[var(--color-cream)]">
+              <p className="mt-2 text-base font-semibold text-[var(--color-cream)]/90">
                 {THEME_OF_MONTH.title}
               </p>
               <p className="mt-3 text-sm leading-relaxed text-[var(--color-cream)]/80">
@@ -119,12 +122,28 @@ export default function LiveSessionsPage() {
                 camera off and simply receive, or participate more actively when it feels right.
               </p>
               <ul className="mt-3 space-y-1.5 text-sm text-[var(--color-cream)]/82">
-                <li>• Gentle grounding and nervous system reset</li>
-                <li>• Guided inner growth practice or visualization</li>
-                <li>• Short teaching around the monthly theme</li>
-                <li>• Space for questions and reflections</li>
-                <li>• Clear, simple next steps to carry into your week</li>
-              </ul>
+  <li className="flex items-start gap-2">
+    <span className="mt-[1px] text-[var(--color-gold)]">✔︎</span>
+    <span>Gentle grounding and nervous system reset</span>
+  </li>
+  <li className="flex items-start gap-2">
+    <span className="mt-[1px] text-[var(--color-gold)]">✔︎</span>
+    <span>Guided inner growth practice or visualization</span>
+  </li>
+  <li className="flex items-start gap-2">
+    <span className="mt-[1px] text-[var(--color-gold)]">✔︎</span>
+    <span>Short teaching around the monthly theme</span>
+  </li>
+  <li className="flex items-start gap-2">
+    <span className="mt-[1px] text-[var(--color-gold)]">✔︎</span>
+    <span>Space for questions and reflections</span>
+  </li>
+  <li className="flex items-start gap-2">
+    <span className="mt-[1px] text-[var(--color-gold)]">✔︎</span>
+    <span>Clear, simple next steps to carry into your week</span>
+  </li>
+</ul>
+
             </div>
           </div>
         </section>
@@ -133,26 +152,57 @@ export default function LiveSessionsPage() {
         <section className="rounded-2xl bg-[var(--color-teal-850)]/85 ring-1 ring-white/10 p-6 md:p-7">
           <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
             <div className="md:max-w-[55%]">
-              <h2 className="text-lg font-semibold text-[var(--color-cream)]">Before the Session</h2>
+              <p className="text-[11px] md:text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-gold)]">
+  PREPARE
+</p>
+<h2 className="mt-1 text-lg font-semibold text-[var(--color-cream)] opacity-90">Before the Session</h2>
+
               <p className="mt-3 text-sm leading-relaxed text-[var(--color-cream)]/80">
                 A few minutes of preparation can completely change how the session lands in your body and mind.
                 Think of this as your small ritual to step out of everyday noise and into intentional time with yourself.
               </p>
             </div>
-            <ul className="mt-2 space-y-2 text-sm text-[var(--color-cream)]/88 md:max-w-[45%]">
-              <li>✓ Choose a quiet, comfortable space where you won&apos;t be interrupted.</li>
-              <li>✓ Bring headphones if possible for a more immersive experience.</li>
-              <li>✓ Have water or tea nearby.</li>
-              <li>✓ Keep a journal and pen within reach.</li>
-              <li>✓ Optional: light a candle or incense to mark this as time just for you.</li>
-              <li>✓ Take 2–3 deep breaths and set one simple intention for the session.</li>
-            </ul>
+<ul className="mt-2 space-y-2 text-sm text-[var(--color-cream)]/88 md:max-w-[45%]">
+  <li className="flex items-start gap-2">
+    <span className="mt-[1px] text-[var(--color-gold)]">✔︎</span>
+    <span>Choose a quiet, comfortable space where you won&apos;t be interrupted.</span>
+  </li>
+  
+  <li className="flex items-start gap-2">
+    <span className="mt-[1px] text-[var(--color-gold)]">✔︎</span>
+    <span>Bring headphones if possible for a more immersive experience.</span>
+  </li>
+
+  <li className="flex items-start gap-2">
+    <span className="mt-[1px] text-[var(--color-gold)]">✔︎</span>
+    <span>Have water or tea nearby.</span>
+  </li>
+
+  <li className="flex items-start gap-2">
+    <span className="mt-[1px] text-[var(--color-gold)]">✔︎</span>
+    <span>Keep a journal and pen within reach.</span>
+  </li>
+
+  <li className="flex items-start gap-2">
+    <span className="mt-[1px] text-[var(--color-gold)]">✔︎</span>
+    <span>Optional: light a candle or incense to mark this as time just for you.</span>
+  </li>
+
+  <li className="flex items-start gap-2">
+    <span className="mt-[1px] text-[var(--color-gold)]">✔︎</span>
+    <span>Take 2–3 deep breaths and set one simple intention for the session.</span>
+  </li>
+</ul>
+
           </div>
         </section>
 
         {/* 3. AFTER THE SESSION */}
         <section className="rounded-2xl bg-white/[0.05] ring-1 ring-white/12 p-6 md:p-7">
-          <h2 className="text-lg font-semibold text-[var(--color-cream)]">After the Session</h2>
+<p className="text-[11px] md:text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-gold)]">
+  INTEGRATE
+</p>
+<h2 className="mt-1 text-lg font-semibold text-[var(--color-cream)] opacity-90">After the Session</h2>
           <p className="mt-3 text-sm leading-relaxed text-[var(--color-cream)]/80">
             The real transformation shows up in how you live with what came up for you. Use these simple steps
             to integrate the work into your day-to-day life.
@@ -169,11 +219,21 @@ export default function LiveSessionsPage() {
               </div>
               <div>
                 <p className="text-[13px] font-semibold text-[var(--color-gold)]">2. Journal Prompts</p>
-                <ul className="mt-1 space-y-1">
-                  <li>• What stood out to me most from this session?</li>
-                  <li>• What am I ready to gently release or soften?</li>
-                  <li>• What new belief, habit, or boundary am I choosing to practice this month?</li>
-                </ul>
+<ul className="mt-1 space-y-1">
+  <li className="flex items-start gap-2">
+    <span className="mt-[1px] text-[var(--color-gold)]">✔︎</span>
+    <span>What stood out to me most from this session?</span>
+  </li>
+  <li className="flex items-start gap-2">
+    <span className="mt-[1px] text-[var(--color-gold)]">✔︎</span>
+    <span>What am I ready to gently release or soften?</span>
+  </li>
+  <li className="flex items-start gap-2">
+    <span className="mt-[1px] text-[var(--color-gold)]">✔︎</span>
+    <span>What new belief, habit, or boundary am I choosing to practice this month?</span>
+  </li>
+</ul>
+
               </div>
             </div>
 
@@ -198,7 +258,10 @@ export default function LiveSessionsPage() {
 
         {/* 4. REPLAY ACCESS */}
         <section className="rounded-2xl bg-[var(--color-teal-850)]/85 ring-1 ring-white/12 p-6 md:p-7">
-          <h2 className="text-lg font-semibold text-[var(--color-cream)]">Replay Access</h2>
+<p className="text-[11px] md:text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-gold)]">
+  CATCH THE REPLAY
+</p>
+<h2 className="mt-1 text-lg font-semibold text-[var(--color-cream)] opacity-90">Replay Access</h2>
           <p className="mt-3 text-sm leading-relaxed text-[var(--color-cream)]/80">
             If you can&apos;t attend live, you can watch the replay here. Recordings are available until the next
             session is released.
@@ -238,7 +301,7 @@ export default function LiveSessionsPage() {
 </div>
 
       {/* Divider ABOVE footer, matching membership/meditations */}
-      <div className="mx-auto max-w-[1200px] px-6 mt-12">
+      <div className="mx-auto max-w-[1200px] px-6 mt-10">
         <hr className="border-t border-[var(--color-cream)]/22" />
       </div>
 
@@ -316,7 +379,7 @@ export default function LiveSessionsPage() {
         </div>
       </div>
 
-      {/* Mobile divider */}
+            {/* Mobile divider to match membership/contact */}
       <div className="lg:hidden mx-auto w-full px-0 mt-8">
         <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
       </div>
@@ -324,11 +387,62 @@ export default function LiveSessionsPage() {
       {/* Mobile footer stack */}
       <div className="lg:hidden mx-auto w-full max-w-[900px] px-0 mt-6">
         <div className="mt-0 text-[13px] leading-relaxed">
-          <p className="uppercase tracking-[0.18em] text-left opacity-70">
-            Follow Dr. Salerno:
+          <p className="uppercase tracking-[0.18em] text-left opacity-70">Follow Dr. Salerno:</p>
+          <div className="mt-3 flex items-left justify-left gap-8">
+<a
+              href="https://www.tiktok.com/@drjuanpablosalerno"
+              aria-label="TikTok"
+              className="opacity-90 hover:opacity-100"
+            >
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                <path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z" />
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/drjuanpablosalerno/"
+              aria-label="Instagram"
+              className="opacity-90 hover:opacity-100"
+            >
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
+                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 2.75a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5Zm0 1.75a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm5.5-2.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z" />
+              </svg>
+            </a>
+            <a
+              href="https://www.youtube.com/@drjuanpablosalerno"
+              aria-label="YouTube"
+              className="opacity-90 hover:opacity-100"
+            >
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                <path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" />
+              </svg>
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61582412806274#"
+              aria-label="Facebook"
+              className="opacity-90 hover:opacity-100"
+            >
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2v3h-2c-.3 0-.5.2-.5.5V12H16l-.5 3h-2v7A10 10 0 0 0 22 12z" />
+              </svg>
+            </a>
+          </div>
+
+          <p className="mt-5 text-left opacity-85">
+            Dr. Juan Pablo Salerno is an award-winning mental health science expert and thought leader, author, and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
           </p>
-          {/* mobile socials (same as above) */}
-          {/* ...you can paste the same social icons + text as your meditations footer... */}
+
+          <p className="mt-6 text-left opacity-85">© Dr. Juan Pablo Salerno™</p>
+          <p className="mt-2 mb-5 text-left opacity-85">
+            <a href="/terms" className="underline underline-offset-4 hover:opacity-80">
+              Terms
+            </a>
+            <span className="mx-2 opacity-50">·</span>
+            <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">
+              Privacy
+            </a>
+            <span className="mx-2 opacity-50">·</span>
+            <span>All rights reserved</span>
+          </p>
         </div>
       </div>
 
