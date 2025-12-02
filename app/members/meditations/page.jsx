@@ -9,7 +9,7 @@ const MEDITATION_THEMES = [
   {
     id: "motivation-mindset",
     label: "Motivation & Mindset",
-    description: "Short resets to help you get unstuck, refocus, and take aligned action.",
+    description: "Short resets to help you get unstuck, clear your mind, and take aligned action.",
     meditations: [
       {
         id: "morning-reset-5min",
@@ -22,23 +22,12 @@ const MEDITATION_THEMES = [
         comingSoon: false,
         blurb: "A quick reset to clear mental fog and reconnect with your intention for the day."
       },
-      {
-        id: "evening-reset-10min",
-        title: "Evening Reset for Busy Minds",
-        length: "10 min",
-        level: "All levels",
-        mood: ["grounding", "unwinding"],
-        language: "EN",
-        audioPath: "/audio/evening-reset-10min.mp3",
-        comingSoon: true,
-        blurb: "Gently release the weight of the day and prepare your nervous system for rest."
-      }
     ]
   },
   {
     id: "mental-health-stress",
     label: "Mental Health & Stress Relief",
-    description: "Support for anxiety, overwhelm, and emotional regulation on hard days.",
+    description: "Gentle support for anxiety, overwhelm, and calming your nervous system on hard days.",
     meditations: [
       {
         id: "anxiety-soften-7min",
@@ -56,7 +45,7 @@ const MEDITATION_THEMES = [
   {
     id: "self-compassion-healing",
     label: "Self-Compassion & Healing",
-    description: "Practices to quiet the inner critic and meet yourself with more gentleness.",
+    description: "Practices to soften your inner critic and meet yourself with more gentleness and care.",
     meditations: [
       {
         id: "inner-friend-8min",
@@ -74,29 +63,47 @@ const MEDITATION_THEMES = [
   {
     id: "relationships-connection",
     label: "Relationships & Connection",
-    description: "Guided reflections to deepen connection with yourself and others.",
+    description: "Guided reflections to deepen connection with yourself and the people who matter most.",
     meditations: []
   },
   {
     id: "purpose-alignment",
     label: "Purpose & Alignment",
-    description: "Come back to your values, vision, and the bigger “why” behind your life.",
+    description: "Sessions to hepp you return to your values, vision, and the deeper “why” behind your life.",
     meditations: []
   },
   {
     id: "manifestation-intention",
     label: "Manifestation & Intention Setting",
-    description: "Align your energy, beliefs, and actions with what you’re calling in.",
+    description: "Practices to align your energy, beliefs, and actions with what you’re calling in.",
     meditations: []
   },
   {
-    id: "fengshui-environment",
-    label: "Feng Shui & Environment",
-    description: "Support for clearing, grounding, and energizing the spaces you live in.",
+    id: "confidence-self-worth",
+    label: "Confidence & Self-Worth",
+    description: "Sessions to strengthen your inner confidence, self-trust, and sense of enoughness.",
     meditations: []
+  },
+  {
+    id: "rest-sleep-restoration",
+    label: "Rest & Sleep Restoration",
+    description: "Evening practices to help you unwind, release the day, and settle into deeper, more restorative sleep.",
+    meditations: [
+      {
+        id: "evening-reset-10min",
+        title: "Evening Reset for Busy Minds",
+        length: "10 min",
+        level: "All levels",
+        mood: ["grounding", "unwinding"],
+        language: "EN",
+        audioPath: "/audio/evening-reset-10min.mp3",
+        comingSoon: true,
+        blurb: "Gently release the weight of the day and prepare your nervous system for rest."
+      }
+
+    ]
   }
 ];
-
 export default function MeditationLibraryPage() {
   // No "all" filter anymore → null means show everything
   const [activeFilter, setActiveFilter] = useState(null);
@@ -146,7 +153,7 @@ export default function MeditationLibraryPage() {
           in this exact moment.
         </p>
         <p className="mt-3 text-xs text-white/50">
-          Last updated: {lastUpdated}
+          This page will be updated periodically as new sessions are added. Last updated: {lastUpdated}
         </p>
       </section>
 
@@ -312,22 +319,38 @@ export default function MeditationLibraryPage() {
         <div className="mt-0 text-[13px] leading-relaxed">
           <p className="uppercase tracking-[0.18em] text-left opacity-70">Follow Dr. Salerno:</p>
           <div className="mt-3 flex items-left justify-left gap-8">
-            <a href="https://www.tiktok.com/@drjuanpablosalerno" aria-label="TikTok" className="opacity-90 hover:opacity-100">
+<a
+              href="https://www.tiktok.com/@drjuanpablosalerno"
+              aria-label="TikTok"
+              className="opacity-90 hover:opacity-100"
+            >
               <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
                 <path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z" />
               </svg>
             </a>
-            <a href="https://www.instagram.com/drjuanpablosalerno/" aria-label="Instagram" className="opacity-90 hover:opacity-100">
-              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 0 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z" />
+            <a
+              href="https://www.instagram.com/drjuanpablosalerno/"
+              aria-label="Instagram"
+              className="opacity-90 hover:opacity-100"
+            >
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
+                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 2.75a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5Zm0 1.75a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm5.5-2.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z" />
               </svg>
             </a>
-            <a href="https://www.youtube.com/@drjuanpablosalerno" aria-label="YouTube" className="opacity-90 hover:opacity-100">
+            <a
+              href="https://www.youtube.com/@drjuanpablosalerno"
+              aria-label="YouTube"
+              className="opacity-90 hover:opacity-100"
+            >
               <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
                 <path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" />
               </svg>
             </a>
-            <a href="https://www.facebook.com/profile.php?id=61582412806274#" aria-label="Facebook" className="opacity-90 hover:opacity-100">
+            <a
+              href="https://www.facebook.com/profile.php?id=61582412806274#"
+              aria-label="Facebook"
+              className="opacity-90 hover:opacity-100"
+            >
               <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
                 <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2v3h-2c-.3 0-.5.2-.5.5V12H16l-.5 3h-2v7A10 10 0 0 0 22 12z" />
               </svg>
