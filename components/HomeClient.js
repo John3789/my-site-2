@@ -221,7 +221,7 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
 
 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 lg:gap-24 items-start lg:items-center">
                 {/* Left: image */}
-<div className="lg:col-span-6 w-full max-w-[680px] lg:max-w-[780px] mx-auto lg:mx-0 [@media(orientation:landscape)_and_(max-width:900px)]:max-w-[560px]">                  
+<div className="lg:col-span-6 w-full max-w-[680px] lg:max-w-[780px] mx-auto lg:mx-0 lg:justify-self-start [@media(orientation:landscape)_and_(max-width:900px)]:max-w-[560px]">
                   <div className="relative w-full aspect-[3/2] shadow-2xl overflow-hidden">
 <HeroImageIphoneAware
                       src="/beach1.jpg"
