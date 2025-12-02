@@ -44,6 +44,82 @@ export default function WeeklyWisdomPage() {
     )}
   </header>
 
+{/* HOW TO USE THIS WEEK'S WISDOM */}
+<section className="mx-auto mt-8 md:mt-10 max-w-[1100px] px-6">
+  <div className="rounded-2xl bg-white/[0.07] ring-1 ring-white/10 p-6 md:p-8">
+    {/* Heading */}
+    <h2 className="font-serif text-2xl md:text-[26px] mb-3">
+      How to use this week’s wisdom
+    </h2>
+
+    {/* Intro line */}
+    <p className="text-sm md:text-[15px] opacity-85 max-w-3xl">
+      Each Weekly Wisdom includes a short reflection, a journal prompt, and an affirmation. Use them as a simple 5–10 minute weekly ritual to stay grounded and moving forward.
+    </p>
+
+    {/* 4 x 1 grid of smaller cards */}
+    <div className="mt-6 grid gap-4 md:grid-cols-4">
+      {/* Step 1 */}
+      <div className="rounded-xl border border-white/15 bg-white/5 px-4 py-4 flex flex-col gap-2 hover:bg-white/[0.07]">
+        <div className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] opacity-90">
+          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[var(--color-gold)]/95 text-[11px] font-bold text-black">
+            1
+          </span>
+          <span>Read</span>
+        </div>
+        <p className="text-[13px] opacity-85">
+          Read the letter slowly and notice which lines land the most.
+        </p>
+      </div>
+
+      {/* Step 2 */}
+      <div className="rounded-xl border border-white/15 bg-white/5 px-4 py-4 flex flex-col gap-2 hover:bg-white/[0.07]">
+        <div className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] opacity-90">
+          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[var(--color-gold)]/95 text-[11px] font-bold text-black">
+            2
+          </span>
+          <span>Journal</span>
+        </div>
+        <p className="text-[13px] opacity-85">
+          Spend a few minutes reflecting & answering the journal prompt.
+        </p>
+      </div>
+
+      {/* Step 3 */}
+      <div className="rounded-xl border border-white/15 bg-white/5 px-4 py-4 flex flex-col gap-2 hover:bg-white/[0.07]">
+        <div className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] opacity-90">
+          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[var(--color-gold)]/95 text-[11px] font-bold text-black">
+            3
+          </span>
+          <span>Affirm</span>
+        </div>
+        <p className="text-[13px] opacity-85">
+          Eyes closed, breathe, & repeat the affirmation with intention.
+        </p>
+      </div>
+
+      {/* Step 4 */}
+      <div className="rounded-xl border border-white/15 bg-white/5 px-4 py-4 flex flex-col gap-2 hover:bg-white/[0.07]">
+        <div className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] opacity-90">
+          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[var(--color-gold)]/95 text-[11px] font-bold text-black">
+            4
+          </span>
+          <span>Act</span>
+        </div>
+        <p className="text-[13px] opacity-85">
+          Practice one small action aligned with what came up.
+        </p>
+      </div>
+    </div>
+
+    {/* Closing line */}
+    <p className="mt-6 text-[13px] md:text-[14px] opacity-80 max-w-3xl">
+      You don’t have to do this perfectly. Come back to the same wisdom as often as you need throughout the week.
+    </p>
+  </div>
+</section>
+
+
 
             {/* FEATURED EMAIL — LATEST WEEKLY WISDOM (styled like Guides) */}
       {hasEmails && featured && (
@@ -135,7 +211,7 @@ export default function WeeklyWisdomPage() {
       {hasEmails && recent.length > 0 && (
         <section className="mt-10">
           <div className="flex items-baseline justify-between gap-4">
-            <h2 className="font-sans text-sm font-semibold uppercase tracking-[0.18em] text-[var(--color-cream)]/80">
+            <h2 className="font-sans text-sm font-semibold uppercase tracking-[0.18em] text-[var(--color-cream)]/80 opacity-98">
               Recent Weekly Wisdom
             </h2>
             <p className="text-[11px] text-[var(--color-cream)]/60">
