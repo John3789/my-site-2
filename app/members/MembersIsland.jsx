@@ -206,7 +206,7 @@ export default function MembersIsland() {
 
 {/* STICKY QUICK ACTION BAR */}
 <section className="sticky top-[2.5rem] z-30 mt-4 mb-4">
-  <div className="flex flex-wrap items-center gap-2 md:gap-3 rounded-full bg-[var(--color-teal-850)]/20 ring-1 ring-white/20 px-4 py-3 shadow-[0_10px_35px_rgba(0,0,0,0.45)] backdrop-blur-sm transition">
+  <div className="flex flex-wrap items-center gap-2 md:gap-2.75 rounded-full bg-[var(--color-teal-850)]/20 ring-1 ring-white/20 px-4 py-3 shadow-[0_10px_35px_rgba(0,0,0,0.45)] backdrop-blur-sm transition">
 
  {/* Welcome */}
     <button
