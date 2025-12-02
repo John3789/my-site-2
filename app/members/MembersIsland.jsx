@@ -208,13 +208,23 @@ export default function MembersIsland() {
 <section className="sticky top-[2.5rem] z-30 mt-4 mb-4">
   <div className="flex flex-wrap items-center gap-2 md:gap-3 rounded-full bg-[var(--color-teal-850)]/20 ring-1 ring-white/20 px-4 py-3 shadow-[0_10px_35px_rgba(0,0,0,0.45)] backdrop-blur-sm transition">
 
+ {/* Welcome */}
+    <button
+      type="button"
+      onClick={() => handleJump("welcome")}
+      className="inline-flex items-center gap-1 rounded-full border border-white/20 bg-white/[0.08] px-4 py-1.5 text-[11px] md:text-xs font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/15 active:translate-y-[1px] transition"
+    >
+      <span>🙏</span>
+      <span>Welcome</span>
+    </button>
+
     {/* Start Here */}
     <button
       type="button"
       onClick={() => handleJump("start-here")}
       className="inline-flex items-center gap-1 rounded-full border border-white/20 bg-white/[0.08] px-4 py-1.5 text-[11px] md:text-xs font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/15 active:translate-y-[1px] transition"
     >
-      <span>📘</span>
+      <span>🎬</span>
       <span>Start here</span>
     </button>
 
@@ -239,7 +249,7 @@ export default function MembersIsland() {
         alt="Dr. Salerno AI"
         className="h-5 w-5 rounded-full object-cover ring-1 ring-white/25"
       />
-      <span>Core RISE tools</span>
+      <span>Core tools</span>
     </button>
 
     {/* Everything in RISE */}
@@ -249,7 +259,7 @@ export default function MembersIsland() {
       className="inline-flex items-center gap-1 rounded-full border border-white/20 bg-white/[0.06] px-4 py-1.5 text-[11px] md:text-xs font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
     >
       <span>🌐</span>
-      <span>All RISE tools</span>
+      <span>All tools</span>
     </button>
 
     {/* FAQs */}
@@ -268,8 +278,8 @@ export default function MembersIsland() {
       onClick={() => handleJump("roadmap")}
       className="inline-flex items-center gap-1 rounded-full border border-white/20 bg-white/[0.06] px-4 py-1.5 text-[11px] md:text-xs font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
     >
-      <span>📄</span>
-      <span>RISE roadmap</span>
+      <span>🗺️</span>
+      <span>Roadmap</span>
     </button>
 
     {/* Account & Billing */}
@@ -279,7 +289,7 @@ export default function MembersIsland() {
       className="inline-flex items-center gap-1 rounded-full border border-white/20 bg-white/[0.06] px-4 py-1.5 text-[11px] md:text-xs font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
     >
       <span>💳</span>
-      <span>Account and billing</span>
+      <span>Account & Billing</span>
     </button>
 
   </div>
