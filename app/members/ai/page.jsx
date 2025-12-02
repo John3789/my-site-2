@@ -16,7 +16,7 @@ const EXAMPLE_QUESTIONS = [
   "Something that happened today is really bothering me. Can you help me unpack why it's triggering me?",
   "My anxiety is high right now. Can you walk me through a quick grounding reset?",
   "Can you help me reframe this thought in a kinder, more truthful way?",
-  "Can you help me realign with what actually matters to me?",
+  "Can you help me realign my mind, body, and spirit with what actually matters to me?",
 ];
 
 export default function MembersAiPage() {
@@ -134,7 +134,7 @@ export default function MembersAiPage() {
               </span>
 
               <div>
-                <h1 className="font-serif text-4xl font-bold tracking-tight text-[var(--color-cream)] md:text-5xl">Dr. Salerno AI</h1>
+                <h1 className="font-serif text-4xl font-bold tracking-tight text-[var(--color-cream)] md:text-5xl opacity-95">Dr. Salerno AI</h1>
                 <p className="mt-2 text-lg font-medium text-[var(--color-cream)]/85 md:text-xl">Your Inner Growth Advisor</p>
               </div>
             </div>
@@ -187,7 +187,7 @@ export default function MembersAiPage() {
 
               {/* Closing text + signoff */}
               <p className="mt-5 text-sm leading-relaxed text-[var(--color-cream)]/88">
-                Thank you for being part of this early chapter. My hope is that this becomes a <span className="font-semibold text-[var(--color-cream)]">daily advisor you can turn to whenever you need a reset</span> — a place that gently reminds you of your strength, your worth, and your capacity to grow.
+                Thank you for being part of this early chapter. My hope is that this becomes a <span className="font-semibold text-[var(--color-cream)] opacity-92">daily advisor you can turn to whenever you need a reset</span> — a place that gently reminds you of your strength, your worth, and your capacity to grow.
               </p>
               <p className="mt-3 text-sm italic text-[var(--color-cream)]/80">
                 With love, <span className="font-semibold">Dr. JP Salerno</span>
@@ -216,9 +216,9 @@ export default function MembersAiPage() {
           <div className="mx-auto mt-7 grid max-w-[950px] items-start gap-6 md:grid-cols-2">
             {/* Big card: Working with Dr. Salerno AI */}
             <div className="rounded-2xl bg-[var(--color-teal-850)]/96 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.06),_transparent)] p-6 text-left ring-1 ring-white/12">
-              <h2 className="text-sm font-semibold text-[var(--color-gold)]">Working With Dr. Salerno AI</h2>
+              <h2 className="text-sm font-semibold text-[var(--color-gold)] opacity-90">Working With Dr. Salerno AI</h2>
 
-              <div className="mt-4 grid gap-4.5">
+              <div className="mt-4 grid gap-7">
                 {/* What it can help with */}
                 <div className="rounded-xl bg-white/[0.04] p-4 ring-1 ring-[var(--color-gold)]/60">
                   <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-cream)]/75">What It Can Help You With</h3>
@@ -249,7 +249,7 @@ export default function MembersAiPage() {
 
             {/* Big card: Examples of questions */}
             <div className="rounded-2xl bg-[var(--color-teal-850)]/96 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.06),_transparent)] p-6 text-left ring-1 ring-white/12">
-              <h2 className="text-sm font-semibold text-[var(--color-gold)]">Examples of Things You Can Ask</h2>
+              <h2 className="text-sm font-semibold text-[var(--color-gold)] opacity-90">Examples of Things You Can Ask</h2>
 
               <div className="mt-4 grid gap-3">
                 {EXAMPLE_QUESTIONS.map((q, idx) => (
@@ -277,7 +277,7 @@ export default function MembersAiPage() {
 
             <div className="mb-2 flex items-center justify-between">
               <div>
-                <h2 className="text-[15px] font-semibold tracking-wide text-[var(--color-cream)] md:text-[17px]">Live Conversation</h2>
+                <h2 className="text-[15px] font-semibold tracking-wide text-[var(--color-cream)] md:text-[17px] opacity-90">Live Conversation</h2>
                 <p className="mt-1 text-[10px] text-[var(--color-cream)]/60 md:text-[11px]">
                   Supportive guidance only — not therapy, medical care, or an emergency service.
                 </p>
