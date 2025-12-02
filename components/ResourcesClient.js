@@ -15,8 +15,16 @@ const BYPASS_RESOURCES_GATE = true; // 👈 set to true while designing
    THEMES DATA
    ========================= */
 
-   // ---- Resources mobile jump + wraparound order ----
-const RES_SECTIONS = ["motivation", "mindfulness", "manifestation", "fengshui"]; // first -> last
+// ---- Resources mobile jump + wraparound order ----
+const RES_SECTIONS = [
+  "motivation-mindset",
+  "confidence-self-worth",
+  "mental-health-stress",
+  "self-compassion-healing",
+  "relationships-connection",
+  "lost-finding-way",
+  "manifestation-intention",
+]; // first -> last
 
 const idxRes = (id) => RES_SECTIONS.indexOf(id);
 const prevRes = (id) =>
@@ -52,14 +60,165 @@ function jumpRes(targetId, opts = {}) {
 }
 
 const THEMES = [
-  { slug: "motivation-mindset", title: "Motivation & Mindset", blurb: "Shift perspective and recharge your drive with affirmations and reframes.", collections: [{ slug: "confidence-boost", title: "Confidence Boost", subtitle: "Reframes and tiny actions to move through self-doubt.", tags: ["Motivation", "Confidence"], items: [] }, { slug: "positive-reframes", title: "Positive Reframes", subtitle: "Gentle perspective shifts that stick.", tags: ["Mindset", "Resilience"], items: [] }] },
-  { slug: "mental-health-stress", title: "Mental Health & Stress Relief", blurb: "Practical steps for everyday wellbeing and downshifting your nervous system.", collections: [{ slug: "everyday-wellbeing", title: "Everyday Wellbeing", subtitle: "Small habits that compound over time.", tags: ["Wellbeing", "Habits"], items: [] }, { slug: "calm-in-chaos", title: "Calm in Chaos", subtitle: "Grounding tools for busy environments.", tags: ["Stress relief", "Grounding"], items: [] }] },
-  { slug: "self-compassion-healing", title: "Self-Compassion & Healing", blurb: "Practices for forgiving, softening, and rebuilding resilience after setbacks.", collections: [{ slug: "compassion-practices", title: "Compassion Practices", subtitle: "Moments to offer yourself kindness.", tags: ["Compassion", "Healing"], items: [] }, { slug: "healing-habits", title: "Healing Habits", subtitle: "Daily cues that create space to recover.", tags: ["Recovery", "Self-care"], items: [] }] },
-  { slug: "relationships-connection", title: "Relationships & Connection", blurb: "Build healthier everyday relationships—with friends, family, colleagues, and community.", collections: [{ slug: "everyday-connection", title: "Everyday Connection", subtitle: "Small ways to nurture belonging and support.", tags: ["Connection", "Community"], items: [] }, { slug: "communication-shifts", title: "Communication Shifts", subtitle: "Gentle ways to express yourself clearly.", tags: ["Communication", "Clarity"], items: [] }] },
-  { slug: "purpose-alignment", title: "Purpose & Alignment", blurb: "Connect with your deeper why and align your daily actions to it.", collections: [{ slug: "values-check", title: "Values Check", subtitle: "Reflection prompts to guide decisions.", tags: ["Purpose", "Values"], items: [] }, { slug: "alignment-habits", title: "Alignment Habits", subtitle: "Simple steps to bring goals and life closer.", tags: ["Alignment", "Direction"], items: [] }] },
-  { slug: "manifestation-intentions", title: "Manifestation & Intention Setting", blurb: "Align actions with vision through clear intentions and consistent micro-moves.", collections: [{ slug: "morning-clarity", title: "Morning Clarity", subtitle: "Orient your day toward purpose.", tags: ["Clarity", "Intention"], items: [] }, { slug: "get-unstuck", title: "Get Unstuck", subtitle: "From hesitation to first step.", tags: ["Momentum", "Action"], items: [] }] },
-  { slug: "feng-shui-environment", title: "Feng Shui & Environment", blurb: "Small environmental shifts that support energy, focus, and rest.", collections: [{ slug: "clarity-corners", title: "Clarity Corners", subtitle: "Tidy cues that nudge focus.", tags: ["Focus", "Simplicity"], items: [] }, { slug: "rest-friendly-bedroom", title: "Rest-Friendly Bedroom", subtitle: "Edit the room, not your willpower.", tags: ["Rest", "Sleep"], items: [] }] },
+  {
+    slug: "motivation-mindset",
+    title: "Motivation & Mindset",
+    blurb:
+      "Reels to shift your mindset, boost motivation, and get you back into motion when you've been feeling stuck, on auto-pilot, or second-guessing yourself.",
+    collections: [
+      {
+        slug: "motivation-reset",
+        title: "Motivation Reset",
+        subtitle:
+          "Short, direct boosts for when you’re procrastinating, stalling, or talking yourself out of what you want.",
+        tags: ["Motivation", "Action"],
+        items: [],
+      },
+      {
+        slug: "mindset-shifts",
+        title: "Mindset Shifts That Stick",
+        subtitle:
+          "Reframes that challenge all-or-nothing thinking, perfectionism, and fear of failure—without toxic positivity.",
+        tags: ["Mindset", "Resilience"],
+        items: [],
+      },
+    ],
+  },
+
+  {
+    slug: "confidence-self-worth",
+    title: "Confidence & Self-Worth",
+    blurb:
+      "Reels to strengthen self-worth, soften harsh self-criticism, and help you show up with grounded confidence—not fake hype.",
+    collections: [
+      {
+        slug: "inner-worth-reminders",
+        title: "Remembering Your Worth",
+        subtitle:
+          "Go-to reels for the moments you feel behind, not enough, or like everyone else is further ahead than you.",
+        tags: ["Self-worth", "Comparison"],
+        items: [],
+      },
+      {
+        slug: "self-trust-moments",
+        title: "Building Self-Trust",
+        subtitle:
+          "Stories and prompts that support trusting your decisions, boundaries, and unique timing—especially when others don’t fully get it.",
+        tags: ["Self-trust", "Boundaries"],
+        items: [],
+      },
+            {
+        slug: "compassion-practices",
+        title: "Softening Self-Judgment",
+        subtitle:
+          "Reframes for when your inner critic is loud, cruel, or stuck in shame—and you need a kinder voice.",
+        tags: ["Self-compassion", "Inner critic"],
+        items: [],
+      },
+    ],
+  },
+
+  {
+    slug: "mental-health-stress",
+    title: "Mental Health & Stress Relief",
+    blurb:
+      "Grounded mental health reels—about anxiety, burnout, and overwhelm—that normalize what you’re feeling and offer practical ways to steady yourself.",
+    collections: [
+      {
+        slug: "everyday-wellbeing",
+        title: "Stress & Overwhelm Check-Ins",
+        subtitle:
+          "Reels that name what you're going through so you can stop blaming yourself and start responding with more care.",
+        tags: ["Stress", "Overwhelm"],
+        items: [],
+      },
+      {
+        slug: "calm-in-chaos",
+        title: "Anxiety, Burnout & Reset",
+        subtitle:
+          "Tools, scripts, and tiny steps to calm your system without pretending everything is fine when it isn’t.",
+        tags: ["Anxiety", "Burnout"],
+        items: [],
+      },
+    ],
+  },
+  {
+    slug: "relationships-connection",
+    title: "Relationships & Connection",
+    blurb:
+      "Reels on the quiet stuff under your relationships: feeling unseen, over-giving, people-pleasing, and craving deeper connection. Guidance for creating relationships that actually feel good to be in.",
+    collections: [
+      {
+        slug: "everyday-connection",
+        title: "Everyday Relationship Dynamics",
+        subtitle:
+          "Guidance for navigating miscommunication, emotional distance, and feeling like you’re ‘too much’ or ‘not enough’ for the people around you.",
+        tags: ["Relationships", "Belonging"],
+        items: [],
+      },
+      {
+        slug: "communication-shifts",
+        title: "Honest Conversations",
+        subtitle:
+          "On setting boundaries, expressing your needs, or repairing after conflict—without losing yourself.",
+        tags: ["Communication", "Boundaries"],
+        items: [],
+      },
+    ],
+  },
+
+  {
+    slug: "lost-finding-way",
+    title: "Feeling Lost & Finding Your Way",
+    blurb:
+      "Reels for the seasons when life feels confusing, heavy, or directionless. These help you understand what’s happening inside and with taking the right next step instead of staying stuck.",
+    collections: [
+      {
+        slug: "understanding-yourself",
+        title: "Understanding What You’re Feeling",
+        subtitle:
+          "Reels that help you name your what you're navigating, your patterns, and what’s actually underneath the fog—not just ‘I don’t know.’",
+        tags: ["Clarity", "Awareness"],
+        items: [],
+      },
+      {
+        slug: "finding-direction",
+        title: "Finding Your Next Step",
+        subtitle:
+          "Grounding reminders and prompts for when you feel lost, behind, or unsure where life is heading—but understanding you’re meant for more.",
+        tags: ["Direction", "Next steps"],
+        items: [],
+      },
+    ],
+  },
+
+  {
+    slug: "manifestation-intention",
+    title: "Manifestation & Intention Setting",
+    blurb:
+      "Reels that support you in getting intentional about your life—your choices, your energy, and the direction you’re moving—so what you want becomes something you actively build, not wait for.",
+    collections: [
+      {
+        slug: "morning-clarity",
+        title: "Intention in Real Life",
+        subtitle:
+          "Practical, grounded ways to set intentions for your day, your goals, and your energy—without pressure to be ‘high vibe’ all the time.",
+        tags: ["Intention", "Alignment"],
+        items: [],
+      },
+      {
+        slug: "get-unstuck",
+        title: "Manifesting Through Action",
+        subtitle:
+          "Reframes and steps that move you from wishing and waiting into small, aligned decisions that actually shift your reality.",
+        tags: ["Momentum", "Action"],
+        items: [],
+      },
+    ],
+  },
 ];
+
+
 
 export default function ResourcesClient() {
   const wrapRef = useRef(null);
