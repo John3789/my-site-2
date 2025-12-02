@@ -185,8 +185,8 @@ export default function MembersIsland() {
         </p>
         <p className="mt-3 text-base md:text-lg opacity-85">
           Inside RISE, you&apos;ll find guided meditations, weekly wisdom, monthly live sessions,
-          members-only AI guidance, alignment guides, and an inspiration library. You can move
-          slowly—everything here is designed to support you, not overwhelm you.
+          members-only AI guidance, alignment guides, and a media inspiration space. You can move
+          slowly—everything here is designed to support you at your pace.
         </p>
         <p className="text-base md:text-lg opacity-85">
           Start with the simple 7-day path below, and come back here anytime you need to reset.
@@ -345,7 +345,7 @@ export default function MembersIsland() {
         num: "4",
         title: "Ask Dr. Salerno AI",
         content:
-          "Open Dr. Salerno AI and share what you're moving through. Ask for a grounding exercise, a simple next step, or a new way to look at your situation. Save any response that really helps you.",
+          "Open Dr. Salerno AI and share what you're moving through. Ask for a grounding exercise, a simple next step, or a new way to look at your situation. Save or write down any response that really helps you.",
       },
       {
         num: "5",
@@ -357,7 +357,7 @@ export default function MembersIsland() {
         num: "6",
         title: "Explore custom support",
         content:
-          "Visit the Custom Meditations + Transformation Calls page and read how it works. Notice whether having a personalized meditation and 1:1 call feels like something you might want in this season.",
+          "Visit the Custom Meditations + Transformation Calls pages and read how they work. Notice whether having a personalized meditation or 1:1 call feels like something you might benefit from presently.",
       },
       {
         num: "7",
@@ -431,7 +431,7 @@ export default function MembersIsland() {
         <div className="flex items-center gap-2">
           <span className="text-base">✨</span>
           <span className="text-sm font-semibold uppercase tracking-wide opacity-80">
-            Meditation as your anchor
+            Guided Meditations
           </span>
         </div>
         <span className="ml-3 text-xs opacity-70 transition-transform group-open:rotate-90">
@@ -441,7 +441,7 @@ export default function MembersIsland() {
       <div className="mt-2">
         <p className="text-sm opacity-80">
           On heavy days or in the small in-between moments, a short meditation becomes your reset
-          button. Pick a track that matches how you feel and let it bring you back into your body
+          button. Pick a track that matches how you feel and let it bring you back to center
           and into your day.
         </p>
         <p className="mt-2 text-[10.5px] uppercase tracking-[0.16em] opacity-75 font-bold">
@@ -498,7 +498,7 @@ export default function MembersIsland() {
 
       <div className="mt-2">
         <p className="text-sm opacity-90">
-          Use Dr. Salerno AI when you’re spiraling, stuck, or unsure what’s next. Share what’s
+          Use Dr. Salerno AI when you’re stuck or unsure what’s next. Share what’s
           happening and ask for grounding, a reframe, or a simple plan for the week—so you don’t
           have to carry it all by yourself.
         </p>
@@ -529,7 +529,7 @@ export default function MembersIsland() {
         <p className="text-sm opacity-80">
           Once a month, we gather live for a guided reset—grounding, emotional release, and
           realignment with who you’re becoming. Join live when you can, or lean on the replay when
-          you need a deeper, held space.
+          you need a more private space.
         </p>
         <p className="mt-2 text-[10.5px] uppercase tracking-[0.16em] opacity-75 font-bold">
           Suggested rhythm: join live or watch replay once a month
@@ -540,7 +540,7 @@ export default function MembersIsland() {
 
   <p className="mt-3 text-xs md:text-sm opacity-75">
     Always remember: consistency over intensity. Let these four anchors support you in whatever
-    rhythm fits your season—there’s no single “right” pace.
+    rhythm works for you—there’s no single “right” pace.
   </p>
 </section>
 
@@ -571,8 +571,8 @@ export default function MembersIsland() {
       <span>When you feel stuck, talk to Dr. Salerno AI</span>
     </h2>
     <p className="mt-2 text-sm md:text-base opacity-90 max-w-[33rem]">
-      Talk to him when you want thoughtful guidance, emotional clarity, or a trusted perspective.
-      He helps you understand your feelings, see things more clearly, and choose your next step.
+     Reach out when you want thoughtful guidance, emotional clarity, or a trusted perspective.
+      Dr. Salerno AI helps you understand your feelings, see things more clearly, & choose your next step.
     </p>
 
     {/* 1 column on mobile, 3-column waterfall on desktop */}
@@ -586,7 +586,7 @@ export default function MembersIsland() {
         <ul className="mt-2 text-sm space-y-1">
           <li className="flex gap-2">
             <span className="text-[var(--color-gold)]">•</span>
-            <span>Your mind won&apos;t stop spiraling</span>
+            <span>Your mind won&apos;t stop negative thinking</span>
           </li>
           <li className="flex gap-2">
             <span className="text-[var(--color-gold)]">•</span>
@@ -602,7 +602,7 @@ export default function MembersIsland() {
       {/* What to say */}
       <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
         <summary className="flex items-center justify-between text-sm font-semibold list-none">
-          <span>What to say to him</span>
+          <span>What to say or ask </span>
           <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
         </summary>
         <ul className="mt-2 text-sm space-y-1">
@@ -672,7 +672,7 @@ export default function MembersIsland() {
 
     <p className="mt-2 text-sm md:text-base opacity-90">
       Once a month, we pause together so you can release what you&apos;re carrying and realign with who you&apos;re becoming.{" "}
-      <span className="font-semibold">You start the month feeling clearer, lighter, and more grounded.</span>
+      <span className="font-semibold">You'll feel clearer, lighter, grounded, and ready for the month.</span>
     </p>
 
     {/* 1 column on mobile, 2-column waterfall on desktop */}
@@ -750,8 +750,8 @@ export default function MembersIsland() {
 
     <p className="mt-2 text-sm md:text-base opacity-90">
       A meditation created just for your energy, season of life, and goals.{" "}
-      <span className="font-semibold">You&apos;ll be guided through a 30-minute Vision Call to set your intentions</span> and
-      receive member-only discounted pricing on your meditation.
+      <span className="font-semibold">You&apos;ll be guided through a complimentary 30-minute Vision Call to set your intentions</span> and
+      receive member-only discounted pricing on your customized meditation.
     </p>
 
     {/* Waterfall layout (matching others) */}
@@ -766,7 +766,7 @@ export default function MembersIsland() {
         <ul className="mt-2 text-sm space-y-1">
           <li className="flex gap-2">
             <span className="text-[var(--color-gold)]">•</span>
-            <span>Your emotional season and what you&apos;re moving through</span>
+            <span>Your current emotional landscape and what you&apos;re moving through</span>
           </li>
           <li className="flex gap-2">
             <span className="text-[var(--color-gold)]">•</span>
@@ -787,17 +787,21 @@ export default function MembersIsland() {
         </summary>
 
         <ul className="mt-2 text-sm space-y-1">
-          <li className="flex gap-2">
+                    <li className="flex gap-2">
             <span className="text-[var(--color-gold)]">•</span>
-            <span>A meditation recorded specifically for you</span>
+            <span>Member-only discounted pricing on your meditation</span>
           </li>
-          <li className="flex gap-2">
+                    <li className="flex gap-2">
             <span className="text-[var(--color-gold)]">•</span>
             <span>A Vision Call where you feel deeply seen and supported</span>
           </li>
           <li className="flex gap-2">
             <span className="text-[var(--color-gold)]">•</span>
-            <span>Member-only discounted pricing on your meditation</span>
+            <span>A meditation recorded specifically for you</span>
+          </li>
+              <li className="flex gap-2">
+            <span className="text-[var(--color-gold)]">•</span>
+            <span>A specific integration plan so you know your next steps</span>
           </li>
         </ul>
       </details>
@@ -845,15 +849,15 @@ export default function MembersIsland() {
         <ul className="mt-2 text-sm space-y-1">
           <li className="flex gap-2">
             <span className="text-[var(--color-gold)]">•</span>
-            <span>You&apos;re in a heavy or confusing season and feel stuck</span>
+            <span>You&apos;re experiencing a heavy or confusing time and feel stuck</span>
           </li>
           <li className="flex gap-2">
             <span className="text-[var(--color-gold)]">•</span>
-            <span>You want support that goes deeper than the meditations and emails</span>
+            <span>You want support that goes deeper than other RISE resources</span>
           </li>
           <li className="flex gap-2">
             <span className="text-[var(--color-gold)]">•</span>
-            <span>You&apos;re craving a one-time reset, not weekly sessions</span>
+            <span>You&apos;d benefit from a one-time reset, not weekly sessions</span>
           </li>
         </ul>
       </details>
@@ -875,11 +879,11 @@ export default function MembersIsland() {
           </li>
           <li className="flex gap-2">
             <span className="text-[var(--color-gold)]">•</span>
-            <span>Create self-worth affirmations you can return to</span>
+            <span>Create self-worth affirmations you can return to whenever you need</span>
           </li>
           <li className="flex gap-2">
             <span className="text-[var(--color-gold)]">•</span>
-            <span>Explore mindset and journaling tools tailored to you</span>
+            <span>Explore mindset and journaling tools tailored to your experiences</span>
           </li>
         </ul>
       </details>
@@ -933,14 +937,14 @@ export default function MembersIsland() {
     href="/members/weekly-wisdom"
     icon="✉️"
     title="Weekly Wisdom Collection"
-    desc="Short, uplifting nudges to keep you moving—one each week."
+    desc="Concise, uplifting nudges to keep you moving—one each week."
   />
 
   <Card
     href="/members/guides"
     icon="📄"
     title="Mental Health & Alignment Guides"
-    desc="Digestible 1–2 page guides with practical insights you can use today."
+    desc="Easy-to-read guides with practical insights you can use today."
   />
 
   <Card
@@ -968,7 +972,7 @@ export default function MembersIsland() {
     href="/members/custom-meditation"
     icon="📿"
     title="Custom Meditations"
-    desc="Personalized audio (5, 10, 15 min) + a complimentary 30-minute Vision Call."
+    desc="Personalized guided meditation audio + a complimentary 30-minute Vision Call."
     classNameExtra="
       ring-[var(--color-gold)]/55
       before:pointer-events-none before:absolute before:inset-0 before:rounded-2xl
@@ -998,7 +1002,7 @@ export default function MembersIsland() {
     href="/contact"
     icon="🛟"
     title="Support & Contact"
-    desc="Reach out anytime with questions or concerns about your membership or benefits."
+    desc="I am here to support you every step of the way. Reach out anytime with questions or concerns."
   />
 </div>
 
@@ -1037,7 +1041,7 @@ export default function MembersIsland() {
         </summary>
         <p className="mt-2 text-sm opacity-80">
           There’s no right pace. Some members check in daily, others once a week. Use the rhythms above
-          as a guide, then adjust based on what feels supportive in your current season.
+          as a guide, then adjust based on what feels most supportive for you.
         </p>
       </details>
 
@@ -1049,7 +1053,7 @@ export default function MembersIsland() {
           </span>
         </summary>
         <p className="mt-2 text-sm opacity-80">
-          Replays are always available in the Monthly Inner Growth Sessions area, so you can tune in
+          Replays are available until the next session in the Monthly Inner Growth Sessions area, so you can tune in
           when it fits your life. You won’t “fall behind” — each session is designed to meet you where you are.
         </p>
       </details>
@@ -1062,7 +1066,7 @@ export default function MembersIsland() {
           </span>
         </summary>
         <p className="mt-2 text-sm opacity-80">
-          Open the AI page and talk to it like you would with me. Share what you&apos;re feeling or facing,
+          Open the AI page for guidance. Talk to Dr. Salerno AI like you would with me. Share what you&apos;re feeling or facing,
           then ask for grounding, clarity, or a simple plan for the next few days. The more specific you are,
           the more tailored the guidance will feel.
         </p>
@@ -1103,7 +1107,7 @@ export default function MembersIsland() {
           </span>
         </summary>
         <p className="mt-2 text-sm opacity-80">
-          Nothing breaks. You can always come back to a single meditation, session replay, or AI check-in
+          You can't fall behind and there's nothing wrong with taking a break. You can always come back to a single meditation, session replay, or AI check-in
           to restart. RISE is designed to meet you where you return, not where you think you “should” be.
         </p>
       </details>
@@ -1116,7 +1120,7 @@ export default function MembersIsland() {
           </span>
         </summary>
         <p className="mt-2 text-sm opacity-80">
-          All replays live inside the Monthly Inner Growth Sessions area. You can revisit them anytime you
+          Replays live inside the Monthly Inner Growth Sessions area. You can revisit them until the next session whenever you
           want a guided reset.
         </p>
       </details>

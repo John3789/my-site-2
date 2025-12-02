@@ -644,11 +644,11 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
       <div className="mt-3 space-y-3 md:space-y-0 md:columns-2 md:gap-4">
         <Faq
           q="What exactly is RISE?"
-          a="RISE is a guided membership space devoted to helping you transform into a more grounded, aligned, and elevated version of yourself. Through live monthly sessions, a meditation library, weekly wisdom notes, an inspiration space, mental health and alignment guides, and a 24/7 AI companion shaped by my approach, you’ll have tools that support clarity, emotional stability, and meaningful inner growth — all in one place."
+          a="RISE is a guided membership space devoted to helping you transform into a more grounded, aligned, and elevated version of yourself. Through live monthly sessions, a meditation library, weekly wisdom notes, a social media inspiration space, mental health and alignment guides,  a 24/7 AI companion shaped by my approach, and more, you’ll have tools that support clarity, emotional stability, and meaningful inner growth — all in one place."
         />
         <Faq
           q="What do I get inside RISE?"
-          a="Inside RISE, you’ll find an experience that supports your mind, energy, and spirit. This includes the meditation library, social media inspiration space, weekly wisdom collection, monthly live inner growth sessions, the Dr. Salerno AI advisor, and mental health & alignment guides. You also receive members-only access to optional premium add-ons like discounted custom meditations and Vision Calls."
+          a="Inside RISE, you’ll find an experience that supports your mind, energy, and spirit. This includes the meditation library, social media inspiration space, weekly wisdom collection, monthly live inner growth sessions, the Dr. Salerno AI advisor, and mental health & alignment guides. You also receive members-only access to optional premium add-ons like discounted custom meditations and Transformation Calls."
         />
         <Faq
           q="Is the AI advisor really like talking to Dr. Salerno?"
@@ -669,7 +669,7 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
       <div className="mt-3 space-y-3 md:space-y-0 md:columns-2 md:gap-4">
         <Faq
           q="I’m going through a lot emotionally. Is this a good fit?"
-          a="Yes — many members join RISE during seasons of stress, burnout, heaviness, or transition. The tools here are meant to help you feel supported, less alone, and more resourced as you move into a new chapter. If you’re in immediate crisis, you’ll still want professional or emergency support alongside RISE."
+          a="Yes — many members join RISE during seasons of stress, burnout, heaviness, or transition. The tools here are meant to help you feel supported, less alone, and more resourced as you move into a new chapter. If you’re in immediate crisis, please seek professional or emergency support alongside RISE."
         />
         <Faq
           q="Do I need prior meditation experience?"
@@ -710,7 +710,7 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
         />
         <Faq
           q="Can I buy premium add-ons without being a member?"
-          a="Vision Calls and member-priced Custom Meditations are exclusive to active RISE members. Non-members can purchase custom meditations at regular pricing, but Vision Calls are reserved for those inside the membership."
+          a="Transformation Calls and member-priced Custom Meditations are exclusive to active RISE members. Non-members can purchase custom meditations at regular pricing, but Transformation Calls are reserved for RISE members only."
         />
       </div>
     </div>
