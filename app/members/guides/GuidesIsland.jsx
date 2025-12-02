@@ -105,14 +105,13 @@ export default function GuidesIsland() {
 
       {/* HEADER */}
       <section className="mb-10">
-        <h1 className="mt-4 font-serif text-4xl md:text-5xl text-[var(--color-cream)]">
+        <h1 className="mx-auto text-center mt-4 font-serif text-4xl md:text-5xl text-[var(--color-cream)]">
           Mental Health & Alignment Guides
         </h1>
-                  <div className="mt-4 mb-3 h-[2px] w-16 rounded bg-[var(--color-gold)]/85" />
+                  <div className="mx-auto mt-5 mb-5 h-[2px] w-16 rounded bg-[var(--color-gold)]/85" />
 
-        <p className="mt-3 max-w-2xl text-sm md:text-base text-[var(--color-cream)]/80">
-      Easy-to-read guides that you can return to anytime. Start with the latest guide below,
-          or explore by theme to find the support that fits what you&apos;re moving through right now.
+        <p className="text-center mx-auto mt-3 max-w-2xl text-sm md:text-base text-[var(--color-cream)]/80">
+Short, practical guides you can use anytime to reset, realign, and move forward.
         </p>
       </section>
 
