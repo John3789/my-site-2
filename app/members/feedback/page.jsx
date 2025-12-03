@@ -483,7 +483,7 @@ export default function MembersFeedbackPage() {
                   <label className="text-sm font-medium">E2. If yes, how many Live Sessions have you attended in total? (0–6)</label>
                   <select className="w-full rounded-md bg-black/20 px-3 py-2 text-sm" value={formData.live_attendedCount} onChange={e => handleFieldChange("live_attendedCount", e.target.value)}>
                     <option value="">Select</option>
-                    {["0", "1", "2", "3", "4", "5", "6"].map(num => (
+                    {["0", "1", "2-4", "5-7", "8-10", "11-13", "14+"].map(num => (
                       <option key={num} value={num}>
                         {num}
                       </option>
@@ -509,7 +509,7 @@ export default function MembersFeedbackPage() {
                   <label className="text-sm font-medium">E4. If yes, how many recordings have you watched? (0–6)</label>
                   <select className="w-full rounded-md bg-black/20 px-3 py-2 text-sm" value={formData.live_recordingCount} onChange={e => handleFieldChange("live_recordingCount", e.target.value)}>
                     <option value="">Select</option>
-                    {["0", "1", "2", "3", "4", "5", "6"].map(num => (
+                    {["0", "1", "2-4", "5-7", "8-10", "11-13", "14+"].map(num => (
                       <option key={num} value={num}>
                         {num}
                       </option>
