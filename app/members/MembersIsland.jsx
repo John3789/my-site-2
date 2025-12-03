@@ -28,33 +28,42 @@ export default function MembersIsland() {
   const [nlSubmitting, setNlSubmitting] = useState(false);
   const [nlSubscribed, setNlSubscribed] = useState(false);
 
-    const handleJump = useCallback((id) => {
-    if (typeof document === "undefined") return;
+const handleJump = useCallback((id) => {
+  if (typeof document === "undefined") return;
 
-    const el = document.getElementById(id);
-    if (!el) return;
+  const el = document.getElementById(id);
+  if (!el) return;
 
-    // Base offset for most sections
-    let yOffset = -120;
+  // Detect mobile (portrait + landscape)
+  const isMobile = window.innerWidth <= 999;
 
-    // Fine-tune for specific sections if needed
-    if (id === "everything-rise") {
-      yOffset = -120; // scrolls slightly lower so the section sits a bit further down
-    }
+  // Base offsets
+  let yOffsetDesktop = -120;   // your original desktop behavior
+  let yOffsetMobile = -20;     // scrolls lower on mobile — adjust to taste
 
-     if (id === "ai-guide") {
-      yOffset = -200; // scrolls slightly lower so the section sits a bit further down
-    }
+  // Set default offset based on device
+  let yOffset = isMobile ? yOffsetMobile : yOffsetDesktop;
 
-    const rect = el.getBoundingClientRect();
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const targetY = rect.top + scrollTop + yOffset;
+  // --- Fine-tune for specific sections ---
+  if (id === "everything-rise") {
+    yOffset = isMobile ? -40 : -120;  // mobile scrolls lower, desktop unchanged
+  }
 
-    window.scrollTo({
-      top: targetY,
-      behavior: "smooth",
-    });
-  }, []);
+  if (id === "ai-guide") {
+    yOffset = isMobile ? -100 : -200; // mobile scrolls lower, desktop unchanged
+  }
+
+  // --- Perform scroll ---
+  const rect = el.getBoundingClientRect();
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const targetY = rect.top + scrollTop + yOffset;
+
+  window.scrollTo({
+    top: targetY,
+    behavior: "smooth",
+  });
+}, []);
+
 
 
 
@@ -204,11 +213,97 @@ export default function MembersIsland() {
   </section>
 
 
-{/* STICKY QUICK ACTION BAR */}
-<section className="sticky top-[2.5rem] z-30 mt-4 mb-4">
-  <div className="flex flex-wrap items-center gap-2 md:gap-2.75 rounded-full bg-[var(--color-teal-850)]/20 ring-1 ring-white/20 px-4 py-3 shadow-[0_10px_35px_rgba(0,0,0,0.45)] backdrop-blur-sm transition">
+{/* QUICK ACTION BAR – mobile = regular card, desktop = sticky oval */}
+<section className="mt-4 mb-4 min-[1000px]:sticky min-[1000px]:top-[2.5rem] min-[1000px]:z-30">
 
- {/* Welcome */}
+  {/* MOBILE (0–999px) */}
+  <div className="max-[999px]:block min-[1000px]:hidden rounded-2xl bg-[var(--color-teal-850)]/45 ring-1 ring-white/18 px-4 py-4 shadow-[0_10px_30px_rgba(0,0,0,0.45)]">
+    <p className="text-[11px] uppercase tracking-[0.18em] opacity-75 text-center mb-3">
+      RISE Shortcuts
+    </p>
+
+    <div className="grid grid-cols-2 gap-2">
+      <button
+        type="button"
+        onClick={() => handleJump("welcome")}
+        className="w-full inline-flex items-center justify-center gap-1 rounded-full border border-white/20 bg-white/[0.08] px-3 py-2 text-[11px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/15 active:translate-y-[1px] transition"
+      >
+        <span>🙏</span>
+        <span>Welcome</span>
+      </button>
+
+      <button
+        type="button"
+        onClick={() => handleJump("start-here")}
+        className="w-full inline-flex items-center justify-center gap-1 rounded-full border border-white/20 bg-white/[0.08] px-3 py-2 text-[11px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/15 active:translate-y-[1px] transition"
+      >
+        <span>🎬</span>
+        <span>Start here</span>
+      </button>
+
+      <button
+        type="button"
+        onClick={() => handleJump("regular-rhythm")}
+        className="w-full inline-flex items-center justify-center gap-1 rounded-full border border-white/20 bg-white/[0.06] px-3 py-2 text-[11px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
+      >
+        <span>🔁</span>
+        <span>Your rhythm</span>
+      </button>
+
+      <button
+        type="button"
+        onClick={() => handleJump("ai-guide")}
+        className="w-full inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.06] px-3 py-2 text-[11px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
+      >
+        <img
+          src="/headshot.jpg"
+          alt="Dr. Salerno AI"
+          className="h-5 w-5 rounded-full object-cover ring-1 ring-white/25"
+        />
+        <span>Core tools</span>
+      </button>
+
+      <button
+        type="button"
+        onClick={() => handleJump("everything-rise")}
+        className="w-full inline-flex items-center justify-center gap-1 rounded-full border border-white/20 bg-white/[0.06] px-3 py-2 text-[11px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
+      >
+        <span>🌐</span>
+        <span>All tools</span>
+      </button>
+
+      <button
+        type="button"
+        onClick={() => handleJump("faqs")}
+        className="w-full inline-flex items-center justify-center gap-1 rounded-full border border-white/20 bg-white/[0.06] px-3 py-2 text-[11px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
+      >
+        <span>❓</span>
+        <span>FAQs</span>
+      </button>
+
+      <button
+        type="button"
+        onClick={() => handleJump("roadmap")}
+        className="w-full inline-flex items-center justify-center gap-1 rounded-full border border-white/20 bg-white/[0.06] px-3 py-2 text-[11px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
+      >
+        <span>🗺️</span>
+        <span>Roadmap</span>
+      </button>
+
+      <button
+        type="button"
+        onClick={() => handleJump("account-billing")}
+        className="w-full inline-flex items-center justify-center gap-1 rounded-full border border-white/20 bg-white/[0.06] px-3 py-2 text-[11px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
+      >
+        <span>💳</span>
+        <span>Account &amp; Billing</span>
+      </button>
+    </div>
+  </div>
+
+  {/* DESKTOP (≥ 1000px) */}
+  <div className="hidden min-[1000px]:flex flex-wrap items-center gap-2.75 rounded-full bg-[var(--color-teal-850)]/20 ring-1 ring-white/20 px-4 py-3 shadow-[0_10px_35px_rgba(0,0,0,0.45)] backdrop-blur-sm transition">
+    {/* Welcome */}
     <button
       type="button"
       onClick={() => handleJump("welcome")}
@@ -289,11 +384,11 @@ export default function MembersIsland() {
       className="inline-flex items-center gap-1 rounded-full border border-white/20 bg-white/[0.06] px-4 py-1.5 text-[11px] md:text-xs font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
     >
       <span>💳</span>
-      <span>Account & Billing</span>
+      <span>Account &amp; Billing</span>
     </button>
-
   </div>
 </section>
+
 
       <MembersSurveyBanner />
 
@@ -598,7 +693,7 @@ export default function MembersIsland() {
         className="h-17 h-17 rounded-full object-cover ring-1 ring-white/25"
       />
 <span>
-  When you feel stuck, talk to <br />Dr. Salerno AI
+  When you feel stuck, talk to Dr. Salerno AI
 </span>    </h2>
     <p className="mt-2 text-sm md:text-base opacity-90 max-w-[33rem]">
      Reach out when you want thoughtful guidance, emotional clarity, or a trusted perspective.
@@ -1297,7 +1392,8 @@ export default function MembersIsland() {
       <div className="lg:hidden mx-auto w-full max-w-[900px] px-0 mt-0">
         <div className="mx-auto w-full px-0">
           {/* Newsletter card */}
-          <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-6">
+{/* Newsletter card – hidden on mobile (≤ 999px) */}
+<div className="max-[999px]:hidden min-[1000px]:block rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-6">
             <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
               Science, Soul, and a Bit of Magic — Every Month
             </p>
