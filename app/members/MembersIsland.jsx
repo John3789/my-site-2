@@ -317,10 +317,10 @@ export default function MembersIsland() {
     your own pace.
   </p>
 
-    {/* 1 column on mobile, 2 fixed columns (1–4 left, 5–8 right) on desktop */}
-  <div className="mt-5 grid gap-3 md:grid-cols-2">
+      {/* 1 column on mobile; 2 fixed columns on desktop — Safari-safe */}
+  <div className="mt-5 grid md:grid-cols-2 md:gap-x-3">
     {/* Left column: 1–4 */}
-    <div className="space-y-3">
+    <div className="flex flex-col">
       {[
         {
           num: "1",
@@ -349,7 +349,7 @@ export default function MembersIsland() {
       ].map(({ num, title, content }) => (
         <details
           key={num}
-          className="group rounded-xl bg-white/5 ring-1 ring-white/10 p-4 cursor-pointer"
+          className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/10 p-4 cursor-pointer"
         >
           <summary className="flex items-center justify-between text-sm font-semibold list-none">
             <div className="flex items-center gap-2">
@@ -372,7 +372,7 @@ export default function MembersIsland() {
     </div>
 
     {/* Right column: 5–8 */}
-    <div className="space-y-3 mt-3 md:mt-0">
+    <div className="flex flex-col mt-3 md:mt-0">
       {[
         {
           num: "5",
@@ -401,7 +401,7 @@ export default function MembersIsland() {
       ].map(({ num, title, content }) => (
         <details
           key={num}
-          className="group rounded-xl bg-white/5 ring-1 ring-white/10 p-4 cursor-pointer"
+          className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/10 p-4 cursor-pointer"
         >
           <summary className="flex items-center justify-between text-sm font-semibold list-none">
             <div className="flex items-center gap-2">
@@ -423,6 +423,7 @@ export default function MembersIsland() {
       ))}
     </div>
   </div>
+
 
 
   <p className="mt-4 text-xs md:text-sm opacity-75">
