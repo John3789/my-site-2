@@ -70,10 +70,10 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
               </div>
 
               {/* Pricing row */}
-              <div className="mt-5 grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start justify-items-center gap-4">
+              <div className="tracking-tight mt-5 grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start justify-items-center gap-4">
                 {/* Monthly */}
                 <div className="flex flex-col items-center gap-1">
-                  <div className="pt-12 flex items-baseline justify-center gap-1">
+                  <div className="tracking-tight pt-12 flex items-baseline justify-center gap-1">
                     <span className="text-xs opacity-60 line-through">$19.99</span>
                     <span className="text-2xl font-semibold">$15.99</span>
                     <span className="text-[11px] opacity-60 whitespace-nowrap">+ fees</span>
@@ -89,7 +89,7 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
                   <div className="inline-flex items-center justify-center mt-1 mb-1 px-3 py-1 rounded-full bg-[var(--color-gold)] text-black text-[10px] font-semibold tracking-wide">
                     BEST VALUE
                   </div>
-                  <div className="flex items-baseline justify-center gap-1">
+                  <div className="tracking-tight flex items-baseline justify-center gap-1">
                     <span className="text-xs opacity-60 line-through">$129.99</span>
                     <span className="inline-flex items-baseline gap-1">
                       <span className="text-2xl font-semibold ">$99.99</span>
@@ -99,7 +99,7 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
                   <div className="text-[11px] opacity-80 text-center leading-relaxed">
                     save 23% yearly
                   </div>
-                  <div className="text-[11px] text-[var(--color-gold)] font-semibold underline decoration-[var(--color-gold)]/50">
+                  <div className="text-[10.5px] text-[var(--color-gold)] font-semibold underline decoration-[var(--color-gold)]/50">
                     $8.33/mo · save 52% monthly
                   </div>
                 </div>
@@ -385,7 +385,7 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
   </p>
 
   {/* 3-up grid for mini pricing cards */}
-<div className="mt-4 grid gap-4 md:grid-cols-3">
+<div className="mt-4 grid gap-3 md:grid-cols-3">
 
   {/* Mini card — 5 min */}
   <div className="rounded-2xl border border-white/15 bg-white/[0.03] p-4 flex flex-col">
@@ -410,14 +410,14 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
   </div>
 
   {/* Mini card — 10 min */}
-  <div className="rounded-2xl border border-white/15 bg-white/[0.03] p-4 flex flex-col">
+  <div className="tracking-tight rounded-2xl border border-white/15 bg-white/[0.03] p-4 flex flex-col">
     <span className="text-[11px] font-semibold uppercase tracking-[0.16em] opacity-80">
       10 minutes
     </span>
 
     <div className="mt-2">
       <div className="text-2xl font-semibold text-[var(--color-cream)]">$75</div>
-      <div className="flex items-center gap-2 mt-1">
+      <div className="flex items-center gap-1.5 mt-1">
         <span className="text-xs line-through opacity-50">$100</span>
 
         <span className="inline-flex items-center rounded-full border border-[var(--color-gold)]/50 bg-[var(--color-gold)]/10 px-2 py-0 text-[10px] font-semibold text-[var(--color-gold)]">
@@ -432,14 +432,14 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
   </div>
 
   {/* Mini card — 15 min */}
-  <div className="rounded-2xl border border-white/15 bg-white/[0.03] p-4 flex flex-col">
+  <div className="tracking-tight rounded-2xl border border-white/15 bg-white/[0.03] p-4 flex flex-col">
     <span className="text-[11px] font-semibold uppercase tracking-[0.16em] opacity-80">
       15 minutes
     </span>
 
     <div className="mt-2">
       <div className="text-2xl font-semibold text-[var(--color-cream)]">$100</div>
-      <div className="flex items-center gap-2 mt-1">
+      <div className="flex items-center gap-1.25 mt-1">
         <span className="text-xs line-through opacity-50">$150</span>
 
         <span className="inline-flex items-center rounded-full border border-[var(--color-gold)]/50 bg-[var(--color-gold)]/10 px-2 py-0 text-[10px] font-semibold text-[var(--color-gold)]">
@@ -483,7 +483,7 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
         <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-gold)]">
           Investment
         </div>
-        <p className="mt-0 text-2xl font-semibold">
+        <p className="tracking-tight mt-0 text-2xl font-semibold">
           $150{" "}
           <span className="text-sm font-normal opacity-80">USD per 60-minute session</span>
         </p>
@@ -596,15 +596,18 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
             </p>
           </div>
 
-          {/* RIGHT: image */}
-          <div className="mt-7 overflow-hidden max-w-[330px] squared-2xl border border-white/15 bg-black/10">
-            <img
-              src="/heroabout.jpg"
-              alt="Dr. Juan Pablo Salerno"
-              className="w-full h-full object-cover opacity-95"
-            />
-          </div>
-        </div>
+{/* RIGHT: image */}
+<div className="mt-7 flex justify-center md:justify-end">
+  <div className="overflow-hidden max-w-[330px] border border-white/15 bg-black/10">
+    <img
+      src="/heroabout.jpg"
+      alt="Dr. Juan Pablo Salerno"
+      className="w-full h-full object-cover opacity-95"
+    />
+  </div>
+</div>
+</div>
+
       </section>
 
       {/* CTA */}
@@ -730,7 +733,7 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
       </section>
 
       {/* Divider ABOVE footer, like Contact/Members */}
-      <div className="mx-auto max-w-[1200px] px-6 mt-12">
+      <div className="mx-auto max-w-[1200px] px-6 mt-12 max-[999px]:hidden">
         <hr className="border-t border-[var(--color-cream)]/22" />
       </div>
 
