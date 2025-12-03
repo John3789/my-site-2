@@ -193,8 +193,8 @@ export default function AboutClient() {
                 {/* Paragraph 3 */}
                 <p className="mx-auto space-y-6 text-[clamp(16px,1.4vw,19px)] opacity-90 leading-loose narrow-landscape-80">
                   Dr. Salerno’s expertise is rooted in science and shaped by personal transformation. 
-                  After reaching his lowest point in mental health, he embarked on a years-long journey 
-                  of healing and self-discovery. Yet he soon realized that his path was meant to extend 
+                  After reaching his lowest point in mental health, he embarked on a years-long healing 
+                  and self-discovery journey. Yet he soon realized that his path was meant to extend 
                   far beyond recovery—it was the beginning of something greater. Finding freedom from 
                   mental health suffering unlocked an inner knowing that he had not yet discovered his 
                   true purpose. Drawn to explore beyond the boundaries of traditional healing, he turned 
@@ -238,8 +238,8 @@ export default function AboutClient() {
                     integrates science and personal transformation. His forthcoming book weaves scientific insight and
                     transformative wisdom to guide others toward balance, purpose, fulfillment, and
                     mental wellness. On this site, you can explore his offerings - including his
-                    signature <Link href="/membership" className="link">RISE Membership Program</Link>, guided meditations, public speaking, consulting, publications,
-                    and additional resources for personal growth and mental health.
+                    signature <Link href="/membership" className="link">RISE Membership Program</Link>, <Link href="/meditations" 
+                    className="link">customized meditations</Link>, <Link href="/speaking" className="link">speaking</Link> and <Link href="/consulting" className="link">consulting</Link> services, and <Link href="/books" className="link">writing projects</Link>.
                   </p>
                 </section>
 
