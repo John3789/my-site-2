@@ -597,8 +597,9 @@ export default function MembersIsland() {
         alt="Dr. Juan Pablo Salerno"
         className="h-17 h-17 rounded-full object-cover ring-1 ring-white/25"
       />
-      <span>When you feel stuck, talk to Dr. Salerno AI</span>
-    </h2>
+<span>
+  When you feel stuck, talk to <br />Dr. Salerno AI
+</span>    </h2>
     <p className="mt-2 text-sm md:text-base opacity-90 max-w-[33rem]">
      Reach out when you want thoughtful guidance, emotional clarity, or a trusted perspective.
       Dr. Salerno AI helps you understand your feelings, see things more clearly, & choose your next step.
