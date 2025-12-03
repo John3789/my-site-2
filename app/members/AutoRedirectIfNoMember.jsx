@@ -7,6 +7,20 @@ import { useRouter } from "next/navigation";
 const MEMBER_OK_FLAG = "__salernoMemberOk";
 const POST_LOGIN_FLAG = "postLoginReload"; // must match what you set after login
 
+function setPersistentMemberFlag() {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(MEMBER_OK_FLAG, "true");
+  } catch (err) {
+    console.warn("Failed to set localStorage member flag", err);
+  }
+}
+
+function hasPersistentMemberFlag() {
+  if (typeof window === "undefined") return false;
+  return window.localStorage.getItem(MEMBER_OK_FLAG) === "true";
+}
+
 function getMemberstack() {
   if (typeof window === "undefined") return null;
   return (
@@ -31,7 +45,7 @@ export default function AutoRedirectIfNoMember({ children }) {
   const router = useRouter();
 
   const [status, setStatus] = useState(() => {
-    if (typeof window !== "undefined" && hasMemberFlag()) {
+    if (typeof window !== "undefined" && (hasMemberFlag() || hasPersistentMemberFlag())) {
       return "allowed";
     }
     return "checking";
@@ -93,6 +107,7 @@ export default function AutoRedirectIfNoMember({ children }) {
         // ✅ Paid member with a plan: allow through and remember for this tab
         if (hasPlan) {
           setMemberFlag();
+          setPersistentMemberFlag(); // New line to persist the flag
           setStatus("allowed");
           return;
         }

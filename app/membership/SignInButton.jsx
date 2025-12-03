@@ -42,6 +42,7 @@ export default function SignInButton({
             if (hasPlan && typeof window !== "undefined") {
               try {
                 window.sessionStorage?.setItem(POST_LOGIN_FLAG, "1");
+                window.localStorage.setItem(MEMBER_OK_FLAG, "true"); // Add this line
               } catch (err) {
                 console.warn(
                   "[SignInButton] Unable to set postLoginReload flag",
