@@ -192,12 +192,14 @@ export default function AboutClient() {
               <div className="mx-auto max-w-none md:max-w-[1000px] px-2 md:px-6 space-y-12">
                 {/* Paragraph 3 */}
                 <p className="mx-auto space-y-6 text-[clamp(16px,1.4vw,19px)] opacity-90 leading-loose narrow-landscape-80">
-                  Dr. Salerno’s expertise is rooted in science and shaped by personal transformation.
-                  After reaching his lowest point in mental health, he devoted years to therapy and
-                  recovery. But remission wasn’t the destination - it was the beginning. Seeking
-                  something greater than the absence of suffering, he broadened his path to healing
-                  through personal growth practices such as meditation, Feng Shui, and manifestation,
-                  learning from some of the most respected experts in the field. Through this journey,
+                  Dr. Salerno’s expertise is rooted in science and shaped by personal transformation. 
+                  After reaching his lowest point in mental health, he embarked on a years-long journey 
+                  of healing and self-discovery. Yet he soon realized that his path was meant to extend 
+                  far beyond recovery—it was the beginning of something greater. Finding freedom from 
+                  mental health suffering unlocked an inner knowing that he had not yet discovered his 
+                  true purpose. Drawn to explore beyond the boundaries of traditional healing, he turned 
+                  to personal growth practices like meditation, Feng Shui, and manifestation, learning 
+                  from some of the most well-respected experts in the field. Through his ongoing evolution, 
                   he continues to ascend toward his highest self and uncover his deeper purpose.
                 </p>
 
@@ -212,9 +214,9 @@ export default function AboutClient() {
                   </h2>
                   <div className="h-[2px] w-20 bg-[var(--color-gold)]/80 mx-auto mt-3 mb-8 rounded" />
                   <p className="mx-auto space-y-6 text-[clamp(16px,1.4vw,19px)] opacity-90 leading-loose narrow-landscape-80">
-                    To blend science and personal growth wisdom to help individuals and communities rise
-                    above mental health challenges, unlock hidden potential, and live with greater
-                    purpose and abundance.
+                  To uplift humanity by weaving scientific insight with transformative wisdom, empowering individuals 
+                  to rise above mental health challenges, awaken their true potential, and live with greater purpose, alignment, 
+                  and abundance.
                   </p>
                 </section>
 
@@ -231,10 +233,10 @@ export default function AboutClient() {
                   <p className="mx-auto space-y-6 text-[clamp(16px,1.4vw,19px)] opacity-90 leading-loose narrow-landscape-80">
                     Today, Dr. Salerno continues advancing research that bridges scientific discovery
                     with real-world impact on mental health. As a university educator, he mentors the
-                    next generation of scholars and practitioners with a focus on purpose, wellbeing, and
-                    community. Alongside his academic work, he is building a personal brand that
+                    next generation of scholars and practitioners with a focus on mental wellbeing and
+                    community health. Alongside his academic work, he is building a personal brand that
                     integrates science and soul. His forthcoming book weaves scientific insight and
-                    personal growth wisdom to guide others toward balance, purpose, fulfillment, and
+                    transformative wisdom to guide others toward balance, purpose, fulfillment, and
                     mental wellness. On this site, you can explore his offerings - including his
                     signature <Link href="/membership" className="link">RISE Membership Program</Link>, guided meditations, public speaking, consulting, publications,
                     and additional resources for personal growth and mental health.

@@ -582,13 +582,13 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
             </p>
             <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
               He created RISE to be the space he wished he had during the moments he felt stuck in life — a place where
-              your inner world is taken seriously, and where you feel seen, supported, and guided back to 
+              your inner world is taken seriously, and where you feel seen, supported, and guided toward becoming
               your strongest, most aligned self.
             </p>
             <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
               Inside, you&apos;re not just getting content; you&apos;re getting a steady
               companion — live sessions, meditations, weekly wisdom, an AI advisor
-              trained on his voice, and more — all designed to help you rise, one step at a time.
+              trained on Dr. Salerno's voice, and more — all designed to help you rise, one step at a time.
             </p>
             <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
               His intention is simple: to help you feel more grounded, more hopeful, and
