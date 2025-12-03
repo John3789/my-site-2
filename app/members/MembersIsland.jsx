@@ -317,85 +317,113 @@ export default function MembersIsland() {
     your own pace.
   </p>
 
-  {/* 1 column on mobile, 2-column waterfall on larger screens */}
-  <div
-    className="mt-5 columns-1 md:columns-2"
-    style={{ columnGap: "0.75rem" }}
-  >
-    {[
-      {
-        num: "1",
-        title: "Arrive & get oriented",
-        content:
-          "Watch the welcome video, then skim the RISE roadmap (you’ll find the download further down this page). Notice one idea that makes you feel a bit more hopeful and keep it in your notes app.",
-      },
-      {
-        num: "2",
-        title: "Your first meditation",
-        content:
-          "Choose a short meditation that matches how you feel today—stress, low energy, or needing clarity. You don't need to do it perfectly; just press play and stay with it as best you can.",
-      },
-      {
-        num: "3",
-        title: "Weekly wisdom reset",
-        content:
-          "Read your most recent Weekly Wisdom email. If one line really lands, star the email or screenshot it so you can come back to it when you’re having a harder day.",
-      },
-      {
-        num: "4",
-        title: "Ask Dr. Salerno AI",
-        content:
-          "Open Dr. Salerno AI and share what you're moving through. Ask for a grounding exercise, a simple next step, or a new way to look at your situation. Save or write down any response that really helps you.",
-      },
-      {
-        num: "5",
-        title: "Get ready for the live session",
-        content:
-          "Check the date of the next Monthly Inner Growth Session. Read the event description and preparation notes, then add it to your calendar with a reminder so you can come prepared and be fully present.",
-      },
-      {
-        num: "6",
-        title: "Explore custom support",
-        content:
-          "Visit the Custom Meditations + Transformation Calls pages and read how they work. Notice whether having a personalized meditation or 1:1 call feels like something you might benefit from presently.",
-      },
-      {
-        num: "7",
-        title: "Choose one thing that speaks to you",
-        content:
-          "Browse the Alignment Guides or Inspiration Library and pick one guide, post, or message that really resonates. Let that be your theme for the week instead of trying to do everything at once.",
-      },
-      {
-        num: "8+",
-        title: "Find your ongoing rhythm",
-        content:
-          "Now that you've tried the core parts of RISE, choose a simple weekly rhythm that works for you. You’ll find suggestions below and in the RISE roadmap—use it as a guide, then adjust based on what feels supportive for you.",
-      },
-    ].map(({ num, title, content }) => (
-      <details
-        key={num}
-        className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/10 p-4 cursor-pointer"
-      >
-        <summary className="flex items-center justify-between text-sm font-semibold list-none">
-          <div className="flex items-center gap-2">
-            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full text-[11px] font-bold bg-[var(--color-gold)]/90 text-black">
-              {num}
+    {/* 1 column on mobile, 2 fixed columns (1–4 left, 5–8 right) on desktop */}
+  <div className="mt-5 grid gap-3 md:grid-cols-2">
+    {/* Left column: 1–4 */}
+    <div className="space-y-3">
+      {[
+        {
+          num: "1",
+          title: "Arrive & get oriented",
+          content:
+            "Watch the welcome video, then skim the RISE roadmap (you’ll find the download further down this page). Notice one idea that makes you feel a bit more hopeful and keep it in your notes app.",
+        },
+        {
+          num: "2",
+          title: "Your first meditation",
+          content:
+            "Choose a short meditation that matches how you feel today—stress, low energy, or needing clarity. You don't need to do it perfectly; just press play and stay with it as best you can.",
+        },
+        {
+          num: "3",
+          title: "Weekly wisdom reset",
+          content:
+            "Read your most recent Weekly Wisdom email. If one line really lands, star the email or screenshot it so you can come back to it when you’re having a harder day.",
+        },
+        {
+          num: "4",
+          title: "Ask Dr. Salerno AI",
+          content:
+            "Open Dr. Salerno AI and share what you're moving through. Ask for a grounding exercise, a simple next step, or a new way to look at your situation. Save or write down any response that really helps you.",
+        },
+      ].map(({ num, title, content }) => (
+        <details
+          key={num}
+          className="group rounded-xl bg-white/5 ring-1 ring-white/10 p-4 cursor-pointer"
+        >
+          <summary className="flex items-center justify-between text-sm font-semibold list-none">
+            <div className="flex items-center gap-2">
+              <span className="inline-flex h-6 w-6 items-center justify-center rounded-full text-[11px] font-bold bg-[var(--color-gold)]/90 text-black">
+                {num}
+              </span>
+              <span className="uppercase tracking-[0.14em] opacity-85 text-[11px]">
+                {title}
+              </span>
+            </div>
+            <span className="text-xs opacity-70 transition-transform group-open:rotate-90">
+              ▶
             </span>
-            <span className="uppercase tracking-[0.14em] opacity-85 text-[11px]">
-              {title}
-            </span>
-          </div>
-          <span className="text-xs opacity-70 transition-transform group-open:rotate-90">
-            ▶
-          </span>
-        </summary>
+          </summary>
+          <p className="mt-3 text-xs md:text-sm opacity-80 leading-relaxed pr-1">
+            {content}
+          </p>
+        </details>
+      ))}
+    </div>
 
-        <p className="mt-3 text-xs md:text-sm opacity-80 leading-relaxed pr-1">
-          {content}
-        </p>
-      </details>
-    ))}
+    {/* Right column: 5–8 */}
+    <div className="space-y-3 mt-3 md:mt-0">
+      {[
+        {
+          num: "5",
+          title: "Get ready for the live session",
+          content:
+            "Check the date of the next Monthly Inner Growth Session. Read the event description and preparation notes, then add it to your calendar with a reminder so you can come prepared and be fully present.",
+        },
+        {
+          num: "6",
+          title: "Explore custom support",
+          content:
+            "Visit the Custom Meditations + Transformation Calls pages and read how they work. Notice whether having a personalized meditation or 1:1 call feels like something you might benefit from presently.",
+        },
+        {
+          num: "7",
+          title: "Choose one thing that speaks to you",
+          content:
+            "Browse the Alignment Guides or Inspiration Library and pick one guide, post, or message that really resonates. Let that be your theme for the week instead of trying to do everything at once.",
+        },
+        {
+          num: "8+",
+          title: "Find your ongoing rhythm",
+          content:
+            "Now that you've tried the core parts of RISE, choose a simple weekly rhythm that works for you. You’ll find suggestions below and in the RISE roadmap—use it as a guide, then adjust based on what feels supportive for you.",
+        },
+      ].map(({ num, title, content }) => (
+        <details
+          key={num}
+          className="group rounded-xl bg-white/5 ring-1 ring-white/10 p-4 cursor-pointer"
+        >
+          <summary className="flex items-center justify-between text-sm font-semibold list-none">
+            <div className="flex items-center gap-2">
+              <span className="inline-flex h-6 w-6 items-center justify-center rounded-full text-[11px] font-bold bg-[var(--color-gold)]/90 text-black">
+                {num}
+              </span>
+              <span className="uppercase tracking-[0.14em] opacity-85 text-[11px]">
+                {title}
+              </span>
+            </div>
+            <span className="text-xs opacity-70 transition-transform group-open:rotate-90">
+              ▶
+            </span>
+          </summary>
+          <p className="mt-3 text-xs md:text-sm opacity-80 leading-relaxed pr-1">
+            {content}
+          </p>
+        </details>
+      ))}
+    </div>
   </div>
+
 
   <p className="mt-4 text-xs md:text-sm opacity-75">
     This path is meant to support you, not pressure you. There is no ‘right’ timeline here — the

@@ -135,8 +135,8 @@ style={{ marginBottom: 'calc(env(safe-area-inset-bottom) + 5px)' }}
               <div className="h-[2px] w-16 bg-[var(--color-gold)]/55 mx-auto mt-2 mb-36 rounded" />
               <div className="max-w-4xl mx-auto text-center landscape:max-w-2xl lg:landscape:max-w-4xl">
                 <p className="font-serif leading-[1.08] text-[clamp(28px,4.2vw,48px)] opacity-90">
-                  “I believe everyone has the power to unlock hidden potential and live with greater purpose —
-                  my mission is to blend scientific and growth wisdom to guide the way.”
+                  “I believe everyone has the power to heal, awaken potential, and live with greater purpose —
+                  my mission is to weave scientific insight and transformational wisdom to guide the way.”
                 </p>
                 <Link href="about" className="mt-8 inline-block link">
                   About Dr. Salerno →
