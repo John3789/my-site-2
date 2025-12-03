@@ -513,7 +513,7 @@ A grounded belief in your direction again, and the motivation to take your next 
                   name="focus"
                   className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
                   rows={3}
-                  placeholder="Share anything you feel comfortable with about what you’re moving through emotionally, mentally, or spiritually. Detailed responses are encouraged."
+                  placeholder="Share anything you feel comfortable with about what you’re moving through emotionally, mentally, or spiritually. You're welcome to provide a thorough response."
                   required
                 />
               </div>
@@ -524,7 +524,7 @@ A grounded belief in your direction again, and the motivation to take your next 
                   name="goals"
                   className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
                   rows={3}
-                  placeholder="For example: clearer direction, specific next steps, support with a decision, a mindset shift, renewed motivation, regained self-confidence, etc."
+                  placeholder="For example: clearer direction, specific next steps, support with a decision, a mindset shift, renewed motivation, regained self-confidence, etc. Please elaborate wherever it feels helpful."
                   required
                 />
               </div>
@@ -555,7 +555,7 @@ A grounded belief in your direction again, and the motivation to take your next 
                     name="preferences"
                     className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
                     rows={2}
-                    placeholder="Language (English/Spanish), spiritual preferences, topics you’d rather not discuss, or anything else I should know before our session."
+      placeholder="e.g. English or Spanish, spiritual preferences, coaching styles that resonate with you, or anything you'd prefer to avoid."
                   />
                 </div>
               </div>

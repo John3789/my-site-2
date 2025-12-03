@@ -361,7 +361,7 @@ await fetch("/api/forms/meditation-members", {
       name="current"
       className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
       rows={3}
-      placeholder="Share anything you feel comfortable with about what you’re navigating emotionally, mentally, or spiritually."
+      placeholder="Share anything you feel comfortable with about what you’re navigating emotionally, mentally, or spiritually. Please elaborate wherever it feels helpful."
     />
   </div>
 
@@ -371,7 +371,7 @@ await fetch("/api/forms/meditation-members", {
       name="support"
       className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
       rows={3}
-      placeholder="For example: anxiety, burnout, confidence, clarity, grief, motivation, self-trust, etc. The more specific you are, the better."
+      placeholder="For example: anxiety, burnout, confidence, clarity, grief, motivation, self-trust, etc. You're welcome to provide a thorough response."
       required
     />
   </div>
@@ -410,7 +410,7 @@ await fetch("/api/forms/meditation-members", {
       name="preferences"
       className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
       rows={2}
-      placeholder="For example: English or Spanish, any phrases, language, or styles you resonate with, or anything you'd prefer to avoid."
+      placeholder="For example: English or Spanish, spiritual preferences, any phrases, language, or styles that resonate with you, or anything you'd prefer to avoid."
     />
   </div>
 
