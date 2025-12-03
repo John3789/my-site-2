@@ -570,7 +570,7 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
           {/* LEFT: text */}
           <div>
             <h2 className="text-center font-serif text-3xl md:text-4xl tracking-tight text-[var(--color-cream)]">
-              Meet Your Guide
+              Meet Your Transformation Advisor
             </h2>
                               <div className="mx-auto h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-5 rounded" />
 
