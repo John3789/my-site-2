@@ -235,7 +235,7 @@ export default function AboutClient() {
                     with real-world impact on mental health. As a university educator, he mentors the
                     next generation of scholars and practitioners with a focus on mental wellbeing and
                     community health. Alongside his academic work, he is building a personal brand that
-                    integrates science and soul. His forthcoming book weaves scientific insight and
+                    integrates science and personal transformation. His forthcoming book weaves scientific insight and
                     transformative wisdom to guide others toward balance, purpose, fulfillment, and
                     mental wellness. On this site, you can explore his offerings - including his
                     signature <Link href="/membership" className="link">RISE Membership Program</Link>, guided meditations, public speaking, consulting, publications,

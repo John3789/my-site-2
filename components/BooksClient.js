@@ -67,9 +67,7 @@ export default function BooksClient() {
                     <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 rounded mb-5" />
 
                     <p className="text-[clamp(16px,1.4vw,19px)] opacity-90 max-w-3xl mb-6 leading-loose">
-                      A powerful blend of science and personal growth wisdom, this forthcoming book by Dr. Salerno
-                      offers an accessible, inspiring, and transformative framework for overcoming mental health
-                      struggles and living with greater purpose, balance, and fulfillment.
+A powerful blend of scientific insight and transformational wisdom, this forthcoming book by Dr. Salerno offers a clear, accessible, and inspiring framework for rising above mental health challenges and living with greater purpose, balance, and fulfillment.
                     </p>
 
 
