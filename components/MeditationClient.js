@@ -327,7 +327,7 @@ When your mind feels heavy or overwhelmed, the right meditation can help you com
       Dr. Salerno understands what it’s like to carry the heavy weight of a life that no longer 
       feels aligned — and how, beneath that burden, a deeper knowing begins to rise: the knowing 
       that you’re meant for something greater. His work blends mental health science with personal transformation 
-       to help people rise into the fullest, most aligned versions of who 
+       to help others rise into the fullest, most aligned versions of who 
       they’re truly meant to be.
       </p>
 
