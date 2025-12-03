@@ -49,7 +49,7 @@ export default function HomeClient() {
   {/* Image layer fills the section */}
   <div className="absolute inset-0">
 <HeroImageIphoneAware
-      src="/hero17.jpg?v=25"
+      src="/hero17.jpg"
       alt="Portrait of Dr. Salerno"
       fill
       priority
