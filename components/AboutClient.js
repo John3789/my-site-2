@@ -238,8 +238,13 @@ export default function AboutClient() {
                     integrates science and personal transformation. His forthcoming book weaves scientific insight and
                     transformative wisdom to guide others toward balance, purpose, fulfillment, and
                     mental wellness. On this site, you can explore his offerings - including his
-                    signature <Link href="/membership" className="link">RISE Membership Program</Link>, <Link href="/meditations" 
-                    className="link">customized meditations</Link>, <Link href="/speaking" className="link">speaking</Link> and <Link href="/consulting" className="link">consulting</Link> services, and <Link href="/books" className="link">writing projects</Link>.
+                    signature <a
+        href="/membership"
+      className="text-[var(--color-gold)] brightness-110 underline underline-offset-[2px]"
+      >
+        RISE Membership Program
+      </a>, <Link href="/meditations" 
+                    className="link">Customized Meditations</Link>, <Link href="/speaking" className="link">Speaking</Link> and <Link href="/Consulting" className="link">Consulting</Link> services, and <Link href="/books" className="link">Writing</Link> projects.
                   </p>
                 </section>
 

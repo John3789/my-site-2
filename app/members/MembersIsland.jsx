@@ -951,7 +951,7 @@ export default function MembersIsland() {
   />
 
   <Card
-    href="/resources"
+    href="/members/resources"
     icon="📚"
     title="Social Media Inspiration Space"
     desc="Curated posts and reframes by theme. Find the prompt that shifts your day."
