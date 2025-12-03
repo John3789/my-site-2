@@ -110,7 +110,7 @@ await fetch("/api/forms/meditation-members", {
   }}
 >
   <MembersHomeLink
-    className="mb-21 mt-3 inline-flex items-center rounded-full border border-[var(--color-gold)] bg-transparent px-2.5 py-[3px] text-[9px] font-semibold tracking-[0.14em] text-[var(--color-gold)] backdrop-blur-sm"
+    className="mb-18 mt-3 inline-flex items-center rounded-full border border-[var(--color-gold)] bg-transparent px-2.5 py-[3px] text-[9px] font-semibold tracking-[0.14em] text-[var(--color-gold)] backdrop-blur-sm"
   />
 </div>
 

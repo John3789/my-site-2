@@ -106,6 +106,7 @@ export default function AutoRedirectIfNoMember({ children }) {
 
         // ✅ Paid member with a plan: allow through and remember for this tab
         if (hasPlan) {
+          console.log("Member confirmed, rendering page.");
           setMemberFlag();
           setPersistentMemberFlag(); // New line to persist the flag
           setStatus("allowed");

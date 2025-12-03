@@ -96,7 +96,7 @@ await fetch("/api/forms/vision-call", {
       <main className="mx-auto max-w-[1100px] px-6 py-10 narrow-landscape-80">
        
         {/* Centered page title + intro */}
-        <header className="mx-auto max-w-3xl text-center mt-5">
+        <header className="mx-auto max-w-3xl text-center mt-11">
           <h1 className="font-serif text-4xl md:text-5xl leading-tight">Transformation Call with Dr. Salerno</h1>
           <div className="mx-auto mt-4 h-[2px] w-16 rounded bg-[var(--color-gold)]/85" />
           <p className="mt-5.5 text-sm md:text-base leading-relaxed opacity-85">

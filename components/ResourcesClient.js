@@ -452,7 +452,7 @@ export default function ResourcesClient() {
 
           {/* Title + intro */}
           <div className="mx-auto max-w-[1200px] px-6 pt-4 pb-6">
-            <h1 className="text-center font-serif text-6xl leading-[1.06] opacity-95 mb-3 mt-10">
+            <h1 className="text-center font-serif text-5xl md:text-6xl leading-[1.06] opacity-95 mb-3 mt-5">
               Social Media Inspiration Space
             </h1>
 
@@ -461,12 +461,12 @@ export default function ResourcesClient() {
 
 
 
-            <section className="mx-auto max-w-[850px] px-6 text-center mb-6 narrow-landscape-80 narrow-landscape-80-ipad [@media(orientation:portrait)_and_(max-width:600px)]:px-3 [@media(orientation:portrait)_and_(max-width:600px)]:max-w-none [@media(orientation:portrait)_and_(max-width:600px)]:w-[92vw]">
+            <section className="mx-auto max-w-[750px] px-6 text-center mb-6 narrow-landscape-80 narrow-landscape-80-ipad [@media(orientation:portrait)_and_(max-width:600px)]:px-3 [@media(orientation:portrait)_and_(max-width:600px)]:max-w-none [@media(orientation:portrait)_and_(max-width:600px)]:w-[92vw]">
 
-              <p className="text-lg md:text-xl opacity-90 leading-relaxed">
-                A growing space of concise media collections—shaped by science and lived experience—to sharpen your mind and uplift your life. Each theme is designed to meet you where you are and guide you toward greater confidence, balance, and intentional living.
+              <p className="text-base md:text-md opacity-90 leading-loose">
+                A growing space of concise media collections—shaped to sharpen your mind and uplift your life. Designed to meet you where you are and guide you toward greater confidence and balance.
               </p>
-              <p className="mt-5 text-sm opacity-70">This page is under construction and will be updated periodically with new content.</p>
+              <p className="mt-3 text-sm opacity-70">This page is under construction and will be updated periodically with new content.</p>
             </section>
 
             {/* Mobile nav chips */}

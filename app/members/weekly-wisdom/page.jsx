@@ -26,7 +26,7 @@ export default function WeeklyWisdomPage() {
    {/* PAGE HEADER */}
   <header>
 
-    <h1 className="mx-auto mt-9 font-serif text-5xl md:text-6xl tracking-tight leading-tight text-[var(--color-cream)] text-center">
+    <h1 className="mx-auto mt-5 font-serif text-5xl md:text-6xl tracking-tight leading-tight text-[var(--color-cream)] text-center">
       {hasEmails ? "Weekly Wisdom Collection" : "Weekly Wisdom"}
     </h1>
           <div className="mx-auto text-center mt-4 mb-6 h-[2px] w-16 rounded bg-[var(--color-gold)]/85" />

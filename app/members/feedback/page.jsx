@@ -280,56 +280,52 @@ export default function MembersFeedbackPage() {
                 <label className="text-sm font-medium">B2. How helpful was the welcome email you received after signing up for RISE?</label>
                 <select className="w-full rounded-md bg-black/20 px-3 py-2 text-sm" value={formData.welcome_emailHelpful} onChange={e => handleFieldChange("welcome_emailHelpful", e.target.value)}>
                   <option value="">Select</option>
-                  <option value="1">1 - Not at all</option>
-                  <option value="2">2 - A little</option>
-                  <option value="3">3 - Somewhat</option>
-                  <option value="4">4 - Very</option>
-                  <option value="5">5 - Very much</option>
+                  <option value="1">1 - Not at all helpful</option>
+                  <option value="2">2 - A little helpful</option>
+                  <option value="3">3 - Somewhat helpful</option>
+                  <option value="4">4 - Very helpful</option>
+                  <option value="5">5 - Extremely helpful</option>
                   <option value="did-not-read">Did not read</option>
                 </select>
-                <p className="text-[11px] text-[var(--color-cream)]/60">Scale: 1 = not at all helpful, 5 = very helpful.</p>
               </div>
 
               <div className="space-y-2">
                 <label className="text-sm font-medium">B3. How helpful was the welcome video?</label>
                 <select className="w-full rounded-md bg-black/20 px-3 py-2 text-sm" value={formData.welcome_videoHelpful} onChange={e => handleFieldChange("welcome_videoHelpful", e.target.value)}>
                   <option value="">Select</option>
-                  <option value="1">1 - Not at all</option>
-                  <option value="2">2 - A little</option>
-                  <option value="3">3 - Somewhat</option>
-                  <option value="4">4 - Very</option>
-                  <option value="5">5 - Very much</option>
+                  <option value="1">1 - Not at all helpful</option>
+                  <option value="2">2 - A little helpful</option>
+                  <option value="3">3 - Somewhat helpful</option>
+                  <option value="4">4 - Very helpful</option>
+                  <option value="5">5 - Extremely helpful</option>
                   <option value="did-not-watch">Did not watch</option>
                 </select>
-                <p className="text-[11px] text-[var(--color-cream)]/60">Scale: 1 = not at all helpful, 5 = very helpful.</p>
               </div>
 
               <div className="space-y-2">
                 <label className="text-sm font-medium">B4. How helpful was the RISE Roadmap?</label>
                 <select className="w-full rounded-md bg-black/20 px-3 py-2 text-sm" value={formData.welcome_roadmapHelpful} onChange={e => handleFieldChange("welcome_roadmapHelpful", e.target.value)}>
                   <option value="">Select</option>
-                  <option value="1">1 - Not at all</option>
-                  <option value="2">2 - A little</option>
-                  <option value="3">3 - Somewhat</option>
-                  <option value="4">4 - Very</option>
-                  <option value="5">5 - Very much</option>
+                  <option value="1">1 - Not at all helpful</option>
+                  <option value="2">2 - A little helpful</option>
+                  <option value="3">3 - Somewhat helpful</option>
+                  <option value="4">4 - Very helpful</option>
+                  <option value="5">5 - Extremely helpful</option>
                   <option value="did-not-use">Did not use</option>
                 </select>
-                <p className="text-[11px] text-[var(--color-cream)]/60">Scale: 1 = not at all helpful, 5 = very helpful.</p>
               </div>
 
               <div className="space-y-2">
                 <label className="text-sm font-medium">B5. How helpful was the &quot;Start Here – your first 7 days&quot; section in the RISE Members Area?</label>
                 <select className="w-full rounded-md bg-black/20 px-3 py-2 text-sm" value={formData.welcome_startHereHelpful} onChange={e => handleFieldChange("welcome_startHereHelpful", e.target.value)}>
                   <option value="">Select</option>
-                  <option value="1">1 - Not at all</option>
-                  <option value="2">2 - A little</option>
-                  <option value="3">3 - Somewhat</option>
-                  <option value="4">4 - Very</option>
-                  <option value="5">5 - Very much</option>
+                  <option value="1">1 - Not at all helpful</option>
+                  <option value="2">2 - A little helpful</option>
+                  <option value="3">3 - Somewhat helpful</option>
+                  <option value="4">4 - Very helpful</option>
+                  <option value="5">5 - Extremely helpful</option>
                   <option value="did-not-use">Did not use</option>
                 </select>
-                <p className="text-[11px] text-[var(--color-cream)]/60">Scale: 1 = not at all helpful, 5 = very helpful.</p>
               </div>
 
               <div className="space-y-2">
@@ -380,13 +376,14 @@ export default function MembersFeedbackPage() {
 
               <div className="space-y-2">
                 <label className="text-sm font-medium">C4. How easy is it for you to navigate the RISE Members Area (after you login)?</label>
-                <select className="w-full rounded-md bg-black/20 px-3 py-2 text-sm" value={formData.web_membersAreaEase} onChange={e => handleFieldChange("web_membersAreaEase", e.target.value)}>
+                <select className="w-full rounded-md bg-black/20 px-3 py-2 text-sm" value={formData.welcome_emailHelpful} onChange={e => handleFieldChange("welcome_emailHelpful", e.target.value)}>
                   <option value="">Select</option>
-                  {SCALE_EXPERIENCE.map(opt => (
-                    <option key={opt.value} value={opt.value}>
-                      {opt.label}
-                    </option>
-                  ))}
+                  <option value="1">1 - Very difficult</option>
+                  <option value="2">2 - Difficult</option>
+                  <option value="3">3 - Neutral</option>
+                  <option value="4">4 - Easy</option>
+                  <option value="5">5 - Very easy</option>
+                  <option value="did-not-read">Did not read</option>
                 </select>
               </div>
 
@@ -431,7 +428,7 @@ export default function MembersFeedbackPage() {
               <h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--color-cream)]/80">D. Dr. Salerno AI</h2>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium">D1. How helpful has Dr. Salerno AI been for you? (1 = not at all helpful, 5 = extremely helpful)</label>
+                <label className="text-sm font-medium">D1. How helpful has Dr. Salerno AI been for you? </label>
                 <select className="w-full rounded-md bg-black/20 px-3 py-2 text-sm" value={formData.ai_helpfulRating} onChange={e => handleFieldChange("ai_helpfulRating", e.target.value)}>
                   <option value="">Select</option>
                   {SCALE_HELPFUL.map(opt => (
@@ -692,9 +689,8 @@ export default function MembersFeedbackPage() {
   </label>
     <p className="text-[11px] text-[var(--color-cream)]/70">
     For example: motivation &amp; mindset, mental health &amp; stress,
-    self-compassion &amp; healing, relationships &amp; connection,
-    purpose &amp; alignment, manifestation &amp; intention setting,
-    Feng Shui &amp; environment.
+    confidence &amp; self-worth, relationships &amp; connection,
+    feeling lost &amp; finding your way, manifestation &amp; intention setting.
   </p>
   <textarea
     className="min-h-[80px] w-full rounded-md bg-black/20 px-3 py-2 text-sm"
@@ -740,7 +736,7 @@ export default function MembersFeedbackPage() {
                   <option value="once-per-month">Once per month</option>
                   <option value="twice-per-month">Twice per month</option>
                   <option value="three-times-per-month">Three times per month</option>
-                  <option value="four-times-per-month">4 times a month (every week)</option>
+                  <option value="four-times-per-month">Four times a month (every week)</option>
                 </select>
               </div>
 
@@ -789,11 +785,9 @@ export default function MembersFeedbackPage() {
                 <label className="text-sm font-medium">J3. Which themes or topics have been most supportive in the Social Media Inspiration Space?</label>
                   <p className="text-[11px] text-[var(--color-cream)]/70">
     For example: motivation &amp; mindset, mental health &amp; stress,
-    self-compassion &amp; healing, relationships &amp; connection,
-    purpose &amp; alignment, manifestation &amp; intention setting,
-    Feng Shui &amp; environment.
-  </p>
-                <textarea className="min-h-[80px] w-full rounded-md bg-black/20 px-3 py-2 text-sm" value={formData.sm_supportiveThemes} onChange={e => handleFieldChange("sm_supportiveThemes", e.target.value)} />
+    confidence &amp; self-worth, relationships &amp; connection,
+    feeling lost &amp; finding your way, manifestation &amp; intention setting.
+  </p>       <textarea className="min-h-[80px] w-full rounded-md bg-black/20 px-3 py-2 text-sm" value={formData.sm_supportiveThemes} onChange={e => handleFieldChange("sm_supportiveThemes", e.target.value)} />
               </div>
 
               <div className="space-y-2">
@@ -839,11 +833,10 @@ export default function MembersFeedbackPage() {
 
               <div className="space-y-2">
                 <label className="text-sm font-medium">K3. Which themes or topics have been most supportive in the Mental Health & Alignment Guides?</label>
-                  <p className="text-[11px] text-[var(--color-cream)]/70">
+    <p className="text-[11px] text-[var(--color-cream)]/70">
     For example: motivation &amp; mindset, mental health &amp; stress,
-    self-compassion &amp; healing, relationships &amp; connection,
-    purpose &amp; alignment, manifestation &amp; intention setting,
-    Feng Shui &amp; environment.
+    confidence &amp; self-worth, relationships &amp; connection,
+    feeling lost &amp; finding your way, manifestation &amp; intention setting.
   </p>
                 <textarea className="min-h-[80px] w-full rounded-md bg-black/20 px-3 py-2 text-sm" value={formData.mh_supportiveThemes} onChange={e => handleFieldChange("mh_supportiveThemes", e.target.value)} />
               </div>
