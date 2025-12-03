@@ -554,11 +554,11 @@ export default function MembersIsland() {
 </p>
 
 <div className="mt-8 md:mt-10 grid gap-6 md:grid-cols-2">
+
+
   {/* DR. SALERNO AI FEATURE SECTION – DEEP BLUE CARD */}
-  <section
-    id="ai-guide"
-    className="rounded-2xl bg-[#0f2334] ring-1 ring-white/12 p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)] h-full"
-  >
+ <section id="ai-guide" className="mb-6 break-inside-avoid rounded-2xl bg-[#0f2334] ring-1 ring-white/12 p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)]">
+
     <p className="text-[10px] md:text-[11px] uppercase tracking-[0.18em] text-[var(--color-cream)]/70 mb-2">
       Everyday support
     </p>
@@ -655,10 +655,8 @@ export default function MembersIsland() {
   </section>
 
   {/* MONTHLY INNER GROWTH SESSION SECTION – DEEP BLUE CARD */}
-  <section
-    id="monthly-session"
-    className="rounded-2xl bg-[#0f2334] ring-1 ring-white/12 p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)] h-full"
-  >
+  <section id="monthly-session" className="mb-6 break-inside-avoid rounded-2xl bg-[#0f2334] ring-1 ring-white/12 p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)]">
+
     <p className="text-[10px] md:text-[11px] uppercase tracking-[0.18em] text-[var(--color-cream)]/70 mb-2">
       Monthly live session
     </p>
@@ -733,10 +731,8 @@ export default function MembersIsland() {
   </section>
 
   {/* FEATURED – CUSTOM MEDITATIONS – PREMIUM 1:1 */}
-  <section
-    id="custom-meditations"
-    className="relative rounded-2xl bg-[#0f2334] ring-1 ring-white/12 border border-[var(--color-gold)]/40 p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)] h-full"
-  >
+  <section id="custom-meditations" className="relative mb-6 break-inside-avoid rounded-2xl bg-[#0f2334] ring-1 ring-white/12 border border-[var(--color-gold)]/40 p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)]">
+
     <p className="text-[10px] md:text-[11px] uppercase tracking-[0.18em] text-[var(--color-gold)]/85 mb-2">
       Premium 1:1 support
     </p>
@@ -818,10 +814,8 @@ export default function MembersIsland() {
   </section>
 
   {/* FEATURED – TRANSFORMATION CALLS – PREMIUM 1:1 */}
-  <section
-    id="vision-call"
-    className="relative rounded-2xl bg-[#0f2334] ring-1 ring-white/12 border border-[var(--color-gold)]/40 p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)] h-full"
-  >
+  <section id="vision-call" className="relative mb-6 break-inside-avoid rounded-2xl bg-[#0f2334] ring-1 ring-white/12 border border-[var(--color-gold)]/40 p-6 md:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.55)]">
+
     <p className="text-[10px] md:text-[11px] uppercase tracking-[0.18em] text-[var(--color-gold)]/85 mb-2">
       Premium 1:1 support
     </p>

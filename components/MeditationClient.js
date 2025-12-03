@@ -141,7 +141,7 @@ await fetch("/api/forms/meditation-non-members", {
             </section>
 
            {/* ===== INTRO ===== */}
-<section className="mx-auto max-w-[700px] lg:max-w-[850px] px-6 text-center mb-12 narrow-landscape-80 narrow-landscape-80-ipad">
+<section className="mx-auto max-w-[700px] lg:max-w-[860px] px-6 text-center mb-12 narrow-landscape-80 narrow-landscape-80-ipad">
   <p className="text-lg md:text-xl opacity-90 leading-relaxed narrow-landscape-80 narrow-landscape-80-ipad">
 When your mind feels heavy or overwhelmed, the right meditation can help you come back to center — resetting your body, calming your thoughts, and reconnecting with yourself.  </p>
 
@@ -177,7 +177,7 @@ When your mind feels heavy or overwhelmed, the right meditation can help you com
 
       <p className="mt-3 text-base md:text-lg opacity-90 leading-relaxed max-w-2xl text-left [@media(orientation:portrait)_and_(max-width:920px)]:mx-auto">
         Every custom meditation includes a <span className="font-semibold">complimentary 30-minute Vision Call</span>, 
-        where we explore what you need emotionally, mentally, and spiritually so your session feels grounded, 
+        where we explore what you need emotionally, mentally, and spiritually so your recording feels grounded, 
         supportive, and truly aligned with you.
       </p>
 
@@ -285,7 +285,7 @@ When your mind feels heavy or overwhelmed, the right meditation can help you com
 
   <li className="flex items-start gap-2">
     <span className="text-[var(--color-gold)] mt-[2px]">✔︎</span>
-    <span>Ready to build an easy ritual you can return to when life feel heavy</span>
+    <span>Ready to build an easy ritual you can return to when life feels heavy</span>
   </li>
 
   <li className="flex items-start gap-2">
@@ -324,17 +324,18 @@ When your mind feels heavy or overwhelmed, the right meditation can help you com
       <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded mx-auto md:mx-0" />
 
       <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
-        Dr. Salerno understands what it feels like to carry a lot and stay strong for everyone, 
-        while sensing that something inside you is ready for more. His work blends mental health 
-        science with grounded spiritual practice to help you shift out of survival mode and into 
-        the highest version of yourself — the person you’re meant to become.
+      Dr. Salerno understands what it’s like to carry the heavy weight of a life that no longer 
+      feels aligned — and how, beneath that burden, a deeper knowing begins to rise: the knowing 
+      that you’re meant for something greater. His work blends mental health science with grounded 
+      spiritual practice to help people rise into the fullest, most aligned versions of who 
+      they’re truly meant to be.
       </p>
 
       <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
         He creates meditations that meet you exactly where you are — steady, supportive, and 
-        designed to help you rise into more clarity, purpose, and inner strength. Not returning 
-        to who you were before, but growing into a life that feels more aligned, intentional, 
-        and authentic to the real you.
+        designed to help you uncover clarity, purpose, and inner strength. Not returning 
+        to who you were before, but growing into a life that feels more authentic, intentional, 
+        and purposeful.
       </p>
 
       <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
@@ -580,7 +581,7 @@ When your mind feels heavy or overwhelmed, the right meditation can help you com
               </div>
                     {/* QUESTIONS / CONTACT */}
 <div className="mt-8 text-center">
-  <p className="text-base md:text-lg font-semibold text-[var(--color-cream)]">
+  <p className="opacity-93 text-base md:text-lg font-semibold text-[var(--color-cream)]">
     Additional questions? Include them in your form or{" "}
     <a
       href="/contact"
