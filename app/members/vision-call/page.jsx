@@ -98,12 +98,12 @@ await fetch("/api/forms/vision-call", {
         {/* Centered page title + intro */}
         <header className="mx-auto max-w-3xl text-center mt-5">
           <h1 className="font-serif text-4xl md:text-5xl leading-tight">Transformation Call with Dr. Salerno</h1>
-          <div className="mx-auto mt-3 h-[2px] w-16 rounded bg-[var(--color-gold)]/85" />
-          <p className="mt-4 text-sm md:text-base leading-relaxed opacity-85">
+          <div className="mx-auto mt-4 h-[2px] w-16 rounded bg-[var(--color-gold)]/85" />
+          <p className="mt-5.5 text-sm md:text-base leading-relaxed opacity-85">
             A focused, one-time session for RISE members who want deeper, personalized support — so you can clear the fog, reconnect with your inner strength, and walk away with a grounded plan for your next chapter.
           </p>
           <p className="mt-3 text-xs md:text-sm opacity-70">
-            This is separate from the complimentary 30-minute Vision Call that comes with a custom meditation. Think of it as a full, dedicated hour just for you.
+            Note: This is separate from the complimentary 30-minute Vision Call that comes with a custom meditation.
           </p>
         </header>
 
@@ -166,7 +166,7 @@ await fetch("/api/forms/vision-call", {
                   </a>
                 </div>
                 <div className="leading-tight mt-3 flex flex-wrap items-baseline justify-start gap-2">
-                  <p className="leading-tight text-xl font-semibold md:text-2xl">
+                  <p className="leading-tight text-xl font-semibold md:text-2xl opacity-92">
                     $150 <span className="text-sm font-normal opacity-80 md:text-base">USD</span>
                   </p>
                   <span className="text-xs opacity-75 md:text-sm">per 60-minute session</span>
@@ -196,7 +196,7 @@ await fetch("/api/forms/vision-call", {
               {/* Step 1 – Book your session */}
               <div className="rounded-xl bg-white/[0.03] px-4 py-4 ring-1 ring-white/10">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-gold)]/90">Step 1</p>
-                <h3 className="mt-1 text-sm font-semibold md:text-base">Short intake form</h3>
+                <h3 className="mt-1 text-sm font-semibold md:text-base opacity-93">Short intake form</h3>
                                 <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
                   First, you&apos;ll fill out a brief form so I can understand what you&apos;re moving through and prepare a tailored plan for our session.
                 </p>
@@ -204,7 +204,7 @@ await fetch("/api/forms/vision-call", {
               {/* Step 2 – Short intake form & schedule your call */}
               <div className="rounded-xl bg-white/[0.03] px-4 py-4 ring-1 ring-white/10">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-gold)]/90">Step 2</p>
-                <h3 className="mt-1 text-sm font-semibold md:text-base">Book your session & schedule your call</h3>
+                <h3 className="mt-1 text-sm font-semibold md:text-base opacity-93">Book your session & schedule your call</h3>
                 <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
                   You&apos;ll then receive an email confirmation with details and a link to complete your payment and schedule your Transformation Call.
                 </p>
@@ -213,7 +213,7 @@ await fetch("/api/forms/vision-call", {
               {/* Step 3 – 60-minute live session */}
               <div className="rounded-xl bg-white/[0.03] px-4 py-4 ring-1 ring-white/10">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-gold)]/90">Step 3</p>
-                <h3 className="mt-1 text-sm font-semibold md:text-base">60-minute live session</h3>
+                <h3 className="mt-1 text-sm font-semibold md:text-base opacity-93">60-minute live session</h3>
                 <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
                   We meet on Zoom (or a similar platform) for your Transformation Call — a full hour devoted to your clarity, emotions, and next steps.
                 </p>
@@ -221,7 +221,7 @@ await fetch("/api/forms/vision-call", {
               {/* Step 4 – After the call */}
               <div className="rounded-xl bg-white/[0.03] px-4 py-4 ring-1 ring-white/10">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-gold)]/90">Step 4</p>
-                <h3 className="mt-1 text-sm font-semibold md:text-base">After the call</h3>
+                <h3 className="mt-1 text-sm font-semibold md:text-base opacity-93">After the call</h3>
                 <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
                   You&apos;ll leave with your action steps, practices, and mindset tools. If you ever need more support, you can book another Transformation Call in a future month.
                 </p>
@@ -236,16 +236,16 @@ await fetch("/api/forms/vision-call", {
             <h2 className="font-serif text-2xl md:text-3xl opacity-95">Who this Transformation Call is for</h2>
             <div className="mt-3 h-[2px] w-10 rounded bg-[var(--color-gold)]/80" />
             <p className="mt-4 text-sm leading-relaxed opacity-85 md:text-base">
-              This session is for a specific kind of RISE member — the one who feels called to more intimate, one-on-one support:
+              Transformation sessions are for RISE members who feel called to more intimate, one-on-one support:
             </p>
             <div className="mt-4 grid gap-4 md:grid-cols-2">
               <div className="rounded-xl bg-white/[0.03] px-4 py-4 ring-1 ring-white/10">
                 <div className="flex items-start gap-2">
                   <span className="mt-[-1px] text-[var(--color-gold)]">✔︎</span>
                   <div>
-                    <p className="text-sm font-semibold opacity-90 md:text-base">Personalized support</p>
+                    <p className="text-sm font-semibold opacity-93 md:text-base">Personalized support</p>
                     <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
-                      You want more personalized support than you can get from the meditations, resources, and emails alone.
+                      You want deeper, more personalized support than you can get from the meditations, other RISE resources, and emails alone.
                     </p>
                   </div>
                 </div>
@@ -254,9 +254,9 @@ await fetch("/api/forms/vision-call", {
                 <div className="flex items-start gap-2">
                   <span className="mt-[-1px] text-[var(--color-gold)]">✔︎</span>
                   <div>
-                    <p className="text-sm font-semibold opacity-90 md:text-base">Talk it through</p>
+                    <p className="text-sm font-semibold opacity-93 md:text-base">Talk it through</p>
                     <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
-                      You&apos;re moving through an especially heavy or confusing season and want a grounded, compassionate space to talk it through.
+                      You&apos;re moving through an especially heavy or confusing time and want a grounded, compassionate space to talk it through.
                     </p>
                   </div>
                 </div>
@@ -265,7 +265,7 @@ await fetch("/api/forms/vision-call", {
                 <div className="flex items-start gap-2">
                   <span className="mt-[-1px] text-[var(--color-gold)]">✔︎</span>
                   <div>
-                    <p className="text-sm font-semibold opacity-90 md:text-base">Reflective perspective</p>
+                    <p className="text-sm font-semibold opacity-93 md:text-base">Reflective perspective</p>
                     <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
                       You feel it would help to have a thoughtful outside perspective to organize your thoughts, validate what you’re feeling, and reflect back your strengths.
                     </p>
@@ -276,7 +276,7 @@ await fetch("/api/forms/vision-call", {
                 <div className="flex items-start gap-2">
                   <span className="mt-[-1px] text-[var(--color-gold)]">✔︎</span>
                   <div>
-                    <p className="text-sm font-semibold opacity-90 md:text-base">Powerful reset</p>
+                    <p className="text-sm font-semibold opacity-93 md:text-base">Powerful reset</p>
                     <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
                       You want a powerful, one-time reset that can shift how you’re feeling right now and help you move forward with more confidence.
                     </p>
@@ -293,13 +293,13 @@ await fetch("/api/forms/vision-call", {
             <h2 className="font-serif text-2xl md:text-3xl opacity-95">What we’ll do in your hour</h2>
             <div className="mt-3 h-[2px] w-10 rounded bg-[var(--color-gold)]/80" />
             <p className="mt-4 text-sm leading-relaxed opacity-85 md:text-base">
-              Your Transformation Call follows a gentle structure so you feel grounded, heard, and supported — while still leaving room to follow what you most need.
+              Your Transformation Call follows a gentle structure so you feel grounded, heard, and supported — while still leaving room for deep personalized guidance.
             </p>
             <div className="mt-5 grid gap-4 md:grid-cols-3">
               {/* Step 1 */}
               <div className="rounded-xl bg-white/[0.03] px-4 py-4 ring-1 ring-white/10">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-gold)]/90">Step 1</p>
-                <h3 className="mt-1 text-sm font-semibold md:text-base">Arrival (~5 minutes)</h3>
+                <h3 className="mt-1 text-sm font-semibold md:text-base opacity-93">Arrival (~5 minutes)</h3>
                 <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
                   Warm welcome, quick check-in, and a shared intention for what you want from our time together.
                 </p>
@@ -307,7 +307,7 @@ await fetch("/api/forms/vision-call", {
               {/* Step 2 */}
               <div className="rounded-xl bg-white/[0.03] px-4 py-4 ring-1 ring-white/10">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-gold)]/90">Step 2</p>
-                <h3 className="mt-1 text-sm font-semibold md:text-base">Centering meditation (~5 minutes)</h3>
+                <h3 className="mt-1 text-sm font-semibold md:text-base opacity-93">Centering meditation (~5-10 minutes)</h3>
                 <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
                   A short guided meditation to quiet the noise, help your nervous system settle, and bring you back into your body.
                 </p>
@@ -315,7 +315,7 @@ await fetch("/api/forms/vision-call", {
               {/* Step 3 */}
               <div className="rounded-xl bg-white/[0.03] px-4 py-4 ring-1 ring-white/10">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-gold)]/90">Step 3</p>
-                <h3 className="mt-1 text-sm font-semibold md:text-base">Your story (~10 minutes)</h3>
+                <h3 className="mt-1 text-sm font-semibold md:text-base opacity-93">Your story (~15-20 minutes)</h3>
                 <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
                   You share what you’ve been moving through emotionally, mentally, and spiritually. This is your space to be heard and acknowledged without judgment or pressure to “perform.”
                 </p>
@@ -323,9 +323,9 @@ await fetch("/api/forms/vision-call", {
               {/* Deep personalized guidance */}
               <div className="rounded-2xl bg-[#0f2334] px-4 py-4 ring-1 ring-white/12 shadow-[0_10px_35px_rgba(0,0,0,0.55)] md:col-span-3">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-gold)]/90">Step 4</p>
-                <h3 className="mt-1 text-base font-semibold opacity-90 md:text-lg">Deep personalized guidance</h3>
+                <h3 className="mt-1 text-base font-semibold opacity-87 md:text-lg">Deep personalized guidance</h3>
                 <p className="mt-3 text-sm leading-relaxed opacity-90 md:text-base">
-                  This is the heart of your Transformation Call — the part you&apos;re really coming for. In the remaining time, we focus on what will genuinely move the needle for you:
+                  This is the part of your call where we cut through the noise and highlight the insight that can open new energy, direction, and momentum:
                 </p>
 
                 <div className="mt-4 grid gap-3 md:grid-cols-2">
@@ -333,9 +333,9 @@ await fetch("/api/forms/vision-call", {
                     <div className="flex items-start gap-2">
                       <span className="mt-[-1px] text-[var(--color-gold)]">✔︎</span>
                       <div>
-                        <p className="text-sm font-semibold opacity-90 md:text-base">Identifying patterns & fears</p>
+                        <p className="text-sm font-semibold opacity-90 md:text-base">1. Identifying patterns & fears</p>
                         <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
-                          We identify the core patterns, beliefs, or fears that are draining your energy or keeping you stuck.
+                          We identify the core patterns, beliefs, or fears that are draining your energy or keeping you stuck in cycles that are holding you back.
                         </p>
                       </div>
                     </div>
@@ -344,9 +344,9 @@ await fetch("/api/forms/vision-call", {
                     <div className="flex items-start gap-2">
                       <span className="mt-[-1px] text-[var(--color-gold)]">✔︎</span>
                       <div>
-                        <p className="text-sm font-semibold opacity-90 md:text-base">Softening self-criticism</p>
+                        <p className="text-sm font-semibold opacity-90 md:text-base">2. Softening self-criticism</p>
                         <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
-                          We gently shift you out of harsh self-criticism into more self-compassion, self-respect, and self-worth.
+                          We gently shift your mindset out of harsh self-criticism and toward alignment with the self-compassion, self-respect, and self-worth that you deserve.
                         </p>
                       </div>
                     </div>
@@ -355,9 +355,9 @@ await fetch("/api/forms/vision-call", {
                     <div className="flex items-start gap-2">
                       <span className="mt-[-1px] text-[var(--color-gold)]">✔︎</span>
                       <div>
-                        <p className="text-sm font-semibold opacity-90 md:text-base">Concrete next steps</p>
+                        <p className="text-sm font-semibold opacity-90 md:text-base">3. Concrete next steps</p>
                         <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
-                          We co-create 2–4 clear, doable actions you can start taking right away — this might include small shifts to your routine, boundaries, rest, or daily habits.
+                          We co-create a list of clear, doable actions you can start taking right away — this might include small shifts to your routine, boundaries, rest, or daily habits.
                         </p>
                       </div>
                     </div>
@@ -366,9 +366,9 @@ await fetch("/api/forms/vision-call", {
                     <div className="flex items-start gap-2">
                       <span className="mt-[-1px] text-[var(--color-gold)]">✔︎</span>
                       <div>
-                        <p className="text-sm font-semibold opacity-90 md:text-base">Mindset tools & journaling</p>
+                        <p className="text-sm font-semibold opacity-90 md:text-base">4. Mindset tools & journaling</p>
                         <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
-                          I offer simple mindset tools, journaling prompts, or reflection questions you can keep using after the call to deepen your clarity.
+                          We co-design a set of mindset tools, journaling prompts, or reflection questions you can keep using after the call to deepen your clarity.
                         </p>
                       </div>
                     </div>
@@ -377,9 +377,9 @@ await fetch("/api/forms/vision-call", {
                     <div className="flex items-start gap-2">
                       <span className="mt-[-1px] text-[var(--color-gold)]">✔︎</span>
                       <div>
-                        <p className="text-sm font-semibold opacity-90 md:text-base">Affirmations for self-worth</p>
+                        <p className="text-sm font-semibold opacity-90 md:text-base">5. Affirmations & Mantras for self-worth</p>
                         <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
-                          Together we craft a few personalized affirmations or phrases that support your self-confidence, self-love, and trust in your path.
+                          Together we craft a personalized affirmations or mantras that support your self-confidence, self-love, and trust in your path.
                         </p>
                       </div>
                     </div>
@@ -388,7 +388,7 @@ await fetch("/api/forms/vision-call", {
                     <div className="flex items-start gap-2">
                       <span className="mt-[-1px] text-[var(--color-gold)]">✔︎</span>
                       <div>
-                        <p className="text-sm font-semibold opacity-90 md:text-base">A micro-meditation to return to</p>
+                        <p className="text-sm font-semibold opacity-90 md:text-base">6. A micro-meditation to return to</p>
                         <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
                           If it feels aligned, we may end with a brief micro-meditation or visualization you can return to whenever you need to reconnect with this version of you.
                         </p>
@@ -411,9 +411,9 @@ await fetch("/api/forms/vision-call", {
                 <div className="flex items-start gap-2">
                   <span className="mt-[-1px] text-[var(--color-gold)]">✔︎</span>
                   <div>
-                    <p className="text-sm font-semibold opacity-90 md:text-base">A clearer sense</p>
+                    <p className="text-sm font-semibold opacity-90 md:text-base">1. A clearer sense</p>
                     <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
-                      A clearer sense of what you truly want in this season of your life — not just what you “should” want.
+                      A clearer sense of what you truly want in this chapter of your life — not just what you “should” want.
                     </p>
                   </div>
                 </div>
@@ -422,7 +422,7 @@ await fetch("/api/forms/vision-call", {
                 <div className="flex items-start gap-2">
                   <span className="mt-[-1px] text-[var(--color-gold)]">✔︎</span>
                   <div>
-                    <p className="text-sm font-semibold opacity-90 md:text-base">Your action plan</p>
+                    <p className="text-sm font-semibold opacity-90 md:text-base">2. Your action plan</p>
                     <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
                       A simple, personalized action plan you can begin using immediately after the call.
                     </p>
@@ -433,9 +433,9 @@ await fetch("/api/forms/vision-call", {
                 <div className="flex items-start gap-2">
                   <span className="mt-[-1px] text-[var(--color-gold)]">✔︎</span>
                   <div>
-                    <p className="text-sm font-semibold opacity-90 md:text-base">Mindset & journaling support</p>
+                    <p className="text-sm font-semibold opacity-90 md:text-base">3. Mindset & journaling support</p>
                     <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
-                      Mindset shifts, journaling prompts, and affirmations you can come back to when you feel stuck or discouraged.
+                      Mindset shifts, journal prompts, and affirmations you can come back to when you're feeling down or discouraged.
                     </p>
                   </div>
                 </div>
@@ -444,10 +444,9 @@ await fetch("/api/forms/vision-call", {
                 <div className="flex items-start gap-2">
                   <span className="mt-[-1px] text-[var(--color-gold)]">✔︎</span>
                   <div>
-                    <p className="text-sm font-semibold opacity-90 md:text-base">Renewed belief</p>
+                    <p className="text-sm font-semibold opacity-90 md:text-base">4. Renewed belief</p>
                     <p className="mt-1 text-xs leading-relaxed opacity-90 md:text-sm">
-                      A renewed connection to the part of you that still believes in what’s possible for your life.
-                    </p>
+A grounded belief in your direction again, and the motivation to take your next step with purpose.                    </p>
                   </div>
                 </div>
               </div>
@@ -455,30 +454,25 @@ await fetch("/api/forms/vision-call", {
           </div>
         </section>
 
-        {/* READY TO SCHEDULE CTA */}
-        <section id="book-call" className="mt-10 mb-10">
-          <div className="mx-auto max-w-2xl rounded-2xl border border-[var(--color-gold)]/55 bg-[var(--color-teal-850)]/85 px-6 py-6 shadow-[0_18px_40px_rgba(0,0,0,0.5)]">
-            <h2 className="font-serif text-xl md:text-2xl">Ready to schedule your Transformation Call?</h2>
-            <p className="mt-3 text-sm leading-relaxed opacity-90 md:text-base">
-              Transformation Calls are there for you when you need deeper one-on-one support. They&apos;re meant to be occasional, powerful check-ins that help you realign with who you&apos;re becoming — not just more appointments on your calendar.
-            </p>
-            <a
-              href="#vision-call-request"
-              onClick={(e) => {
-                e.preventDefault();
-                handleJump("vision-call-request", 80);
-              }}
-              className="mt-4 inline-flex items-center justify-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)] px-5 py-2.5 text-xs md:text-sm font-semibold tracking-wide text-black shadow-sm hover:brightness-110 transition"
-            >
-              Request a Transformation Call
-            </a>
-          </div>
-        </section>
+{/* READY TO SCHEDULE CTA */}
+<section id="book-call" className="mt-10 mb-10 text-center">
+  <a
+    href="#vision-call-request"
+    onClick={(e) => {
+      e.preventDefault();
+      handleJump("vision-call-request", 80);
+    }}
+    className="mt-0 inline-flex items-center justify-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)] px-5 py-2.5 text-xs md:text-sm font-semibold tracking-wide text-black shadow-sm hover:brightness-110 transition"
+  >
+    Request Your Transformation Call
+  </a>
+</section>
+
 
         {/* VISION CALL REQUEST FORM (bottom of page) */}
         <section id="vision-call-request" className="mt-4 mx-auto max-w-[900px] px-6 py-12 narrow-landscape-80">
           <h2 className="font-serif text-3xl md:text-4xl opacity-95 text-center -mt-3">Transformation Call Request Form</h2>
-          <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded mx-auto" />
+          <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-5 rounded mx-auto" />
 
           <div className="text-center mb-6">
             <p className="text-base md:text-lg opacity-90 leading-relaxed">
@@ -487,7 +481,7 @@ await fetch("/api/forms/vision-call", {
           </div>
 
           <div className="mt-6 rounded-2xl border border-white/20 bg-white/5 p-5 md:p-6 shadow-2xl">
-            <h3 className="text-lg font-semibold mb-4">Request a Transformation Call</h3>
+            <h3 className="text-lg font-semibold mb-4 opacity-93">Request a Transformation Call</h3>
 
             <form className="space-y-4" onSubmit={handleVisionCallSubmit}>
               <div className="grid gap-4 md:grid-cols-2">
@@ -519,7 +513,7 @@ await fetch("/api/forms/vision-call", {
                   name="focus"
                   className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
                   rows={3}
-                  placeholder="Share anything you feel comfortable sharing about what you’re moving through emotionally, mentally, or spiritually."
+                  placeholder="Share anything you feel comfortable with about what you’re moving through emotionally, mentally, or spiritually. Detailed responses are encouraged."
                   required
                 />
               </div>
@@ -530,7 +524,7 @@ await fetch("/api/forms/vision-call", {
                   name="goals"
                   className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
                   rows={3}
-                  placeholder="For example: clearer direction, specific next steps, support with a decision, a mindset shift, renewed motivation, etc."
+                  placeholder="For example: clearer direction, specific next steps, support with a decision, a mindset shift, renewed motivation, regained self-confidence, etc."
                   required
                 />
               </div>
@@ -552,7 +546,7 @@ await fetch("/api/forms/vision-call", {
                     type="text"
                     name="availability"
                     className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
-                    placeholder="For example: weekday evenings, Saturdays, your time zone, etc."
+                    placeholder="e.g. weekday evenings, Saturdays, your time zone."
                   />
                 </div>
                 <div>
@@ -561,7 +555,7 @@ await fetch("/api/forms/vision-call", {
                     name="preferences"
                     className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
                     rows={2}
-                    placeholder="Language (English/Spanish), spiritual preferences, topics you’d rather not discuss, or anything else I should know."
+                    placeholder="Language (English/Spanish), spiritual preferences, topics you’d rather not discuss, or anything else I should know before our session."
                   />
                 </div>
               </div>
@@ -587,7 +581,7 @@ await fetch("/api/forms/vision-call", {
           </div>
 
           <div className="mt-8 text-center">
-            <p className="text-base md:text-lg font-semibold text-[var(--color-cream)]">
+            <p className="opacity-93 text-base md:text-lg font-semibold text-[var(--color-cream)]">
               Additional questions? Include them in your form or{" "}
               <a href="/contact" className="text-[var(--color-gold)] underline underline-offset-4 hover:opacity-90">
                 contact me directly.
