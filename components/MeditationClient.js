@@ -323,25 +323,26 @@ When your mind feels heavy or overwhelmed, the right meditation can help you com
       </h2>
       <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded mx-auto md:mx-0" />
 
-      <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
-      Dr. Salerno understands what it’s like to carry the heavy weight of a life that no longer 
-      feels aligned — and how, beneath that burden, a deeper knowing begins to rise: the knowing 
-      that you’re meant for something greater. His work blends mental health science with personal transformation 
-       to help others rise into the fullest, most aligned versions of who 
-      they’re truly meant to be.
-      </p>
+<p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
+  Dr. Salerno’s work brings together grounded mental health science and 
+  transformational practice to help people rise into the most 
+  empowered, authentic versions of themselves. He understands the weight of living a life 
+  that is no longer aligned — and the quiet pull from within that signals you’re meant for something more.
+</p>
 
-      <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
-        He creates meditations that meet you exactly where you are — steady, supportive, and 
-        designed to help you uncover clarity, purpose, and inner strength. Not returning 
-        to who you were before, but growing into a life that feels more authentic, intentional, 
-        and purposeful.
-      </p>
+<p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
+  His customized meditation program was created to meet you exactly where 
+  you are — compassionate, intentional, and designed to help you find clarity, 
+  direction, and inner strength. This isn't about returning to yourself; 
+  it’s about evolving into the person you're meant to become and stepping into a 
+  life of purpose and fulfillment.
+</p>
 
-      <p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
-        These practices are here to help you feel clearer, more centered, and more connected to 
-        who you’re becoming — one intentional moment at a time.
-      </p>
+<p className="mt-3 text-sm md:text-base opacity-90 leading-relaxed">
+  Each practice is an invitation to feel more centered, more grounded, 
+  and more connected to your true path — moment by moment.
+</p>
+
     </div>
 
     {/* RIGHT: IMAGE */}
