@@ -117,17 +117,17 @@ await fetch("/api/forms/meditation-members", {
 
  {/* HERO */}
 <section className="mx-auto max-w-[1100px] px-6 pt-4 pb-10">
-  <div className="max-w-[720px]">
+  <div className="mx-auto max-w-[720px] text-center">
     <h1 className="font-serif text-4xl md:text-5xl leading-tight opacity-95">
-      Custom Meditations &amp; Vision Calls
+      Custom Meditations + Vision Calls
     </h1>
 
-    <div className="h-[2px] w-16 bg-[var(--color-gold)]/80 mt-4 mb-5 rounded" />
+    <div className="mx-auto h-[2px] w-16 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded" />
 
-    <p className="text-base md:text-lg opacity-90 leading-relaxed">
-      Personalized audio and a focused <strong>complimentary 1:1 Vision Call</strong> 
-      to support what you're moving through right now — created just for you, 
-      with exclusive RISE member benefits.
+    <p className="mt-1 md:text-lg opacity-90 leading-relaxed">
+      Personalized audio and a focused <strong>complimentary 1:1 Vision Call</strong>
+      {" "}to support what you're moving through right now — created just for you,
+      {" "}with exclusive RISE member benefits.
     </p>
 
     {/* Gold CTA replacing the old complimentary pill */}
@@ -150,6 +150,7 @@ await fetch("/api/forms/meditation-members", {
 </section>
 
 
+
           {/* Divider */}
           <div className="mx-auto w-full max-w-[1100px] px-6">
             <hr className="border-t border-[var(--color-cream)]/15" />
@@ -164,12 +165,12 @@ await fetch("/api/forms/meditation-members", {
               <Step
                 number="1"
                 title="Share what you need"
-                body="Use the request form below to tell me what you're moving through and what you want this meditation to support. You don’t need perfect language — just your honest starting point."
+                body="Use the request form below to share what you're moving through and what you want this meditation to support. You don’t need perfect language — just your honest starting point."
               />
               <Step
                 number="2"
                 title="Book your session & schedule your Vision Call"
-                body="You'll then receive an email confirmation and a link to complete your payment and schedule your complimentary 30-minute Vision Call to explore your intentions, emotional patterns, and spiritual needs."
+                body="You'll then receive an email confirmation and link to complete your payment and schedule your complimentary 30-minute Vision Call to explore your intentions, emotional patterns, and spiritual needs."
               />
               <Step
                 number="3"
@@ -203,7 +204,7 @@ await fetch("/api/forms/meditation-members", {
                   />
                   <LengthCard
                     label="10 minutes — Steady Grounding"
-                    body="Ideal for working through a specific pattern, restoring clarity, and reconnecting with yourself during demanding seasons."
+                    body="Ideal for working through a specific pattern, restoring clarity, and reconnecting with yourself during demanding moments."
                   />
                   <LengthCard
                     label="15 minutes — Deep Reset"
@@ -271,7 +272,7 @@ await fetch("/api/forms/meditation-members", {
       <h2 className="font-serif text-3xl md:text-4xl opacity-95">What I’ll Ask You</h2>
       <div className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded" />
       <p className="text-base md:text-lg opacity-90 leading-relaxed mb-4">
-        These questions help me create a meditation that feels deeply aligned with your current season of life:
+        These short form questions help me create a meditation that feels deeply aligned with what you're currently navigating in life:
       </p>
 
       <ul className="space-y-2 text-sm md:text-base opacity-90 leading-relaxed">
@@ -298,7 +299,7 @@ await fetch("/api/forms/meditation-members", {
 
       <ul className="space-y-2 text-sm md:text-base opacity-90 leading-relaxed">
         <li><span className="text-[var(--color-gold)]">✔︎</span> Feeling emotionally drained, overwhelmed, or stuck in old patterns</li>
-        <li><span className="text-[var(--color-gold)]">✔︎</span> Moving through burnout or a demanding season at work or home</li>
+        <li><span className="text-[var(--color-gold)]">✔︎</span> Moving through burnout or a demanding time at work or home</li>
         <li><span className="text-[var(--color-gold)]">✔︎</span> Navigating a big life transition or change</li>
         <li><span className="text-[var(--color-gold)]">✔︎</span> Wanting something more personal than general meditations</li>
         <li><span className="text-[var(--color-gold)]">✔︎</span> Ready to build a grounding ritual you can return to again and again</li>
@@ -317,7 +318,7 @@ await fetch("/api/forms/meditation-members", {
           {/* IMPORTANT NOTES + FORM */}
           <section className="mx-auto max-w-[900px] px-6 py-12 narrow-landscape-80">
                                     <h2 className="font-serif text-3xl md:text-4xl opacity-95 text-center">Custom Meditation Request Form</h2>
-                                                <div id="custom-meditation-request" className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-4 mb-6 rounded mx-auto" />
+                                                <div id="custom-meditation-request" className="h-[2px] w-12 bg-[var(--color-gold)]/80 mt-5 mb-5 rounded mx-auto" />
 
 
 
@@ -329,7 +330,7 @@ await fetch("/api/forms/meditation-members", {
 
             {/* REQUEST FORM (placeholder structure you can wire up) */}
             <div className="mt-6 rounded-2xl border border-white/20 bg-white/5 p-5 md:p-6 shadow-2xl">
-              <h3 className="text-lg font-semibold mb-4">Custom Meditation Request Form</h3>
+              <h3 className="text-lg font-semibold mb-4 opacity-93">Custom Meditation Request Form</h3>
               <form className="space-y-4" onSubmit={handleRequestSubmit}>
   <div className="grid gap-4 md:grid-cols-2">
     <div>
@@ -360,7 +361,7 @@ await fetch("/api/forms/meditation-members", {
       name="current"
       className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
       rows={3}
-      placeholder="Share anything you feel comfortable sharing about what you’re navigating emotionally, mentally, or spiritually."
+      placeholder="Share anything you feel comfortable with about what you’re navigating emotionally, mentally, or spiritually."
     />
   </div>
 
@@ -370,7 +371,7 @@ await fetch("/api/forms/meditation-members", {
       name="support"
       className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
       rows={3}
-      placeholder="For example: anxiety, burnout, confidence, clarity, grief, motivation, self-trust, etc."
+      placeholder="For example: anxiety, burnout, confidence, clarity, grief, motivation, self-trust, etc. The more specific you are, the better."
       required
     />
   </div>
@@ -398,7 +399,7 @@ await fetch("/api/forms/meditation-members", {
         type="text"
         name="timing"
         className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
-        placeholder="Mornings, before bed, between shifts, after work, etc."
+        placeholder="Mornings, afternoons, evenings, etc."
       />
     </div>
   </div>
@@ -409,7 +410,7 @@ await fetch("/api/forms/meditation-members", {
       name="preferences"
       className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
       rows={2}
-      placeholder="For example: English or Spanish, any phrases you resonate with, or anything you'd prefer to avoid."
+      placeholder="For example: English or Spanish, any phrases, language, or styles you resonate with, or anything you'd prefer to avoid."
     />
   </div>
 
@@ -437,7 +438,7 @@ await fetch("/api/forms/meditation-members", {
 
            {/* QUESTIONS / CONTACT */}
 <div className="mt-8 text-center">
-  <p className="text-base md:text-lg font-semibold text-[var(--color-cream)]">
+  <p className="text-base md:text-lg font-semibold text-[var(--color-cream)] opacity-90">
     Additional questions? Include them in your form or{" "}
     <a
       href="/contact"
@@ -469,7 +470,7 @@ await fetch("/api/forms/meditation-members", {
   <li className="flex items-start gap-2">
     <span className="text-[var(--color-gold)] mt-[2px]">✔︎</span>
     <span>
-      If you prefer guided meditations you can use anytime, check out the full Meditation Library found in the members page.
+      If you prefer pre-recorded guided meditations you can use anytime, check out the full Meditation Library found in the members page.
    
     </span>
   </li>
@@ -493,7 +494,7 @@ await fetch("/api/forms/meditation-members", {
   <li className="flex items-start gap-2">
     <span className="text-[var(--color-gold)] mt-[3px]">•</span>
     <span>
-      These meditations are for your personal use only. Please don&apos;t share,
+      These meditations are for your personal use only. Please do not share,
       repost, or resell them.
     </span>
   </li>
@@ -618,7 +619,7 @@ function Step({ number, title, body }) {
         {number}
       </div>
       <div>
-        <div className="font-semibold mb-1">{title}</div>
+        <div className="font-semibold mb-1 opacity-95">{title}</div>
         <p className="text-sm md:text-base opacity-90 leading-relaxed">{body}</p>
       </div>
     </div>
@@ -628,7 +629,7 @@ function Step({ number, title, body }) {
 function LengthCard({ label, body }) {
   return (
     <div className="rounded-xl border border-white/15 bg-white/5 p-4">
-      <div className="font-semibold mb-1">{label}</div>
+      <div className="font-semibold mb-1 opacity-95">{label}</div>
       <p className="text-sm md:text-base opacity-90 leading-relaxed">{body}</p>
     </div>
   );
