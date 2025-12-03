@@ -214,21 +214,55 @@ export default function MembersFeedbackPage() {
             <h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--color-cream)]/80">What part of RISE would you like to share feedback on today?</h2>
             <p className="text-xs text-[var(--color-cream)]/70">You can select one or more areas below and then scroll down.</p>
             <div className="mt-4 space-y-2">
-              {AREA_OPTIONS.map(area => {
-                const active = areaSelected(area.key);
-                return (
-                  <button
-                    key={area.key}
-                    type="button"
-                    onClick={() => toggleArea(area.key)}
-                    className={active ? "flex w-full items-center justify-between rounded-lg border border-[var(--color-gold)] bg-[var(--color-gold)]/10 px-4 py-2 text-xs font-semibold tracking-wide text-[var(--color-cream)] shadow-sm" : "flex w-full items-center justify-between rounded-lg border border-white/20 bg-white/5 px-4 py-2 text-xs font-semibold tracking-wide text-[var(--color-cream)]/90 hover:bg-white/10"}
-                  >
-                    <span>{area.label}</span>
-                    <span className="ml-3 text-[10px] uppercase tracking-[0.2em]">{active ? "Chosen" : "Select"}</span>
-                  </button>
-                );
-              })}
-            </div>
+  {AREA_OPTIONS.map(area => {
+    const active = areaSelected(area.key);
+    const baseClasses =
+      "flex w-full items-start justify-between gap-3 rounded-lg border px-4 py-2 text-xs font-semibold tracking-wide";
+    const activeClasses =
+      "border-[var(--color-gold)] bg-[var(--color-gold)]/10 text-[var(--color-cream)] shadow-sm";
+    const inactiveClasses =
+      "border-white/20 bg-white/5 text-[var(--color-cream)]/90 hover:bg-white/10";
+
+    return (
+      <button
+        key={area.key}
+        type="button"
+        onClick={() => toggleArea(area.key)}
+        className={active ? `${baseClasses} ${activeClasses}` : `${baseClasses} ${inactiveClasses}`}
+      >
+        {/* Left: number + label, always left-aligned and allowed to wrap */}
+<span className="flex-1 flex text-left leading-snug">
+
+  {/* Number block — only 10,11,12 get extra width */}
+  <span
+    className="inline-block shrink-0 tabular-nums text-left"
+    style={{
+      width:
+        area.label.startsWith("1") && area.label[1] !== "."
+          ? "2.6ch" // for 10, 11, 12
+          : "1.8ch" // for 1–9
+    }}
+  >
+    {area.label.split(".")[0]}.
+  </span>
+
+  {/* Text block */}
+  <span className="ml-1 break-words">
+    {area.label.split(". ").slice(1).join(". ")}
+  </span>
+</span>
+
+
+
+        {/* Right: status pill, fixed width so it doesn’t shift */}
+        <span className="shrink-0 ml-3 text-right text-[10px] uppercase tracking-[0.2em]">
+          {active ? "Chosen" : "Select"}
+        </span>
+      </button>
+    );
+  })}
+</div>
+
             <p className="mt-2 text-[11px] text-[var(--color-cream)]/60">Choose at least one area above to share your reflections. You can come back to this page anytime.</p>
           </section>
 
