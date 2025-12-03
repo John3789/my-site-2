@@ -243,7 +243,7 @@ export default function AboutClient() {
       >
         RISE Membership Program
       </a>, <Link href="/meditations" 
-                    className="link">Customized Meditations</Link>, <Link href="/speaking" className="link">Speaking</Link> and <Link href="/Consulting" className="link">Consulting</Link> services, and <Link href="/books" className="link">Writing</Link> projects.
+                    className="link">customized meditations</Link>, <Link href="/speaking" className="link">speaking</Link> and <Link href="/Consulting" className="link">consulting</Link> services, and <Link href="/books" className="link">writing</Link> projects.
                   </p>
                 </section>
 
