@@ -92,16 +92,18 @@ export default function GuidesIsland() {
       data-page="members"
       className="mx-auto max-w-[1100px] px-6 py-10 mt-9"
     >
-<div className="sticky top-8 z-30 flex justify-start">
+          {/* Sticky Members Home button */}
+<div className="min-[1000px]:top-8 min-[1000px]:ml-8 sticky top-4 min-[1000px]:mt-0 -mt-20 z-30 flex justify-end min-[1000px]:justify-start">
   <MembersHomeLink
-    className="mb-4 inline-flex items-center rounded-full border border-[var(--color-gold)] bg-transparent px-2.5 py-[3px] text-[9px] font-semibold tracking-[0.14em] text-[var(--color-gold)] backdrop-blur-sm"
+    className="inline-flex items-center rounded-full border border-[var(--color-gold)]
+               bg-transparent px-2.5 py-1  text-[13px] font-semibold tracking-[0.14em]
+               text-[var(--color-gold)] backdrop-blur-sm"
   />
 </div>
 
-
       {/* HEADER */}
       <section className="mb-10">
-        <h1 className="mx-auto text-center mt-4 font-serif text-4xl md:text-5xl text-[var(--color-cream)]">
+        <h1 className="mx-auto text-center mt-18 min-[1000px]:mt-4 font-serif text-4xl md:text-5xl text-[var(--color-cream)]">
           Mental Health & Alignment Guides
         </h1>
                   <div className="mx-auto mt-5 mb-5 h-[2px] w-16 rounded bg-[var(--color-gold)]/85" />
@@ -253,28 +255,22 @@ Short, practical guides you can use anytime to reset, realign, and move forward.
       </div>
 
       {/* Mobile footer block (newsletter + socials + bio + legal) */}
-      <div className="lg:hidden mx-auto w-full max-w-[900px] px-0 mt-0">
-        <div className="mx-auto w-full px-0">
-          {/* Newsletter card */}
-          <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-6">
-            <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">Science, Soul, and a Bit of Magic — Every Month</p>
-            <p className="text-sm opacity-85 mb-3">Practical wisdom for modern minds — best paired with coffee and curiosity.</p>
+      <div className="lg:hidden w-full max-w-[500px] px-0 mt-0">
+        <div className="w-full px-0">
+          {/* Newsletter card (midnight blue) — hidden on mobile */}
+    {/*
+    <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
+      <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
+        Science, Soul, and a Bit of Magic — Every Month
+      </p>
+      <p className="text-sm opacity-85 mb-3">
+        Practical wisdom for modern minds — best paired with coffee and curiosity.
+      </p>
+      <MobileFooterSubscribeClient />
+    </div>
+    */}
 
-            {nlSubscribed ? (
-              <div className="flex gap-2">
-                <div className="flex-1 rounded-md border border-[var(--color-gold)]/90 text-[var(--color-gold)]/90 px-3 py-2 font-semibold text-center cursor-default select-none">Thank you!</div>
-              </div>
-            ) : (
-              <form onSubmit={handleNewsletterSubmit} className="mt-4 space-y-3">
-                <input type="text" name="hp" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
-                <div className="flex gap-2">
-                  <input type="email" name="email" required placeholder="you@example.com" className="flex-1 rounded-md border border-white/15 bg-white/5 px-3 py-2 placeholder-white/60 outline-none focus:ring-2 focus:ring-[var(--color-gold)]/50 focus:border-[var(--color-gold)]/50" />
-                  <button type="submit" disabled={nlSubmitting} className="shrink-0 rounded-md bg-[var(--color-gold)] text-black px-4 py-2 font-semibold">{nlSubmitting ? "Sending…" : "Subscribe"}</button>
-                </div>
-              </form>
-            )}
-          </div>
-
+    {/* --- MOBILE Jay-style footer block --- */}
           {/* Socials + bio + legal (mobile) */}
           <div className="mt-6 text-[13px] leading-relaxed">
             <p className="uppercase tracking-[0.18em] text-left opacity-70">Follow Dr. Salerno:</p>

@@ -35,9 +35,12 @@ export default function LiveSessionsPage() {
   className="mx-auto w-full max-w-[880px] px-6 pb-16 pt-10 space-y-8"
 >
         {/* HEADER */}
-<div className="sticky top-0 z-30 flex justify-start">
+          {/* Sticky Members Home button */}
+<div className="min-[1000px]:top-8 min-[1000px]:-ml-20 sticky top-4 min-[1000px]:mt-4 -mt-9 z-30 flex justify-end min-[1000px]:justify-start">
   <MembersHomeLink
-    className="mb-0 mt-9 inline-flex items-center rounded-full border border-[var(--color-gold)] bg-transparent px-2.5 py-[3px] text-[9px] font-semibold tracking-[0.14em] text-[var(--color-gold)] backdrop-blur-sm"
+    className="mb-7 min-[1000px]:-mb-2 inline-flex items-center rounded-full border border-[var(--color-gold)]
+               bg-transparent px-2.5 py-1  text-[13px] font-semibold tracking-[0.14em]
+               text-[var(--color-gold)] backdrop-blur-sm"
   />
 </div>
         <header>
@@ -301,7 +304,7 @@ export default function LiveSessionsPage() {
 </div>
 
       {/* Divider ABOVE footer, matching membership/meditations */}
-      <div className="mx-auto max-w-[1200px] px-6 mt-10">
+      <div className="hidden lg:block mx-auto max-w-[1200px] px-6 mt-10">
         <hr className="border-t border-[var(--color-cream)]/22" />
       </div>
 
@@ -385,7 +388,7 @@ export default function LiveSessionsPage() {
       </div>
 
       {/* Mobile footer stack */}
-      <div className="lg:hidden mx-auto w-full max-w-[900px] px-0 mt-6">
+      <div className="lg:hidden w-full max-w-[500px] px-0 mt-6">
         <div className="mt-0 text-[13px] leading-relaxed">
           <p className="uppercase tracking-[0.18em] text-left opacity-70">Follow Dr. Salerno:</p>
           <div className="mt-3 flex items-left justify-left gap-8">
@@ -428,7 +431,7 @@ export default function LiveSessionsPage() {
           </div>
 
           <p className="mt-5 text-left opacity-85">
-            Dr. Juan Pablo Salerno is an award-winning mental health science expert and thought leader, author, and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
+            Dr. Juan Pablo Salerno is an award-winning mental health science expert and transformation advisor, author, and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
           </p>
 
           <p className="mt-6 text-left opacity-85">© Dr. Juan Pablo Salerno™</p>
