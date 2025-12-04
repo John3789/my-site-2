@@ -18,7 +18,12 @@ function setPersistentMemberFlag() {
 
 function hasPersistentMemberFlag() {
   if (typeof window === "undefined") return false;
-  return window.localStorage.getItem(MEMBER_OK_FLAG) === "true";
+  try {
+    return window.localStorage.getItem(MEMBER_OK_FLAG) === "true";
+  } catch (err) {
+    console.warn("Failed to read localStorage member flag", err);
+    return false;
+  }
 }
 
 function getMemberstack() {
@@ -43,15 +48,9 @@ function setMemberFlag() {
 
 export default function AutoRedirectIfNoMember({ children }) {
   const router = useRouter();
+  const [status, setStatus] = useState("checking"); // "checking" | "allowed" | "redirecting"
 
-  const [status, setStatus] = useState(() => {
-    if (typeof window !== "undefined" && (hasMemberFlag() || hasPersistentMemberFlag())) {
-      return "allowed";
-    }
-    return "checking";
-  });
-
-  // ✅ 1) Handle the "post-login reload" case first
+  // 1) Handle the "post-login reload" case
   useEffect(() => {
     if (typeof window === "undefined") return;
 
@@ -63,13 +62,14 @@ export default function AutoRedirectIfNoMember({ children }) {
 
     // Mark this tab as allowed and go to members home
     setMemberFlag();
+    setPersistentMemberFlag();
     setStatus("allowed");
     router.replace("/members");
   }, [router]);
 
-  // ✅ 2) Normal Memberstack gate (unchanged except for using status)
+  // 2) Normal Memberstack gate — but NO full-screen overlay anymore
   useEffect(() => {
-    if (status !== "checking") return;
+    if (typeof window === "undefined") return;
 
     let cancelled = false;
     let retryTimeout;
@@ -79,13 +79,21 @@ export default function AutoRedirectIfNoMember({ children }) {
     async function runGate() {
       if (cancelled) return;
 
+      // If we've already marked this tab OK, don't block anything
+      if (hasMemberFlag() || hasPersistentMemberFlag()) {
+        setStatus("allowed");
+        return;
+      }
+
       const ms = getMemberstack();
 
       // Memberstack script not ready yet → retry
       if (!ms || !ms.getCurrentMember) {
         if (attempts >= maxAttempts) {
-          // After enough tries with no Memberstack, treat as "no member"
-          router.replace("/membership?need_member=1");
+          console.warn(
+            "[Member gate] Memberstack not ready after retries — skipping gate (allowing)."
+          );
+          setStatus("allowed");
           return;
         }
         attempts += 1;
@@ -95,61 +103,56 @@ export default function AutoRedirectIfNoMember({ children }) {
 
       try {
         const result = await ms.getCurrentMember();
-        const member = result?.data;
         if (cancelled) return;
 
+        const member = result?.data;
         const hasPlan =
           Array.isArray(member?.planConnections) &&
           member.planConnections.length > 0;
 
         const isLoggedIn = !!member?.id;
 
-        // ✅ Paid member with a plan: allow through and remember for this tab
         if (hasPlan) {
           console.log("Member confirmed, rendering page.");
           setMemberFlag();
-          setPersistentMemberFlag(); // New line to persist the flag
+          setPersistentMemberFlag();
           setStatus("allowed");
           return;
         }
 
-        // ⏳ Not logged in yet – could still be the first-load handshake
+        // Not logged in yet – could still be handshake
         if (!isLoggedIn && attempts < maxAttempts) {
           attempts += 1;
           retryTimeout = window.setTimeout(runGate, 500);
           return;
         }
 
-        // ⏳ Logged in but no plan yet – likely just created account / just paid
-        // Give Memberstack more time to attach planConnections before we eject them
+        // Logged in but no plan – give it more time once
         if (isLoggedIn && attempts < maxAttempts) {
           attempts += 1;
           retryTimeout = window.setTimeout(runGate, 500);
           return;
         }
 
-        // ❌ After all attempts:
-        // - either not logged in, or logged in but still no plan → send back
+        // After all attempts, treat as no member
+        console.warn("[Member gate] No valid member/plan found — redirecting.");
+        setStatus("redirecting");
         router.replace("/membership?need_member=1");
       } catch (err) {
         if (cancelled) return;
 
-        // Treat errors like "still initializing" up to maxAttempts
+        console.warn("[Member gate] Error during gate:", err);
         if (attempts < maxAttempts) {
           attempts += 1;
           retryTimeout = window.setTimeout(runGate, 500);
         } else {
+          setStatus("redirecting");
           router.replace("/membership?need_member=1");
         }
       }
     }
 
-    // If we've already marked this tab ok somehow, skip everything
-    if (hasMemberFlag()) {
-      setStatus("allowed");
-    } else {
-      runGate();
-    }
+    runGate();
 
     return () => {
       cancelled = true;
@@ -157,34 +160,10 @@ export default function AutoRedirectIfNoMember({ children }) {
         window.clearTimeout(retryTimeout);
       }
     };
-  }, [router, status]);
+  }, [router]);
 
-  // ✅ 3) Safety watchdog: never stay "checking" forever
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    if (status !== "checking") return;
-
-    // If the gate hasn't resolved within 8 seconds, stop blocking the UI.
-    const watchdog = window.setTimeout(() => {
-      console.warn(
-        "[Member gate] Timed out after 8s — proceeding as allowed to avoid lock."
-      );
-      setMemberFlag();
-      setPersistentMemberFlag();
-      setStatus("allowed");
-    }, 8000);
-
-    return () => {
-      window.clearTimeout(watchdog);
-    };
-  }, [status]);
-
-  // While checking, keep the overlay (your existing behavior)
-  if (status !== "allowed") {
-    return (
-      <div className="fixed inset-0 z-[9999] bg-[var(--color-teal-850)]" />
-    );
-  }
+  // 3) Optional: you *could* show a tiny "Checking access..." bar or nothing at all.
+  // The key fix is: DO NOT block the entire screen with a fixed overlay.
 
   return children;
 }
