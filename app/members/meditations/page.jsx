@@ -285,7 +285,7 @@ export default function MeditationLibraryPage() {
       </div>
 
       {/* Divider ABOVE footer, desktop-only */}
-      <div className="hidden md:block mx-auto max-w-[1200px] px-6 mt-8">
+      <div className="hidden lg:block mx-auto max-w-[1200px] px-6 mt-8">
         <hr className="border-t border-[var(--color-cream)]/22" />
       </div>
 
@@ -338,8 +338,8 @@ export default function MeditationLibraryPage() {
         </div>
       </div>
 
-      {/* Mobile + tablet divider */}
-      <div className="md:hidden mx-auto w-full px-0 mt-8">
+            {/* Divider (mobile/desktop) */}
+      <div className="lg:hidden mx-auto w-full px-0 mt-10">
         <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
       </div>
 
