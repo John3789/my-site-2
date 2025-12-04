@@ -365,12 +365,10 @@ export default function ResourcesClient() {
             onScroll={updateNavScrollState}
           >
             {/* First pill: Members Home (gold) */}
-            <a
-              href="/members"
+            <MembersHomeLink
               className="whitespace-nowrap rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)] px-3.5 py-1.5 text-[12px] font-semibold tracking-wide text-black shadow-sm transition active:scale-95"
-            >
-              Members Home
-            </a>
+   />
+
 
             {/* Theme pills: always green */}
             {THEMES.map((t) => {
@@ -606,7 +604,7 @@ export default function ResourcesClient() {
 
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="block lg:hidden">
-  <div className="mx-auto max-w-[1400px] px-6 mb-7 -mt-5">
+  <div className="mx-auto max-w-[1400px] px-6 mb-6.5 -mt-5">
     <hr className="w-[100%] mx-auto border-t border-[var(--color-cream)]/22 mb-0" />
   </div>
 
