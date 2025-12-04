@@ -222,11 +222,11 @@ const handleJump = useCallback((id) => {
       RISE Shortcuts
     </p>
 
-    <div className="grid grid-cols-2 gap-2">
+<div className="grid grid-cols-2 min-[600px]:grid-cols-3 min-[750px]:grid-cols-4 gap-2">
       <button
         type="button"
         onClick={() => handleJump("welcome")}
-        className="w-full inline-flex items-center justify-center gap-1 rounded-full border border-white/20 bg-white/[0.08] px-3 py-2 text-[11px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/15 active:translate-y-[1px] transition"
+        className="w-full inline-flex items-center justify-center gap-1 rounded-full border border-white/20 bg-white/[0.08] px-3 py-1 text-[11px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/15 active:translate-y-[1px] transition"
       >
         <span>🙏</span>
         <span>Welcome</span>
@@ -235,7 +235,7 @@ const handleJump = useCallback((id) => {
       <button
         type="button"
         onClick={() => handleJump("start-here")}
-        className="w-full inline-flex items-center justify-center gap-1 rounded-full border border-white/20 bg-white/[0.08] px-3 py-2 text-[11px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/15 active:translate-y-[1px] transition"
+        className="w-full inline-flex items-center justify-center gap-1 rounded-full border border-white/20 bg-white/[0.08] px-3 py-1 text-[11px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/15 active:translate-y-[1px] transition"
       >
         <span>🎬</span>
         <span>Start here</span>
@@ -244,7 +244,7 @@ const handleJump = useCallback((id) => {
       <button
         type="button"
         onClick={() => handleJump("regular-rhythm")}
-        className="w-full inline-flex items-center justify-center gap-1 rounded-full border border-white/20 bg-white/[0.06] px-3 py-2 text-[11px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
+        className="w-full inline-flex items-center justify-center gap-1 rounded-full border border-white/20 bg-white/[0.06] px-3 py-1 text-[11px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
       >
         <span>🔁</span>
         <span>Your rhythm</span>
@@ -253,7 +253,7 @@ const handleJump = useCallback((id) => {
       <button
         type="button"
         onClick={() => handleJump("ai-guide")}
-        className="w-full inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.06] px-3 py-2 text-[11px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
+        className="w-full inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.06] px-3 py-1 text-[11px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
       >
         <img
           src="/headshot.jpg"
@@ -266,7 +266,7 @@ const handleJump = useCallback((id) => {
       <button
         type="button"
         onClick={() => handleJump("everything-rise")}
-        className="w-full inline-flex items-center justify-center gap-1 rounded-full border border-white/20 bg-white/[0.06] px-3 py-2 text-[11px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
+        className="w-full inline-flex items-center justify-center gap-1 rounded-full border border-white/20 bg-white/[0.06] px-3 py-1 text-[11px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
       >
         <span>🌐</span>
         <span>All tools</span>
@@ -275,7 +275,7 @@ const handleJump = useCallback((id) => {
       <button
         type="button"
         onClick={() => handleJump("faqs")}
-        className="w-full inline-flex items-center justify-center gap-1 rounded-full border border-white/20 bg-white/[0.06] px-3 py-2 text-[11px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
+        className="w-full inline-flex items-center justify-center gap-1 rounded-full border border-white/20 bg-white/[0.06] px-3 py-1 text-[11px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
       >
         <span>❓</span>
         <span>FAQs</span>
@@ -284,7 +284,7 @@ const handleJump = useCallback((id) => {
       <button
         type="button"
         onClick={() => handleJump("roadmap")}
-        className="w-full inline-flex items-center justify-center gap-1 rounded-full border border-white/20 bg-white/[0.06] px-3 py-2 text-[11px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
+        className="w-full inline-flex items-center justify-center gap-1 rounded-full border border-white/20 bg-white/[0.06] px-3 py-1 text-[11px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
       >
         <span>🗺️</span>
         <span>Roadmap</span>
@@ -293,7 +293,7 @@ const handleJump = useCallback((id) => {
       <button
         type="button"
         onClick={() => handleJump("account-billing")}
-        className="w-full inline-flex items-center justify-center gap-1 rounded-full border border-white/20 bg-white/[0.06] px-3 py-2 text-[11px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
+        className="w-full inline-flex items-center justify-center gap-1 rounded-full border border-white/20 bg-white/[0.06] px-3 py-1 text-[11px] font-semibold tracking-wide text-[var(--color-cream)] hover:bg-white/12 active:translate-y-[1px] transition"
       >
         <span>💳</span>
         <span>Account &amp; Billing</span>
@@ -693,10 +693,10 @@ const handleJump = useCallback((id) => {
         className="h-17 h-17 rounded-full object-cover ring-1 ring-white/25"
       />
 <span>
-  When you feel stuck, talk to Dr. Salerno AI
+  When you feel stuck, connect with Dr. Salerno AI
 </span>    </h2>
     <p className="mt-2 text-sm md:text-base opacity-90 max-w-[33rem]">
-     Reach out when you want thoughtful guidance, emotional clarity, or a trusted perspective.
+    Reach out when you want thoughtful guidance, emotional clarity, or a trusted perspective.
       Dr. Salerno AI helps you understand your feelings, see things more clearly, & choose your next step.
     </p>
 
@@ -705,7 +705,7 @@ const handleJump = useCallback((id) => {
       {/* When to open it */}
       <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
         <summary className="flex items-center justify-between text-sm font-semibold list-none">
-          <span>When to reach out</span>
+          <span>When to connect</span>
           <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
         </summary>
         <ul className="mt-2 text-sm space-y-1">
@@ -749,7 +749,7 @@ const handleJump = useCallback((id) => {
       {/* What you leave with */}
       <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
         <summary className="flex items-center justify-between text-sm font-semibold list-none">
-          <span>What you leave with</span>
+          <span>What you receive</span>
           <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
         </summary>
         <ul className="mt-2 text-sm space-y-1">
@@ -788,14 +788,13 @@ const handleJump = useCallback((id) => {
     <h2 className="font-serif text-2xl md:text-3xl tracking-tight flex items-center gap-3">
       <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/5 text-2xl">📅</span>
       <span className="leading-tight">
-<span className="block">Your monthly realignment</span>
-    <span className="block"> and inner growth session</span>
+<span className="block">Realign by attending your monthly live inner growth session</span>
   </span>
     </h2>
 
     <p className="mt-2 text-sm md:text-base opacity-90">
       Once a month, we pause together so you can release what you&apos;re carrying and realign with who you&apos;re becoming.{" "}
-      <span className="font-semibold">You'll feel clearer, lighter, grounded, and ready for the month.</span>
+      <span className="font-semibold">You'll feel clearer, lighter, grounded, and ready for the month ahead.</span>
     </p>
 
     {/* 1 column on mobile, 2-column waterfall on desktop */}
@@ -864,8 +863,7 @@ const handleJump = useCallback((id) => {
     <h2 className="font-serif text-2xl md:text-3xl tracking-tight flex items-center gap-3">
       <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/5 text-2xl">🎧</span>
       <span className="leading-tight">
-        <span className="block">If you need a powerful reset,</span>
-        <span className="block">consider a Custom Meditation</span>
+        <span className="block">When you need a powerful reset, consider a Custom Meditation</span>
       </span>
     </h2>
 
@@ -962,7 +960,7 @@ const handleJump = useCallback((id) => {
       {/* When this is helpful */}
       <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
         <summary className="flex items-center justify-between text-sm font-semibold list-none">
-          <span>When a transformation call is helpful</span>
+          <span>When a call is helpful</span>
           <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
         </summary>
         <ul className="mt-2 text-sm space-y-1">
@@ -984,7 +982,7 @@ const handleJump = useCallback((id) => {
       {/* During your hour */}
       <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
         <summary className="flex items-center justify-between text-sm font-semibold list-none">
-          <span>In your transformation call we may</span>
+          <span>What we could do on the call</span>
           <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
         </summary>
         <ul className="mt-2 text-sm space-y-1">
