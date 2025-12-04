@@ -159,6 +159,26 @@ export default function AutoRedirectIfNoMember({ children }) {
     };
   }, [router, status]);
 
+  // ✅ 3) Safety watchdog: never stay "checking" forever
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (status !== "checking") return;
+
+    // If the gate hasn't resolved within 8 seconds, stop blocking the UI.
+    const watchdog = window.setTimeout(() => {
+      console.warn(
+        "[Member gate] Timed out after 8s — proceeding as allowed to avoid lock."
+      );
+      setMemberFlag();
+      setPersistentMemberFlag();
+      setStatus("allowed");
+    }, 8000);
+
+    return () => {
+      window.clearTimeout(watchdog);
+    };
+  }, [status]);
+
   // While checking, keep the overlay (your existing behavior)
   if (status !== "allowed") {
     return (
