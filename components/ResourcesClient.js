@@ -607,12 +607,12 @@ export default function ResourcesClient() {
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="block lg:hidden">
   <div className="mx-auto max-w-[1400px] px-6 mb-7 -mt-5">
-    <hr className="w-[98%] mx-auto border-t border-[var(--color-cream)]/22 mb-0" />
+    <hr className="w-[100%] mx-auto border-t border-[var(--color-cream)]/22 mb-0" />
   </div>
 
-  <div className="mobile-footer-cap">
+  <div className="">
 
-    <div className="mx-auto max-w-[1400px] px-3 narrow-landscape-70">
+    <div className="max-w-[500px] px-6">
     {/* Newsletter card (midnight blue) — hidden on mobile */}
     {/*
     <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
