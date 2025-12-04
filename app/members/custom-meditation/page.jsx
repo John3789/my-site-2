@@ -99,21 +99,14 @@ await fetch("/api/forms/meditation-members", {
   data-page="members-custom-meditation"
   className="min-h-screen w-full bg-[var(--color-teal-850)] text-[var(--color-cream)] pb-16"
 >
-            {/* Sticky element with inline style */}
-        <div
-  className="sticky z-30 transition-[top] duration-300 ease-in-out"
-  style={{
-    top: stickyTop,
-    maxWidth: '1100px', // Match your content width
-    margin: '0 auto',      // Center it horizontally
-    padding: '0 1.5rem' // Same side padding as your content
-  }}
->
+          {/* Sticky Members Home button */}
+<div className="min-[1000px]:top-8 min-[1000px]:ml-27 sticky top-8 min-[1000px]:mt-19 mt-10 z-30 mr-6 flex justify-end min-[1000px]:justify-start">
   <MembersHomeLink
-    className="mb-18 mt-3 inline-flex items-center rounded-full border border-[var(--color-gold)] bg-transparent px-2.5 py-[3px] text-[9px] font-semibold tracking-[0.14em] text-[var(--color-gold)] backdrop-blur-sm"
+    className="mb-8 -mt-6 min-[1000px]:-mb-2 min-[1000px]:mt-0 inline-flex items-center rounded-full border border-[var(--color-gold)]
+               bg-transparent px-2.5 py-1  text-[13px] font-semibold tracking-[0.14em]
+               text-[var(--color-gold)] backdrop-blur-sm"
   />
 </div>
-
 
  {/* HERO */}
 <section className="mx-auto max-w-[1100px] px-6 pt-4 pb-10">
@@ -504,7 +497,7 @@ await fetch("/api/forms/meditation-members", {
           </section>
 
                 {/* Divider ABOVE footer, matching membership/meditations */}
-      <div className="mx-auto max-w-[1200px] px-6 mt-0">
+      <div className="hidden lg:block mx-auto max-w-[1200px] px-6 mt-0">
         <hr className="border-t border-[var(--color-cream)]/22" />
       </div>
 
@@ -582,19 +575,70 @@ await fetch("/api/forms/meditation-members", {
         </div>
       </div>
 
-      {/* Mobile divider */}
-      <div className="lg:hidden mx-auto w-full px-0 mt-8">
+{/* Mobile divider to match membership/contact */}
+      <div className="lg:hidden mx-auto w-full px-5 mt-8">
         <hr className="border-t border-[var(--color-cream)]/22 mb-0" />
       </div>
 
       {/* Mobile footer stack */}
-      <div className="lg:hidden mx-auto w-full max-w-[900px] px-0 mt-6">
+      <div className="lg:hidden w-full max-w-[500px] px-5 mt-6">
         <div className="mt-0 text-[13px] leading-relaxed">
-          <p className="uppercase tracking-[0.18em] text-left opacity-70">
-            Follow Dr. Salerno:
+          <p className="uppercase tracking-[0.18em] text-left opacity-70">Follow Dr. Salerno:</p>
+          <div className="mt-3 flex items-left justify-left gap-8">
+<a
+              href="https://www.tiktok.com/@drjuanpablosalerno"
+              aria-label="TikTok"
+              className="opacity-90 hover:opacity-100"
+            >
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                <path d="M21 8.5a6.7 6.7 0 0 1-4.3-1.6v6.1a6.9 6.9 0 1 1-6.9-6.9c.4 0 .8 0 1.1.1v3a3.9 3.9 0 1 0 2.8 3.8V2h3a6.7 6.7 0 0 0 4.3 5.3z" />
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/drjuanpablosalerno/"
+              aria-label="Instagram"
+              className="opacity-90 hover:opacity-100"
+            >
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
+                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 2.75a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5Zm0 1.75a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm5.5-2.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z" />
+              </svg>
+            </a>
+            <a
+              href="https://www.youtube.com/@drjuanpablosalerno"
+              aria-label="YouTube"
+              className="opacity-90 hover:opacity-100"
+            >
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                <path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.6 4.3 12 4.3 12 4.3s-6.6 0-8.2.4A4 4 0 0 0 1 7.5 41 41 0 0 0 .6 12 41 41 0 0 0 1 16.5a4 4 0 0 0 2.8 2.8c1.6.4 8.2.4 8.2.4s6.6 0 8.2-.4A4 4 0 0 0 23 16.5 41 41 0 0 0 23.4 12 41 41 0 0 0 23 7.5zM9.8 15.4V8.6L15.6 12l-5.8 3.4z" />
+              </svg>
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61582412806274#"
+              aria-label="Facebook"
+              className="opacity-90 hover:opacity-100"
+            >
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2v3h-2c-.3 0-.5.2-.5.5V12H16l-.5 3h-2v7A10 10 0 0 0 22 12z" />
+              </svg>
+            </a>
+          </div>
+
+          <p className="mt-5 text-left opacity-85">
+            Dr. Juan Pablo Salerno is an award-winning mental health science expert and transformation advisor, author, and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
           </p>
-          {/* mobile socials (same as above) */}
-          {/* ...you can paste the same social icons + text as your meditations footer... */}
+
+          <p className="mt-6 text-left opacity-85">© Dr. Juan Pablo Salerno™</p>
+          <p className="mt-2 mb-5 text-left opacity-85">
+            <a href="/terms" className="underline underline-offset-4 hover:opacity-80">
+              Terms
+            </a>
+            <span className="mx-2 opacity-50">·</span>
+            <a href="/privacy" className="underline underline-offset-4 hover:opacity-80">
+              Privacy
+            </a>
+            <span className="mx-2 opacity-50">·</span>
+            <span>All rights reserved</span>
+          </p>
         </div>
       </div>
 
