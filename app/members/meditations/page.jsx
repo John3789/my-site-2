@@ -33,7 +33,7 @@ const MEDITATION_THEMES = [
         title: "Soften Anxiety in the Body",
         length: "7 min",
         level: "All levels",
-        mood: ["calming", "regulation"],
+        mood: ["calming"],
         language: "EN",
         audioPath: "/audio/soften-anxiety-7min.mp3",
         comingSoon: true,
@@ -51,7 +51,7 @@ const MEDITATION_THEMES = [
         title: "Speaking to Yourself Like Your Child",
         length: "8 min",
         level: "All levels",
-        mood: ["soft", "heart-opening"],
+        mood: ["compassion"],
         language: "EN",
         audioPath: "/audio/inner-friend-8min.mp3",
         comingSoon: true,
@@ -87,7 +87,7 @@ const MEDITATION_THEMES = [
         title: "Evening Reset for Busy Minds",
         length: "10 min",
         level: "All levels",
-        mood: ["relaxing", "rest"],
+        mood: ["relaxing"],
         language: "EN",
         audioPath: "/audio/evening-reset-10min.mp3",
         comingSoon: true,
@@ -433,7 +433,7 @@ function MeditationCard({ meditation, themeId }) {
         <div className="tracking-tight mt-2 flex flex-wrap items-center gap-2 text-[11px] text-white/70">
           {length && <span className="rounded-full border border-white/20 px-2 py-[2px]">{length}</span>}
           {level && <span className="rounded-full border border-white/20 px-2 py-[2px]">{level}</span>}
-          {language && <span className="rounded-full border border-white/20 px-2 py-[2px] uppercase">{language}</span>}
+          {language && <span className="rounded-full border border-white/20 px-1.5 py-[2px] uppercase">{language}</span>}
           {mood && mood.length > 0 && <span className="text-[11px] text-white/60">{mood.join(" · ")}</span>}
           {comingSoon && (
             <span className="ml-auto rounded-full bg-white/10 px-2 py-[2px] text-[10px] font-semibold uppercase tracking-tight text-[var(--color-gold)]">

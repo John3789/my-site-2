@@ -103,7 +103,7 @@ const THEMES = [
         slug: "self-trust-moments",
         title: "Building Self-Trust",
         subtitle:
-          "Stories and prompts that support trusting your decisions, boundaries, and unique timing—especially when others don’t fully get it.",
+          "Reels that support trusting your decisions, boundaries, and unique timing, even when others don’t get it.",
         tags: ["Self-trust", "Boundaries"],
         items: [],
       },
@@ -126,9 +126,9 @@ const THEMES = [
     collections: [
       {
         slug: "everyday-wellbeing",
-        title: "Stress & Overwhelm Check-Ins",
+        title: "Stress, Overwhelm Check-In",
         subtitle:
-          "Reels that name what you're going through so you can stop blaming yourself and start responding with more care.",
+          "Reels about what you're going through so you can stop blaming yourself and respond with more care.",
         tags: ["Stress", "Overwhelm"],
         items: [],
       },
@@ -150,9 +150,9 @@ const THEMES = [
     collections: [
       {
         slug: "everyday-connection",
-        title: "Everyday Relationship Dynamics",
+        title: "Relationship Dynamics",
         subtitle:
-          "Guidance for navigating miscommunication, emotional distance, and feeling like you’re ‘too much’ or ‘not enough’ for the people around you.",
+          "Guidance for navigating communication, emotional distance, and feeling like you’re not enough.",
         tags: ["Relationships", "Belonging"],
         items: [],
       },
@@ -175,7 +175,7 @@ const THEMES = [
     collections: [
       {
         slug: "understanding-yourself",
-        title: "Understanding What You’re Feeling",
+        title: "Understanding Your Feelings",
         subtitle:
           "Reels that help you name your what you're navigating, your patterns, and what’s actually underneath the fog—not just ‘I don’t know.’",
         tags: ["Clarity", "Awareness"],
