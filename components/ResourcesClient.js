@@ -606,14 +606,15 @@ export default function ResourcesClient() {
 
 {/* --- MOBILE divider + footer (inside zoom, after the form) --- */}
 <div className="block lg:hidden">
-  <div className="mx-auto max-w-[1400px] px-6 mb-14 -mt-5">
+  <div className="mx-auto max-w-[1400px] px-6 mb-7 -mt-5">
     <hr className="w-[98%] mx-auto border-t border-[var(--color-cream)]/22 mb-0" />
   </div>
 
   <div className="mobile-footer-cap">
 
-  <div className="mx-auto max-w-[1400px] px-3 narrow-landscape-70">
-    {/* Newsletter card (midnight blue) */}
+    <div className="mx-auto max-w-[1400px] px-3 narrow-landscape-70">
+    {/* Newsletter card (midnight blue) — hidden on mobile */}
+    {/*
     <div className="rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-10">
       <p className="text-[12px] uppercase tracking-[0.18em] opacity-70 mb-2">
         Science, Soul, and a Bit of Magic — Every Month
@@ -621,12 +622,13 @@ export default function ResourcesClient() {
       <p className="text-sm opacity-85 mb-3">
         Practical wisdom for modern minds — best paired with coffee and curiosity.
       </p>
-                              <MobileFooterSubscribeClient />
-      
+      <MobileFooterSubscribeClient />
     </div>
+    */}
 
-                      {/* --- MOBILE Jay-style footer block --- */}
-                  <div className="mt-6 text-[13px] leading-relaxed">
+    {/* --- MOBILE Jay-style footer block --- */}
+    <div className="mt-6 text-[13px] leading-relaxed">
+
                     {/* 1) Heading */}
                     <p className="uppercase tracking-[0.18em] text-left opacity-70">
                       Follow Dr. Salerno:

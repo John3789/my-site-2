@@ -326,7 +326,7 @@ export default function MeditationLibraryPage() {
       </div>
 
       {/* Mobile footer stack */}
-      <div className="lg:hidden mx-auto w-full max-w-[900px] px-0 mt-6">
+      <div className="lg:hidden w-full max-w-[500px] px-0 mt-6">
         <div className="mt-0 text-[13px] leading-relaxed">
           <p className="uppercase tracking-[0.18em] text-left opacity-70">Follow Dr. Salerno:</p>
           <div className="mt-3 flex items-left justify-left gap-8">
@@ -353,7 +353,7 @@ export default function MeditationLibraryPage() {
           </div>
 
           <p className="mt-5 text-left opacity-85">
-            Dr. Juan Pablo Salerno is an award-winning mental health science expert and thought leader, author, and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
+            Dr. Juan Pablo Salerno is an award-winning mental health science expert and transformation advisor, author, and professor—credited with more than 30 peer-reviewed publications and over 2,000 citations.
           </p>
 
           <p className="mt-6 text-left opacity-85">© Dr. Juan Pablo Salerno™</p>

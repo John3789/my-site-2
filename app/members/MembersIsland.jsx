@@ -1389,8 +1389,8 @@ const handleJump = useCallback((id) => {
       </div>
 
       {/* Mobile footer block (newsletter + socials + bio + legal) */}
-      <div className="lg:hidden mx-auto w-full max-w-[900px] px-0 mt-0">
-        <div className="mx-auto w-full px-0">
+      <div className="lg:hidden w-full max-w-[500px] px-0 mt-0">
+        <div className="w-full px-0">
           {/* Newsletter card */}
 {/* Newsletter card – hidden on mobile (≤ 999px) */}
 <div className="max-[999px]:hidden min-[1000px]:block rounded-xl bg-[#0f2334] ring-1 ring-white/10 p-5 shadow-2xl mt-6">
