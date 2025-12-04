@@ -165,9 +165,18 @@ export default function MeditationLibraryPage() {
         <div className="relative mx-auto max-w-[1100px] px-6 py-3">
           <div ref={navScrollRef} className="flex gap-2 overflow-x-auto no-scrollbar scroll-smooth" onScroll={updateNavScrollState}>
             {/* GOLD MEMBERS HOME PILL */}
-           <MembersHomeLink
-  className="flex-shrink-0 inline-flex items-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)] px-3.5 py-1.5 text-xs font-semibold tracking-wide text-black shadow-sm transition active:scale-95"
-/>
+<MembersHomeLink
+  className="flex-shrink-0 inline-flex items-center justify-center rounded-full border-none bg-[var(--color-gold)] text-black px-3.5 py-1 text-xs font-semibold tracking-wide shadow-none transition-all hover:bg-[var(--color-gold)]/90 active:scale-95"
+  showArrow={false}  // Hides the arrow
+>
+  <span className="opacity-100">Members Home</span>
+</MembersHomeLink>
+
+
+
+
+
+
 
             {/* THEME BUTTONS – click → scroll, do NOT filter */}
                   {MEDITATION_THEMES.map((option) => {
@@ -215,37 +224,48 @@ export default function MeditationLibraryPage() {
         </div>
       </section>
 
-      {/* MOBILE NAV – 2-COLUMN PILL GRID, NON-STICKY */}
-<div className="mt-8 max-[998px]:block min-[999px]:hidden">
-        <div className="grid grid-cols-2 gap-3">
-    {/* Members Home pill */}
-<MembersHomeLink
-  className="w-full inline-flex items-center justify-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)] px-3.5 py-2 text-xs font-semibold tracking-wide text-black shadow-sm active:scale-95"
-/>
+   {/* MOBILE NAV CHIPS — replicated from Resources page (3-up grid, teal chips) */}
+<div id="quicknav" className="lg:hidden mb-8 mt-4 grid grid-cols-3 gap-2 narrow-landscape-70">
 
+  {/* GOLD Members Home pill as FIRST pill using MembersHomeLink */}
+  <MembersHomeLink
+    showArrow={false}
+    className="w-full rounded-full px-2 py-1.5 text-[11px] font-semibold tracking-wide truncate 
+               transition active:scale-95 active:brightness-110 
+               bg-[var(--color-gold)] text-black border border-white/20 text-center"
+  >
+    Members Home
+  </MembersHomeLink>
 
-    {MEDITATION_THEMES.map((option) => {
-      const isActive = activeFilter === option.id;
-      return (
-        <button
-          key={option.id}
-          type="button"
-          onClick={() => {
-            setActiveFilter(option.id);
-            handleJump(option.id);
-          }}
-          className={
-            isActive
-              ? "w-full inline-flex items-center justify-center rounded-full border border-white/25 bg-white/[0.08] px-3.5 py-2 text-xs font-semibold tracking-wide text-[var(--color-cream)] transition active:scale-95"
-              : "w-full inline-flex items-center justify-center rounded-full border border-white/15 bg-white/[0.03] px-3.5 py-2 text-xs font-semibold tracking-wide text-[var(--color-cream)]/90 transition hover:bg-white/[0.07] active:scale-95"
-          }
-        >
-          <span className="truncate">{option.label}</span>
-        </button>
-      );
-    })}
-  </div>
+  {/* ORIGINAL TEAL PILLS */}
+  {MEDITATION_THEMES.map((t) => {
+    const active = activeFilter === t.id;
+    return (
+      <button
+        key={t.id}
+        onClick={() => {
+          setActiveFilter(t.id);
+          handleJump(t.id);
+        }}
+        aria-current={active ? "true" : "false"}
+        className={[
+          "w-full rounded-full px-2 py-1.5 text-[11px] font-semibold tracking-wide truncate transition",
+          "active:scale-95 active:brightness-125 bg-[var(--color-teal-800)]",
+          "text-[var(--color-cream)] border border-white/12",
+        ].join(" ")}
+      >
+        {t.label}
+      </button>
+    );
+  })}
+
 </div>
+
+{/* Divider under mobile nav — matches Resources */}
+<div className="lg:hidden mt-3 -mb-5 px-0">
+  <div className="h-px w-[95%] lg:w-full bg-[var(--color-cream)]/15 mx-auto" />
+</div>
+
 
       {/* THEMES + MEDITATION CARDS */}
       <section className="mt-10 space-y-12">

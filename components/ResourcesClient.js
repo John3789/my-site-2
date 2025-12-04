@@ -469,6 +469,13 @@ export default function ResourcesClient() {
 
             {/* Mobile nav chips */}
             <div id="quicknav" className="lg:hidden mb-8 mt-4 grid grid-cols-3 gap-2 narrow-landscape-80">
+               {/* NEW: Gold Members Home pill */}
+ <MembersHomeLink
+  showArrow={false}
+  textColor="text-black" // override inherited color
+  className="inline-block w-full rounded-full px-2 py-1.5 text-[11px] font-semibold tracking-wide
+             truncate text-center bg-[var(--color-gold)] border border-white/20"
+/>
               {THEMES.map((t) => {
                 const active = currentId === t.slug;
                 return (

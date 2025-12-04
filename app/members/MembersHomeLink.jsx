@@ -1,10 +1,9 @@
-// app/members/MembersHomeLink.jsx
 "use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function MembersHomeLink({ className = "" }) {
+export default function MembersHomeLink({ className = "", textColor = "var(--color-gold)", showArrow = true }) {
   const pathname = usePathname();
 
   // Don't show this link on the Members home page itself
@@ -16,9 +15,9 @@ export default function MembersHomeLink({ className = "" }) {
     <div className={className}>
       <Link
         href="/members"
-        className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-gold)] hover:underline"
+        className={`inline-flex items-center gap-2 font-semibold ${textColor} tracking-wide active:scale-95 transition hover:bg-[var(--color-gold)]/90`} // Removed underline
       >
-        <span aria-hidden="true">←</span>
+        {showArrow && <span aria-hidden="true">←</span>}  {/* Conditionally render the arrow */}
         <span>Members Home</span>
       </Link>
     </div>
