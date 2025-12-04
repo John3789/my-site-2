@@ -121,9 +121,15 @@ export default function MembersAiPage() {
       <div ref={wrapRef} className="min-h-[100vh] px-4 py-8 md:px-6 md:py-10">
         <div className="mx-auto max-w-[950px]">
           {/* Sticky Members Home pill */}
-          <div className="pl-6 sticky top-0 z-30 flex justify-start">
-            <MembersHomeLink className="mb-4 mt-9 inline-flex items-center rounded-full border border-[var(--color-gold)] bg-transparent px-2.5 py-[3px] text-[9px] font-semibold tracking-[0.14em] text-[var(--color-gold)] backdrop-blur-sm" />
+
+          <div className="min-[1000px]:top-0 min-[1000px]:pl-6 sticky -top-5 min-[1000px]:mt-0 -mt-20 z-30 flex justify-end min-[1000px]:justify-start">
+            <MembersHomeLink
+              className="mb-15 mt-9 min-[1000px]:mb-0 min-[1000px]:mt-9 inline-flex items-center rounded-full border border-[var(--color-gold)]
+                         bg-transparent px-2.5 py-1  text-[13px] font-semibold tracking-[0.14em]
+                         text-[var(--color-gold)] backdrop-blur-sm"
+            />
           </div>
+
 
           {/* HERO HEADER */}
           <div className="mt-4 flex flex-col items-center text-center">
