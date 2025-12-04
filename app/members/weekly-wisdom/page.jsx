@@ -18,15 +18,17 @@ export default function WeeklyWisdomPage() {
       className="mx-auto max-w-[1100px] px-6 py-12 mt-7"
     >
           {/* Sticky Members Home button */}
-<div className="ml-8 sticky top-8 z-30 flex justify-start">
+<div className="min-[1000px]:top-8 min-[1000px]:ml-8 sticky top-4 -mt-10 z-30 flex justify-end min-[1000px]:justify-start">
   <MembersHomeLink
-    className="inline-flex items-center rounded-full border border-[var(--color-gold)] bg-transparent px-2.5 py-[3px] text-[9px] font-semibold tracking-[0.14em] text-[var(--color-gold)] backdrop-blur-sm"
+    className="inline-flex items-center rounded-full border border-[var(--color-gold)]
+               bg-transparent px-2.5 py-1  text-[13px] font-semibold tracking-[0.14em]
+               text-[var(--color-gold)] backdrop-blur-sm"
   />
 </div>
    {/* PAGE HEADER */}
   <header>
 
-    <h1 className="mx-auto mt-5 font-serif text-5xl md:text-6xl tracking-tight leading-tight text-[var(--color-cream)] text-center">
+    <h1 className="mx-auto mt-15 font-serif text-5xl md:text-6xl tracking-tight leading-tight text-[var(--color-cream)] text-center">
       {hasEmails ? "Weekly Wisdom Collection" : "Weekly Wisdom"}
     </h1>
           <div className="mx-auto text-center mt-4 mb-6 h-[2px] w-16 rounded bg-[var(--color-gold)]/85" />
