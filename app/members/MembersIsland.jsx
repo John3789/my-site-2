@@ -697,7 +697,7 @@ const handleJump = useCallback((id) => {
 </span>    </h2>
     <p className="mt-2 text-sm md:text-base opacity-90 max-w-[33rem]">
     Reach out when you want thoughtful guidance, emotional clarity, or a trusted perspective.
-      Dr. Salerno AI helps you understand your feelings, see things more clearly, & choose your next step.
+      Dr. Salerno AI helps you understand your feelings, see things more clearly, and choose your next step.
     </p>
 
     {/* 1 column on mobile, 3-column waterfall on desktop */}
@@ -960,7 +960,7 @@ const handleJump = useCallback((id) => {
       {/* When this is helpful */}
       <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
         <summary className="flex items-center justify-between text-sm font-semibold list-none">
-          <span>When a call is helpful</span>
+          <span>When a call could help you</span>
           <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
         </summary>
         <ul className="mt-2 text-sm space-y-1">
@@ -982,7 +982,7 @@ const handleJump = useCallback((id) => {
       {/* During your hour */}
       <details className="group mb-3 break-inside-avoid rounded-xl bg-white/5 ring-1 ring-white/12 p-4 cursor-pointer">
         <summary className="flex items-center justify-between text-sm font-semibold list-none">
-          <span>What we could do on the call</span>
+          <span>What we will do on the call</span>
           <span className="ml-2 text-xs opacity-70 transition-transform group-open:rotate-90">▶</span>
         </summary>
         <ul className="mt-2 text-sm space-y-1">
