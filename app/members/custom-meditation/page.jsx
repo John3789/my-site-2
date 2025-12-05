@@ -354,7 +354,7 @@ await fetch("/api/forms/meditation-members", {
       name="current"
       className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
       rows={3}
-      placeholder="Share anything you feel comfortable with about what you’re navigating emotionally, mentally, or spiritually. Please elaborate wherever it feels helpful."
+      placeholder="Share anything you feel comfortable with about what you’re navigating emotionally, mentally, or spiritually. Feel free elaborate wherever it feels helpful."
     />
   </div>
 

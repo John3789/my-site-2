@@ -500,7 +500,7 @@ When your mind feels heavy or overwhelmed, the right meditation can help you com
                       name="current"
                       className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
                       rows={3}
-                      placeholder="Share what you’re navigating emotionally, mentally, or spiritually."
+                      placeholder="Share anything you feel comfortable with about what you’re navigating emotionally, mentally, or spiritually. Feel free to elaborate wherever it feels helpful."
                     />
                   </div>
 
@@ -512,7 +512,7 @@ When your mind feels heavy or overwhelmed, the right meditation can help you com
                       name="support"
                       className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
                       rows={3}
-                      placeholder="For example: anxiety, burnout, confidence, clarity, grief, motivation, self-trust, etc."
+                      placeholder="For example: anxiety, burnout, confidence, clarity, grief, motivation, self-trust, etc. You're welcome to provide a thorough response."
                       required
                     />
                   </div>
@@ -542,7 +542,7 @@ When your mind feels heavy or overwhelmed, the right meditation can help you com
                         type="text"
                         name="timing"
                         className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
-                        placeholder="Mornings, before bed, between shifts, after work, etc."
+                        placeholder="Mornings, afternoons, evenings, etc."
                       />
                     </div>
                   </div>
@@ -555,7 +555,7 @@ When your mind feels heavy or overwhelmed, the right meditation can help you com
                       name="preferences"
                       className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
                       rows={2}
-                      placeholder="For example: English or Spanish, any phrases you resonate with, or anything you'd prefer to avoid."
+                      placeholder="For example: English or Spanish, spiritual preferences, any phrases, language, or styles that resonate with you, or anything you'd prefer to avoid."
                     />
                   </div>
 
