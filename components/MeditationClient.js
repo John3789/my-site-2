@@ -500,19 +500,18 @@ When your mind feels heavy or overwhelmed, the right meditation can help you com
                       name="current"
                       className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
                       rows={3}
-                      placeholder="Share anything you feel comfortable with about what you’re navigating emotionally, mentally, or spiritually. Feel free to elaborate wherever it feels helpful."
+                      placeholder="You’re welcome to share what's been present for you  — feeling directionless, repeating old patterns, navigating a major transition, feeling disconnected from yourself, or moving through a period of low motivation or uncertainty. Describe what life feels like for you right now."
                     />
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium mb-1">
-                      What would you like this meditation to support?
-                    </label>
+What kind of support or shift would you like this meditation to help you create?                    </label>
                     <textarea
                       name="support"
                       className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
                       rows={3}
-                      placeholder="For example: anxiety, burnout, confidence, clarity, grief, motivation, self-trust, etc. You're welcome to provide a thorough response."
+                      placeholder="For example: gaining clarity around your path, rebuilding self-worth, breaking patterns that keep holding you back, feeling more grounded instead of on autopilot, or reconnecting with your goals and sense of direction. Describe what you hope this meditation helps you move toward."
                       required
                     />
                   </div>
@@ -542,7 +541,7 @@ When your mind feels heavy or overwhelmed, the right meditation can help you com
                         type="text"
                         name="timing"
                         className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
-                        placeholder="Mornings, afternoons, evenings, etc."
+                        placeholder="Mornings, midday, after work, before bed, etc."
                       />
                     </div>
                   </div>
