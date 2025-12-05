@@ -15,7 +15,7 @@ export default function MembersHomeLink({ className = "", textColor = "var(--col
     <div className={className}>
       <Link
         href="/members"
-        className={`inline-flex items-center gap-2 font-semibold ${textColor} tracking-wide active:scale-95 transition hover:bg-[var(--color-gold)]/90`} // Removed underline
+        className={`inline-flex items-center gap-2 font-semibold ${textColor} tracking-wide active:scale-95 transition hover:bg-[var(--color-transparent)]`} // Removed underline
       >
         {showArrow && <span aria-hidden="true">←</span>}  {/* Conditionally render the arrow */}
         <span>Members Home</span>
