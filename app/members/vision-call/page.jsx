@@ -559,7 +559,7 @@ A grounded belief in your direction again, and the motivation to take your next 
                   name="focus"
                   className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
                   rows={3}
-                  placeholder="Share anything you feel comfortable with about what you’re moving through emotionally, mentally, or spiritually. You're welcome to provide a thorough response."
+                  placeholder="Share what’s been weighing on you or feeling hard to navigate — whether that’s a major life transition, feeling lost, relationship challenges, burnout, repeating patterns you’re tired of, or anything that feels like it’s asking for your attention right now."
                   required
                 />
               </div>
@@ -570,7 +570,7 @@ A grounded belief in your direction again, and the motivation to take your next 
                   name="goals"
                   className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
                   rows={3}
-                  placeholder="For example: clearer direction, specific next steps, support with a decision, a mindset shift, renewed motivation, regained self-confidence, etc. Please elaborate wherever it feels helpful."
+                  placeholder="For example: clarity around a difficult situation, understanding why you feel stuck, support with a major decision, a breakthrough in cycles holding you back, relief from emotional heaviness, or a sense of direction and renewed self-worth. Share whatever feels true for you."
                   required
                 />
               </div>
