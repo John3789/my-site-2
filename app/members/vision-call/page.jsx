@@ -503,14 +503,17 @@ A grounded belief in your direction again, and the motivation to take your next 
     href="#vision-call-request"
     onClick={(e) => {
       e.preventDefault();
-      handleJump("vision-call-request", 20);
+
+      const isMobile = window.innerWidth < 1024; // matches lg:hidden
+      const offset = isMobile ? 20 : 100;
+
+      handleJump("vision-call-request", offset);
     }}
     className="mt-0 inline-flex items-center justify-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)] px-5 py-2.5 text-xs md:text-sm font-semibold tracking-wide text-black shadow-sm hover:brightness-110 transition"
   >
     Request Your Transformation Call
   </a>
 </section>
-
 
         {/* VISION CALL REQUEST FORM (bottom of page) */}
         <section id="vision-call-request" className="mt-4 mx-auto max-w-[900px] px-6 py-12 narrow-landscape-80">
