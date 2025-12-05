@@ -25,7 +25,7 @@ export default function MembershipPageClient() {
     const el = document.getElementById(sectionId);
     if (!el) return;
 
-    const navOffset = typeof offsetOverride === "number" ? offsetOverride : 110;
+    const navOffset = typeof offsetOverride === "number" ? offsetOverride : 100;
 
     const rect = el.getBoundingClientRect();
     const targetY = rect.top + window.scrollY - navOffset;
@@ -107,8 +107,51 @@ await fetch("/api/forms/vision-call", {
           </p>
         </header>
 
+{/* MOBILE NAV CHIPS — copied from Meditation Library */}
+<div
+  id="quicknav"
+  className="lg:hidden mb-8 mt-6 grid grid-cols-3 gap-2 narrow-landscape-70"
+>
+  {/* GOLD Members Home pill — make it shrink to content (w-auto) */}
+  <Link
+    href="/members"
+    className="self-start col-span-1 justify-self-center w-auto rounded-full px-3.5 py-1.25 text-[11.5px] font-semibold tracking-wide truncate 
+               transition active:scale-95 active:brightness-110 
+               bg-[var(--color-gold)] text-black border border-white/20 text-center"
+  >
+    Members Home
+  </Link>
+
+  {/* MOBILE THEME BUTTONS — Membership navItems */}
+  {navItems.map((item) => {
+    const base =
+      "w-full rounded-full text-[11px] font-semibold tracking-wide truncate transition active:scale-95";
+    const teal =
+      "px-2 py-1.5 bg-[var(--color-teal-800)] text-[var(--color-cream)] border border-white/12 hover:brightness-110";
+    const gold =
+      "px-2 py-1 bg-[var(--color-gold)] text-black border border-white/20 hover:brightness-105";
+
+    return (
+      <button
+  key={item.id}
+  onClick={() =>
+    handleJump(
+      item.id,
+      item.isPrimary ? 0 : 10 // ⭐ AFFECTS MOBILE ONLY
+    )
+  }
+  className={`${base} ${item.isPrimary ? gold : teal}`}
+>
+  {item.label}
+</button>
+
+    );
+  })}
+</div>
+
+
         {/* Sticky section nav */}
-        <nav className="sticky top-8 z-30 mt-6">
+<nav className="hidden lg:block sticky top-8 z-30 mt-6">
           <div className="mx-auto max-w-[1000px]">
             <div className="rounded-full backdrop-blur-sm ring-1 ring-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
               <div className="flex flex-wrap items-center justify-center gap-2 px-3 py-3">
@@ -158,7 +201,7 @@ await fetch("/api/forms/vision-call", {
                     href="#vision-call-request"
                     onClick={(e) => {
                       e.preventDefault();
-                      handleJump("vision-call-request", 80);
+                      handleJump("vision-call-request", 10);
                     }}
                     className="inline-flex items-center justify-center rounded-full bg-[var(--color-gold)] px-4 py-1.5 text-[11px] font-semibold tracking-wide text-black shadow-sm hover:brightness-110 transition"
                   >
@@ -460,7 +503,7 @@ A grounded belief in your direction again, and the motivation to take your next 
     href="#vision-call-request"
     onClick={(e) => {
       e.preventDefault();
-      handleJump("vision-call-request", 80);
+      handleJump("vision-call-request", 20);
     }}
     className="mt-0 inline-flex items-center justify-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold)] px-5 py-2.5 text-xs md:text-sm font-semibold tracking-wide text-black shadow-sm hover:brightness-110 transition"
   >
@@ -592,7 +635,7 @@ A grounded belief in your direction again, and the motivation to take your next 
         </section>
 
         {/* Divider ABOVE footer, like Contact/Members */}
-        <div className="mx-auto max-w-[1200px] px-6 mt-12">
+        <div className="hidden lg:block mx-auto max-w-[1200px] px-6 mt-12">
           <hr className="border-t border-[var(--color-cream)]/22" />
         </div>
 
