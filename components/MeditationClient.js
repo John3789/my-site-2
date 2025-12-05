@@ -500,7 +500,7 @@ When your mind feels heavy or overwhelmed, the right meditation can help you com
                       name="current"
                       className="w-full rounded-md border border-white/15 bg-black/20 px-3 py-2 text-sm outline-none focus:border-[var(--color-gold)] focus:ring-1 focus:ring-[var(--color-gold)]"
                       rows={3}
-                      placeholder="You’re welcome to share what's been present for you  — feeling directionless, repeating old patterns, navigating a major transition, feeling disconnected from yourself, or moving through a period of low motivation or uncertainty. Describe what life feels like for you right now."
+                      placeholder="For example: feeling directionless, repeating old patterns, navigating a major transition, feeling disconnected from yourself, or moving through a period of low motivation or uncertainty. Describe what life feels like for you right now."
                     />
                   </div>
 
