@@ -192,23 +192,35 @@ export default function MembersFeedbackPage() {
     return selectedAreas.includes(key);
   }
 
-  return (
-    <div ref={wrapRef} className="min-h-screen bg-[var(--color-teal-850)] text-[var(--color-cream)]">
-      <div className="mx-auto max-w-[900px] px-6 py-10">
-        <header className="mb-8">
-<div className="mb-6 flex justify-start">
-  <MembersHomeLink
-    className="mt-9 inline-flex items-center rounded-full border border-[var(--color-gold)] bg-transparent px-2.5 py-[3px] text-[9px] font-semibold tracking-[0.14em] text-[var(--color-gold)]"
-  />
-</div>
-          <p className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-gold)]">RISE Member Experience Feedback Survey</p>
-          <h1 className="mt-4 font-serif text-3xl md:text-4xl">A space to help shape the future of RISE.</h1>
-          <p className="mt-4 text-sm leading-relaxed text-[var(--color-cream)]/85">
-            Thank you for being part of RISE. Your presence, your voice, and your experience matter more than you know. This survey is a space for you to share what&apos;s working beautifully, what could feel even better, and what you&apos;d love to see next. Your feedback helps refine the journey, elevate the tools, and co-create a program that truly supports your growth and transformation.
-          </p>
-        </header>
+return (
+  <div
+    ref={wrapRef}
+    className="min-h-screen bg-[var(--color-teal-850)] text-[var(--color-cream)]"
+  >
+    <div className="mx-auto max-w-[900px] px-6 py-10">
+      {/* STICKY MEMBERS HOME PILL – keeps your positioning */}
+      <div className="sticky top-8 min-[1000px]:top-10 mt-0 min-[1000px]:mt-0 min-[1000px]:-ml-40 -mr-3 z-9999 flex justify-end min-[1000px]:justify-start">
+        <MembersHomeLink
+          className="min-[1000px]:-mt-9 -mt-7 inline-flex items-center rounded-full border border-[var(--color-gold)] bg-transparent px-2.5 py-1 text-[13px] font-semibold tracking-[0.14em] text-[var(--color-gold)] backdrop-blur-sm"
+        />
+      </div>
 
-        <form onSubmit={handleSubmit} className="space-y-8 rounded-2xl bg-white/5 p-6 shadow-xl ring-1 ring-white/10">
+      <header className="mb-8">
+        <p className="mt-15 min-[1000px]:mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-gold)]">
+          RISE Member Experience Feedback Survey
+        </p>
+        <h1 className="mt-4 font-serif text-3xl md:text-4xl">
+          A space to help shape the future of RISE.
+        </h1>
+        <p className="mt-4 text-sm leading-relaxed text-[var(--color-cream)]/85">
+          Thank you for being part of RISE. Your presence, your voice, and your experience matter more than you know. This survey is a space for you to share what&apos;s working beautifully, what could feel even better, and what you&apos;d love to see next. Your feedback helps refine the journey, elevate the tools, and co-create a program that truly supports your growth and transformation.
+        </p>
+      </header>
+
+      <form
+        onSubmit={handleSubmit}
+        className="space-y-8 rounded-2xl bg-white/5 p-6 shadow-xl ring-1 ring-white/10"
+      >
           {/* MAIN CHOICE */}
           <section className="space-y-3">
             <h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--color-cream)]/80">What part of RISE would you like to share feedback on today?</h2>
