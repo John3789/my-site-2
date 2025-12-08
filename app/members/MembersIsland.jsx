@@ -402,8 +402,8 @@ const handleJump = useCallback((id) => {
 >
   <div className="grid grid-cols-1 md:grid-cols-2 items-center md:gap-4">
 
-    {/* LEFT COLUMN – VIDEO (nudged right slightly) */}
-    <div className="flex justify-start ml-15">
+    {/* LEFT COLUMN – VIDEO (same desktop layout, mobile second) */}
+    <div className="order-2 md:order-1 flex justify-start ml-15">
       <iframe
         className="rounded-xl"
         width="320"
@@ -416,9 +416,8 @@ const handleJump = useCallback((id) => {
       ></iframe>
     </div>
 
-    {/* RIGHT COLUMN – TEXT (wider) */}
-    <div className="flex flex-col items-center text-center max-w-[420px]">
-
+    {/* RIGHT COLUMN – TEXT (same desktop layout, mobile first) */}
+    <div className="order-1 md:order-2 flex flex-col items-center text-center max-w-[420px]">
       <h2 className="font-serif text-4xl md:text-5xl tracking-tight text-[var(--color-cream)]">
         Welcome to RISE
       </h2>
@@ -428,7 +427,6 @@ const handleJump = useCallback((id) => {
       <p className="mt-3 text-xs md:text-sm uppercase tracking-[0.16em] opacity-70">
         A personal welcome from Dr. JP Salerno, your transformation advisor
       </p>
-
     </div>
 
   </div>
