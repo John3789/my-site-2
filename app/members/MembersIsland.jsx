@@ -396,6 +396,54 @@ const handleJump = useCallback((id) => {
 {/* Section divider */}
 <div className="mt-11 md:mt-13 h-px w-full bg-[var(--color-gold)]/15" />
 
+<section
+  id="welcome"
+  className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7"
+>
+  <div className="grid grid-cols-1 md:grid-cols-2 items-center md:gap-4">
+
+    {/* LEFT COLUMN – VIDEO (nudged right slightly) */}
+    <div className="flex justify-start ml-15">
+      <iframe
+        className="rounded-xl"
+        width="320"
+        height="568"
+        src="https://www.youtube.com/embed/BNxAywsI7cU"
+        title="Welcome Video"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+    </div>
+
+    {/* RIGHT COLUMN – TEXT (wider) */}
+    <div className="flex flex-col items-center text-center max-w-[420px]">
+
+      <h2 className="font-serif text-4xl md:text-5xl tracking-tight text-[var(--color-cream)]">
+        Welcome to RISE
+      </h2>
+
+      <div className="w-14 h-px bg-[var(--color-gold)] mt-5 mb-3"></div>
+
+      <p className="mt-3 text-xs md:text-sm uppercase tracking-[0.16em] opacity-70">
+        A personal welcome from Dr. JP Salerno, your transformation advisor
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+{/* Section divider */}
+<div className="mt-11 md:mt-13 h-px w-full bg-[var(--color-gold)]/15" />
+
 {/* START HERE – FIRST 7 DAYS (Accordion Cards) */}
 <section
   id="start-here"
