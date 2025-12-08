@@ -401,23 +401,8 @@ const handleJump = useCallback((id) => {
   className="mt-10 md:mt-12 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-7"
 >
   <div className="grid grid-cols-1 md:grid-cols-2 items-center md:gap-4">
-
-    {/* LEFT COLUMN – VIDEO (same desktop layout, mobile second) */}
-    <div className="order-2 md:order-1 flex justify-start ml-15">
-      <iframe
-        className="rounded-xl"
-        width="320"
-        height="568"
-        src="https://www.youtube.com/embed/BNxAywsI7cU"
-        title="Welcome Video"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe>
-    </div>
-
-    {/* RIGHT COLUMN – TEXT (same desktop layout, mobile first) */}
-    <div className="order-1 md:order-2 flex flex-col items-center text-center max-w-[420px]">
+    {/* RIGHT COLUMN ON DESKTOP / FIRST ON MOBILE – TEXT */}
+    <div className="order-1 md:order-2 flex flex-col items-center text-center max-w-[420px] mx-auto md:mx-0">
       <h2 className="font-serif text-4xl md:text-5xl tracking-tight text-[var(--color-cream)]">
         Welcome to RISE
       </h2>
@@ -429,8 +414,22 @@ const handleJump = useCallback((id) => {
       </p>
     </div>
 
+    {/* LEFT COLUMN ON DESKTOP / SECOND ON MOBILE – VIDEO */}
+    <div className="order-2 md:order-1 flex justify-center md:justify-start md:ml-15 mt-6 md:mt-0">
+      <iframe
+        className="rounded-xl"
+        width="320"
+        height="568"
+        src="https://www.youtube.com/embed/BNxAywsI7cU"
+        title="Welcome Video"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+    </div>
   </div>
 </section>
+
 
 
 
