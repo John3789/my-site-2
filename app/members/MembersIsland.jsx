@@ -187,7 +187,7 @@ const handleJump = useCallback((id) => {
       {/* Heading + copy */}
       <div>
         <h1 className="mt-1 font-serif text-4xl md:text-5xl tracking-tight">
-          Welcome to RISE ✨
+          RISE Members Area ✨
         </h1>
         <p className="mt-1 text-sm md:text-base opacity-80">
           Your space to realign and grow.
@@ -420,7 +420,7 @@ const handleJump = useCallback((id) => {
         className="rounded-xl"
         width="320"
         height="568"
-        src="https://www.youtube.com/embed/BNxAywsI7cU"
+        src="https://www.youtube.com/embed/huM0YVinOsQ"
         title="Welcome Video"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
