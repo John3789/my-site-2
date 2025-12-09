@@ -419,7 +419,7 @@ const handleJump = useCallback((id) => {
       <iframe
         className="rounded-xl"
         width="320"
-        height="570"
+        height="568"
         src="https://www.youtube.com/embed/gzuvHMnIXEI"
         title="RISE Welcome Video"
         frameBorder="0"
