@@ -133,18 +133,51 @@ I help members rise into their aligned, strongest, most grounded self — with c
 Every answer should feel like I am sitting with them, supporting them in real time.
 `;
 
-// --- simple crisis keyword detector (input side) ---
+const MAX_MESSAGES = 20;
+const MAX_MESSAGE_CHARS = 2000;
+
+function normalizeMessages(input) {
+  const arr = Array.isArray(input) ? input : [];
+  const cleaned = arr
+    .filter((m) => m && (m.role === "user" || m.role === "assistant") && typeof m.content === "string")
+    .map((m) => ({ role: m.role, content: m.content.trim() }))
+    .filter((m) => m.content.length > 0)
+    .map((m) => ({ role: m.role, content: m.content.slice(0, MAX_MESSAGE_CHARS) }));
+  return cleaned.slice(-MAX_MESSAGES);
+}
+
+// Expand the detector but keep it simple + fast
 function isPotentialCrisis(text = "") {
   const t = text.toLowerCase();
-  return (
-    t.includes("suicide") ||
-    t.includes("kill myself") ||
-    t.includes("want to die") ||
-    t.includes("don't want to live") ||
-    t.includes("self-harm") ||
-    t.includes("hurt myself") ||
-    t.includes("end my life")
-  );
+
+  const phrases = [
+    "suicide",
+    "kill myself",
+    "killing myself",
+    "end my life",
+    "end it all",
+    "want to die",
+    "i want to die",
+    "don't want to live",
+    "dont want to live",
+    "self-harm",
+    "self harm",
+    "hurt myself",
+    "cut myself",
+    "cutting myself",
+    "overdose",
+    "i overdosed",
+    "take my life",
+    "die tonight",
+    "die today",
+    "no reason to live",
+    "i can't go on",
+    "cant go on",
+    "hurt someone",
+    "kill someone",
+  ];
+
+  return phrases.some((p) => t.includes(p));
 }
 
 // Optional: crisis message returned without calling the model
@@ -201,23 +234,27 @@ export async function POST(req) {
     }
 
     // 2) Read body
-    const body = await req.json();
+const body = await req.json();
 
-    // You can send either:
-    // { message: "text" }  OR  { messages: [...chatHistory] }
-    let userMessage = "";
-    let messages = [];
+// You can send either:
+// { message: "text" }  OR  { messages: [...chatHistory] }
+let userMessage = "";
+let messages = [];
 
-    if (Array.isArray(body?.messages)) {
-      messages = body.messages;
-      const lastUser = [...messages].reverse().find((m) => m.role === "user");
-      userMessage = lastUser?.content ?? "";
-    } else if (typeof body?.message === "string") {
-      userMessage = body.message;
-      messages = [{ role: "user", content: userMessage }];
-    } else {
-      return new Response("Invalid payload", { status: 400 });
-    }
+if (Array.isArray(body?.messages)) {
+  messages = normalizeMessages(body.messages);
+  const lastUser = [...messages].reverse().find((m) => m.role === "user");
+  userMessage = lastUser?.content ?? "";
+} else if (typeof body?.message === "string") {
+  userMessage = body.message.trim().slice(0, MAX_MESSAGE_CHARS);
+  messages = userMessage ? [{ role: "user", content: userMessage }] : [];
+} else {
+  return new Response("Invalid payload", { status: 400 });
+}
+
+if (!userMessage) {
+  return new Response("Invalid payload: missing user message", { status: 400 });
+}
 
     // 3) Simple crisis pre-filter
     if (isPotentialCrisis(userMessage)) {

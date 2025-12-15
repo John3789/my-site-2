@@ -37,71 +37,79 @@ export default function MembersAiPage() {
   }, [messages]);
 
   async function handleSend(e) {
-    e.preventDefault();
-    if (!input.trim() || isSending) return;
+  e.preventDefault();
+  if (!input.trim() || isSending) return;
 
-    const userText = input.trim();
-    setInput("");
-    setError("");
+  const userText = input.trim();
+  setInput("");
+  setError("");
 
-    const nextMessages = [
-      ...messages,
-      { role: "user", content: userText },
-      { role: "assistant", content: "" },
-    ];
-    setMessages(nextMessages);
-    setIsSending(true);
+  // Build UI messages (includes placeholder assistant bubble)
+  const uiMessages = [
+    ...messages,
+    { role: "user", content: userText },
+    { role: "assistant", content: "" },
+  ];
+  setMessages(uiMessages);
+  setIsSending(true);
 
-    try {
-      const res = await fetch("/api/salerno-ai", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          messages: nextMessages.slice(-20).map((m) => ({ role: m.role, content: m.content })),
-        }),
-      });
+  // Build API messages (exclude empty assistant placeholder)
+  const apiMessages = [
+    ...messages,
+    { role: "user", content: userText },
+  ]
+    .slice(-20)
+    .filter((m) => (m.role === "user" || m.role === "assistant") && typeof m.content === "string" && m.content.trim().length > 0)
+    .map((m) => ({ role: m.role, content: m.content }));
 
-      if (res.status === 401) {
-        setError("Your membership session is not active. Please sign in again to use Salerno AI.");
-        setIsSending(false);
-        return;
-      }
+  try {
+    const res = await fetch("/api/salerno-ai", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ messages: apiMessages }),
+    });
 
-      if (!res.ok || !res.body) {
-        setError("There was a problem connecting to Salerno AI. Please try again.");
-        setIsSending(false);
-        return;
-      }
-
-      const reader = res.body.getReader();
-      const decoder = new TextDecoder("utf-8");
-      let done = false;
-      let assistantText = "";
-
-      while (!done) {
-        const { value, done: doneReading } = await reader.read();
-        done = doneReading;
-        if (value) {
-          const chunk = decoder.decode(value);
-          assistantText += chunk;
-
-          setMessages((current) => {
-            const updated = [...current];
-            const lastIndex = updated.length - 1;
-            if (lastIndex >= 0 && updated[lastIndex].role === "assistant") {
-              updated[lastIndex] = { ...updated[lastIndex], content: assistantText };
-            }
-            return updated;
-          });
-        }
-      }
-    } catch (err) {
-      console.error("salerno-ai client error:", err);
-      setError("Something went wrong. Please try again in a moment.");
-    } finally {
+    if (res.status === 401) {
+      setError("Your membership session is not active. Please sign in again to use Salerno AI.");
       setIsSending(false);
+      return;
     }
+
+    if (!res.ok || !res.body) {
+      setError("There was a problem connecting to Salerno AI. Please try again.");
+      setIsSending(false);
+      return;
+    }
+
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder("utf-8");
+    let done = false;
+    let assistantText = "";
+
+    while (!done) {
+      const { value, done: doneReading } = await reader.read();
+      done = doneReading;
+      if (value) {
+        const chunk = decoder.decode(value);
+        assistantText += chunk;
+
+        setMessages((current) => {
+          const updated = [...current];
+          const lastIndex = updated.length - 1;
+          if (lastIndex >= 0 && updated[lastIndex].role === "assistant") {
+            updated[lastIndex] = { ...updated[lastIndex], content: assistantText };
+          }
+          return updated;
+        });
+      }
+    }
+  } catch (err) {
+    console.error("salerno-ai client error:", err);
+    setError("Something went wrong. Please try again in a moment.");
+  } finally {
+    setIsSending(false);
   }
+}
 
   function handleResetConversation() {
     setMessages([INITIAL_ASSISTANT_MESSAGE]);
