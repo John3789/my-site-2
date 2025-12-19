@@ -3,4 +3,4 @@ export default function robots() {
     rules: [{ userAgent: "*", allow: "/" }],
     sitemap: "https://drjuanpablosalerno.com/sitemap.xml", // Next.js will generate this automatically
   };
-}
+} 
