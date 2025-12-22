@@ -416,15 +416,16 @@ const handleJump = useCallback((id) => {
 
     {/* LEFT COLUMN ON DESKTOP / SECOND ON MOBILE – VIDEO */}
     <div className="order-2 md:order-1 flex justify-center md:justify-start md:ml-15 mt-6 md:mt-0">
-      <iframe
-        className="rounded-xl"
-        width="320"
-        height="570"
-        src="https://www.youtube.com/embed/8MRjWIPFtNc"
-        title="RISE Welcome Video"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
+    <iframe 
+      className="rounded-xl"
+      width="320" 
+      height="570" 
+      src="https://www.youtube.com/embed/Q6DWatTc2GM" 
+      title="RISE Welcome Video" 
+      frameBorder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      referrerPolicy="strict-origin-when-cross-origin" 
+      allowFullScreen
       ></iframe>
     </div>
   </div>
