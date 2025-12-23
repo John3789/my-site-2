@@ -420,7 +420,7 @@ const handleJump = useCallback((id) => {
       className="rounded-xl"
       width="320" 
       height="570" 
-      src="https://www.youtube.com/embed/Q6DWatTc2GM" 
+      src="https://www.youtube.com/embed/JMRqr5t_3NA"
       title="RISE Welcome Video" 
       frameBorder="0" 
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -430,14 +430,6 @@ const handleJump = useCallback((id) => {
     </div>
   </div>
 </section>
-
-
-
-
-
-
-
-
 
 {/* Section divider */}
 <div className="mt-11 md:mt-13 h-px w-full bg-[var(--color-gold)]/15" />
