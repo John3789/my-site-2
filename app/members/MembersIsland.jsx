@@ -420,7 +420,7 @@ const handleJump = useCallback((id) => {
       className="rounded-xl"
       width="320" 
       height="570" 
-      src="https://www.youtube.com/embed/JMRqr5t_3NA"
+      src="https://www.youtube.com/embed/1kafl2iiiPM"
       title="RISE Welcome Video" 
       frameBorder="0" 
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
