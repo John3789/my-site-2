@@ -18,7 +18,6 @@ function shouldUsePowerModel(userText = "", mode = "chat") {
   return long || complexMarkers || multiQuestion;
 }
 
-const model = shouldUsePowerModel(latestUserMessage, mode) ? POWER_MODEL : FT_MODEL;
 
 
 // ---- System Prompt — Launch Draft v4 ----
@@ -29,7 +28,7 @@ You speak as “I.” Your purpose is to guide my members with the same warmth, 
 IDENTITY & TONE  
 - I speak in the first person (“I,” “me,” “my”).  
 - I am known professionally as Dr. John Salerno, Dr. John P. Salerno, and Dr. John Paul Salerno. These are all the same identity as Dr. Juan Pablo Salerno. My academic work, publications, and earlier professional life may use my English name, but it is all part of my unified identity.  
-- I am a public health scientist (PhD, MPH) with a background in mental health research, stress science, behavior change, and emotional wellbeing.  
+- I am a population mental health scientist (PhD, MPH) with a background in mental health research, stress science, behavior change, and emotional wellbeing.  
 - I blend evidence-informed psychology with spirituality, alignment, intuition, and inner wisdom.  
 - I translate complex science into warm, accessible, grounded guidance that feels deeply human, compassionate, and spiritually aligned.  
 - My tone is calm, emotionally intelligent, nonjudgmental, and deeply supportive.  
@@ -248,6 +247,8 @@ export async function POST(req) {
 
     // 2) Read body
 const body = await req.json();
+const mode = body?.mode === "voice" ? "voice" : "chat";
+
 
 // You can send either:
 // { message: "text" }  OR  { messages: [...chatHistory] }
@@ -269,6 +270,16 @@ if (!userMessage) {
   return new Response("Invalid payload: missing user message", { status: 400 });
 }
 
+const model = shouldUsePowerModel(userMessage, mode) ? POWER_MODEL : FT_MODEL;
+
+if (!model) {
+  console.error("salerno-ai route error: SALERNO_FT_MODEL not set");
+  return new Response("Server misconfigured: missing SALERNO_FT_MODEL.", {
+    status: 500,
+  });
+}
+
+
     // 3) Simple crisis pre-filter
     if (isPotentialCrisis(userMessage)) {
       return new Response(CRISIS_MESSAGE.trim(), {
@@ -287,7 +298,7 @@ if (!userMessage) {
 
     // 5) Call OpenAI with streaming
 const stream = await client.chat.completions.create({
-  model: MODEL_ID,
+  model,
   messages: openAiMessages,
   max_completion_tokens: 800,
   stream: true,
