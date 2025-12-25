@@ -5,8 +5,21 @@ import { cookies } from "next/headers";
 // Ensure Node.js runtime
 export const runtime = "nodejs";
 
-// Optional: keep models configurable via env so you can swap to a fine-tuned model later
-const MODEL_ID = process.env.SALERNO_AI_MODEL || "gpt-5.1-chat-latest";
+const FT_MODEL = process.env.SALERNO_FT_MODEL; // ft:... once training finishes
+const POWER_MODEL = process.env.SALERNO_POWER_MODEL || "gpt-5.2-chat-latest";
+
+function shouldUsePowerModel(userText = "", mode = "chat") {
+  const t = userText.trim();
+  const long = t.length >= 1100;
+  const complexMarkers = /(on the other hand|however|but also|tradeoff|compare|strategy|plan|step-by-step|analyze|framework|options)/i.test(t);
+  const multiQuestion = (t.match(/\?/g) || []).length >= 2;
+  // voice: stay consistent + short; avoid power model unless truly needed
+  if (mode === "voice") return long && complexMarkers;
+  return long || complexMarkers || multiQuestion;
+}
+
+const model = shouldUsePowerModel(latestUserMessage, mode) ? POWER_MODEL : FT_MODEL;
+
 
 // ---- System Prompt — Launch Draft v4 ----
 const SYSTEM_PROMPT = `
