@@ -258,7 +258,7 @@ let messages = [];
 if (Array.isArray(body?.messages)) {
   messages = normalizeMessages(body.messages);
   const lastUser = [...messages].reverse().find((m) => m.role === "user");
-  userMessage = lastUser?.content ?? "";
+userMessage = (lastUser?.content ?? "").slice(0, MAX_MESSAGE_CHARS);
 } else if (typeof body?.message === "string") {
   userMessage = body.message.trim().slice(0, MAX_MESSAGE_CHARS);
   messages = userMessage ? [{ role: "user", content: userMessage }] : [];
@@ -295,6 +295,11 @@ if (!model) {
       { role: "system", content: SYSTEM_PROMPT },
       ...messages,
     ];
+
+    if (openAiMessages.length < 2) {
+  return new Response("Invalid payload: empty messages", { status: 400 });
+}
+
 
     // 5) Call OpenAI with streaming
 const stream = await client.chat.completions.create({
