@@ -31,7 +31,16 @@ export default function MembersRoadmapPage() {
 
         <main className="flex-1 flex flex-col">
           {/* FULL-SCREEN IFRAME BELOW THE HEADER + COLOR BAND */}
-          <iframe src="https://gamma.app/embed/rgasoco648olpx2" style="width: 700px; max-width: 100%; height: 450px" allow="fullscreen" title="Welcome to RISE by "></iframe>
+          <iframe
+            src={GAMMA_URL}
+            style={{
+              width: "100%",
+              height: "calc(100vh - 60px)", // adjust if header height changes
+              border: "none",
+            }}
+            allow="fullscreen"
+            title="RISE Roadmap"
+          />
         </main>
       </div>
 
