@@ -153,7 +153,7 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
             </p>
             <p className="mx-auto mt-6 max-w-[860px] text-xs opacity-75">
               Dr. Juan Pablo Salerno is an award-winning mental health science expert and
-              transformation advisor, author, and professor — credited with more than 30
+              inner confidence advisor, author, and professor — credited with more than 30
               peer-reviewed publications and over 2,000 citations.
             </p>
           </div>
@@ -767,7 +767,7 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
           </div>
           <p className="mt-4 max-w-[500px] text-[13px] leading-relaxed">
             Dr. Juan Pablo Salerno is an award-winning mental health science expert and
-            transformation advisor, author, and professor — credited with more than 30
+            inner confidence advisor, author, and professor — credited with more than 30
             peer-reviewed publications and over 2,000 citations.
           </p>
         </div>
@@ -824,7 +824,7 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
 
           <p className="mt-5 text-left opacity-85">
             Dr. Juan Pablo Salerno is an award-winning mental health science expert and
-            transformation advisor, author, and professor — credited with more than 30
+            inner confidence advisor, author, and professor — credited with more than 30
             peer-reviewed publications and over 2,000 citations.
           </p>
 
