@@ -63,7 +63,7 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
               </div>
 
               <div className="mt-4 text-center text-xl font-bold text-[var(--color-cream)]">
-                LAUNCHING JANUARY 2026
+                LAUNCHING SOON
               </div>
               <div className="text-center text-[10px] uppercase tracking-[0.18em] opacity-60">
                 Choose your plan
