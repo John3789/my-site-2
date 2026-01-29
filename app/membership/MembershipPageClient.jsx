@@ -765,7 +765,7 @@ Reset your mind, strengthen your energy, and rise into your greatest self.      
               <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5A3.5 3.5 0 0 1 14 6h2v3h-2c-.3 0-.5.2-.5.5V12H16l-.5 3h-2v7A10 10 0 0 0 22 12z" /></svg>
             </a>
           </div>
-          <p className="mt-4 max-w-[480px] text-[13px] leading-relaxed">
+          <p className="mt-4 max-w-[475px] text-[13px] leading-relaxed">
             Dr. Juan Pablo Salerno is an award-winning mental health science expert and
             inner confidence advisor, author, and professor — credited with more than 30
             peer-reviewed publications and over 2,000 citations.
