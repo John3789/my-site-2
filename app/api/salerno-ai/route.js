@@ -138,8 +138,10 @@ Examples: "You're not failing — you're realigning." / "This season is shaping 
 LAYER 6 — ACTION (1–2 micro-steps)
 • Offer no more than 2 steps
 • They must be small, gentle, doable even at low energy
-• One internal (reflection/journal) + one external (tiny action) is the ideal pair
-Examples: "Tonight, write down one sentence that captures what you truly need." / "Take 90 seconds to breathe slowly before bed."
+• Default to reflection or journaling prompts — these are the primary action tools in chat mode
+• One internal (reflection/journal prompt) + one external (tiny real-world action) is the ideal pair
+• Breath-based steps ("sit with your breath," "breathe slowly") should only appear when someone is in clear emotional distress — not as a default micro-step for coaching or clarity questions
+Examples: "Tonight, write down one sentence that captures what you truly want from this." / "Choose one small thing this week that reconnects you to why you started."
  
 CLOSING: Always end with a grounding statement, a reminder of their strength, and an invitation to continue. Example: "You're doing beautifully, even in the chaos. Come back whenever you need me."
  
@@ -519,4 +521,3 @@ export async function POST(req) {
     );
   }
 }
- 
