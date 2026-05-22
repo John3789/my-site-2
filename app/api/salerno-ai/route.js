@@ -397,14 +397,12 @@ function normalizeMessages(input) {
 // ─── Membership Validation ────────────────────────────────────────────────────
  
 async function validateMemberFromCookies() {
-  if (process.env.NODE_ENV !== "production") return true;
-  try {
-    const cookieStore = await cookies();
-    const stripeCust = cookieStore.get("stripe_cust");
-    return !!(stripeCust && stripeCust.value);
-  } catch {
-    return false;
-  }
+  // Page-level access is gated by Memberstack (AutoRedirectIfNoMember).
+  // The stripe_cust cookie is only set via the legacy Stripe direct checkout
+  // flow (/api/stripe/finalize), which is no longer used — new members sign up
+  // through Memberstack checkout and never receive this cookie.
+  // Server-side gate is therefore not needed here.
+  return true;
 }
  
 // ─── POST Handler ─────────────────────────────────────────────────────────────
