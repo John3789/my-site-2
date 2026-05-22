@@ -120,12 +120,12 @@ export default function AutoRedirectIfNoMember({ children }) {
           return;
         }
 
-        // Not logged in yet – could still be handshake
-        if (!isLoggedIn && attempts < maxAttempts) {
-          attempts += 1;
-          retryTimeout = window.setTimeout(runGate, 500);
-          return;
-        }
+    // Memberstack responded but user is not logged in — redirect immediately
+if (!isLoggedIn) {
+  setStatus("redirecting");
+  router.replace("/membership?need_member=1");
+  return;
+}
 
         // Logged in but no plan – give it more time once
         if (isLoggedIn && attempts < maxAttempts) {
