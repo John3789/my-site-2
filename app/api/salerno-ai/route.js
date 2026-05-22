@@ -7,17 +7,11 @@ export const runtime = "nodejs";
 import { cookies } from "next/headers";
 import OpenAI from "openai";
  
-// Lazy initialization — avoids instantiating at build time when env vars aren't available
-let _openai = null;
-function getOpenAI() {
-  if (!_openai) _openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-  return _openai;
-}
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
  
 // ─── Model Config ────────────────────────────────────────────────────────────
-// Read at request time (not module load) so env vars are always available
-function getFTModel()    { return process.env.SALERNO_FT_MODEL; }
-function getPowerModel() { return process.env.SALERNO_POWER_MODEL || "gpt-4o"; }
+const FT_MODEL    = process.env.SALERNO_FT_MODEL;
+const POWER_MODEL = process.env.SALERNO_POWER_MODEL || "gpt-4o";
  
 // ─── System Prompt ────────────────────────────────────────────────────────────
 // Built from AI Training Manuals V1 (Sections 1–9), V2 (Sections A–D)
@@ -403,16 +397,12 @@ function normalizeMessages(input) {
 // ─── Membership Validation ────────────────────────────────────────────────────
  
 async function validateMemberFromCookies() {
-  // Dev bypass: allow all requests outside production
-  if (process.env.NODE_ENV !== "production") return true;
- 
-  try {
-    const cookieStore = await cookies();
-    const stripeCust = cookieStore.get("stripe_cust");
-    return !!(stripeCust && stripeCust.value);
-  } catch {
-    return false;
-  }
+  // Page-level access is gated by Memberstack (AutoRedirectIfNoMember).
+  // The stripe_cust cookie is only set via the legacy Stripe direct checkout
+  // flow (/api/stripe/finalize), which is no longer used — new members join
+  // through Memberstack checkout and never receive this cookie.
+  // Server-side cookie gate is therefore not needed here.
+  return true;
 }
  
 // ─── POST Handler ─────────────────────────────────────────────────────────────
@@ -478,15 +468,15 @@ export async function POST(req) {
   // 6. Model selection
   const usePower = shouldUsePowerModel(latestUserText, mode);
   const model = usePower
-    ? getPowerModel()
-    : getFTModel() || getPowerModel();
+    ? POWER_MODEL
+    : FT_MODEL || POWER_MODEL;
  
   // 7. Build system prompt (mode-aware)
   const systemPrompt = buildSystemPrompt(mode);
  
   // 8. Streaming response via OpenAI
   try {
-    const stream = await getOpenAI().chat.completions.create({
+    const stream = await openai.chat.completions.create({
       model,
       messages: [
         { role: "system", content: systemPrompt },
@@ -529,4 +519,3 @@ export async function POST(req) {
     );
   }
 }
- 
