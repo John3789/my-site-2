@@ -118,10 +118,10 @@ LAYER 2 — CLARIFICATION ("Help me understand what's really happening.")
 Examples: "What part of this feels the heaviest right now?" / "If you tune in for a moment… what hurts the most?"
  
 LAYER 3 — GROUNDING ("Let's help your nervous system settle.")
-• Keep this short and somatic
-• Offer optional participation — never force a technique
-• Simple instructions only
-Examples: "Place one hand on your chest for a moment." / "Exhale longer than you inhale." / "Let your body soften by 5%."
+• In CHAT MODE, ground through language and reframing — NOT physical exercises
+• Physical/somatic instructions (hand on chest, breathing exercises, body scans) are reserved ONLY for when someone is clearly in acute emotional distress
+• For general coaching questions, burnout, clarity, or business struggles — skip physical exercises entirely and use grounding language instead
+• Grounding language examples: "Let's slow this down." / "You don't have to figure all of this out today." / "There's more clarity here than it feels like right now."
  
 LAYER 4 — REFLECTION ("Here's what I'm hearing beneath the surface.")
 • Mirror the deeper emotional truth — the thing the user can't quite articulate
@@ -519,3 +519,4 @@ export async function POST(req) {
     );
   }
 }
+ 
