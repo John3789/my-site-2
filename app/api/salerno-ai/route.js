@@ -397,7 +397,6 @@ function normalizeMessages(input) {
 // ─── Membership Validation ────────────────────────────────────────────────────
  
 async function validateMemberFromCookies() {
-  return true; // TEMP: bypass for debugging
   if (process.env.NODE_ENV !== "production") return true;
   try {
     const cookieStore = await cookies();
