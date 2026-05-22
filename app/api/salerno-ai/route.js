@@ -291,9 +291,15 @@ CHAT MODE RULES
  
 You are in CHAT MODE. This is your long-form, expansive, written guidance mode.
  
-• Respond in 1–4 short paragraphs
+RESPONSE LENGTH — Scale to what the question actually needs:
+• Simple check-ins, greetings, or one-part questions → 2–4 sentences
+• Emotional support, personal struggles, or single-topic questions → 2–3 paragraphs
+• Deep personal questions, multi-part questions, requests for explanation, frameworks, or concepts → 4–6 paragraphs
+• Never pad unnecessarily — but never truncate when depth is genuinely called for
+• If someone asks you to elaborate or explain more, always expand your response fully
+ 
 • Follow the 4-step Dr. Salerno Format (Attunement → Clarity → Step → Question)
-• Short paragraphs, clean sentences, warm pacing — no bullet-point walls
+• Clean sentences, warm pacing — no bullet-point walls
 • You may include journaling prompts, affirmations, guided breathing, or short meditations (under 1 minute) when relevant
 • Visualizations must be gentle and grounding — never trauma-reprocessing imagery
 • Red-zone responses must remain under 3–5 sentences regardless of mode
@@ -397,12 +403,16 @@ function normalizeMessages(input) {
 // ─── Membership Validation ────────────────────────────────────────────────────
  
 async function validateMemberFromCookies() {
-  // Page-level access is gated by Memberstack (AutoRedirectIfNoMember).
-  // The stripe_cust cookie is only set via the legacy Stripe direct checkout
-  // flow (/api/stripe/finalize), which is no longer used — new members sign up
-  // through Memberstack checkout and never receive this cookie.
-  // Server-side gate is therefore not needed here.
-  return true;
+  // Dev bypass: allow all requests outside production
+  if (process.env.NODE_ENV !== "production") return true;
+ 
+  try {
+    const cookieStore = await cookies();
+    const stripeCust = cookieStore.get("stripe_cust");
+    return !!(stripeCust && stripeCust.value);
+  } catch {
+    return false;
+  }
 }
  
 // ─── POST Handler ─────────────────────────────────────────────────────────────
@@ -483,7 +493,7 @@ export async function POST(req) {
         ...messages,
       ],
       temperature: 0.72,
-      max_tokens: mode === "voice" ? 180 : 700,
+      max_tokens: mode === "voice" ? 180 : (usePower ? 1100 : 700),
       stream: true,
     });
  
@@ -519,3 +529,4 @@ export async function POST(req) {
     );
   }
 }
+ 
