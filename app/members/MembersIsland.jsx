@@ -139,6 +139,7 @@ const handleJump = useCallback((id) => {
 
       if (typeof window !== "undefined") {
         window.__salernoMemberOk = false;
+        window.localStorage.removeItem("__salernoMemberOk"); 
       }
 
       window.location.href = "/membership";
